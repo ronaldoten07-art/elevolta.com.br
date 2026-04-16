@@ -873,5 +873,259 @@ async function submitAndGoStep4(){
 
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeCheckout(); });
 </script>
+
+<!-- ===== SOCIAL PROOF NOTIFICATION ===== -->
+<style>
+#sp-toast{
+  position:fixed;
+  bottom:24px;
+  left:20px;
+  z-index:9999;
+  max-width:310px;
+  width:calc(100vw - 40px);
+  background:rgba(18,10,16,0.97);
+  border:1px solid rgba(200,64,96,0.22);
+  border-left:3px solid var(--rose);
+  border-radius:3px 14px 14px 3px;
+  box-shadow:0 12px 40px rgba(0,0,0,0.6),0 2px 8px rgba(0,0,0,0.4);
+  padding:14px 16px 13px 14px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  backdrop-filter:blur(12px);
+  transform:translateX(calc(-100% - 30px));
+  opacity:0;
+  transition:transform 0.45s cubic-bezier(0.34,1.36,0.64,1),opacity 0.35s ease;
+  pointer-events:auto;
+  cursor:default;
+}
+#sp-toast.sp-show{
+  transform:translateX(0);
+  opacity:1;
+}
+#sp-toast.sp-hide{
+  transform:translateX(calc(-100% - 30px));
+  opacity:0;
+  transition:transform 0.38s cubic-bezier(0.4,0,1,1),opacity 0.3s ease;
+}
+.sp-pulse{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--rose-d),var(--rose));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1rem;
+  flex-shrink:0;
+  position:relative;
+}
+.sp-pulse::after{
+  content:'';
+  position:absolute;
+  inset:-4px;
+  border-radius:50%;
+  border:1px solid rgba(200,64,96,0.35);
+  animation:sp-ring 2s ease-out infinite;
+}
+@keyframes sp-ring{
+  0%{transform:scale(0.85);opacity:0.8;}
+  100%{transform:scale(1.35);opacity:0;}
+}
+.sp-body{
+  flex:1;
+  min-width:0;
+}
+.sp-tag{
+  font-size:0.58rem;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--rose-xl);
+  margin-bottom:3px;
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+.sp-tag::before{
+  content:'';
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--rose-xl);
+  flex-shrink:0;
+  animation:sp-blink 1.4s ease-in-out infinite;
+}
+@keyframes sp-blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.sp-name{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:0.88rem;
+  font-weight:600;
+  color:var(--t1);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  line-height:1.3;
+  margin-bottom:2px;
+}
+.sp-action{
+  font-size:0.76rem;
+  color:var(--t3);
+  line-height:1.35;
+}
+.sp-action em{
+  color:var(--warm-l);
+  font-style:normal;
+}
+.sp-close{
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.06);
+  border:none;
+  cursor:pointer;
+  color:var(--t4);
+  font-size:0.7rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  align-self:flex-start;
+  transition:.2s;
+  padding:0;
+  line-height:1;
+}
+.sp-close:hover{background:rgba(255,255,255,0.12);color:var(--t2);}
+
+/* Não aparece no checkout */
+body.checkout-open #sp-toast{display:none!important;}
+
+@media(max-width:360px){
+  #sp-toast{max-width:calc(100vw - 32px);left:16px;}
+}
+</style>
+
+<div id="sp-toast" role="status" aria-live="polite" aria-atomic="true">
+  <div class="sp-pulse">💜</div>
+  <div class="sp-body">
+    <div class="sp-tag">acesso confirmado</div>
+    <div class="sp-name" id="sp-name">Ana S. — São Paulo</div>
+    <div class="sp-action">acabou de adquirir o <em>Protocolo</em></div>
+  </div>
+  <button class="sp-close" id="sp-close-btn" aria-label="Fechar">✕</button>
+</div>
+
+<script>
+(function(){
+  const leads=[
+    "Ana S. — São Paulo",
+    "Beatriz M. — Rio de Janeiro",
+    "Camila R. — Belo Horizonte",
+    "Daniela F. — Curitiba",
+    "Eduarda L. — Porto Alegre",
+    "Fernanda G. — Salvador",
+    "Gabriela T. — Recife",
+    "Helena P. — Fortaleza",
+    "Isabela C. — Brasília",
+    "Juliana A. — Manaus",
+    "Karina D. — Belém",
+    "Larissa N. — Goiânia",
+    "Mariana B. — Campinas",
+    "Natalia V. — São Luís",
+    "Olivia E. — Maceió",
+    "Patricia H. — Natal",
+    "Renata K. — João Pessoa",
+    "Sabrina O. — Teresina",
+    "Tatiane Q. — Campo Grande",
+    "Vanessa X. — Cuiabá",
+    "Aline Z. — Florianópolis",
+    "Bianca J. — Vitória",
+    "Carla W. — Aracaju",
+    "Débora Y. — Palmas",
+    "Elisa U. — Ribeirão Preto",
+    "Fabiana I. — Sorocaba",
+    "Giovana S. — Uberlândia",
+    "Heloísa M. — Londrina",
+    "Ingrid R. — Joinville",
+    "Jaqueline F. — Caxias do Sul"
+  ];
+
+  const toast   = document.getElementById('sp-toast');
+  const nameEl  = document.getElementById('sp-name');
+  const closeBtn= document.getElementById('sp-close-btn');
+
+  // embaralha para não parecer sequencial
+  let pool = leads.slice().sort(()=>Math.random()-0.5);
+  let idx  = 0;
+  let timer= null;
+  let dismissed = false;
+
+  // Intervalo entre notificações: entre 22s e 38s (natural, não mecânico)
+  function randInterval(){ return 22000 + Math.random()*16000; }
+
+  // Duração visível: 6.5s (tempo suficiente para ler sem incomodar)
+  const VISIBLE_MS = 6500;
+
+  function isCheckoutOpen(){
+    const m = document.getElementById('checkoutModal');
+    return m && m.classList.contains('visible');
+  }
+
+  function showNext(){
+    if(dismissed) return;
+    if(isCheckoutOpen()){ scheduleNext(); return; }
+
+    // pega próximo nome (circular)
+    if(idx >= pool.length){ pool = pool.sort(()=>Math.random()-0.5); idx=0; }
+    nameEl.textContent = pool[idx++];
+
+    // mostra
+    toast.classList.remove('sp-hide');
+    toast.classList.add('sp-show');
+
+    // esconde após VISIBLE_MS
+    clearTimeout(timer);
+    timer = setTimeout(hide, VISIBLE_MS);
+  }
+
+  function hide(){
+    toast.classList.remove('sp-show');
+    toast.classList.add('sp-hide');
+    scheduleNext();
+  }
+
+  function scheduleNext(){
+    clearTimeout(timer);
+    timer = setTimeout(showNext, randInterval());
+  }
+
+  // fechar manualmente — adia próxima aparição um pouco mais
+  closeBtn.addEventListener('click',function(e){
+    e.stopPropagation();
+    clearTimeout(timer);
+    toast.classList.remove('sp-show');
+    toast.classList.add('sp-hide');
+    timer = setTimeout(showNext, randInterval() + 12000);
+  });
+
+  // primeira aparição: entre 8s e 14s após carregar (página já carregada)
+  const firstDelay = 8000 + Math.random()*6000;
+  timer = setTimeout(showNext, firstDelay);
+
+  // pausa quando checkout abre, retoma quando fecha
+  const observer = new MutationObserver(function(){
+    if(isCheckoutOpen()){
+      clearTimeout(timer);
+      toast.classList.remove('sp-show');
+      toast.classList.add('sp-hide');
+    }
+  });
+  const modal = document.getElementById('checkoutModal');
+  if(modal) observer.observe(modal, {attributes:true, attributeFilter:['class']});
+
+})();
+</script>
+<!-- ===== /SOCIAL PROOF NOTIFICATION ===== -->
+
 </body>
 </html>
