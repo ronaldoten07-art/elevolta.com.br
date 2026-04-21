@@ -636,7 +636,7 @@ body::before{content:'';position:fixed;inset:0;z-index:999;pointer-events:none;o
       <div class="desbl-price-pre">✦ &nbsp;Acesso imediato &nbsp;✦</div>
       <div class="desbl-price-old">R$ 97,00</div>
       <div class="desbl-price-main"><sup>R$</sup>47</div>
-      <p class="desbl-price-note">Pix à vista · acesso em imediato</p>
+      <p class="desbl-price-note">Pix à vista · acesso em minutos</p>
       <button class="desbl-cta" onclick="openCheckoutDesbl()">
         <span class="desbl-cta-lbl">🔓 Quero o Código do Desbloqueio</span>
         <span class="desbl-cta-hint">Pagamento seguro via Pix · Acesso imediato</span>
@@ -696,7 +696,7 @@ body::before{content:'';position:fixed;inset:0;z-index:999;pointer-events:none;o
 
 
 <!-- BOTÃO FLUTUANTE DESBLOQUEIO -->
-<button class="desbl-float-btn" id="desblFloatBtn" onclick="document.getElementById('desbloqueio').scrollIntoView({behavior:'smooth'})" aria-label="Quer que ele te desbloqueie?">
+<button class="desbl-float-btn" id="desblFloatBtn" onclick="(function(){var el=document.getElementById('desbloqueio');if(!el)return;var top=el.getBoundingClientRect().top+window.pageYOffset-20;window.scrollTo({top:top,behavior:'smooth'});})()" aria-label="Quer que ele te desbloqueie?">
   <span class="desbl-float-ico">🔓</span>
   <span>Quer que ele te desbloqueie?</span>
 </button>
