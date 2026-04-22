@@ -432,9 +432,43 @@ body::before{content:'';position:fixed;inset:0;z-index:999;pointer-events:none;o
 /* MODAL DESBLOQUEIO */
 #checkoutModalDesbl .modal-logo-text{color:var(--rose-xl);}
 
+
+/* SITE LOCKED - hidden by default */
+.site-locked > *:not(.hero):not(#checkoutModal):not(#checkoutModalDesbl):not(.modal-overlay) {
+  display: none !important;
+}
+.site-locked .desbl-float-btn {
+  display: none !important;
+}
+/* When unlocked via desbloqueio path — show only desbl section */
+body.show-desbl-only .ident-section,
+body.show-desbl-only section:not(.hero):not(.desbl-section),
+body.show-desbl-only footer {
+  display: none !important;
+}
+body.show-desbl-only .desbl-float-btn {
+  display: none !important;
+}
+/* Hero secondary button */
+.hero-btn-desbl {
+  display:inline-flex;align-items:center;gap:8px;padding:14px 28px;
+  border-radius:50px;border:1px solid rgba(200,64,96,0.35);
+  background:rgba(200,64,96,0.07);color:var(--rose-xl);
+  font-family:'DM Sans',sans-serif;font-size:clamp(0.88rem,2.6vw,0.95rem);
+  font-weight:600;cursor:pointer;transition:.25s;
+  -webkit-tap-highlight-color:transparent;letter-spacing:0.04em;
+}
+.hero-btn-desbl:hover{background:rgba(200,64,96,0.14);border-color:rgba(200,64,96,0.55);}
 </style>
 </head>
-<body>
+<body class="site-locked">
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "w940rqdxc1");
+</script>
 
 <!-- HERO -->
 <section class="hero">
@@ -460,12 +494,12 @@ body::before{content:'';position:fixed;inset:0;z-index:999;pointer-events:none;o
         </div>
       </div>
       <div class="fi fi-d5" style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:8px;">
-        <div class="btn-main-wrap" style="gap:0;">
-          <a class="btn-main" href="#oferta">
-            <span class="btn-main-lbl">Quero Ele de Volta</span>
-            <span class="btn-main-hint">Acesso imediato · Pagamento 100% seguro</span>
-          </a>
-        </div>
+        <button class="hero-btn-desbl" style="font-size:clamp(1rem,3vw,1.1rem);padding:18px 36px;" onclick="unlockSite()">
+          🌹 Quero Ele de Volta
+        </button>
+        <button class="hero-btn-desbl" onclick="showDesbloqueioOnly()">
+          🔓 Quer que ele te desbloqueie?
+        </button>
         <div class="hero-trust">
           <span class="htrust-item">🔒 SSL seguro</span>
           <div class="htrust-sep"></div>
@@ -544,34 +578,6 @@ body::before{content:'';position:fixed;inset:0;z-index:999;pointer-events:none;o
       <div class="pillar fi fi-d1"><div class="pillar-day">01–02</div><div class="pillar-title">Desarmamento</div><p class="pillar-desc">Você para de agir por impulso e entende o que o silêncio dele realmente significa.</p></div>
       <div class="pillar fi fi-d2"><div class="pillar-day">03–05</div><div class="pillar-title">Reposicionamento</div><p class="pillar-desc">Você muda a dinâmica. Ele começa a perceber sua ausência de um jeito que te coloca no controle.</p></div>
       <div class="pillar fi fi-d3"><div class="pillar-day">06–07</div><div class="pillar-title">Ativação</div><p class="pillar-desc">O movimento final. Como e quando agir para que ele venha até você.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROVA SOCIAL -->
-<section class="prova-section">
-  <div class="container">
-    <div class="section-label fi"><div class="section-label-line"></div>Resultados reais</div>
-    <h2 class="section-title fi">O que elas <em>estão vivendo</em></h2>
-    <div class="depo-grid">
-      <!-- STAT CARD -->
-      <div class="depo-card depo-stat fi" style="grid-column:1/-1;text-align:center;padding:28px 24px;">
-        <div class="dfn-big">3.847</div>
-        <p class="dfn-lbl">mulheres que já usaram o método</p>
-      </div>
-      <!-- FOTO DEPOIMENTO 1 -->
-      <div class="depo-card fi fi-d1" style="padding:0;background:transparent;border:none;overflow:hidden;border-radius:3px 18px 3px 18px;">
-        <img src="https://i.imgur.com/quVaZLv.jpeg" alt="Depoimento real" style="width:100%;height:auto;display:block;border-radius:3px 18px 3px 18px;box-shadow:0 8px 32px rgba(0,0,0,0.5);" loading="lazy">
-      </div>
-
-      <!-- FOTO DEPOIMENTO 3 -->
-      <div class="depo-card fi fi-d1" style="padding:0;background:transparent;border:none;overflow:hidden;border-radius:3px 18px 3px 18px;">
-        <img src="https://i.imgur.com/Kj1DAnR.jpeg" alt="Depoimento real" style="width:100%;height:auto;display:block;border-radius:3px 18px 3px 18px;box-shadow:0 8px 32px rgba(0,0,0,0.5);" loading="lazy">
-      </div>
-      <!-- FOTO DEPOIMENTO 4 -->
-      <div class="depo-card fi fi-d2" style="padding:0;background:transparent;border:none;overflow:hidden;border-radius:3px 18px 3px 18px;">
-        <img src="https://i.imgur.com/pwHcP9t.jpeg" alt="Depoimento real" style="width:100%;height:auto;display:block;border-radius:3px 18px 3px 18px;box-shadow:0 8px 32px rgba(0,0,0,0.5);" loading="lazy">
-      </div>
     </div>
   </div>
 </section>
@@ -668,8 +674,30 @@ body::before{content:'';position:fixed;inset:0;z-index:999;pointer-events:none;o
   </div>
 </section>
 
+<!-- PROVA SOCIAL -->
+<section class="prova-section">
+  <div class="container">
+    <div class="section-label fi"><div class="section-label-line"></div>Resultados reais</div>
+    <h2 class="section-title fi">O que elas <em>estão vivendo</em></h2>
+    <div class="depo-grid">
+      <div class="depo-card depo-stat fi" style="grid-column:1/-1;text-align:center;padding:28px 24px;">
+        <div class="dfn-big">3.847</div>
+        <p class="dfn-lbl">mulheres que já usaram o método</p>
+      </div>
+      <div class="depo-card fi fi-d1" style="padding:0;background:transparent;border:none;overflow:hidden;border-radius:3px 18px 3px 18px;">
+        <img src="https://i.imgur.com/quVaZLv.jpeg" alt="Depoimento real" style="width:100%;height:auto;display:block;border-radius:3px 18px 3px 18px;box-shadow:0 8px 32px rgba(0,0,0,0.5);" loading="lazy">
+      </div>
+      <div class="depo-card fi fi-d1" style="padding:0;background:transparent;border:none;overflow:hidden;border-radius:3px 18px 3px 18px;">
+        <img src="https://i.imgur.com/Kj1DAnR.jpeg" alt="Depoimento real" style="width:100%;height:auto;display:block;border-radius:3px 18px 3px 18px;box-shadow:0 8px 32px rgba(0,0,0,0.5);" loading="lazy">
+      </div>
+      <div class="depo-card fi fi-d2" style="padding:0;background:transparent;border:none;overflow:hidden;border-radius:3px 18px 3px 18px;">
+        <img src="https://i.imgur.com/pwHcP9t.jpeg" alt="Depoimento real" style="width:100%;height:auto;display:block;border-radius:3px 18px 3px 18px;box-shadow:0 8px 32px rgba(0,0,0,0.5);" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER CTA -->
-<section class="footer-cta">
   <div class="footer-cta-bg"></div>
   <div class="container-sm footer-cta-inner">
     <h2 class="section-title fi">A janela ainda<br><em>está aberta.</em></h2>
@@ -1460,6 +1488,39 @@ async function submitAndGoStepDesbl4(){
 })();
 
 document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeCheckoutDesbl(); });
+
+// ===== SITE LOCK / UNLOCK LOGIC =====
+function unlockSite() {
+  // Remove lock and any desbloqueio-only mode
+  document.body.classList.remove('site-locked');
+  document.body.classList.remove('show-desbl-only');
+  // Scroll to oferta section
+  const oferta = document.getElementById('oferta') || document.querySelector('.oferta-section');
+  if(oferta){
+    setTimeout(function(){
+      var top = oferta.getBoundingClientRect().top + window.pageYOffset - 20;
+      window.scrollTo({top:top, behavior:'smooth'});
+    }, 80);
+  }
+  // Reinit scroll animations
+  if(typeof initFI === 'function') initFI();
+}
+
+function showDesbloqueioOnly() {
+  // Remove lock, add show-desbl-only to hide other sections
+  document.body.classList.remove('site-locked');
+  document.body.classList.add('show-desbl-only');
+  // Scroll to desbloqueio section
+  const desbl = document.getElementById('desbloqueio');
+  if(desbl){
+    setTimeout(function(){
+      var top = desbl.getBoundingClientRect().top + window.pageYOffset - 20;
+      window.scrollTo({top:top, behavior:'smooth'});
+    }, 80);
+  }
+  // Reinit scroll animations
+  if(typeof initFI === 'function') initFI();
+}
 </script>
 
 </body>
