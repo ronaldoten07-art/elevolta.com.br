@@ -10,23 +10,23 @@
 
 <style>
 :root{
-  --rose:#d4552a;
-  --rose-l:#f07048;
-  --rose-d:#8a2a0e;
-  --rose-xl:#ff9070;
-  --rose-soft:#ffb090;
-  --warm:#c8962a;
-  --warm-l:#e8b84a;
-  --gold:#d4a04a;
-  --gold-soft:#f0d08a;
-  --dark:#0a0604;
-  --dark2:#120a05;
-  --dark3:#1a0f07;
-  --dark4:#22140a;
-  --t1:#fdf6ee;
-  --t2:rgba(253,246,238,0.82);
-  --t3:rgba(253,246,238,0.52);
-  --t4:rgba(253,246,238,0.24);
+  --rose:#b5436a;
+  --rose-l:#d4607f;
+  --rose-d:#7a1f42;
+  --rose-xl:#e8829f;
+  --rose-soft:#f0afc2;
+  --warm:#9b6b8a;
+  --warm-l:#c48fb0;
+  --gold:#c49a80;
+  --gold-soft:#e8cbb8;
+  --dark:#080508;
+  --dark2:#0e080c;
+  --dark3:#140b10;
+  --dark4:#1c1018;
+  --t1:#fdf0f4;
+  --t2:rgba(253,240,244,0.84);
+  --t3:rgba(253,240,244,0.54);
+  --t4:rgba(253,240,244,0.26);
   --glass:rgba(255,255,255,0.03);
   --glass-b:rgba(255,255,255,0.08);
 }
@@ -46,7 +46,7 @@ img{max-width:100%;display:block;}
 a{text-decoration:none;color:inherit;}
 ::-webkit-scrollbar{width:3px;}
 ::-webkit-scrollbar-track{background:var(--dark);}
-::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--rose-d),var(--rose));border-radius:2px;}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--rose-d),var(--rose-l));border-radius:2px;}
 
 .container{width:92%;max-width:980px;margin:0 auto;}
 .container-sm{width:92%;max-width:680px;margin:0 auto;}
@@ -86,10 +86,10 @@ body::before{
   justify-content:center;
   padding:40px 20px;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%,rgba(180,70,40,0.35) 0%,transparent 55%),
-    radial-gradient(ellipse 70% 50% at 50% 100%,rgba(140,40,20,0.28) 0%,transparent 60%),
-    radial-gradient(ellipse 50% 40% at 0% 50%,rgba(200,140,80,0.12) 0%,transparent 60%),
-    linear-gradient(180deg,#0a0604 0%,#1a0d06 50%,#0a0604 100%);
+    radial-gradient(ellipse 80% 60% at 50% 0%,rgba(150,40,80,0.32) 0%,transparent 55%),
+    radial-gradient(ellipse 70% 50% at 50% 100%,rgba(100,20,50,0.26) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 40% at 0% 50%,rgba(180,100,130,0.1) 0%,transparent 60%),
+    linear-gradient(180deg,#080508 0%,#160a10 50%,#080508 100%);
   overflow-y:auto;
   transition:opacity .8s ease,transform .8s ease;
 }
@@ -103,9 +103,9 @@ body::before{
   opacity:0.45;
   animation:floatOrb 14s ease-in-out infinite;
 }
-.l-orb-1{width:380px;height:380px;top:-100px;left:-120px;background:radial-gradient(circle,rgba(220,90,50,0.5),transparent 70%);}
-.l-orb-2{width:340px;height:340px;bottom:-80px;right:-100px;background:radial-gradient(circle,rgba(200,140,80,0.4),transparent 70%);animation-delay:3s;animation-duration:18s;}
-.l-orb-3{width:280px;height:280px;top:40%;left:60%;background:radial-gradient(circle,rgba(160,60,40,0.35),transparent 70%);animation-delay:6s;animation-duration:20s;}
+.l-orb-1{width:380px;height:380px;top:-100px;left:-120px;background:radial-gradient(circle,rgba(180,50,90,0.45),transparent 70%);}
+.l-orb-2{width:340px;height:340px;bottom:-80px;right:-100px;background:radial-gradient(circle,rgba(155,80,120,0.35),transparent 70%);animation-delay:3s;animation-duration:18s;}
+.l-orb-3{width:280px;height:280px;top:40%;left:60%;background:radial-gradient(circle,rgba(120,40,70,0.3),transparent 70%);animation-delay:6s;animation-duration:20s;}
 @keyframes floatOrb{
   0%,100%{transform:translate(0,0) scale(1);}
   33%{transform:translate(30px,-40px) scale(1.08);}
@@ -242,10 +242,10 @@ body::before{
 }
 
 .l-btn-primary{
-  background:linear-gradient(135deg,#8a2a0e 0%,#c04020 30%,#e86040 65%,#ff9070 100%);
+  background:linear-gradient(135deg,#5a1030 0%,#8f2550 30%,#b84070 65%,#de7095 100%);
   color:#fff;
   box-shadow:
-    0 24px 70px rgba(180,60,30,0.55),
+    0 24px 70px rgba(140,40,80,0.55),
     0 6px 20px rgba(0,0,0,0.4),
     inset 0 1px 0 rgba(255,255,255,0.25),
     inset 0 -2px 0 rgba(0,0,0,0.25);
@@ -254,16 +254,16 @@ body::before{
 @keyframes heartPulse{
   0%,100%{
     box-shadow:
-      0 0 0 0 rgba(220,90,50,0),
-      0 24px 70px rgba(180,60,30,0.55),
+      0 0 0 0 rgba(181,67,106,0),
+      0 24px 70px rgba(140,40,80,0.55),
       0 6px 20px rgba(0,0,0,0.4),
       inset 0 1px 0 rgba(255,255,255,0.25);
     transform:scale(1);
   }
   50%{
     box-shadow:
-      0 0 0 14px rgba(220,90,50,0.08),
-      0 30px 80px rgba(180,60,30,0.7),
+      0 0 0 14px rgba(181,67,106,0.08),
+      0 30px 80px rgba(140,40,80,0.7),
       0 6px 20px rgba(0,0,0,0.4),
       inset 0 1px 0 rgba(255,255,255,0.25);
     transform:scale(1.015);
@@ -273,8 +273,8 @@ body::before{
   animation:none;
   transform:scale(1.04) translateY(-2px);
   box-shadow:
-    0 0 0 18px rgba(220,90,50,0.12),
-    0 40px 100px rgba(180,60,30,0.85),
+    0 0 0 18px rgba(181,67,106,0.12),
+    0 40px 100px rgba(140,40,80,0.85),
     0 10px 28px rgba(0,0,0,0.5),
     inset 0 1px 0 rgba(255,255,255,0.3);
 }
@@ -387,9 +387,9 @@ body.path-desbloqueio .oferta-section{display:none;}
   overflow:hidden;
   padding:80px 0 70px;
   background:
-    radial-gradient(ellipse 90% 65% at 50% -5%,rgba(180,80,30,0.55) 0%,transparent 58%),
-    radial-gradient(ellipse 60% 40% at 90% 100%,rgba(120,50,10,0.22) 0%,transparent 55%),
-    linear-gradient(170deg,#0a0604 0%,#1c0e06 55%,#0a0604 100%);
+    radial-gradient(ellipse 90% 65% at 50% -5%,rgba(160,50,85,0.5) 0%,transparent 58%),
+    radial-gradient(ellipse 60% 40% at 90% 100%,rgba(100,30,60,0.2) 0%,transparent 55%),
+    linear-gradient(170deg,#080508 0%,#180c12 55%,#080508 100%);
 }
 .petal{position:absolute;pointer-events:none;opacity:0.05;font-size:clamp(50px,10vw,100px);filter:blur(1px);}
 .petal-1{top:10%;left:3%;animation:pd 20s ease-in-out infinite;}
@@ -498,7 +498,7 @@ body.path-desbloqueio .oferta-section{display:none;}
   border-radius:60px;
   border:none;
   cursor:pointer;
-  background:linear-gradient(135deg,#8a2a0e 0%,#c04020 35%,#e86040 65%,#ff9070 100%);
+  background:linear-gradient(135deg,#5a1030 0%,#8f2550 35%,#b84070 65%,#de7095 100%);
   color:#fff;
   font-family:'Plus Jakarta Sans',sans-serif;
   font-weight:700;
@@ -506,7 +506,7 @@ body.path-desbloqueio .oferta-section{display:none;}
   text-transform:uppercase;
   box-shadow:
     0 0 0 0 rgba(212,85,42,0),
-    0 22px 60px rgba(160,60,20,0.6),
+    0 22px 60px rgba(120,30,60,0.6),
     0 4px 16px rgba(0,0,0,0.4),
     inset 0 1px 0 rgba(255,255,255,0.22),
     inset 0 -2px 0 rgba(0,0,0,0.25);
@@ -530,8 +530,8 @@ body.path-desbloqueio .oferta-section{display:none;}
   animation:none;
   transform:scale(1.045) translateY(-2px);
   box-shadow:
-    0 0 0 14px rgba(212,85,42,0.1),
-    0 30px 80px rgba(160,60,20,0.85),
+    0 0 0 14px rgba(181,67,106,0.1),
+    0 30px 80px rgba(120,30,60,0.85),
     0 8px 24px rgba(0,0,0,0.5),
     inset 0 1px 0 rgba(255,255,255,0.25);
 }
@@ -680,7 +680,7 @@ body.path-desbloqueio .oferta-section{display:none;}
   position:absolute;
   inset:0;
   pointer-events:none;
-  background:radial-gradient(ellipse 65% 50% at 50% 100%,rgba(120,20,40,0.1) 0%,transparent 65%);
+  background:radial-gradient(ellipse 65% 50% at 50% 100%,rgba(100,20,60,0.1) 0%,transparent 65%);
 }
 .psico-content{position:relative;z-index:1;}
 .psico-h2{
@@ -845,8 +845,8 @@ body.path-desbloqueio .oferta-section{display:none;}
   position:absolute;inset:0;
   pointer-events:none;
   background:
-    radial-gradient(ellipse 70% 50% at 50% 100%,rgba(120,20,40,0.12) 0%,transparent 65%),
-    radial-gradient(ellipse 60% 40% at 50% 0%,rgba(180,60,30,0.08) 0%,transparent 65%);
+    radial-gradient(ellipse 70% 50% at 50% 100%,rgba(100,20,50,0.12) 0%,transparent 65%),
+    radial-gradient(ellipse 60% 40% at 50% 0%,rgba(140,40,80,0.08) 0%,transparent 65%);
 }
 
 .oferta-box{
@@ -854,7 +854,7 @@ body.path-desbloqueio .oferta-section{display:none;}
   margin:0 auto;
   padding:56px 48px;
   border-radius:4px 32px 4px 32px;
-  background:linear-gradient(145deg,rgba(12,6,4,0.98),rgba(22,12,8,0.98));
+  background:linear-gradient(145deg,rgba(10,4,8,0.98),rgba(20,8,14,0.98));
   backdrop-filter:blur(24px);
   border:1px solid rgba(212,85,42,0.18);
   box-shadow:
@@ -996,14 +996,14 @@ body.path-desbloqueio .oferta-section{display:none;}
   border-radius:60px;
   border:none;
   cursor:pointer;
-  background:linear-gradient(135deg,#8a2a0e 0%,#c04020 35%,#e86040 65%,#ff9070 100%);
+  background:linear-gradient(135deg,#5a1030 0%,#8f2550 35%,#b84070 65%,#de7095 100%);
   color:#fff;
   font-family:'Plus Jakarta Sans',sans-serif;
   font-weight:700;
   letter-spacing:0.04em;
   text-transform:uppercase;
   box-shadow:
-    0 24px 64px rgba(160,60,20,0.65),
+    0 24px 64px rgba(120,30,60,0.65),
     0 0 0 0 rgba(212,85,42,0),
     inset 0 1px 0 rgba(255,255,255,0.22);
   display:flex;
@@ -1023,7 +1023,7 @@ body.path-desbloqueio .oferta-section{display:none;}
   transform:scale(1.04) translateY(-3px);
   box-shadow:
     0 0 0 16px rgba(212,85,42,0.12),
-    0 36px 90px rgba(160,60,20,0.9),
+    0 36px 90px rgba(120,30,60,0.9),
     0 10px 28px rgba(0,0,0,0.5),
     inset 0 1px 0 rgba(255,255,255,0.28);
 }
@@ -1188,7 +1188,7 @@ body.path-desbloqueio .oferta-section{display:none;}
   margin:0 auto;
   padding:48px 42px;
   border-radius:4px 28px 4px 28px;
-  background:linear-gradient(145deg,rgba(12,6,4,0.98),rgba(22,12,8,0.98));
+  background:linear-gradient(145deg,rgba(10,4,8,0.98),rgba(20,8,14,0.98));
   border:1px solid rgba(212,85,42,0.2);
   box-shadow:
     0 0 0 1px rgba(212,85,42,0.08),
@@ -1230,14 +1230,14 @@ body.path-desbloqueio .oferta-section{display:none;}
   border-radius:60px;
   border:none;
   cursor:pointer;
-  background:linear-gradient(135deg,#8a2a0e 0%,#c04020 35%,#e86040 65%,#ff9070 100%);
+  background:linear-gradient(135deg,#5a1030 0%,#8f2550 35%,#b84070 65%,#de7095 100%);
   color:#fff;
   font-family:'Plus Jakarta Sans',sans-serif;
   font-weight:700;
   letter-spacing:0.04em;
   text-transform:uppercase;
   box-shadow:
-    0 24px 64px rgba(160,60,20,0.6),
+    0 24px 64px rgba(120,30,60,0.6),
     inset 0 1px 0 rgba(255,255,255,0.22);
   display:flex;flex-direction:column;align-items:center;gap:4px;
   position:relative;overflow:hidden;
@@ -1250,8 +1250,8 @@ body.path-desbloqueio .oferta-section{display:none;}
   animation:none;
   transform:scale(1.04) translateY(-3px);
   box-shadow:
-    0 0 0 14px rgba(212,85,42,0.1),
-    0 34px 84px rgba(160,60,20,0.85),
+    0 0 0 14px rgba(181,67,106,0.1),
+    0 34px 84px rgba(120,30,60,0.85),
     inset 0 1px 0 rgba(255,255,255,0.28);
 }
 .desbl-cta:active{transform:scale(0.97);}
@@ -1362,6 +1362,40 @@ body.path-desbloqueio .oferta-section{display:none;}
   font-size:0.82rem;color:var(--t3);letter-spacing:0.04em;
 }
 
+.oferta-wa-suporte{
+  margin-top:18px;
+  position:relative;
+  z-index:1;
+}
+.oferta-wa-btn{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px 18px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(37,211,102,0.1),rgba(37,211,102,0.04));
+  border:1px solid rgba(37,211,102,0.25);
+  color:var(--t1);
+  text-decoration:none;
+  transition:.3s;
+}
+.oferta-wa-btn:hover{
+  background:linear-gradient(135deg,rgba(37,211,102,0.18),rgba(37,211,102,0.08));
+  border-color:rgba(37,211,102,0.45);
+  transform:translateY(-1px);
+}
+.oferta-wa-ico{
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,#20b357,#25d366);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;color:#fff;
+}
+.oferta-wa-txt{flex:1;display:flex;flex-direction:column;gap:1px;text-align:left;}
+.oferta-wa-label{font-size:0.72rem;color:var(--t3);font-weight:500;}
+.oferta-wa-main{font-size:0.95rem;font-weight:700;color:#4ec466;}
+.oferta-wa-arrow{color:var(--t3);font-size:0.9rem;transition:.3s;}
+.oferta-wa-btn:hover .oferta-wa-arrow{color:#4ec466;transform:translateX(3px);}
+
 /* ==================== */
 /* WHATSAPP FLOAT BTN  */
 /* ==================== */
@@ -1446,7 +1480,7 @@ body.path-desbloqueio .oferta-section{display:none;}
   width:100%;
   max-width:540px;
   max-height:95vh;
-  background:linear-gradient(160deg,#180c06,#0e0704);
+  background:linear-gradient(160deg,#18080e,#0e0508);
   border-radius:28px 28px 0 0;
   border:1px solid rgba(212,85,42,0.18);
   border-bottom:none;
@@ -1482,7 +1516,7 @@ body.path-desbloqueio .oferta-section{display:none;}
   justify-content:space-between;
   border-bottom:1px solid rgba(255,255,255,0.06);
   position:sticky;top:0;
-  background:linear-gradient(180deg,#180c06 0%,rgba(24,12,6,0.96) 100%);
+  background:linear-gradient(180deg,#18080e 0%,rgba(24,8,14,0.96) 100%);
   backdrop-filter:blur(10px);
   z-index:5;
 }
@@ -1636,7 +1670,7 @@ body.path-desbloqueio .oferta-section{display:none;}
   border-radius:50px;
   border:none;
   cursor:pointer;
-  background:linear-gradient(135deg,#8a2a0e 0%,#c04020 35%,#e86040 65%,#ff9070 100%);
+  background:linear-gradient(135deg,#5a1030 0%,#8f2550 35%,#b84070 65%,#de7095 100%);
   color:#fff;
   font-family:'Plus Jakarta Sans',sans-serif;
   font-size:1.02rem;
@@ -1644,11 +1678,11 @@ body.path-desbloqueio .oferta-section{display:none;}
   letter-spacing:0.03em;
   text-transform:uppercase;
   transition:.3s;
-  box-shadow:0 14px 36px rgba(160,60,20,0.4),inset 0 1px 0 rgba(255,255,255,0.2);
+  box-shadow:0 14px 36px rgba(120,30,60,0.4),inset 0 1px 0 rgba(255,255,255,0.2);
   margin-top:8px;
   -webkit-tap-highlight-color:transparent;
 }
-.btn-modal:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 20px 50px rgba(160,60,20,0.6),inset 0 1px 0 rgba(255,255,255,0.25);}
+.btn-modal:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 20px 50px rgba(120,30,60,0.6),inset 0 1px 0 rgba(255,255,255,0.25);}
 .btn-modal:active:not(:disabled){transform:translateY(0);}
 .btn-modal:disabled{opacity:0.35;cursor:not-allowed;filter:grayscale(0.5);}
 .btn-modal-ghost{
@@ -1870,9 +1904,9 @@ body:not(.site-revealed) .wa-float{display:none!important;}
     <div class="l-orb l-orb-2"></div>
     <div class="l-orb l-orb-3"></div>
   </div>
-  <div class="l-petal l-petal-1">🌹</div>
-  <div class="l-petal l-petal-2">🌹</div>
-  <div class="l-petal l-petal-3">🌹</div>
+  <div class="l-petal l-petal-1">✦</div>
+  <div class="l-petal l-petal-2">✧</div>
+  <div class="l-petal l-petal-3">✦</div>
 
   <div class="landing-inner">
     <div class="l-eyebrow">
@@ -1894,7 +1928,7 @@ body:not(.site-revealed) .wa-float{display:none!important;}
 
     <div class="l-choices">
       <button class="l-btn l-btn-primary" onclick="revealSite('retorno')">
-        <span class="l-btn-icon">🌹</span>
+        <span class="l-btn-icon">♡</span>
         <span class="l-btn-text">
           <span class="l-btn-main-txt">Quero Ele de Volta</span>
           <span class="l-btn-sub-txt">Ele sumiu, esfriou ou pediu espaço</span>
@@ -1929,9 +1963,9 @@ body:not(.site-revealed) .wa-float{display:none!important;}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="petal petal-1">🌹</div>
-  <div class="petal petal-2">🌹</div>
-  <div class="petal petal-3">🌹</div>
+  <div class="petal petal-1">✦</div>
+  <div class="petal petal-2">✧</div>
+  <div class="petal petal-3">✦</div>
   <div class="container">
     <div class="hero-inner">
       <div class="hero-pre fi fi-d1">
@@ -2059,6 +2093,18 @@ body:not(.site-revealed) .wa-float{display:none!important;}
         <span class="g-ico">🛡️</span>
         <p class="g-txt"><strong>100% protegida.</strong> Teste por 7 dias. Se não funcionar, devolvemos cada centavo — sem perguntas.</p>
       </div>
+      <div class="oferta-wa-suporte">
+        <a href="#" id="waOfertaBtn" class="oferta-wa-btn" target="_blank" rel="noopener">
+          <span class="oferta-wa-ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </span>
+          <span class="oferta-wa-txt">
+            <span class="oferta-wa-label">Tem dúvidas antes de comprar?</span>
+            <span class="oferta-wa-main">Falar com suporte</span>
+          </span>
+          <span class="oferta-wa-arrow">→</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -2096,6 +2142,18 @@ body:not(.site-revealed) .wa-float{display:none!important;}
         <span>⚡ Acesso em minutos</span>
         <div class="desbl-trust-sep"></div>
         <span>🛡️ Garantia 7 dias</span>
+      </div>
+      <div class="oferta-wa-suporte">
+        <a href="#" id="waOfertaBtn2" class="oferta-wa-btn" target="_blank" rel="noopener">
+          <span class="oferta-wa-ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </span>
+          <span class="oferta-wa-txt">
+            <span class="oferta-wa-label">Tem dúvidas antes de comprar?</span>
+            <span class="oferta-wa-main">Falar com suporte</span>
+          </span>
+          <span class="oferta-wa-arrow">→</span>
+        </a>
       </div>
     </div>
   </div>
@@ -2165,14 +2223,7 @@ body:not(.site-revealed) .wa-float{display:none!important;}
 
 </div><!-- /.site -->
 
-<!-- WHATSAPP FLOAT BUTTON -->
-<a href="#" class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="Tirar dúvidas via WhatsApp">
-  <span class="wa-float-ico">💬</span>
-  <span class="wa-float-txt">
-    <span>Atendimento direto</span>
-    <span>Tirar dúvidas</span>
-  </span>
-</a>
+<!-- WA float button removed -->
 
 <!-- CHECKOUT MODAL - PROTOCOLO -->
 <div class="modal-overlay" id="checkoutModal" onclick="handleOverlayClick(event)">
@@ -2434,11 +2485,12 @@ function footerCtaClick(){
 function setupWAButton(){
   const msg = currentPath === 'desbloqueio'
     ? 'Olá! Tenho uma dúvida sobre o Código do Desbloqueio.'
-    : 'Olá! Tenho uma dúvida sobre o Protocolo de Retorno.';
+    : 'Olá! Tenho uma dúvida antes de comprar o Protocolo de Retorno.';
   const link = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
-  const btn = document.getElementById('waFloat');
-  btn.href = link;
-  btn.classList.add('show');
+  const btn1 = document.getElementById('waOfertaBtn');
+  if(btn1) btn1.href = link;
+  const btn2 = document.getElementById('waOfertaBtn2');
+  if(btn2) btn2.href = link;
 }
 
 /* ============================================= */
@@ -2808,6 +2860,9 @@ document.addEventListener('keydown',e=>{
 /* ============================================= */
 // Don't run fade-ins until site is revealed
 document.addEventListener('DOMContentLoaded', ()=>{
+  // Sync WA oferta button
+  const waOfertaBtn = document.getElementById('waOfertaBtn');
+
   // Lock scroll on landing
   document.body.style.overflow = 'hidden';
   // Unlock when site revealed
