@@ -2111,7 +2111,7 @@ body:not(.site-revealed) .wa-float{display:none!important;}
     <div class="desbl-price-wrap fi fi-d3">
       <div class="desbl-price-pre">✦ &nbsp;Acesso imediato &nbsp;✦</div>
       <div class="desbl-price-old">R$ 97,00</div>
-      <div class="desbl-price-main"><sup>R$</sup>47</div>
+      <div class="desbl-price-main"><sup>R$</sup>12,90</div>
       <p class="desbl-price-note">Pix à vista · acesso em minutos</p>
       <button class="desbl-cta" onclick="openCheckoutDesbl()">
         <span class="desbl-cta-lbl">🔓 Quero o Código do Desbloqueio</span>
@@ -2187,7 +2187,7 @@ body:not(.site-revealed) .wa-float{display:none!important;}
     <div class="fi fi-d3" style="display:flex;justify-content:center;">
       <button class="btn-premium" onclick="footerCtaClick()">
         <span class="btn-premium-lbl" id="footerCtaLbl">Quero Acesso Agora</span>
-        <span class="btn-premium-hint">R$47 · Garantia 7 dias</span>
+        <span class="btn-premium-hint" id="footerCtaHint">R$47 · Garantia 7 dias</span>
       </button>
     </div>
   </div>
@@ -2351,9 +2351,9 @@ body:not(.site-revealed) .wa-float{display:none!important;}
 
       <div class="checkout-step" id="stepD3">
         <div class="step-title">Pagamento via Pix</div>
-        <p class="step-sub">Faça o Pix de <strong style="color:var(--t1)">R$47,00</strong> e clique em "Já paguei" abaixo.</p>
+        <p class="step-sub">Faça o Pix de <strong style="color:var(--t1)">R$12,90</strong> e clique em "Já paguei" abaixo.</p>
         <div class="pix-block">
-          <div class="pix-valor"><sup>R$</sup>47</div>
+          <div class="pix-valor"><sup>R$</sup>12,90</div>
           <p class="pix-desc">Pix à vista · pagamento único e seguro</p>
           <div class="pix-copy-block">
             <div>
@@ -2376,7 +2376,7 @@ body:not(.site-revealed) .wa-float{display:none!important;}
           <p class="success-msg">Seu pedido foi recebido.<br>Assim que confirmarmos o Pix, você recebe o PDF.</p>
           <div class="success-detail">
             <div class="success-detail-row"><span>📦</span><span><strong>Produto:</strong> Código do Desbloqueio — PDF completo</span></div>
-            <div class="success-detail-row"><span>💰</span><span><strong>Valor:</strong> R$ 47,00 via Pix</span></div>
+            <div class="success-detail-row"><span>💰</span><span><strong>Valor:</strong> R$ 12,90 via Pix</span></div>
             <div class="success-detail-row"><span id="confirmIconD">📲</span><span id="confirmDetailD">—</span></div>
             <div class="success-detail-row"><span>⏱️</span><span><strong>Liberação:</strong> até 15 minutos após confirmação</span></div>
           </div>
@@ -2410,7 +2410,7 @@ body:not(.site-revealed) .wa-float{display:none!important;}
 /* CONSTANTES                                    */
 /* ============================================= */
 const PIX_CODE = "00020126460014br.gov.bcb.pix0111121496937200209ELE VOLTA520400005303986540547.005802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026042022530641950300017br.gov.bcb.brcode01051.0.0630475DE";
-const PIX_CODE_DESBL = PIX_CODE;
+const PIX_CODE_DESBL = "00020126580014br.gov.bcb.pix0111121496937200221Codigo do desbloqueio520400005303986540512.905802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026042402331382150300017br.gov.bcb.brcode01051.0.06304303A";
 const WA_NUMBER = "5524981517067";
 
 /* ============================================= */
@@ -2436,6 +2436,7 @@ function revealSite(path){
         <span>Existe uma <strong>sequência exata de 5 passos</strong> que reverte o bloqueio sem humilhação, sem contato forçado — fazendo com que ele desbloqueie e venha até você.</span>
       </div>`;
     document.getElementById('footerCtaLbl').textContent = 'Quero o Código do Desbloqueio';
+    document.getElementById('footerCtaHint').textContent = 'R$12,90 · Garantia 7 dias';
   } else {
     document.body.classList.add('path-retorno');
   }
@@ -2736,7 +2737,7 @@ async function submitAndGoStepDesbl4(){
     '🔓 *Pagamento realizado!*\n\n'+
     '👤 Nome: '+name+'\n'+
     icon+' '+label+': '+contact+'\n'+
-    '💳 Valor: R$47,00 via Pix\n'+
+    '💳 Valor: R$12,90 via Pix\n'+
     '📦 Produto: Código do Desbloqueio\n\n'+
     'Por favor, confirme meu acesso ao PDF. 🙏'
   );
@@ -2746,7 +2747,7 @@ async function submitAndGoStepDesbl4(){
     await fetch('https://formspree.io/f/mreonbkg',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({nome:name,contato:contact,canal:selectedChannelDesbl,produto:'Código do Desbloqueio',valor:'R$47,00',pagamento:'Pix'})
+      body:JSON.stringify({nome:name,contato:contact,canal:selectedChannelDesbl,produto:'Código do Desbloqueio',valor:'R$12,90',pagamento:'Pix'})
     });
   } catch(e){}
 
