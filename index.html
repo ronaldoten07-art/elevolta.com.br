@@ -1864,6 +1864,707 @@ body.checkout-open #sp-toast{display:none!important;}
 body:not(.site-revealed) #sp-toast{display:none!important;}
 body:not(.site-revealed) .wa-float{display:none!important;}
 
+
+
+/* ============================================= */
+/* DESIGN UPGRADE OVERRIDES                      */
+/* ============================================= */
+:root{
+  --rose:#cf5d86;
+  --rose-l:#f07aa7;
+  --rose-d:#7d2748;
+  --rose-xl:#ff9fbe;
+  --rose-soft:#ffd4df;
+  --warm:#b9849a;
+  --warm-l:#e0a7ba;
+  --gold:#f0bf98;
+  --gold-soft:#ffe0c6;
+  --dark:#07050a;
+  --dark2:#0d0710;
+  --dark3:#140916;
+  --dark4:#1d0f1d;
+  --t1:#fff6fa;
+  --t2:rgba(255,246,250,0.86);
+  --t3:rgba(255,246,250,0.62);
+  --t4:rgba(255,246,250,0.18);
+  --glass:rgba(255,255,255,0.045);
+  --glass-b:rgba(255,255,255,0.12);
+}
+
+html{
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255,121,167,0.14), transparent 24%),
+    radial-gradient(circle at 85% 0%, rgba(255,205,158,0.10), transparent 25%),
+    linear-gradient(180deg,#08050b 0%,#120713 44%,#09050a 100%);
+}
+
+body{
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255,136,177,0.10), transparent 36%),
+    radial-gradient(circle at 90% 20%, rgba(240,191,152,0.07), transparent 28%),
+    radial-gradient(circle at 0% 35%, rgba(210,78,122,0.07), transparent 24%),
+    linear-gradient(180deg,#07050a 0%,#100812 46%,#080509 100%);
+  color:var(--t1);
+}
+
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.03), transparent 18%, transparent 82%, rgba(255,255,255,0.02)),
+    radial-gradient(circle at center, rgba(255,255,255,0.02), transparent 56%);
+  opacity:.8;
+  z-index:0;
+}
+
+body > *{position:relative;z-index:1;}
+
+.container,.container-sm,.container-xs{position:relative;z-index:2;}
+
+.site{
+  background:transparent;
+}
+
+.landing{
+  background:
+    radial-gradient(circle at 50% 18%, rgba(242,119,170,0.26), transparent 28%),
+    radial-gradient(circle at 12% 100%, rgba(194,99,136,0.14), transparent 34%),
+    radial-gradient(circle at 100% 0%, rgba(244,196,150,0.13), transparent 26%),
+    linear-gradient(180deg,#060408 0%,#120814 52%,#08050a 100%);
+}
+
+.landing-inner,
+.hero-inner{
+  position:relative;
+}
+
+.landing-inner::before,
+.hero-inner::before{
+  content:'';
+  position:absolute;
+  inset:-40px -30px;
+  border-radius:38px;
+  background:linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.015));
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 30px 90px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.07);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  z-index:-1;
+}
+
+.l-title,
+.hero-h1,
+.section-title,
+.psico-h2,
+.desbl-title{
+  text-shadow:0 10px 30px rgba(0,0,0,0.26);
+  letter-spacing:-0.03em;
+}
+
+.l-sub,
+.hero-sub,
+.ident-intro,
+.psico-text p,
+.footer-final-text,
+.section-title + p,
+.hero-mirror p,
+.desbl-reveal p,
+.pillar-desc,
+.ident-txt,
+.desbl-item-txt,
+.faq-a p,
+.price-note,
+.oferta-product-sub{
+  color:var(--t2);
+}
+
+.l-eyebrow,
+.hero-pre,
+.section-label,
+.desbl-badge,
+.oferta-box-pre,
+.desbl-price-pre{
+  letter-spacing:.28em;
+}
+
+.l-btn,
+.oferta-cta,
+.desbl-cta,
+.btn-premium{
+  border-radius:24px !important;
+  transform-origin:center;
+}
+
+.l-btn::before,
+.oferta-cta::before,
+.desbl-cta::before,
+.btn-premium::before{
+  content:'';
+  position:absolute;
+  inset:1px;
+  border-radius:inherit;
+  background:linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.02));
+  opacity:.45;
+  pointer-events:none;
+}
+
+.l-btn-primary,
+.oferta-cta,
+.btn-premium{
+  background:linear-gradient(135deg,#7b1f48 0%,#b53f6d 38%,#de6f9a 70%,#f4bc9a 100%) !important;
+  box-shadow:0 24px 60px rgba(181,67,106,0.34), 0 10px 30px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.18) !important;
+}
+
+.l-btn-secondary,
+.desbl-cta{
+  background:linear-gradient(135deg,#4e1f50 0%,#7d3678 36%,#b67eb0 76%,#f0bf98 100%) !important;
+  box-shadow:0 24px 60px rgba(124,72,138,0.30), 0 10px 30px rgba(0,0,0,0.32), inset 0 1px 0 rgba(255,255,255,0.16) !important;
+}
+
+.l-btn:hover,
+.oferta-cta:hover,
+.desbl-cta:hover,
+.btn-premium:hover{
+  transform:translateY(-4px) scale(1.01) !important;
+  filter:saturate(1.07) brightness(1.03);
+}
+
+.hero,
+.ident-section,
+.psico-section,
+.solucao-section,
+.oferta-section,
+.desbl-section,
+.faq-section,
+.prova-section,
+.footer-cta-section{
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before,
+.ident-section::before,
+.psico-section::before,
+.solucao-section::before,
+.oferta-section::before,
+.desbl-section::before,
+.faq-section::before,
+.prova-section::before,
+.footer-cta-section::before{
+  box-shadow:0 0 0 1px rgba(255,255,255,0.02);
+}
+
+.hero::after,
+.solucao-section::after,
+.desbl-section::after,
+.footer-cta-section::after{
+  content:'';
+  position:absolute;
+  inset:auto auto -120px 50%;
+  width:680px;
+  height:680px;
+  transform:translateX(-50%);
+  background:radial-gradient(circle, rgba(219,107,147,0.10), transparent 62%);
+  filter:blur(8px);
+  pointer-events:none;
+}
+
+.hero{
+  padding-top:120px !important;
+  padding-bottom:120px !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,154,190,0.14), transparent 26%),
+    radial-gradient(circle at 85% 16%, rgba(240,191,152,0.10), transparent 20%),
+    linear-gradient(180deg,rgba(9,6,12,0.96) 0%,rgba(16,8,18,0.94) 100%) !important;
+}
+
+.hero-mirror,
+.ident-item,
+.ident-reveal,
+.psico-highlight,
+.pillar,
+.oferta-box,
+.desbl-reveal,
+.desbl-item,
+.desbl-price-wrap,
+.faq-item,
+.depo-stat{
+  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025)) !important;
+  border:1px solid rgba(255,255,255,0.09) !important;
+  box-shadow:0 20px 70px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.05);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+
+.hero-mirror{
+  border-radius:30px !important;
+  padding:38px 36px !important;
+}
+
+.ident-grid,
+.pillars,
+.desbl-list,
+.depo-grid{
+  gap:18px !important;
+}
+
+.ident-item,
+.pillar,
+.desbl-item,
+.faq-item{
+  border-radius:24px !important;
+}
+
+.ident-item:hover,
+.pillar:hover,
+.desbl-item:hover,
+.faq-item:hover,
+.depo-grid img:hover{
+  transform:translateY(-6px);
+  transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  box-shadow:0 26px 70px rgba(0,0,0,0.30), 0 0 0 1px rgba(255,255,255,0.04), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.ident-ico,
+.desbl-item-ico{
+  box-shadow:0 10px 28px rgba(0,0,0,0.24);
+}
+
+.section-label-line,
+.hero-pre-line,
+.l-eyebrow-line,
+.l-eyebrow-line.r{
+  opacity:.9;
+}
+
+.section-title em,
+.psico-h2 em,
+.desbl-title em,
+.hero-h1 .accent,
+.l-title .accent{
+  text-shadow:none;
+  filter:drop-shadow(0 10px 18px rgba(224,112,153,0.18));
+}
+
+.oferta-section{
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,147,184,0.10), transparent 28%),
+    linear-gradient(180deg,#09060b 0%,#120914 100%) !important;
+}
+
+.oferta-box,
+.desbl-price-wrap{
+  border-radius:34px !important;
+  overflow:hidden;
+}
+
+.oferta-box::after,
+.desbl-price-wrap::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(125deg, transparent 20%, rgba(255,255,255,0.06) 38%, transparent 54%);
+  mix-blend-mode:screen;
+}
+
+.price-main,
+.desbl-price-main{
+  text-shadow:0 12px 34px rgba(0,0,0,0.22);
+}
+
+.price-badge{
+  background:linear-gradient(135deg,#ffc48e,#ff8fa5) !important;
+  color:#3d1024 !important;
+  box-shadow:0 12px 30px rgba(255,143,165,0.28);
+}
+
+.trust-row,
+.desbl-trust,
+.hero-trust,
+.l-trust,
+.footer-bar-inner{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:18px;
+  padding:12px 18px;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+
+.guarantee-box{
+  border-radius:22px !important;
+  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025)) !important;
+  border:1px solid rgba(255,255,255,0.08) !important;
+}
+
+.desbl-section{
+  background:
+    radial-gradient(circle at 50% 0%, rgba(177,124,205,0.10), transparent 24%),
+    linear-gradient(180deg,#09060c 0%,#120915 100%) !important;
+}
+
+.faq-section,
+.footer-cta-section{
+  background:
+    linear-gradient(180deg,#0b0710 0%,#100813 100%) !important;
+}
+
+.faq-item.open{
+  background:linear-gradient(135deg, rgba(217,102,144,0.10), rgba(240,191,152,0.03)) !important;
+  border-color:rgba(255,184,210,0.18) !important;
+}
+
+.depo-grid > div[style*="overflow:hidden"]{
+  border-radius:24px !important;
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 18px 54px rgba(0,0,0,0.26);
+}
+
+.depo-grid img{
+  transition:transform .45s ease, filter .45s ease;
+}
+
+.footer-cta-bg{
+  background:
+    radial-gradient(circle at 50% 35%, rgba(216,108,147,0.16), transparent 34%),
+    radial-gradient(circle at 50% 80%, rgba(240,191,152,0.08), transparent 30%) !important;
+}
+
+.footer-bar{
+  background:rgba(7,5,10,0.92) !important;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+
+.modal-box{
+  border:1px solid rgba(255,255,255,0.08) !important;
+  box-shadow:0 30px 90px rgba(0,0,0,0.35) !important;
+}
+
+@media (max-width: 720px){
+  body{font-size:18px;}
+  .landing-inner::before,
+  .hero-inner::before{inset:-22px -12px;border-radius:28px;}
+  .hero{padding-top:96px !important;padding-bottom:96px !important;}
+  .hero-mirror{padding:28px 22px !important;border-radius:24px !important;}
+  .oferta-box,
+  .desbl-price-wrap{border-radius:26px !important;}
+  .trust-row,
+  .desbl-trust,
+  .hero-trust,
+  .l-trust,
+  .footer-bar-inner{padding:10px 12px;border-radius:16px;}
+}
+
+
+/* ============================================= */
+/* LUXURY POLISH — SEM ALTERAR ESTRUTURA         */
+/* ============================================= */
+body{
+  background:
+    radial-gradient(circle at 50% -12%, rgba(255,148,188,0.14), transparent 30%),
+    radial-gradient(circle at 100% 12%, rgba(244,196,150,0.11), transparent 24%),
+    radial-gradient(circle at 0% 32%, rgba(192,82,126,0.10), transparent 22%),
+    linear-gradient(180deg,#060408 0%,#0f0812 45%,#07050a 100%) !important;
+}
+
+::selection{
+  background:rgba(232,130,159,0.32);
+  color:#fff6f8;
+}
+
+.landing::after,
+.hero::before,
+.desbl-section::after,
+.footer-cta-section::after{
+  filter:blur(18px) saturate(1.05);
+}
+
+.landing-inner::before,
+.hero-inner::before{
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.018) 48%, rgba(255,255,255,0.035) 100%) !important;
+  border:1px solid rgba(255,255,255,0.10) !important;
+  box-shadow:
+    0 32px 110px rgba(0,0,0,0.42),
+    0 0 0 1px rgba(255,255,255,0.03),
+    inset 0 1px 0 rgba(255,255,255,0.09),
+    inset 0 -18px 45px rgba(91,22,52,0.09) !important;
+}
+
+.hero,
+.ident-section,
+.psico-section,
+.solucao-section,
+.oferta-section,
+.desbl-section,
+.faq-section,
+.prova-section,
+.footer-cta-section{
+  isolation:isolate;
+}
+
+.hero::before,
+.ident-section::before,
+.psico-section::before,
+.solucao-section::before,
+.oferta-section::before,
+.desbl-section::before,
+.faq-section::before,
+.prova-section::before,
+.footer-cta-section::before{
+  background:linear-gradient(90deg,transparent,rgba(255,187,214,0.16) 20%,rgba(240,191,152,0.22) 50%,rgba(255,187,214,0.16) 80%,transparent) !important;
+  height:1px !important;
+}
+
+.hero-h1,
+.section-title,
+.desbl-title,
+.l-title{
+  letter-spacing:-0.04em !important;
+  text-shadow:0 14px 40px rgba(0,0,0,0.34) !important;
+}
+
+.hero-sub,
+.hero-mirror p,
+.desbl-reveal p,
+.footer-final-text,
+.faq-a p,
+.ident-txt,
+.pillar-desc,
+.oferta-product-sub{
+  color:rgba(253,240,244,0.88) !important;
+}
+
+.hero-mirror,
+.ident-item,
+.ident-reveal,
+.psico-highlight,
+.pillar,
+.oferta-box,
+.desbl-reveal,
+.desbl-item,
+.desbl-price-wrap,
+.faq-item,
+.depo-stat,
+.guarantee-box{
+  position:relative;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.082), rgba(255,255,255,0.026)) !important;
+  border:1px solid rgba(255,255,255,0.10) !important;
+  box-shadow:
+    0 24px 80px rgba(0,0,0,0.30),
+    0 0 0 1px rgba(255,255,255,0.025),
+    inset 0 1px 0 rgba(255,255,255,0.07),
+    inset 0 -18px 36px rgba(75,18,42,0.07) !important;
+}
+
+.hero-mirror::after,
+.ident-item::after,
+.pillar::after,
+.oferta-box::after,
+.desbl-reveal::after,
+.desbl-item::after,
+.desbl-price-wrap::after,
+.faq-item::after,
+.guarantee-box::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background:linear-gradient(135deg, rgba(255,255,255,0.07), transparent 22%, transparent 70%, rgba(255,215,229,0.05));
+  opacity:.9;
+}
+
+.hero-mirror,
+.desbl-reveal{
+  border-radius:32px !important;
+}
+
+.ident-item,
+.pillar,
+.desbl-item,
+.faq-item,
+.guarantee-box,
+.depo-stat{
+  border-radius:26px !important;
+}
+
+.oferta-box,
+.desbl-price-wrap{
+  border-radius:36px !important;
+}
+
+.ident-item:hover,
+.pillar:hover,
+.desbl-item:hover,
+.faq-item:hover,
+.guarantee-box:hover,
+.depo-stat:hover,
+.depo-grid img:hover{
+  transform:translateY(-8px) scale(1.01);
+  border-color:rgba(255,207,224,0.18) !important;
+  box-shadow:
+    0 30px 95px rgba(0,0,0,0.34),
+    0 0 0 1px rgba(255,255,255,0.04),
+    inset 0 1px 0 rgba(255,255,255,0.09),
+    0 0 36px rgba(208,97,142,0.09) !important;
+}
+
+.l-btn,
+.oferta-cta,
+.desbl-cta,
+.btn-premium{
+  border-radius:26px !important;
+  overflow:hidden;
+  box-shadow:
+    0 22px 60px rgba(0,0,0,0.28),
+    0 10px 22px rgba(0,0,0,0.20),
+    inset 0 1px 0 rgba(255,255,255,0.24),
+    inset 0 -10px 18px rgba(60,12,36,0.14) !important;
+}
+
+.l-btn-primary,
+.oferta-cta,
+.btn-premium{
+  background:linear-gradient(135deg,#84244f 0%,#b74473 36%,#df789f 70%,#f3c79e 100%) !important;
+}
+
+.l-btn-secondary,
+.desbl-cta{
+  background:linear-gradient(135deg,#5d225f 0%,#8c4687 40%,#c48fc0 78%,#f1c89f 100%) !important;
+}
+
+.l-btn::before,
+.oferta-cta::before,
+.desbl-cta::before,
+.btn-premium::before{
+  inset:1px !important;
+  background:linear-gradient(105deg, transparent 14%, rgba(255,255,255,0.22) 34%, rgba(255,255,255,0.05) 50%, transparent 72%) !important;
+  opacity:.95 !important;
+}
+
+.l-btn:hover,
+.oferta-cta:hover,
+.desbl-cta:hover,
+.btn-premium:hover{
+  transform:translateY(-5px) scale(1.015) !important;
+  filter:saturate(1.08) brightness(1.04);
+}
+
+.l-btn-main-txt,
+.desbl-cta-lbl,
+.btn-premium-lbl{
+  text-shadow:0 6px 18px rgba(0,0,0,0.22);
+}
+
+.hero-copy-destaque,
+.price-badge,
+.desbl-badge,
+.hero-pre,
+.section-label{
+  box-shadow:0 12px 34px rgba(0,0,0,0.16);
+}
+
+.hero-copy-destaque{
+  background:linear-gradient(135deg, rgba(181,67,106,0.13), rgba(244,196,150,0.08)) !important;
+  border:1px solid rgba(255,214,228,0.10) !important;
+}
+
+.desbl-list,
+.pillars,
+.ident-grid,
+.depo-grid{
+  gap:20px !important;
+}
+
+.desbl-item-ico,
+.ident-ico,
+.pillar-ico{
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+  filter:saturate(1.08);
+}
+
+.price-main,
+.desbl-price-main,
+.dfn-big{
+  text-shadow:0 14px 40px rgba(0,0,0,0.28), 0 0 26px rgba(242,143,174,0.10);
+}
+
+.hero-trust,
+.desbl-trust,
+.trust-row,
+.footer-bar-inner,
+.l-trust{
+  background:linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.026)) !important;
+  border:1px solid rgba(255,255,255,0.09) !important;
+  box-shadow:0 14px 38px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.faq-q{
+  transition:color .25s ease, transform .25s ease;
+}
+
+.faq-item:hover .faq-q{
+  color:#fff6f8;
+  transform:translateX(2px);
+}
+
+.faq-toggle{
+  box-shadow:0 8px 18px rgba(0,0,0,0.18);
+}
+
+.depo-grid > div[style*="overflow:hidden"]{
+  overflow:hidden;
+  border-radius:26px !important;
+  box-shadow:
+    0 20px 65px rgba(0,0,0,0.30),
+    inset 0 1px 0 rgba(255,255,255,0.06) !important;
+}
+
+.depo-grid img{
+  filter:saturate(1.03) contrast(1.02) brightness(1.01);
+}
+
+.footer-bar{
+  border-top:1px solid rgba(255,255,255,0.05);
+  background:rgba(7,5,10,0.72);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+
+@media (max-width: 768px){
+  .landing-inner::before,
+  .hero-inner::before{
+    inset:-20px -14px !important;
+    border-radius:28px !important;
+  }
+
+  .hero-mirror,
+  .desbl-reveal,
+  .oferta-box,
+  .desbl-price-wrap,
+  .ident-item,
+  .pillar,
+  .desbl-item,
+  .faq-item,
+  .guarantee-box{
+    border-radius:22px !important;
+  }
+
+  .l-btn,
+  .oferta-cta,
+  .desbl-cta,
+  .btn-premium{
+    border-radius:22px !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -2075,18 +2776,6 @@ body:not(.site-revealed) .wa-float{display:none!important;}
         <span class="g-ico">🛡️</span>
         <p class="g-txt"><strong>100% protegida.</strong> Teste por 7 dias. Se não funcionar, devolvemos cada centavo — sem perguntas.</p>
       </div>
-      <div class="oferta-wa-suporte">
-        <a href="#" id="waOfertaBtn" class="oferta-wa-btn" target="_blank" rel="noopener">
-          <span class="oferta-wa-ico">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </span>
-          <span class="oferta-wa-txt">
-            <span class="oferta-wa-label">Tem dúvidas antes de comprar?</span>
-            <span class="oferta-wa-main">Falar com suporte</span>
-          </span>
-          <span class="oferta-wa-arrow">→</span>
-        </a>
-      </div>
     </div>
   </div>
 </section>
@@ -2095,10 +2784,10 @@ body:not(.site-revealed) .wa-float{display:none!important;}
 <section class="desbl-section" id="desbloqueio">
   <div class="container-sm desbl-inner">
     <div class="desbl-badge fi">🔓 Código do Desbloqueio</div>
-    <h2 class="desbl-title fi">Ele te <em>bloqueou?</em><br>Existe um jeito de reverter isso.</h2>
+    <h2 class="desbl-title fi">O que você vai receber no <em>Código do Desbloqueio</em></h2>
     <div class="desbl-reveal fi fi-d2">
-      <p>Quando um homem bloqueia, ele não está simplesmente <em>"acabando tudo"</em>. Ele está em sobrecarga emocional — e o bloqueio é a forma dele criar distância de urgência. <strong>Isso tem solução.</strong></p>
-      <p>O problema é que as respostas instintivas — tentar contato de outro número, mandar recado por terceiros, postar indireta — confirmam exatamente o que ele precisava se distanciar. Cada movimento errado <strong>fecha a janela um pouco mais.</strong></p>
+      <p>Você vai receber <strong>instruções claras, estratégicas e na ordem certa</strong> para sair do bloqueio sem piorar a situação — entendendo exatamente o que fazer, o que não fazer e como aumentar as chances de ele te desbloquear.</p>
+      <p>Em vez de agir por impulso e correr o risco de afastá-lo de vez, você terá um <strong>passo a passo pensado para mulheres que foram bloqueadas</strong>, com orientação prática para conduzir esse momento com inteligência, recuperar valor aos olhos dele e criar o cenário certo para o desbloqueio acontecer.</p>
     </div>
     <div class="desbl-list fi fi-d2">
       <div class="desbl-item"><span class="desbl-item-ico">🧠</span><p class="desbl-item-txt"><strong>Por que ele bloqueou</strong> — os 4 tipos e o que cada um revela sobre o que ele ainda sente</p></div>
@@ -2123,18 +2812,6 @@ body:not(.site-revealed) .wa-float{display:none!important;}
         <span>⚡ Acesso em minutos</span>
         <div class="desbl-trust-sep"></div>
         <span>🛡️ Garantia 7 dias</span>
-      </div>
-      <div class="oferta-wa-suporte">
-        <a href="#" id="waOfertaBtn2" class="oferta-wa-btn" target="_blank" rel="noopener">
-          <span class="oferta-wa-ico">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </span>
-          <span class="oferta-wa-txt">
-            <span class="oferta-wa-label">Tem dúvidas antes de comprar?</span>
-            <span class="oferta-wa-main">Falar com suporte</span>
-          </span>
-          <span class="oferta-wa-arrow">→</span>
-        </a>
       </div>
     </div>
   </div>
@@ -2430,10 +3107,10 @@ function revealSite(path){
     document.getElementById('heroSub').innerHTML = 'O que fazer quando ele te bloqueia<br>— e como reverter do jeito certo.';
     document.getElementById('heroMirror').innerHTML = `
       <p class="hero-copy-pergunta">Ele te bloqueou?</p>
-      <p>Você não precisa entrar em pânico. Ser bloqueada parece o fim, mas <strong>é o momento mais decisivo</strong> — e o que você faz agora decide tudo.</p>
-      <p>A maioria das mulheres age por impulso: tenta mensagem de outro número, manda recado por amigos, posta indireta. <em>Cada movimento errado fecha a janela um pouco mais.</em></p>
+      <p>Calma. Isso não significa que acabou. Na maioria dos casos, o bloqueio acontece quando ele entra em sobrecarga emocional e tenta criar distância no impulso — e é exatamente por isso que <strong>ainda existe uma janela de reversão</strong>.</p>
+      <p>O erro é agir no desespero: mandar mensagem de outro número, pedir ajuda a amigos, postar indiretas ou insistir. <em>Cada movimento errado confirma a pressão que ele quer evitar e pode transformar um bloqueio emocional em afastamento definitivo.</em></p>
       <div class="hero-copy-destaque">
-        <span>Existe uma <strong>sequência exata de 5 passos</strong> que reverte o bloqueio sem humilhação, sem contato forçado — fazendo com que ele desbloqueie e venha até você.</span>
+        <span>O <strong>Código do Desbloqueio</strong> te mostra a sequência exata de 5 passos para reverter isso com inteligência — sem humilhação, sem contato forçado e sem parecer desesperada — aumentando as chances de ele te desbloquear e voltar a te procurar.</span>
       </div>`;
     document.getElementById('footerCtaLbl').textContent = 'Quero o Código do Desbloqueio';
     document.getElementById('footerCtaHint').textContent = 'R$12,90 · Garantia 7 dias';
