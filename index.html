@@ -1454,15 +1454,15 @@ body.checkout-open #sp-toast,body:not(.site-revealed) #sp-toast,body:not(.site-r
 
       <div class="checkout-step active" id="stepD1">
         <div class="step-title">Como quer receber<br>seu acesso?</div>
-        <p class="step-sub">Após confirmar o pagamento, enviaremos seu PDF pelo canal escolhido.</p>
+        <p class="step-sub">Após confirmar o pagamento, enviaremos seu acesso exclusivo pelo canal escolhido.</p>
         <div class="channel-opts">
           <div class="channel-opt" id="optD-whatsapp" onclick="selectChannelDesbl('whatsapp')">
             <div class="channel-opt-ico">💬</div>
-            <div><div class="channel-opt-lbl">WhatsApp</div><div class="channel-opt-hint">Recebo o PDF no WhatsApp</div></div>
+            <div><div class="channel-opt-lbl">WhatsApp</div><div class="channel-opt-hint">Recebo o acesso ao conteúdo no WhatsApp</div></div>
           </div>
           <div class="channel-opt" id="optD-email" onclick="selectChannelDesbl('email')">
             <div class="channel-opt-ico">📧</div>
-            <div><div class="channel-opt-lbl">E-mail</div><div class="channel-opt-hint">Recebo o PDF no meu e-mail</div></div>
+            <div><div class="channel-opt-lbl">E-mail</div><div class="channel-opt-hint">Recebo o acesso ao conteúdo no meu e-mail</div></div>
           </div>
         </div>
         <button class="btn-modal" id="btnStepD1" onclick="goStepDesbl(2)" disabled>Continuar →</button>
@@ -1470,7 +1470,7 @@ body.checkout-open #sp-toast,body:not(.site-revealed) #sp-toast,body:not(.site-r
 
       <div class="checkout-step" id="stepD2">
         <div class="step-title" id="stepD2-title">Seu WhatsApp</div>
-        <p class="step-sub" id="stepD2-sub">Digite o número com DDD. É aqui que você vai receber o PDF.</p>
+        <p class="step-sub" id="stepD2-sub">Digite o número com DDD. É aqui que você vai receber o acesso ao conteúdo.</p>
         <div class="form-group">
           <label class="form-label" id="contactLabelD">Número de WhatsApp</label>
           <input class="form-input" id="contactInputD" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" oninput="validateContactDesbl()">
@@ -1507,9 +1507,9 @@ body.checkout-open #sp-toast,body:not(.site-revealed) #sp-toast,body:not(.site-r
           <div class="success-stamp">🎉</div>
           <div class="success-badge">✓ PEDIDO CONFIRMADO</div>
           <div class="success-title">Obrigada,<br><span class="success-name" id="confirmNameD"></span>!</div>
-          <p class="success-msg">Seu pedido foi recebido.<br>Assim que confirmarmos o Pix, você recebe o PDF.</p>
+          <p class="success-msg">Seu pedido foi recebido.<br>Assim que confirmarmos o Pix, você recebe o acesso ao material.</p>
           <div class="success-detail">
-            <div class="success-detail-row"><span>📦</span><span><strong>Produto:</strong> Código do Desbloqueio — PDF completo</span></div>
+            <div class="success-detail-row"><span>📦</span><span><strong>Produto:</strong> Código do Desbloqueio — conteúdo completo</span></div>
             <div class="success-detail-row"><span>💰</span><span><strong>Valor:</strong> R$ 12,90 via Pix</span></div>
             <div class="success-detail-row"><span id="confirmIconD">📲</span><span id="confirmDetailD">—</span></div>
             <div class="success-detail-row"><span>⏱️</span><span><strong>Liberação:</strong> até 15 minutos após confirmação</span></div>
@@ -1810,7 +1810,7 @@ function selectChannelDesbl(ch){
   const inp = document.getElementById('contactInputD');
   if(ch==='email'){
     document.getElementById('stepD2-title').textContent='Seu e-mail';
-    document.getElementById('stepD2-sub').textContent='Digite seu e-mail. É aqui que você vai receber o PDF.';
+    document.getElementById('stepD2-sub').textContent='Digite seu e-mail. É aqui que você vai receber o acesso ao conteúdo.';
     document.getElementById('contactLabelD').textContent='Endereço de e-mail';
     inp.placeholder='seuemail@gmail.com';
     inp.type='email';
@@ -1818,7 +1818,7 @@ function selectChannelDesbl(ch){
     inp.setAttribute('autocomplete','email');
   } else {
     document.getElementById('stepD2-title').textContent='Seu WhatsApp';
-    document.getElementById('stepD2-sub').textContent='Digite o número com DDD. É aqui que você vai receber o PDF.';
+    document.getElementById('stepD2-sub').textContent='Digite o número com DDD. É aqui que você vai receber o acesso ao conteúdo.';
     document.getElementById('contactLabelD').textContent='Número de WhatsApp';
     inp.placeholder='(21) 99999-9999';
     inp.type='tel';
@@ -1876,7 +1876,7 @@ async function submitAndGoStepDesbl4(){
     icon+' '+label+': '+contact+'\n'+
     '💳 Valor: R$12,90 via Pix\n'+
     '📦 Produto: Código do Desbloqueio\n\n'+
-    'Por favor, confirme meu acesso ao PDF. 🙏'
+    'Por favor, confirme meu acesso ao conteúdo. 🙏'
   );
   document.getElementById('notifyBtnD').href = 'https://wa.me/'+WA_NUMBER+'?text='+waMsg;
 
