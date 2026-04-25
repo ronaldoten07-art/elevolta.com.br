@@ -810,12 +810,16 @@ body.path-desbloqueio .oferta-section{display:none;}
   background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);
   align-items:flex-end;justify-content:center;
   opacity:0;transition:opacity .35s ease;padding:0;
+  /* fix tiktok in-app browser: usa altura dinamica da viewport */
+  height:100vh;height:100dvh;height:var(--vvh,100dvh);
 }
 @media(min-width:720px){.modal-overlay{align-items:center;padding:30px;}}
 .modal-overlay.visible{opacity:1;}
 
 .modal-box{
-  width:100%;max-width:540px;max-height:95vh;
+  width:100%;max-width:540px;
+  /* altura dinamica que se adapta quando o teclado abre */
+  max-height:95vh;max-height:95dvh;max-height:calc(var(--vvh,100dvh) - 10px);
   background:linear-gradient(160deg,#18080e,#0e0508);
   border-radius:28px 28px 0 0;
   border:1px solid rgba(255,255,255,0.08);
@@ -823,8 +827,9 @@ body.path-desbloqueio .oferta-section{display:none;}
   box-shadow:0 -30px 80px rgba(0,0,0,0.6);
   overflow-y:auto;position:relative;
   transform:translateY(100%);
-  transition:transform .4s cubic-bezier(.34,1.36,.64,1);
+  transition:transform .4s cubic-bezier(.34,1.36,.64,1),max-height .25s ease;
   -webkit-overflow-scrolling:touch;
+  overscroll-behavior:contain;
 }
 @media(min-width:720px){
   .modal-box{
@@ -833,6 +838,30 @@ body.path-desbloqueio .oferta-section{display:none;}
   }
 }
 .modal-overlay.visible .modal-box{transform:translateY(0) scale(1);}
+
+/* ===== TIKTOK IN-APP BROWSER FIX (teclado virtual) ===== */
+/* Quando o teclado esta aberto, compactamos o modal pra que o input fique visivel acima do teclado */
+body.kbd-open .modal-overlay{align-items:flex-start;}
+body.kbd-open .modal-box{
+  border-radius:0 0 24px 24px;
+  max-height:var(--vvh,100dvh);
+  height:var(--vvh,100dvh);
+}
+body.kbd-open .modal-handle{display:none;}
+body.kbd-open .modal-header{padding:12px 24px 10px;}
+body.kbd-open .modal-body{padding:14px 22px 24px;}
+body.kbd-open .step-indicator{margin-bottom:14px;transform:scale(0.85);transform-origin:center top;}
+body.kbd-open .step-title{font-size:1.25rem!important;margin-bottom:6px;line-height:1.2;}
+body.kbd-open .step-sub{font-size:0.82rem;margin-bottom:14px;}
+body.kbd-open .form-group{margin-bottom:12px;}
+body.kbd-open .form-label{margin-bottom:5px;font-size:0.72rem;}
+body.kbd-open .form-input{padding:13px 14px;}
+body.kbd-open .btn-modal{padding:15px 22px;margin-top:4px;}
+body.kbd-open .btn-modal-ghost{padding:8px;}
+@media(min-width:720px){
+  body.kbd-open .modal-overlay{align-items:center;}
+  body.kbd-open .modal-box{border-radius:24px;height:auto;}
+}
 
 .modal-handle{width:44px;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;margin:12px auto 0;}
 @media(min-width:720px){.modal-handle{display:none;}}
@@ -896,7 +925,12 @@ body.path-desbloqueio .oferta-section{display:none;}
 .form-input{
   width:100%;padding:16px 18px;border-radius:12px;
   background:rgba(255,255,255,0.03);border:1.5px solid rgba(255,255,255,0.08);
-  color:var(--t1);font-family:'DM Sans',sans-serif;font-size:1rem;transition:.2s;-webkit-appearance:none;
+  color:var(--t1);font-family:'DM Sans',sans-serif;
+  /* font-size minimo de 16px evita zoom forcado no iOS / TikTok in-app */
+  font-size:16px;
+  transition:.2s;-webkit-appearance:none;appearance:none;
+  /* margem extra para que scrollIntoView posicione o input com folga */
+  scroll-margin-top:120px;scroll-margin-bottom:120px;
 }
 .form-input:focus{outline:none;border-color:var(--rose);background:rgba(255,255,255,0.05);box-shadow:0 0 0 3px rgba(212,85,42,0.15);}
 .form-input::placeholder{color:var(--t4);}
@@ -1343,11 +1377,11 @@ body.checkout-open #sp-toast,body:not(.site-revealed) #sp-toast,body:not(.site-r
         <p class="step-sub" id="step2-sub">Digite o número com DDD. É aqui que você vai receber o acesso.</p>
         <div class="form-group">
           <label class="form-label" id="contact-label">Número de WhatsApp</label>
-          <input class="form-input" id="contactInput" type="tel" placeholder="(21) 99999-9999" oninput="validateContact()">
+          <input class="form-input" id="contactInput" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" oninput="validateContact()">
         </div>
         <div class="form-group">
           <label class="form-label">Seu nome</label>
-          <input class="form-input" id="nameInput" type="text" placeholder="Como posso te chamar?" oninput="validateContact()">
+          <input class="form-input" id="nameInput" type="text" autocomplete="name" autocapitalize="words" placeholder="Como posso te chamar?" oninput="validateContact()">
         </div>
         <button class="btn-modal" id="btnStep2" onclick="goStep(3)" disabled>Continuar →</button>
         <button class="btn-modal-ghost" onclick="goStep(1)">← Voltar</button>
@@ -1439,11 +1473,11 @@ body.checkout-open #sp-toast,body:not(.site-revealed) #sp-toast,body:not(.site-r
         <p class="step-sub" id="stepD2-sub">Digite o número com DDD. É aqui que você vai receber o PDF.</p>
         <div class="form-group">
           <label class="form-label" id="contactLabelD">Número de WhatsApp</label>
-          <input class="form-input" id="contactInputD" type="tel" placeholder="(21) 99999-9999" oninput="validateContactDesbl()">
+          <input class="form-input" id="contactInputD" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" oninput="validateContactDesbl()">
         </div>
         <div class="form-group">
           <label class="form-label">Seu nome</label>
-          <input class="form-input" id="nameInputD" type="text" placeholder="Como posso te chamar?" oninput="validateContactDesbl()">
+          <input class="form-input" id="nameInputD" type="text" autocomplete="name" autocapitalize="words" placeholder="Como posso te chamar?" oninput="validateContactDesbl()">
         </div>
         <button class="btn-modal" id="btnStepD2" onclick="goStepDesbl(3)" disabled>Continuar →</button>
         <button class="btn-modal-ghost" onclick="goStepDesbl(1)">← Voltar</button>
@@ -1652,18 +1686,23 @@ function selectChannel(ch){
   document.getElementById('opt-whatsapp').classList.toggle('selected', ch==='whatsapp');
   document.getElementById('opt-email').classList.toggle('selected', ch==='email');
   document.getElementById('btnStep1').disabled = false;
+  const inp = document.getElementById('contactInput');
   if(ch==='email'){
     document.getElementById('step2-title').textContent='Seu e-mail';
     document.getElementById('step2-sub').textContent='Digite seu e-mail. É aqui que você vai receber o acesso.';
     document.getElementById('contact-label').textContent='Endereço de e-mail';
-    document.getElementById('contactInput').placeholder='seuemail@gmail.com';
-    document.getElementById('contactInput').type='email';
+    inp.placeholder='seuemail@gmail.com';
+    inp.type='email';
+    inp.setAttribute('inputmode','email');
+    inp.setAttribute('autocomplete','email');
   } else {
     document.getElementById('step2-title').textContent='Seu WhatsApp';
     document.getElementById('step2-sub').textContent='Digite o número com DDD. É aqui que você vai receber o acesso.';
     document.getElementById('contact-label').textContent='Número de WhatsApp';
-    document.getElementById('contactInput').placeholder='(21) 99999-9999';
-    document.getElementById('contactInput').type='tel';
+    inp.placeholder='(21) 99999-9999';
+    inp.type='tel';
+    inp.setAttribute('inputmode','tel');
+    inp.setAttribute('autocomplete','tel');
   }
 }
 
@@ -1768,18 +1807,23 @@ function selectChannelDesbl(ch){
   document.getElementById('optD-whatsapp').classList.toggle('selected', ch==='whatsapp');
   document.getElementById('optD-email').classList.toggle('selected', ch==='email');
   document.getElementById('btnStepD1').disabled = false;
+  const inp = document.getElementById('contactInputD');
   if(ch==='email'){
     document.getElementById('stepD2-title').textContent='Seu e-mail';
     document.getElementById('stepD2-sub').textContent='Digite seu e-mail. É aqui que você vai receber o PDF.';
     document.getElementById('contactLabelD').textContent='Endereço de e-mail';
-    document.getElementById('contactInputD').placeholder='seuemail@gmail.com';
-    document.getElementById('contactInputD').type='email';
+    inp.placeholder='seuemail@gmail.com';
+    inp.type='email';
+    inp.setAttribute('inputmode','email');
+    inp.setAttribute('autocomplete','email');
   } else {
     document.getElementById('stepD2-title').textContent='Seu WhatsApp';
     document.getElementById('stepD2-sub').textContent='Digite o número com DDD. É aqui que você vai receber o PDF.';
     document.getElementById('contactLabelD').textContent='Número de WhatsApp';
-    document.getElementById('contactInputD').placeholder='(21) 99999-9999';
-    document.getElementById('contactInputD').type='tel';
+    inp.placeholder='(21) 99999-9999';
+    inp.type='tel';
+    inp.setAttribute('inputmode','tel');
+    inp.setAttribute('autocomplete','tel');
   }
 }
 
@@ -1929,6 +1973,99 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
   }, 200);
 });
+
+/* =================================================== */
+/* TIKTOK IN-APP BROWSER - KEYBOARD HANDLING           */
+/* Garante que o input fique visivel acima do teclado  */
+/* =================================================== */
+(function(){
+  // 1) Atualiza variavel CSS --vvh com a altura visivel real
+  //    (visualViewport reflete a area sem o teclado)
+  function updateVVH(){
+    const h = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
+    document.documentElement.style.setProperty('--vvh', h + 'px');
+  }
+  updateVVH();
+  if(window.visualViewport){
+    window.visualViewport.addEventListener('resize', updateVVH);
+    window.visualViewport.addEventListener('scroll', updateVVH);
+  }
+  window.addEventListener('resize', updateVVH);
+  window.addEventListener('orientationchange', ()=>setTimeout(updateVVH,300));
+
+  // 2) Detecta teclado aberto: heuristica (innerHeight diminuiu > 150px) +
+  //    fallback por focus/blur dos inputs (TikTok in-app nao dispara resize confiavel)
+  const baseHeight = window.innerHeight;
+  let keyboardOpen = false;
+
+  function setKbdOpen(open){
+    if(open === keyboardOpen) return;
+    keyboardOpen = open;
+    document.body.classList.toggle('kbd-open', open);
+    if(open){
+      // Garante que o input focado fique visivel
+      setTimeout(()=>{
+        const el = document.activeElement;
+        if(el && el.classList && el.classList.contains('form-input')){
+          try{ el.scrollIntoView({block:'center', behavior:'smooth'}); }catch(e){ el.scrollIntoView(); }
+        }
+      }, 200);
+    }
+  }
+
+  function checkKbdByViewport(){
+    const cur = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
+    if(baseHeight - cur > 150) setKbdOpen(true);
+    else setKbdOpen(false);
+  }
+  if(window.visualViewport){
+    window.visualViewport.addEventListener('resize', checkKbdByViewport);
+  }
+  window.addEventListener('resize', checkKbdByViewport);
+
+  // 3) Fallback robusto via focus/blur — funciona ate quando o navegador in-app
+  //    do TikTok nao dispara eventos de resize/visualViewport corretamente
+  function isFormInput(el){
+    return el && el.classList && el.classList.contains('form-input');
+  }
+
+  document.addEventListener('focusin', function(e){
+    if(isFormInput(e.target)){
+      setKbdOpen(true);
+      // Faz scroll do input pra zona visivel com pequeno atraso
+      // (espera o teclado terminar de abrir)
+      setTimeout(function(){
+        try{ e.target.scrollIntoView({block:'center', behavior:'smooth'}); }
+        catch(err){ try{ e.target.scrollIntoView(); }catch(_){} }
+      }, 280);
+      // Segundo scroll para garantir (TikTok as vezes precisa de 2 tentativas)
+      setTimeout(function(){
+        try{ e.target.scrollIntoView({block:'center', behavior:'smooth'}); }catch(_){}
+      }, 600);
+    }
+  }, true);
+
+  document.addEventListener('focusout', function(e){
+    if(isFormInput(e.target)){
+      // Pequeno atraso pra evitar flicker quando o usuario
+      // muda de um input pra outro
+      setTimeout(function(){
+        const ae = document.activeElement;
+        if(!isFormInput(ae)) setKbdOpen(false);
+      }, 120);
+    }
+  }, true);
+
+  // 4) Quando o usuario toca no input mas ainda nao recebeu focus
+  //    (TikTok in-app as vezes atrasa o focus), forca scroll preventivo
+  document.addEventListener('touchend', function(e){
+    if(isFormInput(e.target)){
+      setTimeout(function(){
+        try{ e.target.scrollIntoView({block:'center', behavior:'smooth'}); }catch(_){}
+      }, 350);
+    }
+  }, {passive:true});
+})();
 </script>
 
 </body>
