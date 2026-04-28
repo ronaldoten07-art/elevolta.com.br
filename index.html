@@ -1264,33 +1264,6 @@ a { color:inherit; text-decoration:none; }
   font-size:.74rem !important;
 }
 
-/* ─── SOCIAL PROOF TOAST ─── */
-.toast {
-  position:fixed;
-  bottom:20px; left:20px;
-  background: white;
-  border:1.5px solid var(--border);
-  border-radius:14px;
-  padding:12px 16px;
-  display:flex; align-items:center; gap:12px;
-  box-shadow: 0 12px 36px rgba(200,80,130,.18);
-  max-width: 300px;
-  font-size:.82rem;
-  color: var(--ink2);
-  z-index:50;
-  transform: translateX(-120%);
-  transition: transform .4s cubic-bezier(.2,.8,.2,1);
-}
-.toast.show { transform: translateX(0); }
-.toast-dot {
-  width:8px; height:8px; border-radius:50%;
-  background:#2bb673;
-  flex-shrink:0;
-  animation: pulse 2s infinite;
-}
-.toast-info strong { color:var(--ink); display:block; font-size:1rem; font-weight:800; }
-.toast-info span { color: var(--ink3); font-size:.85rem; font-weight:500; }
-
 /* ─── MODAL ─── */
 .modal {
   position:fixed; inset:0; z-index:200;
@@ -1496,21 +1469,117 @@ a { color:inherit; text-decoration:none; }
 .success-notify-btn > span:first-child { font-size:1.25rem; }
 .success-notify-btn > div { display:flex; flex-direction:column; text-align:left; line-height:1.2; }
 .success-notify-btn small { font-weight:500; opacity:.9; font-size:.72rem; }
+
+/* ─── URGÊNCIA BANNER ─── */
+.urgencia-bar {
+  background: linear-gradient(90deg, var(--rose-d), #a03060, var(--rose-d));
+  background-size: 200% 100%;
+  animation: shimmer-bar 4s linear infinite;
+  color: white;
+  text-align:center;
+  padding: 10px 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(.78rem, 2.2vw, .88rem);
+  font-weight: 700;
+  letter-spacing:.01em;
+  position:sticky; top:0; z-index:90;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  flex-wrap:wrap;
+}
+@keyframes shimmer-bar {
+  0%   { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+.urgencia-bar .vagas-num {
+  background: rgba(255,255,255,.22);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 6px;
+  padding: 1px 8px;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing:.02em;
+}
+.urgencia-bar .urgencia-cta {
+  background: white;
+  color: var(--rose-d);
+  border-radius: 6px;
+  padding: 3px 12px;
+  font-size: .8rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: opacity .2s;
+}
+.urgencia-bar .urgencia-cta:hover { opacity:.85; }
+
+/* ─── ANCORAGEM EMOCIONAL DE PREÇO ─── */
+.ancora-emocional {
+  background: var(--rose-pale);
+  border: 1.5px solid var(--rose-mid);
+  border-radius: 16px;
+  padding: 18px 22px;
+  margin: 14px 0 22px;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.ancora-emocional-icon { font-size: 1.4rem; flex-shrink:0; margin-top:2px; }
+.ancora-emocional p {
+  color: var(--ink2);
+  font-size: .9rem;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+}
+.ancora-emocional p strong { color: var(--rose-d); font-weight: 800; }
+
+/* ─── VAGAS RESTANTES NA OFERTA ─── */
+.vagas-oferta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #fff5f0;
+  border: 1.5px solid #f4c0a0;
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  font-size: .85rem;
+  font-weight: 700;
+  color: #c0501a;
+}
+.vagas-oferta-dot {
+  width:8px; height:8px; border-radius:50%;
+  background: #e05020;
+  animation: pulse 1.5s infinite;
+  flex-shrink:0;
+}
 </style>
 </head>
 <body>
+
+<!-- ─── BARRA DE URGÊNCIA ─── -->
+<div class="urgencia-bar" id="urgencia-bar">
+  <span>⚠️</span>
+  <span>Revisão manual  — máximo de 20 acessos por dia. Restam hoje:</span>
+  <span class="vagas-num" id="vagas-counter">7</span>
+  <span>vagas</span>
+  <button class="urgencia-cta" onclick="scrollTo2('oferta')">Garantir minha vaga →</button>
+</div>
 
 <!-- ─── LANDING ─── -->
 <div class="landing" id="landing">
   <div class="landing-inner">
     <div class="landing-logo">
       <span></span>
-      <span style="background:none; width:auto;">PROTOCOLO DE RETORNO</span>
+      <span style="background:none; width:auto;">PROTOCOLO DE RETORNO · JOSI</span>
       <span></span>
     </div>
 
     <div class="landing-avatar">
-      <img src="img/avatar.jpg" alt="Especialista em reconquista">
+      <img src="img/avatar.jpg" alt="Josi — Especialista em reconquista">
     </div>
 
     <h1 class="landing-heading">
@@ -1518,7 +1587,7 @@ a { color:inherit; text-decoration:none; }
       preciso te perguntar <span class="rose">uma coisa</span>.
     </h1>
 
-    <p class="landing-sub">Sou eu quem te receberá aqui. Quero te entender antes de qualquer coisa.</p>
+    <p class="landing-sub">Sou eu, <strong>Josi</strong>, quem te receberá aqui. Quero te entender antes de qualquer coisa.</p>
 
     <div class="l-divider"></div>
 
@@ -1564,7 +1633,7 @@ a { color:inherit; text-decoration:none; }
       <div class="hero-content">
         <div class="hero-pre">
           <span class="hero-pre-line"></span>
-          OI, EU SOU SUA GUIA NESTE MÉTODO
+          OI, EU SOU A JOSI — SUA GUIA NESTE MÉTODO
         </div>
 
         <h1 class="hero-h1">
@@ -1573,7 +1642,7 @@ a { color:inherit; text-decoration:none; }
         </h1>
 
         <p class="hero-sub">
-          Eu criei o <strong>Protocolo de Retorno</strong> exatamente para a mulher que você é hoje: aquela que não quer mais implorar, suplicar ou se humilhar — mas <span>quer ele de volta</span>.
+          Eu me chamo <strong>Josi</strong>, e criei o <strong>Protocolo de Retorno</strong> exatamente para a mulher que você é hoje: aquela que não quer mais implorar, suplicar ou se humilhar — mas <span>quer ele de volta</span>.
         </p>
 
         <div class="hero-cta-row">
@@ -1618,10 +1687,10 @@ a { color:inherit; text-decoration:none; }
 
       <div class="carta-sign">
         <div class="carta-sign-avatar">
-          <img src="img/avatar.jpg" alt="Sua guia">
+          <img src="img/avatar.jpg" alt="Josi">
         </div>
         <div class="carta-sign-info">
-          <div class="carta-sign-name">— Sua guia neste protocolo</div>
+          <div class="carta-sign-name">— Josi</div>
           <div class="carta-sign-role">Especialista em reconquista emocional</div>
         </div>
       </div>
@@ -1692,7 +1761,7 @@ a { color:inherit; text-decoration:none; }
           Eu não criei isso de um <span class="rose">livro de psicologia</span>.
         </h2>
         <p>
-          Eu criei estudando <strong>cada vírgula do meu próprio erro</strong>. Cada mensagem desesperada que mandei, cada áudio que apaguei antes de enviar, cada noite tentando entender por que ele estava se afastando.
+          Eu me chamo <strong>Josi</strong>. Criei estudando <strong>cada vírgula do meu próprio erro</strong>. Cada mensagem desesperada que mandei, cada áudio que apaguei antes de enviar, cada noite tentando entender por que ele estava se afastando.
         </p>
         <p>
           Quando finalmente entendi <span>como o homem processa silêncio, distância e reconquista</span>, tudo mudou. Não só pra mim — para mais de <strong>1.200 mulheres</strong> que aplicaram esse mesmo método nos últimos meses.
@@ -1857,6 +1926,16 @@ a { color:inherit; text-decoration:none; }
       <div class="oferta-price-now"><small>R$</small>47<small style="font-size:1.2rem;">,00</small></div>
       <div class="oferta-price-info">Pagamento via Pix · à vista · acesso imediato</div>
 
+      <div class="ancora-emocional">
+        <div class="ancora-emocional-icon">💭</div>
+        <p>Você vai gastar mais do que isso no próximo final de semana tentando distrair a cabeça. <strong>Aqui você investe no movimento que pode mudar tudo.</strong> R$47 é o preço de uma janta — e pode ser o preço da virada.</p>
+      </div>
+
+      <div class="vagas-oferta">
+        <div class="vagas-oferta-dot"></div>
+        <span>reviso cada acesso manualmente — restam <strong id="vagas-oferta-num">7</strong> vagas hoje</span>
+      </div>
+
       <div class="oferta-includes">
         <div class="oferta-includes-item">Protocolo guiado dia a dia, do dia 1 ao dia 7</div>
         <div class="oferta-includes-item">Os scripts exatos do que dizer (e quando)</div>
@@ -1933,7 +2012,7 @@ a { color:inherit; text-decoration:none; }
           Você tem <span class="rose">7 dias</span> pra testar — e o risco é todo meu.
         </h2>
         <p>
-          Eu sei que você já está cansada de promessa vazia. Por isso, eu coloco a minha cara. <strong>Aplique o método por 7 dias inteiros</strong>. Se você sentir que não foi pra você, que não te ajudou em nada, basta me mandar uma mensagem.
+          Eu sei que você já está cansada de promessa vazia. Por isso, eu, <strong>Josi</strong>, coloco a minha cara. <strong>Aplique o método por 7 dias inteiros</strong>. Se você sentir que não foi pra você, que não te ajudou em nada, basta me mandar uma mensagem.
         </p>
         <p>
           <strong>Eu devolvo cada centavo</strong> — sem perguntas, sem burocracia, sem você ter que justificar nada. É a minha forma de te dizer: <span>confia, eu sei o que estou colocando na sua mão.</span>
@@ -2058,7 +2137,7 @@ a { color:inherit; text-decoration:none; }
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-brand">Protocolo de Retorno</div>
+    <div class="footer-brand">Protocolo de Retorno · Josi</div>
     <p>© 2026 — Todos os direitos reservados.</p>
     <p class="footer-disclaimer">
       Este conteúdo é informativo e não substitui acompanhamento psicológico profissional. Os resultados variam de acordo com a aplicação individual de cada pessoa. Ao adquirir, você concorda com a política de privacidade e termos de uso.
@@ -2067,15 +2146,6 @@ a { color:inherit; text-decoration:none; }
 </footer>
 
 </div><!-- /site -->
-
-<!-- TOAST -->
-<div class="toast" id="toast">
-  <div class="toast-dot"></div>
-  <div class="toast-info">
-    <strong id="toast-name">Ana S.</strong>
-    <span id="toast-loc">acabou de entrar — São Paulo</span>
-  </div>
-</div>
 
 <!-- MODAL CHECKOUT (3 etapas: dados → Pix → confirmação) -->
 <div class="modal" id="modal">
@@ -2160,24 +2230,35 @@ a { color:inherit; text-decoration:none; }
 const WA_NUMBER = '5524981517067';
 
 /* ─── CÓDIGOS PIX REAIS (Copia e Cola) ─── */
-const PIX_CODE = `00020126460014br.gov.bcb.pix0111121496937200209ELE VOLTA520400005303986540547.005802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026042022530641950300017br.gov.bcb.brcode01051.0.0630475DE`;
+const PIX_CODE = `00020126580014br.gov.bcb.pix013605fe1a5b-fe5c-4065-a064-1e9cee63862c520400005303986540547.005802BR5925Josiane Monteiro De Olive6009Sao Paulo62290525REC69F0C5DDD03150831623886304637A`;
 const PIX_CODE_DESBL = `00020126580014br.gov.bcb.pix0111121496937200221Codigo do desbloqueio520400005303986540512.905802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026042402331382150300017br.gov.bcb.brcode01051.0.06304303A`;
 
 let currentProduto = 'protocolo';   // 'protocolo' | 'desbloqueio'
 let currentLead = null;              // {nome, canal, contato, produto, valor}
 
-const NAMES = [
-  ['Ana S.','São Paulo'],['Beatriz M.','Rio de Janeiro'],['Camila R.','Belo Horizonte'],
-  ['Daniela F.','Curitiba'],['Eduarda L.','Porto Alegre'],['Fernanda G.','Salvador'],
-  ['Gabriela T.','Recife'],['Helena P.','Fortaleza'],['Isabela C.','Brasília'],
-  ['Juliana A.','Manaus'],['Karina D.','Belém'],['Larissa N.','Goiânia'],
-  ['Mariana B.','Campinas'],['Natalia V.','São Luís'],['Olivia E.','Maceió'],
-  ['Patricia H.','Natal'],['Renata K.','João Pessoa'],['Sabrina O.','Teresina'],
-  ['Tatiane Q.','Campo Grande'],['Vanessa X.','Cuiabá'],['Aline Z.','Florianópolis'],
-  ['Bianca J.','Vitória'],['Carla W.','Aracaju'],['Débora Y.','Palmas'],
-  ['Elisa U.','Ribeirão Preto'],['Fabiana I.','Sorocaba'],['Giovana S.','Uberlândia'],
-  ['Heloísa M.','Londrina'],['Ingrid R.','Joinville'],['Jaqueline F.','Caxias do Sul']
-];
+function startUrgencia(){
+  // Vagas: valor persistido por sessão para parecer real
+  let vagas = sessionStorage.getItem('vagas_dia');
+  if(!vagas){
+    // Gera um número entre 5 e 9 e guarda na sessão
+    vagas = Math.floor(Math.random() * 5) + 5;
+    sessionStorage.setItem('vagas_dia', vagas);
+  } else {
+    vagas = parseInt(vagas);
+  }
+  document.getElementById('vagas-counter').textContent = vagas;
+  const ofNum = document.getElementById('vagas-oferta-num');
+  if(ofNum) ofNum.textContent = vagas;
+
+  // A cada 90s remove 1 vaga (simula movimento real durante a sessão)
+  let intervalo = setInterval(()=>{
+    vagas = Math.max(1, vagas - 1);
+    sessionStorage.setItem('vagas_dia', vagas);
+    document.getElementById('vagas-counter').textContent = vagas;
+    if(ofNum) ofNum.textContent = vagas;
+    if(vagas <= 1) clearInterval(intervalo);
+  }, 90000);
+}
 
 function enterSite(target){
   document.getElementById('landing').classList.add('hidden');
@@ -2187,7 +2268,7 @@ function enterSite(target){
     if(target==='bloqueio'){
       document.getElementById('bloqueio').scrollIntoView({behavior:'smooth'});
     }
-    startSocialProof();
+    startUrgencia();
   },500);
 }
 
@@ -2340,21 +2421,6 @@ async function confirmPaid(){
       })
     });
   } catch(_){}
-}
-
-function startSocialProof(){
-  let i = 0;
-  function show(){
-    const [name, loc] = NAMES[i % NAMES.length];
-    document.getElementById('toast-name').textContent = name;
-    document.getElementById('toast-loc').textContent = `acabou de entrar — ${loc}`;
-    const t = document.getElementById('toast');
-    t.classList.add('show');
-    setTimeout(()=> t.classList.remove('show'), 4000);
-    i++;
-  }
-  setTimeout(show, 8000);
-  setInterval(show, 18000);
 }
 
 // Permite fechar modal com ESC
