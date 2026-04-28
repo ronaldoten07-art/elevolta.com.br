@@ -27,6 +27,7 @@
 }
 
 *,:before,:after { box-sizing:border-box; margin:0; padding:0; }
+em, i { font-style: normal; }
 html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
 body {
   background: var(--off-white);
@@ -413,7 +414,7 @@ a { color:inherit; text-decoration:none; }
   color: var(--ink2);
   font-size: clamp(1.1rem, 3vw, 1.35rem);
   line-height:1.65;
-  font-style:italic;
+  font-style:normal;
   font-weight:400;
 }
 .carta-quote p + p { margin-top:14px; }
@@ -544,7 +545,7 @@ a { color:inherit; text-decoration:none; }
   border-radius: 14px;
   padding: 12px 16px;
   font-family: 'Playfair Display', serif;
-  font-style: italic;
+  font-style:normal;
   font-size: .95rem;
   color: var(--ink2);
   border: 1px solid rgba(240,200,216,.6);
@@ -602,7 +603,7 @@ a { color:inherit; text-decoration:none; }
   color:var(--ink2);
   font-size: clamp(1rem, 2.6vw, 1.08rem);
   line-height:1.7;
-  font-style:italic;
+  font-style:normal;
 }
 .psico-highlight strong { color:var(--rose-d); font-weight:700; font-style:normal; }
 
@@ -1275,8 +1276,17 @@ a { color:inherit; text-decoration:none; }
   padding:20px;
   opacity:0; pointer-events:none;
   transition: opacity .3s;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .modal.show { opacity:1; pointer-events:auto; }
+
+@media (max-width: 600px) {
+  .modal {
+    align-items: flex-start;
+    padding: 16px 12px 40px;
+  }
+}
 
 .modal-box {
   background:white;
@@ -1286,6 +1296,15 @@ a { color:inherit; text-decoration:none; }
   position:relative;
   text-align:center;
   box-shadow: 0 30px 80px rgba(0,0,0,.3);
+  margin: auto;
+}
+
+@media (max-width: 600px) {
+  .modal-box {
+    border-radius: 18px;
+    padding: 28px 20px;
+    margin: 0 auto;
+  }
 }
 .modal-close {
   position:absolute; top:16px; right:18px;
@@ -1530,7 +1549,7 @@ a { color:inherit; text-decoration:none; }
         </h1>
 
         <p class="hero-sub">
-          Eu criei o <strong>Protocolo de Retorno</strong> exatamente para a mulher que você é hoje: aquela que não quer mais implorar, suplicar ou se humilhar — mas <em>quer ele de volta</em>.
+          Eu criei o <strong>Protocolo de Retorno</strong> exatamente para a mulher que você é hoje: aquela que não quer mais implorar, suplicar ou se humilhar — mas <span>quer ele de volta</span>.
         </p>
 
         <div class="hero-cta-row">
@@ -1652,7 +1671,7 @@ a { color:inherit; text-decoration:none; }
           Eu criei estudando <strong>cada vírgula do meu próprio erro</strong>. Cada mensagem desesperada que mandei, cada áudio que apaguei antes de enviar, cada noite tentando entender por que ele estava se afastando.
         </p>
         <p>
-          Quando finalmente entendi <em>como o homem processa silêncio, distância e reconquista</em>, tudo mudou. Não só pra mim — para mais de <strong>1.200 mulheres</strong> que aplicaram esse mesmo método nos últimos meses.
+          Quando finalmente entendi <span>como o homem processa silêncio, distância e reconquista</span>, tudo mudou. Não só pra mim — para mais de <strong>1.200 mulheres</strong> que aplicaram esse mesmo método nos últimos meses.
         </p>
         <p>
           E é exatamente isso que vou colocar na sua mão agora: <strong>um caminho claro, dia a dia, do que fazer (e principalmente do que NÃO fazer)</strong> para que ele volte a te procurar — sem você precisar parecer carente, suplicante ou desesperada.
@@ -1893,7 +1912,7 @@ a { color:inherit; text-decoration:none; }
           Eu sei que você já está cansada de promessa vazia. Por isso, eu coloco a minha cara. <strong>Aplique o método por 7 dias inteiros</strong>. Se você sentir que não foi pra você, que não te ajudou em nada, basta me mandar uma mensagem.
         </p>
         <p>
-          <strong>Eu devolvo cada centavo</strong> — sem perguntas, sem burocracia, sem você ter que justificar nada. É a minha forma de te dizer: <em>confia, eu sei o que estou colocando na sua mão.</em>
+          <strong>Eu devolvo cada centavo</strong> — sem perguntas, sem burocracia, sem você ter que justificar nada. É a minha forma de te dizer: <span>confia, eu sei o que estou colocando na sua mão.</span>
         </p>
         <div class="garantia-seal">🛡️ Garantia incondicional de 7 dias</div>
       </div>
@@ -2316,6 +2335,15 @@ function startSocialProof(){
 
 // Permite fechar modal com ESC
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+// Fix: scroll campo focado para fora do teclado virtual no mobile
+document.querySelectorAll('.modal-form input, .modal-form select').forEach(el => {
+  el.addEventListener('focus', function() {
+    setTimeout(() => {
+      this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 350);
+  });
+});
 </script>
 
 </body>
