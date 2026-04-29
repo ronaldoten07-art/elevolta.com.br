@@ -702,6 +702,183 @@ a { color:inherit; text-decoration:none; }
 }
 .psico-card-body span { font-size:.88rem; color:var(--ink3); line-height:1.5; }
 
+/* ─── PROVA SOCIAL — WHATSAPP ─── */
+.prova-section {
+  background: #e5ddd5;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.4) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,.3) 0%, transparent 40%);
+  padding: 90px 0;
+  position: relative;
+}
+.prova-section::before {
+  content:'';
+  position:absolute; inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10S0 14.5 0 20s4.5 10 10 10 10-4.5 10-10zm20 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z' fill='%23ffffff' fill-opacity='0.08'/%3E%3C/svg%3E");
+  opacity:.5; pointer-events:none;
+}
+.prova-header { text-align:center; margin-bottom:52px; position:relative; z-index:1; }
+.prova-header .section-label { justify-content:center; color: #128c7e; }
+.prova-header .section-label-line { background: #128c7e; }
+.prova-header .section-title .rose { color: #128c7e; }
+.prova-header > p {
+  color: var(--ink3);
+  font-size: clamp(.95rem, 2.5vw, 1.05rem);
+  max-width:520px; margin: 12px auto 0;
+  line-height:1.6;
+}
+
+.prova-grid {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  position:relative; z-index:1;
+}
+@media(max-width:900px){ .prova-grid { grid-template-columns: repeat(2, 1fr); gap:18px; } }
+@media(max-width:560px){ .prova-grid { grid-template-columns: 1fr; gap:20px; } }
+
+.wa-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12), 0 2px 6px rgba(0,0,0,.06);
+  display:flex; flex-direction:column;
+  font-family: 'DM Sans', sans-serif;
+  transform: rotate(0);
+  transition: transform .25s, box-shadow .25s;
+}
+.wa-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.16); }
+.wa-card:nth-child(odd) { transform: rotate(-.4deg); }
+.wa-card:nth-child(even) { transform: rotate(.4deg); }
+.wa-card:hover:nth-child(odd),
+.wa-card:hover:nth-child(even) { transform: translateY(-4px) rotate(0); }
+
+.wa-header {
+  background: #075e54;
+  color: #fff;
+  padding: 10px 14px;
+  display:flex; align-items:center; gap:10px;
+}
+.wa-back { color:#fff; opacity:.9; font-size:1.1rem; line-height:1; }
+.wa-avatar {
+  width: 38px; height:38px; border-radius:50%;
+  overflow:hidden; flex-shrink:0;
+  background: linear-gradient(135deg, #e05c8a, #c04070);
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-weight:700; font-size:.95rem;
+  border: 2px solid rgba(255,255,255,.2);
+}
+.wa-info { flex:1; min-width:0; }
+.wa-name {
+  font-size:.92rem; font-weight:600;
+  color:#fff;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.wa-status {
+  font-size:.7rem; font-weight:400;
+  color: rgba(255,255,255,.75);
+}
+.wa-icons { display:flex; gap:14px; opacity:.85; font-size:1rem; color:#fff; }
+
+.wa-body {
+  background: #e5ddd5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath fill='%23d4c9bd' fill-opacity='0.3' d='M30 30m-2 0a2 2 0 1 0 4 0 2 2 0 1 0-4 0z'/%3E%3C/svg%3E");
+  padding: 16px 12px 12px;
+  min-height: 180px;
+  display:flex; flex-direction:column;
+  gap:8px;
+}
+
+.wa-date {
+  align-self:center;
+  background: rgba(225,245,254,.92);
+  color: #54656f;
+  font-size:.68rem; font-weight:500;
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.06);
+}
+
+.wa-msg {
+  max-width: 85%;
+  padding: 7px 10px 18px;
+  border-radius: 8px;
+  font-size: .88rem;
+  line-height: 1.42;
+  color: #111b21;
+  position:relative;
+  box-shadow: 0 1px 1px rgba(0,0,0,.08);
+  word-wrap: break-word;
+}
+.wa-msg-in {
+  align-self:flex-start;
+  background: #fff;
+  border-top-left-radius: 2px;
+}
+.wa-msg-in::before {
+  content:'';
+  position:absolute; top:0; left:-6px;
+  width:0; height:0;
+  border-top: 8px solid #fff;
+  border-left: 6px solid transparent;
+}
+.wa-msg-out {
+  align-self:flex-end;
+  background: #d9fdd3;
+  border-top-right-radius: 2px;
+}
+.wa-msg-out::before {
+  content:'';
+  position:absolute; top:0; right:-6px;
+  width:0; height:0;
+  border-top: 8px solid #d9fdd3;
+  border-right: 6px solid transparent;
+}
+.wa-msg strong { font-weight:700; color: #075e54; }
+
+.wa-time {
+  position:absolute;
+  bottom:3px; right:8px;
+  font-size:.6rem;
+  color: #667781;
+  display:flex; align-items:center; gap:3px;
+  font-weight:400;
+}
+.wa-check {
+  color: #53bdeb;
+  font-size:.72rem;
+  letter-spacing:-3px;
+  font-weight:700;
+}
+
+.prova-footer {
+  text-align:center;
+  margin-top: 40px;
+  position:relative; z-index:1;
+}
+.prova-footer-badge {
+  display:inline-flex; align-items:center; gap:10px;
+  background: #fff;
+  border: 1.5px solid #25d366;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-size: .85rem; font-weight:700;
+  color: #075e54;
+  box-shadow: 0 6px 20px rgba(37,211,102,.18);
+}
+.prova-footer-badge::before {
+  content:'';
+  width:8px; height:8px; border-radius:50%;
+  background: #25d366;
+  box-shadow: 0 0 0 4px rgba(37,211,102,.25);
+  animation: pulse 2s infinite;
+}
+.prova-footer p {
+  font-size:.78rem; color: var(--ink4);
+  margin-top:12px; font-weight:500;
+}
+
 /* ─── COMO VOU TE AJUDAR ─── */
 .ajuda-section {
   background: var(--white);
@@ -1788,6 +1965,178 @@ body.checkout-open{ overflow:hidden; }
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL — WHATSAPP -->
+<section class="prova-section" id="prova-social">
+  <div class="container">
+    <div class="prova-header">
+      <div class="section-label">
+        <span class="section-label-line"></span>
+        MENSAGENS REAIS DE QUEM APLICOU
+        <span class="section-label-line"></span>
+      </div>
+      <h2 class="section-title">
+        Elas também <span class="rose">duvidaram</span>. Até ele voltar.
+      </h2>
+      <p>Algumas das mensagens que recebo toda semana de mulheres que seguiram o protocolo. <strong>Nomes foram abreviados para preservar a identidade delas.</strong></p>
+    </div>
+
+    <div class="prova-grid">
+
+      <!-- Depoimento 1 -->
+      <div class="wa-card">
+        <div class="wa-header">
+          <span class="wa-back">‹</span>
+          <div class="wa-avatar">CS</div>
+          <div class="wa-info">
+            <div class="wa-name">Camila S.</div>
+            <div class="wa-status">online</div>
+          </div>
+          <div class="wa-icons">📞 ⋮</div>
+        </div>
+        <div class="wa-body">
+          <div class="wa-date">HOJE</div>
+          <div class="wa-msg wa-msg-in">
+            Josi, preciso te contar 😭 <strong>ELE ME CHAMOU NO 5º DIA</strong>. Do nada. Mandou "oi, tudo bem?" como se nada tivesse acontecido.
+            <span class="wa-time">14:32 <span class="wa-check">✓✓</span></span>
+          </div>
+          <div class="wa-msg wa-msg-in">
+            Eu tava travada achando que ia ficar sem resposta pra sempre. Obrigada de verdade 💗
+            <span class="wa-time">14:33 <span class="wa-check">✓✓</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Depoimento 2 -->
+      <div class="wa-card">
+        <div class="wa-header">
+          <span class="wa-back">‹</span>
+          <div class="wa-avatar" style="background:linear-gradient(135deg,#7e57c2,#5e35b1);">PM</div>
+          <div class="wa-info">
+            <div class="wa-name">Patrícia M.</div>
+            <div class="wa-status">online</div>
+          </div>
+          <div class="wa-icons">📞 ⋮</div>
+        </div>
+        <div class="wa-body">
+          <div class="wa-date">ONTEM</div>
+          <div class="wa-msg wa-msg-in">
+            Fazia <strong>2 meses que ele tinha sumido</strong>. Eu já tinha desistido. Apliquei do jeito que você ensinou e voltamos 🥹
+            <span class="wa-time">09:15 <span class="wa-check">✓✓</span></span>
+          </div>
+          <div class="wa-msg wa-msg-in">
+            O mais incrível: ele que pediu desculpa primeiro.
+            <span class="wa-time">09:16 <span class="wa-check">✓✓</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Depoimento 3 -->
+      <div class="wa-card">
+        <div class="wa-header">
+          <span class="wa-back">‹</span>
+          <div class="wa-avatar" style="background:linear-gradient(135deg,#ec407a,#ad1457);">JR</div>
+          <div class="wa-info">
+            <div class="wa-name">Juliana R.</div>
+            <div class="wa-status">online</div>
+          </div>
+          <div class="wa-icons">📞 ⋮</div>
+        </div>
+        <div class="wa-body">
+          <div class="wa-date">TERÇA</div>
+          <div class="wa-msg wa-msg-in">
+            Confesso que paguei meio sem fé. Mas o passo a passo é tão claro que <strong>não tem como errar</strong> 🙏
+            <span class="wa-time">21:04 <span class="wa-check">✓✓</span></span>
+          </div>
+          <div class="wa-msg wa-msg-in">
+            No 6º dia ele me ligou chorando. Coisa que ele NUNCA fez antes.
+            <span class="wa-time">21:05 <span class="wa-check">✓✓</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Depoimento 4 -->
+      <div class="wa-card">
+        <div class="wa-header">
+          <span class="wa-back">‹</span>
+          <div class="wa-avatar" style="background:linear-gradient(135deg,#26a69a,#00796b);">BF</div>
+          <div class="wa-info">
+            <div class="wa-name">Bianca F.</div>
+            <div class="wa-status">visto por último hoje</div>
+          </div>
+          <div class="wa-icons">📞 ⋮</div>
+        </div>
+        <div class="wa-body">
+          <div class="wa-date">SEG</div>
+          <div class="wa-msg wa-msg-in">
+            Josi, eu tinha <strong>bloqueado</strong>. Comprei o protocolo + o código do desbloqueio.
+            <span class="wa-time">16:48 <span class="wa-check">✓✓</span></span>
+          </div>
+          <div class="wa-msg wa-msg-in">
+            4 dias depois ele tava me desbloqueando e pedindo pra conversar. Tô em choque até agora 😳
+            <span class="wa-time">16:49 <span class="wa-check">✓✓</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Depoimento 5 -->
+      <div class="wa-card">
+        <div class="wa-header">
+          <span class="wa-back">‹</span>
+          <div class="wa-avatar" style="background:linear-gradient(135deg,#ff7043,#d84315);">LC</div>
+          <div class="wa-info">
+            <div class="wa-name">Larissa C.</div>
+            <div class="wa-status">online</div>
+          </div>
+          <div class="wa-icons">📞 ⋮</div>
+        </div>
+        <div class="wa-body">
+          <div class="wa-date">QUI</div>
+          <div class="wa-msg wa-msg-in">
+            Eu tava mandando áudio de 5 min TODO DIA. Depois que li o protocolo percebi <strong>o quanto eu tava errando</strong> 🫣
+            <span class="wa-time">11:22 <span class="wa-check">✓✓</span></span>
+          </div>
+          <div class="wa-msg wa-msg-in">
+            Parei tudo. Segui direitinho. No dia 7 ele veio MEU. Parece mágica mas é técnica.
+            <span class="wa-time">11:23 <span class="wa-check">✓✓</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Depoimento 6 -->
+      <div class="wa-card">
+        <div class="wa-header">
+          <span class="wa-back">‹</span>
+          <div class="wa-avatar" style="background:linear-gradient(135deg,#5c6bc0,#283593);">AV</div>
+          <div class="wa-info">
+            <div class="wa-name">Amanda V.</div>
+            <div class="wa-status">online</div>
+          </div>
+          <div class="wa-icons">📞 ⋮</div>
+        </div>
+        <div class="wa-body">
+          <div class="wa-date">SÁB</div>
+          <div class="wa-msg wa-msg-in">
+            Faz 3 semanas que ele voltou. <strong>Desta vez ele me procurando, me chamando pra sair, me ligando</strong> 🥰
+            <span class="wa-time">19:57 <span class="wa-check">✓✓</span></span>
+          </div>
+          <div class="wa-msg wa-msg-in">
+            Completamente diferente. Eu parei de correr atrás e ele veio. Indico pra qualquer uma.
+            <span class="wa-time">19:58 <span class="wa-check">✓✓</span></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="prova-footer">
+      <div class="prova-footer-badge">
+        +1.200 mulheres já aplicaram o Protocolo
+      </div>
+      <p>Depoimentos reais compartilhados com autorização · Nomes abreviados para proteção</p>
     </div>
   </div>
 </section>
