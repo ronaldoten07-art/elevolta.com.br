@@ -1601,7 +1601,7 @@ body.checkout-open{ overflow:hidden; }
         </p>
 
         <div class="hero-cta-row">
-          <button class="btn-primary" onclick="scrollTo2('oferta')">
+          <button class="btn-primary" onclick="scrollTo2('estrutura-protocolo')">
             Quero conhecer o protocolo
           </button>
           <button class="btn-secondary" onclick="scrollTo2('historia')">
@@ -2235,7 +2235,15 @@ function enterSite(target){
 }
 
 function scrollTo2(id){
-  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  const el = document.getElementById(id);
+  if(!el) return;
+  const y = el.getBoundingClientRect().top + window.pageYOffset - 24;
+  window.scrollTo({ top: y, behavior: 'smooth' });
+  if(history.replaceState){
+    history.replaceState(null, '', '#' + id);
+  }else{
+    location.hash = id;
+  }
 }
 
 function toggleFaq(el){
