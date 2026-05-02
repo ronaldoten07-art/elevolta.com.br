@@ -10,20 +10,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --rose:       #e05c8a;
-  --rose-d:     #c04070;
-  --rose-l:     #f08ab0;
-  --rose-soft:  #fde8f0;
-  --rose-pale:  #fff0f5;
-  --rose-mid:   #fad4e4;
+  --rose:       #DC2626;
+  --rose-d:     #991B1B;
+  --rose-l:     #EF4444;
+  --rose-soft:  #FEF2F2;
+  --rose-pale:  #FFF5F5;
+  --rose-mid:   #FECACA;
+  --gold:       #F59E0B;
+  --gold-d:     #D97706;
+  --gold-l:     #FCD34D;
+  --gold-soft:  #FFFBEB;
+  --gold-pale:  #FEF3C7;
   --white:      #ffffff;
-  --off-white:  #fdf7f9;
-  --ink:        #1a1016;
-  --ink2:       #3d2535;
-  --ink3:       #6b3d52;
-  --ink4:       #9e6a7e;
-  --border:     #f0c8d8;
-  --border-d:   #e0a8be;
+  --off-white:  #FFFBF7;
+  --ink:        #0F0F0F;
+  --ink2:       #2D2D2D;
+  --ink3:       #525252;
+  --ink4:       #8A8A8A;
+  --border:     #FED7D7;
+  --border-d:   #FEB2B2;
 }
 
 *,:before,:after { box-sizing:border-box; margin:0; padding:0; }
@@ -78,7 +83,7 @@ a { color:inherit; text-decoration:none; }
 /* ─── LANDING SCREEN — HOOK INTEGRADO ─── */
 .landing {
   position: fixed; inset:0; z-index:100;
-  background: linear-gradient(160deg, #1a0a12 0%, #2d0e1e 50%, #1a0a12 100%);
+  background: linear-gradient(160deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
   display: flex; justify-content:center; align-items:center;
   padding: 40px 20px;
   overflow-y: auto;
@@ -138,7 +143,7 @@ a { color:inherit; text-decoration:none; }
 /* The insight line — reframe */
 .hook-insight {
   background: rgba(255,255,255,.05);
-  border: 1px solid rgba(240,138,176,.2);
+  border: 1px solid rgba(220,38,38,.2);
   border-radius: 16px;
   padding: 20px 24px;
   margin: 0 auto 28px;
@@ -180,7 +185,7 @@ a { color:inherit; text-decoration:none; }
 .l-btn {
   display:flex; align-items:center; gap:14px;
   padding: 18px 22px;
-  border: 1.5px solid rgba(240,138,176,.25);
+  border: 1.5px solid rgba(220,38,38,.25);
   border-radius: 16px;
   background: rgba(255,255,255,.04);
   cursor:pointer; text-align:left;
@@ -191,26 +196,26 @@ a { color:inherit; text-decoration:none; }
   backdrop-filter: blur(8px);
 }
 .l-btn:hover {
-  border-color: rgba(240,138,176,.6);
+  border-color: rgba(220,38,38,.6);
   background: rgba(255,255,255,.08);
-  box-shadow: 0 8px 32px rgba(224,92,138,.2);
+  box-shadow: 0 8px 32px rgba(220,38,38,.2);
   transform: translateY(-1px);
 }
 .l-btn:active { transform: scale(.98); }
 
 .l-btn-primary {
-  border-color: rgba(240,138,176,.5);
-  background: rgba(224,92,138,.1);
+  border-color: rgba(220,38,38,.5);
+  background: rgba(220,38,38,.1);
 }
-.l-btn-primary:hover { border-color: var(--rose-l); }
+.l-btn-primary:hover { border-color: #EF4444; }
 
 .l-btn-icon {
   width:44px; height:44px; flex-shrink:0;
-  background: rgba(224,92,138,.15);
+  background: rgba(220,38,38,.15);
   border-radius:50%;
   display:flex; align-items:center; justify-content:center;
   font-size:1.2rem;
-  border: 1px solid rgba(240,138,176,.2);
+  border: 1px solid rgba(220,38,38,.2);
 }
 
 .l-btn-text { flex:1; display:flex; flex-direction:column; gap:2px; }
@@ -255,7 +260,7 @@ a { color:inherit; text-decoration:none; }
 
 .section-divider {
   width:100%; height:1px;
-  background: linear-gradient(90deg, transparent, var(--border-d), transparent);
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
 
 .section-label {
@@ -280,7 +285,7 @@ a { color:inherit; text-decoration:none; }
 
 /* ─── HERO — continua o gancho ─── */
 .hero {
-  background: linear-gradient(160deg, var(--white) 0%, var(--rose-pale) 60%, var(--rose-soft) 100%);
+  background: linear-gradient(160deg, var(--white) 0%, var(--rose-pale) 50%, var(--rose-soft) 100%);
   padding: 90px 0 80px;
   position:relative;
   overflow:hidden;
@@ -288,12 +293,12 @@ a { color:inherit; text-decoration:none; }
 .hero:before {
   content:'';
   position:absolute; top:0; left:0; right:0; height:4px;
-  background: linear-gradient(90deg, var(--rose-d), var(--rose), var(--rose-l));
+  background: linear-gradient(90deg, #991B1B, #DC2626, #EF4444);
 }
 
 /* Bridge line — top of hero continues the TikTok hook */
 .hero-bridge {
-  background: var(--ink);
+  background: #0F172A;
   color: #fff;
   padding: 14px 20px;
   text-align: center;
@@ -350,7 +355,7 @@ a { color:inherit; text-decoration:none; }
 .hero-insight-box {
   background: var(--rose-pale);
   border: 1.5px solid var(--rose-mid);
-  border-left: 4px solid var(--rose);
+  border-left: 4px solid #DC2626;
   border-radius: 14px;
   padding: 18px 20px;
   margin-bottom: 28px;
@@ -375,32 +380,32 @@ a { color:inherit; text-decoration:none; }
 .btn-primary {
   display:inline-flex; align-items:center; gap:10px;
   padding: 22px 36px;
-  background: linear-gradient(135deg, var(--rose-d), var(--rose));
-  color: var(--white);
+  background: linear-gradient(135deg, #B91C1C, #DC2626);
+  color: #FFFFFF;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700; font-size: 1.25rem;
   letter-spacing:.01em;
   border:none; border-radius:14px;
   cursor:pointer;
   transition: transform .15s, box-shadow .2s;
-  box-shadow: 0 8px 24px rgba(200,80,130,.32);
+  box-shadow: 0 8px 24px rgba(220,38,38,.32);
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(200,80,130,.42); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(220,38,38,.42); }
 .btn-primary:active { transform: translateY(0); }
 
 .btn-secondary {
   display:inline-flex; align-items:center; gap:8px;
   padding: 22px 28px;
   background: var(--white);
-  color: var(--rose-d);
+  color: #DC2626;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700; font-size: 1.2rem;
-  border: 1.5px solid var(--rose-l);
+  border: 1.5px solid #FECACA;
   border-radius:14px;
   cursor:pointer;
   transition: background .2s, border-color .2s;
 }
-.btn-secondary:hover { background:var(--rose-pale); border-color:var(--rose); }
+.btn-secondary:hover { background:#FEF2F2; border-color:#DC2626; }
 
 .hero-trust {
   display:flex; align-items:center;
@@ -427,7 +432,7 @@ a { color:inherit; text-decoration:none; }
   position:relative;
   border-radius: 28px;
   overflow:hidden;
-  box-shadow: 0 24px 70px rgba(200,80,130,.22), 0 4px 12px rgba(0,0,0,.06);
+  box-shadow: 0 24px 70px rgba(220,38,38,.18), 0 4px 12px rgba(0,0,0,.06);
   border: 6px solid var(--white);
   aspect-ratio: 3/4;
 }
@@ -448,19 +453,19 @@ a { color:inherit; text-decoration:none; }
   border-radius: 999px;
   padding: 12px 22px;
   display:flex; align-items:center; gap:10px;
-  box-shadow: 0 10px 32px rgba(200,80,130,.22);
+  box-shadow: 0 10px 32px rgba(220,38,38,.18);
   white-space:nowrap;
   z-index:5;
 }
 .hero-badge-dot {
   width:8px; height:8px; border-radius:50%;
-  background: #2bb673;
-  box-shadow: 0 0 0 4px rgba(43,182,115,.15);
+  background: #DC2626;
+  box-shadow: 0 0 0 4px rgba(220,38,38,.15);
   animation: pulse 2s infinite;
 }
 @keyframes pulse {
-  0%,100% { box-shadow: 0 0 0 4px rgba(43,182,115,.15); }
-  50%     { box-shadow: 0 0 0 8px rgba(43,182,115,.05); }
+  0%,100% { box-shadow: 0 0 0 4px rgba(220,38,38,.15); }
+  50%     { box-shadow: 0 0 0 8px rgba(220,38,38,.05); }
 }
 .hero-badge-txt {
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -471,7 +476,7 @@ a { color:inherit; text-decoration:none; }
 /* ─── CARTA PESSOAL ─── */
 .carta-section {
   background: var(--white);
-  padding: 100px 0 90px;
+  padding: 70px 0 60px;
 }
 
 .carta-quote {
@@ -511,13 +516,13 @@ a { color:inherit; text-decoration:none; }
   display:flex; align-items:center; gap:14px;
   margin-top:28px;
   padding-top:24px;
-  border-top: 1px solid var(--rose-mid);
+  border-top: 1px solid var(--border);
 }
 .carta-sign-avatar {
   width:54px; height:54px; border-radius:50%;
   overflow:hidden;
   border:2px solid var(--white);
-  box-shadow: 0 4px 14px rgba(200,80,130,.18);
+  box-shadow: 0 4px 14px rgba(220,38,38,.15);
   flex-shrink:0;
 }
 .carta-sign-avatar img { width:100%; height:100%; object-fit:cover; }
@@ -528,7 +533,7 @@ a { color:inherit; text-decoration:none; }
 /* ─── IDENTIFICAÇÃO ─── */
 .ident-section {
   background: var(--off-white);
-  padding: 100px 0 90px;
+  padding: 70px 0 60px;
 }
 
 .ident-intro {
@@ -557,8 +562,8 @@ a { color:inherit; text-decoration:none; }
   transition: border-color .2s, box-shadow .2s;
 }
 .ident-item:hover {
-  border-color: var(--rose-l);
-  box-shadow: 0 8px 28px rgba(200,80,130,.1);
+  border-color: #EF4444;
+  box-shadow: 0 8px 28px rgba(220,38,38,.08);
 }
 
 .ident-ico { font-size:1.4rem; flex-shrink:0; margin-top:2px; }
@@ -586,7 +591,7 @@ a { color:inherit; text-decoration:none; }
 /* ─── MINHA HISTÓRIA ─── */
 .historia-section {
   background: var(--white);
-  padding: 100px 0;
+  padding: 70px 0;
 }
 
 .historia-grid {
@@ -604,7 +609,7 @@ a { color:inherit; text-decoration:none; }
   position:relative;
   border-radius: 24px;
   overflow:hidden;
-  box-shadow: 0 20px 60px rgba(200,80,130,.18), 0 4px 12px rgba(0,0,0,.05);
+  box-shadow: 0 20px 60px rgba(220,38,38,.15), 0 4px 12px rgba(0,0,0,.05);
   aspect-ratio: 3/4;
   max-width: 420px;
   margin: 0 auto;
@@ -637,7 +642,7 @@ a { color:inherit; text-decoration:none; }
 /* ─── PSICOLOGIA ─── */
 .psico-section {
   background: var(--off-white);
-  padding: 90px 0;
+  padding: 70px 0;
 }
 
 .psico-grid {
@@ -666,7 +671,7 @@ a { color:inherit; text-decoration:none; }
 .psico-highlight {
   background: var(--rose-pale);
   border: 1.5px solid var(--rose-mid);
-  border-left: 4px solid var(--rose);
+  border-left: 4px solid #DC2626;
   border-radius:14px;
   padding:20px 22px;
   margin-top:18px;
@@ -688,7 +693,7 @@ a { color:inherit; text-decoration:none; }
   display:flex; gap:16px; align-items:flex-start;
   transition: border-color .2s, box-shadow .2s;
 }
-.psico-card:hover { border-color: var(--rose-l); box-shadow: 0 6px 20px rgba(200,80,130,.1); }
+.psico-card:hover { border-color: #EF4444; box-shadow: 0 6px 20px rgba(220,38,38,.08); }
 
 .psico-card-num {
   font-family: 'Playfair Display', serif;
@@ -706,7 +711,7 @@ a { color:inherit; text-decoration:none; }
 /* ─── COMO VOU TE AJUDAR ─── */
 .ajuda-section {
   background: var(--white);
-  padding: 100px 0;
+  padding: 70px 0;
 }
 
 .ajuda-grid {
@@ -742,7 +747,7 @@ a { color:inherit; text-decoration:none; }
   border:1px solid var(--border);
   border-radius:18px;
   background:linear-gradient(180deg, #fff7fa 0%, #ffffff 100%);
-  box-shadow:0 14px 34px rgba(224,92,138,.08);
+  box-shadow:0 14px 34px rgba(220,38,38,.08);
   color: var(--ink2);
   font-size: clamp(.95rem, 2.5vw, 1.05rem);
   line-height:1.65;
@@ -758,10 +763,10 @@ a { color:inherit; text-decoration:none; }
   display:flex;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(135deg, var(--rose), var(--rose-d));
+  background:linear-gradient(135deg, #DC2626, #991B1B);
   color:#fff;
   font-weight:800;
-  box-shadow:0 8px 18px rgba(224,92,138,.22);
+  box-shadow:0 8px 18px rgba(220,38,38,.22);
 }
 .ajuda-list li strong { color: var(--ink); font-weight:700; }
 @media(max-width:720px){
@@ -782,7 +787,7 @@ a { color:inherit; text-decoration:none; }
   position:relative; z-index:1;
   border-radius:24px;
   overflow:hidden;
-  box-shadow: 0 20px 56px rgba(200,80,130,.18);
+  box-shadow: 0 20px 56px rgba(220,38,38,.15);
   aspect-ratio: 3/4;
   max-width:360px;
 }
@@ -790,8 +795,8 @@ a { color:inherit; text-decoration:none; }
 
 /* ─── SOLUÇÃO 7 DIAS ─── */
 .solucao-section {
-  background: var(--ink);
-  padding: 90px 0;
+  background: linear-gradient(160deg, #0F172A 0%, #1E293B 100%);
+  padding: 70px 0;
 }
 
 .sol-header {
@@ -843,7 +848,7 @@ a { color:inherit; text-decoration:none; }
 /* ─── OFERTA ─── */
 .oferta-section {
   background: var(--off-white);
-  padding: 100px 0;
+  padding: 70px 0;
 }
 
 .oferta-box {
@@ -854,7 +859,7 @@ a { color:inherit; text-decoration:none; }
   margin:0 auto;
   padding: 52px 48px;
   text-align:center;
-  box-shadow: 0 24px 80px rgba(200,80,130,.14);
+  box-shadow: 0 24px 80px rgba(220,38,38,.14);
 }
 @media(max-width:620px){ .oferta-box { padding:36px 24px; border-radius:20px; } }
 
@@ -890,11 +895,11 @@ a { color:inherit; text-decoration:none; }
   font-family: 'Playfair Display', serif;
   font-size: clamp(3.2rem, 9vw, 4.4rem);
   font-weight:800;
-  color: var(--rose-d);
+  color: var(--gold-d);
   line-height:1;
   margin-bottom:8px;
 }
-.oferta-price-now small { font-size:.4em; vertical-align:top; font-weight:600; color:var(--rose-d); }
+.oferta-price-now small { font-size:.4em; vertical-align:top; font-weight:600; color:var(--gold-d); }
 .oferta-price-info {
   font-size: 1.08rem; font-weight:500;
   color: var(--ink4);
@@ -902,8 +907,8 @@ a { color:inherit; text-decoration:none; }
 }
 
 .ancora-emocional {
-  background: var(--rose-pale);
-  border: 1.5px solid var(--rose-mid);
+  background: var(--gold-soft);
+  border: 1.5px solid var(--gold-pale);
   border-radius: 16px;
   padding: 18px 22px;
   margin: 14px 0 22px;
@@ -920,25 +925,25 @@ a { color:inherit; text-decoration:none; }
   margin: 0;
   font-weight: 500;
 }
-.ancora-emocional p strong { color: var(--rose-d); font-weight: 800; }
+.ancora-emocional p strong { color: var(--gold-d); font-weight: 800; }
 
 .vagas-oferta {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #fff5f0;
-  border: 1.5px solid #f4c0a0;
+  background: #FEF2F2;
+  border: 1.5px solid #FECACA;
   border-radius: 10px;
   padding: 12px 18px;
   margin-bottom: 16px;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #c0501a;
+  color: #DC2626;
 }
 .vagas-oferta-dot {
   width:8px; height:8px; border-radius:50%;
-  background: #e05020;
+  background: #DC2626;
   animation: pulse 1.5s infinite;
   flex-shrink:0;
 }
@@ -954,22 +959,22 @@ a { color:inherit; text-decoration:none; }
   color: var(--ink2);
   line-height:1.55;
 }
-.oferta-includes-item::before { content:'✓'; color:var(--rose); font-weight:800; flex-shrink:0; }
+.oferta-includes-item::before { content:'✓'; color:#DC2626; font-weight:800; flex-shrink:0; }
 
 .oferta-cta {
   display:block; width:100%;
   padding: 24px 28px;
-  background: linear-gradient(135deg, var(--rose-d), var(--rose));
-  color: white;
+  background: linear-gradient(135deg, #B91C1C, #DC2626);
+  color: #FFFFFF;
   border:none; border-radius:14px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800; font-size: clamp(1.25rem, 3.8vw, 1.45rem);
   cursor:pointer;
   transition: transform .15s, box-shadow .2s;
-  box-shadow: 0 10px 30px rgba(200,80,130,.36);
+  box-shadow: 0 10px 30px rgba(220,38,38,.36);
   margin-bottom:16px;
 }
-.oferta-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(200,80,130,.46); }
+.oferta-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(220,38,38,.46); }
 
 .oferta-secure {
   display:flex; align-items:center; justify-content:center;
@@ -980,8 +985,8 @@ a { color:inherit; text-decoration:none; }
 
 /* ─── DESBLOQUEIO ─── */
 .desbloqueio-section {
-  background: var(--ink);
-  padding: 80px 0;
+  background: linear-gradient(160deg, #0F172A 0%, #1E293B 100%);
+  padding: 60px 0;
 }
 
 .desbloqueio-box {
@@ -996,7 +1001,7 @@ a { color:inherit; text-decoration:none; }
   font-size:.72rem; font-weight:800;
   letter-spacing:.2em; text-transform:uppercase;
   color: var(--rose-l);
-  background: rgba(224,92,138,.15);
+  background: rgba(220,38,38,.15);
   border:1px solid rgba(240,138,176,.2);
   border-radius:999px;
   padding:6px 16px;
@@ -1035,7 +1040,7 @@ a { color:inherit; text-decoration:none; }
   font-size: clamp(.88rem, 2.3vw, .95rem);
   line-height:1.5;
 }
-.desbloqueio-list li::before { content:'→'; color:var(--rose-l); font-weight:800; flex-shrink:0; }
+.desbloqueio-list li::before { content:'→'; color:#EF4444; font-weight:800; flex-shrink:0; }
 
 .desbloqueio-pricing {
   display:flex; align-items:baseline; justify-content:center; gap:14px;
@@ -1050,7 +1055,7 @@ a { color:inherit; text-decoration:none; }
   font-family:'Playfair Display',serif;
   font-size:clamp(2.4rem, 7vw, 3.2rem);
   font-weight:800;
-  color:var(--white);
+  color:var(--gold-l);
   line-height:1;
 }
 .desbloqueio-now small { font-size:.42em; font-weight:600; vertical-align:top; }
@@ -1058,21 +1063,21 @@ a { color:inherit; text-decoration:none; }
 .desbloqueio-cta {
   display:inline-flex; align-items:center; gap:10px;
   padding: 18px 36px;
-  background: rgba(224,92,138,.9);
-  color: white;
+  background: linear-gradient(135deg, #B91C1C, #DC2626);
+  color: #FFFFFF;
   border:none; border-radius:14px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800; font-size: 1rem;
   cursor:pointer;
   transition: transform .15s, background .2s;
-  box-shadow: 0 10px 28px rgba(224,92,138,.3);
+  box-shadow: 0 10px 28px rgba(220,38,38,.3);
 }
-.desbloqueio-cta:hover { transform:translateY(-2px); background:var(--rose); }
+.desbloqueio-cta:hover { transform:translateY(-2px); background:#DC2626; }
 
 /* ─── GARANTIA ─── */
 .garantia-section {
   background: var(--white);
-  padding: 100px 0;
+  padding: 70px 0;
 }
 
 .garantia-grid {
@@ -1088,7 +1093,7 @@ a { color:inherit; text-decoration:none; }
   position:relative;
   border-radius:24px;
   overflow:hidden;
-  box-shadow: 0 20px 56px rgba(200,80,130,.16);
+  box-shadow: 0 20px 56px rgba(220,38,38,.12);
   max-width:320px;
   aspect-ratio:1/1;
 }
@@ -1122,17 +1127,17 @@ a { color:inherit; text-decoration:none; }
   display:inline-flex; align-items:center; gap:10px;
   margin-top:24px;
   padding:12px 20px;
-  background:var(--rose-pale);
-  border:1.5px solid var(--rose-mid);
+  background:var(--gold-soft);
+  border:1.5px solid var(--gold-pale);
   border-radius:999px;
   font-size:.85rem; font-weight:700;
-  color:var(--rose-d);
+  color:var(--gold-d);
 }
 
 /* ─── FAQ ─── */
 .faq-section {
   background: var(--off-white);
-  padding: 90px 0;
+  padding: 70px 0;
 }
 
 .faq-header { text-align:center; margin-bottom:48px; }
@@ -1181,8 +1186,8 @@ a { color:inherit; text-decoration:none; }
 /* ─── CTA FINAL ─── */
 .cta-final-section {
   background: var(--rose-pale);
-  padding: 100px 0;
-  border-top: 1px solid var(--rose-mid);
+  padding: 70px 0;
+  border-top: 1px solid var(--border);
 }
 
 .cta-final-grid {
@@ -1197,7 +1202,7 @@ a { color:inherit; text-decoration:none; }
 .cta-final-photo {
   border-radius:24px;
   overflow:hidden;
-  box-shadow: 0 20px 56px rgba(200,80,130,.18);
+  box-shadow: 0 20px 56px rgba(220,38,38,.15);
   max-width:320px;
   aspect-ratio:3/4;
 }
@@ -1217,14 +1222,14 @@ a { color:inherit; text-decoration:none; }
 .cta-final-btn {
   display:inline-flex; align-items:center; gap:10px;
   padding: 24px 40px;
-  background: linear-gradient(135deg, var(--rose-d), var(--rose));
-  color: white;
+  background: linear-gradient(135deg, #B91C1C, #DC2626);
+  color: #FFFFFF;
   border:none; border-radius:14px;
   font-family:'Plus Jakarta Sans',sans-serif;
   font-weight:800; font-size: 1.3rem;
   cursor:pointer;
   transition: transform .15s, box-shadow .2s;
-  box-shadow: 0 10px 30px rgba(200,80,130,.36);
+  box-shadow: 0 10px 30px rgba(220,38,38,.36);
   margin-top:8px; margin-bottom:14px;
 }
 .cta-final-btn:hover { transform:translateY(-2px); box-shadow:0 16px 40px rgba(200,80,130,.46); }
@@ -1236,8 +1241,8 @@ a { color:inherit; text-decoration:none; }
 
 /* ─── FOOTER ─── */
 .footer {
-  background: var(--ink);
-  color: rgba(255,255,255,.4);
+  background: linear-gradient(160deg, #0F172A 0%, #1E293B 100%);
+  color: rgba(255,255,255,.5);
   text-align:center;
   padding: 48px 0;
 }
@@ -1595,17 +1600,17 @@ body.checkout-open{ overflow:hidden; }
 .depo-nav-btn {
   width: 44px; height: 44px; border-radius: 50%;
   border: 1.5px solid var(--border); background: var(--white);
-  color: var(--rose-d); font-size: 1.4rem; font-weight: 300;
+  color: #DC2626; font-size: 1.4rem; font-weight: 300;
   cursor: pointer; display: flex; align-items: center; justify-content: center;
   transition: all .2s;
 }
-.depo-nav-btn:hover { background: var(--rose-pale); border-color: var(--rose-l); }
+.depo-nav-btn:hover { background: var(--rose-pale); border-color: #EF4444; }
 .depo-dots { display: flex; gap: 8px; }
 .depo-dot {
   width: 8px; height: 8px; border-radius: 50%;
   background: var(--border); transition: all .25s; cursor: pointer;
 }
-.depo-dot.active { background: var(--rose); width: 24px; border-radius: 4px; }
+.depo-dot.active { background: #DC2626; width: 24px; border-radius: 4px; }
 .depo-cta-wrap { text-align: center; margin-top: 40px; }
 @media(max-width:720px){
   .depo-section { padding: 80px 0 60px; }
@@ -1633,24 +1638,10 @@ body.checkout-open{ overflow:hidden; }
           <span class="accent">ele volta a te procurar.</span>
         </h1>
 
-        <!-- Insight box espelha o gancho do TikTok -->
-        <div class="hero-insight-box">
-          <p>
-            Quando ele visualiza e não responde, a maioria das mulheres entra em pânico e manda mais mensagem. Isso é o que <strong>afasta ainda mais ele de você</strong>. Existe um jeito diferente — e é exatamente isso que o Protocolo de Retorno vai te ensinar.
-          </p>
-        </div>
-
-        <p class="hero-sub">
-          Eu me chamo <strong>Josiane Monteiro</strong>, e criei o <strong>Protocolo de Retorno</strong> exatamente para a mulher que você é hoje: aquela que não quer mais implorar, suplicar ou se humilhar — mas <span>quer ele de volta</span>.
-        </p>
+        <p class="hero-sub">Um m&#233;todo de <strong>7 dias</strong> pra fazer ele voltar a te procurar &#8212; <strong>sem implorar</strong>. Criado por Josiane Monteiro, terapeuta com 11 anos de experi&#234;ncia.</p>
 
         <div class="hero-cta-row">
-          <button class="btn-primary" onclick="scrollTo2('ajuda')">
-            Quero fazer ele voltar a me procurar
-          </button>
-          <button class="btn-secondary" onclick="scrollTo2('bloqueio')">
-            Quero ser desbloqueada
-          </button>
+          <button class="btn-primary" onclick="scrollTo2('oferta')">Quero come&#231;ar agora &#8594;</button>
         </div>
 
         <div class="hero-trust">
@@ -1675,31 +1666,7 @@ body.checkout-open{ overflow:hidden; }
   </div>
 </section>
 
-<!-- CARTA PESSOAL -->
-<section class="carta-section">
-  <div class="container">
-    <div class="carta-quote">
-      <p>
-        Se você chegou até aqui, é porque algo doeu fundo. Eu sei. <strong>Eu também já estive aí</strong> — segurando o celular esperando uma mensagem que não vinha, relendo conversas antigas tentando entender onde tudo mudou.
-      </p>
-      <p>
-        E foi exatamente desse lugar que nasceu o que eu vou te entregar aqui. Não é teoria, não é truque. <strong>É o que eu queria ter sabido na época em que tudo parecia perdido.</strong>
-      </p>
 
-      <div class="carta-sign">
-        <div class="carta-sign-avatar">
-          <img src="img/avatar.jpg" alt="Josi">
-        </div>
-        <div class="carta-sign-info">
-          <div class="carta-sign-name">— Josi</div>
-          <div class="carta-sign-role">Terapeuta de casais · 11 anos de experiência</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
 
 <!-- IDENTIFICAÇÃO -->
 <section class="ident-section" id="identificacao">
@@ -1711,207 +1678,51 @@ body.checkout-open{ overflow:hidden; }
     <h2 class="section-title">
       O silêncio dele <span class="rose">dói diferente</span>, né?
     </h2>
-    <p class="ident-intro">
-      Não é só saudade. É a sensação de que <strong>algo que era seu escorregou das suas mãos</strong> — e você não sabe mais o que fazer pra trazer de volta sem piorar tudo.
-    </p>
+    <p class="ident-intro">Se voc&#234; se sente assim, <strong>respira</strong> &#8212; existe um jeito de virar esse jogo.</p>
 
     <div class="ident-grid">
       <div class="ident-item">
         <div class="ident-ico">📵</div>
-        <div class="ident-txt">Ele <strong>visualiza e não responde</strong> — e você fica relendo a última conversa tentando entender o que mudou.</div>
-      </div>
-      <div class="ident-item">
-        <div class="ident-ico">💬</div>
-        <div class="ident-txt">As <strong>respostas secaram</strong>. Quando responde, é frio, curto, parece outro.</div>
-      </div>
-      <div class="ident-item">
-        <div class="ident-ico">🚪</div>
-        <div class="ident-txt">Ele <strong>pediu espaço</strong> — e você não sabe se dá tempo ou se ele some de vez.</div>
+        <div class="ident-txt">Ele <strong>visualiza e n&#227;o responde</strong> &#8212; e voc&#234; fica relendo a &#250;ltima conversa.</div>
       </div>
       <div class="ident-item">
         <div class="ident-ico">😰</div>
-        <div class="ident-txt">Você sente que <strong>já errou</strong> — mandou mensagem demais, ligou, cobrou, e isso afastou ele ainda mais.</div>
+        <div class="ident-txt">Voc&#234; sente que <strong>j&#225; errou</strong> &#8212; mandou mensagem demais, cobrou, e isso afastou ele ainda mais.</div>
       </div>
     </div>
 
     <div class="ident-reveal">
-      <p>
-        Se você se reconheceu em qualquer uma dessas situações, <strong>respira</strong>. Eu vou te explicar o que está acontecendo e o que fazer.
-      </p>
+      <p>O que parece desinteresse, <strong>&#233; mecanismo de defesa dele</strong>. E existe um jeito de reverter &#8212; em 7 dias.</p>
     </div>
   </div>
 </section>
-
-<!-- MINHA HISTÓRIA -->
-<section class="historia-section" id="historia">
-  <div class="container">
-    <div class="historia-grid">
-      <div class="historia-photo-wrap">
-        <div class="historia-photo">
-          <img src="img/historia.jpg" alt="Minha história">
-          <div class="historia-photo-tag">"Eu sei como é estar do seu lado da história."</div>
-        </div>
-      </div>
-
-      <div class="historia-text">
-        <div class="section-label">
-          <span class="section-label-line"></span>
-          QUEM ESTÁ DO SEU LADO
-        </div>
-        <h2 class="section-title">
-          11 anos dentro de <span class="rose">relacionamentos reais</span>.
-        </h2>
-        <p>
-          Eu me chamo <strong>Josiane</strong>. Sou terapeuta de casais há 11 anos — e nesse tempo, sentei do outro lado da mesa com centenas de mulheres que viveram exatamente o que você está vivendo agora.
-        </p>
-        <p>
-          O que aprendi nesses anos vai contra tudo que o senso comum diz: <em>não é falta de amor, não é culpa sua, e não é tarde demais</em>. O que está acontecendo tem nome, tem padrão, e tem solução — desde que você saiba como agir.
-        </p>
-        <p>
-          Mais de <strong>1.200 mulheres</strong> já passaram por esse método. Mulheres que estavam no mesmo lugar que você está hoje — lendo essa página de madrugada, com o coração apertado. <strong>Eu sei o que funciona. E é exatamente isso que vou colocar na sua mão.</strong>
-        </p>
-        <div style="display:flex; align-items:center; gap:14px; margin-top:24px; padding:16px 20px; background:var(--rose-pale); border:1.5px solid var(--rose-mid); border-radius:14px;">
-          <div style="font-size:1.8rem; flex-shrink:0;">🎓</div>
-          <div>
-            <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:.75rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--rose-d); margin-bottom:4px;">Terapeuta de casais</div>
-            <div style="font-size:.92rem; color:var(--ink2); line-height:1.5;">Josi · <strong style="color:var(--ink)">11 anos de experiência</strong> em reconquista e dinâmicas relacionais</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- PSICOLOGIA -->
-<section class="psico-section">
-  <div class="container">
-    <div class="psico-grid">
-      <div>
-        <div class="section-label">
-          <span class="section-label-line"></span>
-          DEIXA EU TE EXPLICAR
-        </div>
-        <h2 class="psico-h2">
-          Por que ele está agindo <span class="rose">assim com você</span>.
-        </h2>
-        <div class="psico-text">
-          <p>
-            Eu vou te falar uma coisa que pode aliviar seu peito: <strong>ele não esqueceu você</strong>. Pode parecer que sim — mas não é.
-          </p>
-          <p>
-            O que ele está fazendo se chama <strong>modo de proteção</strong>. É um padrão emocional masculino que se ativa quando ele se sente sobrecarregado, pressionado ou em conflito interno.
-          </p>
-          <div class="psico-highlight">
-            <p>
-              <strong>O que parece desinteresse, na verdade é mecanismo de defesa.</strong> E a forma como você reage agora vai decidir se ele vai voltar — ou se vai se afastar de vez.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="psico-card-stack">
-        <div class="psico-card">
-          <div class="psico-card-num">1</div>
-          <div class="psico-card-body">
-            <strong>Ele recuou — não sumiu.</strong>
-            <span>Recuo emocional não é fim. É um momento de reorganização interna.</span>
-          </div>
-        </div>
-        <div class="psico-card">
-          <div class="psico-card-num">2</div>
-          <div class="psico-card-body">
-            <strong>Pressão aumenta a distância.</strong>
-            <span>Mensagem demais, cobrança, choro — tudo isso empurra ele pra mais longe.</span>
-          </div>
-        </div>
-        <div class="psico-card">
-          <div class="psico-card-num">3</div>
-          <div class="psico-card-body">
-            <strong>A janela de reversão é real.</strong>
-            <span>Existe um período exato em que ele está aberto a sentir saudade. É nessa janela que vamos agir.</span>
-          </div>
-        </div>
-        <div class="psico-card">
-          <div class="psico-card-num">4</div>
-          <div class="psico-card-body">
-            <strong>Silêncio estratégico ativa saudade.</strong>
-            <span>Não é jogo. É inteligência emocional para que o vazio fale por você.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMO POSSO TE AJUDAR -->
-<section class="ajuda-section" id="ajuda">
-  <div class="container">
-    <div class="ajuda-grid">
-      <div class="ajuda-text">
-        <div class="section-label">
-          <span class="section-label-line"></span>
-          COMO EU VOU TE AJUDAR
-        </div>
-        <h2>
-          Eu vou andar com você, <span class="rose">passo a passo</span>, durante esses 7 dias.
-        </h2>
-        <p>
-          Esse não é um guia genérico que você lê e fica perdida. É um <strong>protocolo guiado</strong> — eu te digo o que fazer hoje, o que esperar amanhã, e exatamente como agir quando ele responder (ou quando ele não responder).
-        </p>
-        <ul class="ajuda-list">
-          <li>Você vai saber <strong>o que dizer e o que não dizer</strong> em cada momento.</li>
-          <li>Vai entender <strong>quando ficar em silêncio</strong> e quando dar o passo certo.</li>
-          <li>Vai aprender a <strong>mensagem exata</strong> que reativa o interesse dele.</li>
-          <li>Vai sair desse turbilhão emocional <strong>com poder de volta nas suas mãos</strong>.</li>
-        </ul>
-      </div>
-
-      <div class="ajuda-photo-col">
-        <div class="ajuda-photo-wrap">
-          <div class="ajuda-photo-deco"></div>
-          <div class="ajuda-photo">
-            <img src="img/ajuda.jpg" alt="Como eu vou te ajudar">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
 
 <!-- SOLUÇÃO 7 DIAS -->
-<section class="solucao-section" id="estrutura-protocolo">
+<section class="solucao-section" id="solucao">
   <div class="container">
     <div class="sol-header">
-      <div class="section-label" style="justify-content:center;">
+      <div class="section-label">
         <span class="section-label-line"></span>
-        ESTRUTURA DO PROTOCOLO
-        <span class="section-label-line"></span>
+        O PROTOCOLO
       </div>
-      <h2 class="section-title">
-        7 dias. <span class="rose">3 fases.</span> Um movimento certeiro.
-      </h2>
-      <p>Cada dia tem um objetivo claro. Você não precisa pensar — só seguir.</p>
+      <h2 class="section-title">3 passos. <span class="rose">7 dias.</span> Ele volta.</h2>
     </div>
 
     <div class="pillars">
       <div class="pillar">
-        <div class="pillar-day">01 – 02</div>
-        <div class="pillar-title">Desarmamento</div>
-        <p class="pillar-desc">Você para de agir por impulso e finalmente entende o que o silêncio dele realmente significa. <strong>O peso sai do seu peito aqui.</strong></p>
+        <div class="pillar-day">Dias 1-2</div>
+        <div class="pillar-title">Silêncio Estratégico</div>
+        <div class="pillar-desc">Voc&#234; para de agir por impulso. <strong>O peso sai do peito.</strong></div>
       </div>
       <div class="pillar">
-        <div class="pillar-day">03 – 05</div>
-        <div class="pillar-title">Reposicionamento</div>
-        <p class="pillar-desc">Você muda a dinâmica. Ele começa a perceber sua ausência <strong>de um jeito que te coloca no controle</strong> da situação.</p>
+        <div class="pillar-day">Dias 3-5</div>
+        <div class="pillar-title">Ausência Magnética</div>
+        <div class="pillar-desc">Ele come&#231;a a sentir sua falta. <strong>Voc&#234; volta ao controle.</strong></div>
       </div>
       <div class="pillar">
-        <div class="pillar-day">06 – 07</div>
-        <div class="pillar-title">Ativação</div>
-        <p class="pillar-desc">O movimento final. <strong>Como e quando agir</strong> para que ele venha até você — sem você precisar dar o primeiro passo.</p>
+        <div class="pillar-day">Dias 6-7</div>
+        <div class="pillar-title">O Retorno</div>
+        <div class="pillar-desc"><strong>Ele vem at&#233; voc&#234;</strong> &#8212; sem voc&#234; precisar dar o primeiro passo.</div>
       </div>
     </div>
   </div>
@@ -1922,110 +1733,63 @@ body.checkout-open{ overflow:hidden; }
   <div class="container">
     <div class="oferta-box">
       <div class="oferta-box-pre">
-        <span style="width:24px; height:2px; background:var(--rose); border-radius:2px;"></span>
-        ACESSO IMEDIATO
-        <span style="width:24px; height:2px; background:var(--rose); border-radius:2px;"></span>
+        <span class="hero-badge-dot"></span>
+        VAGAS LIMITADAS
       </div>
+      <div class="oferta-product-name">Protocolo de Retorno</div>
+      <p class="oferta-product-sub">O m&#233;todo que faz ele voltar a te procurar.</p>
 
-      <h2 class="oferta-product-name">Protocolo de Retorno</h2>
-      <p class="oferta-product-sub">7 dias. Um método. O movimento certo para ele voltar a te procurar.</p>
-
-      <div class="oferta-price-old">De R$ 97,00 por:</div>
-      <div class="oferta-price-now"><small>R$</small>47<small style="font-size:1.2rem;">,00</small></div>
-      <div class="oferta-price-info">Pagamento via Pix · à vista · acesso imediato</div>
+      <div class="oferta-price-old">De R$ 197,00</div>
+      <div class="oferta-price-now"><small>R$</small>47</div>
+      <div class="oferta-price-info">Pagamento &#250;nico &#183; Acesso imediato</div>
 
       <div class="ancora-emocional">
-        <div class="ancora-emocional-icon">💭</div>
-        <p>Você vai gastar mais do que isso no próximo final de semana tentando distrair a cabeça. <strong>Aqui você investe no movimento que pode mudar tudo.</strong> R$47 é o preço de uma janta — e pode ser o preço da virada.</p>
+        <div class="ancora-emocional-icon">&#128148;</div>
+        <p>Cada dia que voc&#234; espera, <strong>ele se afasta mais</strong>. O Protocolo reverte isso em 7 dias.</p>
       </div>
 
       <div class="vagas-oferta">
         <div class="vagas-oferta-dot"></div>
-        <span>oferta com desconto · disponível por tempo limitado</span>
+        &#9888;&#65039; &#218;ltimas vagas com esse pre&#231;o
       </div>
 
       <div class="oferta-includes">
-        <div class="oferta-includes-item">Protocolo guiado dia a dia, do dia 1 ao dia 7</div>
-        <div class="oferta-includes-item">Os scripts exatos do que dizer (e quando)</div>
-        <div class="oferta-includes-item">A mensagem-chave que reativa o interesse</div>
-        <div class="oferta-includes-item">O que NÃO fazer durante o protocolo</div>
-        <div class="oferta-includes-item">Acesso imediato no WhatsApp ou e-mail</div>
+        <div class="oferta-includes-item">Protocolo completo de 7 dias</div>
+        <div class="oferta-includes-item">Mensagens prontas pra cada dia</div>
+        <div class="oferta-includes-item">Guia do Sil&#234;ncio Estrat&#233;gico</div>
+        <div class="oferta-includes-item">Suporte direto pelo WhatsApp</div>
       </div>
 
       <button class="oferta-cta" onclick="openCheckoutPage('protocolo')">
-        🔒 Quero acesso agora — R$ 47
+        Quero come&#231;ar agora &#8594;
       </button>
 
       <div class="oferta-secure">
-        <span>🔐 Pagamento seguro</span>
-        <span>⚡ Acesso em minutos</span>
-        <span>🛡️ Garantia 7 dias</span>
+        <span>&#128274; Pagamento seguro</span>
+        <span>&#128737;&#65039; Garantia de 7 dias</span>
+        <span>&#128274; 100% sigiloso</span>
       </div>
     </div>
   </div>
 </section>
-
-<!-- CÓDIGO DESBLOQUEIO -->
-<section class="desbloqueio-section" id="bloqueio">
-  <div class="container">
-    <div class="desbloqueio-box">
-      <div class="desbloqueio-tag">SE VOCÊ ESTÁ BLOQUEADA</div>
-      <h2 class="desbloqueio-h2">
-        Código do <span class="rose">Desbloqueio</span>
-      </h2>
-      <p class="desbloqueio-intro">
-        Se ele te bloqueou, o Protocolo de Retorno sozinho não é suficiente — antes de qualquer movimento, você precisa <strong>reverter o bloqueio</strong>. E é exatamente isso que esse mini-guia vai te ensinar.
-      </p>
-
-      <ul class="desbloqueio-list">
-        <li>Por que ele bloqueou (4 tipos diferentes)</li>
-        <li>Os 7 erros fatais depois do bloqueio</li>
-        <li>O protocolo de 5 passos para reverter</li>
-        <li>A mensagem única que desbloqueia</li>
-        <li>O que fazer quando ele te desbloquear</li>
-        <li>Casos específicos: redes, WhatsApp, etc.</li>
-      </ul>
-
-      <div class="desbloqueio-pricing">
-        <span class="desbloqueio-old">De R$ 97,00 por</span>
-        <span class="desbloqueio-now"><small>R$</small>12<small>,90</small></span>
-      </div>
-
-      <button class="desbloqueio-cta" onclick="openModal('desbloqueio')">
-        🔓 Quero o Código do Desbloqueio
-      </button>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
 
 <!-- GARANTIA -->
 <section class="garantia-section">
   <div class="container">
-    <div class="garantia-grid">
-      <div class="garantia-photo-wrap">
-        <div class="garantia-photo">
-          <img src="img/garantia.jpg" alt="Garantia">
-          <div class="garantia-shield">🛡️</div>
-        </div>
+    <div style="max-width:600px;margin:0 auto;text-align:center;">
+      <div style="font-size:3.5rem;margin-bottom:16px;">&#128737;&#65039;</div>
+      <div class="section-label" style="justify-content:center;">
+        <span class="section-label-line"></span>
+        MINHA PROMESSA PRA VOC&#202;
       </div>
-
-      <div class="garantia-text">
-        <div class="section-label">
-          <span class="section-label-line"></span>
-          MINHA PROMESSA PRA VOCÊ
-        </div>
-        <h2>
-          Você tem <span class="rose">7 dias</span> pra testar — e o risco é todo meu.
-        </h2>
-        <p>
-          Eu sei que você já está cansada de promessa vazia. Por isso, eu, <strong>Josi</strong>, coloco a minha cara. <strong>Aplique o método por 7 dias inteiros</strong>. Se você sentir que não foi pra você, que não te ajudou em nada, basta me mandar uma mensagem.
-        </p>
-        <p>
-          <strong>Eu devolvo cada centavo</strong> — sem perguntas, sem burocracia, sem você ter que justificar nada. É a minha forma de te dizer: <span>confia, eu sei o que estou colocando na sua mão.</span>
-        </p>
-        <div class="garantia-seal">🛡️ Garantia incondicional de 7 dias</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,3rem);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:18px;">
+        Voc&#234; tem <span style="color:#DC2626;">7 dias</span> pra testar &#8212; o risco &#233; todo meu.
+      </h2>
+      <p style="color:var(--ink2);font-size:clamp(1.1rem,3vw,1.25rem);line-height:1.7;margin-bottom:18px;">
+        Aplique o m&#233;todo por 7 dias. Se n&#227;o te ajudar, <strong>eu devolvo cada centavo</strong> &#8212; sem perguntas, sem burocracia.
+      </p>
+      <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;background:var(--gold-soft);border:1.5px solid var(--gold-pale);border-radius:999px;font-size:.85rem;font-weight:700;color:var(--gold-d);">
+        &#128737;&#65039; Garantia incondicional de 7 dias
       </div>
     </div>
   </div>
@@ -2210,7 +1974,7 @@ body.checkout-open{ overflow:hidden; }
     </div>
 
     <div class="depo-cta-wrap">
-      <button class="btn-primary" onclick="scrollTo2('oferta')">
+      <button class="btn-primary" onclick="scrollTo2('oferta')" style="background:linear-gradient(135deg,#B91C1C,#DC2626);box-shadow:0 8px 24px rgba(220,38,38,.32);">
         Quero ter essa hist&#243;ria tamb&#233;m &#8594;
       </button>
     </div>
@@ -2234,61 +1998,29 @@ body.checkout-open{ overflow:hidden; }
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Pra que tipo de situação esse método funciona?</span>
+          <span>Pra que tipo de situa&#231;&#227;o funciona?</span>
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-a"><div class="faq-a-inner">
-          Funciona pra praticamente qualquer cenário de distanciamento: ele esfriou, sumiu sem explicação, pediu espaço, brigou e desapareceu, ou simplesmente parou de te procurar. <strong>Inclusive funciona se vocês não estavam num relacionamento formal</strong> — basta ter existido uma conexão real entre vocês.
+          Qualquer cen&#225;rio de distanciamento. <strong>Inclusive se faz meses</strong> e mesmo sem relacionamento formal.
         </div></div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          <span>E se já faz mais de uma semana que ele sumiu?</span>
+          <span>Isso &#233; manipula&#231;&#227;o?</span>
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-a"><div class="faq-a-inner">
-          Funciona. <strong>Funciona inclusive se faz meses</strong>. O método é aplicado a partir de onde você está hoje — e considera os erros que talvez você já tenha cometido (mensagem demais, cobrança, etc). Eu te mostro como reverter o cenário a partir do estado atual.
+          N&#227;o. <strong>&#201; intelig&#234;ncia emocional</strong>. Voc&#234; para de fazer o que afasta e come&#231;a a fazer o que cria saudade natural.
         </div></div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Isso é manipulação? Eu não quero manipular ninguém.</span>
+          <span>E se eu n&#227;o gostar?</span>
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-a"><div class="faq-a-inner">
-          Não. <strong>É inteligência emocional</strong>. Manipulação é forçar alguém a sentir o que ele não sentiria — aqui, a gente só remove os comportamentos que estão sufocando o que ele já sente. Você vai parar de fazer o que afasta, e começar a fazer o que faz ele sentir saudade naturalmente.
-        </div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Como eu recebo o acesso depois do pagamento?</span>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">
-          Depois do pagamento via Pix, você recebe o acesso em até 15 minutos <strong>direto no seu WhatsApp ou e-mail</strong> (você escolhe na hora da compra). Tudo pra você consumir do seu jeito, no seu ritmo.
-        </div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>E se eu aplicar e não gostar?</span>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">
-          Você tem <strong>7 dias inteiros pra testar</strong>. Se sentir que não é pra você, me chama no WhatsApp e eu devolvo 100% do valor — sem você precisar justificar nada. <strong>O risco é todo meu.</strong>
-        </div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span>Vou precisar mandar mensagem pra ele?</span>
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">
-          Em alguns momentos sim, em outros não — e <strong>tudo depende do dia do protocolo</strong>. Eu te guio sobre quando enviar, o que enviar, e principalmente, quando NÃO enviar nada. Você não vai ter que adivinhar nem improvisar.
+          <strong>7 dias de garantia</strong>. Se n&#227;o te ajudar, devolvo 100% &#8212; sem perguntas. O risco &#233; todo meu.
         </div></div>
       </div>
     </div>
@@ -2298,32 +2030,21 @@ body.checkout-open{ overflow:hidden; }
 <!-- CTA FINAL -->
 <section class="cta-final-section">
   <div class="container">
-    <div class="cta-final-grid">
-      <div class="cta-final-photo-wrap">
-        <div class="cta-final-photo">
-          <img src="img/final-cta.jpg" alt="Vamos juntas">
-        </div>
+    <div style="max-width:560px;margin:0 auto;text-align:center;">
+      <div class="section-label" style="justify-content:center;">
+        <span class="section-label-line"></span>
+        AGORA &#201; COM VOC&#202;
       </div>
-
-      <div class="cta-final-content">
-        <div class="section-label">
-          <span class="section-label-line"></span>
-          AGORA É COM VOCÊ
-        </div>
-        <h2>
-          Em 7 dias, <span class="rose">tudo pode mudar</span>.
-        </h2>
-        <p>
-          Você pode continuar relendo as mensagens antigas e esperando ele aparecer do nada. Ou pode <strong>começar hoje um protocolo claro</strong>, dia a dia, com a chance real de virar esse jogo.
-        </p>
-        <p>
-          <strong>Eu vou estar do seu lado em cada passo.</strong>
-        </p>
-        <button class="cta-final-btn" onclick="scrollTo2('oferta')">
-          Sim, eu quero começar agora →
-        </button>
-        <div class="cta-final-tip">Acesso imediato · Garantia de 7 dias · 100% sigiloso</div>
-      </div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,3rem);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:18px;">
+        Em 7 dias, <span style="color:#DC2626;">tudo pode mudar</span>.
+      </h2>
+      <p style="color:var(--ink2);font-size:clamp(1.1rem,3vw,1.25rem);line-height:1.7;margin-bottom:24px;">
+        Voc&#234; pode continuar esperando. Ou pode <strong>come&#231;ar hoje</strong> com um protocolo claro, dia a dia.
+      </p>
+      <button class="cta-final-btn" onclick="scrollTo2('oferta')" style="background:linear-gradient(135deg,#B91C1C,#DC2626);color:#FFFFFF;border:none;border-radius:14px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.3rem;cursor:pointer;padding:24px 40px;box-shadow:0 10px 30px rgba(220,38,38,.36);">
+        Sim, eu quero come&#231;ar agora &#8594;
+      </button>
+      <div style="font-size:1rem;font-weight:600;color:var(--ink4);margin-top:14px;">Acesso imediato &#183; Garantia de 7 dias &#183; 100% sigiloso</div>
     </div>
   </div>
 </section>
@@ -2716,4 +2437,4 @@ document.querySelectorAll('.modal-form input, .modal-form select').forEach(el =>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
-</html>c
+</html>
