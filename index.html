@@ -1482,6 +1482,137 @@ body.checkout-open{ overflow:hidden; }
   .checkout-overlay-close{ top:14px; right:14px; }
 }
 
+
+/* ─── DEPOIMENTOS WHATSAPP ─── */
+.depo-section {
+  background: var(--white);
+  padding: 100px 0 80px;
+}
+.depo-header { text-align:center; margin-bottom:48px; }
+.depo-sub {
+  color: var(--ink3);
+  font-size: clamp(1.15rem, 3.2vw, 1.3rem);
+  font-weight: 500;
+  margin-top: 8px;
+}
+.depo-carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 4px 30px;
+  scrollbar-width: none;
+}
+.depo-carousel::-webkit-scrollbar { display: none; }
+.depo-phone {
+  flex: 0 0 320px;
+  min-width: 300px;
+  max-width: 340px;
+  background: #0b141a;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,.28), 0 0 0 1px rgba(255,255,255,.06);
+  scroll-snap-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+@media(max-width:400px){
+  .depo-phone { flex: 0 0 290px; min-width: 280px; border-radius: 24px; }
+}
+.depo-phone-notch {
+  width: 100px; height: 22px;
+  background: #0b141a;
+  border-radius: 0 0 16px 16px;
+  margin: 0 auto;
+  position: relative; z-index: 3;
+}
+.depo-wa-header {
+  background: #1f2c34;
+  padding: 8px 12px 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.depo-wa-back { color: #aebac1; font-size: 1.3rem; font-weight: 300; }
+.depo-wa-avatar-wrap { position: relative; }
+.depo-wa-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: .9rem; color: #fff;
+}
+.depo-av1 { background: linear-gradient(135deg, #e05c8a, #c04070); }
+.depo-av2 { background: linear-gradient(135deg, #7c3aed, #5b21b6); }
+.depo-av3 { background: linear-gradient(135deg, #0ea5e9, #0284c7); }
+.depo-av4 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.depo-wa-contact { flex: 1; }
+.depo-wa-name { color: #e9edef; font-size: .88rem; font-weight: 600; line-height: 1.2; }
+.depo-wa-status { color: #8696a0; font-size: .68rem; font-weight: 400; }
+.depo-wa-call { color: #aebac1; font-size: .95rem; }
+.depo-wa-chat {
+  flex: 1;
+  background: #0b141a;
+  background-image: url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='p' width='20' height='20' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='10' cy='10' r='.5' fill='%23ffffff' fill-opacity='.03'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23p)'/%3E%3C/svg%3E");
+  padding: 8px 10px 12px;
+  display: flex; flex-direction: column; gap: 4px;
+  min-height: 320px; max-height: 380px;
+  overflow-y: auto;
+}
+.depo-wa-chat::-webkit-scrollbar { width: 2px; }
+.depo-wa-chat::-webkit-scrollbar-thumb { background: rgba(255,255,255,.1); border-radius: 2px; }
+.depo-wa-date {
+  text-align: center; color: #8696a0; font-size: .65rem; font-weight: 500;
+  background: rgba(11,20,26,.8); padding: 3px 10px; border-radius: 6px;
+  margin: 4px auto 6px; width: fit-content;
+}
+.depo-wa-msg { display: flex; }
+.depo-wa-them { justify-content: flex-start; }
+.depo-wa-me { justify-content: flex-end; }
+.depo-wa-bubble {
+  max-width: 85%; padding: 6px 10px 4px; border-radius: 8px;
+  font-size: .82rem; line-height: 1.45; position: relative; word-wrap: break-word;
+}
+.depo-bubble-them { background: #1f2c34; color: #e9edef; border-top-left-radius: 2px; }
+.depo-bubble-me { background: #005c4b; color: #e9edef; border-top-right-radius: 2px; }
+.depo-wa-meta {
+  display: flex; align-items: center; justify-content: flex-end; gap: 3px;
+  margin-top: 2px; float: right; margin-left: 8px; position: relative; top: 4px;
+}
+.depo-wa-meta span { font-size: .58rem; color: #8696a0; }
+.depo-wa-input-bar {
+  background: #1f2c34; padding: 8px 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+.depo-wa-emoji { font-size: 1.1rem; color: #8696a0; }
+.depo-wa-input-fake {
+  flex: 1; background: #2a3942; border-radius: 20px;
+  padding: 8px 16px; color: #8696a0; font-size: .78rem;
+}
+.depo-wa-mic { font-size: 1.1rem; color: #8696a0; }
+.depo-nav {
+  display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 24px;
+}
+.depo-nav-btn {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1.5px solid var(--border); background: var(--white);
+  color: var(--rose-d); font-size: 1.4rem; font-weight: 300;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all .2s;
+}
+.depo-nav-btn:hover { background: var(--rose-pale); border-color: var(--rose-l); }
+.depo-dots { display: flex; gap: 8px; }
+.depo-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--border); transition: all .25s; cursor: pointer;
+}
+.depo-dot.active { background: var(--rose); width: 24px; border-radius: 4px; }
+.depo-cta-wrap { text-align: center; margin-top: 40px; }
+@media(max-width:720px){
+  .depo-section { padding: 80px 0 60px; }
+  .depo-carousel { gap: 16px; padding-left: 0; }
+  .depo-phone { flex: 0 0 88vw; min-width: 280px; max-width: 340px; }
+}
+
 </style>
 </head>
 <body>
@@ -1896,6 +2027,192 @@ body.checkout-open{ overflow:hidden; }
         </p>
         <div class="garantia-seal">🛡️ Garantia incondicional de 7 dias</div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── DEPOIMENTOS WHATSAPP ─── -->
+<section class="depo-section" id="depoimentos">
+  <div class="container">
+    <div class="depo-header">
+      <div class="section-label" style="justify-content:center;">
+        <span class="section-label-line"></span>
+        RESULTADOS REAIS
+        <span class="section-label-line"></span>
+      </div>
+      <h2 class="section-title" style="text-align:center;">
+        Elas <span class="rose">voltaram a ser procuradas</span>.
+      </h2>
+      <p class="depo-sub">Mensagens reais de mulheres que aplicaram o Protocolo de Retorno.</p>
+    </div>
+
+    <div class="depo-carousel" id="depoCarousel">
+
+      <!-- DEPOIMENTO 1 - Camila -->
+      <div class="depo-phone">
+        <div class="depo-phone-notch"></div>
+        <div class="depo-wa-header">
+          <div class="depo-wa-back">&#8249;</div>
+          <div class="depo-wa-avatar-wrap"><div class="depo-wa-avatar depo-av1">C</div></div>
+          <div class="depo-wa-contact">
+            <div class="depo-wa-name">Camila</div>
+            <div class="depo-wa-status">online</div>
+          </div>
+          <div class="depo-wa-call">&#128222;</div>
+        </div>
+        <div class="depo-wa-chat">
+          <div class="depo-wa-date">hoje</div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">JOSI!! &#128557;&#128557; ele me mandou mensagem!!<div class="depo-wa-meta"><span>09:41</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-me">
+            <div class="depo-wa-bubble depo-bubble-me">NOSSA!! O que ele disse??<div class="depo-wa-meta"><span>09:41</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">"saudade de vc, posso te ligar?" MEU DEUS eu tremi toda kkkk<div class="depo-wa-meta"><span>09:42</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">Faz 2 semanas que ele n&#227;o falava comigo e eu seguindo o protocolo direitinho... no dia 6 ele me procurou &#129802;<div class="depo-wa-meta"><span>09:42</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-me">
+            <div class="depo-wa-bubble depo-bubble-me">Camila!! &#129401;&#129401; Seguiu certinho o sil&#234;ncio do dia 3?<div class="depo-wa-meta"><span>09:43</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">Sim!! Foi a parte mais dif&#237;cil mas eu n&#227;o mandei NADA e foi exatamente isso que fez ele sentir minha falta &#128149; seu protocolo salvou minha vida juro<div class="depo-wa-meta"><span>09:44</span></div></div>
+          </div>
+        </div>
+        <div class="depo-wa-input-bar">
+          <div class="depo-wa-emoji">&#128522;</div>
+          <div class="depo-wa-input-fake">Mensagem</div>
+          <div class="depo-wa-mic">&#127908;</div>
+        </div>
+      </div>
+
+      <!-- DEPOIMENTO 2 - Raquel -->
+      <div class="depo-phone">
+        <div class="depo-phone-notch"></div>
+        <div class="depo-wa-header">
+          <div class="depo-wa-back">&#8249;</div>
+          <div class="depo-wa-avatar-wrap"><div class="depo-wa-avatar depo-av2">R</div></div>
+          <div class="depo-wa-contact">
+            <div class="depo-wa-name">Raquel</div>
+            <div class="depo-wa-status">online</div>
+          </div>
+          <div class="depo-wa-call">&#128222;</div>
+        </div>
+        <div class="depo-wa-chat">
+          <div class="depo-wa-date">hoje</div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">Josi, preciso te contar &#128591;<div class="depo-wa-meta"><span>14:12</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">Ele me desbloqueou e mandou "desculpa sumir, posso te ver?" EU N&#195;O ACREDITO &#128557;<div class="depo-wa-meta"><span>14:12</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-me">
+            <div class="depo-wa-bubble depo-bubble-me">RAQUEL!! &#129401;&#129401; Meu Deus!! Usou o C&#243;digo do Desbloqueio?<div class="depo-wa-meta"><span>14:13</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">Sim!! Aquele passo 3 foi m&#225;gico kkkk ele desbloqueou no dia seguinte e eu nem precisei mandar mensagem primeiro<div class="depo-wa-meta"><span>14:14</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">Chorei de al&#237;vio. Achei que ia ter que implorar mas foi tudo natural. Obrigada demais &#128149;<div class="depo-wa-meta"><span>14:15</span></div></div>
+          </div>
+        </div>
+        <div class="depo-wa-input-bar">
+          <div class="depo-wa-emoji">&#128522;</div>
+          <div class="depo-wa-input-fake">Mensagem</div>
+          <div class="depo-wa-mic">&#127908;</div>
+        </div>
+      </div>
+
+      <!-- DEPOIMENTO 3 - Fernanda -->
+      <div class="depo-phone">
+        <div class="depo-phone-notch"></div>
+        <div class="depo-wa-header">
+          <div class="depo-wa-back">&#8249;</div>
+          <div class="depo-wa-avatar-wrap"><div class="depo-wa-avatar depo-av3">F</div></div>
+          <div class="depo-wa-contact">
+            <div class="depo-wa-name">Fernanda</div>
+            <div class="depo-wa-status">visto por &#250;ltimo hoje &#224;s 15:38</div>
+          </div>
+          <div class="depo-wa-call">&#128222;</div>
+        </div>
+        <div class="depo-wa-chat">
+          <div class="depo-wa-date">ontem</div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">Menina, eu tava desesperada. Fazia 3 semanas que ele tinha sumido, eu tinha mandado um monte de mensagem, ligado, chorado no &#225;udio... tava feio &#128532;<div class="depo-wa-meta"><span>22:07</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-me">
+            <div class="depo-wa-bubble depo-bubble-me">E a&#237;? Come&#231;ou o protocolo?<div class="depo-wa-meta"><span>22:08</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">Sim!! Parei de mandar mensagem no dia 1 e foi a coisa mais dif&#237;cil da minha vida kkkk mas no dia 5 ele me mandou um "oi" do nada<div class="depo-wa-meta"><span>22:09</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">E eu usei a mensagem do dia 6 que vc ensinou... ele t&#225; me ligando todo dia agora &#129317; O sil&#234;ncio funciona demais!!<div class="depo-wa-meta"><span>22:10</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-me">
+            <div class="depo-wa-bubble depo-bubble-me">Fernanda!! &#129401;&#128149; Isso a&#237;! Voc&#234; merecia esse resultado!<div class="depo-wa-meta"><span>22:11</span></div></div>
+          </div>
+        </div>
+        <div class="depo-wa-input-bar">
+          <div class="depo-wa-emoji">&#128522;</div>
+          <div class="depo-wa-input-fake">Mensagem</div>
+          <div class="depo-wa-mic">&#127908;</div>
+        </div>
+      </div>
+
+      <!-- DEPOIMENTO 4 - Amanda -->
+      <div class="depo-phone">
+        <div class="depo-phone-notch"></div>
+        <div class="depo-wa-header">
+          <div class="depo-wa-back">&#8249;</div>
+          <div class="depo-wa-avatar-wrap"><div class="depo-wa-avatar depo-av4">A</div></div>
+          <div class="depo-wa-contact">
+            <div class="depo-wa-name">Amanda</div>
+            <div class="depo-wa-status">online</div>
+          </div>
+          <div class="depo-wa-call">&#128222;</div>
+        </div>
+        <div class="depo-wa-chat">
+          <div class="depo-wa-date">hoje</div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">Josi, n&#227;o sei como te agradecer &#129802;<div class="depo-wa-meta"><span>11:23</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">A gente tava separada h&#225; 2 meses. Eu achei que era o fim. Comecei o protocolo e no dia 7 ele apareceu na minha casa com flores &#127800;<div class="depo-wa-meta"><span>11:24</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-me">
+            <div class="depo-wa-bubble depo-bubble-me">AMANDA!! &#127800; Flores!! Que lindo demais!! Conta tudo!<div class="depo-wa-meta"><span>11:25</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">Ele disse que sentiu minha falta de um jeito que nunca tinha sentido antes. Que o sil&#234;ncio fez ele pensar em tudo que a gente viveu &#128148;&#10132;&#10084;&#65039;<div class="depo-wa-meta"><span>11:26</span></div></div>
+          </div>
+          <div class="depo-wa-msg depo-wa-them">
+            <div class="depo-wa-bubble depo-bubble-them">Melhor investimento da minha vida. Os R$47 mudaram minha hist&#243;ria toda &#128591;&#10024;<div class="depo-wa-meta"><span>11:27</span></div></div>
+          </div>
+        </div>
+        <div class="depo-wa-input-bar">
+          <div class="depo-wa-emoji">&#128522;</div>
+          <div class="depo-wa-input-fake">Mensagem</div>
+          <div class="depo-wa-mic">&#127908;</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Carousel nav -->
+    <div class="depo-nav">
+      <button class="depo-nav-btn" id="depoPrev" aria-label="Anterior">&#8249;</button>
+      <div class="depo-dots" id="depoDots"></div>
+      <button class="depo-nav-btn" id="depoNext" aria-label="Pr&#243;ximo">&#8250;</button>
+    </div>
+
+    <div class="depo-cta-wrap">
+      <button class="btn-primary" onclick="scrollTo2('oferta')">
+        Quero ter essa hist&#243;ria tamb&#233;m &#8594;
+      </button>
     </div>
   </div>
 </section>
@@ -2330,6 +2647,67 @@ document.querySelectorAll('.modal-form input, .modal-form select').forEach(el =>
     }, 350);
   });
 });
+
+
+// ─── DEPOIMENTOS CAROUSEL ───
+(function(){
+  const carousel = document.getElementById('depoCarousel');
+  const dotsWrap = document.getElementById('depoDots');
+  const prevBtn = document.getElementById('depoPrev');
+  const nextBtn = document.getElementById('depoNext');
+  if(!carousel || !dotsWrap) return;
+
+  const phones = carousel.querySelectorAll('.depo-phone');
+  const total = phones.length;
+  let current = 0;
+
+  // Create dots
+  for(let i = 0; i < total; i++){
+    const dot = document.createElement('div');
+    dot.className = 'depo-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  }
+  const dots = dotsWrap.querySelectorAll('.depo-dot');
+
+  function goTo(idx){
+    current = Math.max(0, Math.min(idx, total - 1));
+    phones[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // Update dots on scroll
+  let scrollTimer;
+  carousel.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      const carouselRect = carousel.getBoundingClientRect();
+      const center = carouselRect.left + carouselRect.width / 2;
+      let closest = 0;
+      let minDist = Infinity;
+      phones.forEach((p, i) => {
+        const r = p.getBoundingClientRect();
+        const pCenter = r.left + r.width / 2;
+        const dist = Math.abs(pCenter - center);
+        if(dist < minDist){ minDist = dist; closest = i; }
+      });
+      current = closest;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }, 100);
+  });
+
+  // Auto-scroll
+  let autoInterval = setInterval(() => {
+    goTo(current >= total - 1 ? 0 : current + 1);
+  }, 5000);
+
+  carousel.addEventListener('touchstart', () => clearInterval(autoInterval));
+  carousel.addEventListener('mouseenter', () => clearInterval(autoInterval));
+})();
+
 </script>
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
@@ -2338,4 +2716,4 @@ document.querySelectorAll('.modal-form input, .modal-form select').forEach(el =>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
-</html>
+</html>c
