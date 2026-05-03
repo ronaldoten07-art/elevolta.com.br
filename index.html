@@ -311,9 +311,12 @@ a { color:inherit; text-decoration:none; }
 
 .hero-grid {
   display:grid;
-  grid-template-columns: 1.05fr .95fr;
+  grid-template-columns:1fr;
   gap:56px;
   align-items:center;
+  max-width:700px;
+  margin:0 auto;
+  text-align:center;
 }
 @media(max-width:860px){
   .hero-grid { grid-template-columns:1fr; gap:36px; text-align:center; }
@@ -373,6 +376,7 @@ a { color:inherit; text-decoration:none; }
 .hero-cta-row {
   display:flex; flex-wrap:wrap; gap:12px;
   align-items:center;
+  justify-content:center;
   margin-bottom:24px;
 }
 @media(max-width:860px){ .hero-cta-row { justify-content:center; } }
@@ -929,14 +933,20 @@ a { color:inherit; text-decoration:none; }
 
 .vagas-oferta {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   background: #FEF2F2;
   border: 1.5px solid #FECACA;
-  border-radius: 10px;
-  padding: 12px 18px;
+  border-radius: 14px;
+  padding: 16px 20px;
   margin-bottom: 16px;
+}
+.vagas-oferta-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 1.1rem;
   font-weight: 700;
   color: #DC2626;
@@ -946,6 +956,69 @@ a { color:inherit; text-decoration:none; }
   background: #DC2626;
   animation: pulse 1.5s infinite;
   flex-shrink:0;
+}
+.vagas-countdown-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+.vagas-countdown-bar {
+  flex: 1;
+  height: 8px;
+  background: #FECACA;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.vagas-countdown-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #DC2626, #EF4444);
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+.vagas-countdown-num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #DC2626;
+  min-width: 28px;
+  text-align: center;
+}
+.vagas-countdown-label {
+  font-size: .82rem;
+  font-weight: 600;
+  color: #991B1B;
+  text-align: center;
+  margin-top: 2px;
+}
+.vagas-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+.vagas-timer-block {
+  background: #DC2626;
+  color: #fff;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: .85rem;
+  font-weight: 800;
+  min-width: 32px;
+  text-align: center;
+}
+.vagas-timer-sep {
+  font-size: .85rem;
+  font-weight: 800;
+  color: #DC2626;
+}
+.vagas-timer-label {
+  font-size: .72rem;
+  font-weight: 500;
+  color: #991B1B;
+  margin-top: 2px;
 }
 
 .oferta-includes {
@@ -1678,22 +1751,12 @@ body.checkout-open{ overflow:hidden; }
           <button class="btn-primary" onclick="scrollTo2('oferta')">Quero ele de volta em 7 dias &#8594;</button>
         </div>
 
-        <div class="hero-trust">
+        <div class="hero-trust" style="margin:0 auto;">
           <div class="htrust-item">⭐ +1.200 mulheres atendidas</div>
           <div class="htrust-sep"></div>
           <div class="htrust-item">🎓 11 anos como terapeuta</div>
           <div class="htrust-sep"></div>
           <div class="htrust-item">🛡️ Garantia de 7 dias</div>
-        </div>
-      </div>
-
-      <div class="hero-photo-wrap">
-        <div class="hero-photo">
-          <img src="img/hero.jpg" alt="Especialista em reconquista — Protocolo de Retorno">
-        </div>
-        <div class="hero-badge">
-          <div class="hero-badge-dot"></div>
-          <div class="hero-badge-txt">Atendendo agora · vagas limitadas</div>
         </div>
       </div>
     </div>
@@ -1783,8 +1846,25 @@ body.checkout-open{ overflow:hidden; }
       </div>
 
       <div class="vagas-oferta">
-        <div class="vagas-oferta-dot"></div>
-        &#9888;&#65039; Pre&#231;o promocional &#8212; pode subir a qualquer momento
+        <div class="vagas-oferta-top">
+          <div class="vagas-oferta-dot"></div>
+          &#9888;&#65039; Restam apenas <span id="vagasNum">17</span> vagas com esse pre&#231;o
+        </div>
+        <div class="vagas-countdown-row">
+          <div class="vagas-countdown-bar">
+            <div class="vagas-countdown-fill" id="vagasBar" style="width:85%"></div>
+          </div>
+          <div class="vagas-countdown-num" id="vagasNumBar">17</div>
+        </div>
+        <div class="vagas-countdown-label">Vagas est&#227;o acabando &#8212; pre&#231;o sobe quando chegar a 0</div>
+        <div class="vagas-timer">
+          <div class="vagas-timer-block" id="timerH">02</div>
+          <div class="vagas-timer-sep">:</div>
+          <div class="vagas-timer-block" id="timerM">47</div>
+          <div class="vagas-timer-sep">:</div>
+          <div class="vagas-timer-block" id="timerS">33</div>
+        </div>
+        <div class="vagas-timer-label">Tempo restante com desconto</div>
       </div>
 
       <div class="oferta-includes">
@@ -2408,6 +2488,74 @@ document.querySelectorAll('.modal-form input, .modal-form select').forEach(el =>
   });
 });
 
+
+// ─── VAGAS COUNTDOWN ───
+(function(){
+  const TOTAL_VAGAS = 20;
+  const STORAGE_KEY = 'pr_vagas_state';
+
+  function getState(){
+    try {
+      const s = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      if(s && s.vagas > 0 && s.endTime > Date.now()) return s;
+    } catch(_){}
+    // Initialize: 17 vagas, timer ~2h47m
+    const vagas = 17;
+    const endTime = Date.now() + (2*3600 + 47*60 + 33) * 1000;
+    const state = { vagas, endTime };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    return state;
+  }
+
+  let state = getState();
+
+  // Decrease vagas every 4-8 minutes randomly
+  function scheduleDecrease(){
+    const delay = (4 + Math.random()*4) * 60 * 1000;
+    setTimeout(()=>{
+      if(state.vagas > 1){
+        state.vagas--;
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        updateVagasUI();
+      }
+      scheduleDecrease();
+    }, delay);
+  }
+  scheduleDecrease();
+
+  function updateVagasUI(){
+    const num = state.vagas;
+    const el1 = document.getElementById('vagasNum');
+    const el2 = document.getElementById('vagasNumBar');
+    const bar = document.getElementById('vagasBar');
+    if(el1) el1.textContent = num;
+    if(el2) el2.textContent = num;
+    if(bar) bar.style.width = ((num / TOTAL_VAGAS) * 100) + '%';
+  }
+
+  function updateTimer(){
+    const remaining = Math.max(0, state.endTime - Date.now());
+    const h = Math.floor(remaining / 3600000);
+    const m = Math.floor((remaining % 3600000) / 60000);
+    const s = Math.floor((remaining % 60000) / 1000);
+    const pad = n => String(n).padStart(2,'0');
+    const elH = document.getElementById('timerH');
+    const elM = document.getElementById('timerM');
+    const elS = document.getElementById('timerS');
+    if(elH) elH.textContent = pad(h);
+    if(elM) elM.textContent = pad(m);
+    if(elS) elS.textContent = pad(s);
+    if(remaining <= 0){
+      // Reset timer for another cycle
+      state.endTime = Date.now() + (2*3600 + 30*60) * 1000;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+  }
+
+  updateVagasUI();
+  updateTimer();
+  setInterval(updateTimer, 1000);
+})();
 
 // ─── DEPOIMENTOS CAROUSEL ───
 (function(){
