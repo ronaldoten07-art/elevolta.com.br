@@ -55,7 +55,7 @@ strong, b { font-weight: 800; }
 .pix-desc { font-size: 1.15rem; font-weight: 500; }
 .pix-note { font-size: 1.08rem; font-weight: 500; }
 .success-detail-row { font-size: 1.15rem; font-weight: 500; }
-html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+html { scroll-behavior:auto; -webkit-text-size-adjust:100%; }
 body {
   background: var(--off-white);
   color: var(--ink);
@@ -1021,18 +1021,7 @@ a { color:inherit; text-decoration:none; }
   margin-top: 2px;
 }
 
-.oferta-includes {
-  display:flex; flex-direction:column; gap:10px;
-  margin-bottom:28px;
-  text-align:left;
-}
-.oferta-includes-item {
-  display:flex; align-items:flex-start; gap:12px;
-  font-size: clamp(1.15rem, 3.4vw, 1.3rem);
-  color: var(--ink2);
-  line-height:1.55;
-}
-.oferta-includes-item::before { content:'✓'; color:#DC2626; font-weight:800; flex-shrink:0; }
+/* oferta-includes styles moved to new section below */
 
 .oferta-cta {
   display:block; width:100%;
@@ -1088,6 +1077,132 @@ a { color:inherit; text-decoration:none; }
 }
 .oferta-whatsapp-doubt span {
   line-height: 1.3;
+}
+
+
+/* ─── OFERTA INCLUDES BEAUTIFIED ─── */
+.oferta-includes-header {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--rose-d);
+  margin-bottom: 14px;
+  text-align: left;
+}
+.oferta-includes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+.oferta-includes-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--off-white);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  position: relative;
+  transition: border-color .2s;
+}
+.oferta-includes-item:hover { border-color: #FECACA; }
+.oi-icon {
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+.oi-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+.oi-text strong {
+  font-size: clamp(.95rem, 2.5vw, 1.05rem);
+  color: var(--ink);
+  font-weight: 700;
+  display: block;
+}
+.oi-text span {
+  font-size: clamp(.82rem, 2.2vw, .9rem);
+  color: var(--ink3);
+  font-weight: 500;
+  line-height: 1.5;
+}
+.oferta-bonus-item {
+  border-color: #FCD34D !important;
+  background: linear-gradient(135deg, #FFFBEB, #FEF9E7) !important;
+}
+.oferta-bonus-item .oi-text strong { color: var(--gold-d); }
+.oi-badge-gratis {
+  position: absolute;
+  top: -10px; right: 12px;
+  background: linear-gradient(135deg, #D97706, #F59E0B);
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 3px 10px;
+  box-shadow: 0 4px 12px rgba(217,119,6,.3);
+}
+
+/* ─── WhatsApp DÚVIDA button (logo abaixo do preço) ─── */
+.oferta-wa-doubt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #128C7E, #25D366);
+  color: #fff;
+  border-radius: 12px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: clamp(.92rem, 2.6vw, 1rem);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .2s;
+  box-shadow: 0 8px 22px rgba(37,211,102,.28);
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+.oferta-wa-doubt:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(37,211,102,.38);
+}
+.oferta-wa-doubt svg { flex-shrink: 0; }
+
+
+/* ─── HERO PAIN PILLS ─── */
+.hero-pain-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+.hero-pain-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #FEF2F2;
+  border: 1.5px solid #FECACA;
+  border-radius: 999px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(.82rem, 2.2vw, .9rem);
+  font-weight: 700;
+  color: #991B1B;
+  white-space: nowrap;
 }
 
 /* ─── DESBLOQUEIO ─── */
@@ -1741,22 +1856,33 @@ body.checkout-open{ overflow:hidden; }
     <div class="hero-grid">
       <div class="hero-content">
         <h1 class="hero-h1">
-          Em 7 dias,
-          <span class="accent">ele volta a te procurar.</span>
+          Ele te ignora.
+          <span class="accent">Em 7 dias, ele corre atr&#225;s.</span>
         </h1>
 
-        <p class="hero-sub">O passo a passo que j&#225; ajudou <strong>+1.200 mulheres</strong> a reverter o distanciamento &#8212; <strong>sem implorar, sem cobrar, sem se humilhar</strong>. Criado por Josiane Monteiro, terapeuta com 11 anos de experi&#234;ncia.</p>
+        <p class="hero-sub">Mesmo que ele esteja com outra. Mesmo que te tenha bloqueado. Mesmo que fa&#231;a semanas sem responder. <strong>Voc&#234; n&#227;o est&#225; mais sozinha</strong> &#8212; e existe um jeito de fazer ele voltar a te procurar <strong>sem implorar, sem errar, sem humilha&#231;&#227;o.</strong></p>
+
+        <div class="hero-pain-pills">
+          <div class="hero-pain-pill">&#128683; Ele te ignorando?</div>
+          <div class="hero-pain-pill">&#128148; Sumiu do nada?</div>
+          <div class="hero-pain-pill">&#128683; Est&#225; com outra?</div>
+          <div class="hero-pain-pill">&#128683; Te bloqueou?</div>
+        </div>
+
+        <div class="hero-insight-box">
+          <p>Basta seguir <strong>fielmente, dia a dia</strong>, tudo que o Protocolo manda &#8212; <strong>sem pular etapa, sem errar</strong> &#8212; e ele volta a te procurar. Mais de <strong>+1.200 mulheres</strong> j&#225; provaram isso.</p>
+        </div>
 
         <div class="hero-cta-row">
           <button class="btn-primary" onclick="scrollTo2('oferta')">Quero ele de volta em 7 dias &#8594;</button>
         </div>
 
         <div class="hero-trust" style="margin:0 auto;">
-          <div class="htrust-item">⭐ +1.200 mulheres atendidas</div>
+          <div class="htrust-item">&#11088; +1.200 mulheres atendidas</div>
           <div class="htrust-sep"></div>
-          <div class="htrust-item">🎓 11 anos como terapeuta</div>
+          <div class="htrust-item">&#127891; 11 anos como terapeuta</div>
           <div class="htrust-sep"></div>
-          <div class="htrust-item">🛡️ Garantia de 7 dias</div>
+          <div class="htrust-item">&#128737;&#65039; Garantia de 7 dias</div>
         </div>
       </div>
     </div>
@@ -1770,26 +1896,34 @@ body.checkout-open{ overflow:hidden; }
   <div class="container">
     <div class="section-label">
       <span class="section-label-line"></span>
-      VOCÊ SE RECONHECE AQUI?
+      ISSO TAMBÉM PODE SER VOCÊ
     </div>
     <h2 class="section-title">
-      O silêncio dele <span class="rose">dói diferente</span>, né?
+      Voc&#234; se v&#234; em alguma <span class="rose">dessas situa&#231;&#245;es?</span>
     </h2>
-    <p class="ident-intro">Se voc&#234; se sente assim, <strong>respira</strong> &#8212; existe um jeito de virar esse jogo.</p>
+    <p class="ident-intro">Se voc&#234; se identificou com algum desses cen&#225;rios, <strong>respira</strong> &#8212; nenhum deles &#233; o fim. Existe um protocolo exato pra cada situa&#231;&#227;o. E ele funciona.</p>
 
     <div class="ident-grid">
       <div class="ident-item">
-        <div class="ident-ico">📵</div>
+        <div class="ident-ico">&#128683;</div>
         <div class="ident-txt">Ele <strong>visualiza e n&#227;o responde</strong> &#8212; e voc&#234; fica relendo a &#250;ltima conversa.</div>
       </div>
       <div class="ident-item">
-        <div class="ident-ico">😰</div>
-        <div class="ident-txt">Voc&#234; sente que <strong>j&#225; errou</strong> &#8212; mandou mensagem demais, cobrou, e isso afastou ele ainda mais.</div>
+        <div class="ident-ico">&#128148;</div>
+        <div class="ident-txt">Ele <strong>sumiu do nada</strong> &#8212; sem briga, sem explica&#231;&#227;o, sem nada.</div>
+      </div>
+      <div class="ident-item">
+        <div class="ident-ico">&#128683;</div>
+        <div class="ident-txt">Ele <strong>est&#225; com outra</strong> &#8212; e mesmo assim voc&#234; sente que ainda d&#225; pra reverter.</div>
+      </div>
+      <div class="ident-item">
+        <div class="ident-ico">&#128547;</div>
+        <div class="ident-txt">Voc&#234; <strong>est&#225; bloqueada</strong> &#8212; e n&#227;o sabe como chegar at&#233; ele sem parecer desesperada.</div>
       </div>
     </div>
 
     <div class="ident-reveal">
-      <p>O que parece desinteresse, <strong>&#233; mecanismo de defesa dele</strong>. E existe um jeito de reverter &#8212; em 7 dias.</p>
+      <p>Qualquer que seja o cen&#225;rio, <strong>o protocolo foi criado exatamente pra isso</strong>. Basta seguir fielmente, dia a dia, sem errar &#8212; e ele volta a te procurar <strong>em at&#233; 7 dias</strong>.</p>
     </div>
   </div>
 </section>
@@ -1838,7 +1972,12 @@ body.checkout-open{ overflow:hidden; }
 
       <div class="oferta-price-old">De R$ 197,00</div>
       <div class="oferta-price-now"><small>R$</small>47</div>
-      <div class="oferta-price-info">Pagamento &#250;nico &#183; Acesso imediato &#183; R$ 47 = menos que um jantar fora</div>
+      <div class="oferta-price-info">Pagamento &#250;nico &middot; Acesso imediato</div>
+
+      <a class="oferta-wa-doubt" href="https://wa.me/5524981517067?text=Oi%20Josi%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20Protocolo%20de%20Retorno" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>Tirar d&#250;vida pelo WhatsApp antes de comprar</span>
+      </a>
 
       <div class="ancora-emocional">
         <div class="ancora-emocional-icon">&#128148;</div>
@@ -1867,11 +2006,29 @@ body.checkout-open{ overflow:hidden; }
         <div class="vagas-timer-label">Tempo restante com desconto</div>
       </div>
 
+      <div class="oferta-includes-header">O que voc&#234; recebe:</div>
       <div class="oferta-includes">
-        <div class="oferta-includes-item"><strong>Protocolo completo dia a dia</strong> &#8212; saiba exatamente o que fazer em cada um dos 7 dias</div>
-        <div class="oferta-includes-item"><strong>Mensagens prontas</strong> &#8212; copie e envie no momento certo, sem risco de errar</div>
-        <div class="oferta-includes-item"><strong>Guia do Sil&#234;ncio Estrat&#233;gico</strong> &#8212; quando calar e quando falar pra criar saudade</div>
-        <div class="oferta-includes-item"><strong>Suporte direto pelo WhatsApp</strong> &#8212; d&#250;vida? Eu te ajudo pessoalmente</div>
+        <div class="oferta-includes-item">
+          <div class="oi-icon">📅</div>
+          <div class="oi-text"><strong>Protocolo completo dia a dia</strong><span>Saiba exatamente o que fazer em cada um dos 7 dias &#8212; sem margem pra erro</span></div>
+        </div>
+        <div class="oferta-includes-item">
+          <div class="oi-icon">💬</div>
+          <div class="oi-text"><strong>Mensagens prontas pra copiar</strong><span>Envie no momento certo, com as palavras certas &#8212; sem arrependimento</span></div>
+        </div>
+        <div class="oferta-includes-item">
+          <div class="oi-icon">🤫</div>
+          <div class="oi-text"><strong>Guia do Sil&#234;ncio Estrat&#233;gico</strong><span>Quando calar e quando falar pra criar saudade de verdade</span></div>
+        </div>
+        <div class="oferta-includes-item">
+          <div class="oi-icon">📲</div>
+          <div class="oi-text"><strong>Suporte direto pelo WhatsApp</strong><span>D&#250;vida? Eu te ajudo pessoalmente durante os 7 dias</span></div>
+        </div>
+        <div class="oferta-includes-item oferta-bonus-item">
+          <div class="oi-icon">🎁</div>
+          <div class="oi-text"><strong>GRÁTIS: C&#243;digo do Desbloqueio</strong><span>O m&#233;todo exclusivo pra fazer ele te desbloquear &#8212; mesmo que tenha te bloqueado em tudo</span></div>
+          <div class="oi-badge-gratis">GRÁTIS</div>
+        </div>
       </div>
 
       <button class="oferta-cta" onclick="openCheckoutPage('protocolo')">
@@ -1884,10 +2041,7 @@ body.checkout-open{ overflow:hidden; }
         <span>&#128274; 100% sigiloso</span>
       </div>
 
-      <a class="oferta-whatsapp-doubt" href="https://wa.me/5524981517067?text=Oi%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20Protocolo%20de%20Retorno..." target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span>Est&#225; com d&#250;vida? Fale comigo no WhatsApp</span>
-      </a>
+
     </div>
   </div>
 </section>
@@ -2300,7 +2454,10 @@ function enterSite(target){
 }
 
 function scrollTo2(id){
-  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  var el=document.getElementById(id);
+  if(!el)return;
+  var top=el.getBoundingClientRect().top+window.pageYOffset-10;
+  window.scrollTo({top:top,behavior:'smooth'});
 }
 
 function toggleFaq(el){
@@ -2453,8 +2610,12 @@ function decodeCheckoutTemplate(){
 
 function buildCheckoutHtml(produto){
   const html = decodeCheckoutTemplate();
+  // SVG mockup de produto digital — Protocolo de Retorno
+  const PRODUCT_SVG = `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 260'><defs><linearGradient id='cover' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23991B1B'/><stop offset='50%' stop-color='%23DC2626'/><stop offset='100%' stop-color='%23B91C1C'/></linearGradient><linearGradient id='shine' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23ffffff' stop-opacity='0.18'/><stop offset='100%' stop-color='%23ffffff' stop-opacity='0'/></linearGradient><linearGradient id='gold' x1='0' y1='0' x2='1' y2='0'><stop offset='0' stop-color='%23F59E0B'/><stop offset='50%' stop-color='%23FCD34D'/><stop offset='100%' stop-color='%23F59E0B'/></linearGradient><filter id='shadow'><feDropShadow dx='4' dy='6' stdDeviation='6' flood-color='%23991B1B' flood-opacity='0.35'/></filter></defs><rect x='10' y='8' width='156' height='244' rx='8' fill='%23B91C1C' opacity='0.25' filter='url(%23shadow)'/><rect x='14' y='4' width='156' height='244' rx='8' fill='%23991B1B' opacity='0.4'/><rect x='18' y='0' width='156' height='244' rx='8' fill='url(%23cover)'/><rect x='18' y='0' width='156' height='244' rx='8' fill='url(%23shine)'/><rect x='18' y='0' width='5' height='244' rx='3' fill='%23ffffff' opacity='0.07'/><rect x='26' y='12' width='140' height='1' fill='url(%23gold)' opacity='0.6'/><rect x='26' y='232' width='140' height='1' fill='url(%23gold)' opacity='0.6'/><text x='96' y='40' text-anchor='middle' font-family='Georgia,serif' font-size='9' font-weight='700' letter-spacing='3' fill='%23FCD34D' opacity='0.9'>MÉTODO EXCLUSIVO</text><path d='M96 55 C 78 40, 58 40, 58 56 C 58 72, 78 72, 96 90 C 114 72, 134 72, 134 56 C 134 40, 114 40, 96 55 Z' fill='%23ffffff' opacity='0.15'/><path d='M96 52 C 80 38, 62 38, 62 54 C 62 70, 80 70, 96 88 C 112 70, 130 70, 130 54 C 130 38, 112 38, 96 52 Z' fill='%23ffffff' opacity='0.22'/><path d='M96 50 C 81 37, 65 37, 65 52 C 65 67, 81 67, 96 84 C 111 67, 127 67, 127 52 C 127 37, 111 37, 96 50 Z' fill='%23FCA5A5' opacity='0.5'/><text x='96' y='108' text-anchor='middle' font-family='Georgia,serif' font-size='17' font-weight='900' fill='%23ffffff' letter-spacing='-0.5'>Protocolo</text><text x='96' y='128' text-anchor='middle' font-family='Georgia,serif' font-size='17' font-weight='900' fill='%23ffffff' letter-spacing='-0.5'>de Retorno</text><rect x='46' y='136' width='100' height='2' rx='1' fill='url(%23gold)' opacity='0.8'/><text x='96' y='154' text-anchor='middle' font-family='Arial,sans-serif' font-size='7.5' font-weight='600' fill='%23FECACA' letter-spacing='0.5'>7 dias para ele voltar</text><text x='96' y='166' text-anchor='middle' font-family='Arial,sans-serif' font-size='7.5' font-weight='600' fill='%23FECACA' letter-spacing='0.5'>a te procurar</text><rect x='54' y='178' width='84' height='28' rx='14' fill='%23ffffff' opacity='0.12'/><text x='96' y='196' text-anchor='middle' font-family='Arial,sans-serif' font-size='8' font-weight='800' fill='%23FCD34D' letter-spacing='1'>SEM SUPLICAR</text><text x='96' y='222' text-anchor='middle' font-family='Georgia,serif' font-size='8' font-weight='400' fill='%23FCA5A5' font-style='italic'>Josiane Monteiro</text></svg>`)}`;
+  // Substitui o src da imagem quebrada pelo SVG embutido
+  let patched = html.replace("src=\"img/produto.jpg\"", `src="${PRODUCT_SVG}"`);
   const inject = `<script>window.__CHECKOUT_PRODUCT__=${JSON.stringify(produto)};<\/script>`;
-  return html.replace('<body>', '<body>' + inject);
+  return patched.replace('<body>', '<body>' + inject);
 }
 
 function openCheckoutPage(produto='protocolo'){
@@ -2580,7 +2741,9 @@ document.querySelectorAll('.modal-form input, .modal-form select').forEach(el =>
 
   function goTo(idx){
     current = Math.max(0, Math.min(idx, total - 1));
-    phones[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    var phone = phones[current];
+    var scrollLeft = phone.offsetLeft - (carousel.offsetWidth / 2) + (phone.offsetWidth / 2);
+    carousel.scrollTo({ left: scrollLeft, behavior: 'smooth' });
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
   }
 
