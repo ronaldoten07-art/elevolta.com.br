@@ -286,7 +286,7 @@ a { color:inherit; text-decoration:none; }
 /* ─── HERO — continua o gancho ─── */
 .hero {
   background: linear-gradient(160deg, var(--white) 0%, var(--rose-pale) 50%, var(--rose-soft) 100%);
-  padding: 90px 0 80px;
+  padding: 72px 0 64px;
   position:relative;
   overflow:hidden;
 }
@@ -1205,6 +1205,31 @@ a { color:inherit; text-decoration:none; }
   white-space: nowrap;
 }
 
+
+/* ─── URGENCY STRIP ─── */
+.urgency-strip {
+  background: linear-gradient(135deg, #0F172A, #1E293B);
+  padding: 18px 0;
+  text-align: center;
+}
+.urgency-strip-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,.85);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(.88rem, 2.4vw, 1rem);
+  font-weight: 600;
+}
+.urgency-strip-inner strong { color: #EF4444; font-weight: 800; }
+.urgency-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #EF4444;
+  box-shadow: 0 0 0 4px rgba(239,68,68,.2);
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
 /* ─── DESBLOQUEIO ─── */
 .desbloqueio-section {
   background: linear-gradient(160deg, #0F172A 0%, #1E293B 100%);
@@ -1713,7 +1738,7 @@ body.checkout-open{ overflow:hidden; }
 /* ─── DEPOIMENTOS WHATSAPP ─── */
 .depo-section {
   background: var(--white);
-  padding: 100px 0 80px;
+  padding: 64px 0 72px;
 }
 .depo-header { text-align:center; margin-bottom:48px; }
 .depo-sub {
@@ -1860,7 +1885,7 @@ body.checkout-open{ overflow:hidden; }
           <span class="accent">Em 7 dias, ele corre atr&#225;s.</span>
         </h1>
 
-        <p class="hero-sub">Mesmo que esteja com outra. Mesmo que ele tenha te bloqueado. Mesmo que fa&#231;a semanas sem responder. <strong>Voc&#234; n&#227;o est&#225; mais sozinha</strong> &#8212; e existe um jeito de fazer ele voltar a te procurar <strong>sem implorar, sem errar, sem humilha&#231;&#227;o.</strong></p>
+        <p class="hero-sub">Mesmo que ele esteja com outra. Mesmo que ele te bloqueado. Mesmo que fa&#231;a semanas sem responder. <strong>Voc&#234; n&#227;o est&#225; mais sozinha</strong> &#8212; e existe um jeito de fazer ele voltar a te procurar <strong>sem implorar, sem errar, sem humilha&#231;&#227;o.</strong></p>
 
         <div class="hero-pain-pills">
           <div class="hero-pain-pill">&#128683; Ele te ignorando?</div>
@@ -1891,197 +1916,19 @@ body.checkout-open{ overflow:hidden; }
 
 
 
-<!-- IDENTIFICAÇÃO -->
-<section class="ident-section" id="identificacao">
-  <div class="container">
-    <div class="section-label">
-      <span class="section-label-line"></span>
-      ISSO TAMBÉM ACONTECE COM VOCÊ?
-    </div>
-    <h2 class="section-title">
-      Voc&#234; se v&#234; em alguma <span class="rose">dessas situa&#231;&#245;es?</span>
-    </h2>
-    <p class="ident-intro">Se voc&#234; se identificou com algum desses cen&#225;rios, <strong>respira</strong> &#8212; nenhum deles &#233; o fim. Existe um protocolo exato pra cada situa&#231;&#227;o. E ele funciona.</p>
-
-    <div class="ident-grid">
-      <div class="ident-item">
-        <div class="ident-ico">&#128683;</div>
-        <div class="ident-txt">Ele <strong>visualiza e n&#227;o responde</strong> &#8212; e voc&#234; fica relendo a &#250;ltima conversa.</div>
-      </div>
-      <div class="ident-item">
-        <div class="ident-ico">&#128148;</div>
-        <div class="ident-txt">Ele <strong>sumiu do nada</strong> &#8212; sem briga, sem explica&#231;&#227;o, sem nada.</div>
-      </div>
-      <div class="ident-item">
-        <div class="ident-ico">&#128683;</div>
-        <div class="ident-txt">Ele <strong>est&#225; com outra</strong> &#8212; e mesmo assim voc&#234; sente que ainda d&#225; pra reverter.</div>
-      </div>
-      <div class="ident-item">
-        <div class="ident-ico">&#128547;</div>
-        <div class="ident-txt">Voc&#234; <strong>est&#225; bloqueada</strong> &#8212; e n&#227;o sabe como chegar at&#233; ele sem parecer desesperada.</div>
-      </div>
-    </div>
-
-    <div class="ident-reveal">
-      <p>Qualquer que seja o cen&#225;rio, <strong>o protocolo foi criado exatamente pra isso</strong>. Basta seguir fielmente, dia a dia, sem errar &#8212; e ele volta a te procurar <strong>em at&#233; 7 dias</strong>.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SOLUÇÃO 7 DIAS -->
-<section class="solucao-section" id="solucao">
-  <div class="container">
-    <div class="sol-header">
-      <div class="section-label">
-        <span class="section-label-line"></span>
-        O PROTOCOLO
-      </div>
-      <h2 class="section-title">3 passos. <span class="rose">7 dias.</span> Ele volta.</h2>
-    </div>
-
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-day">Dias 1-2</div>
-        <div class="pillar-title">Silêncio Estratégico</div>
-        <div class="pillar-desc">Voc&#234; para de agir por impulso. <strong>O peso sai do peito.</strong></div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-day">Dias 3-5</div>
-        <div class="pillar-title">Ausência Magnética</div>
-        <div class="pillar-desc">Ele come&#231;a a sentir sua falta. <strong>Voc&#234; volta ao controle.</strong></div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-day">Dias 6-7</div>
-        <div class="pillar-title">O Retorno</div>
-        <div class="pillar-desc"><strong>Ele vem at&#233; voc&#234;</strong> &#8212; sem voc&#234; precisar dar o primeiro passo.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OFERTA -->
-<section class="oferta-section" id="oferta">
-  <div class="container">
-    <div class="oferta-box">
-      <div class="oferta-box-pre">
-        <span class="hero-badge-dot"></span>
-        VAGAS LIMITADAS
-      </div>
-      <div class="oferta-product-name">Protocolo de Retorno</div>
-      <p class="oferta-product-sub">O passo a passo de 7 dias pra ele voltar a te procurar &#8212; <strong>sem implorar, sem humilhar, sem errar</strong>.</p>
-
-      <div class="oferta-price-old">De R$ 197,00</div>
-      <div class="oferta-price-now"><small>R$</small>47</div>
-      <div class="oferta-price-info">Pagamento &#250;nico &middot; Acesso imediato</div>
-
-      <a class="oferta-wa-doubt" href="https://wa.me/5524981517067?text=Oi%20Josi%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20Protocolo%20de%20Retorno" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span>Tirar d&#250;vida pelo WhatsApp antes de comprar</span>
-      </a>
-
-      <div class="ancora-emocional">
-        <div class="ancora-emocional-icon">&#128148;</div>
-        <p>Cada dia que voc&#234; espera, <strong>ele se afasta mais</strong>. Enquanto voc&#234; rel&#234; essa p&#225;gina, outra mulher j&#225; est&#225; aplicando o m&#233;todo. Em 7 dias, <strong>ela vai ter ele de volta</strong>. E voc&#234;?</p>
-      </div>
-
-      <div class="vagas-oferta">
-        <div class="vagas-oferta-top">
-          <div class="vagas-oferta-dot"></div>
-          &#9888;&#65039; Restam apenas <span id="vagasNum">17</span> vagas com esse pre&#231;o
-        </div>
-        <div class="vagas-countdown-row">
-          <div class="vagas-countdown-bar">
-            <div class="vagas-countdown-fill" id="vagasBar" style="width:85%"></div>
-          </div>
-          <div class="vagas-countdown-num" id="vagasNumBar">17</div>
-        </div>
-        <div class="vagas-countdown-label">Vagas est&#227;o acabando &#8212; pre&#231;o sobe quando chegar a 0</div>
-        <div class="vagas-timer">
-          <div class="vagas-timer-block" id="timerH">02</div>
-          <div class="vagas-timer-sep">:</div>
-          <div class="vagas-timer-block" id="timerM">47</div>
-          <div class="vagas-timer-sep">:</div>
-          <div class="vagas-timer-block" id="timerS">33</div>
-        </div>
-        <div class="vagas-timer-label">Tempo restante com desconto</div>
-      </div>
-
-      <div class="oferta-includes-header">O que voc&#234; recebe:</div>
-      <div class="oferta-includes">
-        <div class="oferta-includes-item">
-          <div class="oi-icon">📅</div>
-          <div class="oi-text"><strong>Protocolo completo dia a dia</strong><span>Saiba exatamente o que fazer em cada um dos 7 dias &#8212; sem margem pra erro</span></div>
-        </div>
-        <div class="oferta-includes-item">
-          <div class="oi-icon">💬</div>
-          <div class="oi-text"><strong>Mensagens prontas pra copiar</strong><span>Envie no momento certo, com as palavras certas &#8212; sem arrependimento</span></div>
-        </div>
-        <div class="oferta-includes-item">
-          <div class="oi-icon">🤫</div>
-          <div class="oi-text"><strong>Guia do Sil&#234;ncio Estrat&#233;gico</strong><span>Quando calar e quando falar pra criar saudade de verdade</span></div>
-        </div>
-        <div class="oferta-includes-item">
-          <div class="oi-icon">📲</div>
-          <div class="oi-text"><strong>Suporte direto pelo WhatsApp</strong><span>D&#250;vida? Eu te ajudo pessoalmente durante os 7 dias</span></div>
-        </div>
-        <div class="oferta-includes-item oferta-bonus-item">
-          <div class="oi-icon">🎁</div>
-          <div class="oi-text"><strong>GRÁTIS: C&#243;digo do Desbloqueio</strong><span>O m&#233;todo exclusivo pra fazer ele te desbloquear &#8212; mesmo que tenha te bloqueado em tudo</span></div>
-          <div class="oi-badge-gratis">GRÁTIS</div>
-        </div>
-      </div>
-
-      <button class="oferta-cta" onclick="openCheckoutPage('protocolo')">
-        SIM! Quero ele de volta em 7 dias &#8594;
-      </button>
-
-      <div class="oferta-secure">
-        <span>&#128274; Pagamento seguro</span>
-        <span>&#128737;&#65039; Garantia de 7 dias</span>
-        <span>&#128274; 100% sigiloso</span>
-      </div>
-
-
-    </div>
-  </div>
-</section>
-
-<!-- GARANTIA -->
-<section class="garantia-section">
-  <div class="container">
-    <div style="max-width:600px;margin:0 auto;text-align:center;">
-      <div style="font-size:3.5rem;margin-bottom:16px;">&#128737;&#65039;</div>
-      <div class="section-label" style="justify-content:center;">
-        <span class="section-label-line"></span>
-        MINHA PROMESSA PRA VOC&#202;
-      </div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,3rem);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:18px;">
-        Voc&#234; tem <span style="color:#DC2626;">7 dias</span> pra testar &#8212; o risco &#233; todo meu.
-      </h2>
-      <p style="color:var(--ink2);font-size:clamp(1.1rem,3vw,1.25rem);line-height:1.7;margin-bottom:18px;">
-        Aplique o m&#233;todo por 7 dias. Se n&#227;o te ajudar, <strong>eu devolvo cada centavo</strong> &#8212; sem perguntas, sem burocracia.
-      </p>
-      <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;background:var(--gold-soft);border:1.5px solid var(--gold-pale);border-radius:999px;font-size:.85rem;font-weight:700;color:var(--gold-d);">
-        &#128737;&#65039; Garantia incondicional de 7 dias
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <!-- ─── DEPOIMENTOS WHATSAPP ─── -->
 <section class="depo-section" id="depoimentos">
   <div class="container">
     <div class="depo-header">
       <div class="section-label" style="justify-content:center;">
         <span class="section-label-line"></span>
-        RESULTADOS REAIS
+        ANTES DE QUALQUER COISA — VEJ A ISSO
         <span class="section-label-line"></span>
       </div>
       <h2 class="section-title" style="text-align:center;">
-        Elas <span class="rose">voltaram a ser procuradas</span>.
+        Mulheres que <span class="rose">estavam exatamente onde voc&#234; est&#225;</span>.
       </h2>
-      <p class="depo-sub">Mensagens reais de mulheres que aplicaram o Protocolo de Retorno.</p>
+      <p class="depo-sub">Bloqueada, ignorada, sem resposta. Seguiram o protocolo fielmente &#8212; e olha o resultado:</p>
     </div>
 
     <div class="depo-carousel" id="depoCarousel">
@@ -2218,7 +2065,7 @@ body.checkout-open{ overflow:hidden; }
             <div class="depo-wa-bubble depo-bubble-them">Josi, n&#227;o sei como te agradecer &#129802;<div class="depo-wa-meta"><span>11:23</span></div></div>
           </div>
           <div class="depo-wa-msg depo-wa-them">
-            <div class="depo-wa-bubble depo-bubble-them">A gente tava separada h&#225; 2 meses. Eu achei que era o fim. Comecei o protocolo e no dia 7 ele apareceu na minha casa com flores &#127800;<div class="depo-wa-meta"><span>11:24</span></div></div>
+            <div class="depo-wa-bubble depo-bubble-them">A gente tava separados h&#225; 2 meses. Eu achei que era o fim. Comecei o protocolo e no dia 7 ele apareceu na minha casa com flores &#127800;<div class="depo-wa-meta"><span>11:24</span></div></div>
           </div>
           <div class="depo-wa-msg depo-wa-me">
             <div class="depo-wa-bubble depo-bubble-me">AMANDA!! &#127800; Flores!! Que lindo demais!! Conta tudo!<div class="depo-wa-meta"><span>11:25</span></div></div>
@@ -2248,11 +2095,199 @@ body.checkout-open{ overflow:hidden; }
 
     <div class="depo-cta-wrap">
       <button class="btn-primary" onclick="scrollTo2('oferta')" style="background:linear-gradient(135deg,#B91C1C,#DC2626);box-shadow:0 8px 24px rgba(220,38,38,.32);">
-        Quero ter esse resultado tamb&#233;m &#8594;
+        Quero ele de volta em 7 dias &#8594;
       </button>
     </div>
   </div>
 </section>
+
+<!-- URGÊNCIA STRIP -->
+<div class="urgency-strip">
+  <div class="container">
+    <div class="urgency-strip-inner">
+      <span class="urgency-dot"></span>
+      <span>Voc&#234; viu o resultado delas &#8212; agora entenda <strong>por que funciona</strong> e <strong>como funciona pra voc&#234;</strong>:</span>
+    </div>
+  </div>
+</div>
+
+<!-- IDENTIFICAÇÃO -->
+<section class="ident-section" id="identificacao">
+  <div class="container">
+    <div class="section-label">
+      <span class="section-label-line"></span>
+      AINDA TEM DÚVIDA? VEJ A SE VOCÊ SE RECONHECE
+    </div>
+    <h2 class="section-title">
+      Se voc&#234; est&#225; nessa situa&#231;&#227;o, <span class="rose">o protocolo &#233; pra voc&#234;.</span>
+    </h2>
+    <p class="ident-intro">Se voc&#234; se identificou com algum desses cen&#225;rios, <strong>respira</strong> &#8212; nenhum deles &#233; o fim. Existe um protocolo exato pra cada situa&#231;&#227;o. E ele funciona.</p>
+
+    <div class="ident-grid">
+      <div class="ident-item">
+        <div class="ident-ico">&#128683;</div>
+        <div class="ident-txt">Ele <strong>visualiza e n&#227;o responde</strong> &#8212; e voc&#234; fica relendo a &#250;ltima conversa.</div>
+      </div>
+      <div class="ident-item">
+        <div class="ident-ico">&#128148;</div>
+        <div class="ident-txt">Ele <strong>sumiu do nada</strong> &#8212; sem briga, sem explica&#231;&#227;o, sem nada.</div>
+      </div>
+      <div class="ident-item">
+        <div class="ident-ico">&#128683;</div>
+        <div class="ident-txt">Ele <strong>est&#225; com outra</strong> &#8212; e mesmo assim voc&#234; sente que ainda d&#225; pra reverter.</div>
+      </div>
+      <div class="ident-item">
+        <div class="ident-ico">&#128547;</div>
+        <div class="ident-txt">Voc&#234; <strong>est&#225; bloqueada</strong> &#8212; e n&#227;o sabe como chegar at&#233; ele sem parecer desesperada.</div>
+      </div>
+    </div>
+
+    <div class="ident-reveal">
+      <p>Qualquer que seja o cen&#225;rio, <strong>o protocolo foi criado exatamente pra isso</strong>. Basta seguir fielmente, dia a dia, sem errar &#8212; e ele volta a te procurar <strong>em at&#233; 7 dias</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUÇÃO 7 DIAS -->
+<section class="solucao-section" id="solucao">
+  <div class="container">
+    <div class="sol-header">
+      <div class="section-label">
+        <span class="section-label-line"></span>
+        O PROTOCOLO
+      </div>
+      <h2 class="section-title">3 passos. <span class="rose">7 dias.</span> Ele volta.</h2>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-day">Dias 1-2</div>
+        <div class="pillar-title">Silêncio Estratégico</div>
+        <div class="pillar-desc">Voc&#234; para de agir por impulso. <strong>O peso sai do peito.</strong></div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-day">Dias 3-5</div>
+        <div class="pillar-title">Ausência Magnética</div>
+        <div class="pillar-desc">Ele come&#231;a a sentir sua falta. <strong>Voc&#234; volta ao controle.</strong></div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-day">Dias 6-7</div>
+        <div class="pillar-title">O Retorno</div>
+        <div class="pillar-desc"><strong>Ele vem at&#233; voc&#234;</strong> &#8212; sem voc&#234; precisar dar o primeiro passo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="oferta-section" id="oferta">
+  <div class="container">
+    <div class="oferta-box">
+      <div class="oferta-box-pre">
+        <span class="hero-badge-dot"></span>
+        VAGAS LIMITADAS
+      </div>
+      <div class="oferta-product-name">Protocolo de Retorno</div>
+      <p class="oferta-product-sub">O m&#233;todo dia a dia que <strong>+1.200 mulheres usaram</strong> pra fazer ele voltar a procurar &#8212; mesmo ignorando, mesmo bloqueada, mesmo que ele esteja com outra.</p>
+
+      <div class="oferta-price-old">De R$ 197,00</div>
+      <div class="oferta-price-now"><small>R$</small>47</div>
+      <div class="oferta-price-info">Pagamento &#250;nico &middot; Acesso imediato</div>
+
+      <a class="oferta-wa-doubt" href="https://wa.me/5524981517067?text=Oi%20Josi%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20Protocolo%20de%20Retorno" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>Tirar d&#250;vida pelo WhatsApp antes de comprar</span>
+      </a>
+
+      <div class="ancora-emocional">
+        <div class="ancora-emocional-icon">&#128148;</div>
+        <p>Cada dia que voc&#234; espera, <strong>ele se afasta mais</strong>. Enquanto voc&#234; rel&#234; essa p&#225;gina, outra mulher j&#225; est&#225; aplicando o m&#233;todo. Em 7 dias, <strong>ela vai ter ele de volta</strong>. E voc&#234;?</p>
+      </div>
+
+      <div class="vagas-oferta">
+        <div class="vagas-oferta-top">
+          <div class="vagas-oferta-dot"></div>
+          &#9888;&#65039; Restam apenas <span id="vagasNum">17</span> vagas com esse pre&#231;o
+        </div>
+        <div class="vagas-countdown-row">
+          <div class="vagas-countdown-bar">
+            <div class="vagas-countdown-fill" id="vagasBar" style="width:85%"></div>
+          </div>
+          <div class="vagas-countdown-num" id="vagasNumBar">17</div>
+        </div>
+        <div class="vagas-countdown-label">Vagas est&#227;o acabando &#8212; pre&#231;o sobe quando chegar a 0</div>
+        <div class="vagas-timer">
+          <div class="vagas-timer-block" id="timerH">02</div>
+          <div class="vagas-timer-sep">:</div>
+          <div class="vagas-timer-block" id="timerM">47</div>
+          <div class="vagas-timer-sep">:</div>
+          <div class="vagas-timer-block" id="timerS">33</div>
+        </div>
+        <div class="vagas-timer-label">Tempo restante com desconto</div>
+      </div>
+
+      <div class="oferta-includes-header">O que voc&#234; recebe:</div>
+      <div class="oferta-includes">
+        <div class="oferta-includes-item">
+          <div class="oi-icon">📅</div>
+          <div class="oi-text"><strong>Protocolo completo dia a dia</strong><span>Saiba exatamente o que fazer em cada um dos 7 dias &#8212; sem margem pra erro</span></div>
+        </div>
+        <div class="oferta-includes-item">
+          <div class="oi-icon">💬</div>
+          <div class="oi-text"><strong>Mensagens prontas pra copiar</strong><span>Envie no momento certo, com as palavras certas &#8212; sem arrependimento</span></div>
+        </div>
+        <div class="oferta-includes-item">
+          <div class="oi-icon">🤫</div>
+          <div class="oi-text"><strong>Guia do Sil&#234;ncio Estrat&#233;gico</strong><span>Quando calar e quando falar pra criar saudade de verdade</span></div>
+        </div>
+        <div class="oferta-includes-item">
+          <div class="oi-icon">📲</div>
+          <div class="oi-text"><strong>Suporte direto pelo WhatsApp</strong><span>D&#250;vida? Eu te ajudo pessoalmente durante os 7 dias</span></div>
+        </div>
+        <div class="oferta-includes-item oferta-bonus-item">
+          <div class="oi-icon">🎁</div>
+          <div class="oi-text"><strong>GRÁTIS: C&#243;digo do Desbloqueio</strong><span>O m&#233;todo exclusivo pra fazer ele te desbloquear &#8212; mesmo que tenha te bloqueado em tudo</span></div>
+          <div class="oi-badge-gratis">GRÁTIS</div>
+        </div>
+      </div>
+
+      <button class="oferta-cta" onclick="openCheckoutPage('protocolo')">
+        SIM! Quero ele de volta em 7 dias &#8594;
+      </button>
+
+      <div class="oferta-secure">
+        <span>&#128274; Pagamento seguro</span>
+        <span>&#128737;&#65039; Garantia de 7 dias</span>
+        <span>&#128274; 100% sigiloso</span>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="garantia-section">
+  <div class="container">
+    <div style="max-width:600px;margin:0 auto;text-align:center;">
+      <div style="font-size:3.5rem;margin-bottom:16px;">&#128737;&#65039;</div>
+      <div class="section-label" style="justify-content:center;">
+        <span class="section-label-line"></span>
+        MINHA PROMESSA PRA VOC&#202;
+      </div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,3rem);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:18px;">
+        Voc&#234; tem <span style="color:#DC2626;">7 dias</span> pra testar &#8212; o risco &#233; todo meu.
+      </h2>
+      <p style="color:var(--ink2);font-size:clamp(1.1rem,3vw,1.25rem);line-height:1.7;margin-bottom:18px;">
+        Aplique o m&#233;todo por 7 dias. Se n&#227;o te ajudar, <strong>eu devolvo cada centavo</strong> &#8212; sem perguntas, sem burocracia.
+      </p>
+      <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;background:var(--gold-soft);border:1.5px solid var(--gold-pale);border-radius:999px;font-size:.85rem;font-weight:700;color:var(--gold-d);">
+        &#128737;&#65039; Garantia incondicional de 7 dias
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- FAQ -->
 <section class="faq-section">
@@ -2321,17 +2356,6 @@ body.checkout-open{ overflow:hidden; }
     </div>
   </div>
 </section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-brand">Protocolo de Retorno · Josi</div>
-    <p>© 2026 — Todos os direitos reservados.</p>
-    <p class="footer-disclaimer">
-      Este conteúdo é informativo e não substitui acompanhamento psicológico profissional. Os resultados variam de acordo com a aplicação individual de cada pessoa. Ao adquirir, você concorda com a política de privacidade e termos de uso.
-    </p>
-  </div>
-</footer>
 
 </div><!-- /site -->
 
