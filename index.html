@@ -983,6 +983,40 @@ a { color:inherit; text-decoration:none; }
   color: var(--ink4);
 }
 
+/* WhatsApp doubt button */
+.oferta-whatsapp-doubt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 12px 18px;
+  background: transparent;
+  border: 1.5px dashed var(--border-d);
+  border-radius: 12px;
+  color: var(--ink4);
+  font-size: .88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .25s;
+  text-decoration: none;
+  width: 100%;
+}
+.oferta-whatsapp-doubt:hover {
+  border-color: #25d366;
+  color: #16a34a;
+  background: rgba(37,211,102,.04);
+}
+.oferta-whatsapp-doubt svg {
+  width: 18px;
+  height: 18px;
+  fill: #25d366;
+  flex-shrink: 0;
+}
+.oferta-whatsapp-doubt span {
+  line-height: 1.3;
+}
+
 /* ─── DESBLOQUEIO ─── */
 .desbloqueio-section {
   background: linear-gradient(160deg, #0F172A 0%, #1E293B 100%);
@@ -1638,10 +1672,10 @@ body.checkout-open{ overflow:hidden; }
           <span class="accent">ele volta a te procurar.</span>
         </h1>
 
-        <p class="hero-sub">Um m&#233;todo de <strong>7 dias</strong> pra fazer ele voltar a te procurar &#8212; <strong>sem implorar</strong>. Criado por Josiane Monteiro, terapeuta com 11 anos de experi&#234;ncia.</p>
+        <p class="hero-sub">O passo a passo que j&#225; ajudou <strong>+1.200 mulheres</strong> a reverter o distanciamento &#8212; <strong>sem implorar, sem cobrar, sem se humilhar</strong>. Criado por Josiane Monteiro, terapeuta com 11 anos de experi&#234;ncia.</p>
 
         <div class="hero-cta-row">
-          <button class="btn-primary" onclick="scrollTo2('oferta')">Quero come&#231;ar agora &#8594;</button>
+          <button class="btn-primary" onclick="scrollTo2('oferta')">Quero ele de volta em 7 dias &#8594;</button>
         </div>
 
         <div class="hero-trust">
@@ -1737,31 +1771,31 @@ body.checkout-open{ overflow:hidden; }
         VAGAS LIMITADAS
       </div>
       <div class="oferta-product-name">Protocolo de Retorno</div>
-      <p class="oferta-product-sub">O m&#233;todo que faz ele voltar a te procurar.</p>
+      <p class="oferta-product-sub">O passo a passo de 7 dias pra ele voltar a te procurar &#8212; <strong>sem implorar, sem humilhar, sem errar</strong>.</p>
 
       <div class="oferta-price-old">De R$ 197,00</div>
       <div class="oferta-price-now"><small>R$</small>47</div>
-      <div class="oferta-price-info">Pagamento &#250;nico &#183; Acesso imediato</div>
+      <div class="oferta-price-info">Pagamento &#250;nico &#183; Acesso imediato &#183; R$ 47 = menos que um jantar fora</div>
 
       <div class="ancora-emocional">
         <div class="ancora-emocional-icon">&#128148;</div>
-        <p>Cada dia que voc&#234; espera, <strong>ele se afasta mais</strong>. O Protocolo reverte isso em 7 dias.</p>
+        <p>Cada dia que voc&#234; espera, <strong>ele se afasta mais</strong>. Enquanto voc&#234; rel&#234; essa p&#225;gina, outra mulher j&#225; est&#225; aplicando o m&#233;todo. Em 7 dias, <strong>ela vai ter ele de volta</strong>. E voc&#234;?</p>
       </div>
 
       <div class="vagas-oferta">
         <div class="vagas-oferta-dot"></div>
-        &#9888;&#65039; &#218;ltimas vagas com esse pre&#231;o
+        &#9888;&#65039; Pre&#231;o promocional &#8212; pode subir a qualquer momento
       </div>
 
       <div class="oferta-includes">
-        <div class="oferta-includes-item">Protocolo completo de 7 dias</div>
-        <div class="oferta-includes-item">Mensagens prontas pra cada dia</div>
-        <div class="oferta-includes-item">Guia do Sil&#234;ncio Estrat&#233;gico</div>
-        <div class="oferta-includes-item">Suporte direto pelo WhatsApp</div>
+        <div class="oferta-includes-item"><strong>Protocolo completo dia a dia</strong> &#8212; saiba exatamente o que fazer em cada um dos 7 dias</div>
+        <div class="oferta-includes-item"><strong>Mensagens prontas</strong> &#8212; copie e envie no momento certo, sem risco de errar</div>
+        <div class="oferta-includes-item"><strong>Guia do Sil&#234;ncio Estrat&#233;gico</strong> &#8212; quando calar e quando falar pra criar saudade</div>
+        <div class="oferta-includes-item"><strong>Suporte direto pelo WhatsApp</strong> &#8212; d&#250;vida? Eu te ajudo pessoalmente</div>
       </div>
 
       <button class="oferta-cta" onclick="openCheckoutPage('protocolo')">
-        Quero come&#231;ar agora &#8594;
+        SIM! Quero ele de volta em 7 dias &#8594;
       </button>
 
       <div class="oferta-secure">
@@ -1769,6 +1803,11 @@ body.checkout-open{ overflow:hidden; }
         <span>&#128737;&#65039; Garantia de 7 dias</span>
         <span>&#128274; 100% sigiloso</span>
       </div>
+
+      <a class="oferta-whatsapp-doubt" href="https://wa.me/5524981517067?text=Oi%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20Protocolo%20de%20Retorno..." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>Est&#225; com d&#250;vida? Fale comigo no WhatsApp</span>
+      </a>
     </div>
   </div>
 </section>
@@ -1975,7 +2014,7 @@ body.checkout-open{ overflow:hidden; }
 
     <div class="depo-cta-wrap">
       <button class="btn-primary" onclick="scrollTo2('oferta')" style="background:linear-gradient(135deg,#B91C1C,#DC2626);box-shadow:0 8px 24px rgba(220,38,38,.32);">
-        Quero ter essa hist&#243;ria tamb&#233;m &#8594;
+        Quero ter esse resultado tamb&#233;m &#8594;
       </button>
     </div>
   </div>
@@ -2036,15 +2075,15 @@ body.checkout-open{ overflow:hidden; }
         AGORA &#201; COM VOC&#202;
       </div>
       <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,3rem);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:18px;">
-        Em 7 dias, <span style="color:#DC2626;">tudo pode mudar</span>.
+        Em 7 dias, <span style="color:#DC2626;">ele pode voltar a te procurar</span>.
       </h2>
       <p style="color:var(--ink2);font-size:clamp(1.1rem,3vw,1.25rem);line-height:1.7;margin-bottom:24px;">
-        Voc&#234; pode continuar esperando. Ou pode <strong>come&#231;ar hoje</strong> com um protocolo claro, dia a dia.
+        Voc&#234; pode continuar esperando ele mudar sozinho. Ou pode <strong>come&#231;ar hoje</strong> com um protocolo claro, dia a dia, que j&#225; funcionou com +1.200 mulheres.
       </p>
       <button class="cta-final-btn" onclick="scrollTo2('oferta')" style="background:linear-gradient(135deg,#B91C1C,#DC2626);color:#FFFFFF;border:none;border-radius:14px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.3rem;cursor:pointer;padding:24px 40px;box-shadow:0 10px 30px rgba(220,38,38,.36);">
-        Sim, eu quero come&#231;ar agora &#8594;
+        SIM! Quero ele de volta em 7 dias &#8594;
       </button>
-      <div style="font-size:1rem;font-weight:600;color:var(--ink4);margin-top:14px;">Acesso imediato &#183; Garantia de 7 dias &#183; 100% sigiloso</div>
+      <div style="font-size:1rem;font-weight:600;color:var(--ink4);margin-top:14px;">Acesso imediato &#183; Garantia de 7 dias &#183; R$ 47 = menos que um jantar fora</div>
     </div>
   </div>
 </section>
