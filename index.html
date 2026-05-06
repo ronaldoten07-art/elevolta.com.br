@@ -1989,57 +1989,6 @@ body.checkout-open{ overflow:hidden; }
     <div class="hero-grid">
       <div class="hero-content">
 
-        <!-- ─── TOPO DE AUTORIDADE — SELO + FRASE FORTE ─── -->
-        <div class="authority-top">
-          <div class="authority-seal" aria-hidden="true">
-            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="sealGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#FCD34D"/>
-                  <stop offset="50%" stop-color="#F59E0B"/>
-                  <stop offset="100%" stop-color="#D97706"/>
-                </linearGradient>
-                <linearGradient id="sealInner" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#991B1B"/>
-                  <stop offset="100%" stop-color="#7F1D1D"/>
-                </linearGradient>
-              </defs>
-              <!-- Ribbons atrás -->
-              <path d="M30 85 L18 118 L38 108 L44 96 Z" fill="#991B1B"/>
-              <path d="M90 85 L102 118 L82 108 L76 96 Z" fill="#991B1B"/>
-              <path d="M30 85 L22 112 L36 104 L42 94 Z" fill="#DC2626"/>
-              <path d="M90 85 L98 112 L84 104 L78 94 Z" fill="#DC2626"/>
-              <!-- Estrela serrilhada externa (selo) -->
-              <path d="M60 5 L66 14 L76 10 L78 21 L89 22 L86 33 L95 40 L88 48 L92 59 L81 62 L80 73 L69 71 L63 80 L60 90 L57 80 L51 71 L40 73 L39 62 L28 59 L32 48 L25 40 L34 33 L31 22 L42 21 L44 10 L54 14 Z" fill="url(#sealGrad)" stroke="#B45309" stroke-width="1"/>
-              <!-- Círculo interno -->
-              <circle cx="60" cy="47" r="26" fill="url(#sealInner)" stroke="#FCD34D" stroke-width="2"/>
-              <circle cx="60" cy="47" r="22" fill="none" stroke="#FCD34D" stroke-width="0.8" stroke-dasharray="2 2" opacity="0.6"/>
-              <!-- Check central -->
-              <path d="M49 47 L57 55 L72 39" fill="none" stroke="#FCD34D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-              <!-- Texto superior -->
-              <text x="60" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="6" font-weight="700" fill="#FCD34D" letter-spacing="1.2">MÉTODO</text>
-              <!-- Texto inferior -->
-              <text x="60" y="66" text-anchor="middle" font-family="Georgia, serif" font-size="6" font-weight="700" fill="#FCD34D" letter-spacing="1.2">VALIDADO</text>
-              <!-- +1.200 mulheres -->
-              <text x="60" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="800" fill="#fff" letter-spacing="0.5">+1.200</text>
-            </svg>
-          </div>
-
-          <div class="authority-text">
-            <div class="authority-kicker">
-              <span class="authority-kicker-line"></span>
-              O ÚNICO QUE REALMENTE FUNCIONA
-              <span class="authority-kicker-line"></span>
-            </div>
-            <h2 class="authority-headline">
-              O protocolo que <span class="authority-rose">faz ele voltar de verdade</span>
-            </h2>
-            <p class="authority-sub">
-              Baseado em <strong>padrões reais de comportamento masculino</strong> e na <strong>ativação de gatilhos psicológicos</strong> que fazem ele sentir sua falta — mesmo depois de dias em silêncio.
-            </p>
-          </div>
-        </div>
-
         <h1 class="hero-h1">
           Ele te ignora?
           <span class="accent">Em 7 dias, ele volta a correr atr&#225;s de voc&#234.</span>
@@ -2354,7 +2303,11 @@ body.checkout-open{ overflow:hidden; }
       <div class="oferta-price-now"><small>R$</small>47</div>
       <div class="oferta-price-info">Pagamento &#250;nico &middot; Acesso imediato</div>
 
-      <a class="oferta-wa-doubt" href="https://wa.me/5524981517067?text=Oi%20Dra.Josi%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20Protocolo%20de%20Retorno" target="_blank" rel="noopener">
+      <button class="oferta-cta" onclick="openCheckoutPage('protocolo')" style="margin-top:18px;margin-bottom:0;">
+        SIM! Quero ele de volta em 7 dias &#8594;
+      </button>
+
+      <a class="oferta-wa-doubt" href="https://wa.me/5524981517067?text=Oi%20Dra.Josi%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20o%20Protocolo%20de%20Retorno" target="_blank" rel="noopener" style="margin-top:10px;">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span>Tirar d&#250;vida pelo WhatsApp antes de comprar</span>
       </a>
@@ -2364,26 +2317,18 @@ body.checkout-open{ overflow:hidden; }
         <p>Cada dia que voc&#234; espera, <strong>ele se afasta mais</strong>. Enquanto voc&#234; rel&#234; essa p&#225;gina, outra mulher j&#225; est&#225; aplicando o m&#233;todo. Em 7 dias, <strong>ela vai ter ele de volta</strong>. E voc&#234;?</p>
       </div>
 
-      <div class="vagas-oferta">
+      <!-- ─── TIMER 5 MINUTOS ─── -->
+      <div class="vagas-oferta" id="ofertaTimer">
         <div class="vagas-oferta-top">
-          <div class="vagas-oferta-dot"></div>
-          &#9888;&#65039; Restam apenas <span id="vagasNum">17</span> vagas com esse pre&#231;o
+          <div class="vagas-oferta-dot" style="animation:pulse 1s infinite;"></div>
+          &#9201;&#65039; Esse pre&#231;o expira em:
         </div>
-        <div class="vagas-countdown-row">
-          <div class="vagas-countdown-bar">
-            <div class="vagas-countdown-fill" id="vagasBar" style="width:85%"></div>
-          </div>
-          <div class="vagas-countdown-num" id="vagasNumBar">17</div>
-        </div>
-        <div class="vagas-countdown-label">Vagas est&#227;o acabando &#8212; pre&#231;o sobe quando chegar a 0</div>
-        <div class="vagas-timer">
-          <div class="vagas-timer-block" id="timerH">02</div>
+        <div class="vagas-timer" style="margin:14px 0 8px;">
+          <div class="vagas-timer-block" id="timerM">05</div>
           <div class="vagas-timer-sep">:</div>
-          <div class="vagas-timer-block" id="timerM">47</div>
-          <div class="vagas-timer-sep">:</div>
-          <div class="vagas-timer-block" id="timerS">33</div>
+          <div class="vagas-timer-block" id="timerS">00</div>
         </div>
-        <div class="vagas-timer-label">Tempo restante com desconto</div>
+        <div class="vagas-timer-label" id="timerLabel">Minutos restantes com desconto — n&#227;o perca</div>
       </div>
 
       <div class="oferta-includes-header">O que voc&#234; recebe:</div>
@@ -2834,72 +2779,60 @@ document.querySelectorAll('.modal-form input, .modal-form select').forEach(el =>
 });
 
 
-// ─── VAGAS COUNTDOWN ───
+// ─── TIMER 5 MINUTOS ───
 (function(){
-  const TOTAL_VAGAS = 20;
-  const STORAGE_KEY = 'pr_vagas_state';
+  const STORAGE_KEY = 'pr_offer_timer_end';
+  const DURATION = 5 * 60 * 1000; // 5 minutos em ms
 
-  function getState(){
+  function getEndTime(){
     try {
-      const s = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      if(s && s.vagas > 0 && s.endTime > Date.now()) return s;
+      const stored = parseInt(localStorage.getItem(STORAGE_KEY), 10);
+      if(stored && stored > Date.now()) return stored;
     } catch(_){}
-    // Initialize: 17 vagas, timer ~2h47m
-    const vagas = 17;
-    const endTime = Date.now() + (2*3600 + 47*60 + 33) * 1000;
-    const state = { vagas, endTime };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    return state;
+    const end = Date.now() + DURATION;
+    try { localStorage.setItem(STORAGE_KEY, end); } catch(_){}
+    return end;
   }
 
-  let state = getState();
+  let endTime = getEndTime();
 
-  // Decrease vagas every 4-8 minutes randomly
-  function scheduleDecrease(){
-    const delay = (4 + Math.random()*4) * 60 * 1000;
-    setTimeout(()=>{
-      if(state.vagas > 1){
-        state.vagas--;
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-        updateVagasUI();
-      }
-      scheduleDecrease();
-    }, delay);
-  }
-  scheduleDecrease();
+  function pad(n){ return String(n).padStart(2,'0'); }
 
-  function updateVagasUI(){
-    const num = state.vagas;
-    const el1 = document.getElementById('vagasNum');
-    const el2 = document.getElementById('vagasNumBar');
-    const bar = document.getElementById('vagasBar');
-    if(el1) el1.textContent = num;
-    if(el2) el2.textContent = num;
-    if(bar) bar.style.width = ((num / TOTAL_VAGAS) * 100) + '%';
-  }
-
-  function updateTimer(){
-    const remaining = Math.max(0, state.endTime - Date.now());
-    const h = Math.floor(remaining / 3600000);
-    const m = Math.floor((remaining % 3600000) / 60000);
+  function tick(){
+    const remaining = Math.max(0, endTime - Date.now());
+    const m = Math.floor(remaining / 60000);
     const s = Math.floor((remaining % 60000) / 1000);
-    const pad = n => String(n).padStart(2,'0');
-    const elH = document.getElementById('timerH');
+
     const elM = document.getElementById('timerM');
     const elS = document.getElementById('timerS');
-    if(elH) elH.textContent = pad(h);
+    const label = document.getElementById('timerLabel');
+
     if(elM) elM.textContent = pad(m);
     if(elS) elS.textContent = pad(s);
+
     if(remaining <= 0){
-      // Reset timer for another cycle
-      state.endTime = Date.now() + (2*3600 + 30*60) * 1000;
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      // Reinicia o timer para criar nova urgência
+      endTime = Date.now() + DURATION;
+      try { localStorage.setItem(STORAGE_KEY, endTime); } catch(_){}
+      if(label) label.textContent = 'Desconto renovado — aproveite agora';
+    } else {
+      // Muda texto quando restam menos de 60s
+      if(label){
+        label.textContent = remaining < 60000
+          ? '⚠️ Últimos segundos! Pre\u00e7o sobe j\u00e1'
+          : 'Minutos restantes com desconto \u2014 n\u00e3o perca';
+      }
+      // Pulsa o bloco timer quando < 60s
+      const timerWrap = document.getElementById('ofertaTimer');
+      if(timerWrap){
+        timerWrap.style.borderColor = remaining < 60000 ? '#DC2626' : '';
+        timerWrap.style.boxShadow   = remaining < 60000 ? '0 0 0 2px rgba(220,38,38,.25)' : '';
+      }
     }
   }
 
-  updateVagasUI();
-  updateTimer();
-  setInterval(updateTimer, 1000);
+  tick();
+  setInterval(tick, 1000);
 })();
 
 // ─── DEPOIMENTOS CAROUSEL ───
