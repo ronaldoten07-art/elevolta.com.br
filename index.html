@@ -1942,14 +1942,20 @@ body.checkout-open{ overflow:hidden; }
   align-items: center;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding: 10px 16px;
   background: linear-gradient(90deg, #0F172A 0%, #1A2540 50%, #0F172A 100%);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 90;
   border-bottom: 1px solid rgba(220,38,38,.2);
+  box-shadow: 0 2px 12px rgba(0,0,0,.35);
 }
+/* compensar altura da live-bar fixa */
+.site { padding-top: 40px; }
 .live-bar-item {
   display: flex;
   align-items: center;
@@ -1981,9 +1987,9 @@ body.checkout-open{ overflow:hidden; }
   50%     { box-shadow: 0 0 0 6px rgba(34,197,94,.05); }
 }
 @media(max-width:520px){
-  .live-bar { gap: 12px; padding: 8px 12px; }
-  .live-bar-sep:last-of-type { display: none; }
-  .live-bar-item:last-child { display: none; }
+  .live-bar { gap: 0; padding: 7px 6px; justify-content: space-between; }
+  .live-bar-sep { display: none !important; }
+  .live-bar-item { font-size: .65rem; gap: 4px; flex: 1; justify-content: center; text-align: center; }
 }
 
 /* ─── TOAST PROVA SOCIAL ─── */
@@ -2275,7 +2281,7 @@ body {
     padding: 12px 15px;
   }
   .depo-phone { flex: 0 0 86vw; }
-  .live-bar { gap: 10px; padding: 8px 10px; }
+  .live-bar { gap: 0; padding: 7px 8px; justify-content: space-between; }
   .sp-toast-wrap { display:none; }
   .mobile-sticky-cta { display:block; }
   body { padding-bottom: 88px; }
@@ -2301,7 +2307,23 @@ body {
 }
 
 
-/* ─── MOBILE HOTFIXES — overflow/corte ─── */
+/* ─── DESTAQUE 7 DIAS ─── */
+.badge-7dias {
+  display: inline-block;
+  background: linear-gradient(135deg, #DC2626, #991B1B);
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: .9em;
+  letter-spacing: .02em;
+  padding: 2px 9px 3px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(220,38,38,.35);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* ─── DESTAQUE 7 DIAS ─── */
 html, body {
   width: 100%;
   max-width: 100%;
@@ -2429,13 +2451,16 @@ html, body {
   }
 
   .live-bar {
-    justify-content: center;
-    gap: 8px;
+    justify-content: space-between;
+    gap: 0;
+    padding: 8px 12px;
   }
 
   .live-bar-item {
     text-align: center;
     justify-content: center;
+    flex: 1;
+    font-size: .7rem;
   }
 
   .author-strip {
@@ -2482,13 +2507,18 @@ html, body {
   }
 
   .live-bar {
-    padding: 8px 10px;
+    padding: 7px 6px;
+    gap: 0;
+    justify-content: space-between;
   }
 
   .live-bar-item {
-    width: 100%;
-    flex: 1 1 100%;
-    font-size: .74rem;
+    width: auto;
+    flex: 1;
+    font-size: .63rem;
+    text-align: center;
+    justify-content: center;
+    gap: 4px;
   }
 
   .live-bar-sep {
@@ -2567,7 +2597,7 @@ html, body {
         </div>
 
         <div class="hero-insight-box">
-          <p>Você não precisa adivinhar o próximo passo. Precisa de um <strong>plano claro, simples e fácil de seguir</strong>. Em 7 dias, você entende o que evitar, o que fazer e como parar de afastá-lo por ansiedade.</p>
+          <p>Você não precisa adivinhar o próximo passo. Precisa de um <strong>plano claro, simples e fácil de seguir</strong>. Em <span class="badge-7dias">7 dias</span>, você entende o que evitar, o que fazer e como parar de afastá-lo por ansiedade.</p>
         </div>
 
         <div class="hero-cta-row">
@@ -2579,7 +2609,7 @@ html, body {
           <div class="htrust-sep"></div>
           <div class="htrust-item">📋 Passo a passo prático</div>
           <div class="htrust-sep"></div>
-          <div class="htrust-item">&#128737;&#65039; Garantia de 7 dias</div>
+          <div class="htrust-item">🛡️ Garantia de 7 dias</div>
         </div>
       </div>
     </div>
@@ -2813,7 +2843,7 @@ html, body {
     </div>
 
     <div class="ident-reveal">
-      <p>Qualquer que seja o cenário, <strong>o protocolo organiza seus próximos 7 dias</strong> para que você pare de piorar a situação e comece a agir com mais clareza, presença e estratégia.</p>
+      <p>Qualquer que seja o cenário, <strong>o protocolo organiza seus próximos <span class="badge-7dias">7 dias</span></strong> para que você pare de piorar a situação e comece a agir com mais clareza, presença e estratégia.</p>
     </div>
   </div>
 </section>
@@ -2826,7 +2856,7 @@ html, body {
         <span class="section-label-line"></span>
         O PROTOCOLO
       </div>
-      <h2 class="section-title">O que fazer em <span class="rose">cada etapa dos 7 dias</span>.</h2>
+      <h2 class="section-title">O que fazer em <span class="rose">cada etapa dos <span class="badge-7dias" style="font-size:.75em;vertical-align:middle;">7 dias</span></span>.</h2>
     </div>
 
     <div class="pillars">
@@ -2883,7 +2913,7 @@ html, body {
       <div class="oferta-includes">
         <div class="oferta-includes-item">
           <div class="oi-icon">📅</div>
-          <div class="oi-text"><strong>Protocolo completo dia a dia</strong><span>Saiba exatamente como agir em cada um dos 7 dias, sem improvisar nem sabotar o processo</span></div>
+          <div class="oi-text"><strong>Protocolo completo dia a dia</strong><span>Saiba exatamente como agir em cada um dos <span class="badge-7dias">7 dias</span>, sem improvisar nem sabotar o processo</span></div>
         </div>
         <div class="oferta-includes-item">
           <div class="oi-icon">💬</div>
@@ -2928,7 +2958,7 @@ html, body {
         RISCO ZERO PRA VOCÊ
       </div>
       <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,3rem);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:18px;">
-        Teste por <span style="color:#DC2626;">7 dias</span> com tranquilidade.
+        Teste por 7 dias com tranquilidade.
       </h2>
       <p style="color:var(--ink2);font-size:clamp(1.1rem,3vw,1.25rem);line-height:1.7;margin-bottom:18px;">
         Se você sentir que o material não te ajudou a agir com mais clareza e segurança, <strong>eu devolvo cada centavo</strong> dentro do prazo de garantia.
@@ -3013,7 +3043,7 @@ html, body {
         SE VOCÊ QUER PARAR DE SOFRER NO IMPROVISO
       </div>
       <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,3rem);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:18px;">
-        Comece hoje com <span style="color:#DC2626;">um plano claro para os próximos 7 dias</span>.
+        Comece hoje com <span style="color:#DC2626;">um plano claro para os próximos <span class="badge-7dias">7 dias</span></span>.
       </h2>
       <p style="color:var(--ink2);font-size:clamp(1.1rem,3vw,1.25rem);line-height:1.7;margin-bottom:24px;">
         Por apenas <strong>R$ 47</strong>, você acessa um passo a passo objetivo, mensagens prontas e orientação para agir com mais segurança emocional — sem continuar tentando adivinhar o que fazer.
