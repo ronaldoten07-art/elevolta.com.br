@@ -3119,7 +3119,10 @@ function scrollTo2(id) { var el = document.getElementById(id); if (!el) return; 
 
         function backToData() { showStep('step-data'); }
 
-        function copyPix() { const t = PRODUTOS[currentProduto]; const code = t.pixCode; const btn = document.getElementById(
+        function copyPix() { const t = PRODUTOS[currentProduto]; const code = t.pixCode;
+                // TikTok Purchase event ao copiar Pix
+                try { if (window.ttq) { ttq.track('Purchase', { value: parseFloat((t.valor||'47').replace(/[^\d,]/g,'').replace(',','.')), currency: 'BRL', contents: [{ content_id: currentProduto, content_name: t.nome||currentProduto }] }); } } catch(e) {}
+                const btn = document.getElementById(
                 'copyBtn'); const done = () => { btn.textContent = '✓ Copiado!';
                 btn.style.background = 'var(--terracotta-mid)';
                 setTimeout(() => { btn.textContent = 'Copiar Pix';
@@ -3143,10 +3146,7 @@ function scrollTo2(id) { var el = document.getElementById(id); if (!el) return; 
                 `${t.icon} *Pagamento realizado!*\n\n👤 Nome: ${currentLead.nome}\n📩 ${currentLead.canal}: ${currentLead.contato}\n💳 Valor: ${currentLead.valor} via Pix\n📦 Produto: ${currentLead.produto}\n\nPor favor, confirme meu acesso. 🙏`
                 );
             document.getElementById('sc-wa-btn').href = `https://wa.me/${WA_NUMBER}?text=${waMsg}`;
-            showStep('step-success');
-            // TikTok Purchase Event
-            try { if (window.ttq) { ttq.track('Purchase', { value: parseFloat((currentLead.valor||'47').replace(/[^\d,]/g,'').replace(',','.')), currency: 'BRL', contents: [{ content_id: currentProduto, content_name: currentLead.produto }] }); } } catch(e) {}
-            try { await fetch('https://formspree.io/f/mreonbkg', { method: 'POST',
+            showStep('step-success'); try { await fetch('https://formspree.io/f/mreonbkg', { method: 'POST',
                     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                     body: JSON.stringify({ nome: currentLead.nome, contato: currentLead.contato, canal: currentLead
                             .canal, produto: currentLead.produto, valor: currentLead.valor, pagamento: 'Pix' }) }); } catch
