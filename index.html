@@ -2386,6 +2386,7 @@
     ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
       ttq.load('D8B6HPJC77UBL2TTS6L0');
       ttq.page();
+      try { ttq.track('ViewContent', { content_type: 'product', content_id: 'protocolo', content_name: 'Protocolo de Retorno', currency: 'BRL', value: 47 }); } catch(e) {}
     }(window, document, 'ttq');
     </script>
     <!-- TikTok Pixel Code End -->
@@ -3114,7 +3115,7 @@ function scrollTo2(id) { var el = document.getElementById(id); if (!el) return; 
                     '').trim(), produto: t.prod, valor: t.valor };
             document.getElementById('pix-valor-txt').textContent = t.valorTxt;
         document.getElementById('pix-valor-big').innerHTML = t.valorBig;
-        showStep('step-pix'); }
+        showStep('step-pix'); try { if(window.ttq){ ttq.track('AddPaymentInfo', { content_id: currentProduto, content_name: currentLead ? currentLead.produto : currentProduto, currency: 'BRL', value: currentLead ? parseFloat((currentLead.valor||'47').replace(/[^\d,]/g,'').replace(',','.')) : 47 }); } } catch(e) {} }
 
         function backToData() { showStep('step-data'); }
 
@@ -3169,7 +3170,8 @@ function scrollTo2(id) { var el = document.getElementById(id); if (!el) return; 
             frame.srcdoc = buildCheckoutHtml(produto);
             overlay.classList.add('show');
             overlay.setAttribute('aria-hidden', 'false');
-            document.body.classList.add('checkout-open'); }
+            document.body.classList.add('checkout-open');
+            const _t = PRODUTOS[produto]; try { if(window.ttq){ ttq.track('InitiateCheckout', { content_id: produto, content_name: _t ? _t.prod : produto, currency: 'BRL', value: _t ? parseFloat((_t.valor||'47').replace(/[^\d,]/g,'').replace(',','.')) : 47 }); } } catch(e) {} }
 
         function closeCheckoutPage() { const overlay = document.getElementById('checkoutOverlay'); const frame = document
                 .getElementById('checkoutFrame');
@@ -6413,7 +6415,7 @@ function scrollTo2(id) { var el = document.getElementById(id); if (!el) return; 
                     '').trim(), produto: t.prod, valor: t.valor };
             document.getElementById('pix-valor-txt').textContent = t.valorTxt;
         document.getElementById('pix-valor-big').innerHTML = t.valorBig;
-        showStep('step-pix'); }
+        showStep('step-pix'); try { if(window.ttq){ ttq.track('AddPaymentInfo', { content_id: currentProduto, content_name: currentLead ? currentLead.produto : currentProduto, currency: 'BRL', value: currentLead ? parseFloat((currentLead.valor||'47').replace(/[^0-9,]/g,'').replace(',','.')) : 47 }); } } catch(e) {} }
 
         function backToData() { showStep('step-data'); }
 
@@ -6468,7 +6470,8 @@ function scrollTo2(id) { var el = document.getElementById(id); if (!el) return; 
             frame.srcdoc = buildCheckoutHtml(produto);
             overlay.classList.add('show');
             overlay.setAttribute('aria-hidden', 'false');
-            document.body.classList.add('checkout-open'); }
+            document.body.classList.add('checkout-open');
+            const _t = PRODUTOS[produto]; try { if(window.ttq){ ttq.track('InitiateCheckout', { content_id: produto, content_name: _t ? _t.prod : produto, currency: 'BRL', value: _t ? parseFloat((_t.valor||'47').replace(/[^0-9,]/g,'').replace(',','.')) : 47 }); } } catch(e) {} }
 
         function closeCheckoutPage() { const overlay = document.getElementById('checkoutOverlay'); const frame = document
                 .getElementById('checkoutFrame');
