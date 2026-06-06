@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<meta name="theme-color" content="#0d2818">
-<title>Código da Reconquista — O método para reverter o silêncio dele</title>
-<meta name="description" content="Ele bloqueou, ignorou ou pediu um tempo? Aprenda o método exato para reverter a situação com estratégia e dignidade.">
+<meta name="theme-color" content="#13202b">
+<title>Código da Reconquista — clareza para quem foi deixada, ignorada ou bloqueada</title>
+<meta name="description" content="Ele bloqueou, ignorou ou pediu um tempo? Um método honesto, criado por um terapeuta de casais, para você recuperar o controle e saber exatamente o que fazer.">
 
 <!-- TikTok Pixel Code Start -->
 <script>
@@ -16,9 +16,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   ttq.load('D8HMJSRC77UB4KU2EIV0');
   ttq.page();
   ttq.track('ViewContent', {
-    contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 36.00 }],
+    contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 57.00 }],
     content_type: 'product',
-    value: 36.00,
+    value: 57.00,
     currency: 'BRL'
   });
 }(window, document, 'ttq');
@@ -27,403 +27,100 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --emerald-deep:#0a2118;
-  --emerald:#103226;
-  --emerald-light:#1a4736;
-  --sage:#3d6b56;
-  --sage-soft:#6b9b85;
-  --gold:#c9a84a;
-  --gold-light:#dcc079;
-  --gold-soft:#e8d9a8;
-  --cream:#f7f2e7;
-  --cream-dim:#d8cfb8;
-  --cream-muted:#a8a08a;
-  --ivory:#fffdf7;
-  --shadow:rgba(7,22,16,0.4);
+  --ink:#13202b;
+  --ink-2:#1a2b38;
+  --ink-3:#22384a;
+  --paper:#f6f1e9;
+  --paper-2:#efe7da;
+  --cream:#fbf7f0;
+  --terra:#c8704f;
+  --terra-soft:#dd9678;
+  --sage:#8aa392;
+  --slate:#5e7588;
+  --muted:#8a9aa6;
+  --ink-text:#2a3a46;
+  /* compat vars usadas pelo checkout (modal escuro sobre página clara) */
+  --emerald-deep:#0e1820; --emerald:#15212b; --emerald-light:#22384a;
+  --gold:#c8704f; --gold-light:#dd9678; --gold-soft:#e8b79a;
+  --cream-dim:#cdd6dc; --cream-muted:#8a9aa6; --ivory:#fbf7f0;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  background:var(--emerald-deep);
-  color:var(--cream);
-  font-family:'Jost',sans-serif;
-  font-weight:400;
-  font-size:18px;
-  line-height:1.7;
-  overflow-x:hidden;
-}
-img{max-width:100%;display:block}
-.serif{font-family:'Fraunces',serif}
+body{background:var(--paper);color:var(--ink-text);font-family:'Outfit',sans-serif;font-weight:400;font-size:18px;line-height:1.7;overflow-x:hidden}
+.serif{font-family:'Newsreader',serif}
+em{font-style:italic}
 
-/* ---------- TOP BAR ---------- */
-.topbar{display:flex;align-items:center;justify-content:center;gap:9px;padding:11px 16px;background:var(--emerald-deep);border-bottom:1px solid rgba(201,168,74,.18)}
-.topbar-tiktok{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(201,168,74,.12);color:var(--gold-light);flex-shrink:0}
-.topbar-name{font-family:'Fraunces',serif;font-size:15px;font-weight:500;letter-spacing:.3px;color:var(--cream);}
+.brandbar{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;background:var(--ink);color:var(--cream)}
+.brandbar .mark{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--terra-soft);display:flex;align-items:center;justify-content:center;color:var(--terra-soft);font-family:'Newsreader',serif;font-style:italic;font-size:17px}
+.brandbar .name{font-family:'Newsreader',serif;font-size:16px;letter-spacing:.3px;font-weight:500}
 
-/* ---------- HERO ---------- */
-.hero{
-  position:relative;
-  padding:56px 22px 48px;
-  text-align:center;
-  background:
-    radial-gradient(ellipse 120% 80% at 50% -10%, rgba(201,168,74,0.12) 0%, transparent 60%),
-    linear-gradient(180deg, var(--emerald) 0%, var(--emerald-deep) 100%);
-  border-bottom:1px solid rgba(201,168,74,0.18);
-  overflow:hidden;
-}
-.hero::after{
-  content:'';
-  position:absolute;
-  bottom:0;left:0;right:0;
-  height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-}
-.eyebrow{
-  display:inline-block;
-  font-size:13px;
-  font-weight:500;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:22px;
-  padding:8px 18px;
-  border:1px solid rgba(201,168,74,0.35);
-  border-radius:100px;
-}
-h1.headline{
-  font-family:'Fraunces',serif;
-  font-weight:500;
-  font-size:clamp(36px,10vw,48px);
-  line-height:1.15;
-  letter-spacing:-0.5px;
-  margin-bottom:20px;
-  color:var(--ivory);
-}
-h1.headline em{
-  font-style:italic;
-  color:var(--gold-light);
-}
-.lead{
-  font-size:19px;
-  color:var(--cream-dim);
-  line-height:1.7;
-  max-width:500px;
-  margin:0 auto 28px;
-}
-.gold-rule{
-  width:42px;height:2px;
-  background:var(--gold);
-  margin:0 auto 26px;
-  border-radius:2px;
-}
-.pain-card{
-  background:rgba(255,253,247,0.04);
-  border:1px solid rgba(201,168,74,0.2);
-  border-radius:16px;
-  padding:22px 22px;
-  max-width:480px;
-  margin:0 auto 28px;
-  text-align:left;
-}
-.pain-card p{
-  font-size:18px;
-  color:var(--cream-dim);
-  font-style:italic;
-  font-family:'Fraunces',serif;
-  font-weight:400;
-  line-height:1.8;
-}
-.pain-card strong{
-  color:var(--gold-light);
-  font-style:normal;
-  font-weight:500;
-}
-.shift{
-  font-size:19px;
-  color:var(--cream-dim);
-  max-width:480px;
-  margin:0 auto 30px;
-}
-.shift strong{color:var(--ivory);font-weight:500}
+.hero{position:relative;background:radial-gradient(ellipse 90% 60% at 50% -10%, rgba(200,112,79,.12) 0%, transparent 60%),linear-gradient(180deg,var(--ink) 0%,var(--ink-2) 100%);color:var(--cream);padding:64px 24px 60px;text-align:center;overflow:hidden}
+.hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--terra),transparent)}
+.hero .kicker{display:inline-block;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra-soft);margin-bottom:24px;font-weight:500}
+.hero h1{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(34px,9vw,52px);line-height:1.12;letter-spacing:-.4px;margin-bottom:22px;color:var(--cream)}
+.hero h1 em{color:var(--terra-soft)}
+.hero .sub{font-size:19px;color:#cdd6dc;line-height:1.65;max-width:540px;margin:0 auto 18px;font-weight:300}
+.hero .sub strong{color:var(--cream);font-weight:500}
+.hero .breathe{font-family:'Newsreader',serif;font-style:italic;font-size:20px;color:var(--terra-soft);margin-top:24px}
+.hero-proof{font-size:14px;color:#cdd6dc;margin-top:18px;letter-spacing:.3px}
 
-/* ---------- CTA BUTTON ---------- */
-.btn{
-  display:block;
-  width:100%;
-  max-width:400px;
-  margin:0 auto;
-  background:linear-gradient(180deg,var(--gold-light),var(--gold));
-  color:var(--emerald-deep);
-  font-family:'Jost',sans-serif;
-  font-size:17px;
-  font-weight:600;
-  letter-spacing:0.8px;
-  text-transform:uppercase;
-  padding:20px 28px;
-  border:none;
-  border-radius:14px;
-  cursor:pointer;
-  text-decoration:none;
-  text-align:center;
-  box-shadow:0 8px 24px rgba(201,168,74,0.25);
-  transition:transform .15s ease, box-shadow .15s ease;
-}
-.btn:active{transform:scale(0.98);box-shadow:0 4px 14px rgba(201,168,74,0.2)}
-.btn-sub{
-  font-size:14px;
-  color:var(--cream-muted);
-  text-align:center;
-  margin-top:14px;
-  letter-spacing:0.3px;
-}
-.hero-proof{
-  font-size:14px;
-  color:var(--cream-dim);
-  text-align:center;
-  margin-top:16px;
-  letter-spacing:.3px;
-}
+section{padding:60px 24px}
+.wrap{max-width:620px;margin:0 auto}
+.eyebrow{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra);font-weight:600;text-align:center;margin-bottom:14px}
+h2{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,6vw,36px);line-height:1.22;letter-spacing:-.3px;text-align:center;color:var(--ink);margin-bottom:18px}
+h2 em{color:var(--terra)}
+.lead{font-size:18px;color:var(--slate);text-align:center;line-height:1.7;max-width:500px;margin:0 auto 40px}
 
-/* ---------- TRUST STRIP ---------- */
-.trust{
-  display:flex;
-  justify-content:center;
-  gap:10px 22px;
-  flex-wrap:wrap;
-  padding:22px 20px;
-  background:var(--emerald-deep);
-  border-bottom:1px solid rgba(255,253,247,0.06);
-}
-.trust span{
-  font-size:14px;
-  color:var(--cream-muted);
-  letter-spacing:0.4px;
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-}
-.trust span::before{
-  content:'';
-  width:7px;height:7px;
-  border-radius:50%;
-  background:var(--gold);
-}
+.mirror{background:var(--cream)}
+.mirror-card{background:var(--paper);border:1px solid var(--paper-2);border-radius:18px;padding:26px;margin-bottom:16px;display:flex;gap:16px;align-items:flex-start}
+.mirror-card .dot{flex-shrink:0;width:38px;height:38px;border-radius:11px;background:var(--ink);color:var(--terra-soft);display:flex;align-items:center;justify-content:center;font-size:18px}
+.mirror-card p{font-size:16.5px;color:var(--ink-text);line-height:1.6}
+.mirror-card p b{color:var(--ink);font-weight:600}
 
-/* ---------- SECTION ---------- */
-.section{padding:54px 22px;max-width:560px;margin:0 auto}
-.label{
-  font-size:13px;
-  font-weight:500;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:var(--gold);
-  text-align:center;
-  margin-bottom:14px;
-}
-h2.title{
-  font-family:'Fraunces',serif;
-  font-weight:500;
-  font-size:clamp(28px,7.5vw,36px);
-  line-height:1.25;
-  text-align:center;
-  color:var(--ivory);
-  margin-bottom:14px;
-  letter-spacing:-0.3px;
-}
-h2.title em{font-style:italic;color:var(--gold-light)}
-.sub{
-  font-size:18px;
-  color:var(--cream-dim);
-  text-align:center;
-  line-height:1.65;
-  max-width:460px;
-  margin:0 auto 40px;
-}
+.turn{background:var(--ink);color:var(--cream)}
+.turn h2{color:var(--cream)} .turn h2 em{color:var(--terra-soft)} .turn .lead{color:#bcc7ce}
+.turn-quote{font-family:'Newsreader',serif;font-size:24px;line-height:1.5;color:var(--cream);text-align:center;max-width:540px;margin:0 auto;font-weight:400}
+.turn-quote em{color:var(--terra-soft)}
 
-/* ---------- MODULES ---------- */
-.modules{display:flex;flex-direction:column;gap:18px}
-.module{
-  background:linear-gradient(155deg, var(--emerald-light) 0%, var(--emerald) 55%, var(--emerald-deep) 100%);
-  border:1px solid rgba(201,168,74,0.22);
-  border-radius:20px;
-  padding:26px 22px 26px 24px;
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 6px 20px rgba(7,22,16,0.35);
-}
-.module::before{
-  content:'';
-  position:absolute;
-  left:0;top:0;bottom:0;
-  width:5px;
-  background:linear-gradient(180deg,var(--gold-light),var(--gold),var(--sage));
-}
-.module.featured{
-  border:1.5px solid var(--gold);
-  background:linear-gradient(155deg, #1d5240 0%, var(--emerald) 55%, var(--emerald-deep) 100%);
-  box-shadow:0 8px 28px rgba(201,168,74,0.18);
-}
-.mod-num{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:14px;
-}
-.mod-num .n{
-  font-family:'Fraunces',serif;
-  font-size:22px;
-  font-weight:600;
-  color:var(--emerald-deep);
-  background:linear-gradient(160deg,var(--gold-light),var(--gold));
-  width:46px;height:46px;
-  border-radius:14px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  box-shadow:0 4px 12px rgba(201,168,74,0.3);
-}
-.mod-num .tag{
-  font-size:13px;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-  color:var(--gold-light);
-  font-weight:500;
-}
-.mod-title{
-  font-family:'Fraunces',serif;
-  font-weight:500;
-  font-size:23px;
-  line-height:1.3;
-  color:var(--ivory);
-  margin-bottom:12px;
-}
-.mod-desc{
-  font-size:17px;
-  color:var(--cream-dim);
-  line-height:1.6;
-}
-.mod-desc strong{color:var(--gold-light);font-weight:500}
+.method{background:linear-gradient(180deg,var(--paper) 0%,var(--paper-2) 100%)}
+.method h2{font-size:clamp(28px,6.5vw,40px)}
+.steps{display:flex;flex-direction:column;gap:14px}
+.step{background:var(--cream);border:1px solid var(--paper-2);border-radius:16px;padding:22px 22px 22px 20px;position:relative;border-left:4px solid var(--terra);box-shadow:0 4px 16px rgba(42,58,70,.06)}
+.step .n{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:9px;background:var(--terra);color:#fff;font-family:'Newsreader',serif;font-style:italic;font-size:15px;font-weight:600;margin-bottom:11px}
+.step h3{font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:var(--ink);margin-bottom:7px;line-height:1.3}
+.step p{font-size:15px;color:var(--slate);line-height:1.55}
 
-/* ---------- GUARANTEE ---------- */
-.guarantee{
-  background:rgba(201,168,74,0.06);
-  border:1px solid rgba(201,168,74,0.22);
-  border-radius:18px;
-  padding:32px 24px;
-  text-align:center;
-  margin-top:34px;
-}
-.guarantee .seal{
-  width:58px;height:58px;
-  margin:0 auto 16px;
-  border-radius:50%;
-  border:2px solid var(--gold);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:26px;
-}
-.guarantee h3{
-  font-family:'Fraunces',serif;
-  font-weight:500;
-  font-size:22px;
-  color:var(--ivory);
-  margin-bottom:12px;
-}
-.guarantee p{
-  font-size:17px;
-  color:var(--cream-dim);
-  line-height:1.65;
-  max-width:400px;
-  margin:0 auto;
-}
+.not{background:var(--cream)}
+.not-grid{display:flex;flex-direction:column;gap:12px;margin-bottom:30px}
+.not-row{display:flex;gap:13px;align-items:flex-start;background:var(--paper);border:1px solid var(--paper-2);border-radius:14px;padding:18px 20px}
+.not-row .x{flex-shrink:0;color:var(--terra);font-size:18px;font-weight:600;line-height:1.5}
+.not-row p{font-size:16px;color:var(--ink-text);line-height:1.55}
+.not-row p b{color:var(--ink);font-weight:600}
+.not-note{font-family:'Newsreader',serif;font-style:italic;font-size:18px;color:var(--slate);text-align:center;line-height:1.6;max-width:480px;margin:0 auto}
 
-/* ---------- FINAL CTA ---------- */
-.final{
-  background:
-    radial-gradient(ellipse 100% 70% at 50% 0%, rgba(201,168,74,0.1) 0%, transparent 60%),
-    linear-gradient(180deg, var(--emerald) 0%, var(--emerald-deep) 100%);
-  border-top:1px solid rgba(201,168,74,0.18);
-  padding:56px 22px 60px;
-  text-align:center;
-}
-.final h2{
-  font-family:'Fraunces',serif;
-  font-weight:500;
-  font-size:clamp(24px,6.5vw,32px);
-  line-height:1.25;
-  color:var(--ivory);
-  margin-bottom:14px;
-}
-.final h2 em{font-style:italic;color:var(--gold-light)}
-.final .sub{margin-bottom:32px}
-.price-box{
-  background:rgba(255,253,247,0.04);
-  border:1px solid rgba(201,168,74,0.25);
-  border-radius:18px;
-  padding:28px 24px;
-  max-width:320px;
-  margin:0 auto 26px;
-}
-.price-from{
-  font-size:13px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--cream-muted);
-  margin-bottom:4px;
-}
-.price-old{
-  font-size:15px;
-  color:var(--cream-dim);
-  margin-bottom:2px;
-}
-.price-old s{color:var(--cream-muted);text-decoration-thickness:1.5px}
-.price-main{
-  font-family:'Fraunces',serif;
-  font-weight:600;
-  font-size:64px;
-  line-height:1;
-  color:var(--ivory);
-  margin:6px 0;
-}
-.price-main .cur{
-  font-size:28px;
-  vertical-align:super;
-  color:var(--gold-light);
-  margin-right:2px;
-}
-.price-note{
-  font-size:14px;
-  color:var(--cream-muted);
-  letter-spacing:0.3px;
-}
-.final-trust{
-  font-size:14px;
-  color:var(--cream-muted);
-  margin-top:18px;
-  line-height:1.9;
-}
-.final-trust b{color:var(--gold-light);font-weight:400}
+.author{background:var(--paper)}
+.author-card{background:var(--cream);border:1px solid var(--paper-2);border-radius:20px;padding:32px 26px;text-align:center}
+.author-photo{width:88px;height:88px;border-radius:50%;margin:0 auto 18px;background:linear-gradient(160deg,var(--ink-3),var(--ink));display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-style:italic;font-size:34px;color:var(--terra-soft);border:2px solid var(--terra-soft)}
+.author-photo-img{width:110px;height:110px;border-radius:50%;margin:0 auto 18px;object-fit:cover;display:block;border:2px solid var(--terra-soft);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+.author-card h3{font-family:'Newsreader',serif;font-weight:500;font-size:22px;color:var(--ink);margin-bottom:4px}
+.author-card .role{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--terra);margin-bottom:16px}
+.author-card p{font-size:16.5px;color:var(--slate);line-height:1.7;margin-bottom:14px}
+.author-creds{display:flex;flex-direction:column;gap:8px;text-align:left;max-width:380px;margin:18px auto 0}
+.author-creds li{list-style:none;display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--ink-text);line-height:1.5}
+.author-creds li::before{content:'✓';color:var(--terra);font-weight:700;flex-shrink:0}
 
-footer{
-  text-align:center;
-  padding:28px 22px 40px;
-  font-size:13px;
-  color:var(--cream-muted);
-  background:var(--emerald-deep);
-  line-height:1.8;
-}
-
-/* ---------- DEPOIMENTOS WHATSAPP ---------- */
-.depo-section{padding:54px 22px;max-width:640px;margin:0 auto}
+.voices{background:var(--cream)}
 .depo-grid{display:flex;flex-direction:column;gap:18px;margin-top:8px}
-.depo-chat{background:#0b141a;border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(7,22,16,.4)}
+.depo-more{display:none;margin-top:18px}
+.depo-more.show{display:flex;animation:coFade .35s ease}
+.depo-toggle{display:block;margin:22px auto 0;background:transparent;border:1.5px solid var(--terra);color:var(--terra);font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;padding:13px 28px;border-radius:50px;cursor:pointer;transition:background .2s,color .2s}
+.depo-toggle:hover{background:var(--terra);color:#fff}
+.depo-chat{background:#0b141a;border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.18)}
 .depo-bar{display:flex;align-items:center;gap:11px;background:#1f2c33;padding:11px 14px}
-.depo-avatar{width:40px;height:40px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:17px;font-family:'Jost',sans-serif}
+.depo-avatar{width:40px;height:40px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:17px;font-family:'Outfit',sans-serif}
 .depo-id{flex:1;display:flex;flex-direction:column;line-height:1.25}
 .depo-id strong{color:#e9edef;font-size:16px;font-weight:500;filter:blur(5px);user-select:none}
 .depo-id span{color:#8696a0;font-size:12.5px}
@@ -433,246 +130,253 @@ footer{
 .depo-msg.in{align-self:flex-start;background:#202c33;color:#e9edef;border-top-left-radius:2px}
 .depo-msg.out{align-self:flex-end;background:#005c4b;color:#e9edef;border-top-right-radius:2px}
 .depo-time{position:absolute;right:9px;bottom:5px;font-size:10.5px;white-space:nowrap}
-.depo-msg.in .depo-time{color:#8696a0}
-.depo-msg.out .depo-time{color:#9fd8c8}
-.depo-disclaimer{text-align:center;font-size:12.5px;color:var(--cream-muted);margin-top:28px;font-style:italic}
+.depo-msg.in .depo-time{color:#8696a0}.depo-msg.out .depo-time{color:#9fd8c8}
+.verify{font-size:13px;color:var(--muted);text-align:center;margin-top:18px;font-style:italic}
 
-/* ---------- DESKTOP ---------- */
+.offer{background:var(--ink);color:var(--cream)}
+.offer h2{color:var(--cream)} .offer .lead{color:#bcc7ce}
+.price-card{background:var(--ink-2);border:1px solid rgba(200,112,79,.3);border-radius:22px;padding:34px 26px;max-width:380px;margin:0 auto;text-align:center}
+.price-card .incl{text-align:left;margin:0 auto 24px;max-width:300px}
+.price-card .incl li{list-style:none;display:flex;gap:10px;align-items:flex-start;font-size:15.5px;color:#cdd6dc;line-height:1.5;margin-bottom:10px}
+.price-card .incl li::before{content:'✓';color:var(--terra-soft);font-weight:600;flex-shrink:0}
+.price-old{font-size:15px;color:var(--muted);margin-bottom:2px}
+.price-old s{color:var(--muted)}
+.price-tag{font-family:'Newsreader',serif;font-size:54px;font-weight:600;color:var(--cream);line-height:1}
+.price-tag .cur{font-size:24px;vertical-align:super;color:var(--terra-soft);margin-right:3px}
+.price-meta{font-size:13.5px;color:var(--muted);margin-top:6px;margin-bottom:24px}
+.cta{display:block;width:100%;background:linear-gradient(180deg,var(--terra-soft),var(--terra));color:#fff;font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;letter-spacing:.4px;padding:18px;border:none;border-radius:14px;cursor:pointer;text-decoration:none;box-shadow:0 10px 28px rgba(200,112,79,.28);transition:transform .15s}
+.cta:active{transform:scale(.98)}
+.guarantee{font-size:14.5px;color:#bcc7ce;text-align:center;margin-top:22px;line-height:1.6;max-width:380px;margin-left:auto;margin-right:auto}
+.guarantee b{color:var(--cream);font-weight:500}
+
+.safety{background:var(--ink-2);padding:26px 24px;border-top:1px solid rgba(255,255,255,.06)}
+.safety-inner{max-width:560px;margin:0 auto;display:flex;gap:14px;align-items:flex-start;background:rgba(138,163,146,.1);border:1px solid rgba(138,163,146,.3);border-radius:14px;padding:18px 20px}
+.safety-inner .heart{font-size:20px;flex-shrink:0}
+.safety-inner p{font-size:14.5px;color:#cdd6dc;line-height:1.6}
+.safety-inner p b{color:var(--cream);font-weight:500}
+
+footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 24px 44px;font-size:13px;line-height:1.8}
+
 @media(min-width:720px){
-  .hero{padding:80px 24px 64px}
-  .section{padding:72px 24px}
-  .final{padding:80px 24px 80px}
-  .depo-section{padding:72px 24px}
-  .depo-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  section{padding:80px 24px}
+  .hero{padding:90px 24px 80px}
+  .steps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 }
+  /* ═══════════ CHECKOUT — esmeralda/dourado ═══════════ */
+  .co-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(7,11,16,.82);backdrop-filter:blur(4px);align-items:flex-start;justify-content:center;padding:20px 14px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .co-overlay.show{display:flex}
+  .co-overlay.kb-open{padding-bottom:48vh}
+  .co-panel{position:relative;width:100%;max-width:440px;margin:auto;background:linear-gradient(168deg,#1a2b38 0%,#0e1820 60%,#0e1820 100%);border:1px solid rgba(200,112,79,.28);border-radius:24px;padding:30px 24px 26px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  @media(max-width:480px){.co-panel{padding:26px 18px 22px;border-radius:20px}}
+  .co-input{scroll-margin-top:80px;scroll-margin-bottom:80px}
+  .co-x{position:absolute;top:14px;right:16px;width:36px;height:36px;border:none;background:rgba(255,255,255,.05);border-radius:50%;color:var(--cream-muted);font-size:1.5rem;line-height:1;cursor:pointer;transition:background .2s}
+  .co-x:hover{background:rgba(255,255,255,.12)}
+
+  .co-head{margin-bottom:20px}
+  .co-secure{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--gold-light);background:rgba(200,112,79,.1);border:1px solid rgba(200,112,79,.25);padding:7px 14px;border-radius:100px;margin-bottom:20px}
+  .co-progress{display:flex;align-items:center;justify-content:center;gap:0}
+  .co-prog-step{display:flex;flex-direction:column;align-items:center;gap:5px;flex-shrink:0}
+  .co-prog-step span{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;font-family:'Newsreader',serif;background:rgba(255,255,255,.06);color:var(--cream-muted);border:1.5px solid rgba(255,255,255,.12);transition:all .3s}
+  .co-prog-step label{font-size:11px;color:var(--cream-muted);letter-spacing:.5px;transition:color .3s}
+  .co-prog-step.on span{background:linear-gradient(160deg,var(--gold-light),var(--gold));color:var(--emerald-deep);border-color:var(--gold)}
+  .co-prog-step.on label{color:var(--gold-light)}
+  .co-prog-step.done span{background:rgba(200,112,79,.2);color:var(--gold-light);border-color:var(--gold)}
+  .co-prog-line{flex:1;height:2px;max-width:46px;background:rgba(255,255,255,.12);margin:0 6px;margin-bottom:18px;transition:background .3s}
+  .co-prog-line.on{background:var(--gold)}
+
+  .co-order{background:rgba(9,14,19,.5);border:1px solid rgba(200,112,79,.18);border-radius:14px;padding:14px 16px;margin-bottom:20px}
+  .co-order-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .co-order-name{font-family:'Newsreader',serif;font-size:17px;font-weight:500;color:var(--ivory)}
+  .co-order-meta{font-size:12.5px;color:var(--cream-muted);margin-top:2px}
+  .co-order-price{font-family:'Newsreader',serif;font-size:26px;font-weight:600;color:var(--gold-light);white-space:nowrap}
+  .co-order-price span{font-size:.55em;vertical-align:baseline}
+
+  .co-step{display:none}
+  .co-step.active{display:block;animation:coFade .3s ease}
+  @keyframes coFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .co-h3{font-family:'Newsreader',serif;font-size:22px;font-weight:500;color:var(--ivory);line-height:1.3;margin-bottom:8px}
+  .co-p{font-size:15px;color:var(--cream-dim);line-height:1.6;margin-bottom:18px}
+  .co-hl{color:var(--gold-light);font-weight:500}
+
+  .co-label{display:block;font-size:13.5px;font-weight:500;color:var(--cream-dim);margin-bottom:7px}
+  .co-input{width:100%;padding:15px 16px;border:1.5px solid rgba(200,112,79,.2);border-radius:13px;background:rgba(9,14,19,.55);color:var(--ivory);font-family:'Outfit',sans-serif;font-size:16px;transition:border-color .2s,box-shadow .2s}
+  .co-input::placeholder{color:var(--cream-muted)}
+  .co-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,112,79,.12)}
+
+  .co-field{display:none;margin-top:14px}
+  .co-field.show{display:block;animation:coFade .25s ease}
+
+  .co-wa-advantage{display:flex;align-items:flex-start;gap:11px;background:rgba(37,211,102,.07);border:1px solid rgba(37,211,102,.28);border-radius:13px;padding:13px 14px;margin-top:16px}
+  .co-wa-advantage-ic{font-size:20px;flex-shrink:0;margin-top:1px}
+  .co-wa-advantage strong{display:block;font-size:14.5px;color:#7fe3a6;font-weight:500;margin-bottom:3px}
+  .co-wa-advantage span{display:block;font-size:13px;color:var(--cream-dim);line-height:1.5}
+
+  .co-err{display:none;font-size:13.5px;color:#ef9a92;margin-top:12px}
+  .co-btn{display:flex;align-items:center;justify-content:center;width:100%;border:none;border-radius:14px;font-family:'Outfit',sans-serif;font-weight:600;font-size:16px;cursor:pointer;transition:transform .15s,box-shadow .2s,opacity .2s}
+  .co-btn-gold{margin-top:18px;padding:17px;background:linear-gradient(180deg,var(--gold-light),var(--gold));color:var(--emerald-deep);letter-spacing:.5px;box-shadow:0 8px 22px rgba(200,112,79,.22)}
+  .co-btn-gold:active{transform:scale(.985)}
+  .co-reassure{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;color:var(--cream-muted);margin-top:13px;text-align:center}
+
+  .co-pix-amount{text-align:center;background:rgba(9,14,19,.5);border:1px solid rgba(200,112,79,.18);border-radius:16px;padding:18px;margin-bottom:14px}
+  .co-pix-big{font-family:'Newsreader',serif;font-size:48px;font-weight:600;color:var(--ivory);line-height:1}
+  .co-pix-big span{font-size:.42em;vertical-align:top;color:var(--gold-light);margin-right:3px;font-weight:500}
+  .co-pix-big i{font-size:.42em;font-style:normal;color:var(--gold-light);font-weight:500}
+  .co-pix-tag{font-size:13px;color:var(--cream-muted);margin-top:6px}
+
+  .co-receiver{display:flex;align-items:center;justify-content:space-between;background:rgba(9,14,19,.4);border:1px solid rgba(200,112,79,.14);border-radius:12px;padding:12px 14px;margin-bottom:12px}
+  .co-receiver-label{font-size:12px;color:var(--cream-muted);text-transform:uppercase;letter-spacing:.05em}
+  .co-receiver-name{font-size:14px;color:var(--cream-dim);font-weight:500}
+
+  .co-howto{font-size:14px;color:var(--cream-dim);line-height:1.55;background:rgba(9,14,19,.35);border:1px dashed rgba(200,112,79,.22);border-radius:12px;padding:12px 14px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .co-howto-num{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:rgba(200,112,79,.18);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px}
+
+  .co-btn-gold#genBtn{margin-top:4px}
+  .co-pix-ready{display:none;margin-top:4px}
+  .co-pix-ready.show{display:block;animation:coFade .3s ease}
+  .co-pix-ready-tag{display:flex;align-items:center;justify-content:center;gap:7px;font-size:13.5px;color:#7fe3a6;margin-bottom:12px}
+  .co-pix-ready-tag span{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:rgba(37,211,102,.18);font-size:11px;font-weight:700}
+  .co-btn-copy{padding:16px;background:rgba(200,112,79,.14);border:1.5px solid var(--gold);color:var(--gold-light);font-size:16px}
+  .co-btn-copy:active{transform:scale(.985)}
+  .co-btn-copy.copied{background:#1d6b4f;border-color:#2e8c68;color:#dffbef}
+  .co-copied-msg{display:none;align-items:center;justify-content:center;gap:7px;text-align:center;font-size:14px;font-weight:500;color:#7fe3a6;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);border-radius:12px;padding:12px 14px;margin-top:12px;line-height:1.45}
+  .co-copied-msg.show{display:flex;animation:coFade .3s ease}
+  .co-btn-confirm{margin-top:18px;padding:17px;background:transparent;border:1.5px solid rgba(200,112,79,.4);color:var(--gold-light);font-size:15px}
+  .co-btn-confirm:active{transform:scale(.985)}
+
+  .co-timer{text-align:center;font-size:14px;font-weight:500;color:var(--gold-light);margin-bottom:8px}
+
+  .co-ghost{width:100%;background:none;border:none;color:var(--cream-muted);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;padding:12px;margin-top:6px;cursor:pointer;transition:color .2s}
+  .co-ghost:hover{color:var(--cream-dim)}
+
+  .co-done-ic{width:64px;height:64px;margin:4px auto 16px;border-radius:50%;background:linear-gradient(160deg,var(--gold-light),var(--gold));color:var(--emerald-deep);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;box-shadow:0 10px 30px rgba(200,112,79,.3)}
+  .co-summary{background:rgba(9,14,19,.45);border:1px solid rgba(200,112,79,.15);border-radius:14px;padding:6px 14px;margin:18px 0}
+  .co-sum-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+  .co-sum-row:last-child{border-bottom:none}
+  .co-sum-row>span{font-size:18px}
+  .co-sum-row div{display:flex;flex-direction:column;line-height:1.3}
+  .co-sum-row b{font-size:11.5px;font-weight:500;color:var(--cream-muted);text-transform:uppercase;letter-spacing:.04em}
+  .co-sum-row div>span{font-size:15px;color:var(--ivory)}
+  .co-wa{display:flex;align-items:center;justify-content:center;gap:11px;width:100%;background:#25d366;color:#062b14;border:none;border-radius:50px;padding:15px 18px;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;transition:transform .15s;box-shadow:0 8px 22px rgba(37,211,102,.25)}
+  .co-wa:active{transform:scale(.985)}
+  .co-wa-ic{font-size:22px}
+  .co-wa div{display:flex;flex-direction:column;text-align:left;line-height:1.25}
+  .co-wa small{font-weight:400;opacity:.8;font-size:12px}
+
 </style>
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <span class="topbar-tiktok" aria-hidden="true">
-      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.05-2.82h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.27 0 .53.04.78.12V9.74a5.7 5.7 0 0 0-.78-.05 5.69 5.69 0 1 0 5.69 5.69V8.91a7.3 7.3 0 0 0 4.27 1.37V7.17a4.28 4.28 0 0 1-3.21-1.35Z"/></svg>
-    </span>
-    <span class="topbar-name">Especialista em reconquista</span>
+  <div class="brandbar">
+    <span class="mark">R</span>
+    <span class="name">Código da Reconquista</span>
   </div>
 
   <!-- HERO -->
   <header class="hero">
-    <span class="eyebrow">Você não merece sofrer em silêncio</span>
-    <h1 class="headline">Ele sumiu. Bloqueou.<br>Ignorou.<br><em>E se eu te disser que dá pra reverter isso a partir de agora?</em></h1>
-    <div class="gold-rule"></div>
-    <p class="lead">Cada minuto sem resposta dói. Você fica olhando pro celular, relendo as mensagens, tentando entender o que aconteceu — com medo de dar o passo errado e perder ele de vez.</p>
-
-    <div class="pain-card">
-      <p>Ele visualizou e <strong>não respondeu.</strong> Pediu um tempo e <strong>sumiu.</strong> Está com outra e <strong>você ainda sente.</strong> Te bloqueou sem explicação. E você não consegue parar de pensar nele.</p>
-    </div>
-
-    <p class="shift">Isso vai mudar agora. Não com drama. Não com desespero.<br><strong>Com estratégia.</strong></p>
-
+    <span class="kicker">Para quem foi deixada, ignorada ou bloqueada</span>
+    <h1>Ele sumiu. Bloqueou. Ignorou.<br><em>E se eu te disser que dá pra reverter isso a partir de agora?</em></h1>
+    <p class="sub">Cada minuto sem resposta dói. Você fica olhando pro celular, relendo as mensagens, tentando entender o que aconteceu — com medo de dar o passo errado e perder ele de vez.</p>
+    <p class="breathe">Respira. Isso vai mudar — com estratégia, não com desespero.</p>
     <p class="hero-proof">💛 +2.000 mulheres já aplicaram</p>
   </header>
 
-  <!-- TRUST STRIP -->
-  <div class="trust">
-    <span>Método passo a passo</span>
-    <span>Scripts prontos</span>
-    <span>Garantia de 7 dias</span>
+  <!-- METHOD / MODULES -->
+  <section class="method">
+    <div class="wrap">
+      <p class="eyebrow">O conteúdo do curso · 8 módulos</p>
+      <h2>Tudo o que você vai<br><em>aprender lá dentro</em></h2>
+      <p class="lead">O silêncio dele não é o fim. Cada módulo te dá o passo certo — o que fazer, não só o que sentir.</p>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><h3>Ele bloqueou — o segredo para ser desbloqueada</h3><p>O bloqueio não é o fim. É uma reação emocional — e existe um protocolo exato para reverter isso sem implorar, sem drama, sem parecer desesperada.</p></div>
+        <div class="step"><span class="n">2</span><h3>Visualizou e não respondeu — o que isso realmente significa e como reverter essa dinâmica</h3><p>Pare de inventar histórias na sua cabeça. Entenda o que está por trás do silêncio — e o movimento certo para fazer ele querer responder.</p></div>
+        <div class="step"><span class="n">3</span><h3>Ele pediu um tempo — como agir sem perder ele de vez</h3><p>Cada movimento errado nessa fase afasta ele mais. Você vai aprender o roteiro exato para esse momento delicado.</p></div>
+        <div class="step"><span class="n">4</span><h3>Ele está com outra — o que fazer (e o que nunca fazer)</h3><p>A situação mais dolorosa de todas — e também a mais reversível quando você age com inteligência emocional.</p></div>
+        <div class="step"><span class="n">5</span><h3>Scripts prontos para cada situação</h3><p>O que escrever. Quando enviar. Como soar segura sem parecer desesperada. Mensagens testadas que reabrem o diálogo.</p></div>
+        <div class="step"><span class="n">6</span><h3>De descartada para desejada — o reposicionamento</h3><p>Como mudar a percepção que ele tem de você — sem fingir, sem joguinho — usando psicologia real de atração.</p></div>
+        <div class="step"><span class="n">7</span><h3>Como fazer ele se arrepender sem dizer uma palavra</h3><p>Presença estratégica. O poder do silêncio calculado. Como despertar o instinto de caça nele de novo.</p></div>
+        <div class="step"><span class="n">8</span><h3>Destruir o ego dele com elegância — sem parecer amarga</h3><p>Ele precisa sentir o que fez. Você vai aprender a virar o jogo com dignidade — de um jeito que ele nunca vai esquecer.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHOR -->
+  <section class="author">
+    <div class="wrap">
+      <p class="eyebrow">Quem está do outro lado</p>
+      <div class="author-card">
+        <img class="author-photo-img" id="authorPhoto" src="data:image/jpeg;base64,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" alt="Ronaldo Cunha" onerror="this.style.display='none';document.getElementById('authorInitial').style.display='flex';">
+        <div class="author-photo" id="authorInitial" style="display:none">R</div>
+        <h3>Ronaldo Cunha</h3>
+        <p class="role">Especialista em relacionamentos</p>
+        <p style="color:var(--terra);font-family:'Newsreader',serif;font-style:italic;font-size:18px;">Eu vou te contar todos os segredos da reconquista, um por um — inclusive os que ninguém tem coragem de falar.</p>
+        <ul class="author-creds">
+          <li>Anos de experiência ajudando mulheres na reconquista</li>
+          <li>Método próprio, testado e aplicado por milhares de mulheres</li>
+          <li>Os segredos que viram o jogo — explicados passo a passo</li>
+          <li>Suporte e acompanhamento direto pelo WhatsApp</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICES (WhatsApp) -->
+  <section class="voices">
+    <div class="wrap">
+      <p class="eyebrow">Quem aplicou, conta</p>
+      <h2>Mensagens reais de quem<br><em>virou o jogo</em></h2>
+      <div class="depo-grid">
+        <div class="depo-chat"><div class="depo-bar"><div class="depo-avatar" style="background:#c66">M</div><div class="depo-id"><strong>Mariana</strong><span>online</span></div><span class="depo-call">📞</span></div><div class="depo-body"><div class="depo-msg in">Tô passada... ele tinha me bloqueado em tudo 😭 segui o módulo 1 certinho e ontem ele me chamou<span class="depo-time">21:14 ✓✓</span></div><div class="depo-msg in">Não acreditei quando vi a mensagem dele aparecer<span class="depo-time">21:14 ✓✓</span></div><div class="depo-msg in">Obrigada de verdade, eu tava destruída 🙏<span class="depo-time">21:15 ✓✓</span></div><div class="depo-msg out">Eu te falei que ia dar certo 🥹 fico muito feliz por você!<span class="depo-time">21:16 ✓✓</span></div></div></div>
+        <div class="depo-chat"><div class="depo-bar"><div class="depo-avatar" style="background:#7a8">J</div><div class="depo-id"><strong>Juliana</strong><span>online</span></div><span class="depo-call">📞</span></div><div class="depo-body"><div class="depo-msg in">ele ficava visualizando e nunca respondia, me deixava no vácuo 😞<span class="depo-time">09:32 ✓✓</span></div><div class="depo-msg in">parei de mandar mensagem desesperada como vc ensinou e em 3 dias ELE me respondeu primeiro 😱<span class="depo-time">09:33 ✓✓</span></div><div class="depo-msg out">Que delícia ler isso! 😍 você teve disciplina, o mérito é seu<span class="depo-time">09:40 ✓✓</span></div></div></div>
+        <div class="depo-chat"><div class="depo-bar"><div class="depo-avatar" style="background:#a78">C</div><div class="depo-id"><strong>Camila</strong><span>visto por último hoje</span></div><span class="depo-call">📞</span></div><div class="depo-body"><div class="depo-msg in">ele tinha pedido um tempo e eu achei que era o fim<span class="depo-time">18:47 ✓✓</span></div><div class="depo-msg in">aprendi a NÃO cometer os erros que eu tava cometendo... fez toda diferença<span class="depo-time">18:48 ✓✓</span></div><div class="depo-msg in">esse fim de semana a gente se viu e foi como antes ❤️ obrigada<span class="depo-time">18:48 ✓✓</span></div><div class="depo-msg out">Que lindo 🥰 você merece toda essa felicidade, viu<span class="depo-time">18:55 ✓✓</span></div></div></div>
+      </div>
+
+      <div class="depo-grid depo-more" id="moreDepo">
+        <div class="depo-chat"><div class="depo-bar"><div class="depo-avatar" style="background:#b97">A</div><div class="depo-id"><strong>Aline</strong><span>online</span></div><span class="depo-call">📞</span></div><div class="depo-body"><div class="depo-msg in">o melhor é q eu reconquistei ele SEM perder minha dignidade<span class="depo-time">20:09 ✓✓</span></div><div class="depo-msg in">parei de implorar, voltei a me valorizar e ele percebeu<span class="depo-time">20:10 ✓✓</span></div><div class="depo-msg out">É exatamente isso 💛 obrigado pela confiança<span class="depo-time">20:18 ✓✓</span></div></div></div>
+        <div class="depo-chat"><div class="depo-bar"><div class="depo-avatar" style="background:#69a">B</div><div class="depo-id"><strong>Beatriz</strong><span>online</span></div><span class="depo-call">📞</span></div><div class="depo-body"><div class="depo-msg in">ele tinha sumido fazia 2 semanas, eu tava sem chão<span class="depo-time">15:20 ✓✓</span></div><div class="depo-msg in">apliquei o que vc ensina e ontem ele mandou "saudades" 🥹<span class="depo-time">15:21 ✓✓</span></div><div class="depo-msg out">Que notícia linda 😍 agora segue firme no que aprendeu<span class="depo-time">15:30 ✓✓</span></div></div></div>
+        <div class="depo-chat"><div class="depo-bar"><div class="depo-avatar" style="background:#a86">R</div><div class="depo-id"><strong>Renata</strong><span>online</span></div><span class="depo-call">📞</span></div><div class="depo-body"><div class="depo-msg in">comprei meio desconfiada, achei q era mais um golpe<span class="depo-time">11:02 ✓✓</span></div><div class="depo-msg in">mas é muito conteúdo de verdade, mudou minha cabeça<span class="depo-time">11:03 ✓✓</span></div><div class="depo-msg in">valeu cada centavo<span class="depo-time">11:03 ✓✓</span></div><div class="depo-msg out">Fico muito feliz que viu valor 🙏<span class="depo-time">11:12 ✓✓</span></div></div></div>
+        <div class="depo-chat"><div class="depo-bar"><div class="depo-avatar" style="background:#8a7">L</div><div class="depo-id"><strong>Letícia</strong><span>visto por último hoje</span></div><span class="depo-call">📞</span></div><div class="depo-body"><div class="depo-msg in">o módulo dos scripts é ouro puro<span class="depo-time">22:40 ✓✓</span></div><div class="depo-msg in">eu nunca sabia a hora certa de responder, agora sei<span class="depo-time">22:41 ✓✓</span></div><div class="depo-msg out">É a parte que mais transforma mesmo 💬<span class="depo-time">22:49 ✓✓</span></div></div></div>
+        <div class="depo-chat"><div class="depo-bar"><div class="depo-avatar" style="background:#96a">P</div><div class="depo-id"><strong>Priscila</strong><span>online</span></div><span class="depo-call">📞</span></div><div class="depo-body"><div class="depo-msg in">a parte de parar de parecer desesperada me abriu os olhos<span class="depo-time">08:15 ✓✓</span></div><div class="depo-msg in">eu tava fazendo tudo errado sem perceber 😬<span class="depo-time">08:15 ✓✓</span></div><div class="depo-msg out">Acontece com quase todo mundo, o importante é corrigir 💪<span class="depo-time">08:22 ✓✓</span></div></div></div>
+        <div class="depo-chat"><div class="depo-bar"><div class="depo-avatar" style="background:#7aa">T</div><div class="depo-id"><strong>Tatiane</strong><span>online</span></div><span class="depo-call">📞</span></div><div class="depo-body"><div class="depo-msg in">independente de ele voltar ou não, eu me sinto outra pessoa<span class="depo-time">19:33 ✓✓</span></div><div class="depo-msg in">recuperei minha paz e meu valor, isso não tem preço<span class="depo-time">19:34 ✓✓</span></div><div class="depo-msg out">Isso é o mais importante de tudo 🥹💛<span class="depo-time">19:40 ✓✓</span></div></div></div>
+      </div>
+
+      <button type="button" class="depo-toggle" id="depoToggle" onclick="toggleDepo()">Ver mais relatos &darr;</button>
+      <p class="verify">Relatos de clientes, compartilhados com permissão. Resultados variam de pessoa para pessoa.</p>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="offer" id="comprar">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--terra-soft)">Comece hoje</p>
+      <h2>Dê o seu primeiro<br><em>passo de volta</em></h2>
+      <p class="lead">Acesso imediato ao método completo, no seu tempo, quantas vezes precisar.</p>
+      <div class="price-card">
+        <ul class="incl">
+          <li>Os 8 módulos completos, passo a passo</li>
+          <li>Scripts e mensagens prontas para cada situação</li>
+          <li>Mapa de situações: bloqueio, vácuo, "um tempo", outra pessoa</li>
+          <li>Acesso vitalício e suporte pelo WhatsApp</li>
+        </ul>
+        <p class="price-old">de <s>R$ 97</s> por</p>
+        <div class="price-tag"><span class="cur">R$</span>57</div>
+        <p class="price-meta">Pagamento único · acesso imediato</p>
+        <button type="button" class="cta" onclick="openCheckout()">Quero começar agora</button>
+      </div>
+      <p class="guarantee"><b>Garantia real de 7 dias.</b> Entrou, não fez sentido pra você? Devolvemos 100%, sem perguntas e sem complicação. O risco é todo meu.</p>
+    </div>
+  </section>
+
+  <!-- SAFETY NET -->
+  <div class="safety">
+    <div class="safety-inner">
+      <span class="heart">💛</span>
+      <p><b>Antes de qualquer coisa, cuide de você.</b> Se a dor estiver grande demais, ou se você tiver pensamentos de se machucar, por favor procure ajuda agora: <b>CVV — ligue 188</b> (24h, gratuito e sigiloso). Você importa muito mais do que qualquer relacionamento.</p>
+    </div>
   </div>
 
-  <!-- MODULES -->
-  <section class="section">
-    <p class="label">O que você vai aprender</p>
-    <h2 class="title">Cada módulo foi feito para<br><em>exatamente o que você vive</em></h2>
-    <p class="sub">Nada de teoria vaga. Cada aula te diz o que fazer — não só o que sentir.</p>
-
-    <div class="modules">
-
-      <div class="module featured">
-        <div class="mod-num"><span class="n">1</span><span class="tag">Módulo</span></div>
-        <p class="mod-title">Ele bloqueou — o segredo para ser desbloqueada</p>
-        <p class="mod-desc">O bloqueio não é o fim. É uma reação emocional — e existe um protocolo exato para reverter isso <strong>sem implorar, sem drama, sem parecer desesperada.</strong></p>
-      </div>
-
-      <div class="module">
-        <div class="mod-num"><span class="n">2</span><span class="tag">Módulo</span></div>
-        <p class="mod-title">Visualizou e não respondeu — o que isso realmente significa e como reverter essa dinâmica</p>
-        <p class="mod-desc">Pare de inventar histórias na sua cabeça. Entenda <strong>o que está por trás do silêncio</strong> — e o movimento certo para fazer ele querer responder.</p>
-      </div>
-
-      <div class="module">
-        <div class="mod-num"><span class="n">3</span><span class="tag">Módulo</span></div>
-        <p class="mod-title">Ele pediu um tempo — como agir sem perder ele de vez</p>
-        <p class="mod-desc">Cada movimento errado nessa fase afasta ele mais. Você vai aprender <strong>o roteiro exato</strong> para esse momento delicado.</p>
-      </div>
-
-      <div class="module">
-        <div class="mod-num"><span class="n">4</span><span class="tag">Módulo</span></div>
-        <p class="mod-title">Ele está com outra — o que fazer (e o que nunca fazer)</p>
-        <p class="mod-desc">A situação mais dolorosa de todas — e também a mais reversível quando você <strong>age com inteligência emocional.</strong></p>
-      </div>
-
-      <div class="module">
-        <div class="mod-num"><span class="n">5</span><span class="tag">Módulo</span></div>
-        <p class="mod-title">Scripts prontos para cada situação</p>
-        <p class="mod-desc">O que escrever. Quando enviar. Como soar segura sem parecer desesperada. <strong>Mensagens testadas</strong> que reabrem o diálogo.</p>
-      </div>
-
-      <div class="module">
-        <div class="mod-num"><span class="n">6</span><span class="tag">Módulo</span></div>
-        <p class="mod-title">De descartada para desejada — o reposicionamento</p>
-        <p class="mod-desc">Como mudar a percepção que ele tem de você — <strong>sem fingir, sem joguinho</strong> — usando psicologia real de atração.</p>
-      </div>
-
-      <div class="module">
-        <div class="mod-num"><span class="n">7</span><span class="tag">Módulo</span></div>
-        <p class="mod-title">Como fazer ele se arrepender sem dizer uma palavra</p>
-        <p class="mod-desc">Presença estratégica. O poder do silêncio calculado. <strong>Como despertar o instinto de caça</strong> nele de novo.</p>
-      </div>
-
-      <div class="module">
-        <div class="mod-num"><span class="n">8</span><span class="tag">Módulo</span></div>
-        <p class="mod-title">Destruir o ego dele com elegância — sem parecer amarga</p>
-        <p class="mod-desc">Ele precisa sentir o que fez. Você vai aprender a <strong>virar o jogo com dignidade</strong> — de um jeito que ele nunca vai esquecer.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="final" id="comprar">
-    <p class="label">Sua decisão</p>
-    <h2>Você pode continuar esperando.<br><em>Ou pode agir agora.</em></h2>
-    <p class="sub">Cada dia sem estratégia é um dia que ele esquece mais de você. O Código da Reconquista te dá exatamente o que fazer — a partir de hoje.</p>
-
-    <div class="price-box">
-      <p class="price-from">Acesso completo</p>
-      <p class="price-old">de <s>R$ 67</s> por</p>
-      <p class="price-main"><span class="cur">R$</span>36</p>
-      <p class="price-note">Pagamento único · Acesso imediato</p>
-    </div>
-
-    <button type="button" class="btn" onclick="openCheckout()">Quero meu acesso agora</button>
-
-    <p class="final-trust">
-      <b>✓</b> Acesso imediato &nbsp;&nbsp; <b>✓</b> Garantia de 7 dias<br>
-      <b>✓</b> 100% digital &nbsp;&nbsp; <b>✓</b> Pagamento seguro via PIX
-    </p>
-
-    <!-- GUARANTEE (após a oferta) -->
-    <div class="guarantee" style="max-width:520px;margin:40px auto 0;">
-      <div class="seal">🛡️</div>
-      <h3>Garantia incondicional de 7 dias</h3>
-      <p>Se você aplicar o método e não sentir nenhuma mudança — ou simplesmente não gostar — devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
-    </div>
-  </section>
-
-  <!-- ═══════════════ DEPOIMENTOS (WhatsApp) ═══════════════ -->
-  <section class="depo-section">
-    <p class="label">Quem aplicou, conta</p>
-    <h2 class="title">Mensagens reais de quem<br><em>virou o jogo</em></h2>
-    <p class="sub">Mulheres que estavam exatamente onde você está agora — e decidiram agir.</p>
-
-    <div class="depo-grid">
-
-      <!-- 1 — bloqueada -->
-      <div class="depo-chat">
-        <div class="depo-bar">
-          <div class="depo-avatar" style="background:#c66">M</div>
-          <div class="depo-id"><strong>Mariana</strong><span>online</span></div>
-          <span class="depo-call">📞</span>
-        </div>
-        <div class="depo-body">
-          <div class="depo-msg in">Tô passada... ele tinha me bloqueado em tudo 😭 segui o módulo 1 certinho e ontem ele me chamou<span class="depo-time">21:14 ✓✓</span></div>
-          <div class="depo-msg in">Não acreditei quando vi a mensagem dele aparecer<span class="depo-time">21:14 ✓✓</span></div>
-          <div class="depo-msg in">Obrigada de verdade, eu tava destruída 🙏<span class="depo-time">21:15 ✓✓</span></div>
-          <div class="depo-msg out">Eu te falei que ia dar certo 🥹 fico muito feliz por você!<span class="depo-time">21:16 ✓✓</span></div>
-        </div>
-      </div>
-
-      <!-- 2 — visualizou e não respondeu -->
-      <div class="depo-chat">
-        <div class="depo-bar">
-          <div class="depo-avatar" style="background:#7a8">J</div>
-          <div class="depo-id"><strong>Juliana</strong><span>online</span></div>
-          <span class="depo-call">📞</span>
-        </div>
-        <div class="depo-body">
-          <div class="depo-msg in">ele ficava visualizando e nunca respondia, me deixava no vácuo 😞<span class="depo-time">09:32 ✓✓</span></div>
-          <div class="depo-msg in">parei de mandar mensagem desesperada como vc ensinou e em 3 dias ELE me respondeu primeiro 😱<span class="depo-time">09:33 ✓✓</span></div>
-          <div class="depo-msg in">funciona mesmo viu<span class="depo-time">09:33 ✓✓</span></div>
-          <div class="depo-msg out">Que delícia ler isso! 😍 você teve disciplina, o mérito é seu<span class="depo-time">09:40 ✓✓</span></div>
-        </div>
-      </div>
-
-      <!-- 3 — pediu um tempo -->
-      <div class="depo-chat">
-        <div class="depo-bar">
-          <div class="depo-avatar" style="background:#a78">C</div>
-          <div class="depo-id"><strong>Camila</strong><span>visto por último hoje</span></div>
-          <span class="depo-call">📞</span>
-        </div>
-        <div class="depo-body">
-          <div class="depo-msg in">ele tinha pedido um tempo e eu achei que era o fim<span class="depo-time">18:47 ✓✓</span></div>
-          <div class="depo-msg in">aprendi a NÃO cometer os erros que eu tava cometendo... fez toda diferença<span class="depo-time">18:48 ✓✓</span></div>
-          <div class="depo-msg in">esse fim de semana a gente se viu e foi como antes ❤️ obrigada<span class="depo-time">18:48 ✓✓</span></div>
-          <div class="depo-msg out">Que lindo 🥰 você merece toda essa felicidade, viu<span class="depo-time">18:55 ✓✓</span></div>
-        </div>
-      </div>
-
-      <!-- 4 — estava com outra -->
-      <div class="depo-chat">
-        <div class="depo-bar">
-          <div class="depo-avatar" style="background:#86a">F</div>
-          <div class="depo-id"><strong>Fernanda</strong><span>online</span></div>
-          <span class="depo-call">📞</span>
-        </div>
-        <div class="depo-body">
-          <div class="depo-msg in">confesso q comprei chorando, ele já tava saindo com outra<span class="depo-time">23:01 ✓✓</span></div>
-          <div class="depo-msg in">o módulo de "ele está com outra" abriu minha cabeça, parei de me humilhar<span class="depo-time">23:02 ✓✓</span></div>
-          <div class="depo-msg in">hoje é ELE que tá correndo atrás 🙌 nunca pensei que ia virar esse jogo<span class="depo-time">23:02 ✓✓</span></div>
-          <div class="depo-msg out">Eu fico arrepiado de orgulho 🥹 você recuperou seu valor, isso é tudo<span class="depo-time">23:10 ✓✓</span></div>
-        </div>
-      </div>
-
-      <!-- 5 — scripts -->
-      <div class="depo-chat">
-        <div class="depo-bar">
-          <div class="depo-avatar" style="background:#999">P</div>
-          <div class="depo-id"><strong>Patrícia</strong><span>online</span></div>
-          <span class="depo-call">📞</span>
-        </div>
-        <div class="depo-body">
-          <div class="depo-msg in">os scripts prontos salvaram minha vida kkk eu nunca sabia o que escrever<span class="depo-time">14:22 ✓✓</span></div>
-          <div class="depo-msg in">mandei exatamente do jeito que tava ali e ele respondeu na hora<span class="depo-time">14:22 ✓✓</span></div>
-          <div class="depo-msg in">melhor R$36 que já gastei na vida 😅<span class="depo-time">14:23 ✓✓</span></div>
-          <div class="depo-msg out">kkkk amei 😄 agora é só manter a postura que você vai longe<span class="depo-time">14:30 ✓✓</span></div>
-        </div>
-      </div>
-
-      <!-- 6 — geral / dignidade -->
-      <div class="depo-chat">
-        <div class="depo-bar">
-          <div class="depo-avatar" style="background:#b97">A</div>
-          <div class="depo-id"><strong>Aline</strong><span>online</span></div>
-          <span class="depo-call">📞</span>
-        </div>
-        <div class="depo-body">
-          <div class="depo-msg in">o melhor é q eu reconquistei ele SEM perder minha dignidade<span class="depo-time">20:09 ✓✓</span></div>
-          <div class="depo-msg in">parei de implorar, voltei a me valorizar e ele percebeu<span class="depo-time">20:10 ✓✓</span></div>
-          <div class="depo-msg in">recomendo pra todas as amigas 💛<span class="depo-time">20:10 ✓✓</span></div>
-          <div class="depo-msg out">É exatamente isso 💛 obrigado pela confiança, fico muito feliz por você<span class="depo-time">20:18 ✓✓</span></div>
-        </div>
-      </div>
-
-    </div>
-
-    <p class="depo-disclaimer">Relatos de clientes. Resultados podem variar de pessoa para pessoa.</p>
-  </section>
-
   <footer>
-    Código da Reconquista · Todos os direitos reservados<br>
-    Este produto não substitui acompanhamento profissional.
+    Código da Reconquista · Conteúdo educativo sobre relacionamentos<br>
+    Não substitui acompanhamento psicológico profissional.
   </footer>
 
   <!-- ═══════════════ CHECKOUT ═══════════════ -->
@@ -699,7 +403,7 @@ footer{
             <div class="co-order-name">Código da Reconquista</div>
             <div class="co-order-meta">Acesso vitalício · 100% digital</div>
           </div>
-          <div class="co-order-price"><s style="color:var(--cream-muted);font-size:.6em;font-weight:400;margin-right:5px">R$ 67</s>R$ 36<span>,00</span></div>
+          <div class="co-order-price"><s style="color:var(--cream-muted);font-size:.6em;font-weight:400;margin-right:5px">R$ 97</s>R$ 57<span>,00</span></div>
         </div>
       </div>
 
@@ -737,7 +441,7 @@ footer{
         <p class="co-p">Gere o código Pix abaixo e pague no app do seu banco. A confirmação costuma ser <strong class="co-hl">imediata</strong>.</p>
 
         <div class="co-pix-amount">
-          <div class="co-pix-big"><span>R$</span>36<i>,00</i></div>
+          <div class="co-pix-big"><span>R$</span>57<i>,00</i></div>
           <div class="co-pix-tag">Pagamento único · à vista</div>
         </div>
 
@@ -780,7 +484,7 @@ footer{
           <div class="co-sum-row"><span>👤</span><div><b>Nome</b><span id="scNome">—</span></div></div>
           <div class="co-sum-row"><span>📩</span><div><b>Contato</b><span id="scContato">—</span></div></div>
           <div class="co-sum-row"><span>📦</span><div><b>Produto</b>Código da Reconquista</div></div>
-          <div class="co-sum-row"><span>💰</span><div><b>Valor</b>R$ 36,00 via Pix</div></div>
+          <div class="co-sum-row"><span>💰</span><div><b>Valor</b>R$ 57,00 via Pix</div></div>
         </div>
 
         <a class="co-wa" id="scWaBtn" href="#" target="_blank" rel="noopener">
@@ -793,114 +497,13 @@ footer{
     </div>
   </div>
 
-  <style>
-  /* ═══════════ CHECKOUT — esmeralda/dourado ═══════════ */
-  .co-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(4,12,9,.82);backdrop-filter:blur(4px);align-items:flex-start;justify-content:center;padding:20px 14px;overflow-y:auto;-webkit-overflow-scrolling:touch}
-  .co-overlay.show{display:flex}
-  .co-overlay.kb-open{padding-bottom:48vh}
-  .co-panel{position:relative;width:100%;max-width:440px;margin:auto;background:linear-gradient(168deg,#12352a 0%,#0a2118 60%,#081b13 100%);border:1px solid rgba(201,168,74,.28);border-radius:24px;padding:30px 24px 26px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
-  @media(max-width:480px){.co-panel{padding:26px 18px 22px;border-radius:20px}}
-  .co-input{scroll-margin-top:80px;scroll-margin-bottom:80px}
-  .co-x{position:absolute;top:14px;right:16px;width:36px;height:36px;border:none;background:rgba(255,255,255,.05);border-radius:50%;color:var(--cream-muted);font-size:1.5rem;line-height:1;cursor:pointer;transition:background .2s}
-  .co-x:hover{background:rgba(255,255,255,.12)}
-
-  .co-head{margin-bottom:20px}
-  .co-secure{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--gold-light);background:rgba(201,168,74,.1);border:1px solid rgba(201,168,74,.25);padding:7px 14px;border-radius:100px;margin-bottom:20px}
-  .co-progress{display:flex;align-items:center;justify-content:center;gap:0}
-  .co-prog-step{display:flex;flex-direction:column;align-items:center;gap:5px;flex-shrink:0}
-  .co-prog-step span{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;font-family:'Fraunces',serif;background:rgba(255,255,255,.06);color:var(--cream-muted);border:1.5px solid rgba(255,255,255,.12);transition:all .3s}
-  .co-prog-step label{font-size:11px;color:var(--cream-muted);letter-spacing:.5px;transition:color .3s}
-  .co-prog-step.on span{background:linear-gradient(160deg,var(--gold-light),var(--gold));color:var(--emerald-deep);border-color:var(--gold)}
-  .co-prog-step.on label{color:var(--gold-light)}
-  .co-prog-step.done span{background:rgba(201,168,74,.2);color:var(--gold-light);border-color:var(--gold)}
-  .co-prog-line{flex:1;height:2px;max-width:46px;background:rgba(255,255,255,.12);margin:0 6px;margin-bottom:18px;transition:background .3s}
-  .co-prog-line.on{background:var(--gold)}
-
-  .co-order{background:rgba(5,15,11,.5);border:1px solid rgba(201,168,74,.18);border-radius:14px;padding:14px 16px;margin-bottom:20px}
-  .co-order-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .co-order-name{font-family:'Fraunces',serif;font-size:17px;font-weight:500;color:var(--ivory)}
-  .co-order-meta{font-size:12.5px;color:var(--cream-muted);margin-top:2px}
-  .co-order-price{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--gold-light);white-space:nowrap}
-  .co-order-price span{font-size:.55em;vertical-align:baseline}
-
-  .co-step{display:none}
-  .co-step.active{display:block;animation:coFade .3s ease}
-  @keyframes coFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  .co-h3{font-family:'Fraunces',serif;font-size:22px;font-weight:500;color:var(--ivory);line-height:1.3;margin-bottom:8px}
-  .co-p{font-size:15px;color:var(--cream-dim);line-height:1.6;margin-bottom:18px}
-  .co-hl{color:var(--gold-light);font-weight:500}
-
-  .co-label{display:block;font-size:13.5px;font-weight:500;color:var(--cream-dim);margin-bottom:7px}
-  .co-input{width:100%;padding:15px 16px;border:1.5px solid rgba(201,168,74,.2);border-radius:13px;background:rgba(5,15,11,.55);color:var(--ivory);font-family:'Jost',sans-serif;font-size:16px;transition:border-color .2s,box-shadow .2s}
-  .co-input::placeholder{color:var(--cream-muted)}
-  .co-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,74,.12)}
-
-  .co-field{display:none;margin-top:14px}
-  .co-field.show{display:block;animation:coFade .25s ease}
-
-  .co-wa-advantage{display:flex;align-items:flex-start;gap:11px;background:rgba(37,211,102,.07);border:1px solid rgba(37,211,102,.28);border-radius:13px;padding:13px 14px;margin-top:16px}
-  .co-wa-advantage-ic{font-size:20px;flex-shrink:0;margin-top:1px}
-  .co-wa-advantage strong{display:block;font-size:14.5px;color:#7fe3a6;font-weight:500;margin-bottom:3px}
-  .co-wa-advantage span{display:block;font-size:13px;color:var(--cream-dim);line-height:1.5}
-
-  .co-err{display:none;font-size:13.5px;color:#ef9a92;margin-top:12px}
-  .co-btn{display:flex;align-items:center;justify-content:center;width:100%;border:none;border-radius:14px;font-family:'Jost',sans-serif;font-weight:600;font-size:16px;cursor:pointer;transition:transform .15s,box-shadow .2s,opacity .2s}
-  .co-btn-gold{margin-top:18px;padding:17px;background:linear-gradient(180deg,var(--gold-light),var(--gold));color:var(--emerald-deep);letter-spacing:.5px;box-shadow:0 8px 22px rgba(201,168,74,.22)}
-  .co-btn-gold:active{transform:scale(.985)}
-  .co-reassure{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;color:var(--cream-muted);margin-top:13px;text-align:center}
-
-  .co-pix-amount{text-align:center;background:rgba(5,15,11,.5);border:1px solid rgba(201,168,74,.18);border-radius:16px;padding:18px;margin-bottom:14px}
-  .co-pix-big{font-family:'Fraunces',serif;font-size:48px;font-weight:600;color:var(--ivory);line-height:1}
-  .co-pix-big span{font-size:.42em;vertical-align:top;color:var(--gold-light);margin-right:3px;font-weight:500}
-  .co-pix-big i{font-size:.42em;font-style:normal;color:var(--gold-light);font-weight:500}
-  .co-pix-tag{font-size:13px;color:var(--cream-muted);margin-top:6px}
-
-  .co-receiver{display:flex;align-items:center;justify-content:space-between;background:rgba(5,15,11,.4);border:1px solid rgba(201,168,74,.14);border-radius:12px;padding:12px 14px;margin-bottom:12px}
-  .co-receiver-label{font-size:12px;color:var(--cream-muted);text-transform:uppercase;letter-spacing:.05em}
-  .co-receiver-name{font-size:14px;color:var(--cream-dim);font-weight:500}
-
-  .co-howto{font-size:14px;color:var(--cream-dim);line-height:1.55;background:rgba(5,15,11,.35);border:1px dashed rgba(201,168,74,.22);border-radius:12px;padding:12px 14px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-  .co-howto-num{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:rgba(201,168,74,.18);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px}
-
-  .co-btn-gold#genBtn{margin-top:4px}
-  .co-pix-ready{display:none;margin-top:4px}
-  .co-pix-ready.show{display:block;animation:coFade .3s ease}
-  .co-pix-ready-tag{display:flex;align-items:center;justify-content:center;gap:7px;font-size:13.5px;color:#7fe3a6;margin-bottom:12px}
-  .co-pix-ready-tag span{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:rgba(37,211,102,.18);font-size:11px;font-weight:700}
-  .co-btn-copy{padding:16px;background:rgba(201,168,74,.14);border:1.5px solid var(--gold);color:var(--gold-light);font-size:16px}
-  .co-btn-copy:active{transform:scale(.985)}
-  .co-btn-copy.copied{background:#1d6b4f;border-color:#2e8c68;color:#dffbef}
-  .co-copied-msg{display:none;align-items:center;justify-content:center;gap:7px;text-align:center;font-size:14px;font-weight:500;color:#7fe3a6;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);border-radius:12px;padding:12px 14px;margin-top:12px;line-height:1.45}
-  .co-copied-msg.show{display:flex;animation:coFade .3s ease}
-  .co-btn-confirm{margin-top:18px;padding:17px;background:transparent;border:1.5px solid rgba(201,168,74,.4);color:var(--gold-light);font-size:15px}
-  .co-btn-confirm:active{transform:scale(.985)}
-
-  .co-timer{text-align:center;font-size:14px;font-weight:500;color:var(--gold-light);margin-bottom:8px}
-
-  .co-ghost{width:100%;background:none;border:none;color:var(--cream-muted);font-family:'Jost',sans-serif;font-size:14px;font-weight:500;padding:12px;margin-top:6px;cursor:pointer;transition:color .2s}
-  .co-ghost:hover{color:var(--cream-dim)}
-
-  .co-done-ic{width:64px;height:64px;margin:4px auto 16px;border-radius:50%;background:linear-gradient(160deg,var(--gold-light),var(--gold));color:var(--emerald-deep);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;box-shadow:0 10px 30px rgba(201,168,74,.3)}
-  .co-summary{background:rgba(5,15,11,.45);border:1px solid rgba(201,168,74,.15);border-radius:14px;padding:6px 14px;margin:18px 0}
-  .co-sum-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05)}
-  .co-sum-row:last-child{border-bottom:none}
-  .co-sum-row>span{font-size:18px}
-  .co-sum-row div{display:flex;flex-direction:column;line-height:1.3}
-  .co-sum-row b{font-size:11.5px;font-weight:500;color:var(--cream-muted);text-transform:uppercase;letter-spacing:.04em}
-  .co-sum-row div>span{font-size:15px;color:var(--ivory)}
-  .co-wa{display:flex;align-items:center;justify-content:center;gap:11px;width:100%;background:#25d366;color:#062b14;border:none;border-radius:50px;padding:15px 18px;font-family:'Jost',sans-serif;font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;transition:transform .15s;box-shadow:0 8px 22px rgba(37,211,102,.25)}
-  .co-wa:active{transform:scale(.985)}
-  .co-wa-ic{font-size:22px}
-  .co-wa div{display:flex;flex-direction:column;text-align:left;line-height:1.25}
-  .co-wa small{font-weight:400;opacity:.8;font-size:12px}
-  </style>
 
   <script>
   /* ═══════════ CHECKOUT — Código da Reconquista ═══════════ */
   const WA_NUMBER = '5524981517067';
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mreonbkg';
-  const PIX_CODE = '00020126640014br.gov.bcb.pix0111121496937200227Codigo da Reconquista  2026520400005303986540536.005802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026060515290196050300017br.gov.bcb.brcode01051.0.06304826D';
-  const PRODUTO = { nome: 'Código da Reconquista', valor: 'R$ 36,00' };
+  const PIX_CODE = '00020126630014br.gov.bcb.pix0111121496937200226Codigo da Reconquista 2026520400005303986540557.005802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026060618285141450300017br.gov.bcb.brcode01051.0.063040355';
+  const PRODUTO = { nome: 'Código da Reconquista', valor: 'R$ 57,00' };
 
   let canal = 'WhatsApp';
   let lead = null;
@@ -924,9 +527,9 @@ footer{
     document.body.style.overflow = 'hidden';
     if(window.ttq && typeof ttq.track === 'function'){
       ttq.track('InitiateCheckout', {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 36.00 }],
+        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 57.00 }],
         content_type: 'product',
-        value: 36.00,
+        value: 57.00,
         currency: 'BRL'
       });
     }
@@ -979,9 +582,9 @@ footer{
     goStep(2);
     if(window.ttq && typeof ttq.track === 'function'){
       ttq.track('AddToCart', {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 36.00 }],
+        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 57.00 }],
         content_type: 'product',
-        value: 36.00,
+        value: 57.00,
         currency: 'BRL'
       });
     }
@@ -1031,9 +634,9 @@ footer{
     // conversão TikTok no momento em que copia o Pix
     if(window.ttq && typeof ttq.track === 'function'){
       var pixContents = {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 36.00 }],
+        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 57.00 }],
         content_type: 'product',
-        value: 36.00,
+        value: 57.00,
         currency: 'BRL'
       };
       ttq.track('PlaceAnOrder', pixContents);
@@ -1070,6 +673,13 @@ footer{
     $('scWaBtn').href = `https://wa.me/${WA_NUMBER}?text=${waMsg}`;
     clearInterval(timerId);
     goStep(3);
+  }
+
+  function toggleDepo(){
+    var box = document.getElementById('moreDepo');
+    var btn = document.getElementById('depoToggle');
+    var open = box.classList.toggle('show');
+    btn.innerHTML = open ? 'Ver menos &uarr;' : 'Ver mais relatos &darr;';
   }
   </script>
 
