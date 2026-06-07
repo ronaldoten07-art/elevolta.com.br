@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="theme-color" content="#13202b">
 <title>Código da Reconquista — clareza para quem foi deixada, ignorada ou bloqueada</title>
-<meta name="description" content="Ele bloqueou, ignorou ou pediu um tempo? Um método honesto, criado por um terapeuta de casais, para você recuperar o controle e saber exatamente o que fazer.">
+<meta name="description" content="Ele bloqueou, ignorou ou pediu um tempo? Um plano prático de 10 dias + 8 módulos para você recuperar o controle e saber exatamente o que fazer.">
 
 <!-- TikTok Pixel Code Start -->
 <script>
@@ -275,6 +275,45 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   .co-wa div{display:flex;flex-direction:column;text-align:left;line-height:1.25}
   .co-wa small{font-weight:400;opacity:.8;font-size:12px}
 
+  /* Frase de destaque no hero */
+  .hero-highlight{max-width:520px;margin:30px auto 0;padding:20px 24px;background:rgba(200,112,79,.13);border:1px solid rgba(221,150,120,.35);border-radius:16px;backdrop-filter:blur(4px)}
+  .hero-highlight p{font-family:'Newsreader',serif;font-size:20px;line-height:1.45;color:var(--cream);font-weight:500}
+  .hero-highlight p b{color:var(--terra-soft);font-weight:600}
+
+  /* Plano de 10 dias */
+  .plan10{background:var(--ink);color:var(--cream)}
+  .plan10 .eyebrow{color:var(--terra-soft)}
+  .plan10 h2{color:var(--cream)}
+  .plan10 h2 em{color:var(--terra-soft)}
+  .plan10 .lead{color:#bcc7ce}
+  .plan10 .plan-big{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(42px,12vw,72px);line-height:1.05;color:var(--terra-soft);text-align:center;margin-bottom:24px;letter-spacing:-1px}
+  .plan-explain{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(22px,5.5vw,30px);line-height:1.45;color:var(--cream);text-align:center;max-width:560px;margin:0 auto}
+  .plan-close{font-family:'Newsreader',serif;font-style:italic;font-size:19px;color:var(--terra-soft);text-align:center;line-height:1.5;max-width:480px;margin:30px auto 0}
+  .method .eyebrow .plus{display:inline-block;color:var(--terra);font-family:'Newsreader',serif;font-style:italic;font-weight:600;font-size:15px;margin:0 3px;transform:translateY(.5px)}
+
+  /* Botão dúvidas */
+  .faq-open{display:block;margin:20px auto 0;background:transparent;border:none;color:var(--terra-soft);font-family:'Outfit',sans-serif;font-size:15px;font-weight:500;cursor:pointer;text-decoration:underline;text-underline-offset:4px;transition:color .2s}
+  .faq-open:hover{color:var(--cream)}
+
+  /* Modal FAQ */
+  .faq-overlay{position:fixed;inset:0;background:rgba(14,24,32,.78);backdrop-filter:blur(5px);z-index:1000;display:flex;align-items:flex-end;justify-content:center;animation:coFade .3s ease}
+  @media(min-width:640px){.faq-overlay{align-items:center}}
+  .faq-box{position:relative;background:var(--paper);width:100%;max-width:540px;max-height:90vh;overflow-y:auto;border-radius:22px 22px 0 0;padding:36px 24px 28px;animation:faqUp .35s ease}
+  @media(min-width:640px){.faq-box{border-radius:22px}}
+  @keyframes faqUp{from{transform:translateY(40px);opacity:.4}to{transform:translateY(0);opacity:1}}
+  .faq-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:none;background:var(--paper-2);color:var(--ink);font-size:17px;cursor:pointer;transition:background .2s}
+  .faq-close:hover{background:var(--terra-soft)}
+  .faq-eyebrow{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra);font-weight:600;text-align:center;margin-bottom:8px}
+  .faq-title{font-family:'Newsreader',serif;font-weight:500;font-size:28px;color:var(--ink);text-align:center;margin-bottom:24px}
+  .faq-list{display:flex;flex-direction:column;gap:10px}
+  .faq-item{background:var(--cream);border:1px solid var(--paper-2);border-radius:13px;overflow:hidden}
+  .faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;background:transparent;border:none;padding:17px 18px;font-family:'Newsreader',serif;font-weight:500;font-size:16.5px;color:var(--ink);cursor:pointer;line-height:1.35}
+  .faq-arrow{flex-shrink:0;color:var(--terra);font-size:20px;font-weight:400;transition:transform .25s}
+  .faq-item.open .faq-arrow{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .faq-a p{padding:0 18px 17px;font-size:15.5px;color:var(--slate);line-height:1.6}
+  .faq-cta{margin-top:22px}
+
 </style>
 </head>
 <body>
@@ -291,12 +330,25 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
     <p class="sub">Cada minuto sem resposta dói. Você fica olhando pro celular, relendo as mensagens, tentando entender o que aconteceu — com medo de dar o passo errado e perder ele de vez.</p>
     <p class="breathe">Respira. Isso vai mudar — com estratégia, não com desespero.</p>
     <p class="hero-proof">💛 +2.000 mulheres já aplicaram</p>
+    <div class="hero-highlight">
+      <p>Como fazer ele voltar <b>achando que a ideia foi dele</b> — sem você precisar mandar uma única mensagem.</p>
+    </div>
   </header>
+
+  <!-- PLANO DE 10 DIAS -->
+  <section class="plan10">
+    <div class="wrap">
+      <p class="eyebrow">O coração do método</p>
+      <h2 class="plan-big">Plano de 10 dias</h2>
+      <p class="plan-explain">Aqui eu te dou o passo a passo prático, guiado dia a dia. Cada dia você abre, lê o que fazer naquele dia, e aplica. Sem achismo, sem desespero — é só seguir.</p>
+      <p class="plan-close">Em 10 dias você sai do lugar onde foi descartada — e se torna a mulher que ele não consegue mais ignorar.</p>
+    </div>
+  </section>
 
   <!-- METHOD / MODULES -->
   <section class="method">
     <div class="wrap">
-      <p class="eyebrow">8 módulos · acesso imediato</p>
+      <p class="eyebrow">Plano de 10 dias <span class="plus">+</span> 8 módulos · acesso imediato</p>
       <h2>O segredo da reconquista<br><em>está todo aqui dentro</em></h2>
       <p class="lead">Nada escondido. Cada módulo te entrega o passo certo — o que fazer, não só o que sentir.</p>
       <div class="steps">
@@ -365,9 +417,9 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
       <p class="lead">Você pode continuar esperando, ou começar a agir hoje. Com o método em mãos, você sabe exatamente o que fazer pra virar o jogo a seu favor.</p>
       <div class="price-card">
         <ul class="incl">
-          <li>Os 8 módulos completos, passo a passo</li>
+          <li><b>Plano prático de 10 dias</b> — um passo por dia, do começo ao fim</li>
+          <li>Os 8 módulos complementares, passo a passo</li>
           <li>Scripts e mensagens prontas para cada situação</li>
-          <li>Mapa de situações: bloqueio, vácuo, "um tempo", outra pessoa</li>
           <li>Acesso vitalício e suporte pelo WhatsApp</li>
         </ul>
         <p class="price-old">de <s>R$ 97</s> por</p>
@@ -376,6 +428,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
         <button type="button" class="cta" onclick="openCheckout()">Quero começar agora</button>
       </div>
       <p class="guarantee"><b>Garantia real de 7 dias.</b> Entrou, não fez sentido pra você? Devolvemos 100%, sem perguntas e sem complicação. O risco é todo meu.</p>
+      <button type="button" class="faq-open" onclick="openFaq()">Ainda tem dúvidas? Toque aqui</button>
     </div>
   </section>
 
@@ -391,6 +444,46 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
     Código da Reconquista · Conteúdo educativo sobre relacionamentos<br>
     Não substitui acompanhamento psicológico profissional.
   </footer>
+
+  <!-- ═══════════════ FAQ ═══════════════ -->
+  <div class="faq-overlay" id="faqModal" aria-hidden="true" style="display:none">
+    <div class="faq-box">
+      <button type="button" class="faq-close" onclick="closeFaq()" aria-label="Fechar">✕</button>
+      <p class="faq-eyebrow">Perguntas frequentes</p>
+      <h3 class="faq-title">Tira suas dúvidas</h3>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-q" onclick="toggleFaqItem(this)">Funciona se ele está em outra cidade ou longe?<span class="faq-arrow">+</span></button>
+          <div class="faq-a"><p>Sim. Hoje a reconquista começa no digital, não no presencial. O que reacende o interesse dele é a forma como você se posiciona — e isso funciona à distância, às vezes até melhor, porque a saudade pesa mais. A distância não te impede de virar o jogo.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" onclick="toggleFaqItem(this)">Em quanto tempo ele volta?<span class="faq-arrow">+</span></button>
+          <div class="faq-a"><p>Não dá pra cravar uma data, porque depende dele e de como você aplica o passo a passo — e quem promete "ele volta em X dias" não está sendo honesto. O que o método faz é encurtar muito esse caminho: você para de cometer os erros que afastam e passa a fazer os movimentos certos. E desde o primeiro dia, você já volta pro controle da situação.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" onclick="toggleFaqItem(this)">É seguro? Não é golpe?<span class="faq-arrow">+</span></button>
+          <div class="faq-a"><p>Totalmente seguro. O pagamento é via Pix, o acesso é imediato, e você ainda tem garantia de 7 dias — se não gostar, devolvo 100% do valor, sem perguntas. Além disso, você fala diretamente comigo pelo WhatsApp a qualquer momento. Não é um site que some: sou eu, de verdade, do outro lado.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" onclick="toggleFaqItem(this)">Como eu recebo o acesso?<span class="faq-arrow">+</span></button>
+          <div class="faq-a"><p>Assim que o pagamento via Pix é confirmado, você recebe o acesso na hora pelo WhatsApp. O conteúdo fica seu para sempre — você acessa quantas vezes quiser, no seu tempo.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" onclick="toggleFaqItem(this)">Serve pro meu caso?<span class="faq-arrow">+</span></button>
+          <div class="faq-a"><p>Se ele te bloqueou, te ignorou, pediu um tempo, terminou ou até já está com outra — o método cobre todos esses cenários. O plano de 10 dias é a base, e os 8 módulos aprofundam cada situação específica. É só seguir o do seu caso.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" onclick="toggleFaqItem(this)">Vou precisar implorar ou mandar mensagem pra ele?<span class="faq-arrow">+</span></button>
+          <div class="faq-a"><p>Não. O método é justamente o contrário: você reconquista sem se humilhar, sem implorar e sem ficar mandando mensagem. Você aprende a se reposicionar de um jeito que faz ele querer voltar por conta própria.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" onclick="toggleFaqItem(this)">R$49,90 é pagamento único?<span class="faq-arrow">+</span></button>
+          <div class="faq-a"><p>Sim, pagamento único. Você paga uma vez só e o conteúdo é seu para sempre, com direito ao suporte pelo WhatsApp. Sem mensalidade, sem cobrança extra.</p></div>
+        </div>
+      </div>
+      <button type="button" class="cta faq-cta" onclick="closeFaq();openCheckout()">Quero começar agora</button>
+    </div>
+  </div>
 
   <!-- ═══════════════ CHECKOUT ═══════════════ -->
   <div class="co-overlay" id="checkout" aria-hidden="true" style="display:none">
@@ -557,6 +650,31 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   }
   $('checkout').addEventListener('click', e=>{ if(e.target.id==='checkout') closeCheckout(); });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeCheckout(); });
+
+  // FAQ
+  function openFaq(){
+    $('faqModal').style.display = 'flex';
+    $('faqModal').setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeFaq(){
+    $('faqModal').style.display = 'none';
+    $('faqModal').setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  function toggleFaqItem(btn){
+    var item = btn.parentElement;
+    var ans = btn.nextElementSibling;
+    if(item.classList.contains('open')){
+      item.classList.remove('open');
+      ans.style.maxHeight = null;
+    } else {
+      item.classList.add('open');
+      ans.style.maxHeight = ans.scrollHeight + 'px';
+    }
+  }
+  $('faqModal').addEventListener('click', e=>{ if(e.target.id==='faqModal') closeFaq(); });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeFaq(); });
 
   // Evita que o teclado do celular cubra o campo em foco
   ['nome','contatoWa'].forEach(id=>{
