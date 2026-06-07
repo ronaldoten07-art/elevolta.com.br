@@ -16,9 +16,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   ttq.load('D8HMJSRC77UB4KU2EIV0');
   ttq.page();
   ttq.track('ViewContent', {
-    contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 57.00 }],
+    contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 49.90 }],
     content_type: 'product',
-    value: 57.00,
+    value: 49.90,
     currency: 'BRL'
   });
 }(window, document, 'ttq');
@@ -371,7 +371,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
           <li>Acesso vitalício e suporte pelo WhatsApp</li>
         </ul>
         <p class="price-old">de <s>R$ 97</s> por</p>
-        <div class="price-tag"><span class="cur">R$</span>57</div>
+        <div class="price-tag"><span class="cur">R$</span>49<small style="font-size:.45em;vertical-align:super">,90</small></div>
         <p class="price-meta">Pagamento único · acesso imediato</p>
         <button type="button" class="cta" onclick="openCheckout()">Quero começar agora</button>
       </div>
@@ -416,7 +416,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
             <div class="co-order-name">Código da Reconquista</div>
             <div class="co-order-meta">Acesso vitalício · 100% digital</div>
           </div>
-          <div class="co-order-price"><s style="color:var(--cream-muted);font-size:.6em;font-weight:400;margin-right:5px">R$ 97</s>R$ 57<span>,00</span></div>
+          <div class="co-order-price"><s style="color:var(--cream-muted);font-size:.6em;font-weight:400;margin-right:5px">R$ 97</s>R$ 49<span>,90</span></div>
         </div>
       </div>
 
@@ -454,7 +454,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
         <p class="co-p">Gere o código Pix abaixo e pague no app do seu banco. A confirmação costuma ser <strong class="co-hl">imediata</strong>.</p>
 
         <div class="co-pix-amount">
-          <div class="co-pix-big"><span>R$</span>57<i>,00</i></div>
+          <div class="co-pix-big"><span>R$</span>49<i>,90</i></div>
           <div class="co-pix-tag">Pagamento único · à vista</div>
         </div>
 
@@ -497,7 +497,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
           <div class="co-sum-row"><span>👤</span><div><b>Nome</b><span id="scNome">—</span></div></div>
           <div class="co-sum-row"><span>📩</span><div><b>Contato</b><span id="scContato">—</span></div></div>
           <div class="co-sum-row"><span>📦</span><div><b>Produto</b>Código da Reconquista</div></div>
-          <div class="co-sum-row"><span>💰</span><div><b>Valor</b>R$ 57,00 via Pix</div></div>
+          <div class="co-sum-row"><span>💰</span><div><b>Valor</b>R$ 49,90 via Pix</div></div>
         </div>
 
         <a class="co-wa" id="scWaBtn" href="#" target="_blank" rel="noopener">
@@ -515,8 +515,8 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   /* ═══════════ CHECKOUT — Código da Reconquista ═══════════ */
   const WA_NUMBER = '5524981517067';
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mreonbkg';
-  const PIX_CODE = '00020126630014br.gov.bcb.pix0111121496937200226Codigo da Reconquista 2026520400005303986540557.005802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026060618285141450300017br.gov.bcb.brcode01051.0.063040355';
-  const PRODUTO = { nome: 'Código da Reconquista', valor: 'R$ 57,00' };
+  const PIX_CODE = '00020126330014br.gov.bcb.pix011112149693720520400005303986540549.905802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026060715183383250300017br.gov.bcb.brcode01051.0.063040A20';
+  const PRODUTO = { nome: 'Código da Reconquista', valor: 'R$ 49,90' };
 
   let canal = 'WhatsApp';
   let lead = null;
@@ -540,9 +540,9 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
     document.body.style.overflow = 'hidden';
     if(window.ttq && typeof ttq.track === 'function'){
       ttq.track('InitiateCheckout', {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 57.00 }],
+        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 49.90 }],
         content_type: 'product',
-        value: 57.00,
+        value: 49.90,
         currency: 'BRL'
       });
     }
@@ -595,9 +595,9 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
     goStep(2);
     if(window.ttq && typeof ttq.track === 'function'){
       ttq.track('AddToCart', {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 57.00 }],
+        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 49.90 }],
         content_type: 'product',
-        value: 57.00,
+        value: 49.90,
         currency: 'BRL'
       });
     }
@@ -647,9 +647,9 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
     // conversão TikTok no momento em que copia o Pix
     if(window.ttq && typeof ttq.track === 'function'){
       var pixContents = {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 57.00 }],
+        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 49.90 }],
         content_type: 'product',
-        value: 57.00,
+        value: 49.90,
         currency: 'BRL'
       };
       ttq.track('PlaceAnOrder', pixContents);
