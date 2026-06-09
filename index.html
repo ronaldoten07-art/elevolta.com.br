@@ -735,20 +735,41 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeFaq(); });
 
   // Evita que o teclado do celular cubra o campo em foco
+  const coOverlay = $('checkout');
   const coPanel = document.querySelector('.co-panel');
+
+  function scrollFieldIntoView(el){
+    setTimeout(()=>{
+      const vv = window.visualViewport;
+      const rect = el.getBoundingClientRect();
+      const visibleBottom = vv ? vv.offsetTop + vv.height : window.innerHeight;
+      if(rect.bottom + 24 > visibleBottom){
+        const extra = rect.bottom + 24 - visibleBottom;
+        if(coOverlay) coOverlay.scrollTop += extra;
+      }
+    }, 420);
+  }
+
   ['nome','contatoWa'].forEach(id=>{
     const el = $(id);
     if(!el) return;
     el.addEventListener('focus', ()=>{
-      if(coPanel) coPanel.style.paddingBottom = '260px';
-      setTimeout(()=>{
-        try{ el.scrollIntoView({block:'start', behavior:'smooth'}); }catch(_){ el.scrollIntoView(); }
-      }, 300);
+      if(coPanel) coPanel.style.paddingBottom = '300px';
+      scrollFieldIntoView(el);
     });
     el.addEventListener('blur', ()=>{
-      setTimeout(()=>{ if(coPanel) coPanel.style.paddingBottom = ''; }, 150);
+      setTimeout(()=>{ if(coPanel) coPanel.style.paddingBottom = ''; }, 200);
     });
   });
+
+  if(window.visualViewport){
+    window.visualViewport.addEventListener('resize', ()=>{
+      const active = document.activeElement;
+      if(active && (active.id==='nome' || active.id==='contatoWa')){
+        scrollFieldIntoView(active);
+      }
+    });
+  }
 
   // Corrige o "duplo toque": dispara antes do blur do input roubar o 1º toque
   (function(){
