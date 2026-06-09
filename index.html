@@ -16,9 +16,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   ttq.load('D8HMJSRC77UB4KU2EIV0');
   ttq.page();
   ttq.track('ViewContent', {
-    contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 49.90 }],
+    contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 19.90 }],
     content_type: 'product',
-    value: 49.90,
+    value: 19.90,
     currency: 'BRL'
   });
 }(window, document, 'ttq');
@@ -306,13 +306,21 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   .plan10 .lead{color:#bcc7ce}
   .plan10 .plan-big{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(42px,12vw,72px);line-height:1.05;color:var(--terra-soft);text-align:center;margin-bottom:24px;letter-spacing:-1px}
   .plan-explain{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(22px,5.5vw,30px);line-height:1.45;color:var(--cream);text-align:center;max-width:560px;margin:0 auto}
-  .plan-close{font-family:'Newsreader',serif;font-style:italic;font-size:19px;color:var(--terra-soft);text-align:center;line-height:1.5;max-width:480px;margin:34px auto 0}
-  .journey{max-width:520px;margin:32px auto 0;display:flex;flex-direction:column;gap:0}
+  .plan-close{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(21px,5vw,27px);color:var(--cream);text-align:center;line-height:1.45;max-width:480px;margin:36px auto 0}
+  .plan-close br{display:block}
+  .journey{max-width:520px;margin:24px auto 0;display:none;flex-direction:column;gap:0}
+  .journey.open{display:flex}
   .jd{display:flex;gap:16px;align-items:flex-start;padding:16px 0;position:relative}
   .jd:not(:last-child)::before{content:'';position:absolute;left:18px;top:46px;bottom:-16px;width:2px;background:linear-gradient(180deg,var(--terra) 0%,rgba(200,112,79,.25) 100%)}
   .jd-n{flex-shrink:0;width:38px;height:38px;border-radius:50%;background:var(--terra);color:var(--cream);font-family:'Newsreader',serif;font-weight:600;font-size:18px;display:flex;align-items:center;justify-content:center;z-index:1;box-shadow:0 2px 10px rgba(200,112,79,.4)}
   .jd-c h3{font-family:'Newsreader',serif;font-weight:600;font-size:18.5px;color:var(--cream);line-height:1.25;margin-bottom:5px;padding-top:6px}
   .jd-c p{font-size:14.5px;color:#bcc7ce;line-height:1.55}
+  .read-more{display:block;margin:24px auto 0;background:transparent;border:1.5px solid var(--terra-soft);color:var(--terra-soft);font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;letter-spacing:.4px;padding:11px 26px;border-radius:50px;cursor:pointer;transition:all .2s}
+  .read-more:hover{background:var(--terra-soft);color:var(--ink)}
+  @keyframes rmPulse{0%,100%{box-shadow:0 0 0 0 rgba(221,150,120,.55);transform:scale(1)}50%{box-shadow:0 0 0 9px rgba(221,150,120,0);transform:scale(1.04)}}
+  .read-more-pulse{animation:rmPulse 1.8s ease-in-out infinite}
+  .author-more{display:none;margin-top:18px}
+  .author-more.open{display:block}
   .method .eyebrow .plus{display:inline-block;color:var(--terra);font-family:'Newsreader',serif;font-style:italic;font-weight:600;font-size:15px;margin:0 3px;transform:translateY(.5px)}
 
   /* Botão dúvidas */
@@ -362,10 +370,10 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   <!-- PLANO DE 10 DIAS -->
   <section class="plan10">
     <div class="wrap">
-      <p class="eyebrow">O coração do método</p>
+      <p class="eyebrow">Você não vai mais acordar sem saber o que fazer</p>
       <h2 class="plan-big">Plano de 10 dias</h2>
-      <p class="plan-explain">10 dias pra fazer ele voltar — e pra te transformar na mulher forte e magnética que ele vai correr atrás. Um passo por dia. Você abre, lê, e faz. Olha a jornada que te espera:</p>
-      <div class="journey">
+      <p class="plan-explain">10 dias pra fazer ele voltar — e pra te transformar na mulher forte e magnética que ele vai correr atrás. Um passo por dia. Você abre, lê, e faz.</p>
+      <div class="journey" id="journey">
         <div class="jd"><span class="jd-n">1</span><div class="jd-c"><h3>O primeiro movimento</h3><p>Existe um gesto silencioso, logo no dia 1, que acende um alerta na cabeça dele. A maioria faz o oposto — e afasta de vez. Você vai fazer certo.</p></div></div>
         <div class="jd"><span class="jd-n">2</span><div class="jd-c"><h3>O silêncio que fala por você</h3><p>Tem um tipo de silêncio que, em vez de afastar, puxa ele de volta. Você aprende o jeito exato de sumir que deixa ele inquieto, checando o celular, pensando em você.</p></div></div>
         <div class="jd"><span class="jd-n">3</span><div class="jd-c"><h3>Você se reencontra</h3><p>Tem um motivo invisível que te fez aceitar menos do que merece. Nesse dia você descobre qual é — e corta esse padrão pra nunca mais ser descartada.</p></div></div>
@@ -377,14 +385,14 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
         <div class="jd"><span class="jd-n">9</span><div class="jd-c"><h3>O reencontro nos seus termos</h3><p>O que dizer, como agir e o que NUNCA fazer na hora do reencontro. Um passo errado aqui põe tudo a perder — por isso você entra preparada e no controle.</p></div></div>
         <div class="jd"><span class="jd-n">10</span><div class="jd-c"><h3>A decisão passa a ser sua</h3><p>A virada completa: de quem implorava… pra quem escolhe. Agora é você, do alto da sua nova posição, quem decide o que fazer com ele.</p></div></div>
       </div>
-      <p class="plan-close">Quando você vira esse prêmio que ele acha que perdeu… ele faz de tudo pra te ter de volta.</p>
+      <button type="button" class="read-more read-more-pulse" id="journeyBtn" onclick="toggleJourney()">Ver os 10 dias ↓</button>
+      <p class="plan-close">No dia 1 você está implorando pela atenção dele.<br>No dia 10, é ele quem implora pela sua.</p>
     </div>
   </section>
 
   <!-- METHOD / MODULES -->
   <section class="method">
     <div class="wrap">
-      <p class="eyebrow">Plano de 10 dias <span class="plus">+</span> 8 módulos · acesso imediato</p>
       <h2 class="method-title">O segredo da reconquista<br><em>está todo aqui dentro</em></h2>
       <p class="method-promise">É aqui que você para de sofrer.</p>
       <p class="lead">Isso aqui é a virada da sua vida. Aqui você troca as noites em claro, a ansiedade e o medo de perder ele… pela mulher segura, no controle, que sabe exatamente o que fazer. Cada módulo resolve uma situação real, com o movimento exato: o que fazer, o que dizer, e o que <b>nunca</b> fazer.</p>
@@ -410,13 +418,16 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
         <div class="author-photo" id="authorInitial" style="display:none">R</div>
         <h3>Ronaldo Cunha</h3>
         <p class="role">Especialista em relacionamentos</p>
-        <p style="color:var(--terra);font-family:'Newsreader',serif;font-style:italic;font-size:23px;line-height:1.4;font-weight:500;">Aqui eu abro o jogo: vou te entregar TODOS os segredos da reconquista — até os que ninguém tem coragem de te contar.</p>
-        <ul class="author-creds">
-          <li>15 anos de experiência ajudando mulheres na reconquista</li>
-          <li>Um passo a passo exato pra seguir e aplicar hoje mesmo</li>
-          <li>Método já aplicado por milhares de mulheres</li>
-          <li>Suporte direto pelo WhatsApp</li>
-        </ul>
+        <div class="author-more" id="authorMore">
+          <p style="color:var(--terra);font-family:'Newsreader',serif;font-style:italic;font-size:23px;line-height:1.4;font-weight:500;">Aqui eu abro o jogo: vou te entregar TODOS os segredos da reconquista — até os que ninguém tem coragem de te contar.</p>
+          <ul class="author-creds">
+            <li>15 anos de experiência ajudando mulheres na reconquista</li>
+            <li>Um passo a passo exato pra seguir e aplicar hoje mesmo</li>
+            <li>Método já aplicado por milhares de mulheres</li>
+            <li>Suporte direto pelo WhatsApp</li>
+          </ul>
+        </div>
+        <button type="button" class="read-more" id="authorBtn" onclick="toggleAuthor()">Ler mais sobre o Ronaldo ↓</button>
       </div>
     </div>
   </section>
@@ -478,12 +489,12 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
         </div>
         <div class="total-row"><span>O plano sozinho vale</span><span class="total-old">R$ 197</span></div>
         <p class="price-old">Hoje, com tudo incluso, por apenas:</p>
-        <div class="price-tag"><span class="cur">R$</span>49<small style="font-size:.45em;vertical-align:super">,90</small></div>
+        <div class="price-tag"><span class="cur">R$</span>19<small style="font-size:.45em;vertical-align:super">,90</small></div>
         <p class="price-meta">Pagamento único · sem mensalidade · acesso na hora</p>
         <button type="button" class="cta" onclick="openCheckout()">Quero virar o jogo agora</button>
         <p class="pc-foot">⚡ Acesso liberado na hora pelo WhatsApp</p>
       </div>
-      <p class="guarantee"><b>Garantia blindada de 7 dias.</b> Entrou, olhou tudo por dentro e não foi pra você? Devolvo seus R$49,90 na hora, sem perguntar nada. Você não arrisca um centavo — o risco é todo meu.</p>
+      <p class="guarantee"><b>Garantia blindada de 7 dias.</b> Entrou, olhou tudo por dentro e não foi pra você? Devolvo seus R$19,90 na hora, sem perguntar nada. Você não arrisca um centavo — o risco é todo meu.</p>
       <button type="button" class="faq-open" onclick="openFaq()">Ainda tem dúvidas? Toque aqui</button>
     </div>
   </section>
@@ -533,7 +544,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
           <div class="faq-a"><p>Não. O método é justamente o contrário: você reconquista sem se humilhar, sem implorar e sem ficar mandando mensagem. Você aprende a se reposicionar de um jeito que faz ele querer voltar por conta própria.</p></div>
         </div>
         <div class="faq-item">
-          <button type="button" class="faq-q" onclick="toggleFaqItem(this)">R$49,90 é pagamento único?<span class="faq-arrow">+</span></button>
+          <button type="button" class="faq-q" onclick="toggleFaqItem(this)">R$19,90 é pagamento único?<span class="faq-arrow">+</span></button>
           <div class="faq-a"><p>Sim, pagamento único. Você paga uma vez só e o conteúdo é seu para sempre, com direito ao suporte pelo WhatsApp. Sem mensalidade, sem cobrança extra.</p></div>
         </div>
       </div>
@@ -565,7 +576,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
             <div class="co-order-name">Código da Reconquista</div>
             <div class="co-order-meta">Acesso vitalício · 100% digital</div>
           </div>
-          <div class="co-order-price"><s style="color:var(--cream-muted);font-size:.6em;font-weight:400;margin-right:5px">R$ 97</s>R$ 49<span>,90</span></div>
+          <div class="co-order-price"><s style="color:var(--cream-muted);font-size:.6em;font-weight:400;margin-right:5px">R$ 97</s>R$ 19<span>,90</span></div>
         </div>
       </div>
 
@@ -603,7 +614,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
         <p class="co-p">Gere o código Pix abaixo e pague no app do seu banco. A confirmação costuma ser <strong class="co-hl">imediata</strong>.</p>
 
         <div class="co-pix-amount">
-          <div class="co-pix-big"><span>R$</span>49<i>,90</i></div>
+          <div class="co-pix-big"><span>R$</span>19<i>,90</i></div>
           <div class="co-pix-tag">Pagamento único · à vista</div>
         </div>
 
@@ -646,7 +657,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
           <div class="co-sum-row"><span>👤</span><div><b>Nome</b><span id="scNome">—</span></div></div>
           <div class="co-sum-row"><span>📩</span><div><b>Contato</b><span id="scContato">—</span></div></div>
           <div class="co-sum-row"><span>📦</span><div><b>Produto</b>Código da Reconquista</div></div>
-          <div class="co-sum-row"><span>💰</span><div><b>Valor</b>R$ 49,90 via Pix</div></div>
+          <div class="co-sum-row"><span>💰</span><div><b>Valor</b>R$ 19,90 via Pix</div></div>
         </div>
 
         <a class="co-wa" id="scWaBtn" href="#" target="_blank" rel="noopener">
@@ -664,8 +675,8 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   /* ═══════════ CHECKOUT — Código da Reconquista ═══════════ */
   const WA_NUMBER = '5524981517067';
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mreonbkg';
-  const PIX_CODE = '00020126330014br.gov.bcb.pix011112149693720520400005303986540549.905802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026060715183383250300017br.gov.bcb.brcode01051.0.063040A20';
-  const PRODUTO = { nome: 'Código da Reconquista', valor: 'R$ 49,90' };
+  const PIX_CODE = '00020126500014br.gov.bcb.pix0111121496937200213Plano 10 dias520400005303986540519.905802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026060913300148150300017br.gov.bcb.brcode01051.0.06304BB33';
+  const PRODUTO = { nome: 'Código da Reconquista', valor: 'R$ 19,90' };
 
   let canal = 'WhatsApp';
   let lead = null;
@@ -689,9 +700,9 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
     document.body.style.overflow = 'hidden';
     if(window.ttq && typeof ttq.track === 'function'){
       ttq.track('InitiateCheckout', {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 49.90 }],
+        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 19.90 }],
         content_type: 'product',
-        value: 49.90,
+        value: 19.90,
         currency: 'BRL'
       });
     }
@@ -711,6 +722,32 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   function goOferta(){
     var el = document.getElementById('comprar');
     if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function toggleJourney(){
+    var j = document.getElementById('journey');
+    var b = document.getElementById('journeyBtn');
+    if(j.classList.contains('open')){
+      j.classList.remove('open');
+      b.textContent = 'Ver os 10 dias ↓';
+      b.classList.add('read-more-pulse');
+    } else {
+      j.classList.add('open');
+      b.textContent = 'Ver menos ↑';
+      b.classList.remove('read-more-pulse');
+    }
+  }
+
+  function toggleAuthor(){
+    var m = document.getElementById('authorMore');
+    var b = document.getElementById('authorBtn');
+    if(m.classList.contains('open')){
+      m.classList.remove('open');
+      b.textContent = 'Ler mais sobre o Ronaldo ↓';
+    } else {
+      m.classList.add('open');
+      b.textContent = 'Ler menos ↑';
+    }
   }
 
   function openFaq(){    $('faqModal').style.display = 'flex';
@@ -773,9 +810,9 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
     goStep(2);
     if(window.ttq && typeof ttq.track === 'function'){
       ttq.track('AddToCart', {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 49.90 }],
+        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 19.90 }],
         content_type: 'product',
-        value: 49.90,
+        value: 19.90,
         currency: 'BRL'
       });
     }
@@ -825,9 +862,9 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
     // conversão TikTok no momento em que copia o Pix
     if(window.ttq && typeof ttq.track === 'function'){
       var pixContents = {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 49.90 }],
+        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 19.90 }],
         content_type: 'product',
-        value: 49.90,
+        value: 19.90,
         currency: 'BRL'
       };
       ttq.track('PlaceAnOrder', pixContents);
