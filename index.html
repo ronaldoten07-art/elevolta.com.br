@@ -194,104 +194,92 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   .steps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 }
   /* ═══════════ CHECKOUT — esmeralda/dourado ═══════════ */
-  .co-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(7,11,16,.82);backdrop-filter:blur(4px);align-items:flex-start;justify-content:center;padding:20px 14px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .co-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(19,32,43,.6);backdrop-filter:blur(4px);align-items:flex-start;justify-content:center;padding:20px 14px;overflow-y:auto;-webkit-overflow-scrolling:touch}
   .co-overlay.show{display:flex}
-  .co-overlay.kb-open{padding-bottom:48vh}
-  .co-panel{position:relative;width:100%;max-width:440px;margin:auto;background:linear-gradient(168deg,#1a2b38 0%,#0e1820 60%,#0e1820 100%);border:1px solid rgba(200,112,79,.28);border-radius:24px;padding:30px 24px 26px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  @media(max-width:480px){.co-overlay{padding:12px 10px}}
+  .co-panel{position:relative;width:100%;max-width:440px;margin:auto;background:var(--cream);border:1px solid var(--paper-2);border-radius:24px;padding:30px 24px 26px;box-shadow:0 30px 80px rgba(19,32,43,.3)}
   @media(max-width:480px){.co-panel{padding:26px 18px 22px;border-radius:20px}}
   .co-input{scroll-margin-top:80px;scroll-margin-bottom:80px}
-  .co-x{position:absolute;top:14px;right:16px;width:36px;height:36px;border:none;background:rgba(255,255,255,.05);border-radius:50%;color:var(--cream-muted);font-size:1.5rem;line-height:1;cursor:pointer;transition:background .2s}
-  .co-x:hover{background:rgba(255,255,255,.12)}
+  .co-x{position:absolute;top:14px;right:16px;width:36px;height:36px;border:none;background:var(--paper-2);border-radius:50%;color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;transition:background .2s}
+  .co-x:hover{background:var(--terra-soft)}
 
   .co-head{margin-bottom:20px}
-  .co-secure{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--gold-light);background:rgba(200,112,79,.1);border:1px solid rgba(200,112,79,.25);padding:7px 14px;border-radius:100px;margin-bottom:20px}
+  .co-secure{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--terra);background:rgba(200,112,79,.1);border:1px solid rgba(200,112,79,.25);padding:7px 14px;border-radius:100px;margin-bottom:20px}
   .co-progress{display:flex;align-items:center;justify-content:center;gap:0}
   .co-prog-step{display:flex;flex-direction:column;align-items:center;gap:5px;flex-shrink:0}
-  .co-prog-step span{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;font-family:'Newsreader',serif;background:rgba(255,255,255,.06);color:var(--cream-muted);border:1.5px solid rgba(255,255,255,.12);transition:all .3s}
-  .co-prog-step label{font-size:11px;color:var(--cream-muted);letter-spacing:.5px;transition:color .3s}
-  .co-prog-step.on span{background:linear-gradient(160deg,var(--gold-light),var(--gold));color:var(--emerald-deep);border-color:var(--gold)}
-  .co-prog-step.on label{color:var(--gold-light)}
-  .co-prog-step.done span{background:rgba(200,112,79,.2);color:var(--gold-light);border-color:var(--gold)}
-  .co-prog-line{flex:1;height:2px;max-width:46px;background:rgba(255,255,255,.12);margin:0 6px;margin-bottom:18px;transition:background .3s}
-  .co-prog-line.on{background:var(--gold)}
+  .co-prog-step span{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;font-family:'Newsreader',serif;background:var(--paper-2);color:var(--muted);border:1.5px solid var(--paper-2);transition:all .3s}
+  .co-prog-step label{font-size:11px;color:var(--muted);letter-spacing:.5px;transition:color .3s}
+  .co-prog-step.on span{background:linear-gradient(160deg,var(--terra-soft),var(--terra));color:#fff;border-color:var(--terra)}
+  .co-prog-step.on label{color:var(--terra)}
+  .co-prog-step.done span{background:rgba(200,112,79,.2);color:var(--terra);border-color:var(--terra)}
+  .co-prog-line{flex:1;height:2px;max-width:46px;background:var(--paper-2);margin:0 6px;margin-bottom:18px;transition:background .3s}
+  .co-prog-line.on{background:var(--terra)}
 
-  .co-order{background:rgba(9,14,19,.5);border:1px solid rgba(200,112,79,.18);border-radius:14px;padding:14px 16px;margin-bottom:20px}
+  .co-order{background:var(--paper);border:1px solid var(--paper-2);border-radius:14px;padding:14px 16px;margin-bottom:20px}
   .co-order-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .co-order-name{font-family:'Newsreader',serif;font-size:17px;font-weight:500;color:var(--ivory)}
-  .co-order-meta{font-size:12.5px;color:var(--cream-muted);margin-top:2px}
-  .co-order-price{font-family:'Newsreader',serif;font-size:26px;font-weight:600;color:var(--gold-light);white-space:nowrap}
+  .co-order-name{font-family:'Newsreader',serif;font-size:17px;font-weight:500;color:var(--ink)}
+  .co-order-meta{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .co-order-price{font-family:'Newsreader',serif;font-size:26px;font-weight:600;color:var(--terra);white-space:nowrap}
   .co-order-price span{font-size:.55em;vertical-align:baseline}
 
   .co-step{display:none}
   .co-step.active{display:block;animation:coFade .3s ease}
   @keyframes coFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  .co-h3{font-family:'Newsreader',serif;font-size:22px;font-weight:500;color:var(--ivory);line-height:1.3;margin-bottom:8px}
-  .co-p{font-size:15px;color:var(--cream-dim);line-height:1.6;margin-bottom:18px}
-  .co-hl{color:var(--gold-light);font-weight:500}
+  .co-h3{font-family:'Newsreader',serif;font-size:22px;font-weight:500;color:var(--ink);line-height:1.3;margin-bottom:8px}
+  .co-p{font-size:15px;color:#5e7588;line-height:1.6;margin-bottom:18px}
+  .co-hl{color:var(--terra);font-weight:600}
 
-  .co-label{display:block;font-size:13.5px;font-weight:500;color:var(--cream-dim);margin-bottom:7px}
-  .co-input{width:100%;padding:15px 16px;border:1.5px solid rgba(200,112,79,.2);border-radius:13px;background:rgba(9,14,19,.55);color:var(--ivory);font-family:'Outfit',sans-serif;font-size:16px;transition:border-color .2s,box-shadow .2s}
-  .co-input::placeholder{color:var(--cream-muted)}
-  .co-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,112,79,.12)}
+  .co-label{display:block;font-size:13.5px;font-weight:500;color:#5e7588;margin-bottom:7px}
+  .co-label-big{font-size:20px;font-weight:600;color:var(--ink);margin-bottom:10px;font-family:'Newsreader',serif}
+  .co-input{width:100%;padding:16px;border:1.5px solid var(--paper-2);border-radius:13px;background:#fff;color:var(--ink);font-family:'Outfit',sans-serif;font-size:17px;transition:border-color .2s,box-shadow .2s}
+  .co-input::placeholder{color:var(--muted)}
+  .co-input:focus{outline:none;border-color:var(--terra);box-shadow:0 0 0 3px rgba(200,112,79,.12)}
 
   .co-field{display:none;margin-top:14px}
   .co-field.show{display:block;animation:coFade .25s ease}
 
-  .co-wa-advantage{display:flex;align-items:flex-start;gap:11px;background:rgba(37,211,102,.07);border:1px solid rgba(37,211,102,.28);border-radius:13px;padding:13px 14px;margin-top:16px}
+  .co-wa-advantage{display:flex;align-items:flex-start;gap:11px;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.3);border-radius:13px;padding:13px 14px;margin-top:16px}
   .co-wa-advantage-ic{font-size:20px;flex-shrink:0;margin-top:1px}
-  .co-wa-advantage strong{display:block;font-size:14.5px;color:#7fe3a6;font-weight:500;margin-bottom:3px}
-  .co-wa-advantage span{display:block;font-size:13px;color:var(--cream-dim);line-height:1.5}
+  .co-wa-advantage strong{display:block;font-size:14.5px;color:#1a8a4f;font-weight:600;margin-bottom:3px}
+  .co-wa-advantage span{display:block;font-size:13px;color:#5e7588;line-height:1.5}
+  .co-wa-big{padding:18px 18px;margin-top:22px}
+  .co-wa-big .co-wa-advantage-ic{font-size:26px}
+  .co-wa-big strong{font-size:17px;margin-bottom:5px}
+  .co-wa-big span{font-size:14px}
 
-  .co-err{display:none;font-size:13.5px;color:#ef9a92;margin-top:12px}
+  .co-err{display:none;font-size:13.5px;color:#c0392b;margin-top:12px}
   .co-btn{display:flex;align-items:center;justify-content:center;width:100%;border:none;border-radius:14px;font-family:'Outfit',sans-serif;font-weight:600;font-size:16px;cursor:pointer;transition:transform .15s,box-shadow .2s,opacity .2s}
-  .co-btn-gold{margin-top:18px;padding:17px;background:linear-gradient(180deg,var(--gold-light),var(--gold));color:var(--emerald-deep);letter-spacing:.5px;box-shadow:0 8px 22px rgba(200,112,79,.22)}
+  .co-btn-gold{margin-top:18px;padding:17px;background:linear-gradient(180deg,var(--terra-soft),var(--terra));color:#fff;letter-spacing:.5px;box-shadow:0 8px 22px rgba(200,112,79,.28)}
   .co-btn-gold:active{transform:scale(.985)}
-  .co-reassure{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;color:var(--cream-muted);margin-top:13px;text-align:center}
+  .co-reassure{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;color:var(--muted);margin-top:13px;text-align:center}
 
-  .co-pix-amount{text-align:center;background:rgba(9,14,19,.5);border:1px solid rgba(200,112,79,.18);border-radius:16px;padding:18px;margin-bottom:14px}
-  .co-pix-big{font-family:'Newsreader',serif;font-size:48px;font-weight:600;color:var(--ivory);line-height:1}
-  .co-pix-big span{font-size:.42em;vertical-align:top;color:var(--gold-light);margin-right:3px;font-weight:500}
-  .co-pix-big i{font-size:.42em;font-style:normal;color:var(--gold-light);font-weight:500}
-  .co-pix-tag{font-size:13px;color:var(--cream-muted);margin-top:6px}
+  .co-receiver{display:flex;align-items:center;justify-content:space-between;background:var(--paper);border:1px solid var(--paper-2);border-radius:12px;padding:12px 14px;margin-bottom:18px}
+  .co-receiver-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+  .co-receiver-name{font-size:14px;color:var(--ink);font-weight:500}
 
-  .co-receiver{display:flex;align-items:center;justify-content:space-between;background:rgba(9,14,19,.4);border:1px solid rgba(200,112,79,.14);border-radius:12px;padding:12px 14px;margin-bottom:12px}
-  .co-receiver-label{font-size:12px;color:var(--cream-muted);text-transform:uppercase;letter-spacing:.05em}
-  .co-receiver-name{font-size:14px;color:var(--cream-dim);font-weight:500}
+  /* Botão grande e central de gerar Pix */
+  .co-gen-big{flex-direction:column;gap:6px;padding:26px 20px;background:linear-gradient(180deg,var(--terra-soft),var(--terra));color:#fff;box-shadow:0 12px 30px rgba(200,112,79,.32);margin:6px 0}
+  .co-gen-ic{font-size:30px;line-height:1}
+  .co-gen-txt{font-size:20px;font-weight:600}
+  .co-gen-val{font-family:'Newsreader',serif;font-size:30px;font-weight:600;line-height:1}
+  .co-gen-big:active{transform:scale(.985)}
 
-  .co-howto{font-size:14px;color:var(--cream-dim);line-height:1.55;background:rgba(9,14,19,.35);border:1px dashed rgba(200,112,79,.22);border-radius:12px;padding:12px 14px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-  .co-howto-num{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:rgba(200,112,79,.18);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px}
+  .co-howto{font-size:14px;color:#5e7588;line-height:1.55;background:var(--paper);border:1px dashed var(--paper-2);border-radius:12px;padding:12px 14px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .co-howto-num{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:rgba(200,112,79,.18);color:var(--terra);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px}
 
-  .co-btn-gold#genBtn{margin-top:4px}
   .co-pix-ready{display:none;margin-top:4px}
   .co-pix-ready.show{display:block;animation:coFade .3s ease}
-  .co-pix-ready-tag{display:flex;align-items:center;justify-content:center;gap:7px;font-size:13.5px;color:#7fe3a6;margin-bottom:12px}
-  .co-pix-ready-tag span{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:rgba(37,211,102,.18);font-size:11px;font-weight:700}
-  .co-btn-copy{padding:16px;background:rgba(200,112,79,.14);border:1.5px solid var(--gold);color:var(--gold-light);font-size:16px}
+  .co-btn-copy{padding:19px;background:linear-gradient(180deg,var(--terra-soft),var(--terra));border:none;color:#fff;font-size:18px;font-weight:700;animation:copyPulse 1.4s ease-in-out infinite;box-shadow:0 8px 24px rgba(200,112,79,.4)}
   .co-btn-copy:active{transform:scale(.985)}
-  .co-btn-copy.copied{background:#1d6b4f;border-color:#2e8c68;color:#dffbef}
-  .co-copied-msg{display:none;align-items:center;justify-content:center;gap:7px;text-align:center;font-size:14px;font-weight:500;color:#7fe3a6;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);border-radius:12px;padding:12px 14px;margin-top:12px;line-height:1.45}
+  @keyframes copyPulse{0%,100%{transform:scale(1);box-shadow:0 8px 24px rgba(200,112,79,.4)}50%{transform:scale(1.035);box-shadow:0 12px 32px rgba(200,112,79,.6)}}
+  .co-btn-copy.copied{background:#1d6b4f;color:#dffbef;animation:none;box-shadow:0 8px 22px rgba(37,211,102,.3)}
+  .co-copied-msg{display:none;align-items:center;justify-content:center;gap:7px;text-align:center;font-size:14px;font-weight:500;color:#1a8a4f;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);border-radius:12px;padding:12px 14px;margin-top:12px;line-height:1.45}
   .co-copied-msg.show{display:flex;animation:coFade .3s ease}
-  .co-btn-confirm{margin-top:18px;padding:17px;background:transparent;border:1.5px solid rgba(200,112,79,.4);color:var(--gold-light);font-size:15px}
-  .co-btn-confirm:active{transform:scale(.985)}
 
-  .co-timer{text-align:center;font-size:14px;font-weight:500;color:var(--gold-light);margin-bottom:8px}
+  .co-ghost{width:100%;background:none;border:none;color:var(--muted);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;padding:12px;margin-top:10px;cursor:pointer;transition:color .2s}
+  .co-ghost:hover{color:var(--ink)}
 
-  .co-ghost{width:100%;background:none;border:none;color:var(--cream-muted);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;padding:12px;margin-top:6px;cursor:pointer;transition:color .2s}
-  .co-ghost:hover{color:var(--cream-dim)}
-
-  .co-done-ic{width:64px;height:64px;margin:4px auto 16px;border-radius:50%;background:linear-gradient(160deg,var(--gold-light),var(--gold));color:var(--emerald-deep);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;box-shadow:0 10px 30px rgba(200,112,79,.3)}
-  .co-summary{background:rgba(9,14,19,.45);border:1px solid rgba(200,112,79,.15);border-radius:14px;padding:6px 14px;margin:18px 0}
-  .co-sum-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05)}
-  .co-sum-row:last-child{border-bottom:none}
-  .co-sum-row>span{font-size:18px}
-  .co-sum-row div{display:flex;flex-direction:column;line-height:1.3}
-  .co-sum-row b{font-size:11.5px;font-weight:500;color:var(--cream-muted);text-transform:uppercase;letter-spacing:.04em}
-  .co-sum-row div>span{font-size:15px;color:var(--ivory)}
-  .co-wa{display:flex;align-items:center;justify-content:center;gap:11px;width:100%;background:#25d366;color:#062b14;border:none;border-radius:50px;padding:15px 18px;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;transition:transform .15s;box-shadow:0 8px 22px rgba(37,211,102,.25)}
-  .co-wa:active{transform:scale(.985)}
-  .co-wa-ic{font-size:22px}
-  .co-wa div{display:flex;flex-direction:column;text-align:left;line-height:1.25}
-  .co-wa small{font-weight:400;opacity:.8;font-size:12px}
+  .co-done-ic{width:64px;height:64px;margin:4px auto 16px;border-radius:50%;background:linear-gradient(160deg,var(--terra-soft),var(--terra));color:#fff;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;box-shadow:0 10px 30px rgba(200,112,79,.3)}
 
   /* Frase de destaque no hero */
   .hero-highlight{max-width:520px;margin:30px auto 0;padding:20px 24px;background:rgba(200,112,79,.13);border:1px solid rgba(221,150,120,.35);border-radius:16px;backdrop-filter:blur(4px)}
@@ -582,89 +570,62 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
 
       <!-- STEP 1 -->
       <div class="co-step active" id="step-1">
-        <h3 class="co-h3">Para onde enviamos seu acesso?</h3>
-        <p class="co-p">Assim que o Pix for confirmado, seu acesso é liberado no contato que você escolher.</p>
-
         <div id="leadForm">
-          <label class="co-label" for="nome">Seu primeiro nome</label>
+          <label class="co-label co-label-big" for="nome">Seu primeiro nome</label>
           <input class="co-input" type="text" id="nome" name="nome" placeholder="Informe seu nome" autocomplete="given-name">
 
-          <div class="co-wa-advantage">
+          <label class="co-label co-label-big" for="contatoWa" style="margin-top:18px">Seu WhatsApp</label>
+          <input class="co-input" type="tel" id="contatoWa" name="whatsapp" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel">
+
+          <div class="co-wa-advantage co-wa-big">
             <span class="co-wa-advantage-ic">💬</span>
             <div>
               <strong>Acesso pelo WhatsApp</strong>
-              <span>Você recebe o acesso direto no seu WhatsApp e ainda fica com um canal aberto para tirar dúvidas.</span>
+              <span>Você recebe o acesso direto no seu WhatsApp.</span>
             </div>
           </div>
 
-          <div class="co-field show" id="wrapWa">
-            <label class="co-label" for="contatoWa">Seu WhatsApp (com DDD)</label>
-            <input class="co-input" type="tel" id="contatoWa" name="whatsapp" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel">
-          </div>
-
           <p class="co-err" id="formErr">Preencha seu nome e WhatsApp para continuar.</p>
-          <button type="button" class="co-btn co-btn-gold" id="toPayBtn" onclick="irParaPagamento()">Ir para o pagamento &rarr;</button>
+          <button type="button" class="co-btn co-btn-gold" id="toPayBtn">Ir para o pagamento &rarr;</button>
           <div class="co-reassure"><span>🔒</span> Seus dados são usados só para enviar o acesso.</div>
         </div>
       </div>
 
       <!-- STEP 2 -->
       <div class="co-step" id="step-2">
-        <h3 class="co-h3">Pague com Pix para liberar o acesso</h3>
-        <p class="co-p">Gere o código Pix abaixo e pague no app do seu banco. A confirmação costuma ser <strong class="co-hl">imediata</strong>.</p>
-
-        <div class="co-pix-amount">
-          <div class="co-pix-big"><span>R$</span>19<i>,90</i></div>
-          <div class="co-pix-tag">Pagamento único · à vista</div>
-        </div>
-
         <div class="co-receiver">
           <span class="co-receiver-label">Recebedor</span>
           <span class="co-receiver-name">Ronaldo da Cunha Silva</span>
         </div>
 
-        <div class="co-howto">
-          <span class="co-howto-num">1</span> Abra o app do seu banco em <strong class="co-hl">Pix &rarr; Pix Copia e Cola</strong>
-        </div>
-
-        <!-- Estado A: gerar -->
-        <button type="button" class="co-btn co-btn-gold" id="genBtn" onclick="gerarPix()">
-          ⚡ Gerar código Pix
+        <!-- Estado A: gerar (grande e central) -->
+        <button type="button" class="co-btn co-gen-big" id="genBtn" onclick="gerarPix()">
+          <span class="co-gen-ic">⚡</span>
+          <span class="co-gen-txt">Gerar código Pix</span>
+          <span class="co-gen-val">R$ 19,90</span>
         </button>
 
         <!-- Estado B: copiar (oculto até gerar) -->
         <div class="co-pix-ready" id="pixReady">
-          <div class="co-pix-ready-tag"><span>✓</span> Código Pix gerado e pronto</div>
+          <div class="co-howto">
+            <span class="co-howto-num">1</span> Abra o app do seu banco em <strong class="co-hl">Pix &rarr; Pix Copia e Cola</strong>
+          </div>
           <button type="button" class="co-btn co-btn-copy" id="copyBtn" onclick="copyPix()">
             <span id="copyTxt">📋 Copiar código Pix</span>
           </button>
           <div class="co-copied-msg" id="copiedMsg">✓ Código copiado! Agora é só colar no app do seu banco.</div>
         </div>
 
-        <div class="co-timer" id="coTimer">⏳ Acesso reservado por 15:00</div>
-
-        <button type="button" class="co-btn co-btn-confirm" onclick="goSuccess()">Já paguei — confirmar pedido ✓</button>
         <button type="button" class="co-ghost" onclick="goStep(1)">&larr; Voltar e corrigir meus dados</button>
       </div>
 
       <!-- STEP 3 -->
       <div class="co-step" id="step-3">
         <div class="co-done-ic">✓</div>
-        <h3 class="co-h3" style="text-align:center">Pedido confirmado!</h3>
-        <p class="co-p" style="text-align:center">Assim que identificarmos seu Pix, o acesso será enviado para o seu contato. Para agilizar, avise pelo WhatsApp 👇</p>
-
-        <div class="co-summary">
-          <div class="co-sum-row"><span>👤</span><div><b>Nome</b><span id="scNome">—</span></div></div>
-          <div class="co-sum-row"><span>📩</span><div><b>Contato</b><span id="scContato">—</span></div></div>
-          <div class="co-sum-row"><span>📦</span><div><b>Produto</b>Código da Reconquista</div></div>
-          <div class="co-sum-row"><span>💰</span><div><b>Valor</b>R$ 19,90 via Pix</div></div>
-        </div>
-
-        <a class="co-wa" id="scWaBtn" href="#" target="_blank" rel="noopener">
-          <span class="co-wa-ic">💬</span>
-          <div>Avisar pagamento no WhatsApp<small>Toque para acelerar sua liberação</small></div>
-        </a>
-        <button type="button" class="co-ghost" onclick="closeCheckout()">Fechar</button>
+        <h3 class="co-h3" style="text-align:center">Tudo certo!</h3>
+        <p class="co-p" style="text-align:center;font-size:17px">Assim que seu Pix for confirmado, seu acesso ao <strong class="co-hl">Plano de 10 dias</strong> é liberado <strong class="co-hl">imediatamente</strong> no seu WhatsApp. 💛</p>
+        <p class="co-p" style="text-align:center">Agora é só colar o código no app do seu banco e finalizar o pagamento.</p>
+        <button type="button" class="co-btn co-btn-gold" onclick="closeCheckout()">Entendi 💛</button>
       </div>
 
     </div>
@@ -778,11 +739,25 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
     const el = $(id);
     if(!el) return;
     el.addEventListener('focus', ()=>{
-      $('checkout').classList.add('kb-open');
       setTimeout(()=>{ try{ el.scrollIntoView({block:'center', behavior:'smooth'}); }catch(_){ el.scrollIntoView(); } }, 350);
     });
-    el.addEventListener('blur', ()=>{ $('checkout').classList.remove('kb-open'); });
   });
+
+  // Corrige o "duplo toque": dispara antes do blur do input roubar o 1º toque
+  (function(){
+    const btn = $('toPayBtn');
+    if(!btn) return;
+    let fired = false;
+    const handler = (e)=>{
+      e.preventDefault();
+      if(fired) return;
+      fired = true;
+      irParaPagamento();
+      setTimeout(()=>{ fired = false; }, 600);
+    };
+    btn.addEventListener('pointerdown', handler);
+    btn.addEventListener('click', handler);
+  })();
 
   function goStep(n){
     document.querySelectorAll('.co-step').forEach(s=>s.classList.remove('active'));
@@ -806,7 +781,6 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
     $('formErr').style.display='none';
     lead = { nome, canal: 'WhatsApp', contato, produto: PRODUTO.nome, valor: PRODUTO.valor };
     resetPixUi();
-    startTimer();
     goStep(2);
     if(window.ttq && typeof ttq.track === 'function'){
       ttq.track('AddToCart', {
@@ -816,18 +790,6 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
         currency: 'BRL'
       });
     }
-  }
-
-  function startTimer(){
-    clearInterval(timerId);
-    restante = 15 * 60;
-    tickTimer();
-    timerId = setInterval(()=>{ restante--; tickTimer(); if(restante<=0) clearInterval(timerId); }, 1000);
-  }
-  function tickTimer(){
-    const m = String(Math.max(0, Math.floor(restante/60))).padStart(2,'0');
-    const s = String(Math.max(0, restante%60)).padStart(2,'0');
-    $('coTimer').textContent = `⏳ Acesso reservado por ${m}:${s}`;
   }
 
   function resetPixUi(){
@@ -853,6 +815,8 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
       const b=$('copyBtn'); b.classList.add('copied');
       $('copyTxt').textContent = '✓ Código copiado!';
       $('copiedMsg').classList.add('show');
+      // após copiar, leva pra tela de acesso liberado
+      setTimeout(goSuccess, 900);
     };
     if(navigator.clipboard && navigator.clipboard.writeText){
       navigator.clipboard.writeText(PIX_CODE).then(done).catch(()=>{ fallbackCopy(PIX_CODE); done(); });
@@ -892,14 +856,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
 
   function goSuccess(){
     if(!lead) { goStep(1); return; }
-    enviarLead(); // garante o envio mesmo se não copiou
-    $('scNome').textContent = lead.nome;
-    $('scContato').textContent = `${lead.contato} (${lead.canal})`;
-    const waMsg = encodeURIComponent(
-      `🔓 *Pagamento realizado!*\n\n👤 Nome: ${lead.nome}\n📩 ${lead.canal}: ${lead.contato}\n💳 Valor: ${lead.valor} via Pix\n📦 Produto: ${lead.produto}\n\nPor favor, confirme meu acesso. 🙏`
-    );
-    $('scWaBtn').href = `https://wa.me/${WA_NUMBER}?text=${waMsg}`;
-    clearInterval(timerId);
+    enviarLead();
     goStep(3);
   }
 
