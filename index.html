@@ -557,7 +557,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
         </div>
       </div>
 
-      <!-- order summary com campo de nome embutido -->
+      <!-- order summary com campos de nome e WhatsApp -->
       <div class="co-order" id="co-order">
         <div class="co-order-row">
           <div>
@@ -566,18 +566,21 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
           </div>
           <div class="co-order-price"><s style="color:var(--cream-muted);font-size:.6em;font-weight:400;margin-right:5px">R$ 97</s>R$ 19<span>,90</span></div>
         </div>
-        <div style="margin-top:12px;border-top:1px solid var(--paper-2);padding-top:12px">
-          <label class="co-label" for="nome" style="margin-bottom:6px">Seu primeiro nome</label>
-          <input class="co-input" type="text" id="nome" name="nome" placeholder="Informe seu nome" autocomplete="given-name">
+        <div style="margin-top:12px;border-top:1px solid var(--paper-2);padding-top:12px;display:flex;flex-direction:column;gap:10px">
+          <div>
+            <label class="co-label" for="nome" style="margin-bottom:6px">Seu primeiro nome</label>
+            <input class="co-input" type="text" id="nome" name="nome" placeholder="Informe seu nome" autocomplete="given-name">
+          </div>
+          <div>
+            <label class="co-label" for="contatoWa" style="margin-bottom:6px">Seu WhatsApp</label>
+            <input class="co-input" type="tel" id="contatoWa" name="whatsapp" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel">
+          </div>
         </div>
       </div>
 
       <!-- STEP 1 -->
       <div class="co-step active" id="step-1">
         <div id="leadForm">
-          <label class="co-label co-label-big" for="contatoWa">Seu WhatsApp</label>
-          <input class="co-input" type="tel" id="contatoWa" name="whatsapp" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel">
-
           <div class="co-wa-advantage co-wa-big">
             <span class="co-wa-advantage-ic">💬</span>
             <div>
