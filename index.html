@@ -595,7 +595,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
       <div class="co-step" id="step-2">
         <div class="co-receiver">
           <span class="co-receiver-label">Recebedor</span>
-          <span class="co-receiver-name">Ronaldo da Cunha Silva</span>
+          <span class="co-receiver-name">Ronaldo da cunha</span>
         </div>
 
         <!-- Estado A: gerar (grande e central) -->
@@ -735,11 +735,18 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeFaq(); });
 
   // Evita que o teclado do celular cubra o campo em foco
+  const coPanel = document.querySelector('.co-panel');
   ['nome','contatoWa'].forEach(id=>{
     const el = $(id);
     if(!el) return;
     el.addEventListener('focus', ()=>{
-      setTimeout(()=>{ try{ el.scrollIntoView({block:'center', behavior:'smooth'}); }catch(_){ el.scrollIntoView(); } }, 350);
+      if(coPanel) coPanel.style.paddingBottom = '260px';
+      setTimeout(()=>{
+        try{ el.scrollIntoView({block:'start', behavior:'smooth'}); }catch(_){ el.scrollIntoView(); }
+      }, 300);
+    });
+    el.addEventListener('blur', ()=>{
+      setTimeout(()=>{ if(coPanel) coPanel.style.paddingBottom = ''; }, 150);
     });
   });
 
