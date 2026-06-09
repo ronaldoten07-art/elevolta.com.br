@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, interactive-widget=resizes-visual">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="theme-color" content="#13202b">
 <title>Código da Reconquista — clareza para quem foi deixada, ignorada ou bloqueada</title>
 <meta name="description" content="Ele bloqueou, ignorou ou pediu um tempo? Um plano prático de 10 dias + 8 módulos para você recuperar o controle e saber exatamente o que fazer.">
@@ -194,14 +194,14 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   .steps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 }
   /* ═══════════ CHECKOUT — esmeralda/dourado ═══════════ */
-  /* overlay: fixed cobre tela, scroll interno evita bug do WebView TikTok com teclado */
-  .co-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:rgba(19,32,43,.6);backdrop-filter:blur(4px)}
+  /* overlay: fundo fixo — quem scrolla é o .co-scroll interno (fix p/ WebView TikTok) */
+  .co-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(19,32,43,.6);backdrop-filter:blur(4px)}
   .co-overlay.show{display:block}
-  .co-scroll{position:absolute;top:0;left:0;right:0;bottom:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;display:flex;align-items:flex-start;justify-content:center;padding:20px 14px 200px}
-  @media(max-width:480px){.co-scroll{padding:12px 10px 200px}}
+  .co-scroll{position:absolute;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;display:flex;align-items:flex-start;justify-content:center;padding:20px 14px 220px}
+  @media(max-width:480px){.co-scroll{padding:12px 10px 220px}}
   .co-panel{position:relative;width:100%;max-width:440px;margin:auto;background:var(--cream);border:1px solid var(--paper-2);border-radius:24px;padding:30px 24px 26px;box-shadow:0 30px 80px rgba(19,32,43,.3)}
   @media(max-width:480px){.co-panel{padding:26px 18px 22px;border-radius:20px}}
-  .co-input{scroll-margin-top:16px;scroll-margin-bottom:80px;font-size:16px !important}
+  .co-input{scroll-margin-top:80px;scroll-margin-bottom:80px}
   .co-x{position:absolute;top:14px;right:16px;width:36px;height:36px;border:none;background:var(--paper-2);border-radius:50%;color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;transition:background .2s}
   .co-x:hover{background:var(--terra-soft)}
 
@@ -560,7 +560,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
         </div>
       </div>
 
-      <!-- order summary com campos de nome e WhatsApp -->
+      <!-- order summary (sempre visível nos passos 1 e 2) -->
       <div class="co-order" id="co-order">
         <div class="co-order-row">
           <div>
@@ -569,21 +569,17 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
           </div>
           <div class="co-order-price"><s style="color:var(--cream-muted);font-size:.6em;font-weight:400;margin-right:5px">R$ 97</s>R$ 19<span>,90</span></div>
         </div>
-        <div style="margin-top:12px;border-top:1px solid var(--paper-2);padding-top:12px;display:flex;flex-direction:column;gap:10px">
-          <div>
-            <label class="co-label" for="nome" style="margin-bottom:6px">Seu primeiro nome</label>
-            <input class="co-input" type="text" id="nome" name="nome" placeholder="Informe seu nome" autocomplete="given-name">
-          </div>
-          <div>
-            <label class="co-label" for="contatoWa" style="margin-bottom:6px">Seu WhatsApp</label>
-            <input class="co-input" type="tel" id="contatoWa" name="whatsapp" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel">
-          </div>
-        </div>
       </div>
 
       <!-- STEP 1 -->
       <div class="co-step active" id="step-1">
         <div id="leadForm">
+          <label class="co-label co-label-big" for="nome">Seu primeiro nome</label>
+          <input class="co-input" type="text" id="nome" name="nome" placeholder="Informe seu nome" autocomplete="given-name">
+
+          <label class="co-label co-label-big" for="contatoWa" style="margin-top:18px">Seu WhatsApp</label>
+          <input class="co-input" type="tel" id="contatoWa" name="whatsapp" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel">
+
           <div class="co-wa-advantage co-wa-big">
             <span class="co-wa-advantage-ic">💬</span>
             <div>
@@ -602,7 +598,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
       <div class="co-step" id="step-2">
         <div class="co-receiver">
           <span class="co-receiver-label">Recebedor</span>
-          <span class="co-receiver-name">Ronaldo da cunha</span>
+          <span class="co-receiver-name">Ronaldo da Cunha Silva</span>
         </div>
 
         <!-- Estado A: gerar (grande e central) -->
@@ -742,32 +738,28 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   $('faqModal').addEventListener('click', e=>{ if(e.target.id==='faqModal') closeFaq(); });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeFaq(); });
 
-  // ── Teclado móvel: compatível com WebView TikTok/Instagram ───────────────
-  // Estratégia: o overlay é fixed mas quem scrolla é o .co-scroll (absolute).
-  // No foco, esperamos o teclado abrir e damos scrollIntoView no scroller interno.
-  // Funciona mesmo sem visualViewport (WebViews antigos/restritos).
+  // ── Teclado móvel: compatível com WebView do TikTok/Instagram ────────────
+  // O overlay é fixed, mas quem scrolla é o .co-scroll (position:absolute).
+  // Assim o position:fixed não quebra quando o teclado abre no WebView.
+  // No foco disparamos scrollIntoView em 3 momentos para pegar o timing certo.
   (function(){
     const scroller = $('coScroll');
     if(!scroller) return;
-
     const INPUTS = ['nome','contatoWa'];
 
     function nudgeIntoView(el){
-      // Tenta três vezes em intervalos crescentes para pegar o momento certo
-      [150, 400, 700].forEach(ms => {
-        setTimeout(()=>{
-          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, ms);
+      [150, 400, 700].forEach(ms=>{
+        setTimeout(()=>{ el.scrollIntoView({ behavior:'smooth', block:'center' }); }, ms);
       });
     }
 
     INPUTS.forEach(id=>{
-      const el = document.getElementById(id);
+      const el = $(id);
       if(!el) return;
       el.addEventListener('focus', ()=> nudgeIntoView(el));
     });
 
-    // visualViewport como reforço extra quando disponível
+    // reforço extra via visualViewport quando disponível
     if(window.visualViewport){
       window.visualViewport.addEventListener('resize', ()=>{
         const active = document.activeElement;
