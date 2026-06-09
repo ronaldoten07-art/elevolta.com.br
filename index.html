@@ -194,7 +194,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   .steps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 }
   /* ═══════════ CHECKOUT — esmeralda/dourado ═══════════ */
-  .co-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(19,32,43,.6);backdrop-filter:blur(4px);align-items:flex-start;justify-content:center;padding:20px 14px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .co-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:rgba(19,32,43,.6);backdrop-filter:blur(4px);align-items:flex-start;justify-content:center;padding:20px 14px;overflow-y:auto;-webkit-overflow-scrolling:touch}
   .co-overlay.show{display:flex}
   @media(max-width:480px){.co-overlay{padding:12px 10px}}
   .co-panel{position:relative;width:100%;max-width:440px;margin:auto;background:var(--cream);border:1px solid var(--paper-2);border-radius:24px;padding:30px 24px 26px;box-shadow:0 30px 80px rgba(19,32,43,.3)}
@@ -734,42 +734,44 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   $('faqModal').addEventListener('click', e=>{ if(e.target.id==='faqModal') closeFaq(); });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeFaq(); });
 
-  // Evita que o teclado do celular cubra o campo em foco
-  const coOverlay = $('checkout');
-  const coPanel = document.querySelector('.co-panel');
+  // ── Teclado móvel: ancora o overlay ao visualViewport real ──
+  (function(){
+    const overlay = $('checkout');
+    if(!overlay || !window.visualViewport) return;
+    const vv = window.visualViewport;
 
-  function scrollFieldIntoView(el){
-    setTimeout(()=>{
-      const vv = window.visualViewport;
-      const rect = el.getBoundingClientRect();
-      const visibleBottom = vv ? vv.offsetTop + vv.height : window.innerHeight;
-      if(rect.bottom + 24 > visibleBottom){
-        const extra = rect.bottom + 24 - visibleBottom;
-        if(coOverlay) coOverlay.scrollTop += extra;
-      }
-    }, 420);
-  }
+    function pinOverlay(){
+      overlay.style.top    = vv.offsetTop  + 'px';
+      overlay.style.height = vv.height     + 'px';
+      overlay.style.bottom = 'auto';
+    }
+    function unpinOverlay(){
+      overlay.style.top    = '0';
+      overlay.style.height = '100%';
+      overlay.style.bottom = '0';
+    }
 
-  ['nome','contatoWa'].forEach(id=>{
-    const el = $(id);
-    if(!el) return;
-    el.addEventListener('focus', ()=>{
-      if(coPanel) coPanel.style.paddingBottom = '300px';
-      scrollFieldIntoView(el);
-    });
-    el.addEventListener('blur', ()=>{
-      setTimeout(()=>{ if(coPanel) coPanel.style.paddingBottom = ''; }, 200);
-    });
-  });
-
-  if(window.visualViewport){
-    window.visualViewport.addEventListener('resize', ()=>{
+    function onVVChange(){
       const active = document.activeElement;
-      if(active && (active.id==='nome' || active.id==='contatoWa')){
-        scrollFieldIntoView(active);
+      const isInput = active && (active.id==='nome' || active.id==='contatoWa');
+      if(isInput){
+        pinOverlay();
+        // rola suavemente o campo para ficar 24px acima do fundo visível
+        setTimeout(()=>{
+          const rect = active.getBoundingClientRect();
+          const visBottom = vv.offsetTop + vv.height;
+          if(rect.bottom + 24 > visBottom){
+            overlay.scrollTop += (rect.bottom + 24 - visBottom);
+          }
+        }, 80);
+      } else {
+        unpinOverlay();
       }
-    });
-  }
+    }
+
+    vv.addEventListener('resize', onVVChange);
+    vv.addEventListener('scroll', onVVChange);
+  })();
 
   // Corrige o "duplo toque": dispara antes do blur do input roubar o 1º toque
   (function(){
