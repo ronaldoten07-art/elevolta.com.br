@@ -194,9 +194,11 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   .steps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 }
   /* ═══════════ CHECKOUT — esmeralda/dourado ═══════════ */
-  .co-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:rgba(19,32,43,.6);backdrop-filter:blur(4px);align-items:flex-start;justify-content:center;padding:20px 14px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
-  .co-overlay.show{display:flex}
-  @media(max-width:480px){.co-overlay{padding:12px 10px}}
+  /* overlay: fixed cobre tela, scroll interno evita bug do WebView TikTok com teclado */
+  .co-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:rgba(19,32,43,.6);backdrop-filter:blur(4px)}
+  .co-overlay.show{display:block}
+  .co-scroll{position:absolute;top:0;left:0;right:0;bottom:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;display:flex;align-items:flex-start;justify-content:center;padding:20px 14px 200px}
+  @media(max-width:480px){.co-scroll{padding:12px 10px 200px}}
   .co-panel{position:relative;width:100%;max-width:440px;margin:auto;background:var(--cream);border:1px solid var(--paper-2);border-radius:24px;padding:30px 24px 26px;box-shadow:0 30px 80px rgba(19,32,43,.3)}
   @media(max-width:480px){.co-panel{padding:26px 18px 22px;border-radius:20px}}
   .co-input{scroll-margin-top:16px;scroll-margin-bottom:80px;font-size:16px !important}
@@ -542,6 +544,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
 
   <!-- ═══════════════ CHECKOUT ═══════════════ -->
   <div class="co-overlay" id="checkout" aria-hidden="true" style="display:none">
+    <div class="co-scroll" id="coScroll">
     <div class="co-panel" role="dialog" aria-modal="true" aria-label="Finalizar compra">
       <button class="co-x" type="button" onclick="closeCheckout()" aria-label="Fechar">&times;</button>
 
@@ -632,8 +635,9 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
         <button type="button" class="co-btn co-btn-gold" onclick="closeCheckout()">Entendi 💛</button>
       </div>
 
-    </div>
-  </div>
+    </div><!-- /co-panel -->
+    </div><!-- /co-scroll -->
+  </div><!-- /co-overlay -->
 
 
   <script>
@@ -680,7 +684,7 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
     document.body.style.overflow = '';
     clearInterval(timerId);
   }
-  $('checkout').addEventListener('click', e=>{ if(e.target.id==='checkout') closeCheckout(); });
+  $('checkout').addEventListener('click', e=>{ if(e.target.id==='checkout'||e.target.id==='coScroll') closeCheckout(); });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeCheckout(); });
 
   // FAQ
@@ -738,68 +742,38 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   $('faqModal').addEventListener('click', e=>{ if(e.target.id==='faqModal') closeFaq(); });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeFaq(); });
 
-  // ── Teclado móvel: rola o panel para manter o campo visível ──────────────
+  // ── Teclado móvel: compatível com WebView TikTok/Instagram ───────────────
+  // Estratégia: o overlay é fixed mas quem scrolla é o .co-scroll (absolute).
+  // No foco, esperamos o teclado abrir e damos scrollIntoView no scroller interno.
+  // Funciona mesmo sem visualViewport (WebViews antigos/restritos).
   (function(){
-    const overlay = $('checkout');
-    const panel   = overlay ? overlay.querySelector('.co-panel') : null;
-    if(!overlay || !panel) return;
+    const scroller = $('coScroll');
+    if(!scroller) return;
 
     const INPUTS = ['nome','contatoWa'];
 
-    function scrollFieldIntoView(el){
-      setTimeout(()=>{
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 350);
+    function nudgeIntoView(el){
+      // Tenta três vezes em intervalos crescentes para pegar o momento certo
+      [150, 400, 700].forEach(ms => {
+        setTimeout(()=>{
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, ms);
+      });
     }
 
-    // visualViewport: quando o teclado abre, rola o overlay para expor o campo
+    INPUTS.forEach(id=>{
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.addEventListener('focus', ()=> nudgeIntoView(el));
+    });
+
+    // visualViewport como reforço extra quando disponível
     if(window.visualViewport){
-      const vv = window.visualViewport;
-
-      function onVVChange(){
-        if(!overlay.classList.contains('show')) return;
+      window.visualViewport.addEventListener('resize', ()=>{
         const active = document.activeElement;
-        if(!active || !INPUTS.includes(active.id)) return;
-
-        // Ajusta a altura máxima do overlay ao espaço visível real
-        const visibleHeight = vv.height;
-        panel.style.maxHeight = (visibleHeight - 32) + 'px';
-        panel.style.overflowY = 'auto';
-
-        // Garante que o campo fique visível dentro do panel
-        setTimeout(()=>{
-          active.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 60);
-      }
-
-      function resetPanelHeight(){
-        panel.style.maxHeight = '';
-      }
-
-      vv.addEventListener('resize', onVVChange);
-
-      INPUTS.forEach(id=>{
-        const el = $(id);
-        if(!el) return;
-        el.addEventListener('focus', ()=>{
-          setTimeout(onVVChange, 100);
-          setTimeout(onVVChange, 400);
-        });
-        el.addEventListener('blur', ()=>{
-          setTimeout(()=>{
-            if(!INPUTS.includes(document.activeElement && document.activeElement.id)){
-              resetPanelHeight();
-            }
-          }, 300);
-        });
-      });
-
-    } else {
-      // Fallback simples para browsers sem visualViewport
-      INPUTS.forEach(id=>{
-        const el = $(id);
-        if(!el) return;
-        el.addEventListener('focus', ()=> scrollFieldIntoView(el));
+        if(active && INPUTS.includes(active.id)){
+          setTimeout(()=> active.scrollIntoView({ behavior:'smooth', block:'center' }), 80);
+        }
       });
     }
   })();
