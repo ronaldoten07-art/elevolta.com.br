@@ -738,121 +738,68 @@ footer{background:var(--ink);color:var(--muted);text-align:center;padding:30px 2
   $('faqModal').addEventListener('click', e=>{ if(e.target.id==='faqModal') closeFaq(); });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeFaq(); });
 
-  // ── Teclado móvel: solução definitiva ──────────────────────────────────────
-  // Estratégia: quando o teclado abre, o visualViewport encolhe.
-  // Reposicionamos o overlay para ocupar apenas o espaço visível real,
-  // e rolamos o campo ativo para que fique visível acima do teclado.
+  // ── Teclado móvel: rola o panel para manter o campo visível ──────────────
   (function(){
-    const overlay  = $('checkout');
-    const panel    = overlay ? overlay.querySelector('.co-panel') : null;
+    const overlay = $('checkout');
+    const panel   = overlay ? overlay.querySelector('.co-panel') : null;
     if(!overlay || !panel) return;
 
     const INPUTS = ['nome','contatoWa'];
 
-    // --- Detecção de teclado aberto via visualViewport (Chrome/Android/iOS Safari 13+) ---
+    function scrollFieldIntoView(el){
+      setTimeout(()=>{
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 350);
+    }
+
+    // visualViewport: quando o teclado abre, rola o overlay para expor o campo
     if(window.visualViewport){
       const vv = window.visualViewport;
 
-      function applyLayout(){
-        // Pega dimensões reais do viewport visível
-        const top    = vv.offsetTop;
-        const height = vv.height;
-
-        // Move e redimensiona o overlay para o viewport visível exato
-        overlay.style.position = 'fixed';
-        overlay.style.top      = top    + 'px';
-        overlay.style.left     = (vv.offsetLeft || 0) + 'px';
-        overlay.style.width    = vv.width  + 'px';
-        overlay.style.height   = height + 'px';
-        overlay.style.bottom   = 'auto';
-        overlay.style.right    = 'auto';
-
-        // Garante que o panel seja scrollável dentro do overlay
-        overlay.style.overflowY = 'auto';
-
-        // Rola para que o campo ativo fique visível 24px acima do fundo
-        const active = document.activeElement;
-        if(active && INPUTS.includes(active.id)){
-          // Pequeno delay para o layout ter assentado
-          setTimeout(()=>{
-            const fieldRect   = active.getBoundingClientRect();
-            const overlayRect = overlay.getBoundingClientRect();
-            const visibleBottom = overlayRect.top + height;
-            const needed = fieldRect.bottom + 24; // 24px de respiro acima do teclado
-
-            if(needed > visibleBottom){
-              overlay.scrollTop += needed - visibleBottom;
-            }
-          }, 60);
-        }
-      }
-
-      function resetLayout(){
-        overlay.style.position = 'fixed';
-        overlay.style.top      = '0';
-        overlay.style.left     = '0';
-        overlay.style.width    = '';
-        overlay.style.height   = '';
-        overlay.style.bottom   = '0';
-        overlay.style.right    = '0';
-      }
-
       function onVVChange(){
         if(!overlay.classList.contains('show')) return;
-        const active   = document.activeElement;
-        const kbOpen   = vv.height < (window.innerHeight * 0.8); // teclado aberto se viewport encolheu >20%
-        const isTyping = active && INPUTS.includes(active.id);
+        const active = document.activeElement;
+        if(!active || !INPUTS.includes(active.id)) return;
 
-        if(kbOpen || isTyping){
-          applyLayout();
-        } else {
-          resetLayout();
-        }
+        // Ajusta a altura máxima do overlay ao espaço visível real
+        const visibleHeight = vv.height;
+        panel.style.maxHeight = (visibleHeight - 32) + 'px';
+        panel.style.overflowY = 'auto';
+
+        // Garante que o campo fique visível dentro do panel
+        setTimeout(()=>{
+          active.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 60);
+      }
+
+      function resetPanelHeight(){
+        panel.style.maxHeight = '';
       }
 
       vv.addEventListener('resize', onVVChange);
-      vv.addEventListener('scroll', onVVChange);
 
-      // Ao focar em qualquer input do checkout, força o layout correto
       INPUTS.forEach(id=>{
         const el = $(id);
         if(!el) return;
-
         el.addEventListener('focus', ()=>{
-          // iOS Safari atrasa o resize do visualViewport; espera 300ms
-          setTimeout(applyLayout, 50);
-          setTimeout(applyLayout, 300);
+          setTimeout(onVVChange, 100);
+          setTimeout(onVVChange, 400);
         });
-
         el.addEventListener('blur', ()=>{
-          // Aguarda fechar o teclado de fato antes de resetar
           setTimeout(()=>{
-            const stillFocused = INPUTS.includes(document.activeElement && document.activeElement.id);
-            if(!stillFocused) resetLayout();
-          }, 200);
+            if(!INPUTS.includes(document.activeElement && document.activeElement.id)){
+              resetPanelHeight();
+            }
+          }, 300);
         });
       });
 
     } else {
-      // --- Fallback para browsers sem visualViewport (iOS Safari < 13) ---
-      // Usa position:absolute + scroll do document para manter o painel visível
-      let origScrollY = 0;
-
+      // Fallback simples para browsers sem visualViewport
       INPUTS.forEach(id=>{
         const el = $(id);
         if(!el) return;
-
-        el.addEventListener('focus', ()=>{
-          origScrollY = window.scrollY;
-          // Dá tempo do teclado abrir (~400ms) e então rola o campo para o topo
-          setTimeout(()=>{
-            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 400);
-        });
-
-        el.addEventListener('blur', ()=>{
-          setTimeout(()=>{ window.scrollTo(0, origScrollY); }, 100);
-        });
+        el.addEventListener('focus', ()=> scrollFieldIntoView(el));
       });
     }
   })();
