@@ -162,6 +162,9 @@
     padding: 20px 50px;
     border-radius: 60px;
     text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
     box-shadow: 0 8px 32px rgba(139,0,0,0.6), 0 0 0 3px rgba(212,168,67,0.3);
     transition: transform 0.2s, box-shadow 0.2s;
     animation: pulse 2.5s infinite;
@@ -553,6 +556,28 @@
 
   .checkout-overlay.open { display: block; }
 
+  /* Sinais de confiança */
+  .trust-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12.5px; font-weight: 700; letter-spacing: .3px;
+    color: #1a8a4f; background: rgba(37,211,102,.1);
+    border: 1px solid rgba(37,211,102,.3);
+    padding: 6px 14px; border-radius: 50px; margin-bottom: 14px;
+  }
+  .trust-row {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    font-size: 12.5px; color: #c9b8a8; text-align: center; margin-top: 12px;
+  }
+  .guarantee-box {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: rgba(212,168,67,.14); border: 1px solid rgba(212,168,67,.5);
+    border-radius: 12px; padding: 13px 15px; margin-top: 14px;
+    text-align: left;
+  }
+  .guarantee-box .g-ic { font-size: 20px; flex-shrink: 0; line-height: 1.3; }
+  .guarantee-box div { font-size: 13.5px; color: #FDF6ED; line-height: 1.5; }
+  .guarantee-box strong { color: var(--gold); font-weight: 800; }
+
   .checkout-box {
     background: linear-gradient(145deg, #2D0F0F, #1E0808);
     border: 1px solid rgba(212,168,67,0.45);
@@ -678,6 +703,34 @@
     margin-top: 12px;
     font-family: 'Lato', sans-serif;
   }
+  /* Botão grande de gerar PIX */
+  .pix-gen-btn {
+    width: 100%;
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    background: linear-gradient(135deg, #C0392B, #8B0000);
+    color: #fff;
+    border: none; border-radius: 16px;
+    padding: 22px 20px;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    box-shadow: 0 8px 26px rgba(139,0,0,.45), 0 0 0 2px rgba(212,168,67,.35);
+    animation: pulse 2.5s infinite;
+    transition: transform .15s;
+  }
+  .pix-gen-btn:active { transform: scale(.98); }
+  .pix-gen-btn .pg-ic { font-size: 1.9rem; line-height: 1; }
+  .pix-gen-btn .pg-txt { font-size: 1.15rem; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; }
+  /* Mensagem de copiado */
+  .pix-copied-msg {
+    display: none;
+    align-items: center; justify-content: center; gap: 8px;
+    text-align: center; font-size: 0.92rem; font-weight: 700;
+    color: #1a8a4f; background: rgba(37,211,102,.12);
+    border: 1px solid rgba(37,211,102,.4);
+    border-radius: 12px; padding: 13px 15px; margin-top: 12px; line-height: 1.45;
+  }
+  .pix-copied-msg.show { display: flex; }
+  .pix-copy-btn.copied { background: linear-gradient(135deg,#2e8c68,#1d6b4f); color: #fff; animation: none; }
 
   .pix-steps {
     margin: 20px 0 4px;
@@ -743,7 +796,7 @@
   <p class="subtitle">
     Descubra o método psicológico que faz a pessoa que você ama sentir uma atração irresistível por você — mesmo que ela tenha dito que não quer mais.
   </p>
-  <a href="#oferta" class="cta-btn">🔥 Quero Meu Amor de Volta Agora</a>
+  <button type="button" class="cta-btn" onclick="openCheckout()">🔥 Quero Meu Amor de Volta Agora</button>
   <div style="margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:4px;">
     <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;">Acesso completo por apenas</div>
     <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--gold);line-height:1;">R$ 9,90</div>
@@ -797,50 +850,50 @@
     <h2>O Plano de Reconquista<br>Dia a Dia</h2>
     <div class="divider"></div>
     <p style="max-width:620px;margin:0 auto;text-align:center;">
-      Cada dia tem uma missão emocional específica, com ações para <strong style="color:var(--gold)">manhã, tarde e noite</strong>, princípio psicológico, scripts do que dizer (ou não dizer), armadilhas a evitar e checklist. Você não pula etapas: primeiro reconquista a si mesma — depois, naturalmente, ele percebe o que perdeu.
+      Cada dia, um passo claro: o que fazer, o que dizer e o que <strong style="color:var(--gold)">nunca</strong> fazer. Você não fica mais perdida olhando o celular sem saber o próximo movimento — é só seguir.
     </p>
     <div class="days-grid">
 
       <div class="day-card">
         <div class="day-number">01</div>
-        <div class="day-title">Corte Energético + Silêncio Magnético</div>
-        <div class="day-desc">A decisão que muda tudo e o desaparecimento estratégico. Corte digital, a carta que nunca será enviada e a postura de mulher ocupada.</div>
+        <div class="day-title">O primeiro movimento</div>
+        <div class="day-desc">Existe um gesto silencioso, logo no dia 1, que acende um alerta na cabeça dele. A maioria faz o oposto e afasta de vez — você vai fazer certo.</div>
       </div>
 
       <div class="day-card">
         <div class="day-number">02</div>
-        <div class="day-title">Reconstrução Interior</div>
-        <div class="day-desc">O inventário emocional: mapeie os padrões que te fizeram aceitar menos do que merece — e quebre o ciclo com sua frase-mantra.</div>
+        <div class="day-title">Você se reencontra</div>
+        <div class="day-desc">Tem um motivo invisível que te fez aceitar menos do que merece. Nesse dia você descobre qual é — e corta esse padrão pra nunca mais ser descartada.</div>
       </div>
 
       <div class="day-card">
         <div class="day-number">03</div>
-        <div class="day-title">Reset Estético</div>
-        <div class="day-desc">A mulher nova no espelho. Diagnóstico, ação estética concreta e o ritual do corpo — mudança visível que força o cérebro dele a te recategorizar.</div>
+        <div class="day-title">A nova mulher no espelho</div>
+        <div class="day-desc">Pequenas mudanças que viram uma bomba de atração. Quando ele te vir, o cérebro dele vai ser obrigado a te enxergar de um jeito que ele jurava ter esquecido.</div>
       </div>
 
       <div class="day-card">
         <div class="day-number">04</div>
-        <div class="day-title">Universo Expandido + Presença Estratégica</div>
-        <div class="day-desc">Os 4 pilares da vida plena, o mapa dos 30 dias e a aparição calculada: a foto que conta uma história, no canal certo, na hora certa.</div>
+        <div class="day-title">Sua vida volta a brilhar</div>
+        <div class="day-desc">O jeito de fazer ele sentir que está perdendo o melhor — só de ver, de longe, a vida que você está vivendo. E sem trocar uma palavra com ele.</div>
       </div>
 
       <div class="day-card">
         <div class="day-number">05</div>
-        <div class="day-title">Gatilho da Reavaliação + Reaproximação Invertida</div>
-        <div class="day-desc">Quando ele sente e vem. O mapa dos sinais, as 3 regras da reaproximação e o gancho neutro — ele caminha até você, nas suas condições.</div>
+        <div class="day-title">A ficha dele começa a cair</div>
+        <div class="day-desc">O dia em que o jogo vira. Você vai entender o gatilho que faz ele sentir, lá no fundo, que te perder foi o maior erro que cometeu — e vir atrás de você.</div>
       </div>
 
       <div class="day-card">
         <div class="day-number">06</div>
-        <div class="day-title">O Encontro do Poder</div>
-        <div class="day-desc">Conduzindo a conversa: preparação estética e energética, o roteiro mental e os 3 "NÃOs" que protegem tudo o que você construiu.</div>
+        <div class="day-title">O reencontro nos seus termos</div>
+        <div class="day-desc">O que dizer, como agir e o que NUNCA fazer quando ele te procurar. Um passo errado aqui põe tudo a perder — por isso você entra preparada e no controle.</div>
       </div>
 
       <div class="day-card">
         <div class="day-number">07</div>
-        <div class="day-title">Selando a Reconquista</div>
-        <div class="day-desc">O teste das três coerências e a decisão definitiva: abrir a porta nas suas condições — ou liberar com elegância o que não te serve.</div>
+        <div class="day-title">A decisão passa a ser sua</div>
+        <div class="day-desc">A virada completa: de quem implorava… pra quem escolhe. Agora é você, do alto da sua nova posição, quem decide o que fazer com ele.</div>
       </div>
 
     </div>
@@ -985,6 +1038,7 @@
 
     <!-- PASSO 1: Dados -->
     <div id="stepDados">
+      <div class="trust-badge">🔒 Ambiente seguro · Pagamento via PIX</div>
       <div class="checkout-title">Código da Reconquista</div>
       <div class="checkout-sub">Plano de 7 Dias + 8 Módulos • Entrega no WhatsApp</div>
 
@@ -1001,27 +1055,51 @@
       <div class="checkout-error" id="checkoutError">Preencha seu nome e um WhatsApp válido com DDD.</div>
 
       <button class="checkout-btn" onclick="goToPix()">Continuar para o PIX →</button>
+
+      <div class="trust-row">
+        <span>🔒 Seus dados são usados só para enviar seu acesso.</span>
+      </div>
+      <div class="guarantee-box">
+        <span class="g-ic">🛡️</span>
+        <div><strong>Garantia de 7 dias.</strong> Não gostou? Devolvo 100% do valor, sem perguntas.</div>
+      </div>
     </div>
 
     <!-- PASSO 2: PIX -->
     <div id="stepPix" style="display:none;">
+      <div class="trust-badge">🔒 PIX seguro · Confirmação imediata</div>
       <div class="checkout-title">Pague com PIX</div>
       <div class="checkout-sub">Copia e Cola • Pagamento único</div>
 
       <div class="pix-value">R$ 9,90</div>
 
-      <textarea class="pix-code" id="pixCode" readonly>00020126530014br.gov.bcb.pix0111121496937200216Protocolo 7 dias52040000530398654049.905802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026061012263825950300017br.gov.bcb.brcode01051.0.06304BDCD</textarea>
+      <!-- Estado A: gerar (grande e central) -->
+      <button class="pix-gen-btn" id="genBtn" onclick="gerarPix()">
+        <span class="pg-ic">⚡</span>
+        <span class="pg-txt">Gerar código PIX</span>
+      </button>
 
-      <button class="pix-copy-btn" id="copyBtn" onclick="copyPix()">📋 Copiar Código PIX</button>
+      <!-- Estado B: copiar (aparece após gerar) -->
+      <div id="pixReady" style="display:none;">
+        <textarea class="pix-code" id="pixCode" readonly style="display:none;">00020126530014br.gov.bcb.pix0111121496937200216Protocolo 7 dias52040000530398654049.905802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026061012263825950300017br.gov.bcb.brcode01051.0.06304BDCD</textarea>
 
-      <ul class="pix-steps">
-        <li><span class="n">1</span><span>Toque em <strong>Copiar Código PIX</strong> acima.</span></li>
-        <li><span class="n">2</span><span>Abra o app do seu banco e escolha <strong>PIX › Pix Copia e Cola</strong>.</span></li>
-        <li><span class="n">3</span><span>Cole o código, confira o valor de <strong>R$ 9,90</strong> e confirme o pagamento.</span></li>
-      </ul>
+        <button class="pix-copy-btn" id="copyBtn" onclick="copyPix()">📋 Copiar Código PIX</button>
 
-      <div class="whats-note" id="whatsNote">
-        ✅ Assim que o pagamento for confirmado, você recebe o <strong>guia completo no seu WhatsApp</strong> em poucos minutos.
+        <div class="pix-copied-msg" id="pixCopiedMsg">✅ Código PIX copiado! Agora é só colar no app do seu banco.</div>
+
+        <ul class="pix-steps">
+          <li><span class="n">1</span><span>Toque em <strong>Copiar Código PIX</strong> acima.</span></li>
+          <li><span class="n">2</span><span>Abra o app do seu banco e escolha <strong>PIX › Pix Copia e Cola</strong>.</span></li>
+          <li><span class="n">3</span><span>Cole o código, confira o valor de <strong>R$ 9,90</strong> e confirme o pagamento.</span></li>
+        </ul>
+
+        <div class="whats-note" id="whatsNote">
+          ✅ Assim que o pagamento for confirmado, você recebe o <strong>guia completo no seu WhatsApp</strong> em poucos minutos.
+        </div>
+      </div>
+      <div class="guarantee-box">
+        <span class="g-ic">🛡️</span>
+        <div><strong>Garantia de 7 dias.</strong> Se não for pra você, devolvo tudo. O risco é meu.</div>
       </div>
     </div>
 
@@ -1113,6 +1191,12 @@
 
     document.getElementById('stepDados').style.display = 'none';
     document.getElementById('stepPix').style.display = 'block';
+    // reseta o estado do Pix pra começar no botão gerar
+    document.getElementById('genBtn').style.display = 'flex';
+    document.getElementById('pixReady').style.display = 'none';
+    document.getElementById('pixCopiedMsg').classList.remove('show');
+    var cb = document.getElementById('copyBtn');
+    cb.classList.remove('copied'); cb.textContent = '📋 Copiar Código PIX';
     overlay.scrollTop = 0;
     if (window.ttq && typeof ttq.track === 'function') {
       ttq.track('AddToCart', {
@@ -1122,17 +1206,25 @@
     }
   }
 
+  function gerarPix() {
+    document.getElementById('genBtn').style.display = 'none';
+    document.getElementById('pixReady').style.display = 'block';
+  }
+
   function copyPix() {
     const code = document.getElementById('pixCode');
     const btn  = document.getElementById('copyBtn');
+    const msg  = document.getElementById('pixCopiedMsg');
     let ok = false;
 
     // Fallback primeiro: funciona no WebView do TikTok
     try {
+      code.style.display = 'block';
       code.focus();
       code.select();
       code.setSelectionRange(0, 99999);
       ok = document.execCommand('copy');
+      code.style.display = 'none';
     } catch (e) {}
 
     if (!ok && navigator.clipboard) {
@@ -1143,8 +1235,15 @@
     window.getSelection && window.getSelection().removeAllRanges();
     code.blur();
 
-    btn.textContent = ok ? '✅ Código Copiado!' : '⚠️ Segure e copie o código acima';
-    setTimeout(() => { btn.textContent = '📋 Copiar Código PIX'; }, 3000);
+    if (ok) {
+      btn.classList.add('copied');
+      btn.textContent = '✅ Código Copiado!';
+      msg.classList.add('show');
+    } else {
+      btn.textContent = '⚠️ Tente novamente';
+      setTimeout(() => { btn.textContent = '📋 Copiar Código PIX'; }, 3000);
+    }
+
     if (window.ttq && typeof ttq.track === 'function') {
       var c = { contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Codigo da Reconquista', quantity: 1, price: 9.90 }], content_type: 'product', value: 9.90, currency: 'BRL' };
       ttq.track('PlaceAnOrder', c);
