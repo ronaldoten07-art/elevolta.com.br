@@ -196,6 +196,8 @@ footer{background:var(--wine);color:var(--muted);text-align:center;padding:30px 
   .hero{padding:90px 24px 80px}
   .steps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 }
+.toggle-section-btn{display:block;width:100%;background:transparent;border:1.5px solid var(--terra);color:var(--terra);font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;padding:13px 22px;border-radius:50px;cursor:pointer;transition:background .2s,color .2s;margin:0 auto}
+.toggle-section-btn:hover{background:var(--terra);color:#fff}
   /* ═══════════ CHECKOUT — esmeralda/dourado ═══════════ */
   /* overlay: fundo fixo — quem scrolla é o .co-scroll interno (fix p/ WebView TikTok) */
   .co-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(19,32,43,.6);backdrop-filter:blur(4px)}
@@ -594,21 +596,34 @@ body.portal-lock{overflow:hidden}
     <div class="panel-bar"><button type="button" class="panel-back" onclick="closePanel('panelComo')">← Voltar</button><span class="panel-bar-title">Como funciona</span></div>
     <div class="panel-scroll">
 
-  <!-- PLANO DE 7 DIAS -->
-  <section class="plan10" style="padding-top:36px">
-    <div class="wrap">
+  <!-- COPY DE ABERTURA -->
+  <section class="plan10" style="padding-top:40px;padding-bottom:0">
+    <div class="wrap" style="text-align:center">
       <p class="eyebrow">Plano de 7 dias</p>
-      <p class="plan-explain" style="margin-bottom:28px">Um passo por dia. Você abre, lê, e faz.</p>
-      <div class="journey open" id="journey">
-        <div class="jd"><span class="jd-n">1</span><div class="jd-c"><h3>Corte energético + silêncio magnético</h3><p>Existe um gesto silencioso, logo no dia 1, que acende um alerta na cabeça dele. A maioria faz o oposto — e afasta de vez. Você vai fazer certo.</p></div></div>
-        <div class="jd"><span class="jd-n">2</span><div class="jd-c"><h3>O silêncio que fala por você</h3><p>Tem um tipo de silêncio que, em vez de afastar, puxa ele de volta. Você aprende o jeito exato de sumir que deixa ele inquieto, checando o celular, pensando em você.</p></div></div>
-        <div class="jd"><span class="jd-n">3</span><div class="jd-c"><h3>Reconstrução interior — o inventário emocional</h3><p>Tem um motivo invisível que te fez aceitar menos do que merece. Nesse dia você descobre qual é — e corta esse padrão pra nunca mais ser descartada.</p></div></div>
-        <div class="jd"><span class="jd-n">4</span><div class="jd-c"><h3>Reset estético + presença estratégica</h3><p>Pequenas mudanças que viram uma bomba de atração. Você reaparece no lugar certo, na hora certa, com a energia certa — e quando ele te vir, o cérebro dele é obrigado a te rever.</p></div></div>
-        <div class="jd"><span class="jd-n">5</span><div class="jd-c"><h3>Gatilho da reavaliação + reaproximação invertida</h3><p>O dia em que o jogo vira. Você vai entender o gatilho mental que faz ele sentir, lá no fundo, que te perder foi o maior erro que cometeu — e vai saber criar o cenário exato pra ELE te procurar.</p></div></div>
-        <div class="jd"><span class="jd-n">6</span><div class="jd-c"><h3>O encontro do poder</h3><p>O que dizer, como agir e o que NUNCA fazer na hora do reencontro. Um passo errado aqui põe tudo a perder — por isso você entra preparada e no controle.</p></div></div>
-        <div class="jd"><span class="jd-n">7</span><div class="jd-c"><h3>Selando a reconquista — ou liberando o que não te serve</h3><p>A decisão passa a ser sua. De quem implorava pela atenção dele… pra quem escolhe. Agora é você, no alto da sua nova posição, quem decide o que fazer com ele.</p></div></div>
+      <h2 style="font-size:clamp(24px,6vw,34px);margin-bottom:14px">Você ainda pensa nele?</h2>
+      <p class="lead" style="font-size:clamp(20px,5.2vw,23px);margin-bottom:0">O plano estratégico de 7 dias ensina como recuperar a atenção e o amor de quem se afastou. Técnica emocional psicológica usada por terapeutas — agora nas suas mãos.</p>
+    </div>
+  </section>
+
+  <!-- PLANO DE 7 DIAS -->
+  <section class="plan10" style="padding-top:28px">
+    <div class="wrap">
+      <p class="plan-explain" style="margin-bottom:18px;text-align:center">Um passo por dia. Você abre, lê, e faz.</p>
+
+      <button type="button" class="toggle-section-btn" id="btnDias" onclick="toggleSection('journeyWrap','btnDias','Ver os dias ↓','Ocultar os dias ↑')">Ver os dias ↓</button>
+
+      <div id="journeyWrap" style="display:none">
+        <div class="journey open" id="journey" style="margin-top:18px">
+          <div class="jd"><span class="jd-n">1</span><div class="jd-c"><h3>Corte energético + silêncio magnético</h3><p>Existe um gesto silencioso, logo no dia 1, que acende um alerta na cabeça dele. A maioria faz o oposto — e afasta de vez. Você vai fazer certo.</p></div></div>
+          <div class="jd"><span class="jd-n">2</span><div class="jd-c"><h3>O silêncio que fala por você</h3><p>Tem um tipo de silêncio que, em vez de afastar, puxa ele de volta. Você aprende o jeito exato de sumir que deixa ele inquieto, checando o celular, pensando em você.</p></div></div>
+          <div class="jd"><span class="jd-n">3</span><div class="jd-c"><h3>Reconstrução interior — o inventário emocional</h3><p>Tem um motivo invisível que te fez aceitar menos do que merece. Nesse dia você descobre qual é — e corta esse padrão pra nunca mais ser descartada.</p></div></div>
+          <div class="jd"><span class="jd-n">4</span><div class="jd-c"><h3>Reset estético + presença estratégica</h3><p>Pequenas mudanças que viram uma bomba de atração. Você reaparece no lugar certo, na hora certa, com a energia certa — e quando ele te vir, o cérebro dele é obrigado a te rever.</p></div></div>
+          <div class="jd"><span class="jd-n">5</span><div class="jd-c"><h3>Gatilho da reavaliação + reaproximação invertida</h3><p>O dia em que o jogo vira. Você vai entender o gatilho mental que faz ele sentir, lá no fundo, que te perder foi o maior erro que cometeu — e vai saber criar o cenário exato pra ELE te procurar.</p></div></div>
+          <div class="jd"><span class="jd-n">6</span><div class="jd-c"><h3>O encontro do poder</h3><p>O que dizer, como agir e o que NUNCA fazer na hora do reencontro. Um passo errado aqui põe tudo a perder — por isso você entra preparada e no controle.</p></div></div>
+          <div class="jd"><span class="jd-n">7</span><div class="jd-c"><h3>Selando a reconquista — ou liberando o que não te serve</h3><p>A decisão passa a ser sua. De quem implorava pela atenção dele… pra quem escolhe. Agora é você, no alto da sua nova posição, quem decide o que fazer com ele.</p></div></div>
+        </div>
+        <p class="plan-close" style="margin-top:28px">No dia 1 você está implorando pela atenção dele.<br>No dia 7, é ele quem implora pela sua.</p>
       </div>
-      <p class="plan-close" style="margin-top:28px">No dia 1 você está implorando pela atenção dele.<br>No dia 7, é ele quem implora pela sua.</p>
     </div>
   </section>
 
@@ -618,15 +633,20 @@ body.portal-lock{overflow:hidden}
       <h2 class="method-title">O segredo da reconquista<br><em>está todo aqui dentro</em></h2>
       <p class="method-promise">É aqui que você para de sofrer.</p>
       <p class="lead">Isso aqui é a virada da sua vida. Aqui você troca as noites em claro, a ansiedade e o medo de perder ele… pela mulher segura, no controle, que sabe exatamente o que fazer. Cada módulo resolve uma situação real, com o movimento exato: o que fazer, o que dizer, e o que <b>nunca</b> fazer.</p>
-      <div class="steps">
-        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">1</span><h3>Ele bloqueou — o segredo para ser desbloqueada</h3><p>O bloqueio não é o fim. É uma reação emocional — e existe um protocolo exato para reverter isso sem implorar, sem drama, sem parecer desesperada.</p></div>
-        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">2</span><h3>Visualizou e não respondeu — o que isso realmente significa e como reverter essa dinâmica</h3><p>Pare de inventar histórias na sua cabeça. Entenda o que está por trás do silêncio — e o movimento certo para fazer ele querer responder.</p></div>
-        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">3</span><h3>Ele pediu um tempo — como agir sem perder ele de vez</h3><p>Cada movimento errado nessa fase afasta ele mais. Você vai aprender o roteiro exato para esse momento delicado.</p></div>
-        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">4</span><h3>Ele está com outra — o que fazer (e o que nunca fazer)</h3><p>A situação mais dolorosa de todas — e também a mais reversível quando você age com inteligência emocional.</p></div>
-        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">5</span><h3>Scripts prontos para cada situação</h3><p>O que escrever. Quando enviar. Como soar segura sem parecer desesperada. Mensagens testadas que reabrem o diálogo.</p></div>
-        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">6</span><h3>De descartada para desejada — o reposicionamento</h3><p>Como mudar a percepção que ele tem de você — sem fingir, sem joguinho — usando psicologia real de atração.</p></div>
-        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">7</span><h3>Como fazer ele se arrepender sem dizer uma palavra</h3><p>Presença estratégica. O poder do silêncio calculado. Como despertar o instinto de caça nele de novo.</p></div>
-        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">8</span><h3>Destruir o ego dele com elegância — sem parecer amarga</h3><p>Ele precisa sentir o que fez. Você vai aprender a virar o jogo com dignidade — de um jeito que ele nunca vai esquecer.</p></div>
+
+      <button type="button" class="toggle-section-btn" id="btnModulos" onclick="toggleSection('modulosWrap','btnModulos','Ver os módulos ↓','Ocultar os módulos ↑')">Ver os módulos ↓</button>
+
+      <div id="modulosWrap" style="display:none;margin-top:18px">
+        <div class="steps">
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">1</span><h3>Ele bloqueou — o segredo para ser desbloqueada</h3><p>O bloqueio não é o fim. É uma reação emocional — e existe um protocolo exato para reverter isso sem implorar, sem drama, sem parecer desesperada.</p></div>
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">2</span><h3>Visualizou e não respondeu — o que isso realmente significa e como reverter essa dinâmica</h3><p>Pare de inventar histórias na sua cabeça. Entenda o que está por trás do silêncio — e o movimento certo para fazer ele querer responder.</p></div>
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">3</span><h3>Ele pediu um tempo — como agir sem perder ele de vez</h3><p>Cada movimento errado nessa fase afasta ele mais. Você vai aprender o roteiro exato para esse momento delicado.</p></div>
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">4</span><h3>Ele está com outra — o que fazer (e o que nunca fazer)</h3><p>A situação mais dolorosa de todas — e também a mais reversível quando você age com inteligência emocional.</p></div>
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">5</span><h3>Scripts prontos para cada situação</h3><p>O que escrever. Quando enviar. Como soar segura sem parecer desesperada. Mensagens testadas que reabrem o diálogo.</p></div>
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">6</span><h3>De descartada para desejada — o reposicionamento</h3><p>Como mudar a percepção que ele tem de você — sem fingir, sem joguinho — usando psicologia real de atração.</p></div>
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">7</span><h3>Como fazer ele se arrepender sem dizer uma palavra</h3><p>Presença estratégica. O poder do silêncio calculado. Como despertar o instinto de caça nele de novo.</p></div>
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">8</span><h3>Destruir o ego dele com elegância — sem parecer amarga</h3><p>Ele precisa sentir o que fez. Você vai aprender a virar o jogo com dignidade — de um jeito que ele nunca vai esquecer.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -1282,6 +1302,14 @@ body.portal-lock{overflow:hidden}
     var btn = document.getElementById('depoToggle');
     var open = box.classList.toggle('show');
     btn.innerHTML = open ? 'Ver menos &uarr;' : 'Ver mais relatos &darr;';
+  }
+
+  function toggleSection(wrapId, btnId, labelClosed, labelOpen){
+    var wrap = document.getElementById(wrapId);
+    var btn  = document.getElementById(btnId);
+    var isHidden = wrap.style.display === 'none' || wrap.style.display === '';
+    wrap.style.display = isHidden ? 'block' : 'none';
+    btn.textContent   = isHidden ? labelOpen : labelClosed;
   }
   </script>
 
