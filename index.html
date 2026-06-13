@@ -465,6 +465,28 @@ body.portal-lock{overflow:hidden}
 .pcard-free{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;color:#fff;background:#3b9c6d;padding:3px 9px;border-radius:50px;line-height:1.4}
 .pcard-hero .pcard-sub{font-size:16px;color:#dbe2e7;line-height:1.45}
 .pcard-hero .pcard-title{margin-bottom:3px}
+/* ===== ACESSO RESTRITO ===== */
+.acesso-overlay{position:fixed;inset:0;z-index:1200;background:rgba(30,8,14,.62);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:22px;animation:acFade .25s ease}
+@keyframes acFade{from{opacity:0}to{opacity:1}}
+.acesso-box{position:relative;width:100%;max-width:382px;background:linear-gradient(168deg,var(--wine-3),var(--wine));border:1px solid rgba(200,112,79,.42);border-radius:24px;padding:36px 26px 26px;text-align:center;color:var(--cream);box-shadow:0 30px 70px rgba(30,8,14,.5);animation:acPop .32s cubic-bezier(.34,1.4,.5,1)}
+@keyframes acPop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.acesso-x{position:absolute;top:13px;right:16px;background:none;border:none;color:rgba(251,247,240,.55);font-size:27px;line-height:1;cursor:pointer}
+.acesso-lock{width:62px;height:62px;border-radius:50%;margin:0 auto 16px;background:rgba(200,112,79,.16);border:1px solid var(--terra-soft);color:var(--terra-soft);display:flex;align-items:center;justify-content:center}
+.acesso-lock svg{width:28px;height:28px}
+.acesso-eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra-soft);font-weight:700;margin-bottom:6px}
+.acesso-title{font-family:'Newsreader',serif;font-weight:600;font-size:27px;color:#fff;line-height:1.15;margin-bottom:12px}
+.acesso-text{font-size:14.5px;line-height:1.55;color:#e8d3d8;margin-bottom:20px}
+.acesso-price{background:rgba(0,0,0,.18);border:1px solid rgba(200,112,79,.25);border-radius:16px;padding:15px 16px;margin-bottom:20px}
+.ap-label{display:block;font-size:11px;letter-spacing:1.5px;color:var(--terra-soft);text-transform:uppercase;font-weight:600;margin-bottom:3px}
+.ap-val{font-family:'Newsreader',serif;font-weight:600;font-size:46px;color:#fff;line-height:1}
+.ap-val .c{font-size:.5em;vertical-align:super;margin-right:2px}
+.ap-val small{font-size:.4em;vertical-align:super}
+.ap-meta{display:block;font-size:12px;color:#cdb8be;margin-top:6px}
+.acesso-cta{display:block;width:100%;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:600;font-size:16.5px;color:#fff;border:none;background:linear-gradient(135deg,var(--terra),#b35e3e);border-radius:50px;padding:17px;box-shadow:0 12px 28px rgba(200,112,79,.35);transition:transform .15s}
+.acesso-cta:hover{transform:translateY(-2px)}
+.acesso-cta:active{transform:scale(.99)}
+.acesso-foot{font-size:12px;color:#cdb8be;margin-top:14px;display:flex;align-items:center;justify-content:center;gap:6px}
+.acesso-foot svg{width:13px;height:13px}
 </style>
 </head>
 <body>
@@ -483,11 +505,20 @@ body.portal-lock{overflow:hidden}
 
       <nav class="portal-menu" aria-label="Por onde começar">
 
-        <button type="button" class="pcard pcard-hero" onclick="openPanel('panelPlano')">
+        <button type="button" class="pcard pcard-hero" onclick="openAcesso()">
           <span class="pcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span>
           <span class="pcard-txt">
             <span class="pcard-title">Plano de 7 Dias</span>
             <span class="pcard-sub">O passo a passo, dia a dia, que faz ele voltar</span>
+          </span>
+          <span class="pcard-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
+        </button>
+
+        <button type="button" class="pcard" onclick="openPanel('panelComo')">
+          <span class="pcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1.3" fill="currentColor" stroke="none"/><circle cx="3.5" cy="12" r="1.3" fill="currentColor" stroke="none"/><circle cx="3.5" cy="18" r="1.3" fill="currentColor" stroke="none"/></svg></span>
+          <span class="pcard-txt">
+            <span class="pcard-title">Como funciona o Plano</span>
+            <span class="pcard-sub">Veja o passo a passo dos 7 dias</span>
           </span>
           <span class="pcard-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
         </button>
@@ -536,8 +567,8 @@ body.portal-lock{overflow:hidden}
   </div>
 
   <!-- ════════ PAINEL: PLANO 7 DIAS ════════ -->
-  <div class="panel" id="panelPlano">
-    <div class="panel-bar"><button type="button" class="panel-back" onclick="closePanel('panelPlano')">← Voltar</button><span class="panel-bar-title">Plano 7 Dias</span></div>
+  <div class="panel" id="panelComo">
+    <div class="panel-bar"><button type="button" class="panel-back" onclick="closePanel('panelComo')">← Voltar</button><span class="panel-bar-title">Como funciona</span></div>
     <div class="panel-scroll">
 
   <!-- PLANO DE 7 DIAS -->
@@ -565,57 +596,23 @@ body.portal-lock{overflow:hidden}
       <p class="method-promise">É aqui que você para de sofrer.</p>
       <p class="lead">Isso aqui é a virada da sua vida. Aqui você troca as noites em claro, a ansiedade e o medo de perder ele… pela mulher segura, no controle, que sabe exatamente o que fazer. Cada módulo resolve uma situação real, com o movimento exato: o que fazer, o que dizer, e o que <b>nunca</b> fazer.</p>
       <div class="steps">
-        <div class="step" onclick="goOferta()" role="button" tabindex="0"><span class="n">1</span><h3>Ele bloqueou — o segredo para ser desbloqueada</h3><p>O bloqueio não é o fim. É uma reação emocional — e existe um protocolo exato para reverter isso sem implorar, sem drama, sem parecer desesperada.</p></div>
-        <div class="step" onclick="goOferta()" role="button" tabindex="0"><span class="n">2</span><h3>Visualizou e não respondeu — o que isso realmente significa e como reverter essa dinâmica</h3><p>Pare de inventar histórias na sua cabeça. Entenda o que está por trás do silêncio — e o movimento certo para fazer ele querer responder.</p></div>
-        <div class="step" onclick="goOferta()" role="button" tabindex="0"><span class="n">3</span><h3>Ele pediu um tempo — como agir sem perder ele de vez</h3><p>Cada movimento errado nessa fase afasta ele mais. Você vai aprender o roteiro exato para esse momento delicado.</p></div>
-        <div class="step" onclick="goOferta()" role="button" tabindex="0"><span class="n">4</span><h3>Ele está com outra — o que fazer (e o que nunca fazer)</h3><p>A situação mais dolorosa de todas — e também a mais reversível quando você age com inteligência emocional.</p></div>
-        <div class="step" onclick="goOferta()" role="button" tabindex="0"><span class="n">5</span><h3>Scripts prontos para cada situação</h3><p>O que escrever. Quando enviar. Como soar segura sem parecer desesperada. Mensagens testadas que reabrem o diálogo.</p></div>
-        <div class="step" onclick="goOferta()" role="button" tabindex="0"><span class="n">6</span><h3>De descartada para desejada — o reposicionamento</h3><p>Como mudar a percepção que ele tem de você — sem fingir, sem joguinho — usando psicologia real de atração.</p></div>
-        <div class="step" onclick="goOferta()" role="button" tabindex="0"><span class="n">7</span><h3>Como fazer ele se arrepender sem dizer uma palavra</h3><p>Presença estratégica. O poder do silêncio calculado. Como despertar o instinto de caça nele de novo.</p></div>
-        <div class="step" onclick="goOferta()" role="button" tabindex="0"><span class="n">8</span><h3>Destruir o ego dele com elegância — sem parecer amarga</h3><p>Ele precisa sentir o que fez. Você vai aprender a virar o jogo com dignidade — de um jeito que ele nunca vai esquecer.</p></div>
+        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">1</span><h3>Ele bloqueou — o segredo para ser desbloqueada</h3><p>O bloqueio não é o fim. É uma reação emocional — e existe um protocolo exato para reverter isso sem implorar, sem drama, sem parecer desesperada.</p></div>
+        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">2</span><h3>Visualizou e não respondeu — o que isso realmente significa e como reverter essa dinâmica</h3><p>Pare de inventar histórias na sua cabeça. Entenda o que está por trás do silêncio — e o movimento certo para fazer ele querer responder.</p></div>
+        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">3</span><h3>Ele pediu um tempo — como agir sem perder ele de vez</h3><p>Cada movimento errado nessa fase afasta ele mais. Você vai aprender o roteiro exato para esse momento delicado.</p></div>
+        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">4</span><h3>Ele está com outra — o que fazer (e o que nunca fazer)</h3><p>A situação mais dolorosa de todas — e também a mais reversível quando você age com inteligência emocional.</p></div>
+        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">5</span><h3>Scripts prontos para cada situação</h3><p>O que escrever. Quando enviar. Como soar segura sem parecer desesperada. Mensagens testadas que reabrem o diálogo.</p></div>
+        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">6</span><h3>De descartada para desejada — o reposicionamento</h3><p>Como mudar a percepção que ele tem de você — sem fingir, sem joguinho — usando psicologia real de atração.</p></div>
+        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">7</span><h3>Como fazer ele se arrepender sem dizer uma palavra</h3><p>Presença estratégica. O poder do silêncio calculado. Como despertar o instinto de caça nele de novo.</p></div>
+        <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">8</span><h3>Destruir o ego dele com elegância — sem parecer amarga</h3><p>Ele precisa sentir o que fez. Você vai aprender a virar o jogo com dignidade — de um jeito que ele nunca vai esquecer.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- OFFER -->
-  <section class="offer" id="comprar">
-    <div class="wrap">
-      <p class="eyebrow" style="color:var(--terra-soft)">Sua decisão</p>
-      <h2 class="offer-title">Você tem duas escolhas<br><em>a partir de agora</em></h2>
-      <p class="lead">Continuar mais uma noite remoendo, refém do celular, sem saber o que fazer. Ou pegar o mapa na mão e começar a virar o jogo hoje — sabendo exatamente qual é o próximo passo.</p>
-      <div class="price-card">
-        <div class="main-prod">
-          <p class="mp-label">Você está levando</p>
-          <h3 class="mp-name">Plano de 7 dias completo</h3>
-          <p class="mp-desc">O passo a passo guiado, dia por dia, pra trazer ele de volta e te transformar na mulher que ele vai correr atrás.</p>
-        </div>
-        <div class="bonus-stack">
-          <p class="bs-head">🎁 E hoje, de bônus, você ainda leva:</p>
-          <ul class="value-stack">
-            <li>
-              <span class="vs-name"><b>8 módulos completos</b><small>Bloqueio, vácuo, "um tempo", ele com outra</small></span>
-              <span class="vs-val"><s>R$ 67</s><i>GRÁTIS</i></span>
-            </li>
-            <li>
-              <span class="vs-name"><b>Scripts prontos pra copiar e colar</b><small>As palavras certas, na hora certa</small></span>
-              <span class="vs-val"><s>R$ 47</s><i>GRÁTIS</i></span>
-            </li>
-            <li>
-              <span class="vs-name"><b>Suporte direto no WhatsApp</b><small>Eu, de verdade, do seu lado quando precisar</small></span>
-              <span class="vs-val"><s>R$ 37</s><i>GRÁTIS</i></span>
-            </li>
-          </ul>
-          <p class="bs-warn">⚠️ Bônus inclusos só nesta condição de hoje — podem sair a qualquer momento.</p>
-        </div>
-        <div class="total-row"><span>O plano sozinho vale</span><span class="total-old">R$ 197</span></div>
-        <p class="price-old">Hoje, com tudo incluso, por apenas:</p>
-        <div class="price-tag"><span class="cur">R$</span>47<small style="font-size:.45em;vertical-align:super">,00</small></div>
-        <p class="price-meta">Pagamento único · sem mensalidade · acesso na hora</p>
-        <button type="button" class="cta" onclick="openCheckout()">Quero virar o jogo agora</button>
-        <p class="pc-foot">⚡ Acesso liberado na hora pelo WhatsApp</p>
-      </div>
-      <p class="guarantee"><b>Garantia blindada de 7 dias.</b> Entrou, olhou tudo por dentro e não foi pra você? Devolvo seus R$47,00 na hora, sem perguntar nada. Você não arrisca um centavo — o risco é todo meu.</p>
-      <button type="button" class="faq-open" onclick="openFaq()">Ainda tem dúvidas? Toque aqui</button>
+  <!-- CTA ACESSO -->
+  <section class="plan10" style="padding-top:4px;padding-bottom:44px">
+    <div class="wrap" style="text-align:center">
+      <button type="button" class="cta" onclick="openAcesso()">Quero ter acesso a tudo isso</button>
+      <p class="pc-foot" style="margin-top:12px">⚡ Acesso liberado na hora pelo WhatsApp</p>
     </div>
   </section>
 
@@ -857,6 +854,24 @@ body.portal-lock{overflow:hidden}
   </div>
 
   <!-- ═══════════════ CHECKOUT ═══════════════ -->
+    <!-- ACESSO RESTRITO -->
+  <div class="acesso-overlay" id="acesso" style="display:none" aria-hidden="true">
+    <div class="acesso-box" role="dialog" aria-modal="true" aria-label="Acesso restrito">
+      <button class="acesso-x" type="button" onclick="closeAcesso()" aria-label="Fechar">&times;</button>
+      <div class="acesso-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+      <p class="acesso-eyebrow">Conteúdo exclusivo</p>
+      <h3 class="acesso-title">Acesso restrito</h3>
+      <p class="acesso-text">O Plano de 7 Dias completo — o passo a passo dia a dia, os 8 módulos e os scripts prontos — é liberado só para alunas.</p>
+      <div class="acesso-price">
+        <span class="ap-label">Acesso vitalício por</span>
+        <div class="ap-val"><span class="c">R$</span>47<small>,00</small></div>
+        <span class="ap-meta">Pagamento único · liberado na hora</span>
+      </div>
+      <button class="acesso-cta" type="button" onclick="closeAcesso();openCheckout()">Liberar meu acesso agora &rarr;</button>
+      <p class="acesso-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Pagamento protegido via Pix</p>
+    </div>
+  </div>
+
   <div class="co-overlay" id="checkout" aria-hidden="true" style="display:none">
     <div class="co-scroll" id="coScroll">
     <div class="co-panel" role="dialog" aria-modal="true" aria-label="Finalizar compra">
@@ -897,8 +912,8 @@ body.portal-lock{overflow:hidden}
           <div class="co-wa-advantage co-wa-big">
             <span class="co-wa-advantage-ic">💬</span>
             <div>
-              <strong>Acesso pelo WhatsApp</strong>
-              <span>Você recebe o acesso direto no seu WhatsApp.</span>
+              <strong>Acesso liberado na hora</strong>
+              <span>Assim que o pagamento for confirmado, seu acesso é liberado.</span>
             </div>
           </div>
 
@@ -1019,7 +1034,24 @@ body.portal-lock{overflow:hidden}
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeCheckout(); });
 
   // FAQ
-  function goOferta(){
+  function openAcesso(){
+    $('acesso').style.display='flex';
+    $('acesso').setAttribute('aria-hidden','false');
+    document.body.classList.add('portal-lock');
+    if(window.ttq && typeof ttq.track==='function'){
+      ttq.track('ViewContent',{contents:[{content_id:'codigo-da-reconquista',content_name:'Código da Reconquista',quantity:1,price:47.00}],content_type:'product',value:47.00,currency:'BRL'});
+    }
+  }
+  function closeAcesso(){
+    $('acesso').style.display='none';
+    $('acesso').setAttribute('aria-hidden','true');
+    if(!document.querySelector('.panel.open')) document.body.classList.remove('portal-lock');
+  }
+  $('acesso').addEventListener('click', function(e){ if(e.target.id==='acesso') closeAcesso(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && $('acesso').style.display==='flex') closeAcesso(); });
+
+  function goOferta(){ openAcesso(); }
+  function _goOferta_old(){
     var el = document.getElementById('comprar');
     if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
   }
