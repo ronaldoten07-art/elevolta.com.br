@@ -512,6 +512,39 @@ body.portal-lock{overflow:hidden}
 .portal-foot{padding-bottom:0;font-size:clamp(11px,1.5vh,12.5px)}
 @media (max-height:660px){.portal-sub{display:none}.portal-rule{display:none}}
 @media (max-height:560px){.portal-kicker{display:none}}
+/* ===== AJUSTES CLARITY ===== */
+.jd{cursor:pointer;border-radius:12px;transition:background .18s,transform .15s;padding:6px 8px;margin:0 -8px}
+.jd:hover{background:rgba(200,112,79,.06)}
+.jd:hover .jd-c h3{color:var(--terra)}
+.jd:active{transform:scale(.99)}
+.acesso-steps{text-align:left;display:flex;flex-direction:column;gap:9px;margin:0 0 20px}
+.as-step{display:flex;align-items:center;gap:11px;font-size:13.5px;color:#e8d3d8;line-height:1.35}
+.as-n{flex-shrink:0;width:23px;height:23px;border-radius:50%;background:rgba(200,112,79,.18);border:1px solid var(--terra-soft);color:var(--terra-soft);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
+/* ===== DIAS E MÓDULOS LADO A LADO ===== */
+.journey,.journey.open{display:grid!important;grid-template-columns:1fr 1fr;gap:9px;margin:18px 0 0;max-width:none}
+.steps{display:grid!important;grid-template-columns:1fr 1fr;gap:9px}
+.jd,.step{display:block;margin:0;padding:14px 13px;background:#fff;border:1px solid var(--paper-2);border-left:3px solid var(--terra);border-radius:13px;box-shadow:0 3px 12px rgba(42,58,70,.05);cursor:pointer;position:relative;transition:transform .15s,box-shadow .2s,border-color .2s}
+.jd:hover,.step:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(42,58,70,.1);border-color:var(--terra-soft);background:#fff}
+.jd::before{display:none!important}
+.jd-n,.step .n{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;border-radius:8px;background:var(--terra);color:#fff;font-family:'Newsreader',serif;font-weight:600;font-style:italic;font-size:14px;margin-bottom:9px;box-shadow:none}
+.jd-c h3,.step h3{font-family:'Newsreader',serif;font-weight:600;font-size:15px;line-height:1.22;color:var(--ink);margin:0 0 4px;padding-top:0}
+.jd:hover .jd-c h3,.step:hover h3{color:var(--terra)}
+.jd-c p,.step p{font-size:12px;line-height:1.42;color:var(--slate);margin:0}
+/* ===== DUO: 7 DIAS | 8 MÓDULOS ===== */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start;margin-top:14px}
+.duo-col{display:flex;flex-direction:column;min-width:0}
+.duo-h{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(16px,4.4vw,19px);color:var(--terra);text-align:center;margin:0 0 11px;letter-spacing:.2px}
+.duo-list{display:flex;flex-direction:column;gap:8px}
+.duo .jd,.duo .step{padding:13px 12px;border-radius:13px}
+.duo .jd-n,.duo .step .n{width:26px;height:26px;font-size:14px;margin-bottom:8px}
+.duo .jd-c h3,.duo .step h3{font-size:clamp(14.5px,4vw,17px);line-height:1.22;margin:0 0 5px}
+.duo .jd-c p,.duo .step p{font-size:clamp(12.5px,3.5vw,14.5px);line-height:1.42}
+/* ===== LISTA EM 1 COLUNA (dias e módulos) ===== */
+.journey,.journey.open,.steps{display:flex!important;flex-direction:column;gap:10px;grid-template-columns:none!important;max-width:560px;margin-left:auto;margin-right:auto}
+.jd,.step{padding:16px}
+.jd-n,.step .n{width:30px;height:30px;font-size:15px;margin-bottom:10px}
+.jd-c h3,.step h3{font-size:17px;line-height:1.25;margin:0 0 5px}
+.jd-c p,.step p{font-size:14px;line-height:1.45}
 </style>
 </head>
 <body>
@@ -544,6 +577,15 @@ body.portal-lock{overflow:hidden}
           <span class="pcard-txt">
             <span class="pcard-title">Como funciona o Plano</span>
             <span class="pcard-sub">Veja o passo a passo dos 7 dias</span>
+          </span>
+          <span class="pcard-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
+        </button>
+
+        <button type="button" class="pcard" onclick="openPanel('panelSegredos')">
+          <span class="pcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.7 4.9 4.9 1.7-4.9 1.7L12 16l-1.7-4.7L5.4 9.6l4.9-1.7z"/><path d="M19 14.5l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg></span>
+          <span class="pcard-txt">
+            <span class="pcard-title">Os segredos da reconquista</span>
+            <span class="pcard-sub">Um caminho pra cada situação</span>
           </span>
           <span class="pcard-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
         </button>
@@ -606,48 +648,19 @@ body.portal-lock{overflow:hidden}
   </section>
 
   <!-- PLANO DE 7 DIAS -->
-  <section class="plan10" style="padding-top:28px">
+  <section class="plan10" style="padding-top:26px">
     <div class="wrap">
-      <p class="plan-explain" style="margin-bottom:18px;text-align:center">Um passo por dia. Você abre, lê, e faz.</p>
-
-      <button type="button" class="toggle-section-btn" id="btnDias" onclick="toggleSection('journeyWrap','btnDias','Ver os dias ↓','Ocultar os dias ↑')">Ver os dias ↓</button>
-
-      <div id="journeyWrap" style="display:none">
-        <div class="journey open" id="journey" style="margin-top:18px">
-          <div class="jd"><span class="jd-n">1</span><div class="jd-c"><h3>Corte energético + silêncio magnético</h3><p>Existe um gesto silencioso, logo no dia 1, que acende um alerta na cabeça dele. A maioria faz o oposto — e afasta de vez. Você vai fazer certo.</p></div></div>
-          <div class="jd"><span class="jd-n">2</span><div class="jd-c"><h3>O silêncio que fala por você</h3><p>Tem um tipo de silêncio que, em vez de afastar, puxa ele de volta. Você aprende o jeito exato de sumir que deixa ele inquieto, checando o celular, pensando em você.</p></div></div>
-          <div class="jd"><span class="jd-n">3</span><div class="jd-c"><h3>Reconstrução interior — o inventário emocional</h3><p>Tem um motivo invisível que te fez aceitar menos do que merece. Nesse dia você descobre qual é — e corta esse padrão pra nunca mais ser descartada.</p></div></div>
-          <div class="jd"><span class="jd-n">4</span><div class="jd-c"><h3>Reset estético + presença estratégica</h3><p>Pequenas mudanças que viram uma bomba de atração. Você reaparece no lugar certo, na hora certa, com a energia certa — e quando ele te vir, o cérebro dele é obrigado a te rever.</p></div></div>
-          <div class="jd"><span class="jd-n">5</span><div class="jd-c"><h3>Gatilho da reavaliação + reaproximação invertida</h3><p>O dia em que o jogo vira. Você vai entender o gatilho mental que faz ele sentir, lá no fundo, que te perder foi o maior erro que cometeu — e vai saber criar o cenário exato pra ELE te procurar.</p></div></div>
-          <div class="jd"><span class="jd-n">6</span><div class="jd-c"><h3>O encontro do poder</h3><p>O que dizer, como agir e o que NUNCA fazer na hora do reencontro. Um passo errado aqui põe tudo a perder — por isso você entra preparada e no controle.</p></div></div>
-          <div class="jd"><span class="jd-n">7</span><div class="jd-c"><h3>Selando a reconquista — ou liberando o que não te serve</h3><p>A decisão passa a ser sua. De quem implorava pela atenção dele… pra quem escolhe. Agora é você, no alto da sua nova posição, quem decide o que fazer com ele.</p></div></div>
-        </div>
-        <p class="plan-close" style="margin-top:28px">No dia 1 você está implorando pela atenção dele.<br>No dia 7, é ele quem implora pela sua.</p>
+      <p class="plan-explain" style="margin-bottom:8px;text-align:center">Um passo por dia. Toque pra liberar.</p>
+      <div class="journey open" id="journey" style="margin-top:10px">
+          <div class="jd" onclick="openAcesso()" role="button" tabindex="0"><span class="jd-n">1</span><div class="jd-c"><h3>O movimento que liga o alerta dele</h3><p>A maioria faz o oposto — e o perde de vez.</p></div></div>
+          <div class="jd" onclick="openAcesso()" role="button" tabindex="0"><span class="jd-n">2</span><div class="jd-c"><h3>O silêncio que puxa ele de volta</h3><p>Não o que afasta. O que faz ele te procurar.</p></div></div>
+          <div class="jd" onclick="openAcesso()" role="button" tabindex="0"><span class="jd-n">3</span><div class="jd-c"><h3>Por que você foi deixada</h3><p>Tem um padrão escondido. No dia 3 ele acaba.</p></div></div>
+          <div class="jd" onclick="openAcesso()" role="button" tabindex="0"><span class="jd-n">4</span><div class="jd-c"><h3>A virada que ele não vê chegando</h3><p>Quando ele te vê de novo, o cérebro dele trava.</p></div></div>
+          <div class="jd" onclick="openAcesso()" role="button" tabindex="0"><span class="jd-n">5</span><div class="jd-c"><h3>O dia em que o jogo vira</h3><p>O gatilho que faz ele vir atrás de você.</p></div></div>
+          <div class="jd" onclick="openAcesso()" role="button" tabindex="0"><span class="jd-n">6</span><div class="jd-c"><h3>O reencontro, no seu controle</h3><p>O que dizer — e o que jamais fazer.</p></div></div>
+          <div class="jd" onclick="openAcesso()" role="button" tabindex="0"><span class="jd-n">7</span><div class="jd-c"><h3>Agora quem decide é você</h3><p>A última palavra passa a ser sua.</p></div></div>
       </div>
-    </div>
-  </section>
-
-  <!-- METHOD / MODULES -->
-  <section class="method">
-    <div class="wrap">
-      <h2 class="method-title">O segredo da reconquista<br><em>está todo aqui dentro</em></h2>
-      <p class="method-promise">É aqui que você para de sofrer.</p>
-      <p class="lead">Isso aqui é a virada da sua vida. Aqui você troca as noites em claro, a ansiedade e o medo de perder ele… pela mulher segura, no controle, que sabe exatamente o que fazer. Cada módulo resolve uma situação real, com o movimento exato: o que fazer, o que dizer, e o que <b>nunca</b> fazer.</p>
-
-      <button type="button" class="toggle-section-btn" id="btnModulos" onclick="toggleSection('modulosWrap','btnModulos','Ver os módulos ↓','Ocultar os módulos ↑')">Ver os módulos ↓</button>
-
-      <div id="modulosWrap" style="display:none;margin-top:18px">
-        <div class="steps">
-          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">1</span><h3>Ele bloqueou — o segredo para ser desbloqueada</h3><p>O bloqueio não é o fim. É uma reação emocional — e existe um protocolo exato para reverter isso sem implorar, sem drama, sem parecer desesperada.</p></div>
-          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">2</span><h3>Visualizou e não respondeu — o que isso realmente significa e como reverter essa dinâmica</h3><p>Pare de inventar histórias na sua cabeça. Entenda o que está por trás do silêncio — e o movimento certo para fazer ele querer responder.</p></div>
-          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">3</span><h3>Ele pediu um tempo — como agir sem perder ele de vez</h3><p>Cada movimento errado nessa fase afasta ele mais. Você vai aprender o roteiro exato para esse momento delicado.</p></div>
-          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">4</span><h3>Ele está com outra — o que fazer (e o que nunca fazer)</h3><p>A situação mais dolorosa de todas — e também a mais reversível quando você age com inteligência emocional.</p></div>
-          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">5</span><h3>Scripts prontos para cada situação</h3><p>O que escrever. Quando enviar. Como soar segura sem parecer desesperada. Mensagens testadas que reabrem o diálogo.</p></div>
-          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">6</span><h3>De descartada para desejada — o reposicionamento</h3><p>Como mudar a percepção que ele tem de você — sem fingir, sem joguinho — usando psicologia real de atração.</p></div>
-          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">7</span><h3>Como fazer ele se arrepender sem dizer uma palavra</h3><p>Presença estratégica. O poder do silêncio calculado. Como despertar o instinto de caça nele de novo.</p></div>
-          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">8</span><h3>Destruir o ego dele com elegância — sem parecer amarga</h3><p>Ele precisa sentir o que fez. Você vai aprender a virar o jogo com dignidade — de um jeito que ele nunca vai esquecer.</p></div>
-        </div>
-      </div>
+      <p class="plan-close" style="margin-top:26px">No dia 1 você está implorando pela atenção dele.<br>No dia 7, é ele quem implora pela sua.</p>
     </div>
   </section>
 
@@ -674,6 +687,38 @@ body.portal-lock{overflow:hidden}
 
     </div><!-- /panel-scroll -->
   </div><!-- /panelPlano -->
+
+  <!-- ════════ PAINEL: OS SEGREDOS ════════ -->
+  <div class="panel" id="panelSegredos">
+    <div class="panel-bar"><button type="button" class="panel-back" onclick="closePanel('panelSegredos')">← Voltar</button><span class="panel-bar-title">Os segredos</span></div>
+    <div class="panel-scroll">
+      <section class="method" style="padding-top:38px">
+        <div class="wrap">
+          <p class="eyebrow">Os segredos da reconquista</p>
+          <h2 class="method-title">Seja qual for o seu caso,<br><em>tem um caminho pronto</em></h2>
+          <p class="lead">Um movimento certo para cada situação que você está vivendo agora.</p>
+          <div class="steps">
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">1</span><h3>Ele te bloqueou</h3><p>O caminho exato pra ser desbloqueada.</p></div>
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">2</span><h3>Visualizou e não respondeu</h3><p>O que aquele silêncio quer dizer de verdade.</p></div>
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">3</span><h3>Ele pediu um tempo</h3><p>Como agir sem perder ele de vez.</p></div>
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">4</span><h3>Ele está com outra</h3><p>O movimento certo — e o que nunca fazer.</p></div>
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">5</span><h3>As palavras certas, na hora certa</h3><p>Scripts prontos pra copiar e colar.</p></div>
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">6</span><h3>De descartada a desejada</h3><p>Como mudar o jeito que ele te enxerga.</p></div>
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">7</span><h3>Fazer ele se arrepender</h3><p>Sem você dizer uma única palavra.</p></div>
+          <div class="step" onclick="openAcesso()" role="button" tabindex="0"><span class="n">8</span><h3>Virar o jogo com elegância</h3><p>De um jeito que ele não esquece.</p></div>
+          </div>
+          <div style="text-align:center;margin-top:26px">
+            <button type="button" class="cta" onclick="openAcesso()">Quero ter acesso a tudo isso</button>
+            <p class="pc-foot" style="margin-top:12px">⚡ Acesso liberado na hora pelo WhatsApp</p>
+          </div>
+        </div>
+      </section>
+      <footer>
+        Código da Reconquista · Conteúdo educativo sobre relacionamentos<br>
+        Não substitui acompanhamento psicológico profissional.
+      </footer>
+    </div>
+  </div>
 
   <!-- ════════ PAINEL: DICAS DO MESTRE ════════ -->
   <div class="panel" id="panelDicas">
@@ -793,7 +838,7 @@ body.portal-lock{overflow:hidden}
 
         </div>
         <p class="tips-cta">Não importa o cenário — a primeira reconquista é sua. Com você mesma. Essas dicas mostram o que fazer agora. O <strong>Plano de 7 Dias</strong> te leva pela mão, dia após dia, com o passo a passo completo de cada situação.</p>
-        <div style="text-align:center"><button type="button" class="cta" onclick="closePanel('panelDicas');openPanel('panelPlano')">Quero o plano completo</button></div>
+        <div style="text-align:center"><button type="button" class="cta" onclick="closePanel('panelDicas');openAcesso()">Quero o plano completo</button></div>
       </section>
     </div>
   </div>
@@ -905,13 +950,18 @@ body.portal-lock{overflow:hidden}
       <p class="acesso-eyebrow">Conteúdo exclusivo</p>
       <h3 class="acesso-title">Acesso restrito</h3>
       <p class="acesso-text">O Plano de 7 Dias completo — o passo a passo dia a dia, os 8 módulos e os scripts prontos — é liberado só para alunas.</p>
+      <div class="acesso-steps">
+        <div class="as-step"><span class="as-n">1</span><span>Pague pelo Pix em segundos</span></div>
+        <div class="as-step"><span class="as-n">2</span><span>Receba o acesso na hora, pelo WhatsApp</span></div>
+        <div class="as-step"><span class="as-n">3</span><span>Comece o Dia 1 hoje mesmo</span></div>
+      </div>
       <div class="acesso-price">
         <span class="ap-label">Acesso vitalício por</span>
         <div class="ap-val"><span class="c">R$</span>47<small>,00</small></div>
         <span class="ap-meta">Pagamento único · liberado na hora</span>
       </div>
       <button class="acesso-cta" type="button" onclick="closeAcesso();openCheckout()">Liberar meu acesso agora &rarr;</button>
-      <p class="acesso-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Pagamento protegido via Pix</p>
+      <p class="acesso-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Pix protegido · acesso imediato</p>
     </div>
   </div>
 
