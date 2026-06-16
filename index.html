@@ -1363,5 +1363,22 @@ body.portal-lock{overflow:hidden}
   }
   </script>
 
+  <!-- DESTINOS p/ tráfego pago: ?ir=plano | ?ir=segredos | ?ir=dicas | ?ir=acesso -->
+  <script>
+  (function(){
+    try{
+      var ir=(new URLSearchParams(location.search).get("ir")||"").toLowerCase();
+      if(!ir) return;
+      function go(){
+        if(ir==="plano"    && typeof openPanel==="function") openPanel("panelComo");
+        else if(ir==="segredos" && typeof openPanel==="function") openPanel("panelSegredos");
+        else if(ir==="dicas"    && typeof openPanel==="function") openPanel("panelDicas");
+        else if(ir==="acesso"   && typeof openAcesso==="function") openAcesso();
+      }
+      if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", go);
+      else setTimeout(go,60);
+    }catch(e){}
+  })();
+  </script>
 </body>
 </html>
