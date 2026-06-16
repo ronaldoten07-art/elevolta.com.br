@@ -545,6 +545,20 @@ body.portal-lock{overflow:hidden}
 .jd-n,.step .n{width:30px;height:30px;font-size:15px;margin-bottom:10px}
 .jd-c h3,.step h3{font-size:17px;line-height:1.25;margin:0 0 5px}
 .jd-c p,.step p{font-size:14px;line-height:1.45}
+/* ===== MINI-PÁGINAS DE ANÚNCIO ===== */
+.adland{position:fixed;inset:0;z-index:800;overflow-y:auto;-webkit-overflow-scrolling:touch;background:radial-gradient(circle at 18% 8%,rgba(214,120,120,.16) 0%,transparent 44%),linear-gradient(165deg,#fff 0%,var(--cream,#fbf7f0) 45%,var(--paper-2,#efe7da) 100%)}
+.ad-x{position:fixed;top:14px;right:16px;z-index:2;width:38px;height:38px;border-radius:50%;border:none;background:rgba(0,0,0,.06);color:var(--slate,#5e7588);font-size:23px;line-height:1;cursor:pointer}
+.ad-inner{max-width:520px;margin:0 auto;padding:62px 24px 46px;min-height:100%;display:flex;flex-direction:column;justify-content:center}
+.ad-eyebrow{align-self:flex-start;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra,#c8704f);font-weight:700;background:rgba(200,112,79,.1);padding:6px 14px;border-radius:50px;margin-bottom:18px}
+.ad-dor{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(27px,7.4vw,38px);color:var(--ink,#13202b);line-height:1.18;margin:0 0 20px}
+.ad-auto{font-size:17px;line-height:1.62;color:#2a3a46;margin:0 0 16px}
+.ad-anchor{font-style:italic;color:var(--terra,#c8704f);font-weight:500}
+.ad-erro{font-size:15.5px;line-height:1.6;color:#2a3a46;margin:0 0 16px;padding-left:16px;border-left:3px solid var(--paper-2,#efe7da)}
+.ad-esp{font-size:17px;line-height:1.6;color:var(--ink,#13202b);margin:0 0 26px;font-weight:500}
+.ad-cta{display:block;width:100%;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:700;font-size:16.5px;letter-spacing:.3px;color:#fff;border:none;background:linear-gradient(135deg,var(--terra,#c8704f),#b35e3e);border-radius:50px;padding:19px;box-shadow:0 14px 32px rgba(200,112,79,.35);transition:transform .15s}
+.ad-cta:hover{transform:translateY(-2px)}
+.ad-micro{text-align:center;font-size:12.5px;color:var(--muted,#8a9aa6);margin:12px 0 0}
+.ad-explore{display:block;margin:20px auto 0;background:none;border:none;color:var(--muted,#8a9aa6);font-family:'Outfit',sans-serif;font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -1363,6 +1377,33 @@ body.portal-lock{overflow:hidden}
   }
   </script>
 
+  <!-- MINI-PÁGINAS DE ANÚNCIO (só via link dedicado) -->
+  <div class="adland" id="adland" style="display:none" aria-hidden="true"></div>
+  <script>
+  var AD = {"bloqueio":{"eyebrow":"Para quem foi bloqueada","dor":"Ele te bloqueou. E você fica olhando aquela tela, dividida entre sumir de vez e ainda ter esperança.","auto":"Mas tem algo que quase ninguém te conta: bloqueio raramente é o fim. Quem bloqueia ainda sente — raiva, medo de ceder, atração.","anchor":"Ninguém tranca a porta de um cômodo vazio.","erro":"O problema é o que quase toda mulher faz agora: tentar furar o bloqueio com outro número, perfil novo, recado por amiga. E é justamente isso que afasta de vez.","esp":"Existe o caminho oposto — um protocolo passo a passo pra reverter o bloqueio sem se humilhar e sem perseguir. É exatamente isso que está aqui dentro."},"visualizou":{"eyebrow":"Para quem ficou no vácuo","dor":"Ele visualizou. E não respondeu. E você relê a mensagem tentando entender o que fez de errado.","auto":"A verdade: visualizar e não responder quase nunca é “não me importo” — quem não se importa nem abre. É quase sempre “não sei o que responder” ou “estou te deixando na reserva”.","anchor":"","erro":"E o erro fatal é a segunda mensagem. Cada uma sem resposta derruba o seu valor: a primeira é normal, a terceira já te transforma em “carente”.","esp":"Existe uma forma de reabrir esse contato e virar o jogo — sem cobrar, sem implorar. O passo a passo está aqui dentro."},"tempo":{"eyebrow":"Para quem ouviu “preciso de um tempo”","dor":"Ele pediu um tempo. E te deixou no pior lugar do mundo: o da espera, sem saber se é pausa ou despedida.","auto":"O que poucos sabem: na maioria das vezes, “preciso de um tempo” não é sobre pensar — é fuga ou medo de terminar de frente. E como você reage nas próximas horas decide tudo.","anchor":"","erro":"Implorar, exigir explicação ou ligar chorando empurra ele pra decisão que você não quer. E é exatamente isso que a maioria faz.","esp":"Existe uma resposta-mestre pro “pedido de tempo” que faz ele entrar em pânico de te perder — e o caminho pra reverter. Está tudo aqui dentro."},"outra":{"eyebrow":"Para quem viu ele com outra","dor":"Ele apareceu com outra. E parece que o chão sumiu — como se tudo o que vocês viveram não valesse nada.","auto":"Mas escuta: na maioria dos casos, quem termina e já aparece com alguém está num relacionamento-ricochete — uma pessoa pra amortecer a dor, não um amor de verdade. E ricochete tem prazo de validade curto.","anchor":"","erro":"O que te tira de cena de vez é mandar mensagem pra ela, fazer cena, postar indireta. Isso te transforma na vilã e une os dois contra você.","esp":"Existe o movimento certo pra esse cenário — o que fazer e o que nunca fazer enquanto o ricochete desmorona sozinho. Está aqui dentro."},"scripts":{"eyebrow":"Para quem trava na hora de falar com ele","dor":"Você abre a conversa, digita, apaga, digita de novo. Com medo de mandar a mensagem errada e estragar tudo — de novo.","auto":"A real é que não existe “texto perfeito” — existe a palavra certa, no tom certo, na hora certa. E quase toda mulher erra no impulso da emoção, mandando o que sente em vez do que funciona.","anchor":"","erro":"Mensagem longa, três perguntas seguidas, resposta na hora… cada um desses detalhes entrega o jogo e derruba o seu valor sem você perceber.","esp":"Imagina ter o roteiro pronto pra cada situação: reabrir, responder, conduzir pro encontro, segurar a sua posição. São dezenas de scripts prontos pra copiar — e estão aqui dentro."},"desejada":{"eyebrow":"Para quem se sente descartada","dor":"Você se sente trocada, esquecida — como se tivesse perdido o valor que um dia teve aos olhos dele.","auto":"Mas valor não se implora: se reconstrói. O cérebro dele recalcula o que você vale no instante em que te percebe diferente. Não é sorte — é gatilho.","anchor":"","erro":"Tentar “provar” que você mudou com palavras só soa carente. A mudança que atrai é a que ele vê, não a que você anuncia.","esp":"Existe um reposicionamento — corpo, presença, energia — que faz ele te olhar como olhou no início. O passo a passo está aqui dentro."},"arrependimento":{"eyebrow":"Para quem quer que ele sinta o que perdeu","dor":"No fundo, você queria que ele sentisse — nem que por um segundo — o tamanho do que jogou fora.","auto":"E pode sentir. Mas homem se arrepende vendo, não ouvindo. Você pode mandar mil mensagens explicando a mágoa — nada muda. Uma única imagem sua, em alta, muda tudo.","anchor":"","erro":"O erro é tentar provocar com indireta, foto com outro, recado por amiga. Isso cheira a despeito a quilômetros e faz o efeito contrário.","esp":"Existe a forma de fazer ele se arrepender sem você dizer uma palavra — e é mais simples e elegante do que parece. Está aqui dentro."},"jogo":{"eyebrow":"Para quem cansou de correr atrás","dor":"Você está cansada de ser quem corre atrás, quem manda primeiro, quem espera. Queria, pra variar, estar no controle.","auto":"E dá. Quem define os termos detém o poder da relação. A virada não é joguinho — é parar de entregar o controle sem perceber.","anchor":"","erro":"Disponibilidade total, responder na hora, aceitar migalha “pra não perder” — é assim que se entrega o poder de bandeja, todo dia.","esp":"Existe um jeito de virar o jogo com elegância, sem revanche e sem perder a dignidade — e fazer ele vir até você. Está aqui dentro."}};
+  function showAd(key){
+    var a=AD[key]; if(!a) return;
+    var auto=a.auto + (a.anchor? ' <em class="ad-anchor">'+a.anchor+'</em>':'');
+    var el=document.getElementById("adland");
+    el.innerHTML=
+      '<button class="ad-x" type="button" onclick="closeAd()" aria-label="Fechar">&times;</button>'+
+      '<div class="ad-inner">'+
+        '<span class="ad-eyebrow">'+a.eyebrow+'</span>'+
+        '<h1 class="ad-dor">'+a.dor+'</h1>'+
+        '<p class="ad-auto">'+auto+'</p>'+
+        '<p class="ad-erro">'+a.erro+'</p>'+
+        '<p class="ad-esp">'+a.esp+'</p>'+
+        '<button class="ad-cta" type="button" onclick="openCheckout()">QUERO O CAMINHO COMPLETO &middot; R$47</button>'+
+        '<p class="ad-micro">Acesso na hora &middot; pagamento &uacute;nico &middot; Pix protegido</p>'+
+        '<button class="ad-explore" type="button" onclick="closeAd()">prefiro conhecer o site primeiro</button>'+
+      '</div>';
+    el.style.display="block"; el.setAttribute("aria-hidden","false"); el.scrollTop=0;
+    document.body.style.overflow="hidden";
+    if(window.ttq && typeof ttq.track==="function"){ ttq.track("ViewContent",{contents:[{content_id:"codigo-da-reconquista",content_name:"Código da Reconquista",quantity:1,price:47.00}],content_type:"product",value:47.00,currency:"BRL"}); }
+  }
+  function closeAd(){ var el=document.getElementById("adland"); el.style.display="none"; el.setAttribute("aria-hidden","true"); document.body.style.overflow=""; }
+  </script>
+
   <!-- DESTINOS p/ tráfego pago: ?ir=plano | ?ir=segredos | ?ir=dicas | ?ir=acesso -->
   <script>
   (function(){
@@ -1370,6 +1411,7 @@ body.portal-lock{overflow:hidden}
       var ir=(new URLSearchParams(location.search).get("ir")||"").toLowerCase();
       if(!ir) return;
       function go(){
+        if(typeof AD!=="undefined" && AD[ir] && typeof showAd==="function"){ showAd(ir); return; }
         if(ir==="plano"    && typeof openPanel==="function") openPanel("panelComo");
         else if(ir==="segredos" && typeof openPanel==="function") openPanel("panelSegredos");
         else if(ir==="dicas"    && typeof openPanel==="function") openPanel("panelDicas");
