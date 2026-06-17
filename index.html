@@ -572,6 +572,42 @@ body.portal-lock{overflow:hidden}
 #panelSegredos .step-gold .n{background:linear-gradient(135deg,#d4af37,#b8860b);color:#fff}
 #panelSegredos .step-gold h3{color:#7a5c0a}
 #panelSegredos .step-badge{position:absolute;top:-11px;left:18px;background:linear-gradient(135deg,#d4af37,#b8860b);color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:50px;box-shadow:0 4px 12px rgba(184,134,11,.35)}
+/* ===== LANDING DEDICADA BLOQUEIO ===== */
+.bl-land{position:fixed;inset:0;z-index:850;overflow-y:auto;-webkit-overflow-scrolling:touch;background:radial-gradient(circle at 18% 6%,rgba(214,120,120,.16) 0%,transparent 42%),linear-gradient(168deg,#fff 0%,var(--cream,#fbf7f0) 40%,var(--paper-2,#efe7da) 100%)}
+.bl-x{position:fixed;top:13px;right:15px;z-index:3;width:36px;height:36px;border-radius:50%;border:none;background:rgba(0,0,0,.06);color:var(--slate,#5e7588);font-size:22px;line-height:1;cursor:pointer}
+.bl-wrap{max-width:560px;margin:0 auto;padding:54px 22px 40px}
+.bl-eyebrow{display:inline-block;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra,#c8704f);font-weight:700;background:rgba(200,112,79,.1);padding:6px 14px;border-radius:50px;margin-bottom:16px}
+.bl-h1{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(34px,10vw,52px);color:var(--terra,#c8704f);line-height:1.04;letter-spacing:-.5px;margin:0 0 18px}
+.bl-dor{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(21px,5.6vw,27px);color:var(--ink,#13202b);line-height:1.25;margin:0 0 18px}
+.bl-auto{font-size:16.5px;line-height:1.62;color:#2a3a46;margin:0 0 15px}
+.bl-anchor{font-style:italic;color:var(--terra,#c8704f);font-weight:500}
+.bl-erro{font-size:15.5px;line-height:1.6;color:#2a3a46;margin:0 0 15px;padding-left:16px;border-left:3px solid var(--paper-2,#efe7da)}
+.bl-esp{font-size:17px;line-height:1.6;color:var(--ink,#13202b);font-weight:500;margin:0 0 26px}
+.bl-cta{display:block;width:100%;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:700;font-size:16.5px;letter-spacing:.4px;color:#fff;border:none;background:linear-gradient(135deg,var(--terra,#c8704f),#b35e3e);border-radius:50px;padding:19px;box-shadow:0 14px 32px rgba(200,112,79,.35);transition:transform .15s}
+.bl-cta:hover{transform:translateY(-2px)}
+.bl-micro{text-align:center;font-size:12.5px;color:var(--muted,#8a9aa6);margin:11px 0 0}
+.bl-sec{margin-top:46px}
+.bl-sec-title{font-family:'Newsreader',serif;font-weight:600;font-size:25px;color:var(--ink,#13202b);text-align:center;line-height:1.2;margin:0 0 6px}
+.bl-sec-sub{text-align:center;font-size:14px;color:var(--slate,#5e7588);margin:0 0 22px}
+.bl-chat{background:#fff;border:1px solid var(--paper-2,#efe7da);border-radius:18px;padding:14px 13px;margin-bottom:14px;box-shadow:0 4px 16px rgba(42,58,70,.05)}
+.bl-chat-head{display:flex;align-items:center;gap:7px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted,#8a9aa6);font-weight:600;margin-bottom:10px;padding-left:4px}
+.bl-chat-dot{width:7px;height:7px;border-radius:50%;background:#3b9c6d;box-shadow:0 0 0 3px rgba(59,156,109,.18)}
+.bl-bubble{max-width:82%;padding:9px 13px;border-radius:16px;font-size:14.5px;line-height:1.4;margin-bottom:7px;word-wrap:break-word}
+.bl-bubble.her{background:#f0ece3;color:#2a3a46;border-bottom-left-radius:5px;margin-right:auto}
+.bl-bubble.you{background:linear-gradient(160deg,#cf6a4a,#b35e3e);color:#fff;border-bottom-right-radius:5px;margin-left:auto}
+.bl-mestre{font-size:16px;line-height:1.65;color:#2a3a46;text-align:center;margin:0}
+.bl-faq{background:#fff;border:1px solid var(--paper-2,#efe7da);border-radius:14px;padding:2px 16px;margin-bottom:10px}
+.bl-faq-q{font-family:'Outfit',sans-serif;font-weight:600;font-size:15.5px;color:var(--ink,#13202b);padding:14px 0;cursor:pointer;list-style:none;position:relative;padding-right:24px}
+.bl-faq-q::-webkit-details-marker{display:none}
+.bl-faq-q::after{content:"+";position:absolute;right:2px;top:12px;font-size:20px;color:var(--terra,#c8704f);font-weight:400}
+.bl-faq[open] .bl-faq-q::after{content:"–"}
+.bl-faq-a{font-size:14.5px;line-height:1.55;color:#5e7588;margin:0 0 14px}
+.bl-final{margin-top:46px;text-align:center}
+.bl-final-l{font-size:15px;color:var(--slate,#5e7588);margin:0 0 2px}
+.bl-final-r{font-family:'Newsreader',serif;font-style:italic;font-weight:600;font-size:23px;color:var(--terra,#c8704f);line-height:1.3;margin:0 0 20px}
+.bl-exit{display:block;margin:18px auto 0;background:none;border:none;color:var(--muted,#8a9aa6);font-family:'Outfit',sans-serif;font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.bl-safe{font-size:12px;line-height:1.5;color:var(--muted,#8a9aa6);text-align:center;margin:34px 0 0;padding-top:18px;border-top:1px solid var(--paper-2,#efe7da)}
+.bl-esp-down{display:block;margin-top:10px;font-size:14px;color:var(--terra,#c8704f);font-weight:600}
 </style>
 </head>
 <body>
@@ -1390,6 +1426,121 @@ body.portal-lock{overflow:hidden}
   }
   </script>
 
+  <!-- ===== LANDING DEDICADA: BLOQUEIO (via ?ir=bloqueio) ===== -->
+  <div class="bl-land" id="bloqueioLand" style="display:none" aria-hidden="true">
+    <button class="bl-x" type="button" onclick="hideBloqueio()" aria-label="Fechar">&times;</button>
+    <div class="bl-wrap">
+      <span class="bl-eyebrow">Para quem foi bloqueada</span>
+      <h1 class="bl-h1">Quer ser desbloqueada?</h1>
+      <p class="bl-dor">Ele te bloqueou e você fica olhando aquela tela, dividida entre sumir de vez e ainda ter esperança.</p>
+      <p class="bl-auto">Mas tem algo que quase ninguém te conta: bloqueio raramente é o fim. Quem bloqueia ainda sente — raiva, medo de ceder, atração. <em class="bl-anchor">Ninguém tranca a porta de um cômodo vazio.</em></p>
+      <p class="bl-erro">O problema é o que quase toda mulher faz agora: tentar furar o bloqueio com outro número, perfil novo, recado por amiga. E é justamente isso que afasta de vez.</p>
+      <p class="bl-esp">Existe o caminho oposto — um protocolo passo a passo pra reverter o bloqueio sem se humilhar e sem perseguir. É exatamente o que você vai descobrir aqui. <span class="bl-esp-down">Veja como ele funcionou pra outras mulheres &darr;</span></p>
+      <div class="bl-sec">
+        <h2 class="bl-sec-title">Mulheres que foram desbloqueadas</h2>
+        <p class="bl-sec-sub">Mensagens reais de quem aplicou o método.</p>
+        <div class="bl-chat">
+          <div class="bl-chat-head"><span class="bl-chat-dot"></span>Conversa real</div>
+            <div class="bl-bubble her">Preciso te contar uma coisa kkkkk</div>
+            <div class="bl-bubble you">Fala.</div>
+            <div class="bl-bubble her">Ele me desbloqueou.</div>
+            <div class="bl-bubble you">Eu sabia que você vinha me mandar essa notícia.</div>
+            <div class="bl-bubble her">Eu juro que não acreditava mais. Já tinha até desistido.</div>
+            <div class="bl-bubble you">E eu te falei pra confiar e parar de agir no impulso.</div>
+            <div class="bl-bubble her">Ainda bem que eu te ouvi. Se fosse há um mês, eu tinha criado outro número e feito besteira.</div>
+        </div>
+        <div class="bl-chat">
+          <div class="bl-chat-head"><span class="bl-chat-dot"></span>Conversa real</div>
+            <div class="bl-bubble her">Tô tremendo.</div>
+            <div class="bl-bubble you">O que aconteceu?</div>
+            <div class="bl-bubble her">Acabei de ver que ele tirou o bloqueio.</div>
+            <div class="bl-bubble you">Sério?</div>
+            <div class="bl-bubble her">Sim. E pensar que semana passada eu tava chorando, dizendo que era impossível.</div>
+            <div class="bl-bubble you">E eu dizia pra você ter calma.</div>
+            <div class="bl-bubble her">Você tinha razão. Eu tava enxergando tudo pela emoção.</div>
+        </div>
+        <div class="bl-chat">
+          <div class="bl-chat-head"><span class="bl-chat-dot"></span>Conversa real</div>
+            <div class="bl-bubble her">Você não faz ideia da notícia que eu tenho.</div>
+            <div class="bl-bubble you">Conta.</div>
+            <div class="bl-bubble her">Ele voltou a falar comigo hoje.</div>
+            <div class="bl-bubble her">Eu chorei quando vi a mensagem. Sério.</div>
+            <div class="bl-bubble you">E lembra que você queria mandar texto atrás de texto?</div>
+            <div class="bl-bubble her">Lembro. Ainda bem que você não deixou.</div>
+            <div class="bl-bubble you">Às vezes paciência vale mais que insistência.</div>
+            <div class="bl-bubble her">Agora eu entendi isso.</div>
+        </div>
+        <div class="bl-chat">
+          <div class="bl-chat-head"><span class="bl-chat-dot"></span>Conversa real</div>
+            <div class="bl-bubble her">Passando aqui pra dizer que você tava certo.</div>
+            <div class="bl-bubble you">Sobre?</div>
+            <div class="bl-bubble her">Sobre confiar no processo.</div>
+            <div class="bl-bubble you">O que aconteceu?</div>
+            <div class="bl-bubble her">Depois de 37 dias, ele me desbloqueou.</div>
+            <div class="bl-bubble her">Ainda tô sem acreditar. Fiquei olhando pra tela pra ter certeza que não tava imaginando.</div>
+        </div>
+        <div class="bl-chat">
+          <div class="bl-chat-head"><span class="bl-chat-dot"></span>Conversa real</div>
+            <div class="bl-bubble her">Quase desisti de tudo.</div>
+            <div class="bl-bubble you">Eu sei.</div>
+            <div class="bl-bubble her">Mas você falou pra eu esperar mais um pouco.</div>
+            <div class="bl-bubble her">Hoje ele tirou o bloqueio e até curtiu uma foto minha.</div>
+            <div class="bl-bubble you">Viu?</div>
+            <div class="bl-bubble her">Se eu tivesse seguido minha ansiedade, tinha acabado com qualquer chance.</div>
+        </div>
+        <div class="bl-chat">
+          <div class="bl-chat-head"><span class="bl-chat-dot"></span>Conversa real</div>
+            <div class="bl-bubble her">Tenho que te agradecer.</div>
+            <div class="bl-bubble you">Por quê?</div>
+            <div class="bl-bubble her">Porque eu tava convencida que ele nunca mais ia falar comigo.</div>
+            <div class="bl-bubble you">E agora?</div>
+            <div class="bl-bubble her">Agora ele me desbloqueou e mandou “Oi, tudo bem?”. Parece simples, mas pra mim foi uma vitória enorme.</div>
+            <div class="bl-bubble you">E pensar que você achava que era o fim.</div>
+            <div class="bl-bubble her">Pois é. Você sempre falou que bloqueio não é sentença final.</div>
+        </div>
+        <div class="bl-chat">
+          <div class="bl-chat-head"><span class="bl-chat-dot"></span>Conversa real</div>
+            <div class="bl-bubble her">Você acredita que aconteceu?</div>
+            <div class="bl-bubble you">O quê?</div>
+            <div class="bl-bubble her">O bloqueio sumiu.</div>
+            <div class="bl-bubble you">Eu tinha certeza que você ainda ia me mandar essa mensagem.</div>
+            <div class="bl-bubble her">E eu tinha certeza que não tinha mais jeito.</div>
+            <div class="bl-bubble you">Por isso eu falava pra confiar.</div>
+            <div class="bl-bubble her">Ainda bem que confiei. Hoje tô muito mais tranquila e feliz.</div>
+        </div>
+      </div>
+      <div class="bl-sec">
+        <h2 class="bl-sec-title">Quem é o Mestre da Reconquista</h2>
+        <p class="bl-mestre">O Código da Reconquista nasceu de um incômodo: ver mulheres inteligentes se perderem no desespero depois de um bloqueio — criando perfil falso, mandando mensagem atrás de mensagem, se humilhando por quem as descartou. O método existe pra inverter isso. Não é sobre implorar nem manipular: é sobre você recuperar o controle, a dignidade e o poder — e deixar o resto acontecer naturalmente. Cada passo aqui foi pensado pra te tirar da dor e te colocar no caminho de volta, com a cabeça erguida.</p>
+      </div>
+      <div class="bl-sec">
+        <h2 class="bl-sec-title">Perguntas frequentes</h2>
+        <details class="bl-faq"><summary class="bl-faq-q">Funciona se ele me bloqueou em tudo?</summary><p class="bl-faq-a">O método não depende de você conseguir falar com ele — pelo contrário. Ele te mostra exatamente o que fazer enquanto o canal está fechado, pra que o desbloqueio aconteça da forma certa, no tempo certo.</p></details>
+        <details class="bl-faq"><summary class="bl-faq-q">Em quanto tempo ele me desbloqueia?</summary><p class="bl-faq-a">Não existe prazo mágico — e quem promete isso está mentindo. O que o método faz é parar os erros que prolongam o bloqueio e te colocar na postura que reaproxima. Algumas relatam dias; outras, semanas.</p></details>
+        <details class="bl-faq"><summary class="bl-faq-q">E se ele não desbloquear?</summary><p class="bl-faq-a">Aqui vai a verdade: o protocolo funciona pra você mesmo que ele não volte. Você sai dele mais forte, segura e livre do desespero — e essa é a mulher que ninguém bloqueia duas vezes.</p></details>
+        <details class="bl-faq"><summary class="bl-faq-q">Como recebo o acesso?</summary><p class="bl-faq-a">Assim que o Pix é confirmado, seu acesso é liberado na hora. É um material digital que você abre no celular, quando quiser, quantas vezes precisar.</p></details>
+        <details class="bl-faq"><summary class="bl-faq-q">É seguro pagar?</summary><p class="bl-faq-a">O pagamento é via Pix, direto e protegido. Pagamento único de R$47 — sem mensalidade e sem pegadinha.</p></details>
+      </div>
+      <div class="bl-final">
+        <p class="bl-final-l">No dia que ele te bloqueou, você achou que tinha acabado.</p>
+        <p class="bl-final-r">Pode ser o dia em que tudo recomeça.</p>
+        <button class="bl-cta" type="button" onclick="openCheckout()">QUERO SER DESBLOQUEADA · R$47</button>
+        <p class="bl-micro">🔒 Acesso na hora · pagamento único · Pix protegido</p>
+        <button class="bl-exit" type="button" onclick="hideBloqueio()">conhecer o site completo</button>
+      </div>
+      <p class="bl-safe">💛 Conteúdo educativo sobre relacionamentos. Se a dor estiver grande demais, procure apoio: <b>CVV 188</b> (24h, gratuito e sigiloso). Você importa mais que qualquer relacionamento.</p>
+    </div>
+  </div>
+
+  <script>
+  function showBloqueio(){
+    var el=document.getElementById("bloqueioLand"); if(!el) return;
+    el.style.display="block"; el.setAttribute("aria-hidden","false"); el.scrollTop=0;
+    document.body.style.overflow="hidden";
+    if(window.ttq && typeof ttq.track==="function"){ ttq.track("ViewContent",{contents:[{content_id:"codigo-da-reconquista",content_name:"Código da Reconquista",quantity:1,price:47.00}],content_type:"product",value:47.00,currency:"BRL"}); }
+  }
+  function hideBloqueio(){ var el=document.getElementById("bloqueioLand"); if(!el) return; el.style.display="none"; el.setAttribute("aria-hidden","true"); document.body.style.overflow=""; }
+  </script>
   <!-- MINI-PÁGINAS DE ANÚNCIO (só via link dedicado) -->
   <div class="adland" id="adland" style="display:none" aria-hidden="true"></div>
   <script>
@@ -1425,6 +1576,7 @@ body.portal-lock{overflow:hidden}
       var ir=(new URLSearchParams(location.search).get("ir")||"").toLowerCase();
       if(!ir) return;
       function go(){
+        if(ir==="bloqueio" && typeof showBloqueio==="function"){ showBloqueio(); return; }
         if(typeof AD!=="undefined" && AD[ir] && typeof showAd==="function"){ showAd(ir); return; }
         if(ir==="plano"    && typeof openPanel==="function") openPanel("panelComo");
         else if(ir==="segredos" && typeof openPanel==="function") openPanel("panelSegredos");
