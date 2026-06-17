@@ -608,6 +608,24 @@ body.portal-lock{overflow:hidden}
 .bl-exit{display:block;margin:18px auto 0;background:none;border:none;color:var(--muted,#8a9aa6);font-family:'Outfit',sans-serif;font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .bl-safe{font-size:12px;line-height:1.5;color:var(--muted,#8a9aa6);text-align:center;margin:34px 0 0;padding-top:18px;border-top:1px solid var(--paper-2,#efe7da)}
 .bl-esp-down{display:block;margin-top:10px;font-size:14px;color:var(--terra,#c8704f);font-weight:600}
+/* ===== QUADRO DE LIBERAÇÃO ===== */
+.lib-overlay{position:fixed;inset:0;z-index:1200;background:rgba(30,8,14,.62);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:22px;animation:libFade .25s ease}
+@keyframes libFade{from{opacity:0}to{opacity:1}}
+.lib-box{position:relative;width:100%;max-width:392px;max-height:90vh;overflow-y:auto;background:linear-gradient(168deg,var(--wine-3,#6b2038),var(--wine,#3d101e));border:1px solid rgba(200,112,79,.42);border-radius:24px;padding:34px 26px 24px;text-align:center;color:var(--cream,#fbf7f0);box-shadow:0 30px 70px rgba(30,8,14,.5);animation:libPop .3s cubic-bezier(.34,1.4,.5,1)}
+@keyframes libPop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.lib-x{position:absolute;top:13px;right:16px;background:none;border:none;color:rgba(251,247,240,.55);font-size:26px;line-height:1;cursor:pointer}
+.lib-icon{width:58px;height:58px;border-radius:50%;margin:0 auto 14px;background:rgba(200,112,79,.16);border:1px solid var(--terra-soft,#dd9678);color:var(--terra-soft,#dd9678);display:flex;align-items:center;justify-content:center}
+.lib-icon svg{width:26px;height:26px}
+.lib-eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra-soft,#dd9678);font-weight:700;margin-bottom:7px}
+.lib-title{font-family:'Newsreader',serif;font-weight:600;font-size:23px;color:#fff;line-height:1.2;margin:0 0 14px}
+.lib-text{font-size:14.5px;line-height:1.6;color:#e8d3d8;margin:0 0 13px}
+.lib-price{background:rgba(0,0,0,.18);border:1px solid rgba(200,112,79,.25);border-radius:16px;padding:14px;margin:4px 0 18px}
+.lib-price-label{display:block;font-size:11px;letter-spacing:1px;color:var(--terra-soft,#dd9678);text-transform:uppercase;font-weight:600;margin-bottom:3px}
+.lib-price-val{font-family:'Newsreader',serif;font-weight:600;font-size:44px;color:#fff;line-height:1}
+.lib-price-val .c{font-size:.5em;vertical-align:super;margin-right:2px}.lib-price-val small{font-size:.4em;vertical-align:super}
+.lib-cta{display:block;width:100%;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:700;font-size:16.5px;color:#fff;border:none;background:linear-gradient(135deg,var(--terra,#c8704f),#b35e3e);border-radius:50px;padding:18px;box-shadow:0 12px 28px rgba(200,112,79,.35);transition:transform .15s}
+.lib-cta:hover{transform:translateY(-2px)}
+.lib-micro{font-size:12px;color:#cdb8be;margin:12px 0 0}
 </style>
 </head>
 <body>
@@ -1025,6 +1043,21 @@ body.portal-lock{overflow:hidden}
       </div>
       <button class="acesso-cta" type="button" onclick="closeAcesso();openCheckout()">Liberar meu acesso agora &rarr;</button>
       <p class="acesso-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Pix protegido · acesso imediato</p>
+    </div>
+  </div>
+
+  <!-- QUADRO DE LIBERAÇÃO (após "quero ser desbloqueada") -->
+  <div class="lib-overlay" id="liberar" style="display:none" aria-hidden="true">
+    <div class="lib-box" role="dialog" aria-modal="true">
+      <button class="lib-x" type="button" onclick="closeLiberar()" aria-label="Fechar">&times;</button>
+      <div class="lib-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+      <p class="lib-eyebrow">Antes de liberar</p>
+      <h3 class="lib-title">Essa técnica é mais poderosa do que parece</h3>
+      <p class="lib-text">O Protocolo de Desbloqueio age sobre gatilhos emocionais reais. Aplicado na ordem certa, ele funciona — e por isso pede responsabilidade: sem perseguir, sem se humilhar, sem pular etapas.</p>
+      <p class="lib-text">E é justamente por funcionar que ele não fica aberto pra qualquer uma. O acesso completo é liberado por um valor único:</p>
+      <div class="lib-price"><span class="lib-price-label">Liberação única · acesso vitalício</span><div class="lib-price-val"><span class="c">R$</span>47<small>,00</small></div></div>
+      <button class="lib-cta" type="button" onclick="closeLiberar();openCheckout()">Liberar minha técnica agora</button>
+      <p class="lib-micro">🔒 Acesso na hora · pagamento único · Pix protegido</p>
     </div>
   </div>
 
@@ -1517,15 +1550,13 @@ body.portal-lock{overflow:hidden}
         <h2 class="bl-sec-title">Perguntas frequentes</h2>
         <details class="bl-faq"><summary class="bl-faq-q">Funciona se ele me bloqueou em tudo?</summary><p class="bl-faq-a">O método não depende de você conseguir falar com ele — pelo contrário. Ele te mostra exatamente o que fazer enquanto o canal está fechado, pra que o desbloqueio aconteça da forma certa, no tempo certo.</p></details>
         <details class="bl-faq"><summary class="bl-faq-q">Em quanto tempo ele me desbloqueia?</summary><p class="bl-faq-a">Não existe prazo mágico — e quem promete isso está mentindo. O que o método faz é parar os erros que prolongam o bloqueio e te colocar na postura que reaproxima. Algumas relatam dias; outras, semanas.</p></details>
-        <details class="bl-faq"><summary class="bl-faq-q">E se ele não desbloquear?</summary><p class="bl-faq-a">Aqui vai a verdade: o protocolo funciona pra você mesmo que ele não volte. Você sai dele mais forte, segura e livre do desespero — e essa é a mulher que ninguém bloqueia duas vezes.</p></details>
         <details class="bl-faq"><summary class="bl-faq-q">Como recebo o acesso?</summary><p class="bl-faq-a">Assim que o Pix é confirmado, seu acesso é liberado na hora. É um material digital que você abre no celular, quando quiser, quantas vezes precisar.</p></details>
         <details class="bl-faq"><summary class="bl-faq-q">É seguro pagar?</summary><p class="bl-faq-a">O pagamento é via Pix, direto e protegido. Pagamento único de R$47 — sem mensalidade e sem pegadinha.</p></details>
       </div>
       <div class="bl-final">
         <p class="bl-final-l">No dia que ele te bloqueou, você achou que tinha acabado.</p>
         <p class="bl-final-r">Pode ser o dia em que tudo recomeça.</p>
-        <button class="bl-cta" type="button" onclick="openCheckout()">QUERO SER DESBLOQUEADA · R$47</button>
-        <p class="bl-micro">🔒 Acesso na hora · pagamento único · Pix protegido</p>
+        <button class="bl-cta" type="button" onclick="openLiberar()">Quero ser desbloqueada</button>
         <button class="bl-exit" type="button" onclick="hideBloqueio()">conhecer o site completo</button>
       </div>
       <p class="bl-safe">💛 Conteúdo educativo sobre relacionamentos. Se a dor estiver grande demais, procure apoio: <b>CVV 188</b> (24h, gratuito e sigiloso). Você importa mais que qualquer relacionamento.</p>
@@ -1540,6 +1571,8 @@ body.portal-lock{overflow:hidden}
     if(window.ttq && typeof ttq.track==="function"){ ttq.track("ViewContent",{contents:[{content_id:"codigo-da-reconquista",content_name:"Código da Reconquista",quantity:1,price:47.00}],content_type:"product",value:47.00,currency:"BRL"}); }
   }
   function hideBloqueio(){ var el=document.getElementById("bloqueioLand"); if(!el) return; el.style.display="none"; el.setAttribute("aria-hidden","true"); document.body.style.overflow=""; }
+  function openLiberar(){ var el=document.getElementById("liberar"); if(!el) return; el.style.display="flex"; el.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden"; if(window.ttq && typeof ttq.track==="function"){ ttq.track("AddToCart",{contents:[{content_id:"codigo-da-reconquista",content_name:"Código da Reconquista",quantity:1,price:47.00}],content_type:"product",value:47.00,currency:"BRL"}); } }
+  function closeLiberar(){ var el=document.getElementById("liberar"); if(!el) return; el.style.display="none"; el.setAttribute("aria-hidden","true"); }
   </script>
   <!-- MINI-PÁGINAS DE ANÚNCIO (só via link dedicado) -->
   <div class="adland" id="adland" style="display:none" aria-hidden="true"></div>
