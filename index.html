@@ -82,7 +82,7 @@ em{font-style:italic}
 
 section{padding:60px 24px}
 .wrap{max-width:620px;margin:0 auto}
-.eyebrow{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra);font-weight:600;text-align:center;margin-bottom:14px}
+.eyebrow{font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra);font-weight:700;text-align:center;margin-bottom:14px}
 h2{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,6vw,36px);line-height:1.22;letter-spacing:-.3px;text-align:center;color:var(--ink);margin-bottom:18px}
 h2 em{color:var(--terra)}
 .lead{font-size:18px;color:var(--slate);text-align:center;line-height:1.7;max-width:500px;margin:0 auto 40px}
@@ -414,7 +414,7 @@ body.portal-lock{overflow:hidden}
 .tips .wrap{text-align:center}
 .tips h2{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(24px,6vw,32px);color:var(--ink)}
 .tips h2 em{font-style:italic;color:var(--terra)}
-.tips-lead{max-width:520px;margin:10px auto 0;color:var(--slate);font-size:15.5px;line-height:1.6}
+.tips-lead{max-width:540px;margin:12px auto 0;color:var(--slate);font-size:18.5px;font-weight:500;line-height:1.55}
 .tips-grid{max-width:600px;margin:28px auto 0;display:flex;flex-direction:column;gap:12px}
 .tip{background:#fff;border:1.5px solid var(--paper-2);border-radius:16px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
 .tip.open{border-color:var(--terra);box-shadow:0 8px 24px rgba(200,112,79,.12)}
@@ -425,9 +425,10 @@ body.portal-lock{overflow:hidden}
 .tip.open .tip-arrow{transform:rotate(45deg)}
 .tip-body{max-height:0;overflow:hidden;transition:max-height .45s ease;padding:0 20px}
 .tip.open .tip-body{max-height:1200px;padding:0 20px 20px}
-.tip-body p{text-align:left;font-size:15px;line-height:1.6;color:var(--ink-text);margin-bottom:10px}
-.tip-body .tip-main{color:var(--terra);font-weight:600;font-size:16px}
-.tip-label{font-weight:700;font-size:14px;margin:14px 0 6px !important;color:var(--ink)}
+.tip-body p{text-align:left;font-size:17px;line-height:1.55;color:var(--ink-text);margin-bottom:11px}
+#panelDicas .tip-do li,#panelDicas .tip-dont li{font-size:17px;line-height:1.5;margin-bottom:6px}
+.tip-body .tip-main{color:var(--terra);font-weight:700;font-size:18px}
+.tip-label{font-weight:700;font-size:16px;margin:16px 0 7px !important;color:var(--ink)}
 .tip-body ul{list-style:none;text-align:left;margin:0 0 6px;padding:0}
 .tip-body ul li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.5;margin-bottom:6px;color:var(--ink-text)}
 .tip-body ul li::before{content:'•';position:absolute;left:4px;font-weight:700}
@@ -650,6 +651,13 @@ body.portal-lock{overflow:hidden}
 .ag-icon svg{width:30px;height:30px}
 .ag-txt{font-size:14.5px;line-height:1.45;font-weight:500;color:#eaf6ef}
 .ag-txt b{font-weight:700;color:#fff}
+  /* ===== SEGREDO DO MESTRE (conteúdo borrado) ===== */
+  .tip-secret{position:relative;overflow:hidden;cursor:pointer;background:linear-gradient(165deg,#fffdf5,#fbf3da);border:1px solid #e3c24f;border-radius:14px;padding:15px 16px;margin-top:16px;text-align:left}
+  .ts-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+  .ts-badge{font-size:13.5px;letter-spacing:.8px;text-transform:uppercase;font-weight:800;color:#8a6708}
+  .ts-lock{font-size:16px;color:#b8860b}
+  .ts-kill{font-size:17px;line-height:1.45;font-weight:700;color:var(--terra);margin:0 0 11px}
+  .ts-blur{font-size:15px;line-height:1.7;font-weight:500;color:#2f343d;filter:blur(5px);-webkit-filter:blur(5px);user-select:none;-webkit-user-select:none;pointer-events:none;margin:0}
 </style>
 </head>
 <body>
@@ -834,7 +842,7 @@ body.portal-lock{overflow:hidden}
         <div class="wrap">
           <p class="eyebrow">Primeiros socorros</p>
           <h2>Qual é a <em>sua</em> situação?</h2>
-          <p class="tips-lead">Cada cenário pede uma resposta diferente. Fazer a coisa errada na hora errada queima tudo. Toque na sua situação 👇</p>
+          <p class="tips-lead">Cada situação tem um movimento certo — e um que <strong>queima qualquer chance</strong>. E quase toda mulher erra justo na hora mais decisiva. Toque no seu caso e veja exatamente o que fazer agora 👇</p>
         </div>
         <div class="tips-grid">
 
@@ -847,7 +855,12 @@ body.portal-lock{overflow:hidden}
               <ul class="tip-do"><li>Deixe como está. Não bloqueie de volta (isso fecha a porta).</li><li>Suma com elegância pelos canais que ele ainda vê.</li><li>Continue sua vida, visivelmente bem.</li></ul>
               <p class="tip-label">❌ Nunca faça:</p>
               <ul class="tip-dont"><li>Criar fake pra stalkear.</li><li>Mandar por outro número.</li><li>Pedir amigos pra "sondar".</li><li>Comentar em foto de amigo dele.</li></ul>
-              <p class="tip-plan">📘 Quanto tempo esperar e como agir quando ele te desbloquear → está no <strong>Plano de 7 Dias</strong>.</p>
+              <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
+                <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
+                <p class="ts-kill">O gesto silencioso que faz ele tirar o bloqueio sozinho — e ainda vir te procurar primeiro.</p>
+                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
+              </div>
+              <p class="tip-plan">📘 Existe a hora exata de mandar a primeira mensagem depois que ele te desbloqueia — e as palavras certas que fazem ele responder na hora. Tudo, passo a passo, no <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -860,7 +873,12 @@ body.portal-lock{overflow:hidden}
               <ul class="tip-do"><li>Nada. A resposta certa diante de um "visualizado" é o silêncio.</li><li>Encerre o assunto da sua parte depois de 72h.</li></ul>
               <p class="tip-label">❌ Nunca faça:</p>
               <ul class="tip-dont"><li>Mandar "oi?", "viu minha mensagem?".</li><li>Mandar print pra amiga comentar e te animar a insistir.</li><li>Ficar checando se ele entrou online.</li></ul>
-              <p class="tip-plan">📘 Como (e quando) reabrir o contato dias depois sem parecer que estava esperando → no <strong>Plano de 7 Dias</strong>.</p>
+              <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
+                <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
+                <p class="ts-kill">A única mensagem que ele não consegue deixar no vácuo. Quebra o silêncio em horas.</p>
+                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
+              </div>
+              <p class="tip-plan">📘 A mensagem que reabre a conversa sem parecer que você estava esperando — e ainda deixa ele curioso pra te responder. Pronta pra copiar no <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -873,7 +891,12 @@ body.portal-lock{overflow:hidden}
               <ul class="tip-do"><li>Aceite com dignidade.</li><li>Responda algo curto, sem drama.</li><li>Suma de verdade e cuide de você.</li></ul>
               <p class="tip-label">❌ Nunca faça:</p>
               <ul class="tip-dont"><li>Chorar na frente dele.</li><li>Suplicar ou pedir explicação detalhada.</li><li>Mandar indireta nos stories.</li></ul>
-              <p class="tip-plan">📘 A "resposta-mestre" exata e o plano que transforma o tempo dele no SEU presente → no <strong>Plano de 7 Dias</strong>.</p>
+              <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
+                <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
+                <p class="ts-kill">A frase que transforma o "tempo" dele em medo real de te perder de vez.</p>
+                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
+              </div>
+              <p class="tip-plan">📘 A resposta-mestre que vira o "tempo" dele a seu favor — e faz ele perceber que agora quem pode sumir é você. Palavra por palavra no <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -886,7 +909,12 @@ body.portal-lock{overflow:hidden}
               <ul class="tip-do"><li>Silencie os dois perfis — sem aviso, sem drama.</li><li>Invista pesado na sua imagem e na sua vida: é isso que volta pra cabeça dele.</li><li>Fique inacessível e tranquila pra quando o ricochete cobrar a conta.</li><li>Seja a versão de você que ele não consegue esquecer enquanto está com ela.</li></ul>
               <p class="tip-label">❌ Nunca faça:</p>
               <ul class="tip-dont"><li>Stalkear o perfil dela — você só vê a vida editada, e cada espiada te machuca à toa.</li><li>Mandar mensagem pra ela, ou pra ele falando dela.</li><li>Tentar "abrir os olhos dele" sobre ela: atacar a outra só aproxima os dois.</li><li>Aceitar ser a segunda opção escondida enquanto ele decide.</li></ul>
-              <p class="tip-plan">📘 No <strong>Plano de 7 Dias</strong> está o método de reposicionamento que faz ele te comparar com ela — e perceber sozinho o que perdeu. É onde "ele está com outra" deixa de ser o fim e vira a sua maior vantagem.</p>
+              <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
+                <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
+                <p class="ts-kill">O movimento que faz ele te comparar com ela todo dia — até não aguentar mais.</p>
+                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
+              </div>
+              <p class="tip-plan">📘 O método de reposicionamento que faz ele te comparar com ela — e perceber sozinho o que perdeu. É onde "ele está com outra" deixa de ser o fim e vira a sua maior arma. Tudo no <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -899,7 +927,12 @@ body.portal-lock{overflow:hidden}
               <ul class="tip-do"><li>Reabra com pretexto leve (uma música, uma referência, uma lembrança).</li><li>Mensagem curta, sem cobrança.</li><li>Espere de 1h a 12h pra responder, mesmo online.</li></ul>
               <p class="tip-label">❌ Nunca faça:</p>
               <ul class="tip-dont"><li>"Oi sumido", "senti sua falta", "precisamos conversar".</li><li>Mandar duas mensagens seguidas.</li><li>Terminar com três perguntas.</li></ul>
-              <p class="tip-plan">📘 Scripts de gancho neutro prontos pra cada situação → no <strong>Plano de 7 Dias</strong>.</p>
+              <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
+                <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
+                <p class="ts-kill">O gancho que reacende a curiosidade dele e faz ele reaparecer sozinho.</p>
+                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
+              </div>
+              <p class="tip-plan">📘 Os scripts prontos pra cada situação — é só copiar, enviar e ver ele reagir. Todos no <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -912,7 +945,12 @@ body.portal-lock{overflow:hidden}
               <ul class="tip-do"><li>Exija clareza antes de construir qualquer coisa.</li><li>Mantenha sua postura mesmo querendo dizer sim.</li></ul>
               <p class="tip-label">❌ Nunca faça:</p>
               <ul class="tip-dont"><li>Aceitar "ficar perto sem definir".</li><li>Voltar só pra não perder ele de vez.</li></ul>
-              <p class="tip-plan">📘 O "teste das três coerências" que diferencia volta real de teste → no <strong>Plano de 7 Dias</strong>.</p>
+              <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
+                <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
+                <p class="ts-kill">Como recusar a migalha sem perder ele — e fazer ele correr atrás do banquete.</p>
+                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
+              </div>
+              <p class="tip-plan">📘 O teste das três coerências que revela se a volta dele é de verdade ou só carência passageira — pra você não se entregar à toa. No <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -925,7 +963,12 @@ body.portal-lock{overflow:hidden}
               <ul class="tip-do"><li>Mostre vida boa, leve, conquistadora.</li><li>1 conteúdo bom a cada 2-3 dias.</li><li>Poste o que postaria se ele não existisse.</li></ul>
               <p class="tip-label">❌ Nunca faça:</p>
               <ul class="tip-dont"><li>Foto com outro homem só pra provocar.</li><li>Indireta na legenda ou status dramático.</li><li>Postar 10 stories provando que está bem (isso é desespero disfarçado).</li></ul>
-              <p class="tip-plan">📘 Como criar "marcos visíveis" que chegam até ele sozinhos → no <strong>Plano de 7 Dias</strong>.</p>
+              <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
+                <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
+                <p class="ts-kill">O que fazer pra o arrependimento bater nele bem na hora que mais dói.</p>
+                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
+              </div>
+              <p class="tip-plan">📘 Como fazer a sua virada chegar até ele sem você mover um dedo — ele vê, sente, e o arrependimento vem sozinho. No <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -938,12 +981,17 @@ body.portal-lock{overflow:hidden}
               <ul class="tip-do"><li>Veja, cumprimente como um conhecido qualquer, siga.</li><li>Sorria leve. Sem evitar.</li></ul>
               <p class="tip-label">❌ Nunca faça:</p>
               <ul class="tip-dont"><li>Frieza dramática.</li><li>Fingir que não viu.</li><li>Puxar assunto pra "medir o clima".</li></ul>
-              <p class="tip-plan">📘 Como treinar essa postura antes de precisar dela → no <strong>Plano de 7 Dias</strong>.</p>
+              <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
+                <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
+                <p class="ts-kill">A postura de 3 segundos que faz ele travar — e repensar tudo o que perdeu.</p>
+                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
+              </div>
+              <p class="tip-plan">📘 Como treinar a postura que faz ele te desejar de novo — e te deixa no controle de qualquer reencontro. No <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
         </div>
-        <p class="tips-cta">Não importa o cenário — a primeira reconquista é sua. Com você mesma. Essas dicas mostram o que fazer agora. O <strong>Plano de 7 Dias</strong> te leva pela mão, dia após dia, com o passo a passo completo de cada situação.</p>
+        <p class="tips-cta">Essas dicas já te dão mais do que a maioria das mulheres descobre sozinha. Mas a verdade é dura: <strong>dica solta não traz ninguém de volta</strong> — e enquanto você hesita, ele segue a vida.<br><br>O <strong>Plano de 7 Dias</strong> te pega pela mão hoje e te conduz, dia após dia, na ordem exata: de descartada a <strong>quem ele não consegue mais esquecer</strong>. Bloqueada, ignorada ou com ele nos braços de outra — tem um caminho pronto pra cada situação.<br><br><strong>A primeira reconquista é sua, com você mesma. A segunda é com ele.</strong> E ela começa no segundo em que você decide parar de tentar no escuro.</p>
         <div style="text-align:center"><button type="button" class="cta" onclick="closePanel('panelDicas');openPorta('plano')">Quero o plano completo</button></div>
       </section>
     </div>
@@ -1667,7 +1715,8 @@ body.portal-lock{overflow:hidden}
   (function(){
     var PORTA={
       plano:{e:"Antes de começar",t:"Um plano pra trazer ele de volta",x:"Mesmo que ele tenha te bloqueado — ou esteja com outra. São estratégias psicológicas reais e poderosas. Justamente por funcionarem, devem ser usadas com cautela e responsabilidade."},
-      modulo:{e:"Atenção",t:"Uma técnica psicológica poderosa",x:"Cada módulo aplica gatilhos que mexem fundo com o comportamento dele. Use com responsabilidade — sem perseguir, sem se humilhar. Bem aplicada, ela vira a sua maior vantagem."}
+      modulo:{e:"Atenção",t:"Uma técnica psicológica poderosa",x:"Cada módulo aplica gatilhos que mexem fundo com o comportamento dele. Use com responsabilidade — sem perseguir, sem se humilhar. Bem aplicada, ela vira a sua maior vantagem."},
+      segredo:{e:"🔒 Conteúdo bloqueado",t:"Este segredo está trancado",x:"O Segredo do Mestre pra cada situação faz parte do Plano de 7 Dias. Libere seu acesso e desbloqueie todos eles agora."}
     };
     window.openPorta=function(tipo){
       var d=PORTA[tipo]||PORTA.plano;
