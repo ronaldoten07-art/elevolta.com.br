@@ -1355,7 +1355,7 @@ body.portal-lock{overflow:hidden}
     document.body.style.overflow = '';
     clearInterval(timerId);
   }
-  $('checkout').addEventListener('click', e=>{ if((e.target.id==='checkout'||e.target.id==='coScroll') && !e.target.closest('.co-panel')) closeCheckout(); });
+  $('checkout').addEventListener('click', e=>{ if(Date.now()-lastStepChangeAt<400) return; if((e.target.id==='checkout'||e.target.id==='coScroll') && !e.target.closest('.co-panel')) closeCheckout(); });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeCheckout(); });
 
   // FAQ
@@ -1479,7 +1479,9 @@ body.portal-lock{overflow:hidden}
     btn.addEventListener('click', handler);
   })();
 
+  let lastStepChangeAt = 0;
   function goStep(n){
+    lastStepChangeAt = Date.now();
     document.querySelectorAll('.co-step').forEach(s=>s.classList.remove('active'));
     $('step-'+n).classList.add('active');
     // progress dots
