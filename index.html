@@ -683,6 +683,12 @@ body.portal-lock{overflow:hidden}
   @media (prefers-reduced-motion: reduce){ .acesso-x-big{animation:none} }
   @keyframes secretGlow{0%,100%{box-shadow:0 0 0 rgba(201,162,39,0);border-color:#e3c24f}50%{box-shadow:0 0 16px rgba(201,162,39,.45);border-color:#c9a227}}
   @media (prefers-reduced-motion: reduce){ .tip-secret{animation:none} }
+  .of50-badge{font-size:15px;padding:8px 20px;display:inline-flex;align-items:center;gap:7px}
+  .of50-pct{font-size:1.7em;font-weight:900;line-height:1}
+  .of50-box .ap-val{font-size:66px}
+  .of50-box .ap-label{font-size:15px}
+  .of50-timer{font-size:18px;font-weight:700;color:#ff7a2f;background:rgba(255,122,47,.12);border:1.5px solid rgba(255,122,47,.5);border-radius:50px;padding:12px 16px;margin:6px 0 14px}
+  .of50-timer strong{font-family:'Outfit',sans-serif;font-weight:900;color:#ff7a2f;font-variant-numeric:tabular-nums;font-size:24px}
 </style>
 </head>
 <body>
@@ -1158,10 +1164,10 @@ body.portal-lock{overflow:hidden}
   <div class="acesso-overlay" id="oferta50" style="display:none" aria-hidden="true">
     <div class="acesso-box of50-box" role="dialog" aria-modal="true" aria-label="Oferta especial">
       <button class="acesso-x" type="button" onclick="fecharDesconto()" aria-label="Fechar">&times;</button>
-      <div class="of50-badge">⏳ 50% OFF · só agora</div>
+      <div class="of50-badge"><span class="of50-pct">50%</span> OFF</div>
       <p class="acesso-eyebrow">Você foi escolhida</p>
       <h3 class="acesso-title">Eu não faço isso por qualquer uma</h3>
-      <p class="acesso-text">Eu percebi uma coisa em você: não desistiu. Foi até o fim porque ele ainda importa de verdade pra você, e mulher que luta pelo que ama merece uma chance real. Então vou fazer o que quase nunca faço: liberar o Plano de 7 Dias completo pela <b>metade do preço</b>. Não é pra qualquer uma. É pra você, que chegou até aqui. E é só agora.</p>
+      <p class="acesso-text">Você não desistiu, chegou até aqui. E quem luta pelo que ama merece uma chance. Por isso libero o Plano completo pela <b>metade do preço</b>. Só pra você, e só agora.</p>
       <div class="acesso-price">
         <span class="ap-label">De <s>R$ 97,00</s> por</span>
         <div class="ap-val"><span class="c">R$</span>48<small>,50</small></div>
@@ -1172,6 +1178,7 @@ body.portal-lock{overflow:hidden}
         <div class="ag-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <div class="ag-txt"><b>Garantia total de 7 dias.</b> Não gostou? Devolvo seu dinheiro, sem perguntas. E você tem suporte direto comigo no WhatsApp.</div>
       </div>
+      <div class="of50-timer">⏳ Essa oferta some em <strong id="of50Clock">05:00</strong></div>
       <button class="acesso-cta of50-cta" type="button" onclick="setOferta('desconto');fecharDesconto();openCheckout()">Quero com 50% de desconto &rarr;</button>
       <p class="acesso-foot">🔒 Pix · acesso imediato · oferta única</p>
     </div>
@@ -1389,13 +1396,30 @@ body.portal-lock{overflow:hidden}
   }
   $('acesso').addEventListener('click', function(e){ if(e.target.id==='acesso') abrirDesconto(); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && $('acesso').style.display==='flex') closeAcesso(); });
+  var timer50Id=null;
+  function startTimer50(){
+    stopTimer50();
+    var t=300;
+    var clk=document.getElementById('of50Clock');
+    function tick(){
+      var m=Math.floor(t/60), sec=t%60;
+      if(clk) clk.textContent=(m<10?'0':'')+m+':'+(sec<10?'0':'')+sec;
+      if(t<=0){ stopTimer50(); return; }
+      t--;
+    }
+    tick();
+    timer50Id=setInterval(tick,1000);
+  }
+  function stopTimer50(){ if(timer50Id){ clearInterval(timer50Id); timer50Id=null; } }
   function abrirDesconto(){
     $('acesso').style.display='none'; $('acesso').setAttribute('aria-hidden','true');
     $('oferta50').style.display='flex'; $('oferta50').setAttribute('aria-hidden','false');
     document.body.classList.add('portal-lock');
+    startTimer50();
     if(window.ttq && typeof ttq.track==='function'){ ttq.track('ViewContent',{contents:[{content_id:'codigo-da-reconquista',content_name:'Código da Reconquista (desconto)',quantity:1,price:48.50}],content_type:'product',value:48.50,currency:'BRL'}); }
   }
   function fecharDesconto(){
+    stopTimer50();
     $('oferta50').style.display='none'; $('oferta50').setAttribute('aria-hidden','true');
     if(!document.querySelector('.panel.open')) document.body.classList.remove('portal-lock');
   }
