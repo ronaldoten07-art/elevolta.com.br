@@ -16,9 +16,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   ttq.load('D8HMJSRC77UB4KU2EIV0');
   ttq.page();
   ttq.track('ViewContent', {
-    contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 49.90 }],
+    contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 97.00 }],
     content_type: 'product',
-    value: 49.90,
+    value: 97.00,
     currency: 'BRL'
   });
 }(window, document, 'ttq');
@@ -412,9 +412,9 @@ body.portal-lock{overflow:hidden}
 /* ════════ DICAS ════════ */
 .tips{background:var(--cream);padding:48px 18px}
 .tips .wrap{text-align:center}
-.tips h2{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(24px,6vw,32px);color:var(--ink)}
+.tips h2{font-family:'Newsreader',serif;font-weight:700;font-size:clamp(28px,7.5vw,40px);line-height:1.15;color:var(--ink)}
 .tips h2 em{font-style:italic;color:var(--terra)}
-.tips-lead{max-width:540px;margin:12px auto 0;color:var(--slate);font-size:18.5px;font-weight:500;line-height:1.55}
+.tips-lead{max-width:560px;margin:14px auto 0;color:var(--slate);font-size:21px;font-weight:500;line-height:1.5}
 .tips-grid{max-width:600px;margin:28px auto 0;display:flex;flex-direction:column;gap:12px}
 .tip{background:#fff;border:1.5px solid var(--paper-2);border-radius:16px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
 .tip.open{border-color:var(--terra);box-shadow:0 8px 24px rgba(200,112,79,.12)}
@@ -434,7 +434,7 @@ body.portal-lock{overflow:hidden}
 .tip-body ul li::before{content:'•';position:absolute;left:4px;font-weight:700}
 .tip-body ul.tip-do li::before{color:#2e7d52}
 .tip-body ul.tip-dont li::before{color:#b5503a}
-.tip-plan{margin-top:14px !important;padding:12px 14px;background:rgba(200,112,79,.1);border:1px solid rgba(200,112,79,.25);border-radius:10px;font-size:14px !important;color:var(--ink) !important;line-height:1.55 !important}
+.tip-plan{cursor:pointer;margin-top:14px !important;padding:12px 14px;background:rgba(200,112,79,.1);border:1px solid rgba(200,112,79,.25);border-radius:10px;font-size:14px !important;color:var(--ink) !important;line-height:1.55 !important}
 .tip-plan strong{color:var(--terra)}
 .tips-cta{max-width:560px;margin:34px auto 18px;text-align:center;font-size:16.5px;line-height:1.65;color:var(--ink-text)}
 @media(max-width:480px){.tip-ic{font-size:26px}.tip-title{font-size:17px}}
@@ -671,6 +671,16 @@ body.portal-lock{overflow:hidden}
   .ap-pay{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:11px;flex-wrap:wrap}
   .ap-pay-i{font-size:13.5px;font-weight:700;color:var(--cream);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:50px;padding:6px 13px}
   .ap-pay-sep{font-size:12px;color:var(--cream-muted);font-weight:500}
+  .of50-badge{display:inline-block;background:linear-gradient(135deg,#3b9c6d,#2e8159);color:#fff;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:7px 16px;border-radius:50px;margin-bottom:14px}
+  .of50-box{border:2px solid rgba(59,156,109,.5) !important}
+  .acesso-price .ap-label s{color:var(--cream-muted);font-weight:400;margin-right:5px}
+  .of50-cta{background:linear-gradient(135deg,#3b9c6d,#2e8159) !important;box-shadow:0 12px 28px rgba(59,156,109,.35) !important}
+  .acesso-close-btn{display:block;width:100%;background:none;border:1.5px solid rgba(251,247,240,.28);border-radius:50px;color:var(--cream);font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;padding:13px;margin-top:11px;cursor:pointer;transition:border-color .2s,background .2s}
+  .acesso-close-btn:hover{border-color:rgba(251,247,240,.5);background:rgba(255,255,255,.05)}
+  .acesso-x-big{top:10px;right:12px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;font-size:34px;line-height:1;padding-bottom:4px;color:rgba(251,247,240,.92);background:rgba(255,255,255,.07);border-radius:50%;animation:xPulse 2.4s ease-in-out infinite}
+  .acesso-x-big:hover{background:rgba(255,255,255,.14)}
+  @keyframes xPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
+  @media (prefers-reduced-motion: reduce){ .acesso-x-big{animation:none} }
 </style>
 </head>
 <body>
@@ -854,8 +864,8 @@ body.portal-lock{overflow:hidden}
       <section class="tips">
         <div class="wrap">
           <p class="eyebrow">Primeiros socorros</p>
-          <h2>Qual é a <em>sua</em> situação?</h2>
-          <p class="tips-lead">Cada situação tem um movimento certo — e um que <strong>queima qualquer chance</strong>. E quase toda mulher erra justo na hora mais decisiva. Toque no seu caso e veja exatamente o que fazer agora 👇</p>
+          <h2>Ele te <em>bloqueou</em>, sumiu ou está com outra?</h2>
+          <p class="tips-lead">Não importa o seu caso: existe um movimento certo pra reverter, e um erro que <strong>queima qualquer chance</strong>. Toque na sua situação e veja exatamente o que fazer agora 👇</p>
         </div>
         <div class="tips-grid">
 
@@ -871,9 +881,8 @@ body.portal-lock{overflow:hidden}
               <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
                 <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
                 <p class="ts-kill">O gesto silencioso que faz ele tirar o bloqueio sozinho — e ainda vir te procurar primeiro.</p>
-                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
               </div>
-              <p class="tip-plan">📘 Existe a hora exata de mandar a primeira mensagem depois que ele te desbloqueia — e as palavras certas que fazem ele responder na hora. Tudo, passo a passo, no <strong>Plano de 7 Dias</strong>.</p>
+              <p class="tip-plan" onclick="event.stopPropagation();openPorta('plano')">📘 Existe a hora exata de mandar a primeira mensagem depois que ele te desbloqueia — e as palavras certas que fazem ele responder na hora. Tudo, passo a passo, no <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -889,9 +898,8 @@ body.portal-lock{overflow:hidden}
               <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
                 <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
                 <p class="ts-kill">A única mensagem que ele não consegue deixar no vácuo. Quebra o silêncio em horas.</p>
-                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
               </div>
-              <p class="tip-plan">📘 A mensagem que reabre a conversa sem parecer que você estava esperando — e ainda deixa ele curioso pra te responder. Pronta pra copiar no <strong>Plano de 7 Dias</strong>.</p>
+              <p class="tip-plan" onclick="event.stopPropagation();openPorta('plano')">📘 A mensagem que reabre a conversa sem parecer que você estava esperando — e ainda deixa ele curioso pra te responder. Pronta pra copiar no <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -907,9 +915,8 @@ body.portal-lock{overflow:hidden}
               <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
                 <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
                 <p class="ts-kill">A frase que transforma o "tempo" dele em medo real de te perder de vez.</p>
-                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
               </div>
-              <p class="tip-plan">📘 A resposta-mestre que vira o "tempo" dele a seu favor — e faz ele perceber que agora quem pode sumir é você. Palavra por palavra no <strong>Plano de 7 Dias</strong>.</p>
+              <p class="tip-plan" onclick="event.stopPropagation();openPorta('plano')">📘 A resposta-mestre que vira o "tempo" dele a seu favor — e faz ele perceber que agora quem pode sumir é você. Palavra por palavra no <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -925,9 +932,8 @@ body.portal-lock{overflow:hidden}
               <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
                 <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
                 <p class="ts-kill">O movimento que faz ele te comparar com ela todo dia — até não aguentar mais.</p>
-                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
               </div>
-              <p class="tip-plan">📘 O método de reposicionamento que faz ele te comparar com ela — e perceber sozinho o que perdeu. É onde "ele está com outra" deixa de ser o fim e vira a sua maior arma. Tudo no <strong>Plano de 7 Dias</strong>.</p>
+              <p class="tip-plan" onclick="event.stopPropagation();openPorta('plano')">📘 O método de reposicionamento que faz ele te comparar com ela — e perceber sozinho o que perdeu. É onde "ele está com outra" deixa de ser o fim e vira a sua maior arma. Tudo no <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -943,9 +949,8 @@ body.portal-lock{overflow:hidden}
               <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
                 <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
                 <p class="ts-kill">O gancho que reacende a curiosidade dele e faz ele reaparecer sozinho.</p>
-                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
               </div>
-              <p class="tip-plan">📘 Os scripts prontos pra cada situação — é só copiar, enviar e ver ele reagir. Todos no <strong>Plano de 7 Dias</strong>.</p>
+              <p class="tip-plan" onclick="event.stopPropagation();openPorta('plano')">📘 Os scripts prontos pra cada situação — é só copiar, enviar e ver ele reagir. Todos no <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -961,9 +966,8 @@ body.portal-lock{overflow:hidden}
               <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
                 <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
                 <p class="ts-kill">Como recusar a migalha sem perder ele — e fazer ele correr atrás do banquete.</p>
-                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
               </div>
-              <p class="tip-plan">📘 O teste das três coerências que revela se a volta dele é de verdade ou só carência passageira — pra você não se entregar à toa. No <strong>Plano de 7 Dias</strong>.</p>
+              <p class="tip-plan" onclick="event.stopPropagation();openPorta('plano')">📘 O teste das três coerências que revela se a volta dele é de verdade ou só carência passageira — pra você não se entregar à toa. No <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -979,9 +983,8 @@ body.portal-lock{overflow:hidden}
               <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
                 <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
                 <p class="ts-kill">O que fazer pra o arrependimento bater nele bem na hora que mais dói.</p>
-                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
               </div>
-              <p class="tip-plan">📘 Como fazer a sua virada chegar até ele sem você mover um dedo — ele vê, sente, e o arrependimento vem sozinho. No <strong>Plano de 7 Dias</strong>.</p>
+              <p class="tip-plan" onclick="event.stopPropagation();openPorta('plano')">📘 Como fazer a sua virada chegar até ele sem você mover um dedo — ele vê, sente, e o arrependimento vem sozinho. No <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -997,9 +1000,8 @@ body.portal-lock{overflow:hidden}
               <div class="tip-secret" onclick="event.stopPropagation();openPorta('segredo')">
                 <div class="ts-head"><span class="ts-badge">🔑 Segredo do Mestre</span><span class="ts-lock">🔒</span></div>
                 <p class="ts-kill">A postura de 3 segundos que faz ele travar — e repensar tudo o que perdeu.</p>
-                <p class="ts-blur" aria-hidden="true">O primeiro passo é nunca deixar transparecer que você esperou. No instante certo, você faz exatamente isto: aguarda o momento em que ele baixa a guarda e então envia o gatilho que reativa o interesse dele sem nenhum sinal de carência — é esse detalhe que inverte o jogo e faz ele vir até você.</p>
               </div>
-              <p class="tip-plan">📘 Como treinar a postura que faz ele te desejar de novo — e te deixa no controle de qualquer reencontro. No <strong>Plano de 7 Dias</strong>.</p>
+              <p class="tip-plan" onclick="event.stopPropagation();openPorta('plano')">📘 Como treinar a postura que faz ele te desejar de novo — e te deixa no controle de qualquer reencontro. No <strong>Plano de 7 Dias</strong>.</p>
             </div>
           </div>
 
@@ -1100,7 +1102,7 @@ body.portal-lock{overflow:hidden}
           <div class="faq-a"><p>Não. O método é justamente o contrário: você reconquista sem se humilhar, sem implorar e sem ficar mandando mensagem. Você aprende a se reposicionar de um jeito que faz ele querer voltar por conta própria.</p></div>
         </div>
         <div class="faq-item">
-          <button type="button" class="faq-q" onclick="toggleFaqItem(this)">R$49,90 é pagamento único?<span class="faq-arrow">+</span></button>
+          <button type="button" class="faq-q" onclick="toggleFaqItem(this)">R$97 é pagamento único?<span class="faq-arrow">+</span></button>
           <div class="faq-a"><p>Sim, pagamento único. Você paga uma vez só e o conteúdo é seu para sempre, com direito ao suporte pelo WhatsApp. Sem mensalidade, sem cobrança extra.</p></div>
         </div>
       </div>
@@ -1125,28 +1127,51 @@ body.portal-lock{overflow:hidden}
 
   <div class="acesso-overlay" id="acesso" style="display:none" aria-hidden="true">
     <div class="acesso-box" role="dialog" aria-modal="true" aria-label="Acesso restrito">
-      <button class="acesso-x" type="button" onclick="closeAcesso()" aria-label="Fechar">&times;</button>
+      <button class="acesso-x acesso-x-big" type="button" onclick="abrirDesconto()" aria-label="Fechar">&times;</button>
       <div class="acesso-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
       <p class="acesso-eyebrow">Conteúdo exclusivo</p>
       <h3 class="acesso-title">Acesso restrito</h3>
       <p class="acesso-text">O Plano de 7 Dias completo — o passo a passo dia a dia, os 8 módulos e os scripts prontos — é liberado só para alunas.</p>
       <div class="acesso-steps">
-        <div class="as-step"><span class="as-n">1</span><span>Pague com Pix ou cartão de crédito</span></div>
+        <div class="as-step"><span class="as-n">1</span><span>Pague pelo Pix, em segundos</span></div>
         <div class="as-step"><span class="as-n">2</span><span>Receba o acesso na hora, pelo WhatsApp</span></div>
         <div class="as-step"><span class="as-n">3</span><span>Comece o Dia 1 hoje mesmo</span></div>
       </div>
       <div class="acesso-price">
         <span class="ap-label">Acesso vitalício por</span>
-        <div class="ap-val"><span class="c">R$</span>49<small>,90</small></div>
+        <div class="ap-val"><span class="c">R$</span>97<small>,00</small></div>
         <span class="ap-meta">Pagamento único · liberado na hora</span>
-        <div class="ap-pay"><span class="ap-pay-i">⚡ Pix</span><span class="ap-pay-sep">ou</span><span class="ap-pay-i">💳 Cartão de crédito</span></div>
+        <div class="ap-pay"><span class="ap-pay-i">⚡ Pix · acesso na hora</span></div>
       </div>
       <div class="acesso-guard">
         <div class="ag-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <div class="ag-txt"><b>Garantia total de 7 dias.</b> Não gostou? Devolvo seu dinheiro, sem perguntas. E você tem suporte direto comigo no WhatsApp.</div>
       </div>
-      <button class="acesso-cta" type="button" onclick="closeAcesso();openCheckout()">Liberar meu acesso agora &rarr;</button>
-      <p class="acesso-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Pix ou cartão · acesso imediato</p>
+      <button class="acesso-cta" type="button" onclick="setOferta('cheia');closeAcesso();openCheckout()">Liberar meu acesso agora &rarr;</button>
+      <button class="acesso-close-btn" type="button" onclick="abrirDesconto()">Agora não, quero fechar</button>
+      <p class="acesso-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Pix · acesso imediato</p>
+    </div>
+  </div>
+
+  <div class="acesso-overlay" id="oferta50" style="display:none" aria-hidden="true">
+    <div class="acesso-box of50-box" role="dialog" aria-modal="true" aria-label="Oferta especial">
+      <button class="acesso-x" type="button" onclick="fecharDesconto()" aria-label="Fechar">&times;</button>
+      <div class="of50-badge">⏳ 50% OFF · só agora</div>
+      <p class="acesso-eyebrow">Você foi escolhida</p>
+      <h3 class="acesso-title">Eu não faço isso por qualquer uma</h3>
+      <p class="acesso-text">Eu percebi uma coisa em você: não desistiu. Foi até o fim porque ele ainda importa de verdade pra você, e mulher que luta pelo que ama merece uma chance real. Então vou fazer o que quase nunca faço: liberar o Plano de 7 Dias completo pela <b>metade do preço</b>. Não é pra qualquer uma. É pra você, que chegou até aqui. E é só agora.</p>
+      <div class="acesso-price">
+        <span class="ap-label">De <s>R$ 97,00</s> por</span>
+        <div class="ap-val"><span class="c">R$</span>48<small>,50</small></div>
+        <span class="ap-meta">Pagamento único · liberado na hora</span>
+        <div class="ap-pay"><span class="ap-pay-i">⚡ Pix · acesso na hora</span></div>
+      </div>
+      <div class="acesso-guard">
+        <div class="ag-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div class="ag-txt"><b>Garantia total de 7 dias.</b> Não gostou? Devolvo seu dinheiro, sem perguntas. E você tem suporte direto comigo no WhatsApp.</div>
+      </div>
+      <button class="acesso-cta of50-cta" type="button" onclick="setOferta('desconto');fecharDesconto();openCheckout()">Quero com 50% de desconto &rarr;</button>
+      <p class="acesso-foot">🔒 Pix · acesso imediato · oferta única</p>
     </div>
   </div>
 
@@ -1159,8 +1184,8 @@ body.portal-lock{overflow:hidden}
       <h3 class="lib-title">Essa técnica é mais poderosa do que parece</h3>
       <p class="lib-text">O Protocolo de Desbloqueio age sobre gatilhos emocionais reais. Aplicado na ordem certa, ele funciona — e por isso pede responsabilidade: sem perseguir, sem se humilhar, sem pular etapas.</p>
       <p class="lib-text">E é justamente por funcionar que ele não fica aberto pra qualquer uma. O acesso completo é liberado por um valor único:</p>
-      <div class="lib-price"><span class="lib-price-label">Liberação única · acesso vitalício</span><div class="lib-price-val"><span class="c">R$</span>49<small>,90</small></div></div>
-      <button class="lib-cta" type="button" onclick="closeLiberar();openCheckout()">Liberar minha técnica agora</button>
+      <div class="lib-price"><span class="lib-price-label">Liberação única · acesso vitalício</span><div class="lib-price-val"><span class="c">R$</span>97<small>,00</small></div></div>
+      <button class="lib-cta" type="button" onclick="setOferta('cheia');closeLiberar();openCheckout()">Liberar minha técnica agora</button>
       <p class="lib-micro">🔒 Acesso na hora · pagamento único · Pix protegido</p>
     </div>
   </div>
@@ -1189,7 +1214,7 @@ body.portal-lock{overflow:hidden}
             <div class="co-order-name">Código da Reconquista</div>
             <div class="co-order-meta">Acesso vitalício · 100% digital</div>
           </div>
-          <div class="co-order-price">R$ 49<span>,90</span></div>
+          <div class="co-order-price" id="coOrderPrice">R$ 97<span>,00</span></div>
         </div>
       </div>
 
@@ -1218,19 +1243,6 @@ body.portal-lock{overflow:hidden}
 
       <!-- STEP 2 -->
       <div class="co-step" id="step-2">
-        <div class="co-methods">
-          <button type="button" class="co-method active" id="m-pix" onclick="selMethod('pix')">
-            <span class="cm-ic">⚡</span>
-            <span class="cm-info"><span class="cm-t">Pix</span><span class="cm-s">Aprovação na hora</span></span>
-            <span class="cm-check">✓</span>
-          </button>
-          <button type="button" class="co-method" id="m-card" onclick="selMethod('card')">
-            <span class="cm-ic">💳</span>
-            <span class="cm-info"><span class="cm-t">Cartão de crédito</span><span class="cm-s">Via Mercado Pago</span></span>
-            <span class="cm-check">✓</span>
-          </button>
-        </div>
-
         <div id="pay-pix">
         <div class="co-receiver">
           <span class="co-receiver-label">Recebedor</span>
@@ -1241,7 +1253,7 @@ body.portal-lock{overflow:hidden}
         <button type="button" class="co-btn co-gen-big" id="genBtn" onclick="gerarPix()">
           <span class="co-gen-ic">⚡</span>
           <span class="co-gen-txt">Gerar código Pix</span>
-          <span class="co-gen-val">R$ 49,90</span>
+          <span class="co-gen-val" id="coGenVal">R$ 97,00</span>
         </button>
 
         <!-- Estado B: copiar (oculto até gerar) -->
@@ -1256,20 +1268,6 @@ body.portal-lock{overflow:hidden}
         </div>
 
         </div><!-- /pay-pix -->
-
-        <div id="pay-card" style="display:none">
-          <div class="co-receiver">
-            <span class="co-receiver-label">Recebedor</span>
-            <span class="co-receiver-name">Ronaldo da Cunha Silva</span>
-          </div>
-          <div class="co-howto"><span class="co-howto-num">1</span> Copie o link e <strong class="co-hl">cole no seu navegador</strong> pra pagar com cartão</div>
-          <div class="co-cardlink" id="cardLink">https://mpago.la/21inuBD</div>
-          <button type="button" class="co-btn co-btn-copy" id="copyCardBtn" onclick="copyCard()">
-            <span id="copyCardTxt">📋 Copiar link de pagamento</span>
-          </button>
-          <div class="co-copied-msg" id="cardCopiedMsg">✓ Link copiado! Agora cole no seu navegador pra finalizar com cartão.</div>
-          <div class="co-howto" style="margin-top:14px"><span class="co-howto-num">2</span> Após o pagamento, seu acesso chega no seu <strong class="co-hl">WhatsApp</strong> 💛</div>
-        </div>
 
         <button type="button" class="co-ghost" onclick="goStep(1)">&larr; Voltar e corrigir meus dados</button>
       </div>
@@ -1292,9 +1290,12 @@ body.portal-lock{overflow:hidden}
   /* ═══════════ CHECKOUT — Código da Reconquista ═══════════ */
   const WA_NUMBER = '5524981517067';
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mreonbkg';
-  const CARD_LINK = 'https://mpago.la/21inuBD';
-  const PIX_CODE = '00020126490014br.gov.bcb.pix0111121496937200212Plank 7 dias520400005303986540549.905802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026062020375842950300017br.gov.bcb.brcode01051.0.06304E602';
-  const PRODUTO = { nome: 'Código da Reconquista', valor: 'R$ 49,90' };
+  const PIX_97   = '00020126490014br.gov.bcb.pix0111121496937200212Plano 7 dias520400005303986540597.005802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026062117052511550300017br.gov.bcb.brcode01051.0.06304FE3B';
+  const PIX_4850 = '00020126640014br.gov.bcb.pix0111121496937200227Plano 7 dias 50 de desconto520400005303986540548.505802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026062117042196850300017br.gov.bcb.brcode01051.0.063049C0E';
+  const OFERTAS = { cheia:{valor:'R$ 97,00',num:97.00,pix:PIX_97,priceHtml:'R$ 97<span>,00</span>',genVal:'R$ 97,00'}, desconto:{valor:'R$ 48,50',num:48.50,pix:PIX_4850,priceHtml:'R$ 48<span>,50</span>',genVal:'R$ 48,50'} };
+  let OFERTA = OFERTAS.cheia;
+  function setOferta(t){ OFERTA = OFERTAS[t]||OFERTAS.cheia; var op=document.getElementById('coOrderPrice'); if(op) op.innerHTML=OFERTA.priceHtml; var gv=document.getElementById('coGenVal'); if(gv) gv.textContent=OFERTA.genVal; }
+  const PRODUTO = { nome: 'Código da Reconquista', get valor(){ return OFERTA.valor; } };
 
   let canal = 'WhatsApp';
   let metodoPagamento = 'Pix';
@@ -1340,9 +1341,9 @@ body.portal-lock{overflow:hidden}
     document.body.style.overflow = 'hidden';
     if(window.ttq && typeof ttq.track === 'function'){
       ttq.track('InitiateCheckout', {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 49.90 }],
+        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 97.00 }],
         content_type: 'product',
-        value: 49.90,
+        value: 97.00,
         currency: 'BRL'
       });
     }
@@ -1376,7 +1377,7 @@ body.portal-lock{overflow:hidden}
     $('acesso').setAttribute('aria-hidden','false');
     document.body.classList.add('portal-lock');
     if(window.ttq && typeof ttq.track==='function'){
-      ttq.track('ViewContent',{contents:[{content_id:'codigo-da-reconquista',content_name:'Código da Reconquista',quantity:1,price:49.90}],content_type:'product',value:49.90,currency:'BRL'});
+      ttq.track('ViewContent',{contents:[{content_id:'codigo-da-reconquista',content_name:'Código da Reconquista',quantity:1,price:97.00}],content_type:'product',value:97.00,currency:'BRL'});
     }
   }
   function closeAcesso(){
@@ -1384,8 +1385,19 @@ body.portal-lock{overflow:hidden}
     $('acesso').setAttribute('aria-hidden','true');
     if(!document.querySelector('.panel.open')) document.body.classList.remove('portal-lock');
   }
-  $('acesso').addEventListener('click', function(e){ if(e.target.id==='acesso') closeAcesso(); });
+  $('acesso').addEventListener('click', function(e){ if(e.target.id==='acesso') abrirDesconto(); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && $('acesso').style.display==='flex') closeAcesso(); });
+  function abrirDesconto(){
+    $('acesso').style.display='none'; $('acesso').setAttribute('aria-hidden','true');
+    $('oferta50').style.display='flex'; $('oferta50').setAttribute('aria-hidden','false');
+    document.body.classList.add('portal-lock');
+    if(window.ttq && typeof ttq.track==='function'){ ttq.track('ViewContent',{contents:[{content_id:'codigo-da-reconquista',content_name:'Código da Reconquista (desconto)',quantity:1,price:48.50}],content_type:'product',value:48.50,currency:'BRL'}); }
+  }
+  function fecharDesconto(){
+    $('oferta50').style.display='none'; $('oferta50').setAttribute('aria-hidden','true');
+    if(!document.querySelector('.panel.open')) document.body.classList.remove('portal-lock');
+  }
+  $('oferta50').addEventListener('click', function(e){ if(e.target.id==='oferta50') fecharDesconto(); });
 
   function goOferta(){ openAcesso(); }
   function _goOferta_old(){
@@ -1518,9 +1530,9 @@ body.portal-lock{overflow:hidden}
     goStep(2);
     if(window.ttq && typeof ttq.track === 'function'){
       ttq.track('AddToCart', {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 49.90 }],
+        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 97.00 }],
         content_type: 'product',
-        value: 49.90,
+        value: 97.00,
         currency: 'BRL'
       });
     }
@@ -1532,8 +1544,6 @@ body.portal-lock{overflow:hidden}
     $('copiedMsg').classList.remove('show');
     const b = $('copyBtn'); b.classList.remove('copied');
     $('copyTxt').textContent = '📋 Copiar código Pix';
-    var cb=$('copyCardBtn'); if(cb){ cb.classList.remove('copied'); $('copyCardTxt').textContent='📋 Copiar link de pagamento'; $('cardCopiedMsg').classList.remove('show'); }
-    if(typeof selMethod==='function') selMethod('pix');
   }
   function gerarPix(){
     $('genBtn').style.display = 'none';
@@ -1555,17 +1565,17 @@ body.portal-lock{overflow:hidden}
       setTimeout(goSuccess, 900);
     };
     if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(PIX_CODE).then(done).catch(()=>{ fallbackCopy(PIX_CODE); done(); });
-    } else { fallbackCopy(PIX_CODE); done(); }
+      navigator.clipboard.writeText(OFERTA.pix).then(done).catch(()=>{ fallbackCopy(OFERTA.pix); done(); });
+    } else { fallbackCopy(OFERTA.pix); done(); }
     metodoPagamento = 'Pix (copiou o código)';
     // dispara o lead pro Formspree no momento em que copia o Pix (alta intenção)
     enviarLead();
     // conversão TikTok no momento em que copia o Pix
     if(window.ttq && typeof ttq.track === 'function'){
       var pixContents = {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 49.90 }],
+        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 97.00 }],
         content_type: 'product',
-        value: 49.90,
+        value: 97.00,
         currency: 'BRL'
       };
       ttq.track('PlaceAnOrder', pixContents);
@@ -1573,30 +1583,6 @@ body.portal-lock{overflow:hidden}
     }
   }
 
-  function selMethod(m){
-    var pix = (m==='pix');
-    $('m-pix').classList.toggle('active', pix);
-    $('m-card').classList.toggle('active', !pix);
-    $('pay-pix').style.display = pix ? 'block' : 'none';
-    $('pay-card').style.display = pix ? 'none' : 'block';
-  }
-  function copyCard(){
-    const done = ()=>{
-      const b=$('copyCardBtn'); b.classList.add('copied');
-      $('copyCardTxt').textContent = '✓ Link copiado!';
-      $('cardCopiedMsg').classList.add('show');
-      setTimeout(goSuccess, 1100);
-    };
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(CARD_LINK).then(done).catch(()=>{ fallbackCopy(CARD_LINK); done(); });
-    } else { fallbackCopy(CARD_LINK); done(); }
-    metodoPagamento = 'Cartão (copiou o link Mercado Pago)';
-    enviarLead();
-    if(window.ttq && typeof ttq.track === 'function'){
-      var c = { contents:[{ content_id:'codigo-da-reconquista', content_name:'Código da Reconquista', quantity:1, price:49.90 }], content_type:'product', value:49.90, currency:'BRL' };
-      ttq.track('PlaceAnOrder', c); ttq.track('CompletePayment', c);
-    }
-  }
   function enviarLead(){
     if(leadEnviado || !lead) return;
     leadEnviado = true;
@@ -1729,7 +1715,7 @@ body.portal-lock{overflow:hidden}
         <details class="bl-faq"><summary class="bl-faq-q">Funciona se ele me bloqueou em tudo?</summary><p class="bl-faq-a">O método não depende de você conseguir falar com ele — pelo contrário. Ele te mostra exatamente o que fazer enquanto o canal está fechado, pra que o desbloqueio aconteça da forma certa, no tempo certo.</p></details>
         <details class="bl-faq"><summary class="bl-faq-q">Em quanto tempo ele me desbloqueia?</summary><p class="bl-faq-a">Não existe prazo mágico — e quem promete isso está mentindo. O que o método faz é parar os erros que prolongam o bloqueio e te colocar na postura que reaproxima. Algumas relatam dias; outras, semanas.</p></details>
         <details class="bl-faq"><summary class="bl-faq-q">Como recebo o acesso?</summary><p class="bl-faq-a">Assim que o Pix é confirmado, seu acesso é liberado na hora. É um material digital que você abre no celular, quando quiser, quantas vezes precisar.</p></details>
-        <details class="bl-faq"><summary class="bl-faq-q">É seguro pagar?</summary><p class="bl-faq-a">O pagamento é via Pix, direto e protegido. Pagamento único de R$49,90 — sem mensalidade e sem pegadinha.</p></details>
+        <details class="bl-faq"><summary class="bl-faq-q">É seguro pagar?</summary><p class="bl-faq-a">O pagamento é via Pix, direto e protegido. Pagamento único de R$97 — sem mensalidade e sem pegadinha.</p></details>
       </div>
       <div class="bl-final">
         <p class="bl-final-l">No dia que ele te bloqueou, você achou que tinha acabado.</p>
@@ -1746,10 +1732,10 @@ body.portal-lock{overflow:hidden}
     var el=document.getElementById("bloqueioLand"); if(!el) return;
     el.style.display="block"; el.setAttribute("aria-hidden","false"); el.scrollTop=0;
     document.body.style.overflow="hidden";
-    if(window.ttq && typeof ttq.track==="function"){ ttq.track("ViewContent",{contents:[{content_id:"codigo-da-reconquista",content_name:"Código da Reconquista",quantity:1,price:49.90}],content_type:"product",value:49.90,currency:"BRL"}); }
+    if(window.ttq && typeof ttq.track==="function"){ ttq.track("ViewContent",{contents:[{content_id:"codigo-da-reconquista",content_name:"Código da Reconquista",quantity:1,price:97.00}],content_type:"product",value:97.00,currency:"BRL"}); }
   }
   function hideBloqueio(){ var el=document.getElementById("bloqueioLand"); if(!el) return; el.style.display="none"; el.setAttribute("aria-hidden","true"); document.body.style.overflow=""; }
-  function openLiberar(){ var el=document.getElementById("liberar"); if(!el) return; el.style.display="flex"; el.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden"; if(window.ttq && typeof ttq.track==="function"){ ttq.track("AddToCart",{contents:[{content_id:"codigo-da-reconquista",content_name:"Código da Reconquista",quantity:1,price:49.90}],content_type:"product",value:49.90,currency:"BRL"}); } }
+  function openLiberar(){ var el=document.getElementById("liberar"); if(!el) return; el.style.display="flex"; el.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden"; if(window.ttq && typeof ttq.track==="function"){ ttq.track("AddToCart",{contents:[{content_id:"codigo-da-reconquista",content_name:"Código da Reconquista",quantity:1,price:97.00}],content_type:"product",value:97.00,currency:"BRL"}); } }
   function closeLiberar(){ var el=document.getElementById("liberar"); if(!el) return; el.style.display="none"; el.setAttribute("aria-hidden","true"); }
   </script>
   <!-- MINI-PÁGINAS DE ANÚNCIO (só via link dedicado) -->
@@ -1769,13 +1755,13 @@ body.portal-lock{overflow:hidden}
         '<p class="ad-auto">'+auto+'</p>'+
         '<p class="ad-erro">'+a.erro+'</p>'+
         '<p class="ad-esp">'+a.esp+'</p>'+
-        '<button class="ad-cta" type="button" onclick="openCheckout()">QUERO O CAMINHO COMPLETO &middot; R$49,90</button>'+
+        '<button class="ad-cta" type="button" onclick="openCheckout()">QUERO O CAMINHO COMPLETO &middot; R$97</button>'+
         '<p class="ad-micro">Acesso na hora &middot; pagamento &uacute;nico &middot; Pix protegido</p>'+
         '<button class="ad-explore" type="button" onclick="closeAd()">prefiro conhecer o site primeiro</button>'+
       '</div>';
     el.style.display="block"; el.setAttribute("aria-hidden","false"); el.scrollTop=0;
     document.body.style.overflow="hidden";
-    if(window.ttq && typeof ttq.track==="function"){ ttq.track("ViewContent",{contents:[{content_id:"codigo-da-reconquista",content_name:"Código da Reconquista",quantity:1,price:49.90}],content_type:"product",value:49.90,currency:"BRL"}); }
+    if(window.ttq && typeof ttq.track==="function"){ ttq.track("ViewContent",{contents:[{content_id:"codigo-da-reconquista",content_name:"Código da Reconquista",quantity:1,price:97.00}],content_type:"product",value:97.00,currency:"BRL"}); }
   }
   function closeAd(){ var el=document.getElementById("adland"); el.style.display="none"; el.setAttribute("aria-hidden","true"); document.body.style.overflow=""; }
   </script>
@@ -1785,7 +1771,7 @@ body.portal-lock{overflow:hidden}
   (function(){
     try{
       var ir=(new URLSearchParams(location.search).get("ir")||"").toLowerCase();
-      if(!ir) return;
+      if(!ir) ir="dicas";
       function go(){
         if(ir==="bloqueio" && typeof showBloqueio==="function"){ showBloqueio(); return; }
         if(typeof AD!=="undefined" && AD[ir] && typeof showAd==="function"){ showAd(ir); return; }
