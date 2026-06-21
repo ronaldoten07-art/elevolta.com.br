@@ -469,9 +469,9 @@ body.portal-lock{overflow:hidden}
 .pcard-hero .pcard-sub{font-size:20.8px;color:#dbe2e7;line-height:1.45}
 .pcard-hero .pcard-title{margin-bottom:3px}
 /* ===== ACESSO RESTRITO ===== */
-.acesso-overlay{position:fixed;inset:0;z-index:1200;background:rgba(30,8,14,.62);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:22px;animation:acFade .25s ease}
+.acesso-overlay{position:fixed;inset:0;z-index:1200;background:rgba(30,8,14,.62);backdrop-filter:blur(4px);display:flex;align-items:flex-start;justify-content:center;padding:18px;overflow-y:auto;-webkit-overflow-scrolling:touch;animation:acFade .25s ease}
 @keyframes acFade{from{opacity:0}to{opacity:1}}
-.acesso-box{position:relative;width:100%;max-width:382px;background:linear-gradient(168deg,var(--wine-3),var(--wine));border:1px solid rgba(200,112,79,.42);border-radius:24px;padding:36px 26px 26px;text-align:center;color:var(--cream);box-shadow:0 30px 70px rgba(30,8,14,.5);animation:acPop .32s cubic-bezier(.34,1.4,.5,1)}
+.acesso-box{position:relative;width:100%;max-width:362px;margin:auto;background:linear-gradient(168deg,var(--wine-3),var(--wine));border:1px solid rgba(200,112,79,.42);border-radius:22px;padding:30px 22px 22px;text-align:center;color:var(--cream);box-shadow:0 30px 70px rgba(30,8,14,.5);animation:acPop .32s cubic-bezier(.34,1.4,.5,1)}
 @keyframes acPop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
 .acesso-x{position:absolute;top:13px;right:16px;background:none;border:none;color:rgba(251,247,240,.55);font-size:27px;line-height:1;cursor:pointer}
 .acesso-lock{width:62px;height:62px;border-radius:50%;margin:0 auto 16px;background:rgba(200,112,79,.16);border:1px solid var(--terra-soft);color:var(--terra-soft);display:flex;align-items:center;justify-content:center}
@@ -652,7 +652,7 @@ body.portal-lock{overflow:hidden}
 .ag-txt{font-size:14.5px;line-height:1.45;font-weight:500;color:#eaf6ef}
 .ag-txt b{font-weight:700;color:#fff}
   /* ===== SEGREDO DO MESTRE (conteúdo borrado) ===== */
-  .tip-secret{position:relative;overflow:hidden;cursor:pointer;background:linear-gradient(165deg,#fffdf5,#fbf3da);border:1px solid #e3c24f;border-radius:14px;padding:15px 16px;margin-top:16px;text-align:left}
+  .tip-secret{position:relative;overflow:hidden;cursor:pointer;background:linear-gradient(165deg,#fffdf5,#fbf3da);border:1px solid #e3c24f;border-radius:14px;padding:15px 16px;margin-top:16px;text-align:left;animation:secretGlow 2.8s ease-in-out infinite}
   .ts-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
   .ts-badge{font-size:13.5px;letter-spacing:.8px;text-transform:uppercase;font-weight:800;color:#8a6708}
   .ts-lock{font-size:16px;color:#b8860b}
@@ -677,10 +677,12 @@ body.portal-lock{overflow:hidden}
   .of50-cta{background:linear-gradient(135deg,#3b9c6d,#2e8159) !important;box-shadow:0 12px 28px rgba(59,156,109,.35) !important}
   .acesso-close-btn{display:block;width:100%;background:none;border:1.5px solid rgba(251,247,240,.28);border-radius:50px;color:var(--cream);font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;padding:13px;margin-top:11px;cursor:pointer;transition:border-color .2s,background .2s}
   .acesso-close-btn:hover{border-color:rgba(251,247,240,.5);background:rgba(255,255,255,.05)}
-  .acesso-x-big{top:10px;right:12px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;font-size:34px;line-height:1;padding-bottom:4px;color:rgba(251,247,240,.92);background:rgba(255,255,255,.07);border-radius:50%;animation:xPulse 2.4s ease-in-out infinite}
-  .acesso-x-big:hover{background:rgba(255,255,255,.14)}
+  .acesso-x-big{top:18px;right:14px;width:54px;height:54px;display:flex;align-items:center;justify-content:center;font-size:40px;line-height:1;padding-bottom:5px;color:#111;background:#fff;border-radius:50%;box-shadow:0 5px 18px rgba(0,0,0,.35);animation:xPulse 2.4s ease-in-out infinite}
+  .acesso-x-big:hover{background:#f0f0f0}
   @keyframes xPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
   @media (prefers-reduced-motion: reduce){ .acesso-x-big{animation:none} }
+  @keyframes secretGlow{0%,100%{box-shadow:0 0 0 rgba(201,162,39,0);border-color:#e3c24f}50%{box-shadow:0 0 16px rgba(201,162,39,.45);border-color:#c9a227}}
+  @media (prefers-reduced-motion: reduce){ .tip-secret{animation:none} }
 </style>
 </head>
 <body>
