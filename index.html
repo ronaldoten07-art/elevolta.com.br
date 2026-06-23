@@ -441,9 +441,9 @@ body.portal-lock{overflow:hidden}
 
 /* ════════ TEMA DIA DOS NAMORADOS + MESTRE ════════ */
 .portal{background:
-  radial-gradient(circle at 20% 12%, rgba(214,120,120,.20) 0%, transparent 45%),
-  radial-gradient(circle at 85% 85%, rgba(221,150,120,.22) 0%, transparent 50%),
-  linear-gradient(160deg,#fff 0%, var(--cream) 42%, var(--paper-2) 100%)}
+  radial-gradient(circle at 50% 6%, rgba(255,95,115,.20) 0%, transparent 52%),
+  radial-gradient(circle at 86% 92%, rgba(150,18,40,.30) 0%, transparent 56%),
+  linear-gradient(165deg,#2b0a13 0%, #1c0710 55%, #110309 100%)}
 .portal-kicker{display:inline-flex;align-items:center;gap:6px}
 .portal-kicker svg{width:12px;height:12px;color:var(--terra)}
 .portal-brand{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(50px,14.5vw,68px);
@@ -491,7 +491,7 @@ body.portal-lock{overflow:hidden}
 .acesso-foot{font-size:14px;font-weight:500;color:#d6c2c7;margin-top:14px;display:flex;align-items:center;justify-content:center;gap:6px}
 .acesso-foot svg{width:13px;height:13px}
 /* ===== PORTAL EM UMA TELA ===== */
-.portal{height:100dvh;padding:12px 18px;overflow-y:auto;justify-content:flex-start}
+.portal{position:relative;height:100dvh;padding:12px 18px;overflow-y:auto;justify-content:flex-start}
 .portal-inner{margin:auto;width:100%;max-width:482px;display:flex;flex-direction:column;padding:0;gap:clamp(8px,1.8vh,18px)}
 .portal-head{margin-top:0}
 .portal-kicker{margin-bottom:clamp(6px,1.3vh,12px);padding:4px 13px;font-size:10.5px}
@@ -689,94 +689,174 @@ body.portal-lock{overflow:hidden}
   .of50-box .ap-label{font-size:15px}
   .of50-timer{font-size:18px;font-weight:700;color:#ff7a2f;background:rgba(255,122,47,.12);border:1.5px solid rgba(255,122,47,.5);border-radius:50px;padding:12px 16px;margin:6px 0 14px}
   .of50-timer strong{font-family:'Outfit',sans-serif;font-weight:900;color:#ff7a2f;font-variant-numeric:tabular-nums;font-size:24px}
+  .portal-inner{position:relative;z-index:1}
+  .balloon-nav{display:flex;flex-direction:column;align-items:center;gap:0;width:100%;position:relative;z-index:1}
+  .bnav-defs{position:absolute;width:0;height:0}
+  .bnav{position:relative;background:none;border:none;cursor:pointer;padding:0;line-height:0;animation:bob ease-in-out infinite alternate;transform-origin:50% 90%;-webkit-tap-highlight-color:transparent}
+  .bnav:active{filter:brightness(1.08) saturate(1.05)}
+  .bnav-heart{display:block;width:100%;height:auto;filter:drop-shadow(0 6px 13px rgba(50,12,26,.32))}
+  .bnav-label{position:absolute;left:0;right:0;top:29%;transform:translateY(-50%);text-align:center;font-family:'Outfit',sans-serif;font-weight:800;color:#fff;line-height:1.05;letter-spacing:.2px;text-shadow:0 2px 8px rgba(60,8,20,.75);pointer-events:none;padding:0 7%;hyphens:auto}
+  @keyframes bob{0%{transform:translateY(-5px) rotate(-2.6deg)}100%{transform:translateY(5px) rotate(2.6deg)}}
+  @media (prefers-reduced-motion: reduce){ .bnav{animation:none} }
+  #portal .portal-title{color:#fbf7f0}
+  #portal .portal-title em{color:#ff9aa8}
+  #portal .portal-sub{color:rgba(251,247,240,.82)}
+  #portal .portal-brand{color:#fbf7f0}
+  #portal .portal-foot{color:rgba(251,247,240,.6)}
+  .bnav::after{content:"";position:absolute;left:50%;top:28%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:radial-gradient(circle,rgba(255,165,175,.95),rgba(255,90,110,0) 70%);transform:scale(0);opacity:0;pointer-events:none}
+  .bnav.pop{animation:balloonPop .26s ease-out forwards}
+  .bnav.pop .bnav-heart{filter:drop-shadow(0 0 11px rgba(255,90,110,.65))}
+  .bnav.pop::after{animation:popBurst .3s ease-out}
+  @keyframes balloonPop{0%{transform:scale(1)}30%{transform:scale(1.18)}100%{transform:scale(.14);opacity:0}}
+  @keyframes popBurst{0%{transform:scale(.4);opacity:.95}100%{transform:scale(5.5);opacity:0}}
+  .bnav-hero{width:clamp(120px,34vw,150px);margin-bottom:-10px}
+  .bnav-hero .bnav-label{font-size:clamp(16px,4.7vw,21px);top:27%}
+  .bnav-grid{display:flex;flex-wrap:wrap;justify-content:center;column-gap:clamp(2px,1.2vw,8px);row-gap:0;width:100%}
+  .bnav-grid .bnav{width:clamp(84px,24vw,104px);margin-top:-12px}
+  .bnav-grid .bnav-label{font-size:clamp(12.5px,3.6vw,15.5px)}
+  .bnav-grid .bnav:nth-child(1){animation-duration:3.6s;animation-delay:-.4s}
+  .bnav-grid .bnav:nth-child(2){animation-duration:4.1s;animation-delay:-1.1s}
+  .bnav-grid .bnav:nth-child(3){animation-duration:3.3s;animation-delay:-.7s}
+  .bnav-grid .bnav:nth-child(4){animation-duration:4.4s;animation-delay:-1.6s}
+  .bnav-grid .bnav:nth-child(5){animation-duration:3.7s;animation-delay:-.2s}
+  .bnav-grid .bnav:nth-child(6){animation-duration:4.0s;animation-delay:-1.3s}
+  .bg-hearts{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .bgh{position:absolute;bottom:-8%;line-height:1;animation:bgRise linear infinite;will-change:transform,opacity}
+  @keyframes bgRise{0%{transform:translateY(0) scale(.65);opacity:0}18%{opacity:.24}82%{opacity:.2}100%{transform:translateY(-114vh) scale(1.08);opacity:0}}
+  .bgh:nth-child(1){left:6%;font-size:12px;color:rgba(255,120,138,.5);animation-duration:16s;animation-delay:-1s}
+  .bgh:nth-child(2){left:16%;font-size:18px;color:rgba(255,150,162,.42);animation-duration:21s;animation-delay:-8s}
+  .bgh:nth-child(3){left:27%;font-size:10px;color:rgba(255,105,125,.5);animation-duration:13s;animation-delay:-4s}
+  .bgh:nth-child(4){left:38%;font-size:22px;color:rgba(225,60,80,.36);animation-duration:23s;animation-delay:-13s}
+  .bgh:nth-child(5){left:48%;font-size:13px;color:rgba(255,130,145,.48);animation-duration:17s;animation-delay:-6s}
+  .bgh:nth-child(6){left:58%;font-size:16px;color:rgba(255,120,138,.42);animation-duration:19s;animation-delay:-2s}
+  .bgh:nth-child(7){left:68%;font-size:11px;color:rgba(255,150,162,.5);animation-duration:14s;animation-delay:-10s}
+  .bgh:nth-child(8){left:78%;font-size:20px;color:rgba(225,60,80,.34);animation-duration:22s;animation-delay:-5s}
+  .bgh:nth-child(9){left:88%;font-size:13px;color:rgba(255,130,145,.46);animation-duration:18s;animation-delay:-12s}
+  .bgh:nth-child(10){left:33%;font-size:11px;color:rgba(255,120,138,.42);animation-duration:15s;animation-delay:-15s}
+  .bgh:nth-child(11){left:62%;font-size:14px;color:rgba(255,140,155,.4);animation-duration:20s;animation-delay:-7s}
+  .bgh:nth-child(12){left:11%;font-size:15px;color:rgba(255,130,145,.46);animation-duration:18s;animation-delay:-3s}
+  .bgh:nth-child(13){left:22%;font-size:11px;color:rgba(255,120,138,.5);animation-duration:15s;animation-delay:-11s}
+  .bgh:nth-child(14){left:32%;font-size:19px;color:rgba(225,60,80,.36);animation-duration:22s;animation-delay:-6s}
+  .bgh:nth-child(15){left:43%;font-size:12px;color:rgba(255,150,162,.48);animation-duration:16s;animation-delay:-14s}
+  .bgh:nth-child(16){left:53%;font-size:10px;color:rgba(255,105,125,.5);animation-duration:13s;animation-delay:-2s}
+  .bgh:nth-child(17){left:64%;font-size:17px;color:rgba(255,130,145,.44);animation-duration:20s;animation-delay:-9s}
+  .bgh:nth-child(18){left:74%;font-size:13px;color:rgba(255,120,138,.48);animation-duration:17s;animation-delay:-4s}
+  .bgh:nth-child(19){left:84%;font-size:21px;color:rgba(225,60,80,.34);animation-duration:23s;animation-delay:-13s}
+  .bgh:nth-child(20){left:94%;font-size:12px;color:rgba(255,140,155,.46);animation-duration:15s;animation-delay:-7s}
+  .bgh:nth-child(21){left:2%;font-size:14px;color:rgba(255,130,145,.42);animation-duration:19s;animation-delay:-10s}
+  .bgh:nth-child(22){left:50%;font-size:16px;color:rgba(255,120,138,.4);animation-duration:21s;animation-delay:-16s}  @media (prefers-reduced-motion: reduce){ .bgh{animation:none;opacity:0} }
+  .lp{position:relative;font-family:'Outfit',sans-serif;color:#fbeef0;background:linear-gradient(180deg,#2c0c18,#1d0710);overflow-x:hidden;min-height:100dvh}
+  .lp section{position:relative}
+  .lp .lp-script{font-family:'Great Vibes',cursive;color:#f0a0b0;font-weight:400}
+  .lp h1,.lp h2,.lp h3{margin:0}.lp i,.lp b{display:inline-flex}
+  .lp-photo{background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#5a2233}
+  .lp-header{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px clamp(16px,4vw,52px);background:rgba(28,7,16,.86);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,150,170,.1)}
+  .lp-logo{font-family:'Great Vibes',cursive;font-size:clamp(21px,2.4vw,28px);line-height:1.02;color:#fff;display:flex;align-items:center;gap:7px}.lp-logo i svg{width:23px;height:23px;color:#e0556c}
+  .lp-nav{display:flex;gap:clamp(14px,2vw,30px)}
+  .lp-nav a{color:#f3d9de;font-size:16px;font-weight:500;text-decoration:none;cursor:pointer;white-space:nowrap;transition:color .2s}.lp-nav a:hover{color:#fff}
+  .lp-navcta{background:linear-gradient(135deg,#e84258,#c01f3a);color:#fff;border:none;border-radius:50px;padding:12px 24px;font-family:'Outfit',sans-serif;font-weight:700;font-size:16px;cursor:pointer;box-shadow:0 6px 18px rgba(200,30,60,.35);white-space:nowrap}.lp-navcta:hover{filter:brightness(1.06)}
+  .lp-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,4vw,50px);align-items:center;padding:clamp(34px,6vw,76px) clamp(18px,5vw,64px) clamp(40px,6vw,80px);overflow:hidden}
+  .lp-hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+  .lp-hero-bg .lph{position:absolute;bottom:-6%;color:rgba(255,120,140,.16);animation:lpRise linear infinite}
+  @keyframes lpRise{0%{transform:translateY(0) scale(.7);opacity:0}20%{opacity:.5}80%{opacity:.4}100%{transform:translateY(-105vh) scale(1.1);opacity:0}}
+  .lp-hero-bg .lph:nth-child(1){left:5%;font-size:20px;animation-duration:15s;animation-delay:-1s}
+  .lp-hero-bg .lph:nth-child(2){left:18%;font-size:32px;animation-duration:20s;animation-delay:-7s}
+  .lp-hero-bg .lph:nth-child(3){left:30%;font-size:14px;animation-duration:13s;animation-delay:-3s}
+  .lp-hero-bg .lph:nth-child(4){left:44%;font-size:26px;animation-duration:18s;animation-delay:-10s}
+  .lp-hero-bg .lph:nth-child(5){left:60%;font-size:16px;animation-duration:16s;animation-delay:-5s}
+  .lp-hero-bg .lph:nth-child(6){left:72%;font-size:30px;animation-duration:21s;animation-delay:-2s}
+  .lp-hero-bg .lph:nth-child(7){left:84%;font-size:18px;animation-duration:14s;animation-delay:-9s}
+  .lp-hero-bg .lph:nth-child(8){left:92%;font-size:24px;animation-duration:19s;animation-delay:-6s}
+  .lp-hero-bg .lph:nth-child(9){left:52%;font-size:13px;animation-duration:12s;animation-delay:-12s}
+  .lp-hero-text{position:relative;z-index:1}
+  .lp-eyebrow{font-size:14px;letter-spacing:3px;text-transform:uppercase;color:#e08a98;font-weight:700;margin:0 0 14px}
+  .lp-h1{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(36px,5.2vw,62px);line-height:1.08;color:#fff;letter-spacing:-.5px}
+  .lp-h1 .lp-script{font-size:1.18em;display:inline-block;line-height:.9}
+  .lp-lead{font-size:clamp(17px,1.6vw,20px);color:#ecd2d7;margin:20px 0 0;line-height:1.5;font-weight:400}
+  .lp-cta{display:inline-flex;align-items:center;gap:11px;margin-top:28px;background:linear-gradient(135deg,#ec4a60,#c01f3a);color:#fff;border:none;border-radius:50px;padding:18px 32px;font-family:'Outfit',sans-serif;font-weight:800;font-size:clamp(16px,1.5vw,18px);letter-spacing:.5px;cursor:pointer;box-shadow:0 14px 32px rgba(200,30,60,.4);transition:transform .15s,filter .2s}
+  .lp-cta:hover{filter:brightness(1.07)}.lp-cta:active{transform:scale(.98)}.lp-cta i svg{width:21px;height:21px}.lp-cta b svg{width:20px;height:20px}
+  .lp-note{font-family:'Great Vibes',cursive;font-size:26px;color:#e89aa8;margin:18px 0 0;max-width:300px;line-height:1.1}
+  .lp-hero-img{position:relative;z-index:1}
+  .lp-casal{width:100%;aspect-ratio:4/3;border-radius:24px;box-shadow:0 24px 50px rgba(0,0,0,.4);background-image:url('imagens/casal.png')}
+  .lp-eyebrow-c{text-align:center;display:flex;align-items:center;justify-content:center;gap:10px;color:#e08a98;font-size:15px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;margin:0}.lp-eyebrow-c i svg{width:15px;height:15px;color:#e0556c}
+  .lp-need{padding:clamp(34px,5vw,64px) clamp(16px,5vw,64px);background:linear-gradient(180deg,#330e1c,#280a16)}
+  .lp-cards{max-width:1180px;margin:30px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .lp-card{background:linear-gradient(165deg,rgba(90,30,45,.5),rgba(45,16,25,.6));border:1px solid rgba(255,140,160,.16);border-radius:18px;padding:26px 20px;text-align:center;color:#fbeef0;cursor:pointer;transition:transform .18s,border-color .2s,box-shadow .2s;font-family:inherit}
+  .lp-card:hover{transform:translateY(-4px);border-color:rgba(255,140,160,.45);box-shadow:0 16px 30px rgba(0,0,0,.3)}
+  .lp-card-ic{display:inline-flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff7a8e,#c41f3c);color:#fff;margin-bottom:15px}.lp-card-ic svg{width:28px;height:28px}
+  .lp-card h3{font-family:'Newsreader',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:10px}
+  .lp-card p{font-size:15.5px;line-height:1.5;color:#e0c4cc;margin:0}
+  .lp-trans{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;padding:clamp(40px,6vw,76px) clamp(18px,6vw,72px);background:linear-gradient(160deg,#fbeeec,#f6dfe0)}
+  .lp-h2{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3.4vw,42px);line-height:1.14;color:#3d1a22}
+  .lp-em{color:#d23a52;font-style:italic}
+  .lp-checks{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:16px}
+  .lp-checks li{display:flex;align-items:center;gap:13px;font-size:clamp(16px,1.6vw,19px);color:#54292f;font-weight:500}
+  .lp-chk{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#e84258,#c01f3a);color:#fff}.lp-chk svg{width:18px;height:18px}
+  .lp-secure{display:flex;align-items:center;gap:8px;margin:24px 0 0;font-size:15.5px;color:#8a5a64;font-weight:600}.lp-secure svg{width:16px;height:16px}
+  .lp-trans-right{position:relative}
+  .lp-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .lp-photos .lp-photo{min-height:150px;background-color:#dba7b0;border-radius:16px}
+  .lp-photos .lp-photo:nth-child(1){margin-top:18px}.lp-photos .lp-photo:nth-child(4){margin-top:-18px}
+  .lp-m1{background-image:url('imagens/mulher1.png')}.lp-m2{background-image:url('imagens/mulher2.png')}.lp-m3{background-image:url('imagens/mulher3.png')}.lp-m4{background-image:url('imagens/mulher4.png')}
+  .lp-badge{position:absolute;top:-14px;right:-6px;width:112px;height:112px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#d8324c,#9e0c26);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 12px 26px rgba(160,20,45,.45);transform:rotate(8deg);padding:8px}
+  .lp-badge b{font-family:'Newsreader',serif;font-size:23px;line-height:1}.lp-badge span{font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-top:3px;line-height:1.15}
+  .lp-quote{margin-top:16px;background:#fff;border-radius:16px;padding:22px 24px;box-shadow:0 14px 30px rgba(150,60,80,.16);max-width:380px}
+  .lp-stars{color:#e8a13a;font-size:17px;letter-spacing:2px}
+  .lp-quote p{font-family:'Newsreader',serif;font-style:italic;font-size:19px;color:#4a2028;margin:9px 0 11px;line-height:1.4}
+  .lp-quote cite{font-style:normal;font-weight:700;font-size:15px;color:#c01f3a}
+  .lp-diff{padding:clamp(36px,5vw,66px) clamp(16px,5vw,64px);background:linear-gradient(180deg,#2a0b16,#230811);text-align:center}
+  .lp-h2-c{text-align:center;color:#fff}
+  .lp-diff-row{max-width:1120px;margin:38px auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(16px,3vw,38px)}
+  .lp-diff-item{flex:1;min-width:160px;max-width:200px;display:flex;flex-direction:column;align-items:center;gap:13px}
+  .lp-diff-ic{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:16px;background:rgba(232,66,88,.14);border:1px solid rgba(232,66,88,.35);color:#ff8092}.lp-diff-ic svg{width:27px;height:27px}
+  .lp-diff-item p{font-size:16px;line-height:1.4;color:#ecccd2;margin:0;font-weight:500}
+  .lp-content{padding:clamp(34px,5vw,64px) clamp(16px,5vw,64px);background:linear-gradient(180deg,#330e1c,#2a0b16)}
+  .lp-ct-grid{max-width:1180px;margin:30px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .lp-ct-card{position:relative;border:none;padding:0;border-radius:16px;overflow:hidden;cursor:pointer;aspect-ratio:3/4;background:none;font-family:inherit;transition:transform .18s}
+  .lp-ct-card:hover{transform:translateY(-4px)}
+  .lp-ct-card .lp-photo{position:absolute;inset:0;border-radius:16px}
+  .lp-c1{background-image:url('imagens/conteudo1.png')}.lp-c2{background-image:url('imagens/conteudo2.png')}.lp-c3{background-image:url('imagens/conteudo3.png')}.lp-c4{background-image:url('imagens/conteudo4.png')}.lp-c5{background-image:url('imagens/conteudo5.png')}.lp-c6{background-image:url('imagens/conteudo6.png')}
+  .lp-ct-title{position:absolute;left:0;right:0;bottom:0;padding:46px 15px 18px;background:linear-gradient(transparent,rgba(12,2,6,.5) 30%,rgba(12,2,6,.97));color:#fff;font-size:19.5px;font-weight:800;text-align:left;line-height:1.28;letter-spacing:.2px;text-shadow:0 2px 10px rgba(0,0,0,.85),0 1px 2px rgba(0,0,0,.9);z-index:1}
+  .lp-final{text-align:center;padding:clamp(40px,6vw,78px) clamp(18px,6vw,64px);background:linear-gradient(160deg,#4a0f20,#2a0912);position:relative}
+  .lp-guar{width:112px;height:112px;border-radius:50%;border:2px dashed #d99a4a;color:#f0c97a;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 22px;background:rgba(0,0,0,.15)}
+  .lp-guar span{font-size:12px;text-transform:uppercase;letter-spacing:1px}.lp-guar b{font-family:'Newsreader',serif;font-size:26px;line-height:1;margin:1px 0}.lp-guar small{font-size:9.5px;text-transform:uppercase;letter-spacing:.5px}
+  .lp-final-sub{font-size:clamp(16px,1.7vw,19px);color:#ecccd2;margin:14px auto 0;max-width:560px;line-height:1.5}
+  .lp-cta-big{margin-top:26px;font-size:clamp(17px,1.8vw,21px);padding:20px 40px}
+  .lp-final-feats{font-size:15px;color:#d2acb4;margin:22px 0 0;font-weight:500}
+  .lp-final-script{font-family:'Great Vibes',cursive;font-size:clamp(28px,3vw,40px);color:#f0a0b0;margin:18px 0 0;line-height:1.1}
+  @media (max-width:860px){.lp-nav{display:none}.lp-hero{grid-template-columns:1fr;text-align:center}.lp-hero-text{order:1}.lp-hero-img{order:2}.lp-note{margin-left:auto;margin-right:auto}.lp-cards{grid-template-columns:repeat(2,1fr)}.lp-trans{grid-template-columns:1fr}.lp-ct-grid{grid-template-columns:repeat(2,1fr)}.lp-badge{width:96px;height:96px;right:2px}}
+  @media (max-width:560px){.lp-cards{grid-template-columns:repeat(2,1fr);gap:11px}.lp-card{padding:20px 13px}.lp-card h3{font-size:19px}.lp-card p{font-size:13.5px}.lp-ct-grid{gap:11px}.lp-cta{width:100%;justify-content:center}.lp-navcta{padding:10px 16px;font-size:14px}.lp-ct-title{font-size:17px}}
+  @media (prefers-reduced-motion:reduce){.lp-hero-bg .lph{animation:none;opacity:0}}
+  .lp-oferta{padding:clamp(40px,6vw,72px) clamp(16px,5vw,64px);background:linear-gradient(180deg,#2a0b16,#3a0f1c);display:flex;justify-content:center}
+  .lp-of-card{width:100%;max-width:560px;background:linear-gradient(165deg,#3d1320,#2a0c16);border:1.5px solid rgba(232,180,90,.45);border-radius:26px;padding:clamp(26px,5vw,40px);text-align:center;box-shadow:0 26px 60px rgba(0,0,0,.45)}
+  .lp-of-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(232,84,108,.16);border:1px solid rgba(232,84,108,.4);color:#f3c3cc;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:7px 16px;border-radius:50px;margin:0 0 16px}.lp-of-eyebrow i svg{width:14px;height:14px;color:#e8546c}
+  .lp-of-title{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,4vw,38px);line-height:1.12;color:#fff;margin:0}.lp-of-title .lp-script{font-size:1.2em}
+  .lp-of-desc{font-size:16px;color:#e6c8ce;margin:12px 0 0}
+  .lp-of-list{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:13px;text-align:left;max-width:420px;margin-left:auto;margin-right:auto}
+  .lp-of-list li{display:flex;align-items:flex-start;gap:12px;font-size:16.5px;line-height:1.4;color:#f1dce0;font-weight:500}
+  .lp-of-ck{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#3fbf6a,#1f9e4f);color:#fff;margin-top:1px}.lp-of-ck svg{width:15px;height:15px}
+  .lp-of-price{margin:28px 0 0;display:flex;flex-direction:column;align-items:center;gap:2px}
+  .lp-of-old{font-size:19px;color:#c79aa2;text-decoration:line-through;text-decoration-color:#d23a52;font-weight:600}
+  .lp-of-new{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(54px,11vw,74px);line-height:1;color:#fff}.lp-of-new small{font-size:.5em;vertical-align:top;color:#f0a0b0}
+  .lp-of-pix{font-size:15px;color:#e6b955;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+  .lp-of-cta{margin-top:26px;width:100%;justify-content:center;font-size:clamp(16px,2vw,19px);padding:20px 26px}.lp-of-cta b{margin-left:6px}
+  .lp-of-secure{font-size:14px;color:#cda6ae;margin:16px 0 0;font-weight:600}
+  /* animação sutil nas caixas clicáveis da tela inicial */
+  @keyframes lpCardBreath{0%,100%{border-color:rgba(255,140,160,.18);box-shadow:0 6px 16px rgba(0,0,0,.15)}50%{border-color:rgba(255,155,175,.6);box-shadow:0 12px 30px rgba(232,84,108,.32)}}
+  .lp-card{animation:lpCardBreath 3.4s ease-in-out infinite}
+  .lp-card:nth-child(2){animation-delay:.45s}.lp-card:nth-child(3){animation-delay:.9s}.lp-card:nth-child(4){animation-delay:1.35s}.lp-card:nth-child(5){animation-delay:1.8s}.lp-card:nth-child(6){animation-delay:2.25s}
+  @keyframes lpIcPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.09)}}
+  .lp-card-ic{animation:lpIcPulse 2.6s ease-in-out infinite}
+  @keyframes lpCtBreath{0%,100%{box-shadow:0 6px 16px rgba(0,0,0,.22);transform:translateY(0)}50%{box-shadow:0 14px 32px rgba(232,84,108,.4);transform:translateY(-3px)}}
+  .lp-ct-card{animation:lpCtBreath 3.4s ease-in-out infinite}
+  .lp-ct-card:nth-child(2){animation-delay:.55s}.lp-ct-card:nth-child(3){animation-delay:1.1s}.lp-ct-card:nth-child(4){animation-delay:1.65s}.lp-ct-card:nth-child(5){animation-delay:2.2s}.lp-ct-card:nth-child(6){animation-delay:2.75s}
+  @media (prefers-reduced-motion:reduce){.lp-card,.lp-card-ic,.lp-ct-card{animation:none}}
 </style>
 </head>
 <body>
 
   <!-- ════════ PORTAL ════════ -->
-  <div class="portal" id="portal">
-    <div class="portal-inner">
-
-      <div class="portal-head">
-        <p class="portal-kicker"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-6.7-4.3-9.3-8.3C.9 9.7 2.2 6 5.6 6c2 0 3.4 1.3 4.4 2.6C11 7.3 12.4 6 14.4 6c3.4 0 4.7 3.7 2.9 6.7C18.7 16.7 12 21 12 21z"/></svg>Especial · Dia dos Namorados</p>
-        <p class="portal-brand">Mestre da Reconquista</p>
-        <h1 class="portal-title">Aqui você faz ele voltar<br><em>achando que a ideia foi dele.</em></h1>
-        <p class="portal-sub">Sem implorar. Sem se humilhar. Sem mandar uma única mensagem.</p>
-        <div class="portal-rule"><span class="rl"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.35-9.5-8.5C1 8 2.5 4.5 6 4.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 7C19 15.65 12 20 12 20z"/></svg><span class="rl r"></span></div>
-      </div>
-
-      <nav class="portal-menu" aria-label="Por onde começar">
-
-        <button type="button" class="pcard pcard-hero" onclick="openPorta('plano')">
-          <span class="pcard-lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
-          <span class="pcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span>
-          <span class="pcard-txt">
-            <span class="pcard-title">Plano de 7 Dias</span>
-            <span class="pcard-sub">O passo a passo, dia a dia, que faz ele voltar</span>
-          </span>
-          <span class="pcard-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
-        </button>
-
-        <button type="button" class="pcard" onclick="openPanel('panelComo')">
-          <span class="pcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1.3" fill="currentColor" stroke="none"/><circle cx="3.5" cy="12" r="1.3" fill="currentColor" stroke="none"/><circle cx="3.5" cy="18" r="1.3" fill="currentColor" stroke="none"/></svg></span>
-          <span class="pcard-txt">
-            <span class="pcard-title">Como funciona o Plano</span>
-            <span class="pcard-sub">Veja o passo a passo dos 7 dias</span>
-          </span>
-          <span class="pcard-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
-        </button>
-
-        <button type="button" class="pcard pcard-desbloq" onclick="openPanel('panelSegredos')">
-          <span class="pcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.7 4.9 4.9 1.7-4.9 1.7L12 16l-1.7-4.7L5.4 9.6l4.9-1.7z"/><path d="M19 14.5l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg></span>
-          <span class="pcard-txt">
-            <span class="pcard-title">Os segredos da reconquista</span>
-            <span class="pcard-sub pcard-sub-desbloq">Seja desbloqueada</span>
-          </span>
-          <span class="pcard-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
-        </button>
-
-        <button type="button" class="pcard" onclick="openPanel('panelDicas')">
-          <span class="pcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 17.4A2 2 0 0 0 2 18.83V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.17a2 2 0 0 0 1.42-.59l.81-.81a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".6" fill="currentColor" stroke="none"/></svg></span>
-          <span class="pcard-txt">
-            <span class="pcard-titlerow"><span class="pcard-title">Dicas do Mestre</span><span class="pcard-free">Grátis</span></span>
-            <span class="pcard-sub">O que fazer agora, hoje</span>
-          </span>
-          <span class="pcard-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
-        </button>
-
-        <button type="button" class="pcard" onclick="openPanel('panelDepoimentos')">
-          <span class="pcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></span>
-          <span class="pcard-txt">
-            <span class="pcard-title">Depoimentos</span>
-            <span class="pcard-sub">Quem já virou o jogo</span>
-          </span>
-          <span class="pcard-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
-        </button>
-
-        <button type="button" class="pcard" onclick="openPanel('panelMestre')">
-          <span class="pcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.56 3.27a.5.5 0 0 1 .88 0l2.95 5.6a1 1 0 0 0 1.52.3l4.28-3.67a.5.5 0 0 1 .8.52l-2.84 10.25a1 1 0 0 1-.96.73H5.81a1 1 0 0 1-.95-.73L2.02 6.02a.5.5 0 0 1 .8-.52l4.27 3.67a1 1 0 0 0 1.52-.3z"/><path d="M5 21h14"/></svg></span>
-          <span class="pcard-txt">
-            <span class="pcard-title">Quem é o Mestre</span>
-            <span class="pcard-sub">A mente por trás do método</span>
-          </span>
-          <span class="pcard-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
-        </button>
-
-        <button type="button" class="pcard" onclick="abrirWhatsDuvidas()">
-          <span class="pcard-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg></span>
-          <span class="pcard-txt">
-            <span class="pcard-title">Tirar dúvidas</span>
-            <span class="pcard-sub">Tudo sobre o Plano de 7 Dias</span>
-          </span>
-          <span class="pcard-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></span>
-        </button>
-
-      </nav>
-
-      <p class="portal-foot">Mais de 2.000 mulheres já aplicaram o método</p>
-
-    </div>
-  </div>
+  <div class="lp" id="portal"><header class="lp-header"><div class="lp-logo">Mestre da<br>Reconquista <i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i></div><nav class="lp-nav"><a href="#lp-top">Início</a><a href="#lp-need">Como Funciona</a><a href="#lp-depo">Depoimentos</a><a onclick="abrirWhatsDuvidas()">Dúvidas</a><a href="#lp-content">Conteúdos</a></nav><button type="button" class="lp-navcta" onclick="scrollOferta()">Quero ele de volta</button></header><section class="lp-hero" id="lp-top"><div class="lp-hero-bg" aria-hidden="true"><span class="lph">&#9829;</span><span class="lph">&#9829;</span><span class="lph">&#9829;</span><span class="lph">&#9829;</span><span class="lph">&#9829;</span><span class="lph">&#9829;</span><span class="lph">&#9829;</span><span class="lph">&#9829;</span><span class="lph">&#9829;</span></div><div class="lp-hero-text"><p class="lp-eyebrow">Método comprovado</p><h1 class="lp-h1">Aqui você faz <span class="lp-script">ele voltar</span> achando que a ideia foi dele.</h1><p class="lp-lead">Sem implorar. Sem se humilhar. Sem mandar uma única mensagem.</p><button type="button" class="lp-cta" onclick="scrollOferta()"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i> QUERO ELE DE VOLTA <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></b></button><p class="lp-note">Clique aqui e transforme sua história de amor</p></div><div class="lp-hero-img"><div class="lp-photo lp-casal"></div></div></section><section class="lp-need" id="lp-need"><p class="lp-eyebrow-c"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i> Tudo que você precisa, em um só lugar <i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i></p><div class="lp-cards"><button type="button" class="lp-card" onclick="openPanel('panelComo')"><span class="lp-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></span><h3>Como funciona</h3><p>Entenda o passo a passo completo para ele voltar apaixonado.</p></button><button type="button" class="lp-card" onclick="openPanel('panelDicas')"><span class="lp-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></span><h3>Dicas grátis</h3><p>Técnicas práticas que realmente funcionam na reconquista.</p></button><button type="button" class="lp-card" onclick="openPanel('panelSegredos')"><span class="lp-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4"/></svg></span><h3>Os segredos</h3><p>Descubra o que ele sente e como reativar o amor.</p></button><button type="button" class="lp-card" onclick="openPanel('panelDepoimentos')"><span class="lp-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><h3>Depoimentos</h3><p>Histórias reais de mulheres que já reconquistaram o seu amor.</p></button><button type="button" class="lp-card" onclick="openPanel('panelMestre')"><span class="lp-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.6a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-.9-.7L2 6a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/></svg></span><h3>Quem é o Mestre</h3><p>Conheça quem já ajudou milhares de mulheres a reconquistarem.</p></button><button type="button" class="lp-card" onclick="abrirWhatsDuvidas()"><span class="lp-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/></svg></span><h3>Tirar dúvidas</h3><p>Envie suas perguntas e receba respostas especializadas.</p></button></div></section><section class="lp-trans" id="lp-depo"><div class="lp-trans-left"><h2 class="lp-h2">Milhares de <span class="lp-em">mulheres</span> já transformaram suas vidas</h2><ul class="lp-checks"><li><span class="lp-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg></span>Métodos testados e aprovados</li><li><span class="lp-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg></span>Apoio e orientação especializados</li><li><span class="lp-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg></span>Resultados reais e comprovados</li><li><span class="lp-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg></span>Mais amor, autoestima e felicidade</li></ul><button type="button" class="lp-cta" onclick="scrollOferta()"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i> QUERO COMEÇAR AGORA</button><p class="lp-secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4"/></svg> Pagamento 100% seguro</p></div><div class="lp-trans-right"><div class="lp-photos"><div class="lp-photo lp-m1"></div><div class="lp-photo lp-m2"></div><div class="lp-photo lp-m3"></div><div class="lp-photo lp-m4"></div></div><div class="lp-badge"><b>Milhares</b><span>de mulheres transformadas</span></div><div class="lp-quote"><span class="lp-stars">★★★★★</span><p>"Em 7 dias ele me procurou e hoje estamos mais felizes do que antes!"</p><cite>Juliana S.</cite></div></div></section><section class="lp-diff"><h2 class="lp-h2 lp-h2-c">Por que o Mestre da Reconquista é diferente?</h2><div class="lp-diff-row"><div class="lp-diff-item"><span class="lp-diff-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8L20 10l-5.8 1.9L12 18l-1.9-6.1L4 10l6.1-1.2z"/></svg></span><p>Técnicas exclusivas e comprovadas</p></div><div class="lp-diff-item"><span class="lp-diff-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18a4 4 0 0 1-4-4 4 4 0 0 1-1-7.9A4 4 0 0 1 12 4a4 4 0 0 1 8 2.1A4 4 0 0 1 19 14a4 4 0 0 1-4 4M12 4v16"/></svg></span><p>Estratégias que ativam a mente e o coração dele</p></div><div class="lp-diff-item"><span class="lp-diff-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/></svg></span><p>Resultados reais em menos tempo</p></div><div class="lp-diff-item"><span class="lp-diff-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg></span><p>Confidencialidade e apoio total</p></div><div class="lp-diff-item"><span class="lp-diff-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9zM2 9h20M9 3 7 9l5 12 5-12-2-6"/></svg></span><p>Conteúdo atualizado e direto ao ponto</p></div></div></section><section class="lp-content" id="lp-content"><p class="lp-eyebrow-c"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i> Conteúdos exclusivos <i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i></p><div class="lp-ct-grid"><button type="button" class="lp-ct-card" onclick="scrollOferta()"><div class="lp-photo lp-c1"></div><span class="lp-ct-title">Mensagens que fazem ele correr atrás</span></button><button type="button" class="lp-ct-card" onclick="scrollOferta()"><div class="lp-photo lp-c2"></div><span class="lp-ct-title">O poder do silêncio estratégico</span></button><button type="button" class="lp-ct-card" onclick="scrollOferta()"><div class="lp-photo lp-c3"></div><span class="lp-ct-title">Como despertar saudade e desejo</span></button><button type="button" class="lp-ct-card" onclick="scrollOferta()"><div class="lp-photo lp-c4"></div><span class="lp-ct-title">Erros que afastam de vez</span></button><button type="button" class="lp-ct-card" onclick="scrollOferta()"><div class="lp-photo lp-c5"></div><span class="lp-ct-title">Reconstruindo a conexão emocional</span></button><button type="button" class="lp-ct-card" onclick="scrollOferta()"><div class="lp-photo lp-c6"></div><span class="lp-ct-title">Como ser inesquecível</span></button></div></section><section class="lp-final"><div class="lp-guar"><span>Garantia</span><b>7 dias</b><small>incondicional</small></div><h2 class="lp-h2 lp-h2-c">Está pronta para viver o amor que você merece?</h2><p class="lp-final-sub">O primeiro passo é seu. O resto, o Mestre da Reconquista faz por você.</p><button type="button" class="lp-cta lp-cta-big" onclick="scrollOferta()"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i> SIM, EU QUERO ELE DE VOLTA</button><p class="lp-final-feats">Acesso imediato &nbsp;·&nbsp; Conteúdo 100% online &nbsp;·&nbsp; 7 dias de garantia</p><p class="lp-final-script">Você merece ser escolhida, amada e feliz!</p></section>  <section class="lp-oferta" id="lp-oferta"><div class="lp-of-card"><p class="lp-of-eyebrow"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i> Oferta especial de hoje</p><h2 class="lp-of-title">Comece agora o seu <span class="lp-script">Plano de 7 Dias</span></h2><p class="lp-of-desc">Tudo o que você precisa para reconquistar o seu amor, em um só lugar:</p><ul class="lp-of-list"><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Plano completo de 7 dias, passo a passo</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Os segredos do Mestre da Reconquista</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Scripts e mensagens prontas para cada situação</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Bônus exclusivos para acelerar seus resultados</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Acesso imediato e 100% online</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Garantia incondicional de 7 dias</li></ul><div class="lp-of-price"><span class="lp-of-new">R$ 48<small>,50</small></span><span class="lp-of-pix">à vista no PIX</span></div><button type="button" class="lp-cta lp-of-cta" onclick="setOferta('desconto');openCheckout()"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i> QUERO ELE DE VOLTA AGORA <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></b></button><p class="lp-of-secure">Pagamento 100% seguro &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; 7 dias de garantia</p></div></section>  </div>
 
   <!-- ════════ PAINEL: PLANO 7 DIAS ════════ -->
   <div class="panel" id="panelComo">
@@ -1128,7 +1208,7 @@ body.portal-lock{overflow:hidden}
       <p class="porta-eyebrow" id="portaEyebrow"></p>
       <h3 class="porta-title" id="portaTitle"></h3>
       <p class="porta-text" id="portaText"></p>
-      <button class="porta-cta" type="button" onclick="closePorta();openAcesso()">Quero meu acesso agora &rarr;</button>
+      <button class="porta-cta" type="button" onclick="irOferta()">Quero meu acesso agora &rarr;</button>
       <p class="porta-micro">🔒 Conteúdo exclusivo do Plano de 7 Dias</p>
     </div>
   </div>
@@ -1155,7 +1235,7 @@ body.portal-lock{overflow:hidden}
         <div class="ag-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <div class="ag-txt"><b>Garantia total de 7 dias.</b> Não gostou? Devolvo seu dinheiro, sem perguntas. E você tem suporte direto comigo no WhatsApp.</div>
       </div>
-      <button class="acesso-cta" type="button" onclick="setOferta('cheia');closeAcesso();openCheckout()">Liberar meu acesso agora &rarr;</button>
+      <button class="acesso-cta" type="button" onclick="setOferta('desconto');closeAcesso();openCheckout()">Liberar meu acesso agora &rarr;</button>
       <button class="acesso-close-btn" type="button" onclick="abrirDesconto()">Agora não, quero fechar</button>
       <p class="acesso-foot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Pix · acesso imediato</p>
     </div>
@@ -1194,7 +1274,7 @@ body.portal-lock{overflow:hidden}
       <p class="lib-text">O Protocolo de Desbloqueio age sobre gatilhos emocionais reais. Aplicado na ordem certa, ele funciona — e por isso pede responsabilidade: sem perseguir, sem se humilhar, sem pular etapas.</p>
       <p class="lib-text">E é justamente por funcionar que ele não fica aberto pra qualquer uma. O acesso completo é liberado por um valor único:</p>
       <div class="lib-price"><span class="lib-price-label">Liberação única · acesso vitalício</span><div class="lib-price-val"><span class="c">R$</span>97<small>,00</small></div></div>
-      <button class="lib-cta" type="button" onclick="setOferta('cheia');closeLiberar();openCheckout()">Liberar minha técnica agora</button>
+      <button class="lib-cta" type="button" onclick="setOferta('desconto');closeLiberar();openCheckout()">Liberar minha técnica agora</button>
       <p class="lib-micro">🔒 Acesso na hora · pagamento único · Pix protegido</p>
     </div>
   </div>
@@ -1302,9 +1382,10 @@ body.portal-lock{overflow:hidden}
   const PIX_97   = '00020126490014br.gov.bcb.pix0111121496937200212Plano 7 dias520400005303986540597.005802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026062117052511550300017br.gov.bcb.brcode01051.0.06304FE3B';
   const PIX_4850 = '00020126640014br.gov.bcb.pix0111121496937200227Plano 7 dias 50 de desconto520400005303986540548.505802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026062117042196850300017br.gov.bcb.brcode01051.0.063049C0E';
   const OFERTAS = { cheia:{valor:'R$ 97,00',num:97.00,pix:PIX_97,priceHtml:'R$ 97<span>,00</span>',genVal:'R$ 97,00'}, desconto:{valor:'R$ 48,50',num:48.50,pix:PIX_4850,priceHtml:'R$ 48<span>,50</span>',genVal:'R$ 48,50'} };
-  let OFERTA = OFERTAS.cheia;
+  let OFERTA = OFERTAS.desconto;
   function setOferta(t){ OFERTA = OFERTAS[t]||OFERTAS.cheia; var op=document.getElementById('coOrderPrice'); if(op) op.innerHTML=OFERTA.priceHtml; var gv=document.getElementById('coGenVal'); if(gv) gv.textContent=OFERTA.genVal; }
   const PRODUTO = { nome: 'Código da Reconquista', get valor(){ return OFERTA.valor; } };
+  function scrollOferta(){ var el=document.getElementById('lp-oferta'); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); }
 
   let canal = 'WhatsApp';
   let metodoPagamento = 'Pix';
@@ -1316,6 +1397,11 @@ body.portal-lock{overflow:hidden}
   function $(id){ return document.getElementById(id); }
 
   // ════════ PORTAL ════════
+  function popGo(btn, fn){
+    try{ if(navigator.vibrate) navigator.vibrate(35); }catch(e){}
+    if(btn) btn.classList.add('pop');
+    setTimeout(function(){ if(btn) btn.classList.remove('pop'); if(typeof fn==='function') fn(); }, 250);
+  }
   function openPanel(id){
     var p = document.getElementById(id);
     if(!p) return;
@@ -1381,14 +1467,7 @@ body.portal-lock{overflow:hidden}
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeCheckout(); });
 
   // FAQ
-  function openAcesso(){
-    $('acesso').style.display='flex';
-    $('acesso').setAttribute('aria-hidden','false');
-    document.body.classList.add('portal-lock');
-    if(window.ttq && typeof ttq.track==='function'){
-      ttq.track('ViewContent',{contents:[{content_id:'codigo-da-reconquista',content_name:'Código da Reconquista',quantity:1,price:97.00}],content_type:'product',value:97.00,currency:'BRL'});
-    }
-  }
+  function openAcesso(){ setOferta('desconto'); openCheckout(); }
   function closeAcesso(){
     $('acesso').style.display='none';
     $('acesso').setAttribute('aria-hidden','true');
@@ -1797,7 +1876,7 @@ body.portal-lock{overflow:hidden}
   (function(){
     try{
       var ir=(new URLSearchParams(location.search).get("ir")||"").toLowerCase();
-      if(!ir) ir="dicas";
+      if(!ir) return;
       function go(){
         if(ir==="bloqueio" && typeof showBloqueio==="function"){ showBloqueio(); return; }
         if(typeof AD!=="undefined" && AD[ir] && typeof showAd==="function"){ showAd(ir); return; }
@@ -1814,14 +1893,14 @@ body.portal-lock{overflow:hidden}
   <script>
   (function(){
     var PORTA={
-      plano:{e:"Antes de começar",t:"Um plano pra trazer ele de volta",x:"Mesmo que ele tenha te bloqueado — ou esteja com outra. São estratégias psicológicas reais e poderosas. Justamente por funcionarem, devem ser usadas com cautela e responsabilidade."},
+      plano:{e:"Antes de começar",t:"",x:"Mesmo que ele tenha te bloqueado — ou esteja com outra. São estratégias psicológicas reais e poderosas. Justamente por funcionarem, devem ser usadas com cautela e responsabilidade."},
       modulo:{e:"Atenção",t:"Uma técnica psicológica poderosa",x:"Cada módulo aplica gatilhos que mexem fundo com o comportamento dele. Use com responsabilidade — sem perseguir, sem se humilhar. Bem aplicada, ela vira a sua maior vantagem."},
       segredo:{e:"🔒 Conteúdo bloqueado",t:"Este segredo está trancado",x:"O Segredo do Mestre pra cada situação faz parte do Plano de 7 Dias. Libere seu acesso e desbloqueie todos eles agora."}
     };
     window.openPorta=function(tipo){
       var d=PORTA[tipo]||PORTA.plano;
       document.getElementById("portaEyebrow").textContent=d.e;
-      document.getElementById("portaTitle").textContent=d.t;
+      var _pt=document.getElementById("portaTitle"); _pt.textContent=d.t||""; _pt.style.display=d.t?"":"none";
       document.getElementById("portaText").textContent=d.x;
       var el=document.getElementById("porta"); el.style.display="flex"; el.setAttribute("aria-hidden","false");
       document.body.classList.add("portal-lock");
@@ -1829,6 +1908,13 @@ body.portal-lock{overflow:hidden}
     window.closePorta=function(){
       var el=document.getElementById("porta"); el.style.display="none"; el.setAttribute("aria-hidden","true");
       if(!document.querySelector(".panel.open")) document.body.classList.remove("portal-lock");
+    };
+    window.irOferta=function(){
+      var el=document.getElementById("porta"); if(el){ el.style.display="none"; el.setAttribute("aria-hidden","true"); }
+      var ps=document.querySelectorAll(".panel.open"); for(var i=0;i<ps.length;i++){ ps[i].classList.remove("open"); }
+      document.body.classList.remove("portal-lock");
+      var of=document.getElementById("lp-oferta");
+      if(of){ setTimeout(function(){ of.scrollIntoView({behavior:"smooth",block:"start"}); }, 80); }
     };
     var po=document.getElementById("porta");
     if(po) po.addEventListener("click",function(e){ if(e.target.id==="porta") closePorta(); });
