@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -851,6 +851,125 @@ body.portal-lock{overflow:hidden}
   .lp-ct-card{animation:lpCtBreath 3.4s ease-in-out infinite}
   .lp-ct-card:nth-child(2){animation-delay:.55s}.lp-ct-card:nth-child(3){animation-delay:1.1s}.lp-ct-card:nth-child(4){animation-delay:1.65s}.lp-ct-card:nth-child(5){animation-delay:2.2s}.lp-ct-card:nth-child(6){animation-delay:2.75s}
   @media (prefers-reduced-motion:reduce){.lp-card,.lp-card-ic,.lp-ct-card{animation:none}}
+  /* ===== Dicas do Mestre e Os Segredos com a cara da página inicial ===== */
+  .lpskin .panel-scroll{background:linear-gradient(180deg,#2c0c18,#1d0710)}
+  .lpskin .method,.lpskin .tips{background:transparent}
+  .lpskin .panel-bar{background:rgba(28,7,16,.94);border-bottom:1px solid rgba(255,150,170,.14)}
+  .lpskin .panel-bar-title{color:#fff;font-family:'Newsreader',serif;font-size:19px}
+  .lpskin .panel-back{color:#f3a8b6}
+  .lpskin footer{color:#b890a0;border-top:1px solid rgba(255,150,170,.12);font-size:13.5px}
+  .lpskin .wrap{max-width:680px}
+  .lpskin .eyebrow{color:#e6b955;font-size:15px;letter-spacing:2.5px}
+  .lpskin h2,.lpskin .method-title{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,7vw,40px);line-height:1.14;color:#fff}
+  .lpskin h2 em,.lpskin .method-title em{font-style:italic;color:#f2a3b3;font-family:'Newsreader',serif;font-weight:500}
+  .lpskin .lead,.lpskin .tips-lead{font-size:clamp(16.5px,4.2vw,19px);color:#e9ccd2;line-height:1.55}
+  .lpskin .tips-lead strong{color:#ff9fb0}
+  /* cards dos Segredos */
+  .lpskin .steps{gap:16px;margin-top:28px}
+  .lpskin .step{background:linear-gradient(165deg,rgba(92,32,48,.55),rgba(45,16,25,.62));border:1px solid rgba(255,140,160,.2);border-left:4px solid #e8546c;border-radius:18px;padding:24px 22px;box-shadow:0 10px 26px rgba(0,0,0,.28)}
+  .lpskin .step:hover{transform:translateY(-3px);border-color:rgba(255,150,170,.55)}
+  .lpskin .step .n{width:50px;height:50px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff7a8e,#c41f3c);color:#fff;font-style:normal;font-size:23px;margin-bottom:14px;box-shadow:0 6px 16px rgba(196,31,60,.4)}
+  .lpskin .step h3{font-family:'Newsreader',serif;font-size:22px;color:#fff;margin-bottom:8px;line-height:1.25}
+  .lpskin .step p{font-size:16.5px;line-height:1.5;color:#dcbcc4}
+  .lpskin .step-gold{background:linear-gradient(160deg,rgba(120,82,30,.45),rgba(60,32,18,.6));border:1.5px solid rgba(230,185,85,.6);border-left:4px solid #e6b955;box-shadow:0 12px 32px rgba(160,120,30,.28)}
+  .lpskin .step-gold .n{background:radial-gradient(circle at 35% 30%,#f0c97a,#c98f2a)}
+  .lpskin .step-badge{background:linear-gradient(135deg,#f0c97a,#c98f2a);color:#3a1810;font-size:12px;box-shadow:0 4px 12px rgba(160,120,30,.4)}
+  /* cards das Dicas (acordeão) */
+  .lpskin .tips-grid{max-width:640px;gap:14px}
+  .lpskin .tip{background:linear-gradient(165deg,rgba(92,32,48,.5),rgba(45,16,25,.64));border:1.5px solid rgba(255,140,160,.2);border-radius:18px}
+  .lpskin .tip.open{border-color:rgba(255,150,170,.55);box-shadow:0 12px 30px rgba(0,0,0,.34)}
+  .lpskin .tip-head{padding:20px 20px}
+  .lpskin .tip-ic{font-size:30px}
+  .lpskin .tip-title{font-family:'Newsreader',serif;font-size:20px;color:#fff}
+  .lpskin .tip-arrow{color:#f3a8b6}
+  .lpskin .tip-body p{font-size:16.5px;line-height:1.55;color:#e2c6cd}
+  .lpskin .tip-main{color:#fff !important}
+  .lpskin .tip-main strong{color:#ff9fb0}
+  .lpskin .tip-label{font-size:16px;font-weight:700;color:#f6cdd5;margin-top:12px}
+  .lpskin .tip-do li,.lpskin .tip-dont li{font-size:16px;line-height:1.5;color:#dcbcc4}
+  .lpskin .tip-secret{background:linear-gradient(165deg,rgba(120,82,30,.5),rgba(60,32,18,.66));border:1px solid rgba(230,185,85,.55)}
+  .lpskin .ts-badge{color:#f0c97a;font-size:14px}
+  .lpskin .ts-lock{color:#e6b955}
+  .lpskin .ts-kill{color:#fdeef0;font-size:16.5px;line-height:1.45}
+  .lpskin .tip-plan{background:rgba(232,84,108,.14) !important;border:1px solid rgba(232,84,108,.38) !important;color:#f3dce1 !important;font-size:15.5px !important;border-radius:12px}
+  .lpskin .tips-cta{font-size:17.5px;line-height:1.65;color:#e9ccd2}
+  .lpskin .tips-cta strong{color:#ff9fb0}
+  /* botão e rodapé */
+  .lpskin .cta{background:linear-gradient(135deg,#ec4a60,#c01f3a);font-size:18px;font-weight:800;letter-spacing:.5px;border-radius:50px;padding:19px 30px;box-shadow:0 14px 32px rgba(200,30,60,.42)}
+  .lpskin .pc-foot{color:#d2acb4;font-size:14.5px}
+  /* ===== Como Funciona / Depoimentos / Quem é o Mestre no tema da página inicial ===== */
+  /* Como Funciona */
+  .lpskin .plan10{background:transparent}
+  .lpskin .journey{max-width:580px}
+  .lpskin .jd-n{background:radial-gradient(circle at 35% 30%,#ff7a8e,#c41f3c);color:#fff;width:48px;height:48px;font-size:21px;box-shadow:0 6px 15px rgba(196,31,60,.42)}
+  .lpskin .jd-c h3{color:#fff;font-size:22px;line-height:1.25}
+  .lpskin .jd-c p{color:#dcbcc4;font-size:16.5px;line-height:1.5}
+  .lpskin .jd::before,.lpskin .jd::after{background:rgba(255,150,170,.25)!important}
+  .lpskin .plan-explain{color:#fff;font-size:clamp(22px,5.5vw,30px)}
+  .lpskin .plan-explain em,.lpskin .plan-explain strong{color:#f2a3b3;font-style:italic}
+  .lpskin .safety{background:transparent;border-top:1px solid rgba(255,150,170,.14)}
+  .lpskin .safety-inner{background:rgba(255,140,160,.08);border:1px solid rgba(255,140,160,.32);color:#e6c8ce;font-size:15.5px;line-height:1.5}
+  .lpskin .safety-inner strong{color:#fff}
+  /* Depoimentos (mantém o ar de conversa real, integra a moldura) */
+  .lpskin .voices{background:transparent}
+  .lpskin .depo-grid{gap:20px}
+  .lpskin .depo-chat{border:1px solid rgba(255,140,160,.28);box-shadow:0 12px 30px rgba(0,0,0,.38);border-radius:18px}
+  .lpskin .depo-msg{font-size:16px;line-height:1.5}
+  .lpskin .depo-call{font-size:16px}
+  .lpskin .verify{color:#cda6ae;font-size:14.5px}
+  /* Quem é o Mestre */
+  .lpskin .author-card{background:linear-gradient(165deg,rgba(92,32,48,.55),rgba(45,16,25,.62));border:1px solid rgba(255,140,160,.24);color:#fbeef0;box-shadow:0 14px 34px rgba(0,0,0,.3)}
+  .lpskin .author-card h3,.lpskin .author h3{font-family:'Newsreader',serif;color:#fff;font-size:24px}
+  .lpskin .author-creds{color:#e6c8ce;font-size:16px;line-height:1.5}
+  .lpskin .author-creds strong{color:#fff}
+  .lpskin .anon-lead{color:#e9ccd2;font-size:16.5px;line-height:1.55}
+  .lpskin .anon-line{color:#dcbcc4;font-size:16px;line-height:1.5}
+  .lpskin .anon-line strong{color:#ff9fb0}
+  /* correção de cores: textos presos a variáveis escuras viram claros dentro dos painéis */
+  .lpskin{--ink:#ffffff;--ink-text:#e8cdd3;--muted:#c79aa2}
+  .lpskin .panel-scroll{color:#f1dce0}
+  .lpskin .jd-c{color:#dcbcc4}
+  .lpskin .author-creds li{color:#e8cdd3}
+  .lpskin .author-creds li strong,.lpskin .author-creds li b{color:#fff}
+  .lpskin .anon-lead{color:#fbeef0}
+  .lpskin .anon-lead em{color:#f2a3b3;font-style:italic}
+  .lpskin .anon-line{color:#e2c6cd}
+  .lpskin .anon-line b,.lpskin .anon-line strong{color:#ff9fb0}
+  .lpskin .anon-close{color:#fff;font-weight:600}
+  .lpskin .plan-close{color:#fff}
+  .lpskin .plan-close b,.lpskin .plan-close strong{color:#f2a3b3}
+  .lpskin .safety-inner p{color:#e2c6cd}
+  .lpskin .safety-inner b,.lpskin .safety-inner strong{color:#fff}
+  .lpskin h2{color:#fff}
+  /* ===== CORREÇÃO FORTE: Como Funciona e Quem sou eu ===== */
+  #panelComo .panel-scroll,#panelMestre .panel-scroll{background:linear-gradient(180deg,#2c0c18,#1d0710)!important}
+  #panelComo .plan10,#panelComo .safety,#panelComo section,#panelMestre .author,#panelMestre section{background:transparent!important}
+  #panelMestre .author-card{background:linear-gradient(165deg,rgba(92,32,48,.62),rgba(45,16,25,.72))!important;border:1px solid rgba(255,140,160,.26)!important;box-shadow:0 16px 36px rgba(0,0,0,.34)!important}
+  #panelComo .safety-inner{background:rgba(255,140,160,.08)!important;border:1px solid rgba(255,140,160,.32)!important}
+  /* textos base claros */
+  #panelComo .panel-scroll p,#panelComo .lead,#panelComo .plan-close,#panelComo .plan-explain,#panelComo .jd-c p,#panelComo .safety-inner p,#panelMestre .anon-lead,#panelMestre .anon-line,#panelMestre .anon-close,#panelMestre .author-creds li{color:#f1dce0!important}
+  #panelComo .jd-c h3{color:#ffffff!important}
+  /* destaques */
+  #panelComo h2,#panelMestre .author-card h3,#panelMestre h3{color:#ffffff!important}
+  #panelComo .eyebrow,#panelMestre .eyebrow{color:#e6b955!important}
+  #panelComo .plan-explain em,#panelComo .plan-explain strong,#panelComo .plan-close b,#panelComo .plan-close strong,#panelMestre .anon-lead em,#panelMestre .anon-line b,#panelMestre .anon-line strong{color:#f2a3b3!important}
+  #panelComo .safety-inner b,#panelComo .safety-inner strong,#panelMestre .author-creds li b,#panelMestre .author-creds li strong{color:#ffffff!important}
+  #panelComo .jd-n{color:#ffffff!important}
+  /* ===== Jornada do Como Funciona: cards bordô, letras grandes ===== */
+  #panelComo .journey,#panelComo .journey.open{display:flex!important;flex-direction:column!important;gap:14px!important;grid-template-columns:none!important;max-width:580px!important;margin:18px auto 0!important}
+  #panelComo .jd{display:flex!important;gap:16px!important;align-items:flex-start!important;background:linear-gradient(165deg,rgba(92,32,48,.55),rgba(45,16,25,.62))!important;border:1px solid rgba(255,140,160,.2)!important;border-left:4px solid #e8546c!important;border-radius:18px!important;box-shadow:0 10px 26px rgba(0,0,0,.26)!important;padding:22px 20px!important;margin:0!important}
+  #panelComo .jd:hover{transform:translateY(-3px)!important;border-color:rgba(255,150,170,.5)!important;background:linear-gradient(165deg,rgba(102,38,54,.6),rgba(50,18,28,.66))!important}
+  #panelComo .jd::before,#panelComo .jd::after{display:none!important}
+  #panelComo .jd-n{flex-shrink:0!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;width:50px!important;height:50px!important;border-radius:50%!important;background:radial-gradient(circle at 35% 30%,#ff7a8e,#c41f3c)!important;color:#fff!important;font-family:'Newsreader',serif!important;font-style:normal!important;font-weight:600!important;font-size:23px!important;margin:0!important;box-shadow:0 6px 15px rgba(196,31,60,.42)!important}
+  #panelComo .jd-c{padding-top:2px!important}
+  #panelComo .jd-c h3{font-family:'Newsreader',serif!important;font-size:21px!important;font-weight:600!important;color:#fff!important;line-height:1.25!important;margin:0 0 7px!important;padding-top:0!important}
+  #panelComo .jd:hover .jd-c h3{color:#fff!important}
+  #panelComo .jd-c p{font-size:16.5px!important;color:#dcbcc4!important;line-height:1.5!important;margin:0!important}
+  /* abertura e fechamento com mais presença */
+  #panelComo .lead{color:#ecd2d7!important}
+  #panelComo .lead em,#panelComo .lead strong{color:#f2a3b3!important}
+  #panelComo .plan-explain{color:#f3c8d0!important}
+  #panelComo .plan-close{color:#fff!important;font-style:italic}
 </style>
 </head>
 <body>
@@ -859,7 +978,7 @@ body.portal-lock{overflow:hidden}
   <div class="lp" id="portal"><header class="lp-header"><div class="lp-logo">Mestre da<br>Reconquista <i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i></div><nav class="lp-nav"><a href="#lp-top">Início</a><a href="#lp-need">Como Funciona</a><a href="#lp-depo">Depoimentos</a><a onclick="abrirWhatsDuvidas()">Dúvidas</a><a href="#lp-content">Conteúdos</a></nav><button type="button" class="lp-navcta" onclick="scrollOferta()">Quero ele de volta</button></header><section class="lp-hero" id="lp-top"><div class="lp-hero-bg" aria-hidden="true"><span class="lph">&#9829;</span><span class="lph">&#9829;</span><span class="lph">&#9829;</span><span class="lph">&#9829;</span><span class="lph">&#9829;</span><span class="lph">&#9829;</span><span class="lph">&#9829;</span><span class="lph">&#9829;</span><span class="lph">&#9829;</span></div><div class="lp-hero-text"><p class="lp-eyebrow">Método comprovado</p><h1 class="lp-h1">Aqui você faz <span class="lp-script">ele voltar</span> achando que a ideia foi dele.</h1><p class="lp-lead">Sem implorar. Sem se humilhar. Sem mandar uma única mensagem.</p><button type="button" class="lp-cta" onclick="scrollOferta()"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i> QUERO ELE DE VOLTA <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></b></button><p class="lp-note">Clique aqui e transforme sua história de amor</p></div><div class="lp-hero-img"><div class="lp-photo lp-casal"></div></div></section><section class="lp-need" id="lp-need"><p class="lp-eyebrow-c"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i> Tudo que você precisa, em um só lugar <i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i></p><div class="lp-cards"><button type="button" class="lp-card" onclick="openPanel('panelComo')"><span class="lp-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></span><h3>Como funciona</h3><p>Entenda o passo a passo completo para ele voltar apaixonado.</p></button><button type="button" class="lp-card" onclick="openPanel('panelDicas')"><span class="lp-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></span><h3>Dicas grátis</h3><p>Técnicas práticas que realmente funcionam na reconquista.</p></button><button type="button" class="lp-card" onclick="openPanel('panelSegredos')"><span class="lp-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4"/></svg></span><h3>Os segredos</h3><p>Descubra o que ele sente e como reativar o amor.</p></button><button type="button" class="lp-card" onclick="openPanel('panelDepoimentos')"><span class="lp-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><h3>Depoimentos</h3><p>Histórias reais de mulheres que já reconquistaram o seu amor.</p></button><button type="button" class="lp-card" onclick="openPanel('panelMestre')"><span class="lp-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.6 3.3a.5.5 0 0 1 .9 0l2.9 5.6a1 1 0 0 0 1.5.3l4.3-3.7a.5.5 0 0 1 .8.5l-2.8 10.3a1 1 0 0 1-1 .7H5.8a1 1 0 0 1-.9-.7L2 6a.5.5 0 0 1 .8-.5l4.3 3.7a1 1 0 0 0 1.5-.3z"/></svg></span><h3>Quem é o Mestre</h3><p>Conheça quem já ajudou milhares de mulheres a reconquistarem.</p></button><button type="button" class="lp-card" onclick="abrirWhatsDuvidas()"><span class="lp-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/></svg></span><h3>Tirar dúvidas</h3><p>Envie suas perguntas e receba respostas especializadas.</p></button></div></section><section class="lp-trans" id="lp-depo"><div class="lp-trans-left"><h2 class="lp-h2">Milhares de <span class="lp-em">mulheres</span> já transformaram suas vidas</h2><ul class="lp-checks"><li><span class="lp-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg></span>Métodos testados e aprovados</li><li><span class="lp-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg></span>Apoio e orientação especializados</li><li><span class="lp-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg></span>Resultados reais e comprovados</li><li><span class="lp-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg></span>Mais amor, autoestima e felicidade</li></ul><button type="button" class="lp-cta" onclick="scrollOferta()"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i> QUERO COMEÇAR AGORA</button><p class="lp-secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4"/></svg> Pagamento 100% seguro</p></div><div class="lp-trans-right"><div class="lp-photos"><div class="lp-photo lp-m1"></div><div class="lp-photo lp-m2"></div><div class="lp-photo lp-m3"></div><div class="lp-photo lp-m4"></div></div><div class="lp-badge"><b>Milhares</b><span>de mulheres transformadas</span></div><div class="lp-quote"><span class="lp-stars">★★★★★</span><p>"Em 7 dias ele me procurou e hoje estamos mais felizes do que antes!"</p><cite>Juliana S.</cite></div></div></section><section class="lp-diff"><h2 class="lp-h2 lp-h2-c">Por que o Mestre da Reconquista é diferente?</h2><div class="lp-diff-row"><div class="lp-diff-item"><span class="lp-diff-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8L20 10l-5.8 1.9L12 18l-1.9-6.1L4 10l6.1-1.2z"/></svg></span><p>Técnicas exclusivas e comprovadas</p></div><div class="lp-diff-item"><span class="lp-diff-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18a4 4 0 0 1-4-4 4 4 0 0 1-1-7.9A4 4 0 0 1 12 4a4 4 0 0 1 8 2.1A4 4 0 0 1 19 14a4 4 0 0 1-4 4M12 4v16"/></svg></span><p>Estratégias que ativam a mente e o coração dele</p></div><div class="lp-diff-item"><span class="lp-diff-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/></svg></span><p>Resultados reais em menos tempo</p></div><div class="lp-diff-item"><span class="lp-diff-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg></span><p>Confidencialidade e apoio total</p></div><div class="lp-diff-item"><span class="lp-diff-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9zM2 9h20M9 3 7 9l5 12 5-12-2-6"/></svg></span><p>Conteúdo atualizado e direto ao ponto</p></div></div></section><section class="lp-content" id="lp-content"><p class="lp-eyebrow-c"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i> Conteúdos exclusivos <i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i></p><div class="lp-ct-grid"><button type="button" class="lp-ct-card" onclick="scrollOferta()"><div class="lp-photo lp-c1"></div><span class="lp-ct-title">Mensagens que fazem ele correr atrás</span></button><button type="button" class="lp-ct-card" onclick="scrollOferta()"><div class="lp-photo lp-c2"></div><span class="lp-ct-title">O poder do silêncio estratégico</span></button><button type="button" class="lp-ct-card" onclick="scrollOferta()"><div class="lp-photo lp-c3"></div><span class="lp-ct-title">Como despertar saudade e desejo</span></button><button type="button" class="lp-ct-card" onclick="scrollOferta()"><div class="lp-photo lp-c4"></div><span class="lp-ct-title">Erros que afastam de vez</span></button><button type="button" class="lp-ct-card" onclick="scrollOferta()"><div class="lp-photo lp-c5"></div><span class="lp-ct-title">Reconstruindo a conexão emocional</span></button><button type="button" class="lp-ct-card" onclick="scrollOferta()"><div class="lp-photo lp-c6"></div><span class="lp-ct-title">Como ser inesquecível</span></button></div></section><section class="lp-final"><div class="lp-guar"><span>Garantia</span><b>7 dias</b><small>incondicional</small></div><h2 class="lp-h2 lp-h2-c">Está pronta para viver o amor que você merece?</h2><p class="lp-final-sub">O primeiro passo é seu. O resto, o Mestre da Reconquista faz por você.</p><button type="button" class="lp-cta lp-cta-big" onclick="scrollOferta()"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i> SIM, EU QUERO ELE DE VOLTA</button><p class="lp-final-feats">Acesso imediato &nbsp;·&nbsp; Conteúdo 100% online &nbsp;·&nbsp; 7 dias de garantia</p><p class="lp-final-script">Você merece ser escolhida, amada e feliz!</p></section>  <section class="lp-oferta" id="lp-oferta"><div class="lp-of-card"><p class="lp-of-eyebrow"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i> Oferta especial de hoje</p><h2 class="lp-of-title">Comece agora o seu <span class="lp-script">Plano de 7 Dias</span></h2><p class="lp-of-desc">Tudo o que você precisa para reconquistar o seu amor, em um só lugar:</p><ul class="lp-of-list"><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Plano completo de 7 dias, passo a passo</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Os segredos do Mestre da Reconquista</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Scripts e mensagens prontas para cada situação</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Bônus exclusivos para acelerar seus resultados</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Acesso imediato e 100% online</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Garantia incondicional de 7 dias</li></ul><div class="lp-of-price"><span class="lp-of-new">R$ 48<small>,50</small></span><span class="lp-of-pix">à vista no PIX</span></div><button type="button" class="lp-cta lp-of-cta" onclick="setOferta('desconto');openCheckout()"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></i> QUERO ELE DE VOLTA AGORA <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></b></button><p class="lp-of-secure">Pagamento 100% seguro &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; 7 dias de garantia</p></div></section>  </div>
 
   <!-- ════════ PAINEL: PLANO 7 DIAS ════════ -->
-  <div class="panel" id="panelComo">
+  <div class="panel lpskin" id="panelComo">
     <div class="panel-bar"><button type="button" class="panel-back" onclick="closePanel('panelComo')">← Voltar</button><span class="panel-bar-title">Como funciona</span></div>
     <div class="panel-scroll">
 
@@ -867,33 +986,27 @@ body.portal-lock{overflow:hidden}
   <section class="plan10" style="padding-top:40px;padding-bottom:0">
     <div class="wrap" style="text-align:center">
       <p class="eyebrow">Plano de 7 dias</p>
-      <h2 style="font-size:clamp(24px,6vw,34px);margin-bottom:14px">Você ainda pensa nele?</h2>
-      <p class="lead" style="font-size:clamp(20px,5.2vw,23px);margin-bottom:0">O plano estratégico de 7 dias ensina como recuperar a atenção e o amor de quem se afastou. Técnica emocional psicológica usada por terapeutas — agora nas suas mãos.</p>
+      <h2 style="font-size:clamp(26px,6.5vw,36px);margin-bottom:14px">Você ainda pensa nele?</h2>
+      <p class="lead" style="font-size:clamp(18px,5vw,22px);margin-bottom:0">Agora imagine o contrário: ele te procurando de novo, com o olhar de quem percebeu o que perdeu. Esse plano te leva até lá em 7 dias, um passo de cada vez. Sem implorar, sem perseguir, sem mandar a primeira mensagem.</p>
     </div>
   </section>
 
   <!-- PLANO DE 7 DIAS -->
   <section class="plan10" style="padding-top:26px">
     <div class="wrap">
-      <p class="plan-explain" style="margin-bottom:8px;text-align:center">Um passo por dia. Toque pra liberar.</p>
+      <p class="plan-explain" style="margin-bottom:8px;text-align:center">Um movimento certo por dia. Toque em cada um e veja.</p>
       <div class="journey open" id="journey" style="margin-top:10px">
-          <div class="jd" onclick="openPorta('plano')" role="button" tabindex="0"><span class="jd-n">1</span><div class="jd-c"><h3>O movimento que liga o alerta dele</h3><p>A maioria faz o oposto — e o perde de vez.</p></div></div>
-          <div class="jd" onclick="openPorta('plano')" role="button" tabindex="0"><span class="jd-n">2</span><div class="jd-c"><h3>O silêncio que puxa ele de volta</h3><p>Não o que afasta. O que faz ele te procurar.</p></div></div>
-          <div class="jd" onclick="openPorta('plano')" role="button" tabindex="0"><span class="jd-n">3</span><div class="jd-c"><h3>Por que você foi deixada</h3><p>Tem um padrão escondido. No dia 3 ele acaba.</p></div></div>
-          <div class="jd" onclick="openPorta('plano')" role="button" tabindex="0"><span class="jd-n">4</span><div class="jd-c"><h3>A virada que ele não vê chegando</h3><p>Quando ele te vê de novo, o cérebro dele trava.</p></div></div>
-          <div class="jd" onclick="openPorta('plano')" role="button" tabindex="0"><span class="jd-n">5</span><div class="jd-c"><h3>O dia em que o jogo vira</h3><p>O gatilho que faz ele vir atrás de você.</p></div></div>
-          <div class="jd" onclick="openPorta('plano')" role="button" tabindex="0"><span class="jd-n">6</span><div class="jd-c"><h3>O reencontro, no seu controle</h3><p>O que dizer — e o que jamais fazer.</p></div></div>
-          <div class="jd" onclick="openPorta('plano')" role="button" tabindex="0"><span class="jd-n">7</span><div class="jd-c"><h3>Agora quem decide é você</h3><p>A última palavra passa a ser sua.</p></div></div>
+          <div class="jd" onclick="openPorta('plano')" role="button" tabindex="0"><span class="jd-n">1</span><div class="jd-c"><h3>O gesto que acende o alerta dele</h3><p>Em silêncio, ele começa a sentir que algo mudou em você.</p></div></div><div class="jd" onclick="openPorta('plano')" role="button" tabindex="0"><span class="jd-n">2</span><div class="jd-c"><h3>O silêncio que puxa ele de volta</h3><p>A ausência certa que faz ele pegar o celular e te procurar.</p></div></div><div class="jd" onclick="openPorta('plano')" role="button" tabindex="0"><span class="jd-n">3</span><div class="jd-c"><h3>Por que ele se afastou de verdade</h3><p>O motivo real, que ninguém te contou, começa a jogar a seu favor.</p></div></div><div class="jd" onclick="openPorta('plano')" role="button" tabindex="0"><span class="jd-n">4</span><div class="jd-c"><h3>A virada que ele não vê chegando</h3><p>Quando ele te enxerga de novo, a cabeça dele trava em você.</p></div></div><div class="jd" onclick="openPorta('plano')" role="button" tabindex="0"><span class="jd-n">5</span><div class="jd-c"><h3>O dia em que o jogo vira</h3><p>O gatilho que faz ele vir atrás, achando que a ideia foi dele.</p></div></div><div class="jd" onclick="openPorta('plano')" role="button" tabindex="0"><span class="jd-n">6</span><div class="jd-c"><h3>O reencontro, sob o seu controle</h3><p>As palavras certas pra ele sentir tudo o que perdeu.</p></div></div><div class="jd" onclick="openPorta('plano')" role="button" tabindex="0"><span class="jd-n">7</span><div class="jd-c"><h3>Agora quem escolhe é você</h3><p>Ele de volta, e a última palavra nas suas mãos.</p></div></div>
       </div>
-      <p class="plan-close" style="margin-top:26px">No dia 1 você está implorando pela atenção dele.<br>No dia 7, é ele quem implora pela sua.</p>
+      <p class="plan-close" style="margin-top:26px">No dia 1, você ainda espera uma mensagem dele.<br>No dia 7, é ele quem não consegue mais ficar longe de você.</p>
     </div>
   </section>
 
   <!-- CTA ACESSO -->
   <section class="plan10" style="padding-top:4px;padding-bottom:44px">
     <div class="wrap" style="text-align:center">
-      <button type="button" class="cta" onclick="openPorta('plano')">Quero ter acesso a tudo isso</button>
-      <p class="pc-foot" style="margin-top:12px">⚡ Acesso liberado na hora pelo WhatsApp</p>
+      <button type="button" class="cta" onclick="openPorta('plano')">Quero ele de volta em 7 dias</button>
+      <p class="pc-foot" style="margin-top:12px">&#9889; Acesso liberado na hora pelo WhatsApp</p>
     </div>
   </section>
 
@@ -914,7 +1027,7 @@ body.portal-lock{overflow:hidden}
   </div><!-- /panelPlano -->
 
   <!-- ════════ PAINEL: OS SEGREDOS ════════ -->
-  <div class="panel" id="panelSegredos">
+  <div class="panel lpskin" id="panelSegredos">
     <div class="panel-bar"><button type="button" class="panel-back" onclick="closePanel('panelSegredos')">← Voltar</button><span class="panel-bar-title">Os segredos</span></div>
     <div class="panel-scroll">
       <section class="method" style="padding-top:38px">
@@ -946,7 +1059,7 @@ body.portal-lock{overflow:hidden}
   </div>
 
   <!-- ════════ PAINEL: DICAS DO MESTRE ════════ -->
-  <div class="panel" id="panelDicas">
+  <div class="panel lpskin" id="panelDicas">
     <div class="panel-bar"><button type="button" class="panel-back" onclick="closePanel('panelDicas')">← Voltar</button><span class="panel-bar-title">Dicas do Mestre</span></div>
     <div class="panel-scroll">
       <section class="tips">
@@ -1101,7 +1214,7 @@ body.portal-lock{overflow:hidden}
   </div>
 
   <!-- ════════ PAINEL: DEPOIMENTOS ════════ -->
-  <div class="panel" id="panelDepoimentos">
+  <div class="panel lpskin" id="panelDepoimentos">
     <div class="panel-bar"><button type="button" class="panel-back" onclick="closePanel('panelDepoimentos')">← Voltar</button><span class="panel-bar-title">Depoimentos</span></div>
     <div class="panel-scroll">
   <!-- VOICES (WhatsApp) -->
@@ -1130,7 +1243,7 @@ body.portal-lock{overflow:hidden}
   </div>
 
   <!-- ════════ PAINEL: QUEM É O MESTRE ════════ -->
-  <div class="panel" id="panelMestre">
+  <div class="panel lpskin" id="panelMestre">
     <div class="panel-bar"><button type="button" class="panel-back" onclick="closePanel('panelMestre')">← Voltar</button><span class="panel-bar-title">Quem sou eu?</span></div>
     <div class="panel-scroll">
   <!-- AUTHOR -->
