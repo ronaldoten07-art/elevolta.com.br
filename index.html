@@ -7,25 +7,7 @@
 <title>Código da Reconquista — clareza para quem foi deixada, ignorada ou bloqueada</title>
 <meta name="description" content="Ele bloqueou, ignorou ou pediu um tempo? Um plano prático de 7 dias + 8 módulos para você recuperar o controle e saber exatamente o que fazer.">
 
-<!-- TikTok Pixel Code Start -->
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-  ttq.load('D8HMJSRC77UB4KU2EIV0');
-  ttq.page();
-  ttq.track('ViewContent', {
-    contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 97.00 }],
-    content_type: 'product',
-    value: 97.00,
-    currency: 'BRL'
-  });
-}(window, document, 'ttq');
-</script>
-<!-- TikTok Pixel Code End -->
 
-<!-- Microsoft Clarity -->
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -1509,14 +1491,6 @@ body.portal-lock{overflow:hidden}
     $('checkout').classList.add('show');
     $('checkout').setAttribute('aria-hidden','false');
     document.body.style.overflow = 'hidden';
-    if(window.ttq && typeof ttq.track === 'function'){
-      ttq.track('InitiateCheckout', {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 97.00 }],
-        content_type: 'product',
-        value: 97.00,
-        currency: 'BRL'
-      });
-    }
   }
   function closeCheckout(){
     $('checkout').classList.remove('show');
@@ -1570,7 +1544,6 @@ body.portal-lock{overflow:hidden}
     $('oferta50').style.display='flex'; $('oferta50').setAttribute('aria-hidden','false');
     document.body.classList.add('portal-lock');
     startTimer50();
-    if(window.ttq && typeof ttq.track==='function'){ ttq.track('ViewContent',{contents:[{content_id:'codigo-da-reconquista',content_name:'Código da Reconquista (desconto)',quantity:1,price:48.50}],content_type:'product',value:48.50,currency:'BRL'}); }
   }
   function fecharDesconto(){
     stopTimer50();
@@ -1729,14 +1702,6 @@ body.portal-lock{overflow:hidden}
     lead = { nome, canal: 'WhatsApp', contato, produto: PRODUTO.nome, valor: PRODUTO.valor };
     resetPixUi();
     goStep(2);
-    if(window.ttq && typeof ttq.track === 'function'){
-      ttq.track('AddToCart', {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 97.00 }],
-        content_type: 'product',
-        value: 97.00,
-        currency: 'BRL'
-      });
-    }
   }
 
   function resetPixUi(){
@@ -1771,17 +1736,6 @@ body.portal-lock{overflow:hidden}
     metodoPagamento = 'Pix (copiou o código)';
     // dispara o lead pro Formspree no momento em que copia o Pix (alta intenção)
     enviarLead();
-    // conversão TikTok no momento em que copia o Pix
-    if(window.ttq && typeof ttq.track === 'function'){
-      var pixContents = {
-        contents: [{ content_id: 'codigo-da-reconquista', content_name: 'Código da Reconquista', quantity: 1, price: 97.00 }],
-        content_type: 'product',
-        value: 97.00,
-        currency: 'BRL'
-      };
-      ttq.track('PlaceAnOrder', pixContents);
-      ttq.track('CompletePayment', pixContents);
-    }
   }
 
   function enviarLead(){
@@ -1933,10 +1887,9 @@ body.portal-lock{overflow:hidden}
     var el=document.getElementById("bloqueioLand"); if(!el) return;
     el.style.display="block"; el.setAttribute("aria-hidden","false"); el.scrollTop=0;
     document.body.style.overflow="hidden";
-    if(window.ttq && typeof ttq.track==="function"){ ttq.track("ViewContent",{contents:[{content_id:"codigo-da-reconquista",content_name:"Código da Reconquista",quantity:1,price:97.00}],content_type:"product",value:97.00,currency:"BRL"}); }
   }
   function hideBloqueio(){ var el=document.getElementById("bloqueioLand"); if(!el) return; el.style.display="none"; el.setAttribute("aria-hidden","true"); document.body.style.overflow=""; }
-  function openLiberar(){ var el=document.getElementById("liberar"); if(!el) return; el.style.display="flex"; el.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden"; if(window.ttq && typeof ttq.track==="function"){ ttq.track("AddToCart",{contents:[{content_id:"codigo-da-reconquista",content_name:"Código da Reconquista",quantity:1,price:97.00}],content_type:"product",value:97.00,currency:"BRL"}); } }
+  function openLiberar(){ var el=document.getElementById("liberar"); if(!el) return; el.style.display="flex"; el.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden"; }
   function closeLiberar(){ var el=document.getElementById("liberar"); if(!el) return; el.style.display="none"; el.setAttribute("aria-hidden","true"); }
   </script>
   <!-- MINI-PÁGINAS DE ANÚNCIO (só via link dedicado) -->
@@ -1962,7 +1915,6 @@ body.portal-lock{overflow:hidden}
       '</div>';
     el.style.display="block"; el.setAttribute("aria-hidden","false"); el.scrollTop=0;
     document.body.style.overflow="hidden";
-    if(window.ttq && typeof ttq.track==="function"){ ttq.track("ViewContent",{contents:[{content_id:"codigo-da-reconquista",content_name:"Código da Reconquista",quantity:1,price:97.00}],content_type:"product",value:97.00,currency:"BRL"}); }
   }
   function closeAd(){ var el=document.getElementById("adland"); el.style.display="none"; el.setAttribute("aria-hidden","true"); document.body.style.overflow=""; }
   </script>
