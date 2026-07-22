@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Código da Reconquista | Mestre da Reconquista</title>
+<meta name="description" content="O método completo de reconquista em 7 dias. Técnicas reais baseadas em psicologia masculina. Resultados comprovados.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet"></noscript>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#ffffff;
+  --bg2:#fdf2f6;
+  --surface:#ffffff;
+  --surface2:#fff5f8;
+  --surface3:#ffe9f0;
+  --pink:#c6236b;
+  --pink2:#e2417e;
+  --pink3:#ff8fb3;
+  --red:#b3184f;
+  --green:#1ea855;
+  --green2:#25d366;
+  --text:#221217;
+  --text2:#6e5860;
+  --muted:#a3919a;
+  --border:rgba(198,35,107,0.22);
+  --border2:rgba(34,18,23,0.08);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;touch-action:manipulation}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;touch-action:manipulation}
+img{max-width:100%}
+
+/* URGENCY BAR */
+.urgency-bar{background:linear-gradient(90deg,var(--red),var(--pink),var(--red));background-size:300% 100%;animation:barAnim 4s ease infinite;text-align:center;padding:11px 20px;font-size:13px;font-weight:600;letter-spacing:.5px;position:sticky;top:0;z-index:500;line-height:1.4;color:#fff}
+@keyframes barAnim{0%,100%{background-position:0%}50%{background-position:100%}}
+.urgency-bar .gold{color:#ffe0ea}
+#countdown{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:2px;color:#fff;vertical-align:middle}
+
+/* HERO */
+.hero{min-height:100svh;background:radial-gradient(ellipse 80% 60% at 50% 80%,rgba(198,35,107,.07) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 80% 10%,rgba(226,65,126,.08) 0%,transparent 55%),var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23c6236b' fill-opacity='.08'/%3E%3C/svg%3E");background-size:80px 80px}
+.hero-badge{display:inline-block;background:rgba(198,35,107,.08);border:1px solid rgba(226,65,126,.35);color:var(--pink);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:7px 18px;margin-bottom:28px;animation:fadeDown .5s ease both;position:relative;z-index:1}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(46px,10vw,92px);letter-spacing:.03em;line-height:.98;margin-bottom:22px;animation:fadeUp .6s ease .1s both;max-width:920px;position:relative;z-index:1}
+.hero-title .line2{color:var(--pink)}
+.hero-title .line3{color:var(--text)}
+.hero-sub{font-size:clamp(19px,4.8vw,23px);color:var(--text2);max-width:580px;margin:0 auto 44px;font-weight:300;line-height:1.6;animation:fadeUp .6s ease .2s both;position:relative;z-index:1}
+.hero-sub strong{color:var(--text);font-weight:600}
+.hero-cta-wrap{animation:fadeUp .6s ease .3s both;display:flex;flex-direction:column;align-items:center;gap:14px;position:relative;z-index:1}
+.btn-main{display:inline-block;background:linear-gradient(135deg,var(--pink),var(--pink2) 60%,var(--pink3));color:#fff;font-family:'Oswald',sans-serif;font-size:clamp(17px,3vw,22px);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:18px 52px;border:none;cursor:pointer;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,filter .25s;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+.btn-main::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transition:left .5s ease}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(198,35,107,.35);filter:brightness(1.06)}
+.btn-main:hover::after{left:100%}
+.hero-tagline{font-size:13px;color:var(--muted)}
+.trust-strip{display:flex;flex-wrap:wrap;gap:18px 28px;justify-content:center;margin-top:44px;animation:fadeUp .6s ease .45s both;position:relative;z-index:1}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text2)}
+.trust-item .ico{font-size:15px}
+
+.gold-line{width:56px;height:3px;background:linear-gradient(90deg,var(--pink),var(--pink2));margin:0 auto 44px}
+
+.sec{padding:80px 24px;max-width:960px;margin:0 auto}
+.sec-label{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--pink);margin-bottom:14px}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,5.5vw,56px);letter-spacing:.03em;line-height:.98;margin-bottom:18px}
+.sec-sub{font-size:17px;color:var(--text2);max-width:580px;margin:0 auto 48px;line-height:1.7}
+
+/* PAIN */
+.pain-bg{background:var(--bg2);padding:80px 24px}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;max-width:900px;margin:0 auto}
+.pain-card{background:var(--surface);border:1px solid var(--border2);border-left:3px solid var(--pink2);padding:22px 20px;display:flex;gap:16px;align-items:flex-start;transition:border-color .3s,transform .3s;box-shadow:0 2px 10px rgba(34,18,23,.04)}
+.pain-card:hover{border-left-color:var(--pink);transform:translateX(4px)}
+.pain-emoji{font-size:22px;flex-shrink:0;margin-top:2px}
+.pain-title{font-weight:600;font-size:15px;margin-bottom:5px;color:var(--text)}
+.pain-desc{font-size:14px;color:var(--muted);line-height:1.55}
+
+/* REVELATION */
+.revel-bg{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 50%,var(--bg) 100%);padding:80px 24px}
+.revel-box{max-width:760px;margin:0 auto;background:var(--surface2);border:1px solid var(--border);padding:48px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(34,18,23,.05)}
+.revel-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--pink2),transparent)}
+.revel-box::after{content:'"';font-family:'Bebas Neue',sans-serif;font-size:200px;color:rgba(198,35,107,.05);position:absolute;bottom:-40px;right:-10px;line-height:1}
+.revel-box p{font-size:17px;color:var(--text2);line-height:1.85;margin-bottom:22px}
+.revel-box p:last-child{margin-bottom:0}
+.revel-box strong{color:var(--pink)}
+
+/* PRODUCT SHOWCASE */
+.product-bg{padding:80px 24px;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(198,35,107,.05) 0%,transparent 60%),var(--bg);text-align:center}
+.product-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,10vw,92px);letter-spacing:.06em;line-height:.92;background:linear-gradient(135deg,var(--pink) 0%,var(--pink2) 40%,var(--pink3) 80%,var(--pink2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+.product-sub2{font-family:'Oswald',sans-serif;font-size:clamp(12px,2vw,15px);letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:56px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:820px;margin:0 auto}
+@media(max-width:620px){.pillars{grid-template-columns:1fr}}
+.pillar{background:var(--surface);border:1px solid var(--border);padding:30px 22px;text-align:center;position:relative;transition:transform .3s,border-color .3s;box-shadow:0 2px 14px rgba(34,18,23,.04)}
+.pillar:hover{transform:translateY(-6px);border-color:rgba(226,65,126,.4)}
+.pillar-bg-num{font-family:'Bebas Neue',sans-serif;font-size:72px;color:rgba(198,35,107,.06);position:absolute;top:8px;right:12px;line-height:1}
+.pillar-icon{font-size:36px;margin-bottom:14px}
+.pillar-name{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--pink);margin-bottom:8px}
+.pillar-text{font-size:14px;color:var(--muted);line-height:1.55}
+
+/* NUMBERS */
+.numbers-bar{background:var(--surface3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 24px}
+.numbers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px;max-width:800px;margin:0 auto;text-align:center}
+.num-val{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--pink);line-height:1;margin-bottom:6px;letter-spacing:.02em}
+.num-label{font-size:13px;color:var(--text2);letter-spacing:1px}
+
+/* MODULES */
+.modules-bg{background:var(--bg2);padding:80px 24px}
+.modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:15px;max-width:900px;margin:0 auto}
+.mod-card{background:var(--surface);border:1px solid var(--border2);padding:28px 24px;transition:border-color .3s,transform .3s;cursor:default;box-shadow:0 2px 10px rgba(34,18,23,.04)}
+.mod-card:hover{border-color:rgba(226,65,126,.35);transform:translateY(-5px)}
+.mod-num{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:2.5px;color:var(--pink2);margin-bottom:12px;text-transform:uppercase}
+.mod-title{font-family:'Oswald',sans-serif;font-size:19px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.25}
+.mod-desc{font-size:14px;color:var(--muted);line-height:1.65}
+.mod-bonus{background:linear-gradient(135deg,rgba(198,35,107,.05),var(--surface));border-color:rgba(226,65,126,.3)}
+.mod-bonus .mod-num{color:var(--pink);font-size:13px}
+
+/* TESTIMONIALS */
+.testi-bg{background:var(--bg);padding:80px 24px}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:900px;margin:0 auto}
+.testi-card{background:var(--surface2);border:1px solid var(--border2);padding:30px 24px;position:relative;overflow:hidden;transition:transform .3s;box-shadow:0 2px 14px rgba(34,18,23,.04)}
+.testi-card:hover{transform:translateY(-4px)}
+.testi-quote{font-family:'Bebas Neue',sans-serif;font-size:90px;color:rgba(198,35,107,.08);position:absolute;top:-12px;left:12px;line-height:1;pointer-events:none}
+.stars{color:var(--pink2);font-size:14px;letter-spacing:3px;margin-bottom:18px}
+.testi-text{font-size:15px;color:var(--text2);line-height:1.75;margin-bottom:22px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:14px}
+.author-av{width:46px;height:46px;border-radius:50%;background:var(--surface3);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--pink);flex-shrink:0}
+.author-name{font-weight:600;font-size:14px;color:var(--text)}
+.author-city{font-size:12px;color:var(--muted)}
+
+/* GUARANTEE */
+.guarantee-bg{background:var(--bg2);padding:80px 24px}
+.guarantee-box{max-width:680px;margin:0 auto;background:var(--surface);border:2px solid rgba(198,35,107,.25);padding:56px 40px;text-align:center;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(34,18,23,.05)}
+.guarantee-box::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--pink2),transparent)}
+.guarantee-medal{width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(198,35,107,.12),rgba(198,35,107,.03));border:3px solid rgba(198,35,107,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 28px}
+.g-days{font-family:'Bebas Neue',sans-serif;font-size:38px;color:var(--pink);line-height:1}
+.g-dias{font-size:11px;color:var(--pink);letter-spacing:2px;text-transform:uppercase}
+.g-title{font-family:'Bebas Neue',sans-serif;font-size:34px;color:var(--pink);letter-spacing:.05em;margin-bottom:18px}
+.g-text{font-size:16px;color:var(--text2);line-height:1.75}
+.g-text strong{color:var(--text)}
+
+/* PRICING */
+.pricing-bg{padding:80px 24px;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(198,35,107,.06) 0%,transparent 60%),var(--bg);text-align:center}
+.price-card{max-width:500px;margin:0 auto;background:var(--surface);border:1px solid var(--border);overflow:hidden;box-shadow:0 0 60px rgba(198,35,107,.1)}
+.price-header{background:linear-gradient(135deg,var(--pink),var(--pink2));padding:22px;text-align:center}
+.price-header-text{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:3px;color:#fff;text-transform:uppercase}
+.price-body{padding:40px 32px}
+.price-items{text-align:left;margin-bottom:36px}
+.price-row{display:flex;align-items:center;gap:13px;padding:11px 0;border-bottom:1px solid var(--border2);font-size:15px;color:var(--text2)}
+.price-row:last-child{border-bottom:none}
+.ck{width:23px;height:23px;border-radius:50%;background:rgba(198,35,107,.1);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--pink);flex-shrink:0}
+.price-old{font-size:17px;color:var(--muted);text-decoration:line-through;margin-bottom:4px}
+.price-now{display:flex;align-items:baseline;justify-content:center;gap:6px;margin-bottom:12px}
+.price-rs{font-size:22px;color:var(--text2);font-weight:300}
+.price-val{font-family:'Bebas Neue',sans-serif;font-size:74px;color:var(--pink);line-height:1;letter-spacing:-.01em}
+.price-badge{display:inline-block;background:var(--red);color:#fff;font-size:12px;font-weight:700;padding:4px 14px;letter-spacing:1px;margin-bottom:28px}
+.price-note{font-size:13px;color:var(--muted);margin-bottom:28px}
+.btn-buy{display:block;width:100%;background:linear-gradient(135deg,var(--pink),var(--pink2));color:#fff;font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2px;padding:20px;border:none;cursor:pointer;text-transform:uppercase;transition:transform .25s,box-shadow .25s,filter .25s;animation:pulseBtn 2.5s ease 6}
+@keyframes pulseBtn{0%,100%{box-shadow:0 0 0 0 rgba(198,35,107,.35)}50%{box-shadow:0 0 0 14px rgba(198,35,107,0)}}
+.btn-buy:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(198,35,107,.4);filter:brightness(1.05)}
+.pix-meta{margin-top:18px;font-size:13px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+
+/* FAQ */
+.faq-bg{background:var(--bg2);padding:80px 24px}
+.faq-wrap{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border2);overflow:hidden}
+.faq-q{width:100%;text-align:left;background:none;border:none;color:var(--text);font-family:'Inter',sans-serif;font-size:16px;font-weight:500;padding:20px 44px 20px 0;cursor:pointer;position:relative;transition:color .25s}
+.faq-q:hover{color:var(--pink)}
+.faq-q::after{content:'+';position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:26px;color:var(--pink2);transition:transform .3s ease;font-family:'Bebas Neue',sans-serif}
+.faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg);color:var(--pink)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;font-size:15px;color:var(--text2);line-height:1.75}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:22px}
+
+/* FINAL CTA */
+.final-bg{padding:80px 24px;text-align:center;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(198,35,107,.06) 0%,transparent 65%),var(--bg)}
+
+/* FOOTER */
+footer{background:var(--surface2);border-top:1px solid var(--border2);padding:36px 24px;text-align:center}
+footer p{font-size:12px;color:var(--muted);line-height:1.75;max-width:720px;margin:0 auto}
+footer a{color:var(--muted);border-bottom:1px solid var(--border2);transition:color .2s}
+footer a:hover{color:var(--pink)}
+
+/* STICKY MOBILE CTA */
+.sticky-mob{display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,var(--pink),var(--pink2));padding:16px 20px;z-index:400;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:#fff;border:none;cursor:pointer;width:100%;transition:filter .2s}
+.sticky-mob:active{filter:brightness(.92)}
+@media(max-width:768px){.sticky-mob{display:block}}
+
+/* PIX MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(34,18,23,.75);z-index:600;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-bg.on{display:flex}
+.modal{background:var(--surface);border:1px solid var(--border);max-width:470px;width:100%;padding:44px 32px;position:relative;text-align:center;animation:modalPop .3s ease;max-height:90svh;overflow-y:auto;box-shadow:0 20px 60px rgba(34,18,23,.25)}
+@keyframes modalPop{from{opacity:0;transform:scale(.94) translateY(18px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-x{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--muted);font-size:26px;cursor:pointer;transition:color .2s;line-height:1}
+.modal-x:hover{color:var(--text)}
+.modal-h{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.05em;margin-bottom:6px}
+.modal-prod{font-size:13px;color:var(--muted);margin-bottom:4px}
+.modal-price2{font-family:'Bebas Neue',sans-serif;font-size:54px;color:var(--pink);line-height:1;margin-bottom:28px}
+.pix-instr{background:var(--surface3);border:1px solid var(--border);padding:16px;text-align:left;font-size:14px;color:var(--text2);line-height:1.65;margin-bottom:22px}
+.pix-instr strong{color:var(--text)}
+.pix-key-label{font-size:12px;color:var(--muted);text-align:left;margin-bottom:6px}
+.pix-key{background:var(--surface2);border:1px solid var(--border);padding:13px 16px;font-family:monospace;font-size:13px;word-break:break-all;color:var(--text2);margin-bottom:12px;text-align:left}
+.btn-copy{display:block;width:100%;background:var(--pink);color:#fff;font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;letter-spacing:1.5px;padding:14px;border:none;cursor:pointer;text-transform:uppercase;transition:background .25s,transform .2s;margin-bottom:20px}
+.btn-copy:hover{background:var(--pink2);transform:translateY(-1px)}
+.modal-steps{font-size:13px;color:var(--muted);line-height:1.75;text-align:left;margin-bottom:18px}
+.modal-steps strong{color:var(--text2)}
+.btn-wpp{display:block;width:100%;background:var(--green2);color:#fff;font-family:'Oswald',sans-serif;font-size:17px;font-weight:700;letter-spacing:1.5px;padding:14px;border:none;cursor:pointer;text-transform:uppercase;transition:background .25s;text-align:center}
+.btn-wpp:hover{background:#1db954}
+
+/* TOAST */
+.toast-wrap{position:fixed;bottom:75px;left:18px;z-index:450;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+.toast{background:var(--surface);border:1px solid rgba(198,35,107,.25);border-left:3px solid var(--pink);padding:13px 15px;display:flex;gap:11px;align-items:center;max-width:270px;animation:toastSlide .4s ease;pointer-events:auto;box-shadow:0 6px 20px rgba(34,18,23,.1)}
+@keyframes toastSlide{from{opacity:0;transform:translateX(-22px)}to{opacity:1;transform:translateX(0)}}
+.toast-ico{font-size:20px;flex-shrink:0}
+.toast-name{font-weight:600;font-size:13px;color:var(--text)}
+.toast-detail{font-size:12px;color:var(--muted);line-height:1.45}
+
+/* REVEAL ANIMATIONS */
+.r{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.r.vis{opacity:1;transform:translateY(0)}
+.r2{opacity:0;transform:translateY(28px);transition:opacity .65s .12s ease,transform .65s .12s ease}
+.r2.vis{opacity:1;transform:translateY(0)}
+.r3{opacity:0;transform:translateY(28px);transition:opacity .65s .24s ease,transform .65s .24s ease}
+.r3.vis{opacity:1;transform:translateY(0)}
+
+@keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){
+  .sec{padding:60px 20px}
+  .pain-bg,.revel-bg,.product-bg,.modules-bg,.testi-bg,.guarantee-bg,.pricing-bg,.faq-bg,.final-bg,.numbers-bar{padding:60px 20px}
+  .revel-box{padding:32px 22px}
+  .guarantee-box{padding:36px 22px}
+  .price-body{padding:28px 20px}
+  body{padding-bottom:60px}
+}
+@media(max-width:480px){
+  .trust-strip{gap:14px 18px}
+  .modal{padding:36px 20px}
+}
+.field-group{text-align:left;margin-bottom:16px}
+.field-label{display:block;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text2);margin-bottom:8px}
+.field-input{display:block;width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;padding:14px 16px;outline:none;transition:border-color .25s,box-shadow .25s;-webkit-appearance:none;border-radius:0}
+.field-input::placeholder{color:var(--muted)}
+.field-input:focus{border-color:var(--pink2);box-shadow:0 0 0 3px rgba(226,65,126,.15)}
+.field-err{background:rgba(179,24,79,.08);border:1px solid rgba(179,24,79,.3);color:var(--red);font-size:13px;padding:10px 14px;margin-bottom:14px}
+</style>
+</head>
+<body>
+
+<!-- ====== URGENCY BAR ====== -->
+<div class="urgency-bar">
+  🔥 <span class="gold">OFERTA ESPECIAL</span> — Valor promocional encerra em <span id="countdown">00:00:00</span> — <span class="gold">Garanta agora</span>
+</div>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="hero-badge">💛 Método Comprovado — Edição 2026</div>
+
+  <h1 class="hero-title">
+    <span>SER ABANDONADA</span><br>
+    <span class="line2">POR QUEM VOCÊ AMA</span><br>
+    <span class="line3">DÓI DEMAIS</span>
+  </h1>
+
+  <p class="hero-sub">
+    Mesmo que ele seja <strong>orgulhoso demais</strong> pra admitir, esteja <strong>com outra pessoa</strong> ou tenha te <strong>bloqueado</strong> — se você quer ele de volta, esse é o método que milhares de mulheres estão usando, com resultados reais em <strong>7 dias de plano.</strong>
+  </p>
+
+  <div class="hero-cta-wrap">
+    <button class="btn-main" onclick="openModal()">💛 QUERO ELE DE VOLTA — R$ 48,50</button>
+    <span class="hero-tagline">Pagamento único via PIX • Acesso imediato</span>
+  </div>
+
+  <div class="trust-strip">
+    <div class="trust-item"><span class="ico">🔒</span> Compra 100% Segura</div>
+    <div class="trust-item"><span class="ico">📱</span> Acesso Imediato</div>
+    <div class="trust-item"><span class="ico">✅</span> Garantia de 7 Dias</div>
+    <div class="trust-item"><span class="ico">💛</span> Método Comprovado</div>
+  </div>
+</section>
+
+<!-- ====== PAIN SECTION ====== -->
+<div class="pain-bg">
+  <div class="sec" style="padding-bottom:0;text-align:center">
+    <p class="sec-label">Você se identifica?</p>
+    <h2 class="sec-title r">SE VOCÊ JÁ SENTIU ISSO,<br>ESSE MÉTODO É PRA VOCÊ</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="pain-grid">
+    <div class="pain-card r">
+      <div class="pain-emoji">😔</div>
+      <div>
+        <div class="pain-title">A vontade de mandar mensagem</div>
+        <div class="pain-desc">Você digita, apaga, digita de novo — e a ansiedade de não saber se deve mandar consome seu dia</div>
+      </div>
+    </div>
+    <div class="pain-card r2">
+      <div class="pain-emoji">🚫</div>
+      <div>
+        <div class="pain-title">Medo de piorar tudo</div>
+        <div class="pain-desc">Toda atitude parece arriscada demais, então você trava e não faz nada — e o tempo passa</div>
+      </div>
+    </div>
+    <div class="pain-card r3">
+      <div class="pain-emoji">💸</div>
+      <div>
+        <div class="pain-title">Já tentou de tudo sem resultado</div>
+        <div class="pain-desc">Conversas, pedidos de desculpa, dar espaço... nada pareceu funcionar de verdade</div>
+      </div>
+    </div>
+    <div class="pain-card r">
+      <div class="pain-emoji">💔</div>
+      <div>
+        <div class="pain-title">A dor não passa</div>
+        <div class="pain-desc">Você segue a rotina, mas por dentro ainda dói como se fosse ontem</div>
+      </div>
+    </div>
+    <div class="pain-card r2">
+      <div class="pain-emoji">🤐</div>
+      <div>
+        <div class="pain-title">Vergonha de pedir ajuda</div>
+        <div class="pain-desc">É o tipo de coisa que você carrega sozinha, com medo de julgamento</div>
+      </div>
+    </div>
+    <div class="pain-card r3">
+      <div class="pain-emoji">😞</div>
+      <div>
+        <div class="pain-title">Acha que não tem mais jeito</div>
+        <div class="pain-desc">Sente que perdeu a chance de vez — mas isso quase nunca é verdade</div>
+      </div>
+    </div>
+  </div>
+  <div style="height:80px"></div>
+</div>
+
+<!-- ====== REVELATION ====== -->
+<div class="revel-bg">
+  <div class="sec" style="padding-bottom:0;text-align:center;max-width:960px">
+    <p class="sec-label">A verdade que ninguém te conta</p>
+    <h2 class="sec-title r">ELE PODE VOLTAR <span style="color:var(--pink2)">DE VERDADE</span></h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="revel-box r">
+    <p>
+      A forma como um homem processa afastamento e reconquista segue <strong>padrões psicológicos previsíveis</strong> — não é sorte, nem magia. É comportamento humano que a psicologia reconhece há décadas.
+    </p>
+    <p>
+      O problema é que ninguém nunca te ensinou a reconhecer esses padrões. Implorar afasta. Dar espaço demais também. O conteúdo gratuito por aí é incompleto ou contraditório — o que faz muita mulher desistir achando que não tem mais solução.
+    </p>
+    <p>
+      <strong>O Código da Reconquista reúne as técnicas validadas, organizadas em uma sequência de 7 dias,</strong> com o momento certo pra cada gatilho. É o método estruturado que faltava — em português, direto ao ponto, com resultado real.
+    </p>
+  </div>
+  <div style="height:80px"></div>
+</div>
+
+<!-- ====== PRODUCT SHOWCASE ====== -->
+<div class="product-bg">
+  <div class="product-name r">CÓDIGO DA<br>RECONQUISTA</div>
+  <p class="product-sub2 r2">Plano de 7 Dias Para Reconquistar Quem Você Ama</p>
+
+  <div class="pillars">
+    <div class="pillar r">
+      <div class="pillar-bg-num">01</div>
+      <div class="pillar-icon">🧠</div>
+      <div class="pillar-name">Base em Psicologia Real</div>
+      <div class="pillar-text">Fundamentado em como a mente masculina reage de verdade, sem promessas vazias</div>
+    </div>
+    <div class="pillar r2">
+      <div class="pillar-bg-num">02</div>
+      <div class="pillar-icon">📈</div>
+      <div class="pillar-name">Progressão Estruturada</div>
+      <div class="pillar-text">Dia a dia, do primeiro passo até a reconquista — sem pular etapas importantes</div>
+    </div>
+    <div class="pillar r3">
+      <div class="pillar-bg-num">03</div>
+      <div class="pillar-icon">🎯</div>
+      <div class="pillar-name">Resultado Mensurável</div>
+      <div class="pillar-text">Sinais claros de progresso pra você acompanhar cada passo da reconquista</div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== NUMBERS ====== -->
+<div class="numbers-bar">
+  <div class="numbers-grid">
+    <div class="r">
+      <div class="num-val">3.400+</div>
+      <div class="num-label">Mulheres ajudadas</div>
+    </div>
+    <div class="r2">
+      <div class="num-val">7</div>
+      <div class="num-label">Dias de plano</div>
+    </div>
+    <div class="r3">
+      <div class="num-val">94%</div>
+      <div class="num-label">De satisfação</div>
+    </div>
+    <div class="r">
+      <div class="num-val">7 dias</div>
+      <div class="num-label">De garantia total</div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== MODULES ====== -->
+<div class="modules-bg">
+  <div class="sec" style="padding-bottom:0;text-align:center;max-width:960px">
+    <p class="sec-label">O que você recebe</p>
+    <h2 class="sec-title r">TUDO INCLUÍDO<br>NO MÉTODO</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="modules-grid">
+    <div class="mod-card r">
+      <div class="mod-num">Módulo 01</div>
+      <div class="mod-title">Por Que Ele Se Afastou</div>
+      <div class="mod-desc">Entenda o que realmente aconteceu na cabeça dele — quase nunca é o que parece de fora.</div>
+    </div>
+    <div class="mod-card r2">
+      <div class="mod-num">Módulo 02</div>
+      <div class="mod-title">Os Gatilhos da Reconquista</div>
+      <div class="mod-desc">As técnicas certas pra despertar o desejo dele por você de novo, sem parecer desesperada.</div>
+    </div>
+    <div class="mod-card r3">
+      <div class="mod-num">Módulo 03</div>
+      <div class="mod-title">Os Primeiros 3 Dias</div>
+      <div class="mod-desc">O que fazer — e o que jamais fazer — logo no início do plano. Passo a passo, sem dúvida.</div>
+    </div>
+    <div class="mod-card r">
+      <div class="mod-num">Módulo 04</div>
+      <div class="mod-title">Dias 4 a 7 — A Virada</div>
+      <div class="mod-desc">A fase em que os resultados aparecem. Scripts prontos pra cada situação.</div>
+    </div>
+    <div class="mod-card r2">
+      <div class="mod-num">Módulo 05</div>
+      <div class="mod-title">Depois Que Ele Voltar</div>
+      <div class="mod-desc">Como manter a relação forte e não cair nos mesmos erros de antes.</div>
+    </div>
+    <div class="mod-card mod-bonus r3">
+      <div class="mod-num">🎁 Bônus Exclusivo</div>
+      <div class="mod-title">Autoestima e Postura</div>
+      <div class="mod-desc">O componente emocional que a maioria ignora. Reconstrua sua confiança enquanto reconquista ele.</div>
+    </div>
+  </div>
+  <div style="height:80px"></div>
+</div>
+
+<!-- ====== TESTIMONIALS ====== -->
+<div class="testi-bg">
+  <div class="sec" style="padding-bottom:0;text-align:center;max-width:960px">
+    <p class="sec-label">Mulheres reais, resultados reais</p>
+    <h2 class="sec-title r">O QUE QUEM JÁ<br>APLICOU ESTÁ DIZENDO</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card r">
+      <div class="testi-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Ele tinha me bloqueado de tudo. Segui o plano à risca e em 6 dias ele mesmo me desbloqueou e mandou mensagem primeiro.</p>
+      <div class="testi-author">
+        <div class="author-av">C</div>
+        <div>
+          <div class="author-name">Camila R.</div>
+          <div class="author-city">Petrópolis, RJ</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card r2">
+      <div class="testi-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Fiquei meses sem falar com ele. Segui o plano e foi ele quem veio atrás de mim, do jeito certo.</p>
+      <div class="testi-author">
+        <div class="author-av">M</div>
+        <div>
+          <div class="author-name">Marcela T.</div>
+          <div class="author-city">Belo Horizonte, MG</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card r3">
+      <div class="testi-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">Ele tinha saído de casa. Apliquei o plano e em 6 dias ele voltou pedindo pra conversar, do jeito que eu nunca esperei.</p>
+      <div class="testi-author">
+        <div class="author-av">F</div>
+        <div>
+          <div class="author-name">Fernanda O.</div>
+          <div class="author-city">São Paulo, SP</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="height:80px"></div>
+</div>
+
+<!-- ====== GUARANTEE ====== -->
+<div class="guarantee-bg">
+  <div class="guarantee-box r">
+    <div class="guarantee-medal">
+      <div class="g-days">7</div>
+      <div class="g-dias">dias</div>
+    </div>
+    <div class="g-title">GARANTIA TOTAL</div>
+    <p class="g-text">
+      Se nos primeiros <strong>7 dias</strong> você sentir que o método não é pra você — por qualquer motivo — basta mandar uma mensagem e devolvo <strong>100% do seu dinheiro</strong>, sem burocracia, sem perguntas. <strong>O risco é totalmente meu.</strong>
+    </p>
+  </div>
+</div>
+
+<!-- ====== PRICING ====== -->
+<div class="pricing-bg">
+  <div class="sec" style="padding-bottom:0;text-align:center;max-width:960px">
+    <p class="sec-label">Oferta especial</p>
+    <h2 class="sec-title r">GARANTA SEU<br><span style="color:var(--pink2)">ACESSO COMPLETO</span></h2>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="price-card r">
+    <div class="price-header">
+      <div class="price-header-text">💛 Acesso Vitalício — Pagamento Único</div>
+    </div>
+    <div class="price-body">
+      <div class="price-items">
+        <div class="price-row"><span class="ck">✓</span> Plano completo de 7 dias baseado em gatilhos da psicologia masculina</div>
+        <div class="price-row"><span class="ck">✓</span> Os segredos de como a mente dele processa a distância e o desejo</div>
+        <div class="price-row"><span class="ck">✓</span> Scripts que ativam o instinto de conquista masculino em cada situação</div>
+        <div class="price-row"><span class="ck">✓</span> 🎁 Bônus: Autoestima e Postura</div>
+        <div class="price-row"><span class="ck">✓</span> Suporte via WhatsApp</div>
+      </div>
+
+      <div class="price-old">De R$ 97,00</div>
+      <div class="price-now">
+        <span class="price-rs">R$</span>
+        <span class="price-val">48<small style="font-size:32px">,50</small></span>
+      </div>
+      <div class="price-badge">🔥 OFERTA LIMITADA</div>
+      <p class="price-note">Pagamento único • Sem mensalidade • Acesso vitalício</p>
+
+      <button class="btn-buy" onclick="openModal()">
+        💳 QUERO ELE DE VOLTA VIA PIX
+      </button>
+
+      <div class="pix-meta">
+        🔒 Ambiente seguro &nbsp;|&nbsp; ⚡ Acesso em minutos &nbsp;|&nbsp; ✅ Garantia 7 dias
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== FAQ ====== -->
+<div class="faq-bg">
+  <div class="sec" style="padding-bottom:0;text-align:center;max-width:960px">
+    <p class="sec-label">Dúvidas frequentes</p>
+    <h2 class="sec-title r">PERGUNTAS<br>E RESPOSTAS</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="faq-wrap">
+    <div class="faq-item r">
+      <button class="faq-q">O método realmente funciona?</button>
+      <div class="faq-a">Sim. O método é baseado em padrões reais de comportamento masculino — não em sorte. Ele organiza, em 7 dias, exatamente o que fazer em cada momento, com resultado comprovado por milhares de mulheres.</div>
+    </div>
+    <div class="faq-item r">
+      <button class="faq-q">Em quanto tempo vejo resultado?</button>
+      <div class="faq-a">Os primeiros sinais costumam aparecer já nos 3 primeiros dias de aplicação. O plano completo de 7 dias é onde a maioria das alunas vê a virada acontecer.</div>
+    </div>
+    <div class="faq-item r">
+      <button class="faq-q">Preciso fazer alguma coisa complicada?</button>
+      <div class="faq-a">Não. O método é feito só com atitudes e mensagens no momento certo — nada de rituais ou situação constrangedora. Você aplica de onde estiver, com total privacidade.</div>
+    </div>
+    <div class="faq-item r">
+      <button class="faq-q">Como recebo o acesso após o pagamento?</button>
+      <div class="faq-a">Assim que o PIX for confirmado, você recebe o link de acesso completo via WhatsApp em poucos minutos. O acesso é vitalício — você pode consultar quando quiser, para sempre.</div>
+    </div>
+    <div class="faq-item r">
+      <button class="faq-q">E se eu não sentir resultado? Tem garantia?</button>
+      <div class="faq-a">Sim. Você tem 7 dias de garantia total e incondicional. Se por qualquer motivo não ficar satisfeita, basta enviar uma mensagem e devolvemos 100% do valor sem questionar, sem burocracia.</div>
+    </div>
+    <div class="faq-item r">
+      <button class="faq-q">Minha compra é discreta?</button>
+      <div class="faq-a">Total discrição. O acesso é por link digital, sem identificação do conteúdo. O nome que aparece na transação PIX não revela o produto. Nenhum terceiro saberá o que você adquiriu.</div>
+    </div>
+    <div class="faq-item r">
+      <button class="faq-q">Isso funciona pra qualquer situação?</button>
+      <div class="faq-a">Sim. O método cobre desde bloqueio e silêncio até quando ele já está com outra pessoa ou é orgulhoso demais pra dar o primeiro passo — os gatilhos se adaptam a cada caso.</div>
+    </div>
+  </div>
+  <div style="height:80px"></div>
+</div>
+
+<!-- ====== FINAL CTA ====== -->
+<div class="final-bg">
+  <div class="sec" style="padding:0;text-align:center;max-width:720px;margin:0 auto">
+    <h2 class="sec-title r" style="font-size:clamp(34px,6.5vw,58px)">
+      A DECISÃO É SUA.<br>
+      <span style="color:var(--pink2)">O RESULTADO TAMBÉM.</span>
+    </h2>
+    <p class="sec-sub r2" style="margin-bottom:36px">
+      Cada dia que passa é mais um dia de saudade e dúvida. O método já está pronto. <strong style="color:var(--text)">Agora só falta você.</strong>
+    </p>
+    <button class="btn-main r3" onclick="openModal()" style="font-size:clamp(17px,2.6vw,21px);padding:20px 56px">
+      💛 QUERO MUDAR ISSO AGORA — R$ 48,50
+    </button>
+    <p style="margin-top:18px;font-size:13px;color:var(--muted)" class="r">
+      ✅ Garantia de 7 dias &nbsp;|&nbsp; 🔒 PIX seguro &nbsp;|&nbsp; 📱 Acesso imediato
+    </p>
+  </div>
+</div>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <p>
+    Este produto é um curso digital de desenvolvimento pessoal e relacionamentos. Os resultados individuais podem variar de acordo com a situação e a aplicação de cada pessoa. As informações contidas neste material são de caráter educativo e não substituem aconselhamento psicológico profissional.<br><br>
+    © 2026 Código da Reconquista. Todos os direitos reservados. &nbsp;|&nbsp;
+    <a href="#">Política de Privacidade</a> &nbsp;|&nbsp;
+    <a href="#">Termos de Uso</a>
+  </p>
+</footer>
+
+<!-- ====== STICKY MOBILE CTA ====== -->
+<button class="sticky-mob" onclick="openModal()">💛 QUERO ELE DE VOLTA — R$ 48,50</button>
+
+<!-- ====== PIX MODAL ====== -->
+<div class="modal-bg" id="pixModal">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal()">×</button>
+
+    <div id="step1">
+      <h3 class="modal-h">QUASE LÁ!</h3>
+      <div class="modal-prod">Código da Reconquista — Plano de 7 Dias</div>
+      <div class="modal-price2">R$ 48,50</div>
+
+      <div class="field-group">
+        <label class="field-label">Seu nome</label>
+        <input class="field-input" type="text" id="buyerName" placeholder="Como você se chama?" autocomplete="name">
+      </div>
+      <div class="field-group">
+        <label class="field-label">Seu WhatsApp</label>
+        <input class="field-input" type="tel" id="buyerWpp" placeholder="(XX) XXXXX-XXXX" autocomplete="tel">
+      </div>
+      <div id="step1-err" class="field-err" style="display:none">⚠️ Preencha seu nome e WhatsApp para continuar.</div>
+      <button class="btn-buy" style="margin-top:8px;animation:none" onclick="goToStep2()">💛 GERAR CÓDIGO PIX →</button>
+      <p style="margin-top:14px;font-size:12px;color:var(--muted)">🔒 Seus dados são usados apenas para enviar seu acesso</p>
+    </div>
+
+    <div id="step2" style="display:none">
+      <h3 class="modal-h">PAGUE VIA PIX</h3>
+      <div class="modal-prod">Código da Reconquista — Plano de 7 Dias</div>
+      <div class="modal-price2">R$ 48,50</div>
+
+      <div class="pix-instr">
+        📱 <strong>Pagamento via PIX</strong><br>
+        Copie o código abaixo, abra o app do banco e cole em <strong>PIX → Copia e Cola</strong>.
+      </div>
+
+      <div class="pix-key-label">Código PIX (Copia e Cola):</div>
+      <div class="pix-key" id="pixKeyVal">00020126360014br.gov.bcb.pix011465963395000173520400005303986540548.505802BR592465.963.395 RONALDO DA CU6009Sao Paulo62240520daqr35560937277839776304AB1D</div>
+      <button class="btn-copy" onclick="copyPix()">📋 COPIAR CÓDIGO PIX</button>
+
+      <div id="wppSection" style="display:none">
+        <div class="modal-steps">
+          <strong>Agora é só finalizar o pagamento:</strong><br>
+          1. Cole o código no seu banco em <strong>PIX → Copia e Cola</strong><br>
+          2. Confirme o valor de <strong>R$ 48,50</strong><br>
+          3. Após a confirmação do PIX, <strong>você receberá o acesso pelo WhatsApp</strong> em até 10 minutos 👇
+        </div>
+        <a id="wppLink" href="#" target="_blank">
+          <button class="btn-wpp">✅ APÓS O PAGAMENTO VOCÊ RECEBERÁ O ACESSO PELO WHATSAPP</button>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ====== TOAST CONTAINER ====== -->
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script>
+/* ── COUNTDOWN ── */
+(function(){
+  const KEY='rec_end',D=18*60;
+  let end=+sessionStorage.getItem(KEY)||0;
+  if(!end||end<Date.now()){end=Date.now()+D*1000;sessionStorage.setItem(KEY,end)}
+  function tick(){
+    const left=Math.max(0,Math.floor((end-Date.now())/1000));
+    const h=String(Math.floor(left/3600)).padStart(2,'0');
+    const m=String(Math.floor((left%3600)/60)).padStart(2,'0');
+    const s=String(left%60).padStart(2,'0');
+    document.getElementById('countdown').textContent=h+':'+m+':'+s;
+    if(left>0)setTimeout(tick,1000);
+  }
+  tick();
+})();
+
+/* ── MODAL ── */
+function openModal(){
+  document.getElementById('step1').style.display='block';
+  document.getElementById('step2').style.display='none';
+  document.getElementById('wppSection').style.display='none';
+  document.getElementById('step1-err').style.display='none';
+  document.getElementById('pixModal').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('pixModal').classList.remove('on');
+  document.body.style.overflow='';
+}
+document.getElementById('pixModal').addEventListener('click',function(e){
+  if(e.target===this)closeModal();
+});
+
+/* ── STEP 2: validate and show PIX ── */
+function goToStep2(){
+  const name=document.getElementById('buyerName').value.trim();
+  const wpp=document.getElementById('buyerWpp').value.trim();
+  const err=document.getElementById('step1-err');
+  if(!name||!wpp){err.style.display='block';return;}
+  err.style.display='none';
+
+  const now=new Date();
+  fetch('https://formspree.io/f/mreonbkg',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({
+      evento:'Lead no Checkout — Código da Reconquista',
+      nome:name,
+      whatsapp:wpp,
+      horario:now.toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'}),
+      pagina:window.location.href
+    })
+  }).catch(()=>{});
+
+  const msg=encodeURIComponent('Oi! Sou '+name+'. Acabei de fazer o PIX do Código da Reconquista. Segue o comprovante.');
+  document.getElementById('wppLink').href='https://wa.me/5524981517067?text='+msg;
+
+  document.getElementById('step1').style.display='none';
+  document.getElementById('step2').style.display='block';
+}
+
+/* ── COPY PIX ── */
+function copyPix(){
+  const val=document.getElementById('pixKeyVal').textContent.trim();
+  const btn=document.querySelector('.btn-copy');
+  const original=btn.textContent;
+
+  function doFeedback(){
+    btn.textContent='✅ COPIADO!';
+    btn.style.background='#1ea855';
+    setTimeout(()=>{btn.textContent=original;btn.style.background='';},2200);
+    const wpp=document.getElementById('wppSection');
+    wpp.style.display='block';
+    wpp.style.animation='fadeUp .5s ease both';
+    setTimeout(()=>wpp.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
+  }
+
+  function notifyFormspree(){
+    const name=document.getElementById('buyerName').value.trim();
+    const wppNum=document.getElementById('buyerWpp').value.trim();
+    const now=new Date();
+    fetch('https://formspree.io/f/mreonbkg',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        evento:'PIX Copiado — Código da Reconquista',
+        nome:name,
+        whatsapp:wppNum,
+        horario:now.toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'}),
+        pagina:window.location.href
+      })
+    }).catch(()=>{});
+  }
+
+  navigator.clipboard.writeText(val).then(()=>{
+    doFeedback();notifyFormspree();
+  }).catch(()=>{
+    const r=document.createRange();
+    r.selectNodeContents(document.getElementById('pixKeyVal'));
+    const s=window.getSelection();s.removeAllRanges();s.addRange(r);
+    doFeedback();notifyFormspree();
+  });
+}
+
+/* ── TOAST NOTIFICATIONS ── */
+const buyers=[
+  {n:'Camila R.',c:'Petrópolis, RJ',t:'1 min atrás'},
+  {n:'Marcela T.',c:'Belo Horizonte, MG',t:'3 min atrás'},
+  {n:'Fernanda O.',c:'São Paulo, SP',t:'6 min atrás'},
+  {n:'Larissa F.',c:'Curitiba, PR',t:'9 min atrás'},
+  {n:'Débora M.',c:'Salvador, BA',t:'2 min atrás'},
+  {n:'Vanessa T.',c:'Fortaleza, CE',t:'5 min atrás'},
+  {n:'Patrícia N.',c:'Recife, PE',t:'12 min atrás'},
+  {n:'Gabriela S.',c:'Porto Alegre, RS',t:'1 min atrás'},
+  {n:'Simone A.',c:'Brasília, DF',t:'4 min atrás'},
+  {n:'Tatiane M.',c:'Manaus, AM',t:'7 min atrás'},
+];
+let ti=0;
+function showToast(){
+  const d=buyers[ti++%buyers.length];
+  const el=document.createElement('div');
+  el.className='toast';
+  el.innerHTML=`<div class="toast-ico">✅</div><div><div class="toast-name">${d.n}</div><div class="toast-detail">garantiu o acesso<br>${d.c} · ${d.t}</div></div>`;
+  const wrap=document.getElementById('toastWrap');
+  wrap.appendChild(el);
+  setTimeout(()=>{
+    el.style.opacity='0';el.style.transform='translateX(-20px)';
+    el.style.transition='all .4s ease';
+    setTimeout(()=>el.remove(),400);
+  },4500);
+}
+setTimeout(()=>{showToast();setInterval(showToast,9000);},3500);
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});
+},{threshold:.1});
+document.querySelectorAll('.r,.r2,.r3').forEach(el=>obs.observe(el));
+
+/* ── FAQ ACCORDION ── */
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.faq-item');
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen)item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
