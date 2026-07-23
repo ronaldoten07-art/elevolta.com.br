@@ -39,7 +39,6 @@ img{max-width:100%}
 .urgency-bar{background:linear-gradient(90deg,var(--red),var(--pink),var(--red));background-size:300% 100%;animation:barAnim 4s ease infinite;text-align:center;padding:11px 20px;font-size:13px;font-weight:600;letter-spacing:.5px;position:sticky;top:0;z-index:500;line-height:1.4;color:#fff}
 @keyframes barAnim{0%,100%{background-position:0%}50%{background-position:100%}}
 .urgency-bar .gold{color:#ffe0ea}
-#countdown{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:2px;color:#fff;vertical-align:middle}
 
 /* HERO */
 .hero{min-height:100svh;background:radial-gradient(ellipse 80% 60% at 50% 80%,rgba(198,35,107,.07) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 80% 10%,rgba(226,65,126,.08) 0%,transparent 55%),var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden}
@@ -244,12 +243,19 @@ footer a:hover{color:var(--pink)}
 .field-input:focus{border-color:var(--pink2);box-shadow:0 0 0 3px rgba(226,65,126,.15)}
 .field-err{background:rgba(179,24,79,.08);border:1px solid rgba(179,24,79,.3);color:var(--red);font-size:13px;padding:10px 14px;margin-bottom:14px}
 </style>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "w940rqdxc1");
+</script>
 </head>
 <body>
 
 <!-- ====== URGENCY BAR ====== -->
 <div class="urgency-bar">
-  🔥 <span class="gold">OFERTA ESPECIAL</span> — Valor promocional encerra em <span id="countdown">00:00:00</span> — <span class="gold">Garanta agora</span>
+  🔥 <span class="gold">OFERTA ESPECIAL</span> — Valor promocional por tempo limitado — <span class="gold">Garanta agora</span>
 </div>
 
 <!-- ====== HERO ====== -->
@@ -617,7 +623,7 @@ footer a:hover{color:var(--pink)}
 </footer>
 
 <!-- ====== STICKY MOBILE CTA ====== -->
-<button class="sticky-mob" onclick="openModal()">💛 QUERO ELE DE VOLTA — R$ 48,50</button>
+<button class="sticky-mob" onclick="openModal()">💛 QUERO ELE DE VOLTA</button>
 
 <!-- ====== PIX MODAL ====== -->
 <div class="modal-bg" id="pixModal">
@@ -653,7 +659,7 @@ footer a:hover{color:var(--pink)}
       </div>
 
       <div class="pix-key-label">Código PIX (Copia e Cola):</div>
-      <div class="pix-key" id="pixKeyVal">00020126360014br.gov.bcb.pix011465963395000173520400005303986540548.505802BR592465.963.395 RONALDO DA CU6009Sao Paulo62240520daqr35560937277839776304AB1D</div>
+      <div class="pix-key" id="pixKeyVal">00020126330014br.gov.bcb.pix011112149693720520400005303986540548.505802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026072323295714350300017br.gov.bcb.brcode01051.0.063046142</div>
       <button class="btn-copy" onclick="copyPix()">📋 COPIAR CÓDIGO PIX</button>
 
       <div id="wppSection" style="display:none">
@@ -676,21 +682,6 @@ footer a:hover{color:var(--pink)}
 <div class="toast-wrap" id="toastWrap"></div>
 
 <script>
-/* ── COUNTDOWN ── */
-(function(){
-  const KEY='rec_end',D=18*60;
-  let end=+sessionStorage.getItem(KEY)||0;
-  if(!end||end<Date.now()){end=Date.now()+D*1000;sessionStorage.setItem(KEY,end)}
-  function tick(){
-    const left=Math.max(0,Math.floor((end-Date.now())/1000));
-    const h=String(Math.floor(left/3600)).padStart(2,'0');
-    const m=String(Math.floor((left%3600)/60)).padStart(2,'0');
-    const s=String(left%60).padStart(2,'0');
-    document.getElementById('countdown').textContent=h+':'+m+':'+s;
-    if(left>0)setTimeout(tick,1000);
-  }
-  tick();
-})();
 
 /* ── MODAL ── */
 function openModal(){
@@ -743,16 +734,6 @@ function copyPix(){
   const btn=document.querySelector('.btn-copy');
   const original=btn.textContent;
 
-  function doFeedback(){
-    btn.textContent='✅ COPIADO!';
-    btn.style.background='#1ea855';
-    setTimeout(()=>{btn.textContent=original;btn.style.background='';},2200);
-    const wpp=document.getElementById('wppSection');
-    wpp.style.display='block';
-    wpp.style.animation='fadeUp .5s ease both';
-    setTimeout(()=>wpp.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
-  }
-
   function notifyFormspree(){
     const name=document.getElementById('buyerName').value.trim();
     const wppNum=document.getElementById('buyerWpp').value.trim();
@@ -770,35 +751,77 @@ function copyPix(){
     }).catch(()=>{});
   }
 
-  navigator.clipboard.writeText(val).then(()=>{
-    doFeedback();notifyFormspree();
-  }).catch(()=>{
-    const r=document.createRange();
-    r.selectNodeContents(document.getElementById('pixKeyVal'));
-    const s=window.getSelection();s.removeAllRanges();s.addRange(r);
-    doFeedback();notifyFormspree();
-  });
+  function afterCopy(success){
+    if(success){
+      btn.textContent='✅ COPIADO!';
+      btn.style.background='#1ea855';
+    }else{
+      btn.textContent='⚠️ Toque e segure pra copiar';
+      btn.style.background='#b3184f';
+    }
+    setTimeout(()=>{btn.textContent=original;btn.style.background='';},2200);
+    const wpp=document.getElementById('wppSection');
+    wpp.style.display='block';
+    wpp.style.animation='fadeUp .5s ease both';
+    setTimeout(()=>wpp.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
+    notifyFormspree();
+  }
+
+  function fallbackCopy(){
+    let ok=false;
+    const ta=document.createElement('textarea');
+    ta.value=val;
+    ta.setAttribute('readonly','');
+    ta.style.position='fixed';
+    ta.style.top='-9999px';
+    ta.style.left='-9999px';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    ta.setSelectionRange(0,val.length);
+    try{ ok=document.execCommand('copy'); }catch(e){ ok=false; }
+    document.body.removeChild(ta);
+    afterCopy(ok);
+  }
+
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(val).then(()=>afterCopy(true)).catch(fallbackCopy);
+  }else{
+    fallbackCopy();
+  }
 }
 
 /* ── TOAST NOTIFICATIONS ── */
 const buyers=[
-  {n:'Camila R.',c:'Petrópolis, RJ',t:'1 min atrás'},
-  {n:'Marcela T.',c:'Belo Horizonte, MG',t:'3 min atrás'},
-  {n:'Fernanda O.',c:'São Paulo, SP',t:'6 min atrás'},
-  {n:'Larissa F.',c:'Curitiba, PR',t:'9 min atrás'},
-  {n:'Débora M.',c:'Salvador, BA',t:'2 min atrás'},
-  {n:'Vanessa T.',c:'Fortaleza, CE',t:'5 min atrás'},
-  {n:'Patrícia N.',c:'Recife, PE',t:'12 min atrás'},
-  {n:'Gabriela S.',c:'Porto Alegre, RS',t:'1 min atrás'},
-  {n:'Simone A.',c:'Brasília, DF',t:'4 min atrás'},
-  {n:'Tatiane M.',c:'Manaus, AM',t:'7 min atrás'},
+  {n:'Camila R.',c:'Petrópolis, RJ'},
+  {n:'Marcela T.',c:'Belo Horizonte, MG'},
+  {n:'Fernanda O.',c:'São Paulo, SP'},
+  {n:'Larissa F.',c:'Curitiba, PR'},
+  {n:'Débora M.',c:'Salvador, BA'},
+  {n:'Vanessa T.',c:'Fortaleza, CE'},
+  {n:'Patrícia N.',c:'Recife, PE'},
+  {n:'Gabriela S.',c:'Porto Alegre, RS'},
+  {n:'Simone A.',c:'Brasília, DF'},
+  {n:'Tatiane M.',c:'Manaus, AM'},
+  {n:'Cristina L.',c:'Campinas, SP'},
+  {n:'Adriana F.',c:'Niterói, RJ'},
+  {n:'Bianca S.',c:'Florianópolis, SC'},
+  {n:'Juliana S.',c:'Goiânia, GO'},
+  {n:'Renata A.',c:'Vitória, ES'},
+  {n:'Karina P.',c:'Natal, RN'},
+  {n:'Priscila H.',c:'Belém, PA'},
+  {n:'Rafaela D.',c:'João Pessoa, PB'},
 ];
-let ti=0;
+let lastIdx=-1;
 function showToast(){
-  const d=buyers[ti++%buyers.length];
+  let idx;
+  do{ idx=Math.floor(Math.random()*buyers.length); }while(idx===lastIdx && buyers.length>1);
+  lastIdx=idx;
+  const d=buyers[idx];
+  const mins=1+Math.floor(Math.random()*14);
   const el=document.createElement('div');
   el.className='toast';
-  el.innerHTML=`<div class="toast-ico">✅</div><div><div class="toast-name">${d.n}</div><div class="toast-detail">garantiu o acesso<br>${d.c} · ${d.t}</div></div>`;
+  el.innerHTML=`<div class="toast-ico">✅</div><div><div class="toast-name">${d.n}</div><div class="toast-detail">garantiu o acesso<br>${d.c} · ${mins} min atrás</div></div>`;
   const wrap=document.getElementById('toastWrap');
   wrap.appendChild(el);
   setTimeout(()=>{
@@ -806,8 +829,9 @@ function showToast(){
     el.style.transition='all .4s ease';
     setTimeout(()=>el.remove(),400);
   },4500);
+  setTimeout(showToast,7000+Math.random()*6000);
 }
-setTimeout(()=>{showToast();setInterval(showToast,9000);},3500);
+setTimeout(showToast,3500);
 
 /* ── SCROLL REVEAL ── */
 const obs=new IntersectionObserver(entries=>{
