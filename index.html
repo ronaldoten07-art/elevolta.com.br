@@ -196,14 +196,11 @@ footer a:hover{color:var(--pink)}
 .modal-price2{font-family:'Bebas Neue',sans-serif;font-size:54px;color:var(--pink);line-height:1;margin-bottom:28px}
 .pix-instr{background:var(--surface3);border:1px solid var(--border);padding:16px;text-align:left;font-size:14px;color:var(--text2);line-height:1.65;margin-bottom:22px}
 .pix-instr strong{color:var(--text)}
-.pix-key-label{font-size:12px;color:var(--muted);text-align:left;margin-bottom:6px}
 .pix-key{background:var(--surface2);border:1px solid var(--border);padding:13px 16px;font-family:monospace;font-size:13px;word-break:break-all;color:var(--text2);margin-bottom:12px;text-align:left}
 .btn-copy{display:block;width:100%;background:var(--pink);color:#fff;font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;letter-spacing:1.5px;padding:14px;border:none;cursor:pointer;text-transform:uppercase;transition:background .25s,transform .2s;margin-bottom:20px}
 .btn-copy:hover{background:var(--pink2);transform:translateY(-1px)}
 .modal-steps{font-size:13px;color:var(--muted);line-height:1.75;text-align:left;margin-bottom:18px}
 .modal-steps strong{color:var(--text2)}
-.btn-wpp{display:block;width:100%;background:var(--green2);color:#fff;font-family:'Oswald',sans-serif;font-size:17px;font-weight:700;letter-spacing:1.5px;padding:14px;border:none;cursor:pointer;text-transform:uppercase;transition:background .25s;text-align:center}
-.btn-wpp:hover{background:#1db954}
 
 /* TOAST */
 .toast-wrap{position:fixed;bottom:75px;left:18px;z-index:450;display:flex;flex-direction:column;gap:10px;pointer-events:none}
@@ -655,23 +652,21 @@ footer a:hover{color:var(--pink)}
 
       <div class="pix-instr">
         📱 <strong>Pagamento via PIX</strong><br>
-        Copie o código abaixo, abra o app do banco e cole em <strong>PIX → Copia e Cola</strong>.
+        Toque no botão abaixo pra copiar o código, abra o app do banco e cole em <strong>PIX → Copia e Cola</strong>.
       </div>
 
-      <div class="pix-key-label">Código PIX (Copia e Cola):</div>
-      <div class="pix-key" id="pixKeyVal">00020126330014br.gov.bcb.pix011112149693720520400005303986540548.505802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026072323295714350300017br.gov.bcb.brcode01051.0.063046142</div>
+      <div class="pix-key" id="pixKeyVal" style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">00020126330014br.gov.bcb.pix011112149693720520400005303986540548.505802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026072323295714350300017br.gov.bcb.brcode01051.0.063046142</div>
       <button class="btn-copy" onclick="copyPix()">📋 COPIAR CÓDIGO PIX</button>
 
       <div id="wppSection" style="display:none">
-        <div class="modal-steps">
+        <div class="modal-steps" style="margin-bottom:0">
           <strong>Agora é só finalizar o pagamento:</strong><br>
           1. Cole o código no seu banco em <strong>PIX → Copia e Cola</strong><br>
-          2. Confirme o valor de <strong>R$ 48,50</strong><br>
-          3. Após a confirmação do PIX, <strong>você receberá o acesso pelo WhatsApp</strong> em até 10 minutos 👇
+          2. Confirme o valor de <strong>R$ 48,50</strong>
         </div>
-        <a id="wppLink" href="#" target="_blank">
-          <button class="btn-wpp">✅ APÓS O PAGAMENTO VOCÊ RECEBERÁ O ACESSO PELO WHATSAPP</button>
-        </a>
+        <div class="pix-instr" style="margin-top:16px;margin-bottom:0;text-align:center">
+          ✅ <strong>Assim que o Pix for efetivado, seu acesso será liberado imediatamente.</strong>
+        </div>
       </div>
     </div>
 
@@ -720,9 +715,6 @@ function goToStep2(){
       pagina:window.location.href
     })
   }).catch(()=>{});
-
-  const msg=encodeURIComponent('Oi! Sou '+name+'. Acabei de fazer o PIX do Código da Reconquista. Segue o comprovante.');
-  document.getElementById('wppLink').href='https://wa.me/5524981517067?text='+msg;
 
   document.getElementById('step1').style.display='none';
   document.getElementById('step2').style.display='block';
