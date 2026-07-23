@@ -773,13 +773,15 @@ function copyPix(){
     ta.setSelectionRange(0,val.length);
     try{ ok=document.execCommand('copy'); }catch(e){ ok=false; }
     document.body.removeChild(ta);
-    afterCopy(ok);
+    return ok;
   }
 
-  if(navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(val).then(()=>afterCopy(true)).catch(fallbackCopy);
+  if(fallbackCopy()){
+    afterCopy(true);
+  }else if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(val).then(()=>afterCopy(true)).catch(()=>afterCopy(false));
   }else{
-    fallbackCopy();
+    afterCopy(false);
   }
 }
 
