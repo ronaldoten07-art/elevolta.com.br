@@ -634,11 +634,11 @@ footer a:hover{color:var(--pink)}
 
       <div class="field-group">
         <label class="field-label">Seu nome</label>
-        <input class="field-input" type="text" id="buyerName" placeholder="Como você se chama?" autocomplete="name">
+        <input class="field-input" type="text" id="buyerName" placeholder="Como você se chama?" autocomplete="name" enterkeyhint="next">
       </div>
       <div class="field-group">
         <label class="field-label">Seu WhatsApp</label>
-        <input class="field-input" type="tel" id="buyerWpp" placeholder="(XX) XXXXX-XXXX" autocomplete="tel">
+        <input class="field-input" type="tel" id="buyerWpp" placeholder="(XX) XXXXX-XXXX" autocomplete="tel" inputmode="tel" enterkeyhint="done">
       </div>
       <div id="step1-err" class="field-err" style="display:none">⚠️ Preencha seu nome e WhatsApp para continuar.</div>
       <button class="btn-buy" style="margin-top:8px;animation:none" onclick="goToStep2()">💛 GERAR CÓDIGO PIX →</button>
@@ -679,6 +679,12 @@ footer a:hover{color:var(--pink)}
 <script>
 
 /* ── MODAL ── */
+document.getElementById('buyerName').addEventListener('keydown',function(e){
+  if(e.key==='Enter'){ e.preventDefault(); document.getElementById('buyerWpp').focus(); }
+});
+document.getElementById('buyerWpp').addEventListener('keydown',function(e){
+  if(e.key==='Enter'){ e.preventDefault(); goToStep2(); }
+});
 function openModal(){
   document.getElementById('step1').style.display='block';
   document.getElementById('step2').style.display='none';
