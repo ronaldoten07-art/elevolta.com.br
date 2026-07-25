@@ -270,7 +270,7 @@ footer a:hover{color:var(--pink)}
   </p>
 
   <div class="hero-cta-wrap">
-    <button class="btn-main" onclick="openModal()">💛 QUERO ELE DE VOLTA — R$ 48,50</button>
+    <button class="btn-main" onclick="scrollToOferta()">💛 QUERO ELE DE VOLTA — R$ 48,50</button>
     <span class="hero-tagline">Pagamento único via PIX • Acesso imediato</span>
   </div>
 
@@ -511,7 +511,7 @@ footer a:hover{color:var(--pink)}
 </div>
 
 <!-- ====== PRICING ====== -->
-<div class="pricing-bg">
+<div class="pricing-bg" id="oferta">
   <div class="sec" style="padding-bottom:0;text-align:center;max-width:960px">
     <p class="sec-label">Oferta especial</p>
     <h2 class="sec-title r">GARANTA SEU<br><span style="color:var(--pink2)">ACESSO COMPLETO</span></h2>
@@ -524,7 +524,7 @@ footer a:hover{color:var(--pink)}
     </div>
     <div class="price-body">
       <div class="price-items">
-        <div class="price-row"><span class="ck">✓</span> Plano completo de 7 dias baseado em gatilhos da psicologia masculina</div>
+        <div class="price-row"><span class="ck">✓</span> Plano completo de 7 dias baseado em psicologia masculina que TRAZ ELE DE VOLTA!</div>
         <div class="price-row"><span class="ck">✓</span> Os segredos de como a mente dele processa a distância e o desejo</div>
         <div class="price-row"><span class="ck">✓</span> Scripts que ativam o instinto de conquista masculino em cada situação</div>
         <div class="price-row"><span class="ck">✓</span> 🎁 Bônus: Autoestima e Postura</div>
@@ -540,7 +540,7 @@ footer a:hover{color:var(--pink)}
       <p class="price-note">Pagamento único • Sem mensalidade • Acesso vitalício</p>
 
       <button class="btn-buy" onclick="openModal()">
-        💳 QUERO ELE DE VOLTA VIA PIX
+        💛 QUERO ELE DE VOLTA EM 7 DIAS
       </button>
 
       <div class="pix-meta">
@@ -620,7 +620,7 @@ footer a:hover{color:var(--pink)}
 </footer>
 
 <!-- ====== STICKY MOBILE CTA ====== -->
-<button class="sticky-mob" onclick="openModal()">💛 QUERO ELE DE VOLTA</button>
+<button class="sticky-mob" onclick="scrollToOferta()">💛 QUERO ELE DE VOLTA</button>
 
 <!-- ====== PIX MODAL ====== -->
 <div class="modal-bg" id="pixModal">
@@ -685,6 +685,10 @@ document.getElementById('buyerName').addEventListener('keydown',function(e){
 document.getElementById('buyerWpp').addEventListener('keydown',function(e){
   if(e.key==='Enter'){ e.preventDefault(); goToStep2(); }
 });
+function scrollToOferta(){
+  const el=document.getElementById('oferta');
+  if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
 function openModal(){
   document.getElementById('step1').style.display='block';
   document.getElementById('step2').style.display='none';
