@@ -36,8 +36,7 @@ button{font-family:inherit;touch-action:manipulation}
 img{max-width:100%}
 
 /* URGENCY BAR */
-.urgency-bar{background:linear-gradient(90deg,var(--red),var(--pink),var(--red));background-size:300% 100%;animation:barAnim 4s ease 5;text-align:center;padding:11px 20px;font-size:13px;font-weight:600;letter-spacing:.5px;position:sticky;top:0;z-index:500;line-height:1.4;color:#fff}
-@keyframes barAnim{0%,100%{background-position:0%}50%{background-position:100%}}
+.urgency-bar{background:linear-gradient(90deg,var(--red),var(--pink),var(--red));text-align:center;padding:11px 20px;font-size:13px;font-weight:600;letter-spacing:.5px;position:sticky;top:0;z-index:500;line-height:1.4;color:#fff}
 .urgency-bar .gold{color:#ffe0ea}
 
 /* HERO */
@@ -51,9 +50,9 @@ img{max-width:100%}
 .hero-sub strong{color:var(--text);font-weight:600}
 .hero-cta-wrap{animation:fadeUp .6s ease .3s both;display:flex;flex-direction:column;align-items:center;gap:14px;position:relative;z-index:1}
 .btn-main{display:inline-block;background:linear-gradient(135deg,var(--pink),var(--pink2) 60%,var(--pink3));color:#fff;font-family:'Oswald',sans-serif;font-size:clamp(17px,3vw,22px);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:18px 52px;border:none;cursor:pointer;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,filter .25s;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}
-.btn-main::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transition:left .5s ease}
+.btn-main::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:translateX(-100%);transition:transform .5s ease}
 .btn-main:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(198,35,107,.35);filter:brightness(1.06)}
-.btn-main:hover::after{left:100%}
+.btn-main:hover::after{transform:translateX(100%)}
 .hero-tagline{font-size:13px;color:var(--muted)}
 .trust-strip{display:flex;flex-wrap:wrap;gap:18px 28px;justify-content:center;margin-top:44px;animation:fadeUp .6s ease .45s both;position:relative;z-index:1}
 .trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text2)}
@@ -167,8 +166,10 @@ img{max-width:100%}
 .faq-q:hover{color:var(--pink)}
 .faq-q::after{content:'+';position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:26px;color:var(--pink2);transition:transform .3s ease;font-family:'Bebas Neue',sans-serif}
 .faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg);color:var(--pink)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;font-size:15px;color:var(--text2);line-height:1.75}
-.faq-item.open .faq-a{max-height:300px;padding-bottom:22px}
+.faq-a{display:grid;grid-template-rows:0fr;overflow:hidden;transition:grid-template-rows .35s ease;font-size:15px;color:var(--text2);line-height:1.75}
+.faq-a>div{overflow:hidden;padding-bottom:1px}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-item.open .faq-a>div{padding-bottom:22px}
 
 /* FINAL CTA */
 .final-bg{padding:80px 24px;text-align:center;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(198,35,107,.06) 0%,transparent 65%),var(--bg)}
@@ -270,7 +271,7 @@ footer a:hover{color:var(--pink)}
   </p>
 
   <div class="hero-cta-wrap">
-    <button class="btn-main" onclick="scrollToOferta()">💛 QUERO ELE DE VOLTA — R$ 48,50</button>
+    <button class="btn-main" onclick="scrollToOferta()">💛 QUERO ELE DE VOLTA EM 7 DIAS</button>
     <span class="hero-tagline">Pagamento único via PIX • Acesso imediato</span>
   </div>
 
@@ -290,42 +291,42 @@ footer a:hover{color:var(--pink)}
     <div class="gold-line"></div>
   </div>
   <div class="pain-grid">
-    <div class="pain-card r">
+    <div class="pain-card r" onclick="scrollToOferta()" role="button" tabindex="0" style="cursor:pointer">
       <div class="pain-emoji">😔</div>
       <div>
         <div class="pain-title">A vontade de mandar mensagem</div>
         <div class="pain-desc">Você digita, apaga, digita de novo — e a ansiedade de não saber se deve mandar consome seu dia</div>
       </div>
     </div>
-    <div class="pain-card r2">
+    <div class="pain-card r2" onclick="scrollToOferta()" role="button" tabindex="0" style="cursor:pointer">
       <div class="pain-emoji">🚫</div>
       <div>
         <div class="pain-title">Medo de piorar tudo</div>
         <div class="pain-desc">Toda atitude parece arriscada demais, então você trava e não faz nada — e o tempo passa</div>
       </div>
     </div>
-    <div class="pain-card r3">
+    <div class="pain-card r3" onclick="scrollToOferta()" role="button" tabindex="0" style="cursor:pointer">
       <div class="pain-emoji">💸</div>
       <div>
         <div class="pain-title">Já tentou de tudo sem resultado</div>
         <div class="pain-desc">Conversas, pedidos de desculpa, dar espaço... nada pareceu funcionar de verdade</div>
       </div>
     </div>
-    <div class="pain-card r">
+    <div class="pain-card r" onclick="scrollToOferta()" role="button" tabindex="0" style="cursor:pointer">
       <div class="pain-emoji">💔</div>
       <div>
         <div class="pain-title">A dor não passa</div>
         <div class="pain-desc">Você segue a rotina, mas por dentro ainda dói como se fosse ontem</div>
       </div>
     </div>
-    <div class="pain-card r2">
+    <div class="pain-card r2" onclick="scrollToOferta()" role="button" tabindex="0" style="cursor:pointer">
       <div class="pain-emoji">🤐</div>
       <div>
         <div class="pain-title">Vergonha de pedir ajuda</div>
         <div class="pain-desc">É o tipo de coisa que você carrega sozinha, com medo de julgamento</div>
       </div>
     </div>
-    <div class="pain-card r3">
+    <div class="pain-card r3" onclick="scrollToOferta()" role="button" tabindex="0" style="cursor:pointer">
       <div class="pain-emoji">😞</div>
       <div>
         <div class="pain-title">Acha que não tem mais jeito</div>
@@ -560,31 +561,31 @@ footer a:hover{color:var(--pink)}
   <div class="faq-wrap">
     <div class="faq-item r">
       <button class="faq-q">O método realmente funciona?</button>
-      <div class="faq-a">Sim. O método é baseado em padrões reais de comportamento masculino — não em sorte. Ele organiza, em 7 dias, exatamente o que fazer em cada momento, com resultado comprovado por milhares de mulheres.</div>
+      <div class="faq-a"><div>Sim. O método é baseado em padrões reais de comportamento masculino — não em sorte. Ele organiza, em 7 dias, exatamente o que fazer em cada momento, com resultado comprovado por milhares de mulheres.</div></div>
     </div>
     <div class="faq-item r">
       <button class="faq-q">Em quanto tempo vejo resultado?</button>
-      <div class="faq-a">Os primeiros sinais costumam aparecer já nos 3 primeiros dias de aplicação. O plano completo de 7 dias é onde a maioria das alunas vê a virada acontecer.</div>
+      <div class="faq-a"><div>Os primeiros sinais costumam aparecer já nos 3 primeiros dias de aplicação. O plano completo de 7 dias é onde a maioria das alunas vê a virada acontecer.</div></div>
     </div>
     <div class="faq-item r">
       <button class="faq-q">Preciso fazer alguma coisa complicada?</button>
-      <div class="faq-a">Não. O método é feito só com atitudes e mensagens no momento certo — nada de rituais ou situação constrangedora. Você aplica de onde estiver, com total privacidade.</div>
+      <div class="faq-a"><div>Não. O método é feito só com atitudes e mensagens no momento certo — nada de rituais ou situação constrangedora. Você aplica de onde estiver, com total privacidade.</div></div>
     </div>
     <div class="faq-item r">
       <button class="faq-q">Como recebo o acesso após o pagamento?</button>
-      <div class="faq-a">Assim que o PIX for confirmado, você recebe o link de acesso completo via WhatsApp em poucos minutos. O acesso é vitalício — você pode consultar quando quiser, para sempre.</div>
+      <div class="faq-a"><div>Assim que o PIX for confirmado, você recebe o link de acesso completo via WhatsApp em poucos minutos. O acesso é vitalício — você pode consultar quando quiser, para sempre.</div></div>
     </div>
     <div class="faq-item r">
       <button class="faq-q">E se eu não sentir resultado? Tem garantia?</button>
-      <div class="faq-a">Sim. Você tem 7 dias de garantia total e incondicional. Se por qualquer motivo não ficar satisfeita, basta enviar uma mensagem e devolvemos 100% do valor sem questionar, sem burocracia.</div>
+      <div class="faq-a"><div>Sim. Você tem 7 dias de garantia total e incondicional. Se por qualquer motivo não ficar satisfeita, basta enviar uma mensagem e devolvemos 100% do valor sem questionar, sem burocracia.</div></div>
     </div>
     <div class="faq-item r">
       <button class="faq-q">Minha compra é discreta?</button>
-      <div class="faq-a">Total discrição. O acesso é por link digital, sem identificação do conteúdo. O nome que aparece na transação PIX não revela o produto. Nenhum terceiro saberá o que você adquiriu.</div>
+      <div class="faq-a"><div>Total discrição. O acesso é por link digital, sem identificação do conteúdo. O nome que aparece na transação PIX não revela o produto. Nenhum terceiro saberá o que você adquiriu.</div></div>
     </div>
     <div class="faq-item r">
       <button class="faq-q">Isso funciona pra qualquer situação?</button>
-      <div class="faq-a">Sim. O método cobre desde bloqueio e silêncio até quando ele já está com outra pessoa ou é orgulhoso demais pra dar o primeiro passo — os gatilhos se adaptam a cada caso.</div>
+      <div class="faq-a"><div>Sim. O método cobre desde bloqueio e silêncio até quando ele já está com outra pessoa ou é orgulhoso demais pra dar o primeiro passo — os gatilhos se adaptam a cada caso.</div></div>
     </div>
   </div>
   <div style="height:80px"></div>
@@ -684,6 +685,11 @@ document.getElementById('buyerName').addEventListener('keydown',function(e){
 });
 document.getElementById('buyerWpp').addEventListener('keydown',function(e){
   if(e.key==='Enter'){ e.preventDefault(); goToStep2(); }
+});
+document.querySelectorAll('.pain-card').forEach(card=>{
+  card.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); scrollToOferta(); }
+  });
 });
 function scrollToOferta(){
   const el=document.getElementById('oferta');
