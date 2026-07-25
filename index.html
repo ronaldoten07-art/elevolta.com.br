@@ -36,7 +36,7 @@ button{font-family:inherit;touch-action:manipulation}
 img{max-width:100%}
 
 /* URGENCY BAR */
-.urgency-bar{background:linear-gradient(90deg,var(--red),var(--pink),var(--red));background-size:300% 100%;animation:barAnim 4s ease infinite;text-align:center;padding:11px 20px;font-size:13px;font-weight:600;letter-spacing:.5px;position:sticky;top:0;z-index:500;line-height:1.4;color:#fff}
+.urgency-bar{background:linear-gradient(90deg,var(--red),var(--pink),var(--red));background-size:300% 100%;animation:barAnim 4s ease 5;text-align:center;padding:11px 20px;font-size:13px;font-weight:600;letter-spacing:.5px;position:sticky;top:0;z-index:500;line-height:1.4;color:#fff}
 @keyframes barAnim{0%,100%{background-position:0%}50%{background-position:100%}}
 .urgency-bar .gold{color:#ffe0ea}
 
@@ -266,7 +266,7 @@ footer a:hover{color:var(--pink)}
   </h1>
 
   <p class="hero-sub">
-    Mesmo que ele seja <strong>orgulhoso demais</strong> pra admitir, esteja <strong>com outra pessoa</strong> ou tenha te <strong>bloqueado</strong> — se você quer ele de volta, esse é o método que milhares de mulheres estão usando, com resultados reais em <strong>7 dias de plano.</strong>
+    <strong>Mesmo que ele seja ORGULHOSO demais pra admitir que quer voltar, ou esteja com OUTRA PESSOA, ou tenha até mesmo te BLOQUEADO — existe um caminho de volta. É o método que já ajudou milhares de mulheres a reconquistar quem amam, com resultados reais em apenas 7 dias.</strong>
   </p>
 
   <div class="hero-cta-wrap">
@@ -813,7 +813,13 @@ const buyers=[
   {n:'Rafaela D.',c:'João Pessoa, PB'},
 ];
 let lastIdx=-1;
+function pastHero(){
+  const hero=document.querySelector('.hero');
+  if(!hero) return true;
+  return window.scrollY > hero.offsetHeight * 0.6;
+}
 function showToast(){
+  if(!pastHero()){ setTimeout(showToast,1500); return; }
   let idx;
   do{ idx=Math.floor(Math.random()*buyers.length); }while(idx===lastIdx && buyers.length>1);
   lastIdx=idx;
@@ -829,9 +835,9 @@ function showToast(){
     el.style.transition='all .4s ease';
     setTimeout(()=>el.remove(),400);
   },4500);
-  setTimeout(showToast,7000+Math.random()*6000);
+  setTimeout(showToast,25000+Math.random()*15000);
 }
-setTimeout(showToast,3500);
+setTimeout(showToast,12000);
 
 /* ── SCROLL REVEAL ── */
 const obs=new IntersectionObserver(entries=>{
