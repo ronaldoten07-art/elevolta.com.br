@@ -2,13 +2,13 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Código da Reconquista | Mestre da Reconquista</title>
-<meta name="description" content="O método completo de reconquista em 7 dias. Resultados reais, baseado em como a mente masculina realmente funciona.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Código da Reconquista | O Método dos 7 Dias</title>
+<meta name="description" content="O método completo de reconquista em 7 dias. Plano dia a dia + 8 módulos para cada situação: bloqueio, silêncio, outra pessoa e mais.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700&family=Outfit:wght@400;500;600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700&family=Outfit:wght@400;500;600;700;800&display=optional" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=Outfit:wght@400;500;600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=Outfit:wght@400;500;600;700;800&display=optional" rel="stylesheet"></noscript>
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -19,85 +19,130 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#ffffff;
-  --bg2:#fdf2f6;
-  --pink:#c6236b;
-  --pink2:#e2417e;
-  --pink3:#ff8fb3;
-  --text:#221217;
-  --text2:#6e5860;
-  --muted:#a3919a;
-  --border:rgba(198,35,107,0.22);
-  --border2:rgba(34,18,23,0.08);
+  --vh:1vh;
+  /* Paleta "confiança": papel quente + tinta profunda + terracota + vinho — sem rosa-choque, mais elegante e crível */
+  --paper:#f7f1e6;
+  --cream:#fffbf4;
+  --paper2:#eee3d1;
+  --ink:#241712;
+  --ink2:#4a3b34;
+  --slate:#6d675f;
+  --muted:#9a9088;
+  --terra:#bd6a41;
+  --terra-soft:#dd9a74;
+  --wine:#5c1c30;
+  --wine2:#7a2740;
+  --border:rgba(92,28,48,.16);
+  --border2:rgba(36,23,18,.09);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;touch-action:manipulation}
+body{font-family:'Outfit',sans-serif;background:var(--paper);color:var(--ink);line-height:1.68;font-size:18.5px;touch-action:manipulation;
+  background-image:radial-gradient(circle at 18% 8%, rgba(189,106,65,.10) 0%, transparent 45%), radial-gradient(circle at 88% 92%, rgba(92,28,48,.08) 0%, transparent 50%);}
 button{font-family:inherit;touch-action:manipulation}
 
 .wrap{max-width:640px;margin:0 auto;padding:0 24px}
 
 /* HERO */
-.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 24px;background:radial-gradient(ellipse 70% 55% at 50% 15%,rgba(198,35,107,.07),transparent 60%),var(--bg)}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--pink);margin-bottom:22px;animation:fadeIn .6s ease both}
-.h1{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(32px,8vw,52px);line-height:1.12;max-width:560px;margin-bottom:22px;animation:fadeUp .6s ease .08s both}
-.h1 em{font-style:italic;color:var(--pink)}
-.lead{font-size:clamp(17px,3.6vw,19px);font-weight:600;color:var(--text2);max-width:520px;margin-bottom:36px;line-height:1.6;animation:fadeUp .6s ease .16s both}
-.btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--pink),var(--pink2));color:#fff;font-weight:700;font-size:17px;letter-spacing:.3px;padding:18px 38px;border:none;border-radius:50px;cursor:pointer;box-shadow:0 14px 32px rgba(198,35,107,.32),inset 0 1px 0 rgba(255,255,255,.2);transition:transform .2s,box-shadow .2s}
+.hero{min-height:100vh;min-height:calc(var(--vh,1vh)*100);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 24px}
+.eyebrow{font-size:15px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra);margin-bottom:24px;animation:fadeIn .6s ease both}
+.h1{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(38px,10.5vw,60px);line-height:1.16;max-width:600px;margin-bottom:26px;animation:fadeUp .6s ease .08s both;color:var(--wine)}
+.h1 em{font-style:italic;color:var(--terra)}
+.lead{font-size:clamp(20px,5vw,24px);font-weight:500;color:var(--ink2);max-width:560px;margin-bottom:40px;line-height:1.6;animation:fadeUp .6s ease .16s both}
+.btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--terra),var(--wine2));color:#fff;font-weight:700;font-size:19.5px;letter-spacing:.3px;padding:20px 42px;border:none;border-radius:50px;cursor:pointer;box-shadow:0 14px 32px rgba(92,28,48,.28),inset 0 1px 0 rgba(255,255,255,.2);transition:transform .2s,box-shadow .2s}
 .btn:active{transform:scale(.98)}
-.tag{font-size:13px;color:var(--muted);margin-top:14px;animation:fadeIn .6s ease .3s both}
+.tag{font-size:16px;color:var(--muted);margin-top:16px;animation:fadeIn .6s ease .3s both}
 
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
 /* PROMISE */
-.promise{background:var(--bg2);padding:80px 24px;text-align:center}
-.promise-eyebrow{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--pink);margin-bottom:20px}
-.promise-text{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,5.5vw,36px);line-height:1.32;max-width:560px;margin:0 auto}
+.promise{background:var(--cream);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:70px 24px;text-align:center}
+.promise-eyebrow{font-size:14.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra);margin-bottom:20px}
+.promise-text{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(27px,6.6vw,40px);line-height:1.38;max-width:580px;margin:0 auto;color:var(--wine)}
+
+/* BENEFITS */
+.benefits{padding:70px 24px 20px}
+.bf-eyebrow{font-size:14.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra);text-align:center;margin-bottom:16px}
+.bf-title{font-family:'Newsreader',serif;font-size:clamp(29px,7vw,41px);text-align:center;margin-bottom:16px;color:var(--wine);line-height:1.24}
+.bf-sub{font-size:18px;color:var(--slate);text-align:center;max-width:490px;margin:0 auto 34px;line-height:1.6}
+
+/* Botão que revela os detalhes — só quem quiser saber mais clica */
+.reveal-wrap{text-align:center;margin-bottom:8px}
+.btn-reveal{display:inline-flex;align-items:center;gap:9px;background:var(--cream);border:1.5px solid var(--terra);color:var(--wine);font-weight:700;font-size:17px;padding:16px 30px;border-radius:50px;cursor:pointer}
+.btn-reveal .arrow{transition:transform .25s ease;font-size:15px}
+.btn-reveal.open .arrow{transform:rotate(180deg)}
+
+.details{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.details.open{max-height:6000px}
+.details-inner{padding-top:38px}
+
+.sec-label{display:flex;align-items:center;gap:12px;margin:0 0 18px;font-size:14px;letter-spacing:1.8px;text-transform:uppercase;color:var(--wine);font-weight:700}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border2)}
+.block-gap{margin-bottom:46px}
+
+.day-list{display:flex;flex-direction:column;gap:11px}
+.day-item{display:flex;align-items:flex-start;gap:15px;background:var(--cream);border:1px solid var(--border2);border-radius:15px;padding:17px 18px}
+.day-n{flex-shrink:0;width:44px;height:44px;border-radius:11px;background:var(--paper2);color:var(--wine);display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-weight:600;font-size:19px}
+.day-tx{flex:1}
+.day-tt{font-family:'Newsreader',serif;font-weight:600;font-size:19px;color:var(--ink);line-height:1.3;margin-bottom:4px}
+.day-sb{font-size:15.5px;color:var(--slate);line-height:1.52}
+
+.mod-grid{display:flex;flex-direction:column;gap:11px}
+.mod-item{background:linear-gradient(160deg,var(--wine2) 0%, var(--wine) 85%);border-radius:15px;padding:20px 20px;box-shadow:0 10px 26px rgba(92,28,48,.18)}
+.mod-tag{font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--terra-soft);font-weight:700;margin-bottom:7px}
+.mod-tt{font-family:'Newsreader',serif;font-weight:600;font-size:19.5px;color:#fff;margin-bottom:7px;line-height:1.3}
+.mod-sb{font-size:15.5px;color:#efd9d2;line-height:1.55}
+
+.bonus-box{background:var(--paper2);border:1px solid var(--border);border-radius:16px;padding:26px 22px}
+.bonus-tt{font-family:'Newsreader',serif;font-weight:600;font-size:20.5px;color:var(--wine);margin-bottom:14px}
+.bonus-box ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.bonus-box li{position:relative;padding-left:24px;font-size:16px;line-height:1.55;color:var(--ink2)}
+.bonus-box li::before{content:'✓';position:absolute;left:0;top:0;color:var(--terra);font-weight:700}
 
 /* OFFER */
-.offer{padding:80px 24px;text-align:center}
-.offer-title{font-family:'Newsreader',serif;font-size:clamp(26px,5.5vw,36px);margin-bottom:36px}
-.card{max-width:420px;margin:0 auto;border:1px solid var(--border);box-shadow:0 0 50px rgba(198,35,107,.08)}
-.card-head{background:linear-gradient(135deg,var(--pink),var(--pink2));padding:16px;color:#fff;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
-.card-body{padding:36px 28px}
+.offer{padding:70px 24px 80px;text-align:center}
+.offer-title{font-family:'Newsreader',serif;font-size:clamp(29px,6.6vw,41px);margin-bottom:38px;color:var(--wine)}
+.card{max-width:440px;margin:0 auto;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(92,28,48,.14)}
+.card-head{background:linear-gradient(135deg,var(--terra),var(--wine2));padding:19px;color:#fff;font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.card-body{padding:38px 28px;background:var(--cream)}
 .check{text-align:left;margin-bottom:30px}
-.check div{display:flex;gap:12px;font-size:15px;color:var(--text2);padding:10px 0;border-bottom:1px solid var(--border2)}
+.check div{display:flex;gap:12px;font-size:17.5px;color:var(--ink2);padding:12px 0;border-bottom:1px solid var(--border2);line-height:1.5}
 .check div:last-child{border-bottom:none}
-.ck{color:var(--pink);font-weight:700;flex-shrink:0}
-.old-price{font-size:16px;color:var(--muted);text-decoration:line-through}
-.price{font-family:'Newsreader',serif;font-size:58px;font-weight:600;color:var(--pink);margin:6px 0 20px}
-.price small{font-size:26px}
-.note{font-size:13px;color:var(--muted);margin-bottom:24px}
+.ck{color:var(--terra);font-weight:700;flex-shrink:0}
+.old-price{font-size:18.5px;color:var(--muted);text-decoration:line-through}
+.price{font-family:'Newsreader',serif;font-size:64px;font-weight:600;color:var(--wine);margin:8px 0 22px}
+.price small{font-size:29px}
+.note{font-size:15.5px;color:var(--muted);margin-bottom:26px}
 
 /* TESTIMONIALS */
-.testi{background:var(--bg2);padding:80px 24px}
-.testi-title{font-family:'Newsreader',serif;font-size:clamp(24px,5vw,32px);text-align:center;margin-bottom:44px}
-.t-card{background:#fff;border:1px solid var(--border2);padding:24px 22px;margin-bottom:14px;text-align:left}
-.stars{color:var(--pink2);font-size:13px;letter-spacing:2px;margin-bottom:12px}
-.t-text{font-size:14.5px;color:var(--text2);font-style:italic;line-height:1.65;margin-bottom:16px}
-.t-author{font-weight:700;font-size:13px;color:var(--text)}
-.t-city{font-size:12px;color:var(--muted)}
+.testi{background:var(--cream);border-top:1px solid var(--border2);padding:70px 24px}
+.testi-title{font-family:'Newsreader',serif;font-size:clamp(27px,6vw,36px);text-align:center;margin-bottom:44px;color:var(--wine)}
+.t-card{background:#fff;border:1px solid var(--border2);border-radius:14px;padding:24px 22px;margin-bottom:14px;text-align:left}
+.stars{color:var(--terra);font-size:15px;letter-spacing:2px;margin-bottom:12px}
+.t-text{font-size:17px;color:var(--ink2);font-style:italic;line-height:1.65;margin-bottom:16px}
+.t-author{font-weight:700;font-size:15px;color:var(--ink)}
+.t-city{font-size:13.5px;color:var(--muted)}
 
-footer{background:var(--bg2);border-top:1px solid var(--border2);padding:30px 24px;text-align:center}
-footer p{font-size:11.5px;color:var(--muted);line-height:1.7;max-width:600px;margin:0 auto}
+footer{background:var(--paper2);border-top:1px solid var(--border2);padding:32px 24px;text-align:center}
+footer p{font-size:13px;color:var(--muted);line-height:1.7;max-width:600px;margin:0 auto}
 
-.sticky{display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,var(--pink),var(--pink2));padding:15px 20px;z-index:400;font-weight:700;font-size:16px;color:#fff;border:none;cursor:pointer;width:100%}
-@media(max-width:640px){.sticky{display:block}body{padding-bottom:56px}}
+.sticky{display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,var(--terra),var(--wine2));padding:17px 20px;z-index:400;font-weight:700;font-size:18px;color:#fff;border:none;cursor:pointer;width:100%}
+@media(max-width:640px){.sticky{display:block}body{padding-bottom:58px}}
 
 /* MODAL */
-.modal-bg{position:fixed;inset:0;background:rgba(34,18,23,.72);z-index:600;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-bg{position:fixed;inset:0;background:rgba(36,23,18,.72);z-index:600;display:none;align-items:center;justify-content:center;padding:20px}
 .modal-bg.on{display:flex}
-.modal{background:#fff;max-width:420px;width:100%;padding:40px 30px;text-align:center;position:relative;max-height:90svh;overflow-y:auto;box-shadow:0 20px 60px rgba(34,18,23,.25)}
-.modal-x{position:absolute;top:12px;right:16px;background:none;border:none;font-size:24px;color:var(--muted);cursor:pointer}
-.modal-h{font-family:'Newsreader',serif;font-size:26px;margin-bottom:6px}
-.modal-price{font-family:'Newsreader',serif;font-size:44px;color:var(--pink);margin-bottom:26px}
+.modal{background:#fff;max-width:430px;width:100%;border-radius:18px;padding:42px 30px;text-align:center;position:relative;max-height:90vh;max-height:calc(var(--vh,1vh)*90);overflow-y:auto;box-shadow:0 20px 60px rgba(36,23,18,.25)}
+.modal-x{position:absolute;top:14px;right:16px;background:none;border:none;font-size:26px;color:var(--muted);cursor:pointer}
+.modal-h{font-family:'Newsreader',serif;font-size:29px;margin-bottom:6px;color:var(--wine)}
+.modal-price{font-family:'Newsreader',serif;font-size:47px;color:var(--wine);margin-bottom:26px}
 .field-group{text-align:left;margin-bottom:14px}
-.field-label{display:block;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text2);margin-bottom:6px}
-.field-input{display:block;width:100%;background:var(--bg2);border:1px solid var(--border);color:var(--text);font-size:16px;padding:13px 15px;outline:none}
-.field-input:focus{border-color:var(--pink2)}
-.field-err{background:rgba(179,24,79,.08);border:1px solid rgba(179,24,79,.3);color:#b3184f;font-size:13px;padding:9px 12px;margin-bottom:12px}
-.btn-copy{display:block;width:100%;background:var(--pink);color:#fff;font-weight:700;font-size:15px;padding:14px;border:none;cursor:pointer;margin-bottom:16px}
-.confirm-msg{background:var(--bg2);border:1px solid var(--border);padding:16px;font-size:14px;color:var(--text2);line-height:1.6}
+.field-label{display:block;font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--ink2);margin-bottom:6px}
+.field-input{display:block;width:100%;background:var(--paper);border:1px solid var(--border);border-radius:10px;color:var(--ink);font-size:17px;padding:14px 15px;outline:none}
+.field-input:focus{border-color:var(--terra)}
+.field-err{background:rgba(179,24,79,.08);border:1px solid rgba(179,24,79,.3);border-radius:10px;color:#b3184f;font-size:14.5px;padding:10px 12px;margin-bottom:12px}
+.btn-copy{display:block;width:100%;background:var(--wine);color:#fff;font-weight:700;font-size:17px;padding:15px;border:none;border-radius:10px;cursor:pointer;margin-bottom:16px}
+.confirm-msg{background:var(--paper);border:1px solid var(--border);border-radius:10px;padding:17px;font-size:15.5px;color:var(--ink2);line-height:1.6}
 </style>
 </head>
 <body>
@@ -119,6 +164,64 @@ footer p{font-size:11.5px;color:var(--muted);line-height:1.7;max-width:600px;mar
   <p class="promise-text">Em 7 dias, você vai aplicar o método que faz ele voltar a te procurar — sem implorar, sem parecer desesperada, sem competir com ninguém. Só entendendo exatamente o que se passa na cabeça dele.</p>
 </section>
 
+<!-- BENEFITS / DESEJO -->
+<section class="benefits">
+  <p class="bf-eyebrow">O que vem dentro do método</p>
+  <h2 class="bf-title">Um plano pra cada dia. Uma resposta pra cada situação.</h2>
+  <p class="bf-sub">Nada de fórmula genérica. É um passo a passo completo — e um módulo específico pra exatamente o que você está vivendo agora.</p>
+
+  <div class="reveal-wrap">
+    <button class="btn-reveal" id="revealBtn" onclick="toggleDetails()">
+      <span id="revealTxt">Ver tudo o que tem dentro</span> <span class="arrow">▾</span>
+    </button>
+  </div>
+
+  <div class="details" id="detailsBox">
+  <div class="wrap details-inner" style="padding:0 24px">
+    <div class="block-gap">
+      <div class="sec-label">Plano estratégico de 7 dias</div>
+      <div class="day-list">
+        <div class="day-item"><span class="day-n">1</span><span class="day-tx"><span class="day-tt">Corte Energético + Silêncio Magnético</span><span class="day-sb">A decisão que muda tudo — e o desaparecimento estratégico que ativa o alerta de perda na mente dele.</span></span></div>
+        <div class="day-item"><span class="day-n">2</span><span class="day-tx"><span class="day-tt">Reconstrução Interior</span><span class="day-sb">O inventário emocional que quebra o padrão de aceitar menos do que você merece.</span></span></div>
+        <div class="day-item"><span class="day-n">3</span><span class="day-tx"><span class="day-tt">Reset Estético</span><span class="day-sb">A mulher nova no espelho: a mudança que obriga o cérebro dele a te reavaliar.</span></span></div>
+        <div class="day-item"><span class="day-n">4</span><span class="day-tx"><span class="day-tt">Universo Expandido + Presença Estratégica</span><span class="day-sb">Uma vida tão cheia que ele começa a sentir que está perdendo o filme.</span></span></div>
+        <div class="day-item"><span class="day-n">5</span><span class="day-tx"><span class="day-tt">Reaproximação Invertida</span><span class="day-sb">As 3 regras pra fazer ele caminhar até você — nas suas condições.</span></span></div>
+        <div class="day-item"><span class="day-n">6</span><span class="day-tx"><span class="day-tt">O Encontro do Poder</span><span class="day-sb">Como conduzir a conversa que decide tudo, sem entregar o controle da situação.</span></span></div>
+        <div class="day-item"><span class="day-n">7</span><span class="day-tx"><span class="day-tt">Selando a Reconquista</span><span class="day-sb">O teste das 3 coerências pra saber se ele merece — ou não — voltar a fazer parte da sua vida.</span></span></div>
+      </div>
+    </div>
+
+    <div class="block-gap">
+      <div class="sec-label">8 módulos pra cada situação</div>
+      <div class="mod-grid">
+        <div class="mod-item"><div class="mod-tag">Módulo 1 · Ele bloqueou</div><div class="mod-tt">O gesto silencioso que faz ele tirar o bloqueio sozinho</div><div class="mod-sb">O protocolo dos 21 dias, fase a fase.</div></div>
+        <div class="mod-item"><div class="mod-tag">Módulo 2 · Visualizou e não respondeu</div><div class="mod-tt">A mensagem que ele não consegue deixar no vácuo</div><div class="mod-sb">A regra das 72 horas e a técnica do gancho neutro.</div></div>
+        <div class="mod-item"><div class="mod-tag">Módulo 3 · Ele pediu um tempo</div><div class="mod-tt">A resposta que transforma o "tempo" dele em medo de te perder</div><div class="mod-sb">A resposta-mestre + o plano dos 30 dias.</div></div>
+        <div class="mod-item"><div class="mod-tag">Módulo 4 · Ele está com outra</div><div class="mod-tt">O movimento que faz ele te comparar com ela — até não aguentar</div><div class="mod-sb">A verdade sobre o ricochete e a quarentena de 90 dias.</div></div>
+        <div class="mod-item"><div class="mod-tag">Módulo 5 · Scripts prontos</div><div class="mod-tt">A lei que faz qualquer frase funcionar</div><div class="mod-sb">Textos prontos pra reabrir contato, marcar encontro e manter o controle.</div></div>
+        <div class="mod-item"><div class="mod-tag">Módulo 6 · De descartada pra desejada</div><div class="mod-tt">A virada interna que muda como ele te enxerga</div><div class="mod-sb">Os 4 pilares do reposicionamento emocional e estético.</div></div>
+        <div class="mod-item"><div class="mod-tag">Módulo 7 · Fazer ele se arrepender</div><div class="mod-tt">Como o arrependimento bate nele sem você mover um dedo</div><div class="mod-sb">A estratégia dos marcos visíveis nos próximos 30 dias.</div></div>
+        <div class="mod-item"><div class="mod-tag">Módulo 8 · Destruir o ego dele</div><div class="mod-tt">Como tirar dele o poder que ele acha que tem sobre você</div><div class="mod-sb">Neutralidade, esquecimento estratégico e o olhar do não-reconhecimento.</div></div>
+      </div>
+    </div>
+
+    <div class="block-gap">
+      <div class="sec-label">Direto ao ponto</div>
+      <div class="bonus-box">
+        <div class="bonus-tt">Tudo isso, organizado pra você aplicar hoje</div>
+        <ul>
+          <li>Manhã, tarde e noite — ação específica pra cada momento do dia, sem enrolação.</li>
+          <li>O porquê por trás de cada passo — o princípio psicológico explicado de forma simples.</li>
+          <li>Frases prontas pra cada mensagem, e as que você NUNCA deve mandar.</li>
+          <li>Armadilhas que sabotam tudo — pra você não estragar em uma noite o que construiu em 7 dias.</li>
+          <li>🎁 Bônus: Manifesto & Regras de Ouro do Código, pra reler sempre que precisar.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
 <!-- OFFER -->
 <section class="offer" id="oferta">
   <h2 class="offer-title">Garanta seu acesso completo</h2>
@@ -127,9 +230,9 @@ footer p{font-size:11.5px;color:var(--muted);line-height:1.7;max-width:600px;mar
     <div class="card-body">
       <div class="check">
         <div><span class="ck">✓</span> Plano completo de 7 dias baseado em psicologia masculina que TRAZ ELE DE VOLTA!</div>
-        <div><span class="ck">✓</span> Os segredos de como a mente dele processa a distância e o desejo</div>
-        <div><span class="ck">✓</span> Scripts que ativam o instinto de conquista masculino em cada situação</div>
-        <div><span class="ck">✓</span> 🎁 Bônus: Autoestima e Postura</div>
+        <div><span class="ck">✓</span> 8 módulos pra qualquer cenário: bloqueio, silêncio, tempo, outra pessoa e mais</div>
+        <div><span class="ck">✓</span> Scripts prontos que ativam o instinto de conquista masculino em cada situação</div>
+        <div><span class="ck">✓</span> 🎁 Bônus: Manifesto, Regras de Ouro e Autoestima e Postura</div>
         <div><span class="ck">✓</span> Garantia incondicional de 7 dias</div>
       </div>
       <div class="old-price">De R$ 97,00</div>
@@ -197,7 +300,7 @@ footer p{font-size:11.5px;color:var(--muted);line-height:1.7;max-width:600px;mar
     <div id="step2" style="display:none">
       <h3 class="modal-h">Pague via PIX</h3>
       <div class="modal-price">R$ 48,50</div>
-      <p style="font-size:14px;color:var(--text2);margin-bottom:20px">Toque no botão abaixo pra copiar o código, abra o app do banco e cole em <strong>PIX → Copia e Cola</strong>.</p>
+      <p style="font-size:15px;color:var(--ink2);margin-bottom:20px">Toque no botão abaixo pra copiar o código, abra o app do banco e cole em <strong>PIX → Copia e Cola</strong>.</p>
       <div id="pixKeyVal" style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">00020126330014br.gov.bcb.pix011112149693720520400005303986540548.505802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026072323295714350300017br.gov.bcb.brcode01051.0.063046142</div>
       <button class="btn-copy" onclick="copyPix()">📋 COPIAR CÓDIGO PIX</button>
       <div id="confirmMsg" style="display:none" class="confirm-msg">
@@ -208,6 +311,23 @@ footer p{font-size:11.5px;color:var(--muted);line-height:1.7;max-width:600px;mar
 </div>
 
 <script>
+/* Fix de altura de viewport para o navegador in-app do TikTok (evita saltos de layout) */
+function setVH(){
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', vh + 'px');
+}
+setVH();
+window.addEventListener('resize', setVH);
+window.addEventListener('orientationchange', function(){ setTimeout(setVH, 100); });
+
+function toggleDetails(){
+  const box=document.getElementById('detailsBox');
+  const btn=document.getElementById('revealBtn');
+  const txt=document.getElementById('revealTxt');
+  const isOpen=box.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  txt.textContent = isOpen ? 'Ver menos' : 'Ver tudo o que tem dentro';
+}
 function scrollToOferta(){
   const el=document.getElementById('oferta');
   if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
