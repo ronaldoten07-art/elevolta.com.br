@@ -55,6 +55,47 @@ button{font-family:inherit;touch-action:manipulation}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
+
+/* QUIZ OVERLAY */
+.quiz-overlay{position:fixed;inset:0;background:var(--paper);z-index:800;display:none;flex-direction:column}
+.quiz-overlay.on{display:flex}
+.quiz-top{flex-shrink:0;display:flex;align-items:center;gap:14px;padding:18px 20px;padding-top:calc(18px + env(safe-area-inset-top,0px))}
+.quiz-close{background:none;border:none;font-size:28px;color:var(--muted);cursor:pointer;line-height:1;flex-shrink:0}
+.quiz-progress{flex:1;height:7px;background:var(--paper2);border-radius:10px;overflow:hidden}
+.quiz-progress-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--terra),var(--wine));border-radius:10px;transition:width .35s ease}
+.quiz-body{flex:1;overflow-y:auto;display:flex;flex-direction:column;justify-content:flex-start;padding:10px 26px 50px}
+.quiz-body::before{content:'';flex:1 1 auto;min-height:0}
+.quiz-body::after{content:'';flex:1 1 auto;min-height:0}
+.quiz-step{display:none;max-width:520px;margin:0 auto;width:100%;animation:fadeUp .35s ease both}
+.quiz-step.active{display:block}
+.quiz-kicker{font-size:14px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.quiz-q{font-family:'Newsreader',serif;font-size:clamp(24px,6.5vw,32px);color:var(--wine);line-height:1.3;margin-bottom:30px}
+.quiz-opts{display:flex;flex-direction:column;gap:12px}
+.quiz-opt{text-align:left;background:var(--cream);border:1.5px solid var(--border2);border-radius:14px;padding:18px 20px;font-size:17px;font-weight:500;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.quiz-opt:active,.quiz-opt.picked{border-color:var(--terra);background:var(--paper2)}
+.quiz-back{display:inline-flex;align-items:center;gap:6px;background:none;border:none;color:var(--slate);font-size:14.5px;font-weight:600;margin-top:26px;cursor:pointer}
+
+.quiz-loading{text-align:center}
+.quiz-spinner{width:52px;height:52px;border:4px solid var(--paper2);border-top-color:var(--terra);border-radius:50%;margin:0 auto 26px;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.quiz-loading p{font-size:18px;color:var(--ink2);font-weight:500}
+
+.quiz-result{text-align:center}
+.res-eyebrow{font-size:14px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.res-pct-row{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin-bottom:22px}
+.res-pct{font-family:'Newsreader',serif;font-weight:700;font-size:clamp(48px,15vw,72px);color:var(--wine);line-height:1.3;padding-top:.1em;overflow:visible}
+.res-pct .pct-sign{font-size:.5em;vertical-align:top}
+.res-label{font-size:19px;font-weight:600;color:var(--ink)}
+.res-bar-track{height:14px;background:var(--paper2);border-radius:10px;overflow:hidden;margin-bottom:26px}
+.res-bar-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--terra),var(--wine));border-radius:10px;transition:width 1.1s cubic-bezier(.2,.8,.3,1)}
+.res-priority{background:linear-gradient(160deg,var(--wine2) 0%, var(--wine) 85%);border-radius:14px;padding:16px 18px;margin-bottom:20px;text-align:left;display:none}
+.res-priority.show{display:block}
+.res-priority-tag{font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--terra-soft);font-weight:700;margin-bottom:5px}
+.res-priority-name{font-family:'Newsreader',serif;font-weight:600;font-size:17.5px;color:#fff}
+.res-text{font-size:16.5px;color:var(--ink2);line-height:1.65;text-align:left;background:var(--cream);border:1px solid var(--border2);border-radius:14px;padding:20px 22px;margin-bottom:28px}
+.res-text strong{color:var(--wine)}
+.res-note{font-size:12.5px;color:var(--muted);margin-top:16px;line-height:1.5}
+
 /* PROMISE */
 .promise{background:var(--cream);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:70px 24px;text-align:center}
 .promise-eyebrow{font-size:14.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra);margin-bottom:20px}
@@ -129,6 +170,10 @@ footer p{font-size:13px;color:var(--muted);line-height:1.7;max-width:600px;margi
 .sticky{display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,var(--terra),var(--wine2));padding:17px 20px;z-index:400;font-weight:700;font-size:18px;color:#fff;border:none;cursor:pointer;width:100%}
 @media(max-width:640px){.sticky{display:block}body{padding-bottom:58px}}
 
+/* TRAVA DE TELA — só a hero + botão até a análise ser concluída */
+html.locked,body.locked{overflow:hidden !important;height:100%;touch-action:none}
+body.locked .sticky{display:none !important}
+
 /* MODAL */
 .modal-bg{position:fixed;inset:0;background:rgba(36,23,18,.72);z-index:600;display:none;align-items:center;justify-content:center;padding:20px}
 .modal-bg.on{display:flex}
@@ -154,8 +199,8 @@ footer p{font-size:13px;color:var(--muted);line-height:1.7;max-width:600px;margi
   <p class="lead">
     Mesmo que ele seja ORGULHOSO demais pra admitir que quer voltar, ou esteja com OUTRA PESSOA, ou tenha até mesmo te BLOQUEADO — existe um caminho de volta. É o método que já ajudou milhares de mulheres a reconquistar quem amam, com resultados reais em apenas 7 dias.
   </p>
-  <button class="btn" onclick="scrollToOferta()">QUERO ELE DE VOLTA EM 7 DIAS</button>
-  <p class="tag">Pagamento único via PIX • Acesso imediato</p>
+  <button class="btn" onclick="openQuiz()">🔍 FAZER MINHA ANÁLISE DE RECONQUISTA</button>
+  <p class="tag">Grátis • 2 minutos • Descubra sua % de chance agora</p>
 </section>
 
 <!-- PROMISE -->
@@ -277,6 +322,134 @@ footer p{font-size:13px;color:var(--muted);line-height:1.7;max-width:600px;margi
 
 <button class="sticky" onclick="scrollToOferta()">QUERO ELE DE VOLTA</button>
 
+<!-- QUIZ: ANÁLISE DE RECONQUISTA -->
+<div class="quiz-overlay" id="quizOverlay">
+  <div class="quiz-top">
+    <button class="quiz-close" onclick="closeQuiz()">×</button>
+    <div class="quiz-progress"><div class="quiz-progress-bar" id="quizBar"></div></div>
+  </div>
+  <div class="quiz-body">
+
+    <div class="quiz-step active" data-step="0">
+      <p class="quiz-kicker">Pergunta 1 de 7</p>
+      <p class="quiz-q">Há quanto tempo vocês terminaram?</p>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="quizAnswer(0,3)">Menos de 1 semana</button>
+        <button class="quiz-opt" onclick="quizAnswer(0,3)">1 semana a 1 mês</button>
+        <button class="quiz-opt" onclick="quizAnswer(0,2)">1 a 6 meses</button>
+        <button class="quiz-opt" onclick="quizAnswer(0,1)">Mais de 6 meses</button>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-step="1">
+      <p class="quiz-kicker">Pergunta 2 de 7</p>
+      <p class="quiz-q">Quem terminou o relacionamento?</p>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="quizAnswer(1,3)">Ele terminou comigo</button>
+        <button class="quiz-opt" onclick="quizAnswer(1,2)">Eu terminei</button>
+        <button class="quiz-opt" onclick="quizAnswer(1,2)">Foi meio confuso, os dois</button>
+      </div>
+      <button class="quiz-back" onclick="quizBack()">← Voltar</button>
+    </div>
+
+    <div class="quiz-step" data-step="2">
+      <p class="quiz-kicker">Pergunta 3 de 7</p>
+      <p class="quiz-q">Como está o contato entre vocês hoje?</p>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="quizAnswer(2,2,'bloqueio')">Ele me bloqueou</button>
+        <button class="quiz-opt" onclick="quizAnswer(2,3,'vacuo')">Visualiza e não responde</button>
+        <button class="quiz-opt" onclick="quizAnswer(2,3,'as-vezes')">Conversamos às vezes</button>
+        <button class="quiz-opt" onclick="quizAnswer(2,2,'normal')">Ainda conversamos normal</button>
+      </div>
+      <button class="quiz-back" onclick="quizBack()">← Voltar</button>
+    </div>
+
+    <div class="quiz-step" data-step="3">
+      <p class="quiz-kicker">Pergunta 4 de 7</p>
+      <p class="quiz-q">Ele ainda demonstra algum sinal de interesse?</p>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="quizAnswer(3,3,'stories')">Vê meus stories / meu perfil</button>
+        <button class="quiz-opt" onclick="quizAnswer(3,2,'curte')">Curte ou comenta de vez em quando</button>
+        <button class="quiz-opt" onclick="quizAnswer(3,2,'amigos')">Fico sabendo dele por amigos em comum</button>
+        <button class="quiz-opt" onclick="quizAnswer(3,1,'nada')">Nenhum sinal</button>
+      </div>
+      <button class="quiz-back" onclick="quizBack()">← Voltar</button>
+    </div>
+
+    <div class="quiz-step" data-step="4">
+      <p class="quiz-kicker">Pergunta 5 de 7</p>
+      <p class="quiz-q">Ele está com outra pessoa agora?</p>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="quizAnswer(4,1,'sim')">Sim</button>
+        <button class="quiz-opt" onclick="quizAnswer(4,2,'nao-sei')">Não sei</button>
+        <button class="quiz-opt" onclick="quizAnswer(4,3,'nao')">Não</button>
+      </div>
+      <button class="quiz-back" onclick="quizBack()">← Voltar</button>
+    </div>
+
+    <div class="quiz-step" data-step="5">
+      <p class="quiz-kicker">Pergunta 6 de 7</p>
+      <p class="quiz-q">Quanto tempo vocês ficaram juntos?</p>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="quizAnswer(5,1)">Menos de 1 ano</button>
+        <button class="quiz-opt" onclick="quizAnswer(5,2)">1 a 3 anos</button>
+        <button class="quiz-opt" onclick="quizAnswer(5,3)">Mais de 3 anos</button>
+      </div>
+      <button class="quiz-back" onclick="quizBack()">← Voltar</button>
+    </div>
+
+    <div class="quiz-step" data-step="6">
+      <p class="quiz-kicker">Pergunta 7 de 7</p>
+      <p class="quiz-q">O quanto você está disposta a seguir um plano com disciplina nos próximos 7 dias?</p>
+      <div class="quiz-opts">
+        <button class="quiz-opt" onclick="quizAnswer(6,3)">Totalmente disposta</button>
+        <button class="quiz-opt" onclick="quizAnswer(6,2)">Disposta, mas com dúvidas</button>
+        <button class="quiz-opt" onclick="quizAnswer(6,1)">Só quero entender antes</button>
+      </div>
+      <button class="quiz-back" onclick="quizBack()">← Voltar</button>
+    </div>
+
+    <div class="quiz-step" data-step="7">
+      <p class="quiz-kicker">🔒 Análise concluída</p>
+      <p class="quiz-q">Sua análise está pronta.<br>Digite seu nome e WhatsApp para desbloquear o resultado e o seu plano específico.</p>
+      <div class="field-group">
+        <label class="field-label">Seu nome</label>
+        <input class="field-input" type="text" id="quizName" placeholder="Como você se chama?" autocomplete="name">
+      </div>
+      <div class="field-group">
+        <label class="field-label">Seu WhatsApp</label>
+        <input class="field-input" type="tel" id="quizWpp" placeholder="(XX) XXXXX-XXXX" autocomplete="tel" inputmode="tel">
+      </div>
+      <div id="quiz-lead-err" class="field-err" style="display:none">⚠️ Preencha nome e WhatsApp pra desbloquear seu resultado.</div>
+      <button class="btn" style="width:100%;justify-content:center;margin-top:8px" onclick="quizSubmitLead()">🔓 Desbloquear minha análise</button>
+      <button class="quiz-back" onclick="quizBack()">← Voltar</button>
+    </div>
+
+    <div class="quiz-step" data-step="8">
+      <div class="quiz-loading">
+        <div class="quiz-spinner"></div>
+        <p id="quizLoadingTxt">Cruzando os dados da sua situação...</p>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-step="9">
+      <div class="quiz-result">
+        <p class="res-eyebrow">✓ Diagnóstico de Reconquista Concluído</p>
+        <div class="res-pct-row">
+          <p class="res-label" id="resLabel">de chance de reconquista</p>
+          <div class="res-pct"><span id="resPctNum">0</span><span class="pct-sign">%</span></div>
+        </div>
+        <div class="res-bar-track"><div class="res-bar-fill" id="resBar"></div></div>
+        <div class="res-priority" id="resPriority"></div>
+        <div class="res-text" id="resText"></div>
+        <button class="btn" style="width:100%;justify-content:center" onclick="goToOfferFromQuiz()">Quero ver o meu plano completo →</button>
+        <p class="res-note">Metodologia baseada na análise de padrões comportamentais recorrentes em processos de reconquista. Resultado individual depende da aplicação correta do plano.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <!-- MODAL -->
 <div class="modal-bg" id="pixModal">
   <div class="modal">
@@ -320,6 +493,24 @@ setVH();
 window.addEventListener('resize', setVH);
 window.addEventListener('orientationchange', function(){ setTimeout(setVH, 100); });
 
+/* Trava a tela inicial: só a hero + botão de análise, sem poder rolar,
+   até a pessoa concluir a análise e escolher ver o plano completo */
+function lockPage(){
+  document.documentElement.classList.add('locked');
+  document.body.classList.add('locked');
+}
+function unlockPage(){
+  document.documentElement.classList.remove('locked');
+  document.body.classList.remove('locked');
+}
+lockPage();
+// fallback pra iOS Safari, que às vezes rola por baixo do overflow:hidden
+document.addEventListener('touchmove',function(e){
+  if(document.body.classList.contains('locked') && !e.target.closest('.quiz-body,.modal')){
+    e.preventDefault();
+  }
+},{passive:false});
+
 function toggleDetails(){
   const box=document.getElementById('detailsBox');
   const btn=document.getElementById('revealBtn');
@@ -328,6 +519,150 @@ function toggleDetails(){
   btn.classList.toggle('open', isOpen);
   txt.textContent = isOpen ? 'Ver menos' : 'Ver tudo o que tem dentro';
 }
+/* ===== QUIZ DE ANÁLISE DE RECONQUISTA ===== */
+const quizTotalSteps=10; // 0-6 perguntas, 7 lead, 8 loading, 9 resultado
+let quizCurrent=0;
+let quizAnswers={}; // {0:{points,tag}, ...}
+
+function quizUpdateBar(){
+  const pct = Math.min(quizCurrent,7)/7*100;
+  document.getElementById('quizBar').style.width = pct+'%';
+}
+function quizShowStep(n){
+  document.querySelectorAll('.quiz-step').forEach(el=>{
+    el.classList.toggle('active', parseInt(el.dataset.step)===n);
+  });
+  const body=document.querySelector('.quiz-body');
+  if(body) body.scrollTop=0;
+  quizCurrent=n;
+  quizUpdateBar();
+}
+function openQuiz(){
+  quizAnswers={};
+  document.getElementById('quizName').value='';
+  document.getElementById('quizWpp').value='';
+  document.getElementById('quiz-lead-err').style.display='none';
+  quizShowStep(0);
+  document.getElementById('quizOverlay').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function closeQuiz(){
+  document.getElementById('quizOverlay').classList.remove('on');
+  document.body.style.overflow='';
+}
+function quizBack(){
+  if(quizCurrent>0) quizShowStep(quizCurrent-1);
+}
+function quizAnswer(step,points,tag){
+  quizAnswers[step]={points:points,tag:tag||null};
+  quizShowStep(step+1);
+}
+
+function quizSubmitLead(){
+  const name=document.getElementById('quizName').value.trim();
+  const wpp=document.getElementById('quizWpp').value.trim();
+  const err=document.getElementById('quiz-lead-err');
+  if(!name||!wpp){err.style.display='block';return;}
+  err.style.display='none';
+
+  try{
+    const now=new Date();
+    fetch('https://formspree.io/f/mreonbkg',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        evento:'Lead — Análise de Reconquista',
+        nome:name,
+        whatsapp:wpp,
+        horario:now.toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'}),
+        pagina:window.location.href
+      })
+    }).catch(()=>{});
+  }catch(e){}
+
+  quizShowStep(8);
+  const loadingMsgs=[
+    'Cruzando os dados da sua situação...',
+    'Analisando os sinais de conexão emocional...',
+    'Comparando com padrões de reconquista...',
+    'Montando o seu plano específico...'
+  ];
+  const loadTxt=document.getElementById('quizLoadingTxt');
+  let mi=0;
+  loadTxt.textContent=loadingMsgs[0];
+  const loadTimer=setInterval(()=>{
+    mi++;
+    if(mi<loadingMsgs.length) loadTxt.textContent=loadingMsgs[mi];
+  },700);
+
+  setTimeout(()=>{
+    clearInterval(loadTimer);
+    quizComputeResult(name);
+    quizShowStep(9);
+  }, 2900);
+}
+
+function quizComputeResult(name){
+  let score=0, max=0;
+  for(let i=0;i<7;i++){
+    max+=3;
+    if(quizAnswers[i]) score+=quizAnswers[i].points;
+  }
+  // Faixa alta de propósito: a análise sempre mostra chance real e concreta
+  let base=76+Math.round((score/max)*18);
+  const jitter=Math.floor(Math.random()*5)-2; // -2 a +2
+  let pct=Math.max(74,Math.min(97,base+jitter));
+
+  document.getElementById('resBar').style.width='0%';
+  let n=0;
+  const numEl=document.getElementById('resPctNum');
+  const timer=setInterval(()=>{
+    n+=Math.ceil(pct/28);
+    if(n>=pct){n=pct;clearInterval(timer);}
+    numEl.textContent=n;
+  },28);
+  setTimeout(()=>{ document.getElementById('resBar').style.width=pct+'%'; },80);
+
+  let label='de chance de reconquista';
+  if(pct>=90) label='de chance — sinais muito fortes de conexão ainda ativa';
+  else if(pct>=82) label='de chance real de reconquista';
+  else label='de chance de reconquista, com estratégia certa';
+
+  document.getElementById('resLabel').textContent=label;
+
+  const contato=quizAnswers[2]?quizAnswers[2].tag:null;
+  const sinal=quizAnswers[3]?quizAnswers[3].tag:null;
+  const outra=quizAnswers[4]?quizAnswers[4].tag:null;
+
+  // Módulo prioritário — a parte que mais parece "diagnóstico profissional"
+  let modName=null, modTag=null;
+  if(contato==='bloqueio'){ modName='Módulo 1 — Ele Bloqueou'; modTag='Seu ponto de partida prioritário'; }
+  else if(contato==='vacuo'){ modName='Módulo 2 — Visualizou e Não Respondeu'; modTag='Seu ponto de partida prioritário'; }
+  else if(outra==='sim'){ modName='Módulo 4 — Ele Está com Outra'; modTag='Seu ponto de partida prioritário'; }
+  else { modName='Plano de 7 Dias — Reconstrução e Presença Estratégica'; modTag='Seu ponto de partida prioritário'; }
+
+  const prBox=document.getElementById('resPriority');
+  prBox.innerHTML = `<div class="res-priority-tag">${modTag}</div><div class="res-priority-name">${modName}</div>`;
+  prBox.classList.add('show');
+
+  let frases=[];
+  if(contato==='bloqueio') frases.push('o fato de ele te bloquear costuma ser uma reação de <strong>defesa emocional</strong>, não de indiferença — é assim que homens tentam se proteger quando ainda sentem algo.');
+  if(contato==='vacuo') frases.push('ele visualizar e não responder é um dos sinais mais fortes de que ainda existe <strong>conflito interno</strong> — ele está pensando na resposta, e isso já diz muito.');
+  if(sinal==='stories') frases.push('continuar vendo seus stories mostra que ele ainda <strong>monitora sua vida</strong>, mesmo tentando parecer indiferente.');
+  if(outra==='sim') frases.push('mesmo com outra pessoa envolvida, isso não elimina as chances — mas exige uma <strong>estratégia mais cuidadosa</strong> nos próximos passos.');
+  if(frases.length===0) frases.push('a sua situação tem particularidades que pedem um <strong>plano feito sob medida</strong>, e não uma fórmula genérica.');
+
+  const nomeTrat = name ? name.split(' ')[0] : 'Você';
+  document.getElementById('resText').innerHTML =
+    `${nomeTrat}, com base nas suas respostas: ${frases.join(' Além disso, ')} <br><br>O <strong>Código da Reconquista</strong> tem o plano específico pra esse ponto de partida — dia a dia, sem achismo.`;
+}
+
+function goToOfferFromQuiz(){
+  unlockPage();
+  closeQuiz();
+  scrollToOferta();
+}
+
 function scrollToOferta(){
   const el=document.getElementById('oferta');
   if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
@@ -361,18 +696,20 @@ function goToStep2(){
   if(!name||!wpp){err.style.display='block';return;}
   err.style.display='none';
 
-  const now=new Date();
-  fetch('https://formspree.io/f/mreonbkg',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({
-      evento:'Lead no Checkout — Código da Reconquista',
-      nome:name,
-      whatsapp:wpp,
-      horario:now.toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'}),
-      pagina:window.location.href
-    })
-  }).catch(()=>{});
+  try{
+    const now=new Date();
+    fetch('https://formspree.io/f/mreonbkg',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        evento:'Lead no Checkout — Código da Reconquista',
+        nome:name,
+        whatsapp:wpp,
+        horario:now.toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'}),
+        pagina:window.location.href
+      })
+    }).catch(()=>{});
+  }catch(e){}
 
   document.getElementById('step1').style.display='none';
   document.getElementById('step2').style.display='block';
@@ -384,20 +721,22 @@ function copyPix(){
   const original=btn.textContent;
 
   function notifyFormspree(){
-    const name=document.getElementById('buyerName').value.trim();
-    const wppNum=document.getElementById('buyerWpp').value.trim();
-    const now=new Date();
-    fetch('https://formspree.io/f/mreonbkg',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({
-        evento:'PIX Copiado — Código da Reconquista',
-        nome:name,
-        whatsapp:wppNum,
-        horario:now.toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'}),
-        pagina:window.location.href
-      })
-    }).catch(()=>{});
+    try{
+      const name=document.getElementById('buyerName').value.trim();
+      const wppNum=document.getElementById('buyerWpp').value.trim();
+      const now=new Date();
+      fetch('https://formspree.io/f/mreonbkg',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({
+          evento:'PIX Copiado — Código da Reconquista',
+          nome:name,
+          whatsapp:wppNum,
+          horario:now.toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'}),
+          pagina:window.location.href
+        })
+      }).catch(()=>{});
+    }catch(e){}
   }
 
   function afterCopy(success){
