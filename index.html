@@ -47,10 +47,11 @@ button{font-family:inherit;touch-action:manipulation}
 .eyebrow{font-size:15px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra);margin-bottom:24px;animation:fadeIn .6s ease both}
 .h1{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(38px,10.5vw,60px);line-height:1.16;max-width:600px;margin-bottom:26px;animation:fadeUp .6s ease .08s both;color:var(--wine)}
 .h1 em{font-style:italic;color:var(--terra)}
-.lead{font-size:clamp(20px,5vw,24px);font-weight:500;color:var(--ink2);max-width:560px;margin-bottom:40px;line-height:1.6;animation:fadeUp .6s ease .16s both}
+.lead{font-size:clamp(20px,5vw,24px);font-weight:500;color:var(--ink2);max-width:560px;margin-bottom:20px;line-height:1.6;animation:fadeUp .6s ease .16s both}
 .btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--terra),var(--wine2));color:#fff;font-weight:700;font-size:19.5px;letter-spacing:.3px;padding:20px 42px;border:none;border-radius:50px;cursor:pointer;box-shadow:0 14px 32px rgba(92,28,48,.28),inset 0 1px 0 rgba(255,255,255,.2);transition:transform .2s,box-shadow .2s}
 .btn:active{transform:scale(.98)}
-.tag{font-size:16px;color:var(--muted);margin-top:16px;animation:fadeIn .6s ease .3s both}
+.tag{font-size:16px;color:var(--muted);margin-top:4px;animation:fadeIn .6s ease .3s both}
+.btn-skip{display:block;margin:2px auto 0;background:none;border:none;color:var(--text2);font-size:14px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;animation:fadeIn .6s ease .4s both}
 
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
@@ -201,6 +202,7 @@ body.locked .sticky{display:none !important}
   </p>
   <button class="btn" onclick="openQuiz()">🔍 FAZER MINHA ANÁLISE DE RECONQUISTA</button>
   <p class="tag">Grátis • 2 minutos • Descubra sua % de chance agora</p>
+  <button class="btn-skip" onclick="scrollToOferta()">Já fiz minha análise, quero ver o método</button>
 </section>
 
 <!-- PROMISE -->
@@ -334,10 +336,10 @@ body.locked .sticky{display:none !important}
       <p class="quiz-kicker">Pergunta 1 de 7</p>
       <p class="quiz-q">Há quanto tempo vocês terminaram?</p>
       <div class="quiz-opts">
-        <button class="quiz-opt" onclick="quizAnswer(0,3)">Menos de 1 semana</button>
-        <button class="quiz-opt" onclick="quizAnswer(0,3)">1 semana a 1 mês</button>
-        <button class="quiz-opt" onclick="quizAnswer(0,2)">1 a 6 meses</button>
-        <button class="quiz-opt" onclick="quizAnswer(0,1)">Mais de 6 meses</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,0,3)">Menos de 1 semana</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,0,3)">1 semana a 1 mês</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,0,2)">1 a 6 meses</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,0,1)">Mais de 6 meses</button>
       </div>
     </div>
 
@@ -345,9 +347,9 @@ body.locked .sticky{display:none !important}
       <p class="quiz-kicker">Pergunta 2 de 7</p>
       <p class="quiz-q">Quem terminou o relacionamento?</p>
       <div class="quiz-opts">
-        <button class="quiz-opt" onclick="quizAnswer(1,3)">Ele terminou comigo</button>
-        <button class="quiz-opt" onclick="quizAnswer(1,2)">Eu terminei</button>
-        <button class="quiz-opt" onclick="quizAnswer(1,2)">Foi meio confuso, os dois</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,1,3)">Ele terminou comigo</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,1,2)">Eu terminei</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,1,2)">Foi meio confuso, os dois</button>
       </div>
       <button class="quiz-back" onclick="quizBack()">← Voltar</button>
     </div>
@@ -356,10 +358,10 @@ body.locked .sticky{display:none !important}
       <p class="quiz-kicker">Pergunta 3 de 7</p>
       <p class="quiz-q">Como está o contato entre vocês hoje?</p>
       <div class="quiz-opts">
-        <button class="quiz-opt" onclick="quizAnswer(2,2,'bloqueio')">Ele me bloqueou</button>
-        <button class="quiz-opt" onclick="quizAnswer(2,3,'vacuo')">Visualiza e não responde</button>
-        <button class="quiz-opt" onclick="quizAnswer(2,3,'as-vezes')">Conversamos às vezes</button>
-        <button class="quiz-opt" onclick="quizAnswer(2,2,'normal')">Ainda conversamos normal</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,2,2,'bloqueio')">Ele me bloqueou</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,2,3,'vacuo')">Visualiza e não responde</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,2,3,'as-vezes')">Conversamos às vezes</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,2,2,'normal')">Ainda conversamos normal</button>
       </div>
       <button class="quiz-back" onclick="quizBack()">← Voltar</button>
     </div>
@@ -368,10 +370,10 @@ body.locked .sticky{display:none !important}
       <p class="quiz-kicker">Pergunta 4 de 7</p>
       <p class="quiz-q">Ele ainda demonstra algum sinal de interesse?</p>
       <div class="quiz-opts">
-        <button class="quiz-opt" onclick="quizAnswer(3,3,'stories')">Vê meus stories / meu perfil</button>
-        <button class="quiz-opt" onclick="quizAnswer(3,2,'curte')">Curte ou comenta de vez em quando</button>
-        <button class="quiz-opt" onclick="quizAnswer(3,2,'amigos')">Fico sabendo dele por amigos em comum</button>
-        <button class="quiz-opt" onclick="quizAnswer(3,1,'nada')">Nenhum sinal</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,3,3,'stories')">Vê meus stories / meu perfil</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,3,2,'curte')">Curte ou comenta de vez em quando</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,3,2,'amigos')">Fico sabendo dele por amigos em comum</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,3,1,'nada')">Nenhum sinal</button>
       </div>
       <button class="quiz-back" onclick="quizBack()">← Voltar</button>
     </div>
@@ -380,9 +382,9 @@ body.locked .sticky{display:none !important}
       <p class="quiz-kicker">Pergunta 5 de 7</p>
       <p class="quiz-q">Ele está com outra pessoa agora?</p>
       <div class="quiz-opts">
-        <button class="quiz-opt" onclick="quizAnswer(4,1,'sim')">Sim</button>
-        <button class="quiz-opt" onclick="quizAnswer(4,2,'nao-sei')">Não sei</button>
-        <button class="quiz-opt" onclick="quizAnswer(4,3,'nao')">Não</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,4,1,'sim')">Sim</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,4,2,'nao-sei')">Não sei</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,4,3,'nao')">Não</button>
       </div>
       <button class="quiz-back" onclick="quizBack()">← Voltar</button>
     </div>
@@ -391,9 +393,9 @@ body.locked .sticky{display:none !important}
       <p class="quiz-kicker">Pergunta 6 de 7</p>
       <p class="quiz-q">Quanto tempo vocês ficaram juntos?</p>
       <div class="quiz-opts">
-        <button class="quiz-opt" onclick="quizAnswer(5,1)">Menos de 1 ano</button>
-        <button class="quiz-opt" onclick="quizAnswer(5,2)">1 a 3 anos</button>
-        <button class="quiz-opt" onclick="quizAnswer(5,3)">Mais de 3 anos</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,5,1)">Menos de 1 ano</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,5,2)">1 a 3 anos</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,5,3)">Mais de 3 anos</button>
       </div>
       <button class="quiz-back" onclick="quizBack()">← Voltar</button>
     </div>
@@ -402,9 +404,9 @@ body.locked .sticky{display:none !important}
       <p class="quiz-kicker">Pergunta 7 de 7</p>
       <p class="quiz-q">O quanto você está disposta a seguir um plano com disciplina nos próximos 7 dias?</p>
       <div class="quiz-opts">
-        <button class="quiz-opt" onclick="quizAnswer(6,3)">Totalmente disposta</button>
-        <button class="quiz-opt" onclick="quizAnswer(6,2)">Disposta, mas com dúvidas</button>
-        <button class="quiz-opt" onclick="quizAnswer(6,1)">Só quero entender antes</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,6,3)">Totalmente disposta</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,6,2)">Disposta, mas com dúvidas</button>
+        <button class="quiz-opt" onclick="quizAnswer(this,6,1)">Só quero entender antes</button>
       </div>
       <button class="quiz-back" onclick="quizBack()">← Voltar</button>
     </div>
@@ -553,8 +555,11 @@ function closeQuiz(){
 function quizBack(){
   if(quizCurrent>0) quizShowStep(quizCurrent-1);
 }
-function quizAnswer(step,points,tag){
-  quizAnswers[step]={points:points,tag:tag||null};
+function quizAnswer(btn,step,points,tag){
+  const stepEl=btn.closest('.quiz-step');
+  const question=stepEl?stepEl.querySelector('.quiz-q').textContent.trim():'';
+  const label=btn.textContent.trim();
+  quizAnswers[step]={points:points,tag:tag||null,question:question,label:label};
   quizShowStep(step+1);
 }
 
@@ -567,6 +572,20 @@ function quizSubmitLead(){
 
   try{
     const now=new Date();
+    const respostas=[];
+    for(let i=0;i<7;i++){
+      if(quizAnswers[i]) respostas.push((i+1)+'. '+quizAnswers[i].question+' → '+quizAnswers[i].label);
+    }
+    let score=0,max=0;
+    for(let i=0;i<7;i++){ max+=3; if(quizAnswers[i]) score+=quizAnswers[i].points; }
+    const pctDiag=Math.max(74,Math.min(97,76+Math.round((score/max)*18)));
+    const contato=quizAnswers[2]?quizAnswers[2].tag:null;
+    const outra=quizAnswers[4]?quizAnswers[4].tag:null;
+    let modName='Plano de 7 Dias — Reconstrução e Presença Estratégica';
+    if(contato==='bloqueio') modName='Módulo 1 — Ele Bloqueou';
+    else if(contato==='vacuo') modName='Módulo 2 — Visualizou e Não Respondeu';
+    else if(outra==='sim') modName='Módulo 4 — Ele Está com Outra';
+
     fetch('https://formspree.io/f/mreonbkg',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -574,6 +593,9 @@ function quizSubmitLead(){
         evento:'Lead — Análise de Reconquista',
         nome:name,
         whatsapp:wpp,
+        chance_de_reconquista:pctDiag+'%',
+        modulo_prioritario:modName,
+        respostas_do_quiz:respostas.join('\n'),
         horario:now.toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'}),
         pagina:window.location.href
       })
