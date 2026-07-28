@@ -43,7 +43,7 @@ button{font-family:inherit;touch-action:manipulation}
 .wrap{max-width:640px;margin:0 auto;padding:0 24px}
 
 /* HERO */
-.hero{min-height:100vh;min-height:calc(var(--vh,1vh)*100);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 24px}
+.hero{min-height:calc(var(--vh,1vh)*100);min-height:100svh;max-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;overflow-y:auto}
 .eyebrow{font-size:15px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra);margin-bottom:24px;animation:fadeIn .6s ease both}
 .h1{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(38px,10.5vw,60px);line-height:1.16;max-width:600px;margin-bottom:26px;animation:fadeUp .6s ease .08s both;color:var(--wine)}
 .h1 em{font-style:italic;color:var(--terra)}
@@ -508,7 +508,7 @@ function unlockPage(){
 lockPage();
 // fallback pra iOS Safari, que às vezes rola por baixo do overflow:hidden
 document.addEventListener('touchmove',function(e){
-  if(document.body.classList.contains('locked') && !e.target.closest('.quiz-body,.modal')){
+  if(document.body.classList.contains('locked') && !e.target.closest('.quiz-body,.modal,.hero')){
     e.preventDefault();
   }
 },{passive:false});
@@ -686,6 +686,7 @@ function goToOfferFromQuiz(){
 }
 
 function scrollToOferta(){
+  unlockPage();
   const el=document.getElementById('oferta');
   if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
 }
