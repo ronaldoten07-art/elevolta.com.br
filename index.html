@@ -43,7 +43,7 @@ button{font-family:inherit;touch-action:manipulation}
 .wrap{max-width:640px;margin:0 auto;padding:0 24px}
 
 /* HERO */
-.hero{min-height:calc(var(--vh,1vh)*100);min-height:100svh;max-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;overflow-y:auto}
+.hero{min-height:calc(var(--vh,1vh)*100);min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px}
 .eyebrow{font-size:15px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra);margin-bottom:24px;animation:fadeIn .6s ease both}
 .h1{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(38px,10.5vw,60px);line-height:1.16;max-width:600px;margin-bottom:26px;animation:fadeUp .6s ease .08s both;color:var(--wine)}
 .h1 em{font-style:italic;color:var(--terra)}
@@ -51,6 +51,11 @@ button{font-family:inherit;touch-action:manipulation}
 .btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--terra),var(--wine2));color:#fff;font-weight:700;font-size:19.5px;letter-spacing:.3px;padding:20px 42px;border:none;border-radius:50px;cursor:pointer;box-shadow:0 14px 32px rgba(92,28,48,.28),inset 0 1px 0 rgba(255,255,255,.2);transition:transform .2s,box-shadow .2s}
 .btn:active{transform:scale(.98)}
 .tag{font-size:16px;color:var(--muted);margin-top:4px;animation:fadeIn .6s ease .3s both}
+.hero-curio{background:var(--cream);border:1px solid var(--border2);border-radius:16px;padding:20px 22px;max-width:460px;margin-bottom:24px;text-align:left;animation:fadeUp .6s ease .22s both}
+.hero-curio-tt{font-size:15.5px;font-weight:700;color:var(--wine);margin-bottom:10px}
+.hero-curio-list{list-style:none;display:flex;flex-direction:column;gap:7px}
+.hero-curio-list li{position:relative;padding-left:20px;font-size:15.5px;color:var(--ink2);line-height:1.5}
+.hero-curio-list li::before{content:'→';position:absolute;left:0;color:var(--terra);font-weight:700}
 .btn-skip{display:block;margin:2px auto 0;background:none;border:none;color:var(--text2);font-size:14px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;animation:fadeIn .6s ease .4s both}
 
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -101,6 +106,8 @@ button{font-family:inherit;touch-action:manipulation}
 .promise{background:var(--cream);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:70px 24px;text-align:center}
 .promise-eyebrow{font-size:14.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra);margin-bottom:20px}
 .promise-text{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(27px,6.6vw,40px);line-height:1.38;max-width:580px;margin:0 auto;color:var(--wine)}
+.promise-sub{font-size:clamp(17px,4vw,19px);color:var(--ink2);max-width:540px;margin:26px auto 0;line-height:1.65}
+.promise-sub strong{color:var(--wine)}
 
 /* BENEFITS */
 .benefits{padding:70px 24px 20px}
@@ -141,8 +148,14 @@ button{font-family:inherit;touch-action:manipulation}
 .bonus-box li{position:relative;padding-left:24px;font-size:16px;line-height:1.55;color:var(--ink2)}
 .bonus-box li::before{content:'✓';position:absolute;left:0;top:0;color:var(--terra);font-weight:700}
 
+/* URGENCY */
+.urgency{background:linear-gradient(160deg,var(--wine2) 0%, var(--wine) 85%);padding:64px 24px;text-align:center}
+.urgency-eyebrow{font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--terra-soft);margin-bottom:20px}
+.urgency-text{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(20px,5vw,26px);line-height:1.55;max-width:540px;margin:0 auto;color:#fff}
+
 /* OFFER */
 .offer{padding:70px 24px 80px;text-align:center}
+.offer-choice{font-size:clamp(17px,4vw,19px);color:var(--ink2);max-width:520px;margin:0 auto 30px;line-height:1.65}
 .offer-title{font-family:'Newsreader',serif;font-size:clamp(29px,6.6vw,41px);margin-bottom:38px;color:var(--wine)}
 .card{max-width:440px;margin:0 auto;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(92,28,48,.14)}
 .card-head{background:linear-gradient(135deg,var(--terra),var(--wine2));padding:19px;color:#fff;font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
@@ -171,9 +184,11 @@ footer p{font-size:13px;color:var(--muted);line-height:1.7;max-width:600px;margi
 .sticky{display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,var(--terra),var(--wine2));padding:17px 20px;z-index:400;font-weight:700;font-size:18px;color:#fff;border:none;cursor:pointer;width:100%}
 @media(max-width:640px){.sticky{display:block}body{padding-bottom:58px}}
 
-/* TRAVA DE TELA — só a hero + botão até a análise ser concluída */
-html.locked,body.locked{overflow:hidden !important;height:100%;touch-action:none}
-body.locked .sticky{display:none !important}
+/* TRAVA DE TELA — só a hero + botão até a análise ser concluída.
+   Em vez de travar o scroll da página (o que cortava a hero quando o texto
+   cresce), escondemos o restante do site e deixamos a hero rolar normal. */
+.rest-of-site{display:none}
+body.unlocked .rest-of-site{display:block}
 
 /* MODAL */
 .modal-bg{position:fixed;inset:0;background:rgba(36,23,18,.72);z-index:600;display:none;align-items:center;justify-content:center;padding:20px}
@@ -196,19 +211,31 @@ body.locked .sticky{display:none !important}
 <!-- HERO -->
 <section class="hero">
   <p class="eyebrow">Método Comprovado</p>
-  <h1 class="h1">Ser abandonada por quem você ama <em>dói demais</em>.</h1>
+  <h1 class="h1">Você só queria que ele mandasse uma mensagem dizendo: <em>"Podemos conversar?"</em></h1>
   <p class="lead">
-    Mesmo que ele seja ORGULHOSO demais pra admitir que quer voltar, ou esteja com OUTRA PESSOA, ou tenha até mesmo te BLOQUEADO — existe um caminho de volta. É o método que já ajudou milhares de mulheres a reconquistar quem amam, com resultados reais em apenas 7 dias.
+    Enquanto você lê isso, talvez ele esteja agindo como se não sentisse sua falta. Talvez tenha parado de responder, tenha bloqueado você ou até esteja com outra pessoa. E a pior parte é não saber se ainda existe alguma chance... ou se você perdeu o homem que ama para sempre.
   </p>
+  <div class="hero-curio">
+    <p class="hero-curio-tt">Em menos de 2 minutos vamos descobrir:</p>
+    <ul class="hero-curio-list">
+      <li>se ele ainda sente algo por você;</li>
+      <li>qual o maior erro que pode afastá-lo definitivamente;</li>
+      <li>qual estratégia combina com a sua situação;</li>
+      <li>e sua porcentagem de chance de reconquista.</li>
+    </ul>
+  </div>
   <button class="btn" onclick="openQuiz()">🔍 FAZER MINHA ANÁLISE DE RECONQUISTA</button>
-  <p class="tag">Grátis • 2 minutos • Descubra sua % de chance agora</p>
+  <p class="tag">Grátis • 2 minutos • Sua situação é única — a análise é feita pra ela</p>
   <button class="btn-skip" onclick="scrollToOferta()">Já fiz minha análise, quero ver o método</button>
 </section>
 
+<div class="rest-of-site" id="restOfSite">
+
 <!-- PROMISE -->
 <section class="promise">
-  <p class="promise-eyebrow">Existe um caminho</p>
-  <p class="promise-text">Os próximos 7 dias são os mais importantes pra aumentar suas chances de reconquista. Um plano dia a dia, sem implorar, sem parecer desesperada, sem competir com ninguém — só entendendo exatamente o que se passa na cabeça dele.</p>
+  <p class="promise-eyebrow">Sua situação é diferente de todas as outras</p>
+  <p class="promise-text">Uma mulher bloqueada precisa de uma estratégia. Uma mulher que levou vácuo precisa de outra. Uma mulher que está disputando espaço com outra mulher precisa de um caminho completamente diferente. É exatamente isso que essa análise vai descobrir.</p>
+  <p class="promise-sub">O maior erro das mulheres depois do término é fazer justamente aquilo que empurra o homem ainda mais para longe. Quanto mais você tenta convencê-lo... mais ele se fecha.<br><br>O <strong>Código da Reconquista</strong> faz exatamente o contrário. Ele desperta a curiosidade, o medo da perda, e faz você voltar a ocupar espaço na mente dele — sem correr atrás.</p>
 </section>
 
 <!-- BENEFITS / DESEJO -->
@@ -241,11 +268,11 @@ body.locked .sticky{display:none !important}
     <div class="block-gap">
       <div class="sec-label">8 módulos pra cada situação</div>
       <div class="mod-grid">
-        <div class="mod-item"><div class="mod-tag">Módulo 1 · Ele bloqueou</div><div class="mod-tt">O gesto silencioso que faz ele tirar o bloqueio sozinho</div><div class="mod-sb">O protocolo dos 21 dias, fase a fase.</div></div>
+        <div class="mod-item"><div class="mod-tag">Módulo 1 · Ele bloqueou</div><div class="mod-tt">Descubra por que muitos homens bloqueiam justamente quando ainda sentem alguma coisa — e como fazer ele remover esse bloqueio naturalmente</div><div class="mod-sb">O protocolo dos 21 dias, fase a fase.</div></div>
         <div class="mod-item"><div class="mod-tag">Módulo 2 · Visualizou e não respondeu</div><div class="mod-tt">A mensagem que ele não consegue deixar no vácuo</div><div class="mod-sb">A regra das 72 horas e a técnica do gancho neutro.</div></div>
         <div class="mod-item"><div class="mod-tag">Módulo 3 · Ele pediu um tempo</div><div class="mod-tt">A resposta que transforma o "tempo" dele em medo de te perder</div><div class="mod-sb">A resposta-mestre + o plano dos 30 dias.</div></div>
         <div class="mod-item"><div class="mod-tag">Módulo 4 · Ele está com outra</div><div class="mod-tt">Saiba exatamente o que fazer quando existe outra mulher, sem disputar atenção nem agir por impulso</div><div class="mod-sb">A verdade sobre o ricochete e a quarentena de 90 dias.</div></div>
-        <div class="mod-item"><div class="mod-tag">Módulo 5 · Scripts prontos</div><div class="mod-tt">A lei que faz qualquer frase funcionar</div><div class="mod-sb">Textos prontos pra reabrir contato, marcar encontro e manter o controle.</div></div>
+        <div class="mod-item"><div class="mod-tag">Módulo 5 · Scripts prontos</div><div class="mod-tt">Saiba exatamente o que responder quando ele aparecer novamente, sem dizer uma palavra que faça ele sumir de novo</div><div class="mod-sb">Textos prontos pra reabrir contato, marcar encontro e manter o controle.</div></div>
         <div class="mod-item"><div class="mod-tag">Módulo 6 · De descartada pra desejada</div><div class="mod-tt">A virada interna que muda como ele te enxerga</div><div class="mod-sb">Os 4 pilares do reposicionamento emocional e estético.</div></div>
         <div class="mod-item"><div class="mod-tag">Módulo 7 · Fazer ele se arrepender</div><div class="mod-tt">Como o arrependimento bate nele sem você mover um dedo</div><div class="mod-sb">A estratégia dos marcos visíveis nos próximos 30 dias.</div></div>
         <div class="mod-item"><div class="mod-tag">Módulo 8 · Destruir o ego dele</div><div class="mod-tt">Como tirar dele o poder que ele acha que tem sobre você</div><div class="mod-sb">Neutralidade, esquecimento estratégico e o olhar do não-reconhecimento.</div></div>
@@ -269,8 +296,15 @@ body.locked .sticky{display:none !important}
   </div>
 </section>
 
+<!-- URGÊNCIA EMOCIONAL -->
+<section class="urgency">
+  <p class="urgency-eyebrow">O tempo não está do seu lado</p>
+  <p class="urgency-text">Cada dia que passa sem estratégia aumenta as chances dele se acostumar com a sua ausência.<br><br>Não porque ele deixou de amar. Mas porque o cérebro aprende a viver sem aquilo que deixa de ver.<br><br>Os próximos dias podem definir se ele vai voltar... ou seguir em frente.</p>
+</section>
+
 <!-- OFFER -->
 <section class="offer" id="oferta">
+  <p class="offer-choice">Hoje você tem duas opções. Continuar esperando que ele mande mensagem... ou finalmente entender exatamente o que fazer em cada situação pra aumentar suas chances de reconquista.</p>
   <h2 class="offer-title" id="offerTitle">Garanta seu acesso completo</h2>
   <div class="card">
     <div class="card-head">Acesso Vitalício — Pagamento Único</div>
@@ -293,7 +327,7 @@ body.locked .sticky{display:none !important}
       <div class="old-price">De R$ 97,00</div>
       <div class="price">R$ 48<small>,50</small></div>
       <p class="note">Pagamento único • Sem mensalidade • Acesso vitalício</p>
-      <button class="btn" id="offerCta" style="width:100%;justify-content:center" onclick="openModal()">💛 QUERO ELE DE VOLTA EM 7 DIAS</button>
+      <button class="btn" id="offerCta" style="width:100%;justify-content:center" onclick="openModal()">❤️ Quero aumentar minhas chances de reconquista</button>
     </div>
   </div>
 </section>
@@ -331,6 +365,8 @@ body.locked .sticky{display:none !important}
 </footer>
 
 <button class="sticky" onclick="scrollToOferta()">QUERO ELE DE VOLTA</button>
+
+</div><!-- /.rest-of-site -->
 
 <!-- QUIZ: ANÁLISE DE RECONQUISTA -->
 <div class="quiz-overlay" id="quizOverlay">
@@ -453,7 +489,7 @@ body.locked .sticky{display:none !important}
         <div class="res-bar-track"><div class="res-bar-fill" id="resBar"></div></div>
         <div class="res-priority" id="resPriority"></div>
         <div class="res-text" id="resText"></div>
-        <button class="btn" style="width:100%;justify-content:center" onclick="goToOfferFromQuiz()">Quero ver o meu plano completo →</button>
+        <button class="btn" style="width:100%;justify-content:center" onclick="goToOfferFromQuiz()">❤️ Quero descobrir exatamente o que fazer</button>
         <p class="res-note">Metodologia baseada na análise de padrões comportamentais recorrentes em processos de reconquista. Resultado individual depende da aplicação correta do plano.</p>
       </div>
     </div>
@@ -504,23 +540,17 @@ setVH();
 window.addEventListener('resize', setVH);
 window.addEventListener('orientationchange', function(){ setTimeout(setVH, 100); });
 
-/* Trava a tela inicial: só a hero + botão de análise, sem poder rolar,
-   até a pessoa concluir a análise e escolher ver o plano completo */
+/* Trava a tela inicial: só a hero + botão de análise ficam visíveis,
+   até a pessoa concluir a análise e escolher ver o plano completo.
+   Em vez de travar o scroll da página (overflow:hidden), o que cortava
+   a hero quando o texto cresce além do viewport, escondemos o restante
+   do site — a hero rola normalmente, do jeito que o conteúdo pedir. */
 function lockPage(){
-  document.documentElement.classList.add('locked');
-  document.body.classList.add('locked');
+  document.body.classList.remove('unlocked');
 }
 function unlockPage(){
-  document.documentElement.classList.remove('locked');
-  document.body.classList.remove('locked');
+  document.body.classList.add('unlocked');
 }
-lockPage();
-// fallback pra iOS Safari, que às vezes rola por baixo do overflow:hidden
-document.addEventListener('touchmove',function(e){
-  if(document.body.classList.contains('locked') && !e.target.closest('.quiz-body,.modal,.hero')){
-    e.preventDefault();
-  }
-},{passive:false});
 
 function toggleDetails(){
   const box=document.getElementById('detailsBox');
