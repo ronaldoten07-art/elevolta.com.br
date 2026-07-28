@@ -208,7 +208,7 @@ body.locked .sticky{display:none !important}
 <!-- PROMISE -->
 <section class="promise">
   <p class="promise-eyebrow">Existe um caminho</p>
-  <p class="promise-text">Em 7 dias, você vai aplicar o método que faz ele voltar a te procurar — sem implorar, sem parecer desesperada, sem competir com ninguém. Só entendendo exatamente o que se passa na cabeça dele.</p>
+  <p class="promise-text">Os próximos 7 dias são os mais importantes pra aumentar suas chances de reconquista. Um plano dia a dia, sem implorar, sem parecer desesperada, sem competir com ninguém — só entendendo exatamente o que se passa na cabeça dele.</p>
 </section>
 
 <!-- BENEFITS / DESEJO -->
@@ -244,7 +244,7 @@ body.locked .sticky{display:none !important}
         <div class="mod-item"><div class="mod-tag">Módulo 1 · Ele bloqueou</div><div class="mod-tt">O gesto silencioso que faz ele tirar o bloqueio sozinho</div><div class="mod-sb">O protocolo dos 21 dias, fase a fase.</div></div>
         <div class="mod-item"><div class="mod-tag">Módulo 2 · Visualizou e não respondeu</div><div class="mod-tt">A mensagem que ele não consegue deixar no vácuo</div><div class="mod-sb">A regra das 72 horas e a técnica do gancho neutro.</div></div>
         <div class="mod-item"><div class="mod-tag">Módulo 3 · Ele pediu um tempo</div><div class="mod-tt">A resposta que transforma o "tempo" dele em medo de te perder</div><div class="mod-sb">A resposta-mestre + o plano dos 30 dias.</div></div>
-        <div class="mod-item"><div class="mod-tag">Módulo 4 · Ele está com outra</div><div class="mod-tt">O movimento que faz ele te comparar com ela — até não aguentar</div><div class="mod-sb">A verdade sobre o ricochete e a quarentena de 90 dias.</div></div>
+        <div class="mod-item"><div class="mod-tag">Módulo 4 · Ele está com outra</div><div class="mod-tt">Saiba exatamente o que fazer quando existe outra mulher, sem disputar atenção nem agir por impulso</div><div class="mod-sb">A verdade sobre o ricochete e a quarentena de 90 dias.</div></div>
         <div class="mod-item"><div class="mod-tag">Módulo 5 · Scripts prontos</div><div class="mod-tt">A lei que faz qualquer frase funcionar</div><div class="mod-sb">Textos prontos pra reabrir contato, marcar encontro e manter o controle.</div></div>
         <div class="mod-item"><div class="mod-tag">Módulo 6 · De descartada pra desejada</div><div class="mod-tt">A virada interna que muda como ele te enxerga</div><div class="mod-sb">Os 4 pilares do reposicionamento emocional e estético.</div></div>
         <div class="mod-item"><div class="mod-tag">Módulo 7 · Fazer ele se arrepender</div><div class="mod-tt">Como o arrependimento bate nele sem você mover um dedo</div><div class="mod-sb">A estratégia dos marcos visíveis nos próximos 30 dias.</div></div>
@@ -271,21 +271,29 @@ body.locked .sticky{display:none !important}
 
 <!-- OFFER -->
 <section class="offer" id="oferta">
-  <h2 class="offer-title">Garanta seu acesso completo</h2>
+  <h2 class="offer-title" id="offerTitle">Garanta seu acesso completo</h2>
   <div class="card">
     <div class="card-head">Acesso Vitalício — Pagamento Único</div>
     <div class="card-body">
       <div class="check">
-        <div><span class="ck">✓</span> Plano completo de 7 dias baseado em psicologia masculina que TRAZ ELE DE VOLTA!</div>
+        <div><span class="ck">✓</span> Plano completo de 7 dias baseado em psicologia masculina pra aumentar suas chances de reconquista</div>
         <div><span class="ck">✓</span> 8 módulos pra qualquer cenário: bloqueio, silêncio, tempo, outra pessoa e mais</div>
         <div><span class="ck">✓</span> Scripts prontos que ativam o instinto de conquista masculino em cada situação</div>
         <div><span class="ck">✓</span> 🎁 Bônus: Manifesto, Regras de Ouro e Autoestima e Postura</div>
         <div><span class="ck">✓</span> Garantia incondicional de 7 dias</div>
       </div>
+      <div class="stack-box" style="background:var(--paper2);border-radius:14px;padding:18px 20px;margin:18px 0;font-size:15px;line-height:2">
+        <div style="display:flex;justify-content:space-between"><span>Plano estratégico de 7 dias</span><span>R$ 67</span></div>
+        <div style="display:flex;justify-content:space-between"><span>8 módulos por situação</span><span>R$ 97</span></div>
+        <div style="display:flex;justify-content:space-between"><span>Scripts e mensagens prontas</span><span>R$ 47</span></div>
+        <div style="display:flex;justify-content:space-between"><span>Checklist de erros fatais</span><span>R$ 27</span></div>
+        <div style="display:flex;justify-content:space-between"><span>Bônus: Manifesto e Regras de Ouro</span><span>R$ 27</span></div>
+        <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border2);margin-top:8px;padding-top:8px;font-weight:700"><span>Valor total</span><span>R$ 265</span></div>
+      </div>
       <div class="old-price">De R$ 97,00</div>
       <div class="price">R$ 48<small>,50</small></div>
       <p class="note">Pagamento único • Sem mensalidade • Acesso vitalício</p>
-      <button class="btn" style="width:100%;justify-content:center" onclick="openModal()">💛 QUERO ELE DE VOLTA EM 7 DIAS</button>
+      <button class="btn" id="offerCta" style="width:100%;justify-content:center" onclick="openModal()">💛 QUERO ELE DE VOLTA EM 7 DIAS</button>
     </div>
   </div>
 </section>
@@ -368,6 +376,7 @@ body.locked .sticky{display:none !important}
 
     <div class="quiz-step" data-step="3">
       <p class="quiz-kicker">Pergunta 4 de 7</p>
+      <div id="quizIdent" style="display:none;background:var(--paper2);border-radius:12px;padding:14px 16px;font-size:14.5px;color:var(--ink2);margin-bottom:18px"></div>
       <p class="quiz-q">Ele ainda demonstra algum sinal de interesse?</p>
       <div class="quiz-opts">
         <button class="quiz-opt" onclick="quizAnswer(this,3,3,'stories')">Vê meus stories / meu perfil</button>
@@ -555,11 +564,27 @@ function closeQuiz(){
 function quizBack(){
   if(quizCurrent>0) quizShowStep(quizCurrent-1);
 }
+const identMsgs={
+  bloqueio:'Você não está sozinha nessa situação — bloqueio costuma ser reação de defesa emocional, não de indiferença.',
+  vacuo:'Visualizar e não responder é um dos sinais mais comuns de conflito interno. Você não está sozinha nessa situação.',
+  'as-vezes':'Manter contato de vez em quando ainda deixa margem real pra reconstrução.',
+  normal:'Contato normal é um ponto de partida melhor do que parece — mas exige estratégia pra não estagnar.'
+};
+
 function quizAnswer(btn,step,points,tag){
   const stepEl=btn.closest('.quiz-step');
   const question=stepEl?stepEl.querySelector('.quiz-q').textContent.trim():'';
   const label=btn.textContent.trim();
   quizAnswers[step]={points:points,tag:tag||null,question:question,label:label};
+
+  if(step===2){
+    const box=document.getElementById('quizIdent');
+    if(box){
+      if(tag && identMsgs[tag]){ box.textContent=identMsgs[tag]; box.style.display='block'; }
+      else{ box.style.display='none'; }
+    }
+  }
+
   quizShowStep(step+1);
 }
 
@@ -679,7 +704,29 @@ function quizComputeResult(name){
     `${nomeTrat}, com base nas suas respostas: ${frases.join(' Além disso, ')} <br><br>O <strong>Código da Reconquista</strong> tem o plano específico pra esse ponto de partida — dia a dia, sem achismo.`;
 }
 
+const offerCopyByPath={
+  bloqueio:{title:'O plano ideal pra quem foi bloqueada',cta:'💛 QUERO QUE ELE ME DESBLOQUEIE'},
+  vacuo:{title:'O plano ideal pra sair do vácuo',cta:'💛 QUERO A RESPOSTA DELE'},
+  outra:{title:'O plano ideal pra essa situação com outra pessoa',cta:'💛 QUERO REVERTER ISSO'}
+};
+
+function personalizeOffer(){
+  const contato=quizAnswers[2]?quizAnswers[2].tag:null;
+  const outra=quizAnswers[4]?quizAnswers[4].tag:null;
+  let key=null;
+  if(contato==='bloqueio') key='bloqueio';
+  else if(contato==='vacuo') key='vacuo';
+  else if(outra==='sim') key='outra';
+  if(!key) return;
+  const copy=offerCopyByPath[key];
+  const titleEl=document.getElementById('offerTitle');
+  const ctaEl=document.getElementById('offerCta');
+  if(titleEl) titleEl.textContent=copy.title;
+  if(ctaEl) ctaEl.textContent=copy.cta;
+}
+
 function goToOfferFromQuiz(){
+  personalizeOffer();
   unlockPage();
   closeQuiz();
   scrollToOferta();
