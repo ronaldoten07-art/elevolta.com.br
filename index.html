@@ -51,6 +51,8 @@ button{font-family:inherit;touch-action:manipulation}
 .btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--terra),var(--wine2));color:#fff;font-weight:700;font-size:19.5px;letter-spacing:.3px;padding:20px 42px;border:none;border-radius:50px;cursor:pointer;box-shadow:0 14px 32px rgba(92,28,48,.28),inset 0 1px 0 rgba(255,255,255,.2);transition:transform .2s,box-shadow .2s}
 .btn:active{transform:scale(.98)}
 .tag{font-size:16px;color:var(--muted);margin-top:4px;animation:fadeIn .6s ease .3s both}
+.social-proof{font-size:14.5px;color:var(--ink2);max-width:420px;margin:0 auto 18px;line-height:1.5;animation:fadeIn .6s ease .22s both}
+.social-proof strong{color:var(--terra)}
 .hero-curio{background:var(--cream);border:1px solid var(--border2);border-radius:16px;padding:20px 22px;max-width:460px;margin-bottom:24px;text-align:left;animation:fadeUp .6s ease .22s both}
 .hero-curio-tt{font-size:15.5px;font-weight:700;color:var(--wine);margin-bottom:10px}
 .hero-curio-list{list-style:none;display:flex;flex-direction:column;gap:7px}
@@ -99,6 +101,12 @@ button{font-family:inherit;touch-action:manipulation}
 .res-priority-tag{font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--terra-soft);font-weight:700;margin-bottom:5px}
 .res-priority-name{font-family:'Newsreader',serif;font-weight:600;font-size:17.5px;color:#fff}
 .res-text{font-size:16.5px;color:var(--ink2);line-height:1.65;text-align:left;background:var(--cream);border:1px solid var(--border2);border-radius:14px;padding:20px 22px;margin-bottom:28px}
+.res-villain{text-align:left;background:rgba(189,106,65,.07);border-left:3px solid var(--terra);border-radius:0 12px 12px 0;padding:16px 20px;margin-bottom:20px}
+.res-villain p{font-size:15px;color:var(--ink2);line-height:1.6;margin-bottom:8px}
+.res-villain p:last-child{margin-bottom:0}
+.res-imagine{text-align:center;padding:22px 18px;margin-bottom:24px}
+.res-imagine p{font-family:'Newsreader',serif;font-style:italic;font-size:18px;color:var(--wine2);line-height:1.5;margin-bottom:6px}
+.res-imagine-close{font-style:normal !important;font-weight:600;font-size:15px !important;color:var(--ink2) !important;margin-top:10px !important}
 .res-text strong{color:var(--wine)}
 .res-note{font-size:12.5px;color:var(--muted);margin-top:16px;line-height:1.5}
 
@@ -164,8 +172,8 @@ button{font-family:inherit;touch-action:manipulation}
 .check div{display:flex;gap:12px;font-size:17.5px;color:var(--ink2);padding:12px 0;border-bottom:1px solid var(--border2);line-height:1.5}
 .check div:last-child{border-bottom:none}
 .ck{color:var(--terra);font-weight:700;flex-shrink:0}
-.old-price{font-size:18.5px;color:var(--muted);text-decoration:line-through}
 .price{font-family:'Newsreader',serif;font-size:64px;font-weight:600;color:var(--wine);margin:8px 0 22px}
+.today-label{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-top:14px}
 .price small{font-size:29px}
 .note{font-size:15.5px;color:var(--muted);margin-bottom:26px}
 
@@ -224,6 +232,7 @@ body.unlocked .rest-of-site{display:block}
       <li>e sua porcentagem de chance de reconquista.</li>
     </ul>
   </div>
+  <p class="social-proof">👭 <strong>CENTENAS DE MULHERES</strong> já fizeram essa análise para descobrir o melhor caminho para a própria situação.</p>
   <button class="btn" onclick="openQuiz()">🔍 FAZER MINHA ANÁLISE DE RECONQUISTA</button>
   <p class="tag">Grátis • 2 minutos • Sua situação é única — a análise é feita pra ela</p>
   <button class="btn-skip" onclick="scrollToOferta()">Já fiz minha análise, quero ver o método</button>
@@ -324,10 +333,10 @@ body.unlocked .rest-of-site{display:block}
         <div style="display:flex;justify-content:space-between"><span>Bônus: Manifesto e Regras de Ouro</span><span>R$ 27</span></div>
         <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border2);margin-top:8px;padding-top:8px;font-weight:700"><span>Valor total</span><span>R$ 265</span></div>
       </div>
-      <div class="old-price">De R$ 97,00</div>
+      <p class="today-label">Hoje</p>
       <div class="price">R$ 48<small>,50</small></div>
       <p class="note">Pagamento único • Sem mensalidade • Acesso vitalício</p>
-      <button class="btn" id="offerCta" style="width:100%;justify-content:center" onclick="openModal()">❤️ Quero aumentar minhas chances de reconquista</button>
+      <button class="btn" id="offerCta" style="width:100%;justify-content:center" onclick="openModal()">❤️ Quero começar meu plano agora</button>
     </div>
   </div>
 </section>
@@ -338,21 +347,27 @@ body.unlocked .rest-of-site{display:block}
   <div class="wrap" style="max-width:460px">
     <div class="t-card">
       <div class="stars">★★★★★</div>
-      <p class="t-text">"Ele tinha me bloqueado de tudo. Segui o plano à risca e em 6 dias ele mesmo me desbloqueou e mandou mensagem primeiro."</p>
+      <p class="t-text">"Ele tinha sumido e nem respondia mais. Depois de aplicar o método, voltamos a nos falar naturalmente, sem eu forçar nada."</p>
       <div class="t-author">Camila R.</div>
       <div class="t-city">Petrópolis, RJ</div>
     </div>
     <div class="t-card">
       <div class="stars">★★★★★</div>
-      <p class="t-text">"Fiquei meses sem falar com ele. Segui o plano e foi ele quem veio atrás de mim, do jeito certo."</p>
+      <p class="t-text">"Comecei o método querendo ele de volta. No meio do processo entendi que, na verdade, eu tinha crescido e não queria mais aquela relação — e isso foi libertador."</p>
       <div class="t-author">Marcela T.</div>
       <div class="t-city">Belo Horizonte, MG</div>
     </div>
     <div class="t-card">
       <div class="stars">★★★★★</div>
-      <p class="t-text">"Ele é orgulhoso ao extremo, nunca ia admitir que estava errado. Segui o método e em 6 dias ele mesmo me chamou pra conversar."</p>
+      <p class="t-text">"Ele é orgulhoso ao extremo, nunca ia admitir que estava errado. Segui o método e em poucos dias ele mesmo me chamou pra conversar."</p>
       <div class="t-author">Tatiane M.</div>
       <div class="t-city">Manaus, AM</div>
+    </div>
+    <div class="t-card">
+      <div class="stars">★★★★★</div>
+      <p class="t-text">"Fiquei meses sem falar com ele. Segui o plano e hoje estamos juntos de novo, do jeito certo."</p>
+      <div class="t-author">Fernanda O.</div>
+      <div class="t-city">São Paulo, SP</div>
     </div>
   </div>
 </section>
@@ -481,7 +496,7 @@ body.unlocked .rest-of-site{display:block}
 
     <div class="quiz-step" data-step="9">
       <div class="quiz-result">
-        <p class="res-eyebrow">✓ Diagnóstico de Reconquista Concluído</p>
+        <p class="res-eyebrow" id="resEyebrow">✓ Diagnóstico de Reconquista Concluído</p>
         <div class="res-pct-row">
           <p class="res-label" id="resLabel">de chance de reconquista</p>
           <div class="res-pct"><span id="resPctNum">0</span><span class="pct-sign">%</span></div>
@@ -489,7 +504,17 @@ body.unlocked .rest-of-site{display:block}
         <div class="res-bar-track"><div class="res-bar-fill" id="resBar"></div></div>
         <div class="res-priority" id="resPriority"></div>
         <div class="res-text" id="resText"></div>
-        <button class="btn" style="width:100%;justify-content:center" onclick="goToOfferFromQuiz()">❤️ Quero descobrir exatamente o que fazer</button>
+        <div class="res-villain">
+          <p><strong>O maior problema não é ele.</strong> É o desespero que faz a mulher mandar mensagens demais, implorar, cobrar explicações e acabar confirmando pra ele que pode voltar quando quiser.</p>
+          <p>É exatamente esse ciclo que o <strong>Código da Reconquista</strong> quebra.</p>
+        </div>
+        <div class="res-imagine">
+          <p>Imagine abrir o WhatsApp amanhã e ver uma mensagem dele.</p>
+          <p>Não porque você insistiu. Não porque implorou.</p>
+          <p>Mas porque ele voltou a sentir medo de perder você.</p>
+          <p class="res-imagine-close">É exatamente esse comportamento que o Código da Reconquista foi criado para estimular.</p>
+        </div>
+        <button class="btn" style="width:100%;justify-content:center" onclick="goToOfferFromQuiz()">❤️ Quero descobrir exatamente como trazer ele de volta</button>
         <p class="res-note">Metodologia baseada na análise de padrões comportamentais recorrentes em processos de reconquista. Resultado individual depende da aplicação correta do plano.</p>
       </div>
     </div>
@@ -730,8 +755,12 @@ function quizComputeResult(name){
   if(frases.length===0) frases.push('a sua situação tem particularidades que pedem um <strong>plano feito sob medida</strong>, e não uma fórmula genérica.');
 
   const nomeTrat = name ? name.split(' ')[0] : 'Você';
+
+  const eyebrowEl = document.getElementById('resEyebrow');
+  if(eyebrowEl) eyebrowEl.textContent = `✓ ${nomeTrat}, sua análise está concluída`;
+
   document.getElementById('resText').innerHTML =
-    `${nomeTrat}, com base nas suas respostas: ${frases.join(' Além disso, ')} <br><br>O <strong>Código da Reconquista</strong> tem o plano específico pra esse ponto de partida — dia a dia, sem achismo.`;
+    `${nomeTrat}, isso é o que a sua análise revelou: ${frases.join(' Além disso, ')} <br><br>A boa notícia é que sua análise mostra que ainda existem sinais que podem ser trabalhados. Agora o que vai determinar o resultado não é sorte. <strong>É fazer a coisa certa antes que ele se acostume com a sua ausência.</strong>`;
 }
 
 const offerCopyByPath={
