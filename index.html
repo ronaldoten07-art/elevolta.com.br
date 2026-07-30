@@ -48,6 +48,11 @@ button{font-family:inherit;touch-action:manipulation}
 .h1{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(38px,10.5vw,60px);line-height:1.16;max-width:600px;margin-bottom:26px;animation:fadeUp .6s ease .08s both;color:var(--wine)}
 .h1 em{font-style:italic;color:var(--terra)}
 .lead{font-size:clamp(20px,5vw,24px);font-weight:500;color:var(--ink2);max-width:560px;margin-bottom:20px;line-height:1.6;animation:fadeUp .6s ease .16s both}
+.pattern-break{font-family:'Newsreader',serif;font-style:italic;font-size:clamp(18px,4.6vw,21px);color:var(--wine2);max-width:560px;margin-bottom:18px;line-height:1.5;animation:fadeUp .6s ease .12s both}
+.pattern-break strong{font-style:normal;color:var(--wine)}
+.risk-reverse{font-size:14.5px;color:var(--muted);max-width:340px;margin:0 auto 16px;line-height:1.5;font-style:italic}
+.mental-imagine{margin:18px auto 0;max-width:420px;text-align:left}
+.mental-imagine li{font-family:'Newsreader',serif;font-style:italic;font-size:17px;color:var(--wine2);line-height:1.6;list-style:none;margin-bottom:8px}
 .btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--terra),var(--wine2));color:#fff;font-weight:700;font-size:19.5px;letter-spacing:.3px;padding:20px 42px;border:none;border-radius:50px;cursor:pointer;box-shadow:0 14px 32px rgba(92,28,48,.28),inset 0 1px 0 rgba(255,255,255,.2);transition:transform .2s,box-shadow .2s}
 .btn:active{transform:scale(.98)}
 .tag{font-size:16px;color:var(--muted);margin-top:4px;animation:fadeIn .6s ease .3s both}
@@ -232,6 +237,7 @@ body.unlocked .rest-of-site{display:block}
       <li>e sua porcentagem de chance de reconquista.</li>
     </ul>
   </div>
+  <p class="pattern-break">Ele realmente perdeu o interesse... <strong>ou só está deixando o orgulho falar mais alto?</strong><br>É exatamente isso que esta análise vai revelar.</p>
   <p class="social-proof">👭 <strong>CENTENAS DE MULHERES</strong> já fizeram essa análise para descobrir o melhor caminho para a própria situação.</p>
   <button class="btn" onclick="openQuiz()">🔍 FAZER MINHA ANÁLISE DE RECONQUISTA</button>
   <p class="tag">Grátis • 2 minutos • Sua situação é única — a análise é feita pra ela</p>
@@ -245,6 +251,12 @@ body.unlocked .rest-of-site{display:block}
   <p class="promise-eyebrow">Sua situação é diferente de todas as outras</p>
   <p class="promise-text">Uma mulher bloqueada precisa de uma estratégia. Uma mulher que levou vácuo precisa de outra. Uma mulher que está disputando espaço com outra mulher precisa de um caminho completamente diferente. É exatamente isso que essa análise vai descobrir.</p>
   <p class="promise-sub">O maior erro das mulheres depois do término é fazer justamente aquilo que empurra o homem ainda mais para longe. Quanto mais você tenta convencê-lo... mais ele se fecha.<br><br>O <strong>Código da Reconquista</strong> faz exatamente o contrário. Ele desperta a curiosidade, o medo da perda, e faz você voltar a ocupar espaço na mente dele — sem correr atrás.</p>
+  <ul class="mental-imagine">
+    <li>📱 Ver uma mensagem dele chegando.</li>
+    <li>📞 Receber uma ligação inesperada.</li>
+    <li>💬 Ele perguntar como você está.</li>
+    <li>❤️ Ele voltar a demonstrar interesse.</li>
+  </ul>
 </section>
 
 <!-- BENEFITS / DESEJO -->
@@ -336,7 +348,8 @@ body.unlocked .rest-of-site{display:block}
       <p class="today-label">Hoje</p>
       <div class="price">R$ 48<small>,50</small></div>
       <p class="note">Pagamento único • Sem mensalidade • Acesso vitalício</p>
-      <button class="btn" id="offerCta" style="width:100%;justify-content:center" onclick="openModal()">❤️ Quero começar meu plano agora</button>
+      <p class="risk-reverse">Você não precisa acreditar em mim agora. Apenas siga o plano durante os próximos dias e veja como ele reage.</p>
+      <button class="btn" id="offerCta" style="width:100%;justify-content:center" onclick="openModal()">Sim! Quero saber exatamente como agir antes que seja tarde.</button>
     </div>
   </div>
 </section>
@@ -666,10 +679,11 @@ function quizSubmitLead(){
     else if(contato==='vacuo') modName='Módulo 2 — Visualizou e Não Respondeu';
     else if(outra==='sim') modName='Módulo 4 — Ele Está com Outra';
 
-    fetch('https://formspree.io/f/mreonbkg',{
+    fetch('https://api.web3forms.com/submit',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
+        access_key:'b94da7fe-0681-4504-b6a2-9eca5fb9d99d',
         evento:'Lead — Análise de Reconquista',
         nome:name,
         whatsapp:wpp,
@@ -760,13 +774,13 @@ function quizComputeResult(name){
   if(eyebrowEl) eyebrowEl.textContent = `✓ ${nomeTrat}, sua análise está concluída`;
 
   document.getElementById('resText').innerHTML =
-    `${nomeTrat}, isso é o que a sua análise revelou: ${frases.join(' Além disso, ')} <br><br>A boa notícia é que sua análise mostra que ainda existem sinais que podem ser trabalhados. Agora o que vai determinar o resultado não é sorte. <strong>É fazer a coisa certa antes que ele se acostume com a sua ausência.</strong>`;
+    `${nomeTrat}, pelas suas respostas, ainda existem sinais positivos: ${frases.join(' Além disso, ')} <br><br>Mas existe um problema. <strong>Se você agir da maneira errada agora, pode transformar um afastamento temporário em definitivo.</strong> <br><br>A boa notícia é que isso ainda pode ser trabalhado. O que vai determinar o resultado não é sorte — <strong>é fazer a coisa certa antes que ele se acostume com a sua ausência.</strong>`;
 }
 
 const offerCopyByPath={
-  bloqueio:{title:'O plano ideal pra quem foi bloqueada',cta:'💛 QUERO QUE ELE ME DESBLOQUEIE'},
-  vacuo:{title:'O plano ideal pra sair do vácuo',cta:'💛 QUERO A RESPOSTA DELE'},
-  outra:{title:'O plano ideal pra essa situação com outra pessoa',cta:'💛 QUERO REVERTER ISSO'}
+  bloqueio:{title:'O plano ideal pra quem foi bloqueada',cta:'Sim! Quero saber exatamente como agir antes que ele reforce o bloqueio.'},
+  vacuo:{title:'O plano ideal pra sair do vácuo',cta:'Sim! Quero saber exatamente como agir antes que seja tarde.'},
+  outra:{title:'O plano ideal pra essa situação com outra pessoa',cta:'Sim! Quero saber exatamente como agir antes que seja tarde.'}
 };
 
 function personalizeOffer(){
@@ -827,10 +841,11 @@ function goToStep2(){
 
   try{
     const now=new Date();
-    fetch('https://formspree.io/f/mreonbkg',{
+    fetch('https://api.web3forms.com/submit',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({
+        access_key:'b94da7fe-0681-4504-b6a2-9eca5fb9d99d',
         evento:'Lead no Checkout — Código da Reconquista',
         nome:name,
         whatsapp:wpp,
@@ -854,10 +869,11 @@ function copyPix(){
       const name=document.getElementById('buyerName').value.trim();
       const wppNum=document.getElementById('buyerWpp').value.trim();
       const now=new Date();
-      fetch('https://formspree.io/f/mreonbkg',{
+      fetch('https://api.web3forms.com/submit',{
         method:'POST',
         headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify({
+          access_key:'b94da7fe-0681-4504-b6a2-9eca5fb9d99d',
           evento:'PIX Copiado — Código da Reconquista',
           nome:name,
           whatsapp:wppNum,
