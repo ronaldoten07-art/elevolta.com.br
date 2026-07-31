@@ -101,10 +101,6 @@ button{font-family:inherit;touch-action:manipulation}
 .res-label{font-size:19px;font-weight:600;color:var(--ink)}
 .res-bar-track{height:14px;background:var(--paper2);border-radius:10px;overflow:hidden;margin-bottom:26px}
 .res-bar-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--terra),var(--wine));border-radius:10px;transition:width 1.1s cubic-bezier(.2,.8,.3,1)}
-.res-priority{background:linear-gradient(160deg,var(--wine2) 0%, var(--wine) 85%);border-radius:14px;padding:16px 18px;margin-bottom:20px;text-align:left;display:none}
-.res-priority.show{display:block}
-.res-priority-tag{font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--terra-soft);font-weight:700;margin-bottom:5px}
-.res-priority-name{font-family:'Newsreader',serif;font-weight:600;font-size:17.5px;color:#fff}
 .res-text{font-size:16.5px;color:var(--ink2);line-height:1.65;text-align:left;background:var(--cream);border:1px solid var(--border2);border-radius:14px;padding:20px 22px;margin-bottom:28px}
 .res-villain{text-align:left;background:rgba(189,106,65,.07);border-left:3px solid var(--terra);border-radius:0 12px 12px 0;padding:16px 20px;margin-bottom:20px}
 .res-villain p{font-size:15px;color:var(--ink2);line-height:1.6;margin-bottom:8px}
@@ -163,6 +159,17 @@ button{font-family:inherit;touch-action:manipulation}
 
 /* URGENCY */
 .urgency{background:linear-gradient(160deg,var(--wine2) 0%, var(--wine) 85%);padding:64px 24px;text-align:center}
+.plano-exclusivo{background:var(--paper);padding:72px 24px;text-align:center}
+.pe-eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.pe-title{font-family:'Newsreader',serif;font-size:clamp(28px,6vw,38px);color:var(--wine);margin-bottom:14px;line-height:1.18}
+.pe-sub{font-size:16.5px;color:var(--ink2);max-width:540px;margin:0 auto 40px;line-height:1.65}
+.pe-pillars{max-width:560px;margin:0 auto 54px;display:flex;flex-direction:column;gap:16px;text-align:left}
+.pe-pillar{background:#fff;border:1px solid var(--border2);border-radius:14px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start}
+.pe-pillar-num{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--wine);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif}
+.pe-pillar-text strong{display:block;color:var(--wine);font-size:16.5px;margin-bottom:5px}
+.pe-pillar-text span{font-size:14.5px;color:var(--ink2);line-height:1.55}
+.pe-testis-title{font-family:'Newsreader',serif;font-size:clamp(22px,5vw,27px);color:var(--wine);margin-bottom:26px}
+.pe-testis .t-card{max-width:460px;margin-left:auto;margin-right:auto}
 .urgency-eyebrow{font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--terra-soft);margin-bottom:20px}
 .urgency-text{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(20px,5vw,26px);line-height:1.55;max-width:540px;margin:0 auto;color:#fff}
 
@@ -315,6 +322,15 @@ body.unlocked .rest-of-site{display:block}
     </div>
   </div>
   </div>
+</section>
+
+<!-- PLANO EXCLUSIVO PERSONALIZADO -->
+<section class="plano-exclusivo" id="planoExclusivo" style="display:none">
+  <p class="pe-eyebrow" id="peEyebrow">Sua análise, continuada</p>
+  <h2 class="pe-title" id="peTitle"></h2>
+  <p class="pe-sub" id="peSub"></p>
+  <div class="pe-pillars" id="pePillars"></div>
+  <div class="pe-testis" id="peTestis"></div>
 </section>
 
 <!-- URGÊNCIA EMOCIONAL -->
@@ -515,7 +531,6 @@ body.unlocked .rest-of-site{display:block}
           <div class="res-pct"><span id="resPctNum">0</span><span class="pct-sign">%</span></div>
         </div>
         <div class="res-bar-track"><div class="res-bar-fill" id="resBar"></div></div>
-        <div class="res-priority" id="resPriority"></div>
         <div class="res-text" id="resText"></div>
         <div class="res-villain">
           <p><strong>O maior problema não é ele.</strong> É o desespero que faz a mulher mandar mensagens demais, implorar, cobrar explicações e acabar confirmando pra ele que pode voltar quando quiser.</p>
@@ -633,7 +648,7 @@ function quizBack(){
   if(quizCurrent>0) quizShowStep(quizCurrent-1);
 }
 const identMsgs={
-  bloqueio:'Você não está sozinha nessa situação — bloqueio costuma ser reação de defesa emocional, não de indiferença.',
+  bloqueio:'Você não está sozinha nessa situação — bloqueio é uma reação de defesa emocional, não de indiferença. É um sinal de que ainda há sentimento envolvido.',
   vacuo:'Visualizar e não responder é um dos sinais mais comuns de conflito interno. Você não está sozinha nessa situação.',
   'as-vezes':'Manter contato de vez em quando ainda deixa margem real pra reconstrução.',
   normal:'Contato normal é um ponto de partida melhor do que parece — mas exige estratégia pra não estagnar.'
@@ -750,19 +765,8 @@ function quizComputeResult(name){
   const sinal=quizAnswers[3]?quizAnswers[3].tag:null;
   const outra=quizAnswers[4]?quizAnswers[4].tag:null;
 
-  // Módulo prioritário — a parte que mais parece "diagnóstico profissional"
-  let modName=null, modTag=null;
-  if(contato==='bloqueio'){ modName='Módulo 1 — Ele Bloqueou'; modTag='Seu ponto de partida prioritário'; }
-  else if(contato==='vacuo'){ modName='Módulo 2 — Visualizou e Não Respondeu'; modTag='Seu ponto de partida prioritário'; }
-  else if(outra==='sim'){ modName='Módulo 4 — Ele Está com Outra'; modTag='Seu ponto de partida prioritário'; }
-  else { modName='Plano de 7 Dias — Reconstrução e Presença Estratégica'; modTag='Seu ponto de partida prioritário'; }
-
-  const prBox=document.getElementById('resPriority');
-  prBox.innerHTML = `<div class="res-priority-tag">${modTag}</div><div class="res-priority-name">${modName}</div>`;
-  prBox.classList.add('show');
-
   let frases=[];
-  if(contato==='bloqueio') frases.push('o fato de ele te bloquear costuma ser uma reação de <strong>defesa emocional</strong>, não de indiferença — é assim que homens tentam se proteger quando ainda sentem algo.');
+  if(contato==='bloqueio') frases.push('o fato de ele te bloquear é uma reação de <strong>defesa emocional</strong>, não de indiferença — e o bloqueio demonstra que ainda há sentimento envolvido.');
   if(contato==='vacuo') frases.push('ele visualizar e não responder é um dos sinais mais fortes de que ainda existe <strong>conflito interno</strong> — ele está pensando na resposta, e isso já diz muito.');
   if(sinal==='stories') frases.push('continuar vendo seus stories mostra que ele ainda <strong>monitora sua vida</strong>, mesmo tentando parecer indiferente.');
   if(outra==='sim') frases.push('mesmo com outra pessoa envolvida, isso não elimina as chances — mas exige uma <strong>estratégia mais cuidadosa</strong> nos próximos passos.');
@@ -775,6 +779,91 @@ function quizComputeResult(name){
 
   document.getElementById('resText').innerHTML =
     `${nomeTrat}, pelas suas respostas, ainda existem sinais positivos: ${frases.join(' Além disso, ')} <br><br>Mas existe um problema. <strong>Se você agir da maneira errada agora, pode transformar um afastamento temporário em definitivo.</strong> <br><br>A boa notícia é que isso ainda pode ser trabalhado. O que vai determinar o resultado não é sorte — <strong>é fazer a coisa certa antes que ele se acostume com a sua ausência.</strong>`;
+}
+
+const planoData={
+  bloqueio:{
+    title:'Seu Plano Exclusivo — Ele Bloqueou',
+    sub:'Baseado nas suas respostas, aqui está exatamente o que você precisa entender e fazer a partir de agora.',
+    pillars:[
+      {t:'Por que ele bloqueou de verdade',d:'Bloqueio é uma reação de defesa emocional — e demonstra que ainda há sentimento envolvido. Você vai entender o que realmente está por trás disso na sua situação.'},
+      {t:'O gatilho certo pra ele sentir sua falta',d:'Sem mandar uma única mensagem. É sobre o que você faz — ou para de fazer — enquanto o bloqueio está ativo.'},
+      {t:'O momento exato de agir quando ele desbloquear',d:'A maioria das mulheres erra justamente nessa hora. Você vai saber exatamente o que dizer.'}
+    ],
+    testis:[
+      ['Ele tinha me bloqueado de tudo. Segui o plano à risca e em 6 dias ele mesmo me desbloqueou e mandou mensagem primeiro.','Camila R.','Petrópolis, RJ'],
+      ['Eu não fazia ideia do motivo do bloqueio. O método me ajudou a entender e, sem nenhum desespero da minha parte, ele voltou a falar comigo em poucos dias.','Débora M.','Salvador, BA'],
+      ['O que mais me ajudou foi entender o que NÃO fazer. Parei de tentar contato e, em poucos dias, quando ele me desbloqueou, veio ele atrás de mim.','Patrícia N.','Recife, PE']
+    ]
+  },
+  vacuo:{
+    title:'Seu Plano Exclusivo — Saindo do Vácuo',
+    sub:'Baseado nas suas respostas, aqui está exatamente o que você precisa entender e fazer a partir de agora.',
+    pillars:[
+      {t:'O que o vácuo realmente significa',d:'Visualizar e não responder é sinal de conflito interno, não de indiferença. Você vai entender o que se passa na cabeça dele.'},
+      {t:'Como parar de checar o WhatsApp e virar o jogo',d:'A ansiedade de esperar resposta é normal — mas existe uma forma de usar esse tempo a seu favor.'},
+      {t:'A mensagem que quebra o silêncio sem parecer desesperada',d:'Existe um jeito certo — e um momento certo — de retomar o contato sem parecer que você está implorando.'}
+    ],
+    testis:[
+      ['Ele vivia visualizando e sumindo. Apliquei o método e, sem eu insistir, ele voltou a puxar assunto sozinho.','Larissa F.','Curitiba, PR'],
+      ['Fiquei dias no vácuo, achando que tinha perdido ele de vez. Em poucos dias segui os passos certos e ele mesmo me chamou pra conversar.','Vanessa T.','Fortaleza, CE'],
+      ['Parei de mandar mensagem atrás de mensagem. O silêncio dele foi ficando mais curto a cada dia até ele voltar a falar comigo primeiro.','Adriana F.','Niterói, RJ']
+    ]
+  },
+  outra:{
+    title:'Seu Plano Exclusivo — Ele Está com Outra',
+    sub:'Baseado nas suas respostas, aqui está exatamente o que você precisa entender e fazer a partir de agora.',
+    pillars:[
+      {t:'O que essa relação nova realmente representa',d:'Quase nunca é o que parece de fora. Você vai entender o verdadeiro peso disso na sua situação.'},
+      {t:'Como se posicionar sem competir ou implorar',d:'Competir com ela é o erro mais comum — e o que mais afasta. Existe um caminho completamente diferente.'},
+      {t:'Como reativar a lembrança emocional que só vocês têm',d:'Isso não depende dela. Depende de como você usa o que só você sabe fazer ele sentir.'}
+    ],
+    testis:[
+      ['Ele estava namorando outra havia 2 meses. Segui o método sem fazer nenhum drama e em poucos dias ele já estava me procurando de novo.','Gabriela S.','Goiânia, GO'],
+      ['Achei que tinha perdido de vez pra ela. O plano me ensinou a agir diferente e, sem competir com ninguém, ele voltou a me procurar.','Priscila H.','Belém, PA'],
+      ['Parei de me comparar com ela e comecei a aplicar o que aprendi. Em poucos dias ele já estava mandando mensagem de novo.','Rafaela D.','João Pessoa, PB']
+    ]
+  },
+  default:{
+    title:'Seu Plano Exclusivo — Reconstrução e Presença Estratégica',
+    sub:'Baseado nas suas respostas, aqui está exatamente o que você precisa entender e fazer a partir de agora.',
+    pillars:[
+      {t:'O que se passa na cabeça dele agora',d:'Não é o que a maioria imagina. Você vai entender o comportamento masculino real por trás desse afastamento.'},
+      {t:'Os gatilhos certos, no momento certo',d:'Cada fase do plano tem uma ação específica — sem achismo, sem tentativa e erro.'},
+      {t:'Como reconhecer os sinais de que ele está voltando',d:'Pra você não perder a hora certa de agir quando o comportamento dele começar a mudar.'}
+    ],
+    testis:[
+      ['Em poucos dias ele me procurou e hoje estamos mais felizes do que antes!','Juliana S.','Curitiba, PR'],
+      ['Fiquei meses sem falar com ele. Segui o plano e foi ele quem veio atrás de mim, do jeito certo.','Marcela T.','Belo Horizonte, MG'],
+      ['Não sabia nem por onde começar. O passo a passo tirou toda a dúvida e funcionou melhor do que eu esperava.','Karina P.','Natal, RN']
+    ]
+  }
+};
+
+function personalizePlano(){
+  const contato=quizAnswers[2]?quizAnswers[2].tag:null;
+  const outra=quizAnswers[4]?quizAnswers[4].tag:null;
+  let key='default';
+  if(contato==='bloqueio') key='bloqueio';
+  else if(contato==='vacuo') key='vacuo';
+  else if(outra==='sim') key='outra';
+  const d=planoData[key];
+
+  const nomeCompleto=document.getElementById('quizName').value.trim();
+  const nomeTrat=nomeCompleto?nomeCompleto.split(' ')[0]:'';
+  const eyebrowEl=document.getElementById('peEyebrow');
+  if(eyebrowEl) eyebrowEl.textContent = nomeTrat ? `${nomeTrat}, sua análise continuada` : 'Sua análise, continuada';
+
+  document.getElementById('peTitle').textContent=d.title;
+  document.getElementById('peSub').textContent=d.sub;
+  document.getElementById('pePillars').innerHTML=d.pillars.map((p,i)=>
+    `<div class="pe-pillar"><div class="pe-pillar-num">${i+1}</div><div class="pe-pillar-text"><strong>${p.t}</strong><span>${p.d}</span></div></div>`
+  ).join('');
+  document.getElementById('peTestis').innerHTML =
+    '<p class="pe-testis-title">Mulheres que passaram pela mesma situação</p>' +
+    d.testis.map(t=>`<div class="t-card"><div class="stars">★★★★★</div><p class="t-text">"${t[0]}"</p><div class="t-author">${t[1]}</div><div class="t-city">${t[2]}</div></div>`).join('');
+
+  document.getElementById('planoExclusivo').style.display='block';
 }
 
 const offerCopyByPath={
@@ -799,10 +888,12 @@ function personalizeOffer(){
 }
 
 function goToOfferFromQuiz(){
+  personalizePlano();
   personalizeOffer();
   unlockPage();
   closeQuiz();
-  scrollToOferta();
+  const el=document.getElementById('planoExclusivo');
+  if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
 function scrollToOferta(){
