@@ -794,7 +794,7 @@
   const WA_NUMBER = '5524981517067';
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mreonbkg';
   const PIX_97   = '00020126360014br.gov.bcb.pix011465963395000173520400005303986540597.005802BR592465.963.395 RONALDO DA CU6009Sao Paulo62240520daqr9700072778397601630430E6';
-  const PIX_4850 = '00020126360014br.gov.bcb.pix011465963395000173520400005303986540548.505802BR592465.963.395 RONALDO DA CU6009Sao Paulo62240520daqr35560937277839776304AB1D';
+  const PIX_4850 = '00020126330014br.gov.bcb.pix011112149693720520400005303986540548.505802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026080223364313450300017br.gov.bcb.brcode01051.0.0630418D1';
   const OFERTAS = { cheia:{valor:'R$ 97,00',num:97.00,pix:PIX_97,priceHtml:'R$ 97<span>,00</span>',genVal:'R$ 97,00'}, desconto:{valor:'R$ 48,50',num:48.50,pix:PIX_4850,priceHtml:'R$ 48<span>,50</span>',genVal:'R$ 48,50'} };
   let OFERTA = OFERTAS.desconto;
   function setOferta(t){ OFERTA = OFERTAS[t]||OFERTAS.cheia; var op=document.getElementById('coOrderPrice'); if(op) op.innerHTML=OFERTA.priceHtml; var gv=document.getElementById('coGenVal'); if(gv) gv.textContent=OFERTA.genVal; }
