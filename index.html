@@ -532,6 +532,17 @@
   .ck-tip{margin-top:14px;padding:10px 12px;border-radius:12px;background:var(--rose-pale);color:var(--plum);font-size:12.8px;line-height:1.45;text-align:left}
   @media(max-height:640px){.ck-head{padding:14px 20px 12px}.ck-head .t{font-size:17px}.ck-dots{margin-top:10px}.ck-body{padding:18px 20px}.ck-step h4{font-size:19px}.ck-step p.sub{margin-bottom:12px}}
   .ck-err{display:none;margin-top:12px;padding:10px 12px;border-radius:10px;background:#fbeaea;color:#a02a1f;font-size:13.5px;text-align:left}
+  /* teclado aberto (iOS/Android): modal acompanha a área visível e vai para o topo */
+  .ck{height:100%}
+  .ck-box{max-height:var(--ckmax,calc(100dvh - 28px))}
+  .ck.kb{align-items:flex-start;padding-top:8px;padding-bottom:8px}
+  .ck.kb .ck-head{padding:12px 20px 10px}
+  .ck.kb .ck-head .s{display:none}
+  .ck.kb .ck-dots{margin-top:8px}
+  .ck.kb .ck-body{padding:16px 20px 24px}
+  .ck.kb #s1 .sub,.ck.kb #s1 .ck-sec{display:none}
+  .ck.kb #s1 h4{margin-bottom:10px}
+  .ck.kb .ck-btn{margin-top:16px}
   .ck-link{margin-top:16px;padding:12px;border-radius:12px;background:var(--sand);border:1px dashed var(--gold-dk);font-size:13.5px;font-weight:600;color:var(--plum);word-break:break-all}
 </style>
 </head>
@@ -918,9 +929,9 @@
     <p class="sub">Informe seu nome e WhatsApp para receber seu acesso e o protocolo da compra.</p>
     <div class="ck-sum"><span>Total · pagamento único</span><b>R$ 39,90</b></div>
     <label for="ckNome">Nome completo</label>
-    <input id="ckNome" type="text" autocomplete="name" placeholder="Seu nome">
+    <input id="ckNome" type="text" autocomplete="name" autocapitalize="words" enterkeyhint="next" placeholder="Seu nome">
     <label for="ckZap">WhatsApp</label>
-    <input id="ckZap" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(24) 99999-9999" maxlength="15">
+    <input id="ckZap" type="tel" inputmode="numeric" autocomplete="tel" enterkeyhint="done" placeholder="(24) 99999-9999" maxlength="15">
     <div class="ck-err" id="ckErr"></div>
     <button class="ck-btn" id="ckGo" type="button">Continuar</button>
     <div class="ck-sec">🔒 Seus dados estão protegidos</div>
@@ -975,15 +986,20 @@
      <li><i>3</i><span>Informe os dados do cartão e finalize o pagamento de <b>R$ 39,90</b>.</span></li>
     </ul>
     <div class="ck-link" id="ckLinkTxt"></div>
-    <div class="ck-tip">💡 Dica: no TikTok, você também pode tocar nos <b>três pontinhos (…)</b> da página e escolher <b>"Abrir no navegador"</b>.</div>
+    <div class="ck-tip">🔒 <b>Totalmente seguro:</b> o pagamento é processado pelo <b>Mercado Pago</b>, um dos ambientes de pagamento mais seguros do mercado. Seus dados do cartão são protegidos.</div>
     <button class="ck-btn" id="ckCard" type="button">Copiar link de pagamento</button>
     <button class="ck-back" type="button" data-b="s2">Voltar</button>
    </div>
-   <!-- 4b: processando -->
+   <!-- 4b: instruções cartão -->
    <div class="ck-step ck-c" id="s4b">
-    <div class="ck-spin"></div>
-    <h4>Link copiado! Pagamento em processamento</h4>
-    <p class="sub">Agora <b>cole o link no navegador</b> da internet e conclua o pagamento com cartão. Após a confirmação, você recebe o acesso no seu WhatsApp.</p>
+    <div class="ck-ok">✓</div>
+    <h4>Link copiado!</h4>
+    <p class="sub">Agora é só finalizar o pagamento no navegador do seu celular:</p>
+    <ul class="ck-list">
+     <li><i>1</i><span>Abra o <b>navegador do celular</b> (Chrome, Safari...).</span></li>
+     <li><i>2</i><span><b>Cole o link</b> que você copiou na barra de endereço e acesse.</span></li>
+     <li><i>3</i><span>Informe os dados do cartão e finalize o pagamento de <b>R$ 39,90</b>.</span></li>
+    </ul>
     <div class="ck-proto"><small>Seu protocolo</small><b class="ckP"></b></div>
     <button class="ck-btn" id="ckCard2" type="button">Copiar link novamente</button>
     <button class="ck-back" type="button" onclick="ckClose()">Fechar</button>
@@ -1012,16 +1028,42 @@
     var n={s1:1,s2:2,s3a:3,s3b:3,s3c:3,s4a:4,s4b:4}[id];
     document.querySelectorAll('.ck-dots i').forEach(function(x,i){x.classList.toggle('on',i<n)});
     document.querySelector('.ck-box').scrollTop=0;
+    if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();
+    $('ck').classList.remove('kb');fit();
   }
   function proto(){
     var t=new Date(),p=function(n){return String(n).padStart(2,'0')};
     return 'MR'+t.getFullYear()+p(t.getMonth()+1)+p(t.getDate())+'-'+Math.random().toString(36).slice(2,7).toUpperCase();
   }
+  /* ---- ajuste ao teclado: segue a área realmente visível (visualViewport) ---- */
+  var vv=window.visualViewport;
+  function fit(){
+    var ck=$('ck');
+    if(!ck.classList.contains('on'))return;
+    var h=vv?vv.height:window.innerHeight,t=vv?vv.offsetTop:0;
+    ck.style.top=t+'px';ck.style.bottom='auto';ck.style.height=h+'px';
+    ck.style.setProperty('--ckmax',Math.max(200,h-(ck.classList.contains('kb')?16:28))+'px');
+  }
+  if(vv){vv.addEventListener('resize',fit);vv.addEventListener('scroll',fit)}
+  window.addEventListener('resize',fit);
+  window.addEventListener('orientationchange',function(){setTimeout(fit,300)});
+  $('ck').addEventListener('focusin',function(e){
+    if(e.target.tagName!=='INPUT')return;
+    var el=e.target;
+    $('ck').classList.add('kb');fit();
+    setTimeout(function(){fit();try{el.scrollIntoView({block:'center',behavior:'smooth'})}catch(x){}},350);
+  });
+  $('ck').addEventListener('focusout',function(){
+    setTimeout(function(){
+      var a=document.activeElement;
+      if(!a||a.tagName!=='INPUT'){$('ck').classList.remove('kb');fit()}
+    },120);
+  });
   var scrollY=0;
   window.ckOpen=function(e){if(e)e.preventDefault();go('s1');$('ckManual').style.display='none';$('ckCopy').style.display='';
-    scrollY=window.pageYOffset;$('ck').classList.add('on');
+    scrollY=window.pageYOffset;$('ck').classList.add('on');fit();
     document.body.style.cssText='position:fixed;top:-'+scrollY+'px;left:0;right:0;width:100%'};
-  window.ckClose=function(){if(!$('ck').classList.contains('on'))return;$('ck').classList.remove('on');document.body.style.cssText='';window.scrollTo(0,scrollY)};
+  window.ckClose=function(){if(!$('ck').classList.contains('on'))return;$('ck').classList.remove('on','kb');$('ck').style.cssText='';document.body.style.cssText='';window.scrollTo(0,scrollY)};
   $('ck').addEventListener('click',function(e){if(e.target===this)ckClose()});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')ckClose()});
   $('ckZap').addEventListener('input',function(){
@@ -1030,6 +1072,8 @@
     else if(v.length>2)v='('+v.slice(0,2)+') '+v.slice(2);
     this.value=v;
   });
+  $('ckNome').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();$('ckZap').focus()}});
+  $('ckZap').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();$('ckGo').click()}});
   $('ckGo').onclick=function(){
     var n=$('ckNome'),z=$('ckZap'),er=$('ckErr'),msg='';
     var nome=n.value.trim(),zap=z.value.replace(/\D/g,'');
