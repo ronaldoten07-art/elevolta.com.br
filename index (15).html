@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Método da Reconquista 7 Dias | Mestre da Reconquista</title>
+<meta name="description" content="Descubra como fazer qualquer homem voltar a te desejar — mesmo que ele seja orgulhoso, você esteja bloqueada ou ele já esteja com outra.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     MESTRE DA RECONQUISTA — sistema de design
+     vinho profundo + champanhe/dourado + marfim
+     ============================================================ */
+  :root{
+    --noir:#150C10;
+    --plum:#3E0B23;
+    --plum-2:#5B1230;
+    --wine:#6E1739;
+    --rose:#C1587A;
+    --rose-pale:#F0D8E0;
+    --gold:#C6A455;
+    --gold-lt:#E8D6A8;
+    --gold-dk:#9C7A2E;
+    --ivory:#FDFBF8;
+    --sand:#F7F1EA;
+    --line:#EADFD8;
+    --ink:#2B1B22;
+    --muted:#7D6A73;
+
+    --f-display:'Playfair Display',Georgia,serif;
+    --f-accent:'Cormorant Garamond',Georgia,serif;
+    --f-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+
+    --r-lg:22px;
+    --r-md:16px;
+    --shadow-1:0 2px 6px rgba(62,11,35,.05), 0 18px 40px -22px rgba(62,11,35,.28);
+    --shadow-2:0 30px 60px -30px rgba(62,11,35,.55);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--f-body);
+    font-weight:400;
+    color:var(--ink);
+    background:var(--ivory);
+    font-size:16.5px;
+    line-height:1.72;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* textura fina de papel — dá profundidade em vez de cor chapada */
+  body::before{
+    content:'';position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.18;letter-spacing:-.4px}
+  .wrap{width:100%;max-width:680px;margin:0 auto;padding:0 22px;position:relative}
+  section{padding:52px 0;position:relative;z-index:2}
+  .center{text-align:center}
+  em.acc{font-family:var(--f-accent);font-style:italic;font-weight:600}
+  strong{font-weight:600;color:var(--plum)}
+
+  /* ---------- ORNAMENTOS ---------- */
+  .rule{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    padding:0 22px;position:relative;z-index:2
+  }
+  .rule::before,.rule::after{
+    content:'';height:1px;flex:1;max-width:180px;
+    background:linear-gradient(90deg,transparent,var(--gold));
+  }
+  .rule::after{background:linear-gradient(270deg,transparent,var(--gold))}
+  .rule i{
+    width:7px;height:7px;background:var(--gold);transform:rotate(45deg);
+    display:block;flex:0 0 7px
+  }
+  .eyebrow{
+    display:flex;align-items:center;justify-content:center;gap:11px;
+    font-family:var(--f-body);font-size:11px;font-weight:600;
+    letter-spacing:2.6px;text-transform:uppercase;color:var(--gold-dk);
+    margin-bottom:16px
+  }
+  .eyebrow::before,.eyebrow::after{content:'';width:26px;height:1px;background:var(--gold);opacity:.75}
+
+  /* ---------- FAIXA DE URGÊNCIA (topo, fixa) ---------- */
+  .urg{
+    position:sticky;top:0;z-index:90;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:11px 18px;
+    background:linear-gradient(90deg,#2E0619 0%,#6E1739 50%,#2E0619 100%);
+    border-bottom:1px solid rgba(198,164,85,.5);
+    box-shadow:0 6px 22px -10px rgba(21,12,16,.6);
+    color:#F7E6EC;font-size:12.6px;font-weight:500;letter-spacing:.35px;
+    text-align:center;line-height:1.35
+  }
+  .urg .ex{
+    flex:0 0 20px;width:20px;height:20px;border-radius:50%;
+    display:grid;place-items:center;font-size:13px;font-weight:800;font-style:normal;
+    color:#301706;background:linear-gradient(140deg,var(--gold-lt),var(--gold),#A8812F);
+    box-shadow:0 0 0 4px rgba(198,164,85,.16);
+    animation:beat 2.4s ease-in-out infinite
+  }
+  @keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+  .urg b{color:var(--gold-lt);font-weight:700;white-space:nowrap}
+  @media(max-width:420px){.urg{font-size:11.6px;padding:10px 12px;gap:8px}}
+
+  /* ---------- MONOGRAMA / MARCA ---------- */
+  .brandmark{
+    display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:6px
+  }
+  .mono{
+    width:62px;height:62px;border-radius:50%;
+    display:grid;place-items:center;
+    font-family:var(--f-display);font-size:22px;letter-spacing:.5px;
+    color:var(--plum);
+    background:radial-gradient(circle at 30% 25%,#fff,var(--sand));
+    border:1px solid var(--gold);
+    box-shadow:0 0 0 4px rgba(198,164,85,.13), var(--shadow-1)
+  }
+  .mono span{background:linear-gradient(135deg,var(--gold-dk),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .brandname{
+    font-family:var(--f-body);font-size:10.5px;font-weight:600;
+    letter-spacing:3.4px;text-transform:uppercase;color:var(--muted)
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:44px 0 46px;text-align:center;
+    background:
+      radial-gradient(120% 70% at 50% -10%,#F9E7ED 0%,rgba(253,251,248,0) 62%),
+      linear-gradient(180deg,#FDF7F9 0%,var(--ivory) 100%);
+    border-bottom:1px solid var(--line)
+  }
+  .hero h1{
+    font-size:clamp(31px,8.2vw,46px);
+    color:var(--plum);margin:22px auto 18px;max-width:16ch
+  }
+  .hero h1 .it{
+    font-family:var(--f-accent);font-style:italic;font-weight:600;
+    color:var(--wine);display:inline-block
+  }
+  .hero h1 u{
+    text-decoration:none;position:relative;white-space:nowrap
+  }
+  .hero h1 u::after{
+    content:'';position:absolute;left:0;right:0;bottom:2px;height:8px;
+    background:linear-gradient(90deg,rgba(198,164,85,.15),rgba(198,164,85,.45),rgba(198,164,85,.15));
+    border-radius:4px;z-index:-1
+  }
+  .hero .sub{
+    font-size:16.8px;color:#54414A;max-width:44ch;margin:0 auto;font-weight:300
+  }
+  .hero .sub b{font-weight:600;color:var(--wine)}
+
+  /* pilha do que está incluído */
+  .stack{
+    margin:32px 0 30px;text-align:left;
+    background:linear-gradient(180deg,#fff,#FCF7F8);
+    border:1px solid var(--line);border-radius:var(--r-lg);
+    box-shadow:var(--shadow-1);overflow:hidden
+  }
+  .stack-item{
+    display:flex;align-items:center;gap:14px;
+    padding:16px 20px;font-size:15.2px;font-weight:500;color:var(--plum);
+    border-bottom:1px solid var(--line)
+  }
+  .stack-item:last-child{border-bottom:0}
+  .stack-item .ic{
+    flex:0 0 36px;width:36px;height:36px;border-radius:50%;
+    display:grid;place-items:center;font-size:15px;
+    background:linear-gradient(140deg,var(--plum),var(--wine));
+    color:var(--gold-lt);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.18)
+  }
+  .stack-item small{display:block;font-size:12.4px;font-weight:400;color:var(--muted);letter-spacing:.1px}
+
+  /* ---------- BOTÕES ---------- */
+  .btn{
+    position:relative;display:block;width:100%;text-align:center;text-decoration:none;
+    font-family:var(--f-body);font-size:16px;font-weight:600;letter-spacing:.5px;
+    color:#FFF6F9;
+    padding:21px 24px;border-radius:100px;
+    background:linear-gradient(135deg,#4E0F29 0%,#7E1C40 48%,#9E2B52 100%);
+    border:1px solid rgba(198,164,85,.85);
+    box-shadow:0 22px 44px -20px rgba(62,11,35,.75), inset 0 1px 0 rgba(255,255,255,.18);
+    overflow:hidden;isolation:isolate;
+    transition:transform .18s ease, box-shadow .18s ease, filter .18s ease
+  }
+  .btn::after{
+    content:'';position:absolute;top:0;bottom:0;left:-60%;width:45%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.26),transparent);
+    transform:skewX(-18deg);transition:left .6s ease;z-index:-1
+  }
+  .btn:hover::after{left:120%}
+  .btn:hover{filter:brightness(1.06)}
+  .btn:active{transform:translateY(1px) scale(.995)}
+  .btn .lb{
+    display:block;font-size:10.5px;font-weight:600;letter-spacing:2.2px;
+    text-transform:uppercase;color:var(--gold-lt);margin-bottom:5px
+  }
+  .btn-sm{font-size:14.6px;padding:17px 20px;box-shadow:0 16px 34px -18px rgba(62,11,35,.7)}
+  .btn-gold{
+    background:linear-gradient(135deg,#B98F32 0%,#DFC079 45%,#B98F32 100%);
+    color:#3A1D06;border-color:rgba(255,255,255,.55);
+    box-shadow:0 22px 44px -20px rgba(156,122,46,.7), inset 0 1px 0 rgba(255,255,255,.5)
+  }
+  .btn-gold .lb{color:#5C3A0C}
+  .microcopy{
+    display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;
+    margin-top:16px;font-size:12.6px;color:var(--muted);letter-spacing:.2px
+  }
+  .microcopy span{display:inline-flex;align-items:center;gap:6px}
+  .microcopy span::before{content:attr(data-dot);color:var(--gold);font-size:8px}
+
+  /* ---------- DEPOIMENTOS ---------- */
+  .sec-head{text-align:center;margin-bottom:34px}
+  .sec-head h2{font-size:clamp(24px,6.2vw,33px);color:var(--plum);max-width:22ch;margin:0 auto}
+  .sec-head p{font-size:15px;color:var(--muted);max-width:38ch;margin:12px auto 0;font-weight:300}
+  .t-grid{display:grid;gap:16px}
+  .t-card{
+    position:relative;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r-lg);padding:26px 22px 22px;
+    box-shadow:var(--shadow-1)
+  }
+  .t-card::before{
+    content:'”';position:absolute;top:2px;right:20px;
+    font-family:var(--f-display);font-size:64px;line-height:1;color:var(--rose-pale)
+  }
+  .t-stars{color:var(--gold);font-size:12.5px;letter-spacing:3px;margin-bottom:12px}
+  .t-text{font-size:15.1px;color:#463540;position:relative;z-index:1;font-weight:300}
+  .t-who{display:flex;align-items:center;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+  .t-av{
+    flex:0 0 40px;width:40px;height:40px;border-radius:50%;
+    display:grid;place-items:center;
+    font-family:var(--f-display);font-size:16px;color:var(--plum);
+    background:radial-gradient(circle at 32% 28%,#fff,#F3E3E8);
+    border:1px solid var(--gold)
+  }
+  .t-who b{display:block;font-size:13.6px;font-weight:600;color:var(--plum);line-height:1.3}
+  .t-who span{font-size:11.8px;color:var(--muted);letter-spacing:.3px}
+
+  /* ---------- BLOCOS ESCUROS ---------- */
+  .dark{
+    position:relative;overflow:hidden;
+    background:linear-gradient(158deg,#1F0812 0%,var(--plum) 45%,var(--wine) 100%);
+    border-radius:var(--r-lg);padding:44px 26px;
+    box-shadow:var(--shadow-2)
+  }
+  .dark::before{
+    content:'';position:absolute;top:-120px;right:-90px;width:280px;height:280px;border-radius:50%;
+    background:radial-gradient(circle,rgba(198,164,85,.26),transparent 68%)
+  }
+  .dark::after{
+    content:'';position:absolute;inset:12px;border:1px solid rgba(198,164,85,.28);
+    border-radius:14px;pointer-events:none
+  }
+  .dark>*{position:relative;z-index:2}
+  .dark h2{color:#fff;font-size:clamp(24px,6.2vw,33px);margin-bottom:14px}
+  .dark .eyebrow{color:var(--gold-lt)}
+  .dark .eyebrow::before,.dark .eyebrow::after{background:var(--gold-lt)}
+  .dark p{color:#F0DCE4;font-size:16.2px;font-weight:300}
+  .dark p+p{margin-top:14px}
+  .dark p b{color:var(--gold-lt);font-weight:600}
+
+  .nay{list-style:none;display:grid;gap:11px;margin:24px 0 22px}
+  .nay li{
+    display:flex;gap:13px;align-items:flex-start;
+    padding:14px 16px;border-radius:var(--r-md);
+    background:rgba(255,255,255,.055);
+    border:1px solid rgba(198,164,85,.22);
+    font-size:15.3px;font-weight:300;color:#F5E3EA
+  }
+  .nay li .mk{
+    flex:0 0 24px;width:24px;height:24px;border-radius:50%;
+    display:grid;place-items:center;font-size:12px;font-weight:700;
+    color:var(--plum);background:linear-gradient(140deg,var(--gold-lt),var(--gold));
+    margin-top:1px
+  }
+  .nay li .tx{flex:1 1 auto;min-width:0}
+  .nay li i{color:var(--gold-lt);font-style:italic;font-family:var(--f-accent);font-size:17px}
+
+  .statement{
+    text-align:center;padding:44px 24px;
+    background:
+      radial-gradient(100% 60% at 50% 0%,#FBEFF3 0%,rgba(253,251,248,0) 70%),
+      radial-gradient(100% 60% at 50% 100%,#F7F0E6 0%,rgba(253,251,248,0) 70%);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+  }
+  .statement p{
+    font-family:var(--f-display);font-size:clamp(23px,6vw,32px);
+    line-height:1.32;color:var(--plum);max-width:22ch;margin:0 auto
+  }
+  .statement p em{font-family:var(--f-accent);font-style:italic;color:var(--wine)}
+
+  .panel{
+    background:linear-gradient(180deg,#fff,#FCF8F9);
+    border:1px solid var(--line);border-radius:var(--r-lg);
+    padding:38px 26px;box-shadow:var(--shadow-1);text-align:center
+  }
+  .panel h2{color:var(--plum);font-size:clamp(23px,5.9vw,31px);margin-bottom:16px}
+  .panel p{font-size:16.2px;color:#4E3C44;font-weight:300}
+  .panel p+p{margin-top:14px}
+  .badges{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:24px}
+  .chip{
+    font-size:11.6px;font-weight:600;letter-spacing:1.1px;text-transform:uppercase;
+    color:var(--wine);padding:8px 14px;border-radius:100px;
+    background:#fff;border:1px solid var(--line)
+  }
+  .chip.g{color:var(--gold-dk);border-color:rgba(198,164,85,.55);background:#FFFDF7}
+  .days{display:flex;justify-content:center;gap:7px;margin-top:22px}
+  .days i{
+    font-style:normal;width:30px;height:30px;border-radius:50%;
+    display:grid;place-items:center;font-size:12px;font-weight:600;
+    color:var(--gold-dk);border:1px solid rgba(198,164,85,.55);background:#FFFDF7
+  }
+
+  /* ---------- QUADRO COMPARATIVO ---------- */
+  .versus{display:grid;gap:18px;margin-top:6px;position:relative}
+  .vbox{border-radius:var(--r-lg);padding:28px 24px;box-shadow:var(--shadow-1)}
+  .vbox h3{font-size:18.5px;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .vbox h3 .dot{
+    width:26px;height:26px;border-radius:50%;flex:0 0 26px;
+    display:grid;place-items:center;font-size:12px;font-weight:700
+  }
+  .vbox ul{list-style:none;display:grid;gap:13px}
+  .vbox li{display:flex;gap:12px;align-items:flex-start;font-size:15.1px;font-weight:300}
+  .vbox li .mk{
+    flex:0 0 20px;width:20px;height:20px;border-radius:50%;
+    display:grid;place-items:center;font-size:10.5px;font-weight:700;margin-top:3px
+  }
+  .vbox li .tx{flex:1 1 auto;min-width:0;overflow-wrap:break-word}
+  .vbad{background:#FBF5F4;border:1px solid #EDDFDC}
+  .vbad h3{color:#8B5A62}
+  .vbad li{color:#6C5A60}
+  .vbad .dot,.vbad li .mk{background:#EFDCDE;color:#8B5A62}
+  .vgood{
+    background:linear-gradient(160deg,#2C0716 0%,var(--wine) 60%,#8C2549 100%);
+    border:1px solid rgba(198,164,85,.7);
+    box-shadow:var(--shadow-2)
+  }
+  .vgood h3{color:#fff}
+  .vgood .dot,.vgood li .mk{
+    background:linear-gradient(140deg,var(--gold-lt),var(--gold));color:var(--plum)
+  }
+  .vgood li{color:#F2DEE5}
+  .vgood li b{color:#fff;font-weight:600}
+
+  /* ---------- OFERTA ---------- */
+  .offer{
+    position:relative;overflow:hidden;text-align:center;
+    background:linear-gradient(165deg,#1F0812 0%,#4A0E2A 55%,#6E1739 100%);
+    border-radius:var(--r-lg);padding:52px 26px 40px;
+    box-shadow:var(--shadow-2)
+  }
+  .offer::before{
+    content:'';position:absolute;inset:14px;border:1px solid rgba(198,164,85,.32);
+    border-radius:14px;pointer-events:none
+  }
+  .offer::after{
+    content:'';position:absolute;top:-140px;left:50%;transform:translateX(-50%);
+    width:360px;height:280px;border-radius:50%;
+    background:radial-gradient(circle,rgba(198,164,85,.22),transparent 66%);
+    pointer-events:none
+  }
+  .offer>*{position:relative;z-index:2}
+  .offer .tag{
+    display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:2.4px;
+    text-transform:uppercase;color:var(--gold-lt);
+    border:1px solid rgba(198,164,85,.5);border-radius:100px;padding:7px 18px;
+    margin-bottom:22px;background:rgba(198,164,85,.08)
+  }
+  .offer h3{color:#fff;font-size:clamp(22px,5.6vw,29px);margin-bottom:6px}
+  .offer .kicker{font-family:var(--f-accent);font-style:italic;font-size:17px;color:#E4C9D3;margin-bottom:26px}
+  .price-wrap{
+    display:inline-block;padding:22px 40px;border-radius:var(--r-md);
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(198,164,85,.45);
+    margin-bottom:8px
+  }
+  .price{
+    font-family:var(--f-display);font-weight:600;font-size:58px;line-height:1;
+    color:#fff
+  }
+  .price small{font-size:24px;vertical-align:top;margin-right:2px;color:var(--gold-lt)}
+  .price-note{font-size:12.4px;letter-spacing:1.8px;text-transform:uppercase;color:#C9AFB9;margin-bottom:30px}
+  .offer .inc{list-style:none;text-align:left;display:grid;gap:13px;margin:0 0 32px}
+  .offer .inc li{display:flex;gap:13px;align-items:flex-start;font-size:15px;font-weight:300;color:#F1DEE5}
+  .offer .inc li .mk{
+    flex:0 0 22px;width:22px;height:22px;border-radius:50%;
+    display:grid;place-items:center;font-size:11px;font-weight:700;margin-top:3px;
+    background:linear-gradient(140deg,var(--gold-lt),var(--gold));color:var(--plum)
+  }
+  .offer .inc li .tx{flex:1 1 auto;min-width:0}
+  .offer .inc li b{color:#fff;font-weight:600;display:block}
+  .offer .inc li span.d{font-size:13.6px;color:#D8BFC8;font-weight:300}
+  .offer .microcopy{color:#C9AFB9}
+  .offer .microcopy span::before{color:var(--gold)}
+
+  /* ---------- GARANTIA ---------- */
+  .guarantee{
+    display:flex;gap:22px;align-items:center;
+    background:linear-gradient(180deg,#FFFDF9,#FAF4E8);
+    border:1px solid rgba(198,164,85,.5);
+    border-radius:var(--r-lg);padding:28px 24px;box-shadow:var(--shadow-1)
+  }
+  .seal{
+    flex:0 0 88px;width:88px;height:88px;border-radius:50%;
+    display:grid;place-items:center;text-align:center;
+    font-family:var(--f-body);font-size:9.5px;font-weight:700;letter-spacing:1.6px;
+    text-transform:uppercase;color:var(--plum);
+    background:radial-gradient(circle at 32% 26%,#fff,#F4E7C8);
+    border:1px solid var(--gold);
+    box-shadow:0 0 0 5px rgba(198,164,85,.14)
+  }
+  .seal b{display:block;font-family:var(--f-display);font-size:30px;font-weight:600;line-height:1;color:var(--wine)}
+  .guarantee h3{font-size:19.5px;color:var(--plum);margin-bottom:8px}
+  .guarantee p{font-size:14.6px;color:#4E3C44;font-weight:300}
+
+  /* ---------- FAQ ---------- */
+  .faq{display:grid;gap:12px}
+  .faq details{
+    background:#fff;border:1px solid var(--line);border-radius:var(--r-md);
+    padding:2px 22px;box-shadow:var(--shadow-1);transition:border-color .2s ease
+  }
+  .faq details[open]{border-color:rgba(198,164,85,.6)}
+  .faq summary{
+    cursor:pointer;list-style:none;position:relative;
+    padding:19px 30px 19px 0;
+    font-family:var(--f-display);font-size:16.6px;font-weight:600;color:var(--plum)
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{
+    content:'';position:absolute;right:2px;top:50%;width:11px;height:11px;
+    transform:translateY(-50%) rotate(45deg);
+    border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);
+    transition:transform .25s ease
+  }
+  .faq details[open] summary::after{transform:translateY(-20%) rotate(225deg)}
+  .faq p{padding:0 0 22px;font-size:15px;color:#4E3C44;font-weight:300;border-top:1px solid var(--line);padding-top:16px;margin-top:-2px}
+
+  /* ---------- RODAPÉ ---------- */
+  footer{
+    background:linear-gradient(180deg,#1F0812,#150C10);
+    color:#C4AEB6;text-align:center;padding:52px 22px 46px;position:relative;z-index:2
+  }
+  footer .fbrand{
+    display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:18px
+  }
+  footer .mono{
+    width:54px;height:54px;font-size:19px;
+    background:radial-gradient(circle at 30% 25%,#3A1122,#1F0812);
+    color:var(--gold-lt);border-color:rgba(198,164,85,.55);
+    box-shadow:0 0 0 4px rgba(198,164,85,.1)
+  }
+  footer .mono span{-webkit-text-fill-color:var(--gold-lt);background:none}
+  footer .fname{
+    font-family:var(--f-body);font-size:11px;font-weight:600;letter-spacing:3.6px;
+    text-transform:uppercase;color:var(--gold-lt)
+  }
+  footer .fline{font-size:13.4px;color:#B79CA6}
+  footer .dis{
+    max-width:520px;margin:20px auto 0;font-size:11.8px;line-height:1.75;color:#8F767F
+  }
+  footer .rule{margin:26px auto 24px;padding:0}
+  footer .rule::before,footer .rule::after{background:linear-gradient(90deg,transparent,rgba(198,164,85,.55))}
+  footer .rule::after{background:linear-gradient(270deg,transparent,rgba(198,164,85,.55))}
+
+  /* ---------- RESPONSIVO ---------- */
+  @media(min-width:700px){
+    body{font-size:17px}
+    section{padding:64px 0}
+    .t-grid{grid-template-columns:1fr 1fr}
+    .versus{grid-template-columns:1fr 1fr}
+    .offer{padding:60px 44px 46px}
+    .dark{padding:52px 40px}
+    .panel{padding:46px 40px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+  }
+  /* ---------- CHECKOUT ---------- */
+  .ck{position:fixed;inset:0;z-index:999;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(21,12,16,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .ck.on{display:flex;animation:ckf .25s ease}
+  @keyframes ckf{from{opacity:0}to{opacity:1}}
+  .ck-box{position:relative;width:100%;max-width:440px;max-height:94vh;overflow-y:auto;background:var(--ivory);border-radius:var(--r-lg);box-shadow:var(--shadow-2);border:1px solid rgba(198,164,85,.5)}
+  .ck-head{padding:22px 24px 18px;text-align:center;color:#fff;background:linear-gradient(165deg,#1F0812,#4A0E2A 60%,#6E1739);border-radius:var(--r-lg) var(--r-lg) 0 0}
+  .ck-head .t{font-family:var(--f-display);font-size:19px}
+  .ck-head .s{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-lt);margin-top:4px}
+  .ck-x{position:absolute;top:10px;right:12px;width:32px;height:32px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:18px;cursor:pointer}
+  .ck-dots{display:flex;gap:6px;justify-content:center;margin-top:14px}
+  .ck-dots i{width:26px;height:3px;border-radius:3px;background:rgba(255,255,255,.25)}
+  .ck-dots i.on{background:var(--gold)}
+  .ck-body{padding:24px}
+  .ck-step{display:none}.ck-step.on{display:block;animation:ckf .3s ease}
+  .ck-step h4{font-family:var(--f-display);font-size:21px;color:var(--plum);margin-bottom:6px}
+  .ck-step p.sub{font-size:14.5px;color:var(--muted);margin-bottom:18px;line-height:1.55}
+  .ck label{display:block;font-size:12px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--wine);margin:14px 0 6px}
+  .ck input{width:100%;padding:14px 15px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:12px;outline:0;transition:.2s}
+  .ck input:focus{border-color:var(--rose);box-shadow:0 0 0 4px rgba(193,88,122,.14)}
+  .ck input.err{border-color:#c0392b}
+  .ck-btn{display:block;width:100%;margin-top:22px;padding:16px;border:0;border-radius:100px;cursor:pointer;font:inherit;font-weight:700;font-size:15.5px;color:#301706;background:linear-gradient(140deg,var(--gold-lt),var(--gold),#A8812F);box-shadow:0 10px 24px -10px rgba(156,122,46,.8)}
+  .ck-btn:disabled{opacity:.6;cursor:wait}
+  .ck-back{display:block;margin:14px auto 0;background:none;border:0;color:var(--muted);font:inherit;font-size:13.5px;cursor:pointer;text-decoration:underline}
+  .ck-sum{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;margin-bottom:6px;border-radius:14px;background:var(--sand);border:1px solid var(--line);font-size:14px}
+  .ck-sum b{font-family:var(--f-display);font-size:20px;color:var(--plum)}
+  .ck-opt{display:flex;align-items:center;gap:14px;width:100%;margin-top:12px;padding:16px;text-align:left;font:inherit;background:#fff;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;transition:.2s}
+  .ck-opt:hover{border-color:var(--rose);transform:translateY(-1px)}
+  .ck-opt .ic{flex:0 0 44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:21px;background:var(--rose-pale)}
+  .ck-opt b{display:block;color:var(--plum);font-size:15.5px}
+  .ck-opt span.d{font-size:13px;color:var(--muted)}
+  .ck-ok{width:64px;height:64px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;font-size:30px;color:#301706;background:linear-gradient(140deg,var(--gold-lt),var(--gold))}
+  .ck-c{text-align:center}
+  .ck-proto{margin:16px 0;padding:14px;border-radius:14px;background:var(--sand);border:1px dashed var(--gold-dk)}
+  .ck-proto small{display:block;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--muted)}
+  .ck-proto b{font-family:var(--f-display);font-size:21px;letter-spacing:1px;color:var(--plum)}
+  .ck-list{text-align:left;margin:16px 0 0;padding-left:0;list-style:none;display:grid;gap:10px;font-size:14.5px}
+  .ck-list li{display:flex;gap:10px}.ck-list li i{flex:0 0 24px;height:24px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:700;color:#fff;background:var(--wine)}
+  .ck-sec{margin-top:16px;text-align:center;font-size:12px;color:var(--muted)}
+  .ck-spin{width:44px;height:44px;margin:0 auto 14px;border-radius:50%;border:4px solid var(--rose-pale);border-top-color:var(--wine);animation:ckr 1s linear infinite}
+  @keyframes ckr{to{transform:rotate(360deg)}}
+  .ck{padding:max(14px,env(safe-area-inset-top)) 14px max(14px,env(safe-area-inset-bottom));-webkit-tap-highlight-color:transparent}
+  .ck-box{max-height:94vh;max-height:calc(100dvh - 28px);-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+  .ck button{touch-action:manipulation;-webkit-appearance:none;appearance:none}
+  .ck input{-webkit-appearance:none;appearance:none;min-height:50px}
+  .ck-btn,.ck-opt{min-height:52px}
+  .ck-x{width:40px;height:40px;top:8px;right:8px}
+  .ck-manual{display:none;margin-top:16px;text-align:left}
+  .ck-manual p{font-size:13px;color:var(--muted);margin-bottom:8px}
+  .ck-manual textarea{width:100%;height:92px;padding:10px;font:inherit;font-size:16px;border:1.5px solid var(--line);border-radius:12px;resize:none;-webkit-user-select:text;user-select:text}
+  .ck-tip{margin-top:14px;padding:10px 12px;border-radius:12px;background:var(--rose-pale);color:var(--plum);font-size:12.8px;line-height:1.45;text-align:left}
+  @media(max-height:640px){.ck-head{padding:14px 20px 12px}.ck-head .t{font-size:17px}.ck-dots{margin-top:10px}.ck-body{padding:18px 20px}.ck-step h4{font-size:19px}.ck-step p.sub{margin-bottom:12px}}
+  .ck-err{display:none;margin-top:12px;padding:10px 12px;border-radius:10px;background:#fbeaea;color:#a02a1f;font-size:13.5px;text-align:left}
+  /* teclado aberto (iOS/Android): modal acompanha a área visível e vai para o topo */
+  .ck{height:100%}
+  .ck-box{max-height:var(--ckmax,calc(100dvh - 28px))}
+  .ck.kb{align-items:flex-start;padding-top:8px;padding-bottom:8px}
+  .ck.kb .ck-head{padding:12px 20px 10px}
+  .ck.kb .ck-head .s{display:none}
+  .ck.kb .ck-dots{margin-top:8px}
+  .ck.kb .ck-body{padding:16px 20px 24px}
+  .ck.kb #s1 .sub,.ck.kb #s1 .ck-sec{display:none}
+  .ck.kb #s1 h4{margin-bottom:10px}
+  .ck.kb .ck-btn{margin-top:16px}
+  .ck-link{margin-top:16px;padding:12px;border-radius:12px;background:var(--sand);border:1px dashed var(--gold-dk);font-size:13.5px;font-weight:600;color:var(--plum);word-break:break-all}
+</style>
+</head>
+<body>
+
+<!-- ============ FAIXA DE URGÊNCIA FIXA (sem preço) ============ -->
+<div class="urg" role="status">
+  <i class="ex">!</i>
+  <span>Restam apenas <b>50 acessos</b> por este valor — depois o investimento sobe.</span>
+</div>
+
+<!-- ============ 1. HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="brandmark">
+      <div class="mono" aria-hidden="true"><span>MR</span></div>
+      <div class="brandname">Mestre da Reconquista</div>
+    </div>
+
+    <h1>Descubra como fazer <span class="it">qualquer homem</span> voltar a te <u>desejar</u></h1>
+
+    <p class="sub">
+      Mesmo que ele seja <b>orgulhoso</b>, mesmo que você esteja <b>bloqueada</b> nas redes sociais
+      ou até mesmo que ele <b>já esteja com outra mulher</b>.
+    </p>
+
+    <div class="stack">
+      <div class="stack-item">
+        <span class="ic">♥</span>
+        <span>Método da Reconquista em 7 Dias<small>Um movimento por dia, na ordem certa</small></span>
+      </div>
+      <div class="stack-item">
+        <span class="ic">♪</span>
+        <span>Podcast: o Segredo da Reconquista<small>Áudio completo, direto ao ponto</small></span>
+      </div>
+      <div class="stack-item">
+        <span class="ic">✓</span>
+        <span>Acesso imediato<small>Você começa hoje, pelo celular</small></span>
+      </div>
+    </div>
+
+    <!-- ⬇️ COLE SEU LINK DE CHECKOUT AQUI -->
+    <a class="btn" href="#oferta">
+      <span class="lb">Começar agora</span>
+      Quero o Método da Reconquista 7 Dias
+    </a>
+
+    <div class="microcopy">
+      <span data-dot="◆">Compra segura</span>
+      <span data-dot="◆">Acesso imediato</span>
+      <span data-dot="◆">7 dias de garantia</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 2. DEPOIMENTOS ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Elas estavam onde você está</div>
+      <h2>Bloqueadas, ignoradas, cansadas de correr atrás</h2>
+      <p>E mudaram o jogo usando o método — na ordem, sem pular etapa.</p>
+    </div>
+
+    <!-- DEPOIMENTOS ILUSTRATIVOS — substitua pelos depoimentos reais das suas alunas antes de publicar -->
+    <div class="t-grid">
+
+      <article class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">Eu estava bloqueada há quase 3 semanas e já tinha desistido. Fiz o que o método manda fazer nos primeiros dias e no 4º dia ele me desbloqueou e mandou mensagem perguntando se eu estava bem. Eu só respirei e segui o passo a passo.</p>
+        <div class="t-who"><span class="t-av">C</span><div><b>Camila, 29</b><span>Belo Horizonte · MG</span></div></div>
+      </article>
+
+      <article class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">O meu era daquele tipo que prefere perder do que pedir desculpa. Eu sempre cedi primeiro. Dessa vez não. Em uma semana ele me ligou dizendo que não conseguia mais ficar longe. Eu chorei, mas de alívio.</p>
+        <div class="t-who"><span class="t-av">J</span><div><b>Juliana, 34</b><span>São Paulo · SP</span></div></div>
+      </article>
+
+      <article class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">Depois de 6 anos juntos ele terminou por mensagem. Eu mandava textão, ele não respondia. Quando parei de fazer tudo errado e comecei a aplicar o método, quem voltou a puxar assunto foi ele. Hoje estamos juntos e ele me trata diferente.</p>
+        <div class="t-who"><span class="t-av">P</span><div><b>Patrícia, 41</b><span>Curitiba · PR</span></div></div>
+      </article>
+
+      <article class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">A pior parte pra mim foi descobrir que ele estava com outra. Eu achava que não tinha mais nada a fazer. O podcast me abriu os olhos: ele não estava apaixonado por ela, estava preenchendo um vazio. Em 11 dias ele terminou e veio atrás de mim.</p>
+        <div class="t-who"><span class="t-av">R</span><div><b>Renata, 27</b><span>Recife · PE</span></div></div>
+      </article>
+
+      <article class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">Fiquei 4 meses sem falar com ele e achava impossível. Segui o método do dia 1 ao 7 sem pular nada. Na segunda semana ele apareceu na minha porta. Não foi mágica, foi método — e eu entendi cada passo do porquê.</p>
+        <div class="t-who"><span class="t-av">A</span><div><b>Aline, 32</b><span>Goiânia · GO</span></div></div>
+      </article>
+
+      <article class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">O que mais mudou foi dentro de mim. Eu parei de me sentir invisível e comecei a ser a mulher que ele procura. Hoje é ele quem manda bom dia, quem marca, quem corre atrás. Eu só escolho se quero.</p>
+        <div class="t-who"><span class="t-av">F</span><div><b>Fernanda, 38</b><span>Porto Alegre · RS</span></div></div>
+      </article>
+
+      <article class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">Eu ouvi o podcast umas 3 vezes. Tem coisas ali que ninguém fala na internet, e quando você entende como a cabeça dele funciona, você para de se humilhar e passa a agir com estratégia. Valeu cada centavo.</p>
+        <div class="t-who"><span class="t-av">M</span><div><b>Marcela, 24</b><span>Salvador · BA</span></div></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<div class="rule"><i></i></div>
+
+<!-- ============ 3. ESQUEÇA A INTERNET ============ -->
+<section>
+  <div class="wrap">
+    <div class="dark">
+      <div class="eyebrow" style="justify-content:flex-start">A verdade incômoda</div>
+      <h2>Esqueça tudo o que te falaram sobre reconquista na internet</h2>
+      <p>
+        Porque quase tudo o que circula por aí <b>não funciona</b> — e não é porque você fez errado.
+      </p>
+      <p>
+        É porque ninguém te explicou <b>o motivo real pelo qual um homem se afasta</b>.
+        E enquanto você aplica conselho genérico, você repete exatamente o que o afasta mais.
+      </p>
+      <p>
+        O jogo muda quando você entende a cabeça dele. Aí você para de tentar adivinhar
+        e passa a saber o que fazer — em cada dia, em cada mensagem, em cada silêncio.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. POR QUE O HOMEM NÃO VOLTA ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="dark">
+      <h2>Por que o homem não volta…</h2>
+      <p>
+        Ele não volta porque você faz exatamente o que a dor manda fazer: manda mensagem, corre atrás,
+        implora por atenção, tenta provar que mudou, manda indireta, pede explicação.
+      </p>
+      <p>
+        E cada uma dessas atitudes confirma pra ele a única coisa que ele precisa saber:
+        <b>que você está disponível a qualquer momento, sem esforço nenhum.</b>
+      </p>
+
+      <ul class="nay">
+        <li><span class="mk">✕</span><span class="tx">Homem não volta por pena.</span></li>
+        <li><span class="mk">✕</span><span class="tx">Não volta por textão.</span></li>
+        <li><span class="mk">✕</span><span class="tx">Não volta porque você foi a melhor namorada do mundo — ele esquece o que você fez, ele lembra do que ele <i>sentiu</i>.</span></li>
+        <li><span class="mk">✕</span><span class="tx">E não volta porque ele ficou com outra: ele volta quando aquela outra não preenche o que só você preenchia.</span></li>
+      </ul>
+
+      <p>
+        Homem volta quando sente <b>falta de verdade</b>. E falta só existe quando você deixa de estar ali.
+      </p>
+      <p>
+        É isso que o Método da Reconquista 7 Dias constrói: <b>os 7 dias em que você para de empurrar
+        e começa a puxar.</b> Cada dia com uma única missão. Nada de testar coisa aleatória e torcer pra dar certo.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. FRASE DE IMPACTO ============ -->
+<section class="statement" style="padding:44px 0">
+  <div class="wrap">
+    <p>E isso <em>toda mulher</em> pode aprender —<br>inclusive você.</p>
+  </div>
+</section>
+
+<!-- ============ 6. O MÉTODO ============ -->
+<section style="padding-top:52px">
+  <div class="wrap">
+    <div class="panel">
+      <div class="eyebrow">O caminho</div>
+      <h2>O Método da Reconquista 7 Dias</h2>
+      <p>
+        te ensina o passo a passo <strong>simples, direto</strong>, do jeito que funciona na vida real.
+      </p>
+      <p>
+        Um movimento por dia, na ordem certa — do primeiro dia em que você está bloqueada até o dia
+        em que <strong>ele dá o primeiro passo</strong>.
+      </p>
+
+      <div class="days" aria-hidden="true">
+        <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i>
+      </div>
+
+      <div class="badges">
+        <span class="chip g">Método 7 Dias</span>
+        <span class="chip">Podcast completo</span>
+        <span class="chip">Acesso imediato</span>
+      </div>
+    </div>
+    <a class="btn btn-sm" href="#oferta" style="margin-top:26px">Quero o Método da Reconquista 7 Dias</a>
+  </div>
+</section>
+
+<!-- ============ 7. QUADRO COMPARATIVO ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">A diferença</div>
+      <h2>Olhe a diferença que o método faz na sua vida</h2>
+      <p>A mesma mulher. A mesma situação. Só o que ela faz muda.</p>
+    </div>
+
+    <div class="versus">
+      <div class="vbox vbad">
+        <h3><span class="dot">✕</span>Sem o método</h3>
+        <ul>
+          <li><span class="mk">✕</span><span class="tx">Você manda mensagem e ele te ignora</span></li>
+          <li><span class="mk">✕</span><span class="tx">É sempre você correndo atrás</span></li>
+          <li><span class="mk">✕</span><span class="tx">Você vê ele escolher mulheres que você sabe que são piores que você</span></li>
+          <li><span class="mk">✕</span><span class="tx">Você se sente invisível</span></li>
+          <li><span class="mk">✕</span><span class="tx">Você é bloqueada</span></li>
+          <li><span class="mk">✕</span><span class="tx">Ele não te dá atenção</span></li>
+          <li><span class="mk">✕</span><span class="tx">Você termina o dia com o celular na mão, esperando um “oi” que não chega</span></li>
+          <li><span class="mk">✕</span><span class="tx">Você começa a duvidar do seu próprio valor</span></li>
+        </ul>
+      </div>
+
+      <div class="vbox vgood">
+        <h3><span class="dot">♥</span>Com o método</h3>
+        <ul>
+          <li><span class="mk">✓</span><span class="tx"><b>Você vira a mulher que é procurada</b></span></li>
+          <li><span class="mk">✓</span><span class="tx"><b>É ele quem te manda mensagem</b></span></li>
+          <li><span class="mk">✓</span><span class="tx"><b>Você fica na cabeça dele o tempo todo</b></span></li>
+          <li><span class="mk">✓</span><span class="tx"><b>Você é escolhida, desejada e respeitada</b></span></li>
+          <li><span class="mk">✓</span><span class="tx">Você não corre atrás de ninguém — ele corre atrás de você</span></li>
+          <li><span class="mk">✓</span><span class="tx">Você sabe exatamente o que dizer — e o que <b>não</b> dizer — em cada um dos 7 dias</span></li>
+          <li><span class="mk">✓</span><span class="tx">Você para de se humilhar e passa a agir com estratégia</span></li>
+          <li><span class="mk">✓</span><span class="tx">Você recupera o controle: quem decide se ele merece voltar é <b>você</b></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. OFERTA (ÚNICO LUGAR COM PREÇO) ============ -->
+<section id="oferta" style="padding-top:0">
+  <div class="wrap">
+    <div class="offer">
+      <span class="tag">Oferta especial</span>
+      <h3>Protocolo de Retorno</h3>
+      <p class="kicker">Método da Reconquista 7 Dias + Podcast o Segredo da Reconquista</p>
+
+      <div class="price-wrap">
+        <div class="price"><small>R$</small>39,90</div>
+      </div>
+      <div class="price-note">Pagamento único · Sem mensalidade</div>
+
+      <ul class="inc">
+        <li><span class="mk">✓</span><span class="tx"><b>Método da Reconquista 7 Dias</b><span class="d">Um movimento por dia, na ordem certa</span></span></li>
+        <li><span class="mk">✓</span><span class="tx"><b>Podcast: o Segredo da Reconquista</b><span class="d">Os segredos que eu não coloco em vídeo</span></span></li>
+        <li><span class="mk">✓</span><span class="tx"><b>Acesso imediato</b><span class="d">Você começa hoje, pelo celular</span></span></li>
+        <li><span class="mk">✓</span><span class="tx"><b>Bônus: as primeiras 48 horas</b><span class="d">O que fazer — e o que nunca fazer — logo após o bloqueio</span></span></li>
+      </ul>
+
+      <!-- ⬇️ COLE SEU LINK DE CHECKOUT AQUI -->
+      <a class="btn btn-gold" href="#">
+        <span class="lb">Acesso imediato</span>
+        Quero o Protocolo de Retorno 7 Dias agora!
+      </a>
+
+      <div class="microcopy">
+        <span data-dot="◆">Ambiente seguro</span>
+        <span data-dot="◆">Acesso imediato</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. GARANTIA ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="guarantee">
+      <div class="seal" aria-hidden="true"><span><b>7</b>dias</span></div>
+      <div>
+        <h3>7 dias de risco zero</h3>
+        <p>
+          Entre, ouça o podcast, aplique o método. Se em 7 dias você achar que não é pra você,
+          basta mandar uma mensagem e eu devolvo <strong>100% do seu dinheiro</strong>.
+          Sem pergunta, sem burocracia, sem climão.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. FAQ ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Dúvidas</div>
+      <h2>Perguntas frequentes</h2>
+      <p>O que as mulheres mais me perguntam antes de entrar.</p>
+    </div>
+
+    <div class="faq">
+      <details open>
+        <summary>Para quem é este protocolo?</summary>
+        <p>
+          Para a mulher que está vivendo um relacionamento que terminou, que foi bloqueada, que é ignorada,
+          ou que descobriu que ele já está com outra — e que está cansada de agir no desespero e não conseguir
+          o resultado que quer. Serve para quem quer reconquistar com dignidade, e não se humilhar.
+        </p>
+      </details>
+
+      <details>
+        <summary>Como vou receber?</summary>
+        <p>
+          Assim que o pagamento é confirmado, você recebe o acesso no seu e-mail, com o link para o
+          Método da Reconquista 7 Dias e para o podcast. É 100% digital: você acessa pelo celular, no
+          seu tempo, quantas vezes quiser.
+        </p>
+      </details>
+
+      <details>
+        <summary>E se eu não gostar?</summary>
+        <p>
+          Você tem <strong>7 dias</strong> para pedir o reembolso. Não gostou? Manda uma mensagem e recebe
+          todo o valor de volta. O risco é zero e fica todo do meu lado.
+        </p>
+      </details>
+
+      <details>
+        <summary>O pagamento é seguro?</summary>
+        <p>
+          Sim. A compra é processada em plataforma de pagamento segura e reconhecida, com criptografia.
+          Seus dados de cartão nunca passam por mim — e você pode pagar por Pix, cartão ou boleto.
+        </p>
+      </details>
+    </div>
+
+    <!-- ⬇️ COLE SEU LINK DE CHECKOUT AQUI TAMBÉM -->
+    <a class="btn" href="#" style="margin-top:32px">
+      <span class="lb">Última chamada</span>
+      Quero o Protocolo de Retorno 7 Dias agora!
+    </a>
+    <div class="microcopy">
+      <span data-dot="◆">Compra segura</span>
+      <span data-dot="◆">7 dias de garantia</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fbrand">
+    <div class="mono" aria-hidden="true"><span>MR</span></div>
+    <div class="fname">Mestre da Reconquista</div>
+  </div>
+  <p class="fline">Método da Reconquista 7 Dias · Podcast o Segredo da Reconquista</p>
+
+  <div class="rule"><i></i></div>
+
+  <p class="dis">
+    Este conteúdo é educativo e tem como objetivo o desenvolvimento pessoal e a autoestima da mulher.
+    Não é aconselhamento psicológico ou terapia. Resultados variam de pessoa para pessoa e dependem da
+    aplicação do método. Este site não é afiliado, endossado ou patrocinado por TikTok, Instagram, Meta
+    ou Google.
+  </p>
+  <p class="dis" style="margin-top:14px">© <span id="ano"></span> Mestre da Reconquista · Todos os direitos reservados.</p>
+</footer>
+
+<!-- ============ CHECKOUT ============ -->
+<div class="ck" id="ck" role="dialog" aria-modal="true" aria-label="Finalizar compra">
+ <div class="ck-box">
+  <div class="ck-head">
+   <button class="ck-x" type="button" onclick="ckClose()" aria-label="Fechar">×</button>
+   <div class="t">Protocolo de Retorno 7 Dias</div>
+   <div class="s">Ambiente seguro</div>
+   <div class="ck-dots"><i class="on"></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="ck-body">
+   <!-- 1: dados -->
+   <div class="ck-step on" id="s1">
+    <h4>Seus dados</h4>
+    <p class="sub">Informe seu nome e WhatsApp para receber seu acesso e o protocolo da compra.</p>
+    <div class="ck-sum"><span>Total · pagamento único</span><b>R$ 39,90</b></div>
+    <label for="ckNome">Nome completo</label>
+    <input id="ckNome" type="text" autocomplete="name" autocapitalize="words" enterkeyhint="next" placeholder="Seu nome">
+    <label for="ckZap">WhatsApp</label>
+    <input id="ckZap" type="tel" inputmode="numeric" autocomplete="tel" enterkeyhint="done" placeholder="(24) 99999-9999" maxlength="15">
+    <div class="ck-err" id="ckErr"></div>
+    <button class="ck-btn" id="ckGo" type="button">Continuar</button>
+    <div class="ck-sec">🔒 Seus dados estão protegidos</div>
+   </div>
+   <!-- 2: forma de pagamento -->
+   <div class="ck-step" id="s2">
+    <h4>Como prefere pagar?</h4>
+    <p class="sub">Escolha a forma de pagamento. Acesso liberado logo após a confirmação.</p>
+    <button class="ck-opt" type="button" data-m="pix"><span class="ic">⚡</span><span><b>Pix</b><span class="d">Aprovação imediata</span></span></button>
+    <button class="ck-opt" type="button" data-m="cartao"><span class="ic">💳</span><span><b>Cartão de crédito</b><span class="d">Pagamento seguro</span></span></button>
+    <button class="ck-back" type="button" data-b="s1">Voltar</button>
+   </div>
+   <!-- 3a: gerar pix -->
+   <div class="ck-step ck-c" id="s3a">
+    <h4>Pagamento via Pix</h4>
+    <p class="sub">Valor: <b>R$ 39,90</b>. Toque no botão para gerar seu Pix.</p>
+    <button class="ck-btn" id="ckGen" type="button">Gerar Pix</button>
+    <button class="ck-back" type="button" data-b="s2">Voltar</button>
+   </div>
+   <!-- 3b: copiar pix -->
+   <div class="ck-step ck-c" id="s3b">
+    <div class="ck-ok">✓</div>
+    <h4>Pix gerado!</h4>
+    <p class="sub">Toque para copiar o código Pix (copia e cola).</p>
+    <button class="ck-btn" id="ckCopy" type="button">Copiar Pix</button>
+    <div class="ck-manual" id="ckManual">
+     <p>Seu navegador bloqueou a cópia automática. Toque e segure no campo abaixo, escolha <b>Copiar</b> e depois toque em "Já copiei".</p>
+     <textarea id="ckPixTxt" readonly></textarea>
+     <button class="ck-btn" id="ckCopied" type="button" style="margin-top:12px">Já copiei</button>
+    </div>
+   </div>
+   <!-- 4a: instruções pix -->
+   <div class="ck-step ck-c" id="s4a">
+    <div class="ck-ok">✓</div>
+    <h4>Código Pix copiado!</h4>
+    <p class="sub">Agora é só finalizar no aplicativo do seu banco.</p>
+    <ul class="ck-list">
+     <li><i>1</i><span>Abra o app do seu banco e vá em <b>Pix › Pix Copia e Cola</b>.</span></li>
+     <li><i>2</i><span>Cole o código e confirme o pagamento de <b>R$ 39,90</b>.</span></li>
+     <li><i>3</i><span>Você receberá o protocolo e o acesso no seu WhatsApp.</span></li>
+    </ul>
+    <div class="ck-proto"><small>Seu protocolo</small><b class="ckP"></b></div>
+    <button class="ck-btn" type="button" onclick="ckClose()">Concluir</button>
+   </div>
+   <!-- 3c: cartão -->
+   <div class="ck-step ck-c" id="s3c">
+    <h4>Cartão de crédito</h4>
+    <p class="sub">O pagamento é feito em um ambiente seguro do Mercado Pago. Para abrir sem erro, siga os passos:</p>
+    <ul class="ck-list">
+     <li><i>1</i><span>Toque em <b>Copiar link de pagamento</b>.</span></li>
+     <li><i>2</i><span>Abra o <b>navegador do celular</b> (Chrome, Safari...) e <b>cole o link na barra de endereço</b>.</span></li>
+     <li><i>3</i><span>Informe os dados do cartão e finalize o pagamento de <b>R$ 39,90</b>.</span></li>
+    </ul>
+    <div class="ck-link" id="ckLinkTxt"></div>
+    <div class="ck-tip">🔒 <b>Totalmente seguro:</b> o pagamento é processado pelo <b>Mercado Pago</b>, um dos ambientes de pagamento mais seguros do mercado. Seus dados do cartão são protegidos.</div>
+    <button class="ck-btn" id="ckCard" type="button">Copiar link de pagamento</button>
+    <button class="ck-back" type="button" data-b="s2">Voltar</button>
+   </div>
+   <!-- 4b: instruções cartão -->
+   <div class="ck-step ck-c" id="s4b">
+    <div class="ck-ok">✓</div>
+    <h4>Link copiado!</h4>
+    <p class="sub">Agora é só finalizar o pagamento no navegador do seu celular:</p>
+    <ul class="ck-list">
+     <li><i>1</i><span>Abra o <b>navegador do celular</b> (Chrome, Safari...).</span></li>
+     <li><i>2</i><span><b>Cole o link</b> que você copiou na barra de endereço e acesse.</span></li>
+     <li><i>3</i><span>Informe os dados do cartão e finalize o pagamento de <b>R$ 39,90</b>.</span></li>
+    </ul>
+    <div class="ck-proto"><small>Seu protocolo</small><b class="ckP"></b></div>
+    <button class="ck-btn" id="ckCard2" type="button">Copiar link novamente</button>
+    <button class="ck-back" type="button" onclick="ckClose()">Fechar</button>
+   </div>
+  </div>
+ </div>
+</div>
+
+<script>
+  document.getElementById('ano').textContent = new Date().getFullYear();
+</script>
+<script>
+(function(){
+  var FORMSPREE='https://formspree.io/f/moevgpzl';
+  var CARD_LINK='https://mpago.la/1iiNRm5';
+  var PIX=['00020126510014br.gov.bcb.pix0111121496937200214Relacionamento520400005303986540539.905802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026100313141566550300017br.gov.bcb.brcode01051.0.06304BF7B'].join('');
+  var $=function(i){return document.getElementById(i)};
+  var d={nome:'',whatsapp:'',protocolo:''};
+  function send(ev,extra){
+    var p=Object.assign({evento:ev,nome:d.nome,whatsapp:d.whatsapp,protocolo:d.protocolo,produto:'Protocolo de Retorno 7 Dias',valor:'R$ 39,90'},extra||{});
+    return fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(p)}).catch(function(){});
+  }
+  function go(id){
+    document.querySelectorAll('.ck-step').forEach(function(s){s.classList.remove('on')});
+    $(id).classList.add('on');
+    var n={s1:1,s2:2,s3a:3,s3b:3,s3c:3,s4a:4,s4b:4}[id];
+    document.querySelectorAll('.ck-dots i').forEach(function(x,i){x.classList.toggle('on',i<n)});
+    document.querySelector('.ck-box').scrollTop=0;
+    if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();
+    $('ck').classList.remove('kb');fit();
+  }
+  function proto(){
+    var t=new Date(),p=function(n){return String(n).padStart(2,'0')};
+    return 'MR'+t.getFullYear()+p(t.getMonth()+1)+p(t.getDate())+'-'+Math.random().toString(36).slice(2,7).toUpperCase();
+  }
+  /* ---- ajuste ao teclado: segue a área realmente visível (visualViewport) ---- */
+  var vv=window.visualViewport;
+  function fit(){
+    var ck=$('ck');
+    if(!ck.classList.contains('on'))return;
+    var h=vv?vv.height:window.innerHeight,t=vv?vv.offsetTop:0;
+    ck.style.top=t+'px';ck.style.bottom='auto';ck.style.height=h+'px';
+    ck.style.setProperty('--ckmax',Math.max(200,h-(ck.classList.contains('kb')?16:28))+'px');
+  }
+  if(vv){vv.addEventListener('resize',fit);vv.addEventListener('scroll',fit)}
+  window.addEventListener('resize',fit);
+  window.addEventListener('orientationchange',function(){setTimeout(fit,300)});
+  $('ck').addEventListener('focusin',function(e){
+    if(e.target.tagName!=='INPUT')return;
+    var el=e.target;
+    $('ck').classList.add('kb');fit();
+    setTimeout(function(){fit();try{el.scrollIntoView({block:'center',behavior:'smooth'})}catch(x){}},350);
+  });
+  $('ck').addEventListener('focusout',function(){
+    setTimeout(function(){
+      var a=document.activeElement;
+      if(!a||a.tagName!=='INPUT'){$('ck').classList.remove('kb');fit()}
+    },120);
+  });
+  var scrollY=0;
+  window.ckOpen=function(e){if(e)e.preventDefault();go('s1');$('ckManual').style.display='none';$('ckCopy').style.display='';
+    scrollY=window.pageYOffset;$('ck').classList.add('on');fit();
+    document.body.style.cssText='position:fixed;top:-'+scrollY+'px;left:0;right:0;width:100%'};
+  window.ckClose=function(){if(!$('ck').classList.contains('on'))return;$('ck').classList.remove('on','kb');$('ck').style.cssText='';document.body.style.cssText='';window.scrollTo(0,scrollY)};
+  $('ck').addEventListener('click',function(e){if(e.target===this)ckClose()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')ckClose()});
+  $('ckZap').addEventListener('input',function(){
+    var v=this.value.replace(/\D/g,'').slice(0,11);
+    if(v.length>6)v='('+v.slice(0,2)+') '+v.slice(2,7)+'-'+v.slice(7);
+    else if(v.length>2)v='('+v.slice(0,2)+') '+v.slice(2);
+    this.value=v;
+  });
+  $('ckNome').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();$('ckZap').focus()}});
+  $('ckZap').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();$('ckGo').click()}});
+  $('ckGo').onclick=function(){
+    var n=$('ckNome'),z=$('ckZap'),er=$('ckErr'),msg='';
+    var nome=n.value.trim(),zap=z.value.replace(/\D/g,'');
+    n.classList.remove('err');z.classList.remove('err');
+    if(nome.length<2){n.classList.add('err');msg='Digite seu nome.'}
+    else if(zap.length<10){z.classList.add('err');msg='Digite seu WhatsApp com DDD. Exemplo: (24) 99999-9999'}
+    er.textContent=msg;er.style.display=msg?'block':'none';
+    if(msg)return;
+    d.nome=nome;d.whatsapp=z.value;d.protocolo=proto();
+    document.querySelectorAll('.ckP').forEach(function(x){x.textContent=d.protocolo});
+    try{send('lead')}catch(e){}
+    go('s2');
+  };
+  document.querySelectorAll('[data-m]').forEach(function(b){b.onclick=function(){
+    send('forma_pagamento',{forma:b.dataset.m});go(b.dataset.m==='pix'?'s3a':'s3c');
+  }});
+  document.querySelectorAll('[data-b]').forEach(function(b){b.onclick=function(){go(b.dataset.b)}});
+  $('ckGen').onclick=function(){
+    var b=this;b.disabled=true;b.textContent='Gerando Pix...';
+    send('pix_gerado');
+    setTimeout(function(){b.disabled=false;b.textContent='Gerar Pix';go('s3b')},1200);
+  };
+  $('ckCopy').onclick=function(){
+    copyText(PIX,function(ok){
+      if(ok){send('pix_copiado');go('s4a')}
+      else{$('ckPixTxt').value=PIX;$('ckManual').style.display='block';$('ckCopy').style.display='none'}
+    });
+  };
+  $('ckCopied').onclick=function(){send('pix_copiado_manual');go('s4a')};
+  $('ckLinkTxt').textContent=CARD_LINK;
+  function copyText(t,cb){
+    function legacy(){
+      var ok=false,x=document.createElement('textarea');
+      x.value=t;x.setAttribute('readonly','');x.style.cssText='position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;font-size:16px';
+      document.body.appendChild(x);
+      try{
+        var iOS=/ipad|iphone|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+        if(iOS){var r=document.createRange();r.selectNodeContents(x);var sl=window.getSelection();sl.removeAllRanges();sl.addRange(r);x.setSelectionRange(0,t.length)}
+        else{x.select()}
+        ok=document.execCommand('copy');
+      }catch(e){ok=false}
+      document.body.removeChild(x);cb(ok);
+    }
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText&&window.isSecureContext){
+        navigator.clipboard.writeText(t).then(function(){cb(true)},legacy);
+      }else legacy();
+    }catch(e){legacy()}
+  }
+  $('ckCard').onclick=function(){copyText(CARD_LINK,function(ok){send(ok?'link_cartao_copiado':'link_cartao_copia_manual');go('s4b')})};
+  $('ckCard2').onclick=function(){var b=this;copyText(CARD_LINK,function(ok){b.textContent=ok?'Link copiado ✓':'Toque e segure no link para copiar';setTimeout(function(){b.textContent='Copiar link novamente'},2000)})};
+  document.querySelectorAll('.offer .btn, a.btn[href="#"]').forEach(function(a){a.addEventListener('click',ckOpen)});
+})();
+</script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
