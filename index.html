@@ -31,7 +31,7 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
 .sub{display:flex;align-items:center;gap:6px;font-size:13px;opacity:.9}.sub svg{width:12px;height:12px}
 .lk{border:0;background:none;color:#fff;font:600 14px var(--sans);padding:8px 6px;cursor:pointer}
 @media(max-width:480px){.lk.ini{display:none}}
-.chat{position:relative;flex:1;overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;padding:14px 12px 20px;scroll-behavior:smooth}
+.chat{font-size:17.5px;position:relative;flex:1;overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column;padding:14px 12px 20px;scroll-behavior:smooth}
 .m{max-width:88%;margin-bottom:3px;animation:pop .22s ease-out both}
 .m.in{align-self:flex-start}.m.out{align-self:flex-end}.m.tail{margin-top:9px}
 .b{position:relative;display:flow-root;background:#fff;border-radius:8px;padding:7px 9px 6px;box-shadow:0 1px .5px rgba(11,20,26,.13);overflow-wrap:anywhere}
@@ -43,39 +43,39 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
 @keyframes pop{from{opacity:0;transform:translateY(6px)}}
 .ty{display:flex;gap:4px;padding:12px 14px}.ty i{width:7px;height:7px;border-radius:50%;background:#8696a0;animation:bn 1s infinite}.ty i:nth-child(2){animation-delay:.15s}.ty i:nth-child(3){animation-delay:.3s}
 @keyframes bn{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-4px);opacity:1}}
-.nm{display:flex;align-items:center;gap:5px;color:var(--g);font-weight:600;font-size:13.5px;margin-bottom:3px}.nm svg{flex:none;width:14px;height:14px}
-.q{display:block;font-size:20px;line-height:1.22;font-weight:700}
-.h1{font-size:clamp(23px,6.4vw,28px);line-height:1.14;font-weight:800;letter-spacing:-.3px}
-.h2{font-size:clamp(19px,5.2vw,22px);line-height:1.25;font-weight:700}
-.big{display:block;font-size:32px;line-height:1.1;font-weight:800}
-.lead{font-size:17px;line-height:1.45}
-.t{float:right;margin:7px 0 -3px 12px;font-size:11px;color:var(--mu);white-space:nowrap}
+.nm{display:flex;align-items:center;gap:5px;color:var(--g);font-weight:600;font-size:14.5px;margin-bottom:3px}.nm svg{flex:none;width:14px;height:14px}
+.q{display:block;font-size:22px;line-height:1.22;font-weight:700}
+.h1{font-size:clamp(25px,6.8vw,30px);line-height:1.14;font-weight:800;letter-spacing:-.3px}
+.h2{font-size:clamp(21px,5.6vw,24px);line-height:1.25;font-weight:700}
+.big{display:block;font-size:35px;line-height:1.1;font-weight:800}
+.lead{font-size:18.5px;line-height:1.45}
+.t{float:right;margin:7px 0 -3px 12px;font-size:12px;color:var(--mu);white-space:nowrap}
 .tk{font-style:normal;color:#53bdeb;letter-spacing:-2px}
 .lp-script{color:var(--g);font-weight:800;background:linear-gradient(transparent 66%,#c7f0d8 66%)}
-.proof{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:600;color:var(--mu)}
+.proof{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:var(--mu)}
 .dots{display:inline-flex;flex:none}.dots i{width:22px;height:22px;border-radius:50%;border:2px solid #fff;margin-left:-7px;background:#25d366}.dots i:first-child{margin:0;background:#ffd279}.dots i:nth-child(2){background:#7fd8ff}.dots i:nth-child(3){background:#d0b3ff}
 .qr{clear:both;margin:8px -9px -6px;border-radius:0 0 8px 8px;overflow:hidden}
-.qr button{display:block;width:100%;border:0;border-top:1px solid var(--hr);background:none;padding:13px 12px;font:600 16px/1.25 var(--sans);color:var(--bl);cursor:pointer;text-align:center}
+.qr button{display:block;width:100%;border:0;border-top:1px solid var(--hr);background:none;padding:13px 12px;font:600 17.5px/1.25 var(--sans);color:var(--bl);cursor:pointer;text-align:center}
 .qr button:active{background:#f0f2f5}
 .qr button:focus-visible,.cta:focus-visible,.lk:focus-visible,.bk:focus-visible{outline:3px solid #53bdeb;outline-offset:-3px}
 .m.card{width:94%;max-width:94%}
-.of-t{font-size:clamp(22px,6.2vw,27px);line-height:1.14;font-weight:800;margin:2px 0 6px}
-.of-d{color:var(--mu);font-size:16px}
+.of-t{font-size:clamp(24px,6.6vw,29px);line-height:1.14;font-weight:800;margin:2px 0 6px}
+.of-d{color:var(--mu);font-size:17.5px}
 .of-l{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:10px}
-.of-l li{display:flex;align-items:flex-start;gap:9px;font-size:16px;line-height:1.35}
+.of-l li{display:flex;align-items:flex-start;gap:9px;font-size:17.5px;line-height:1.35}
 .ck{flex:none;width:20px;height:20px;margin-top:1px;border-radius:50%;background:var(--g2);color:#fff;display:flex;align-items:center;justify-content:center}.ck svg{width:12px;height:12px}
 .px{display:flex;flex-direction:column;align-items:flex-start;gap:3px;margin-top:16px;padding:12px 14px;background:#f0f2f5;border-left:4px solid var(--g2);border-radius:6px}
 .px .lead-txt{font-weight:600}.px .old{color:var(--red);text-decoration:line-through;font-weight:700}
 .px .new{font-size:76px;line-height:.95;font-weight:800;letter-spacing:-2.5px}.px .new small{font-size:.45em;letter-spacing:0;color:var(--g)}
 .px .pix{font-size:13px;font-weight:700;color:#0a5c36;background:#d9fdd3;border-radius:99px;padding:3px 12px}
 .px .last{font-size:13.5px;font-weight:700;color:var(--red)}
-.cta{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:14px;padding:15px 14px;border:0;border-radius:24px;background:var(--g);color:#fff;font:700 16.5px/1.2 var(--sans);text-align:center;cursor:pointer;box-shadow:0 2px 0 #005c4b}
+.cta{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:14px;padding:15px 14px;border:0;border-radius:24px;background:var(--g);color:#fff;font:700 17.5px/1.2 var(--sans);text-align:center;cursor:pointer;box-shadow:0 2px 0 #005c4b}
 .cta:active{transform:translateY(2px);box-shadow:none}.cta svg{flex:none;width:19px;height:19px}
-.sec{margin-top:10px;font-size:13px;font-weight:600;color:var(--mu);text-align:center}
-.chip{align-self:center;max-width:90%;margin:14px 0 6px;padding:8px 12px;background:#fff3c4;color:#54656f;border-radius:8px;font-size:14.5px;font-weight:600;text-align:center;box-shadow:0 1px .5px rgba(11,20,26,.13)}
+.sec{margin-top:10px;font-size:14px;font-weight:600;color:var(--mu);text-align:center}
+.chip{align-self:center;max-width:90%;margin:14px 0 6px;padding:8px 12px;background:#fff3c4;color:#54656f;border-radius:8px;font-size:15.5px;font-weight:600;text-align:center;box-shadow:0 1px .5px rgba(11,20,26,.13)}
 .st{color:#f5a623;letter-spacing:2px;font-size:15px}
-.dq p{margin:4px 0 8px;font-size:16.5px}
-.au{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600}.au .city{color:var(--mu);font-weight:500}
+.dq p{margin:4px 0 8px;font-size:17.5px}
+.au{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600}.au .city{color:var(--mu);font-weight:500}
 .avt{flex:none;width:28px;height:28px;border-radius:50%;background:#c5ced3;color:#fff;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}.avt svg{width:22px;height:22px}
 .bar{display:flex;align-items:center;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));background:#f0f2f5;pointer-events:none;user-select:none}
 .bar .in{flex:1;padding:10px 16px;background:#fff;border-radius:22px;color:#8696a0}
@@ -124,7 +124,7 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
-<body><body><svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="sic1"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></symbol><symbol id="sic2"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="sic4"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="sic7"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></symbol><symbol id="sic8"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2 9.2 4.3 5.5 4l-1 3.6L1 9.4l2 3.1L1 15.6l3.5 1.8 1 3.6 3.7-.3L12 22l2.8-2.3 3.7.3 1-3.6 3.5-1.8-2-3.1 2-3.1-3.5-1.8-1-3.6-3.7.3L12 2Zm-1.2 13.6-3.4-3.4 1.4-1.4 2 2 4.6-4.6 1.4 1.4-6 6Z"/></symbol><symbol id="sic9"><circle cx="12" cy="8.2" r="4.2"/><path d="M4 20.2c0-4.2 3.6-7.2 8-7.2s8 3 8 7.2v.3H4v-.3Z"/></symbol><symbol id="sic10"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol><symbol id="sic11"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.2 8.85-6.1 3.9a.6.6 0 0 1-.92-.5V9.75a.6.6 0 0 1 .92-.5l6.1 3.9a.6.6 0 0 1 0 .7z"/></symbol></svg>
+<body><svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="sic1"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></symbol><symbol id="sic2"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="sic4"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="sic7"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></symbol><symbol id="sic8"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2 9.2 4.3 5.5 4l-1 3.6L1 9.4l2 3.1L1 15.6l3.5 1.8 1 3.6 3.7-.3L12 22l2.8-2.3 3.7.3 1-3.6 3.5-1.8-2-3.1 2-3.1-3.5-1.8-1-3.6-3.7.3L12 2Zm-1.2 13.6-3.4-3.4 1.4-1.4 2 2 4.6-4.6 1.4 1.4-6 6Z"/></symbol><symbol id="sic9"><circle cx="12" cy="8.2" r="4.2"/><path d="M4 20.2c0-4.2 3.6-7.2 8-7.2s8 3 8 7.2v.3H4v-.3Z"/></symbol><symbol id="sic10"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol><symbol id="sic11"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.2 8.85-6.1 3.9a.6.6 0 0 1-.92-.5V9.75a.6.6 0 0 1 .92-.5l6.1 3.9a.6.6 0 0 1 0 .7z"/></symbol></svg>
 <div id="app">
 <header class="top">
   <button type="button" class="bk" id="backBtn" onclick="voltarPagina()" aria-label="Voltar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button>
@@ -134,7 +134,6 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
     <div class="sub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic7"></use></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic11"></use></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic10"></use></svg> online</div>
   </div>
   <button type="button" class="lk ini" onclick="voltarPagina()">Início</button>
-  <button type="button" class="lk" onclick="abrirWhatsDuvidas()">Dúvidas</button>
 </header>
 <main class="chat" id="chat" aria-live="polite"></main>
 <footer class="bar" aria-hidden="true"><div class="in">Mensagem</div><div class="mic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11Z"/></svg></div></footer>
@@ -237,6 +236,7 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
   function cidadeAleatoria(){ return CIDADES_ANONIMAS[Math.floor(Math.random()*CIDADES_ANONIMAS.length)]; }
   var SITUACOES = {
     bloqueou: {
+      ack: 'Poxa… eu sei como esse silêncio pesa. Respira: você não está sozinha nisso. 💛',
       heroCta: 'Quero sair desse silêncio',
       h1: 'Ele te bloqueou. E o silêncio dói mais que qualquer briga.',
       lead: 'Sem resposta, sem explicação, só aquele silêncio que faz você pensar em tudo. Você relembra as últimas mensagens, tenta entender onde errou e sente vontade de procurar uma forma de falar com ele. Mas é justamente aí que muitas mulheres acabam piorando a situação.',
@@ -255,6 +255,7 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
       ]
     },
     foi_embora: {
+      ack: 'Sinto muito por isso. Sei que não é fácil, mas me escuta com atenção, tá?',
       heroCta: 'Quero ele de volta pra casa',
       h1: 'Ele foi embora. E agora a casa parece grande demais.',
       lead: 'A cama vazia, o silêncio nas refeições, a rotina que não faz mais sentido sem ele. Você repassa cada conversa tentando entender onde foi que tudo desandou.',
@@ -273,6 +274,7 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
       ]
     },
     outra: {
+      ack: 'Imagino o quanto isso dói. Mas fica comigo, porque isso tem jeito.',
       heroCta: 'Quero ser a escolhida',
       h1: 'Ele está com outra, e ver eles juntos é uma facada.',
       lead: 'Você fica se comparando, se perguntando o que ela tem que você não tem. Mas isso não é sobre competir, é sobre lembrar ele do que só você é capaz de fazer ele sentir.',
@@ -291,6 +293,7 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
       ]
     },
     orgulhoso: {
+      ack: 'Ah, esse tipo eu conheço bem. Calma, isso tem solução.',
       heroCta: 'Quero que ele dê o primeiro passo',
       h1: 'Ele é orgulhoso demais pra admitir que sente sua falta.',
       lead: 'Ele prefere sofrer calado a dar o primeiro passo. Pra ele, ceder parece fraqueza, mesmo que por dentro esteja despedaçado. E enquanto ele finge que está tudo bem, você fica esperando um gesto que talvez nunca venha.',
@@ -309,6 +312,7 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
       ]
     },
     reconquistar: {
+      ack: 'Que bom que você não desistiu. Isso já diz muito sobre vocês dois. 💛',
       heroCta: 'Quero começar do jeito certo',
       h1: 'Você sente que ainda existe algo entre vocês.',
       lead: 'Mas não sabe por onde começar, e tem medo de dar o passo errado e estragar de vez a única chance que resta.',
@@ -328,7 +332,7 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
     }
   };
 var OPTS=[['bloqueou','Ele me bloqueou e não sei o que fazer'],['orgulhoso','Ele é orgulhoso'],['foi_embora','Ele terminou comigo'],['outra','Ele está com outra mulher'],['reconquistar','Quero reconquistá-lo']];
-var chat=document.getElementById('chat'),side='',S=null;
+var chat=document.getElementById('chat'),side='',S=null,RUN=0;
 var HEART='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic1"></use></svg>';
 var ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic2"></use></svg>';
 var CHECK='<span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>';
@@ -352,47 +356,60 @@ async function typing(ms){
   m.innerHTML='<div class="b ty"><i></i><i></i><i></i></div>';
   chat.appendChild(m); scrollTo_(m); await wait(ms); m.remove();
 }
-function buttons(m,items){
+function buttons(m,items,ns,keep){
   var q=document.createElement('div'); q.className='qr';
   items.forEach(function(it){
     var b=document.createElement('button'); b.type='button'; b.textContent=it.label;
-    b.onclick=function(){ q.remove(); it.fn(); };
+    b.onclick=function(){ if(!keep) q.remove(); it.fn(); };
     q.appendChild(b);
   });
-  m.querySelector('.b').appendChild(q); scrollTo_(m);
+  m.querySelector('.b').appendChild(q); if(!ns) scrollTo_(m);
+}
+/* ── ritmo de conversa: o "Mestre" digita proporcional ao tamanho da fala ── */
+function dly(h){return Math.min(500+h.replace(/<[^>]+>/g,'').length*14,1900)}
+function frases(t){return (t.match(/[^.!?]+[.!?]+/g)||[t]).map(function(x){return x.trim()}).filter(Boolean)}
+async function say(r,html,cls){
+  await typing(dly(html)); if(r!==RUN) return null;
+  return add('in',html,cls);
 }
 async function start(){
-  side=''; S=null; window.SITUACAO_ATUAL='';
+  var r=++RUN; side=''; S=null; window.SITUACAO_ATUAL='';
   document.getElementById('backBtn').classList.remove('on');
-  await typing(700);
-  var m=add('in','<span class="nm">Descubra todos os segredos do relacionamento</span><strong class="q">Qual dessas é a sua situação?</strong>');
+  await typing(700); if(r!==RUN) return;
+  add('in','<span class="nm">Descubra todos os segredos do relacionamento</span>Oi! Que bom que você chegou até aqui 💛');
+  var m=await say(r,'Me conta com sinceridade: <strong class="q">Qual dessas é a sua situação?</strong>'); if(!m) return;
   buttons(m,OPTS.map(function(o){return {label:o[1],fn:function(){quizSituacao(o[0],o[1])}}}));
 }
 async function quizSituacao(key,label){
-  window.SITUACAO_ATUAL=key; S=SITUACOES[key];
+  var r=RUN; window.SITUACAO_ATUAL=key; S=SITUACOES[key];
   document.getElementById('backBtn').classList.add('on');
   add('out',label);
-  await typing(800);
-  add('in','<span class="nm">Baseado em psicologia masculina real</span><h1 class="h1" id="heroH1">'+S.h1+'</h1>');
-  await typing(900);
-  add('in','<p class="lead" id="heroLead">'+S.lead+'</p>');
-  await typing(600);
-  var m=add('in','<span class="proof"><span class="dots"><i></i><i></i><i></i></span>Milhares de mulheres já começaram essa virada</span>');
+  if(!await say(r,S.ack)) return;
+  if(!await say(r,'<span class="nm">Baseado em psicologia masculina real</span><h1 class="h1" id="heroH1">'+S.h1+'</h1>')) return;
+  var fs=frases(S.lead);
+  for(var i=0;i<fs.length;i++){ if(!await say(r,'<p class="lead"'+(i===0?' id="heroLead"':'')+'>'+fs[i]+'</p>')) return; }
+  if(!await say(r,'<span class="proof"><span class="dots"><i></i><i></i><i></i></span>Milhares de mulheres já começaram essa virada</span>')) return;
+  var m=await say(r,'Quer que eu te mostre o que fazer?'); if(!m) return;
   buttons(m,[{label:S.heroCta,fn:mostrarPromessa}]);
 }
 async function mostrarPromessa(){
-  add('out',S.heroCta);
-  await typing(800);
-  var m=add('in','<span class="nm">Existe um caminho</span><h2 class="h2" id="bridgePromise">'+S.promise+'</h2>');
+  var r=RUN; add('out',S.heroCta);
+  if(!await say(r,'Então presta atenção, porque isso muda tudo:')) return;
+  var fs=frases(S.promise), m=null;
+  for(var i=0;i<fs.length;i++){
+    m=await say(r,i===0?'<span class="nm">Existe um caminho</span><h2 class="h2" id="bridgePromise">'+fs[i]+'</h2>':'<p class="lead">'+fs[i]+'</p>');
+    if(!m) return;
+  }
   buttons(m,[{label:S.bridgeCta,fn:scrollComece}]);
 }
 async function scrollComece(){
-  add('out',S.bridgeCta);
-  await typing(700);
-  add('in','<span class="nm">'+CHECK+' Chega de esperar</span><strong class="big">Comece agora</strong>');
-  await typing(900);
+  var r=RUN; add('out',S.bridgeCta);
+  if(!await say(r,'Então vem comigo. Eu separei o seu plano. 💛')) return;
+  if(!await say(r,'<span class="nm">'+CHECK+' Chega de esperar</span><strong class="big">Comece agora</strong>')) return;
+  await typing(700); if(r!==RUN) return;
   oferta();
 }
+function abrirCheckoutOferta(){ setOferta('desconto'); openCheckout(); }
 function oferta(){
   var items=S.list.concat(['<strong>Bônus exclusivo:</strong> podcast do Mestre revelando todos os segredos sobre relacionamentos']);
   add('in',
@@ -400,12 +417,16 @@ function oferta(){
     '<h2 class="of-t" id="ofertaTitle">'+S.ofTitle+'</h2><p class="of-d" id="ofertaDesc">'+S.ofDesc+'</p>'+
     '<ul class="of-l" id="ofertaList">'+items.map(function(i){return '<li>'+CHECK+'<span>'+i+'</span></li>'}).join('')+'</ul>'+
     '<div class="px"><span class="lead-txt">De <span class="old">R$ 99,90</span> por apenas</span><span class="new">48<small>,50</small></span><span class="pix">à vista no PIX</span><span class="last">Últimos acessos por este valor</span></div>'+
-    '<button type="button" class="cta" onclick="setOferta(\'desconto\');openCheckout()">'+HEART+'<span id="ofertaCtaText">'+S.cta+'</span>'+ARROW+'</button>'+
+    '<button type="button" class="cta" onclick="abrirCheckoutOferta()">'+HEART+'<span id="ofertaCtaText">'+S.cta+'</span>'+ARROW+'</button>'+
     '<p class="sec">Pagamento 100% seguro &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; 7 dias de garantia</p>','card');
+  /* o restante entra sem rolar a tela, para ela ler a oferta primeiro */
   var c=document.createElement('div'); c.className='chip'; c.id='ofertaStat'; c.textContent=S.stat; chat.appendChild(c); side='';
+  add('in','Olha o que algumas delas me contaram depois de aplicar:',null,true);
   S.depos.forEach(function(d){
     add('in','<span class="st">★★★★★</span><p>"'+d[0]+'"</p><div class="au"><span class="avt">'+PERSON+'</span><cite style="font-style:normal">Anônima <span class="city">· '+cidadeAleatoria()+'</span></cite></div>','dq',true);
   });
+  var m=add('in','Se fez sentido pra você, o próximo passo é um toque só. 💛',null,true);
+  buttons(m,[{label:S.cta,fn:abrirCheckoutOferta}],true,true);
 }
 function voltarPagina(){ chat.innerHTML=''; start(); }
 start();
