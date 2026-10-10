@@ -72,6 +72,16 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
 .cta{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:14px;padding:15px 14px;border:0;border-radius:24px;background:var(--g);color:#fff;font:700 17.5px/1.2 var(--sans);text-align:center;cursor:pointer;box-shadow:0 2px 0 #005c4b}
 .cta:active{transform:translateY(2px);box-shadow:none}.cta svg{flex:none;width:19px;height:19px}
 .sec{margin-top:10px;font-size:14px;font-weight:600;color:var(--mu);text-align:center}
+.bq-l{display:block;margin:14px 0 5px;font-size:15px;font-weight:600;color:var(--mu)}
+.bq-in{width:100%;padding:13px 14px;border:0;border-bottom:2px solid #d1d7db;border-radius:8px 8px 0 0;background:#f0f2f5;color:var(--tx);font:500 17px var(--sans)}
+.bq-in:focus{outline:none;border-bottom-color:var(--g2)}
+.bq-in:disabled{opacity:.65}
+.bq-seg{display:flex;gap:8px}
+.bq-seg button{flex:1;padding:12px 6px;border:2px solid #d1d7db;border-radius:10px;background:#f0f2f5;color:var(--tx);font:600 16px var(--sans);cursor:pointer}
+.bq-seg button.on{border-color:var(--g2);background:#d9fdd3;color:#0a5c36}
+.bq-seg button:focus-visible{outline:3px solid #53bdeb;outline-offset:1px}
+.bq-seg.dis button{opacity:.65;pointer-events:none}
+.bq-err{display:none;margin-top:10px;font-size:14px;font-weight:600;color:var(--red)}
 .chip{align-self:center;max-width:90%;margin:14px 0 6px;padding:8px 12px;background:#fff3c4;color:#54656f;border-radius:8px;font-size:15.5px;font-weight:600;text-align:center;box-shadow:0 1px .5px rgba(11,20,26,.13)}
 .st{color:#f5a623;letter-spacing:2px;font-size:15px}
 .dq p{margin:4px 0 8px;font-size:17.5px}
@@ -162,7 +172,7 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
         <div class="co-order-row">
           <div>
             <div class="co-order-name">Código da Reconquista</div>
-            <div class="co-order-meta">Acesso vitalício + podcast exclusivo do Mestre, contando todos os segredos sobre relacionamentos · 100% digital</div>
+            <div class="co-order-meta" id="coMeta">Acesso vitalício · 100% digital</div>
           </div>
           <div class="co-order-price" id="coOrderPrice">R$ 48<span>,50</span></div>
         </div>
@@ -180,8 +190,8 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
           <div class="co-wa-advantage co-wa-big">
             <span class="co-wa-advantage-ic">💬</span>
             <div>
-              <strong>Acesso liberado na hora</strong>
-              <span>Assim que o pagamento for confirmado, seu acesso é liberado.</span>
+              <strong id="coWaT">Acesso liberado na hora</strong>
+              <span id="coWaS">Assim que o pagamento for confirmado, seu acesso é liberado.</span>
             </div>
           </div>
 
@@ -224,7 +234,7 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
         <div class="co-done-ic">✓</div>
         <h3 class="co-h3" style="text-align:center">Falta só o pagamento</h3>
         <p class="co-p" style="text-align:center;font-size:17px">Seu código Pix foi copiado. Abra o app do seu banco, escolha <strong class="co-hl">Pix &rarr; Pix Copia e Cola</strong>, cole o código e confirme.</p>
-        <p class="co-p" style="text-align:center">Assim que o pagamento for confirmado, seu acesso ao <strong class="co-hl">Plano de 7 Dias</strong> chega no seu WhatsApp. 💛</p>
+        <p class="co-p" id="co3b" style="text-align:center">Assim que o pagamento for confirmado, seu acesso ao <strong class="co-hl">Plano de 7 Dias</strong> chega no seu WhatsApp. 💛</p>
         <button type="button" class="co-btn co-btn-gold" onclick="closeCheckout()">Entendi 💛</button>
         <button type="button" class="co-ghost" onclick="abrirWhatsDuvidas()">Pagou e não chegou? Fale com a gente no WhatsApp</button>
       </div>
@@ -244,9 +254,9 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
       bridgeCta: 'Eu quero ser desbloqueada',
       cta: 'QUERO SER DESBLOQUEADA',
       stat: 'Milhares de mulheres já foram desbloqueadas com esse método.',
-      ofTitle: 'O <span class="lp-script">Plano de 7 Dias</span> Para Ele Te Desbloquear',
-      ofDesc: 'Um passo a passo que faz ele mesmo te desbloquear. Sem implorar, sem insistir, sem mandar uma mensagem.',
-      list: ['O que fazer a partir de hoje pra ele querer te desbloquear, sem mandar uma única mensagem','O gatilho que faz ele se arrepender de ter te bloqueado e questionar a própria decisão','O motivo real por trás do bloqueio, e o erro que deixa a maioria das mulheres bloqueada pra sempre','O script exato pra mandar quando ele te desbloquear, pra ele continuar falando com você e não te bloquear de novo','Garantia incondicional de 7 dias'],
+      ofTitle: 'Ele te desbloqueia em <span class="lp-script">7 dias</span>. Você só aguarda.',
+      ofDesc: 'Você não precisa fazer nada: sem mandar mensagem, sem insistir, sem implorar. É só aguardar o prazo de 7 dias.',
+      list: [],
       depos: [
         ['Ele tinha me bloqueado de tudo. Segui o plano à risca e em 5 dias ele mesmo me desbloqueou e mandou mensagem primeiro.','Camila R.'],
         ['Eu não fazia ideia do motivo do bloqueio. O método me ajudou a entender e, sem nenhum desespero da minha parte, ele voltou a falar comigo.','Débora M.'],
@@ -333,15 +343,6 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
   };
 /* ── copy conversacional: reação → diagnóstico → erro (curiosidade) → virada ── */
 var CONV={
- bloqueou:{
-  ack:['Bloqueada. 😔','Eu sei exatamente o que você está sentindo. E sei como resolver.'],
-  lead:['Bloqueio não é o fim. É defesa.','Ele te bloqueou porque ainda sente algo e não aguenta ver você.','E o que você fizer <strong>agora</strong> decide se ele te desbloqueia ou não.'],
-  q:'Há quanto tempo ele te bloqueou?',
-  opts:[['Hoje ou esses dias','Perfeito. Você está na hora certa. Agora cada passo conta.'],['Algumas semanas','Ainda dá tempo. Mas você não pode errar mais nenhuma vez.'],['Mais de um mês','Tempo não importa. O que importa é o que você faz a partir de agora.']],
-  gap:'Agora escuta: existe um erro que mantém ele te bloqueando pra sempre. E quase toda mulher comete.',gapCta:'Qual erro?',
-  erro:['<strong>Tentar contato.</strong>','Perfil novo, amiga falando por você, “só mais uma mensagem”.','Cada tentativa confirma pra ele que bloquear foi a decisão certa.'],
-  turn:['Você vai ser desbloqueada.','Existe uma estratégia que faz ele mesmo te desbloquear, sem você insistir, implorar ou mandar uma mensagem.','Você segue o passo a passo. Ele vem atrás.']
- },
  foi_embora:{
   ack:['Sinto muito. 💔','Eu sei o quanto isso dói. E sei como reverter.'],
   lead:['Término não é o fim.','Ele terminou, mas o sentimento não acabou junto.','Ele vai sentir a sua falta. E você vai fazer essa falta ficar impossível de ignorar.'],
@@ -379,6 +380,14 @@ var CONV={
   turn:['Você vai reconquistar ele.','Existe o jeito certo, passo a passo, dia a dia.','Em poucos dias, o mesmo homem que te amou volta a te procurar.']
  }
 };
+var BQ_SENT=false;
+/* ── fluxo curto do bloqueio: dor → "eu sei o que fazer" → promessa → dados → oferta ── */
+var BLOQ={
+ pain:['Você abre o WhatsApp e a foto dele sumiu. O coração gela.','Relê as últimas mensagens procurando onde errou. Quer escrever e nem isso pode.','Esse aperto no peito, a raiva misturada com saudade, a sensação de ter sido apagada da vida dele.'],
+ q:'É exatamente isso que você está sentindo?',
+ yes:'É exatamente isso',
+ know:['Eu sei exatamente o que fazer.','Bloqueio não é o fim. É defesa. Ele ainda sente algo e não aguenta ver você.','Existe um jeito de fazer ele te desbloquear. O prazo é de 7 dias e você não precisa fazer nada, nem mandar mensagem, nem insistir. Só aguardar.','Você vai ser desbloqueada em 7 dias.']
+};
 var C=null;
 var OPTS=[['bloqueou','Ele me bloqueou e não sei o que fazer'],['orgulhoso','Ele é orgulhoso'],['foi_embora','Ele terminou comigo'],['outra','Ele está com outra mulher'],['reconquistar','Quero reconquistá-lo']];
 var chat=document.getElementById('chat'),side='',S=null,RUN=0;
@@ -389,7 +398,7 @@ var PERSON='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use
 function hm(){var d=new Date();return ('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2)}
 function wait(ms){return new Promise(function(r){setTimeout(r,ms)})}
 function scrollTo_(el){setTimeout(function(){
-  if(el.offsetHeight>chat.clientHeight*.8) chat.scrollTo({top:el.offsetTop-12,behavior:'smooth'});
+  if(el.classList.contains('card')||el.offsetHeight>chat.clientHeight*.8) chat.scrollTo({top:el.offsetTop-12,behavior:'smooth'});
   else chat.scrollTo({top:chat.scrollHeight,behavior:'smooth'});
 },30)}
 function add(who,html,cls,ns){
@@ -422,7 +431,7 @@ async function say(r,html,cls){
   return add('in',html,cls);
 }
 async function start(){
-  var r=++RUN; side=''; S=null; window.SITUACAO_ATUAL='';
+  var r=++RUN; side=''; S=null; window.SITUACAO_ATUAL=''; BQ_SENT=false; window.BLOQUEIO=null;
   document.getElementById('backBtn').classList.remove('on');
   await typing(700); if(r!==RUN) return;
   add('in','<span class="nm">Descubra todos os segredos do relacionamento</span>Oi! Que bom que você chegou até aqui 💛');
@@ -431,10 +440,96 @@ async function start(){
 }
 async function sayAll(r,arr,cls){var m=null;for(var i=0;i<arr.length;i++){m=await say(r,arr[i],cls);if(!m)return null}return m}
 function ld(t){return '<p class="lead">'+t+'</p>'}
+function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function maskTel(v){var d=v.replace(/\D/g,'').slice(0,11),k=d.length>10?7:6;
+  if(d.length>6) return '('+d.slice(0,2)+') '+d.slice(2,k)+'-'+d.slice(k);
+  if(d.length>2) return '('+d.slice(0,2)+') '+d.slice(2);
+  return d.length?'('+d:''}
+async function fluxoBloqueou(r){
+  if(!await say(r,'Bloqueada. 😔')) return;
+  if(!await say(r,'<span class="nm">Baseado em psicologia masculina real</span><h1 class="h1" id="heroH1">'+S.h1+'</h1>')) return;
+  if(!await sayAll(r,BLOQ.pain.map(ld))) return;
+  var m=await say(r,'<strong class="q">'+BLOQ.q+'</strong>'); if(!m) return;
+  buttons(m,[{label:BLOQ.yes,fn:bloqueouSei}]);
+}
+async function bloqueouSei(){
+  var r=RUN; add('out',BLOQ.yes);
+  var n=BLOQ.know.length;
+  var m=await sayAll(r,BLOQ.know.map(function(t,i){return (i===0||i===n-1)?'<h2 class="h2">'+t+'</h2>':ld(t)}));
+  if(!m) return;
+  buttons(m,[{label:S.bridgeCta,fn:bloqueouDados}]);
+}
+async function bloqueouDados(){
+  var r=RUN; add('out',S.bridgeCta);
+  if(!await say(r,'Pra iniciar o seu desbloqueio, preciso de 4 informações rápidas:')) return;
+  var m=add('in',
+    '<span class="nm">'+HEART+' Seu desbloqueio</span>'+
+    '<label class="bq-l" for="bqMe">Seu primeiro nome</label><input class="bq-in" id="bqMe" type="text" autocomplete="given-name" enterkeyhint="next" placeholder="Seu nome">'+
+    '<label class="bq-l" for="bqHim">Nome dele</label><input class="bq-in" id="bqHim" type="text" autocomplete="off" enterkeyhint="next" placeholder="Nome de quem te bloqueou">'+
+    '<label class="bq-l" for="bqTel">WhatsApp dele (com DDD)</label><input class="bq-in" id="bqTel" type="tel" inputmode="tel" autocomplete="off" enterkeyhint="done" placeholder="(00) 00000-0000">'+
+    '<span class="bq-l" id="bqOutraL">Ele está com outra pessoa?</span><div class="bq-seg" id="bqSeg" role="group" aria-labelledby="bqOutraL"><button type="button" data-v="Sim" aria-pressed="false">Sim</button><button type="button" data-v="Não" aria-pressed="false">Não</button><button type="button" data-v="Não sei" aria-pressed="false">Não sei</button></div>'+
+    '<p class="bq-err" id="bqErr">Preencha tudo e escolha uma opção em "Ele está com outra pessoa?".</p>'+
+    '<button type="button" class="cta" id="bqBtn">'+HEART+'<span>INICIAR MEU DESBLOQUEIO</span>'+ARROW+'</button>','card');
+  var ids=['bqMe','bqHim','bqTel'];
+  ids.forEach(function(id,i){
+    var el=document.getElementById(id);
+    el.addEventListener('focus',function(){[150,400,700].forEach(function(ms){setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'center'})},ms)})});
+    el.addEventListener('keydown',function(e){
+      if(e.key!=='Enter') return; e.preventDefault();
+      if(i<ids.length-1) document.getElementById(ids[i+1]).focus(); else enviarBloqueio();
+    });
+  });
+  var seg=document.getElementById('bqSeg');
+  [].forEach.call(seg.querySelectorAll('button'),function(b){
+    b.addEventListener('click',function(){
+      seg.setAttribute('data-sel',b.getAttribute('data-v'));
+      [].forEach.call(seg.querySelectorAll('button'),function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on?'true':'false')});
+      document.getElementById('bqErr').style.display='none';
+    });
+  });
+  var tel=document.getElementById('bqTel');
+  tel.addEventListener('input',function(){tel.value=maskTel(tel.value)});
+  var btn=document.getElementById('bqBtn'),fired=false;
+  var h=function(e){e.preventDefault();e.stopPropagation();if(fired)return;fired=true;enviarBloqueio();setTimeout(function(){fired=false},600)};
+  btn.addEventListener('pointerdown',h); btn.addEventListener('click',h);
+}
+function enviarBloqueio(){
+  if(BQ_SENT) return;
+  var g=function(id){return document.getElementById(id).value.trim()};
+  var me=g('bqMe'),him=g('bqHim'),tel=g('bqTel'),dg=tel.replace(/\D/g,'');
+  var err=document.getElementById('bqErr'),outra=document.getElementById('bqSeg').getAttribute('data-sel')||'';
+  if(!me||!him||dg.length<10||dg.length>11||!outra){err.style.display='block';return}
+  BQ_SENT=true; err.style.display='none';
+  window.BLOQUEIO={nomeDela:me,nomeDele:him,whatsappDele:tel,outra:outra};
+  fetch(FORMSPREE_ENDPOINT,{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({
+      tipo:'Desbloqueio: dados antes do checkout',
+      nome_dela:me,
+      nome_dele:him,
+      whatsapp_dele:tel,
+      ele_esta_com_outra_pessoa:outra,
+      situacao:'bloqueou',
+      _subject:'Desbloqueio: '+me+' quer ser desbloqueada por '+him+' ('+tel+') | Outra pessoa: '+outra
+    })
+  }).catch(function(){});
+  ['bqMe','bqHim','bqTel'].forEach(function(id){document.getElementById(id).disabled=true});
+  document.getElementById('bqSeg').classList.add('dis');
+  document.getElementById('bqBtn').style.display='none';
+  bloqueouOferta(me,him);
+}
+async function bloqueouOferta(me,him){
+  var r=RUN;
+  if(!await say(r,'Pronto, <strong>'+esc(me)+'</strong>. Falta só um passo pra começar a contagem dos 7 dias até <strong>'+esc(him)+'</strong> te desbloquear. 💛')) return;
+  await typing(600); if(r!==RUN) return;
+  oferta();
+}
 async function quizSituacao(key,label){
   var r=RUN; window.SITUACAO_ATUAL=key; S=SITUACOES[key]; C=CONV[key];
   document.getElementById('backBtn').classList.add('on');
   add('out',label);
+  if(key==='bloqueou') return fluxoBloqueou(r);
   if(!await sayAll(r,C.ack)) return;
   if(!await say(r,'<span class="nm">Baseado em psicologia masculina real</span><h1 class="h1" id="heroH1">'+S.h1+'</h1>')) return;
   if(!await sayAll(r,C.lead.map(ld))) return;
@@ -464,14 +559,14 @@ async function scrollComece(){
 }
 function abrirCheckoutOferta(){ setOferta('desconto'); openCheckout(); }
 function oferta(){
-  var items=S.list.concat(['<strong>Bônus exclusivo:</strong> podcast do Mestre revelando todos os segredos sobre relacionamentos']);
+  var items=S.list;
   add('in',
     '<span class="nm">'+HEART+' Método comprovado · Baseado na psicologia masculina</span>'+
     '<h2 class="of-t" id="ofertaTitle">'+S.ofTitle+'</h2><p class="of-d" id="ofertaDesc">'+S.ofDesc+'</p>'+
-    '<ul class="of-l" id="ofertaList">'+items.map(function(i){return '<li>'+CHECK+'<span>'+i+'</span></li>'}).join('')+'</ul>'+
+    (items.length?'<ul class="of-l" id="ofertaList">'+items.map(function(i){return '<li>'+CHECK+'<span>'+i+'</span></li>'}).join('')+'</ul>':'')+
     '<div class="px"><span class="lead-txt">De <span class="old">R$ 99,90</span> por apenas</span><span class="new">48<small>,50</small></span><span class="pix">à vista no PIX</span><span class="last">Últimos acessos por este valor</span></div>'+
     '<button type="button" class="cta" onclick="abrirCheckoutOferta()">'+HEART+'<span id="ofertaCtaText">'+S.cta+'</span>'+ARROW+'</button>'+
-    '<p class="sec">Pagamento 100% seguro &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; 7 dias de garantia</p>','card');
+    '<p class="sec">'+(window.SITUACAO_ATUAL==='bloqueou'?'Pagamento 100% seguro &nbsp;·&nbsp; Você só aguarda &nbsp;·&nbsp; 7 dias de garantia':'Pagamento 100% seguro &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; 7 dias de garantia')+'</p>','card');
   /* o restante entra sem rolar a tela, para ela ler a oferta primeiro */
   var c=document.createElement('div'); c.className='chip'; c.id='ofertaStat'; c.textContent=S.stat; chat.appendChild(c); side='';
   add('in','Olha o que algumas delas me contaram depois de aplicar:',null,true);
@@ -502,12 +597,17 @@ let timerId = null;
 function $(id){ return document.getElementById(id); }
 
 function abrirWhatsDuvidas(){
-  var msg = encodeURIComponent('Oi! Quero tirar dúvidas sobre o Plano de 7 Dias 💛');
+  var msg = encodeURIComponent(window.SITUACAO_ATUAL === 'bloqueou' ? 'Oi! Quero tirar dúvidas sobre o meu desbloqueio 💛' : 'Oi! Quero tirar dúvidas sobre o Plano de 7 Dias 💛');
   window.open('https://wa.me/' + WA_NUMBER + '?text=' + msg, '_blank');
 }
 
 function openCheckout(){
-  $('nome').value = '';
+  var bq = (window.SITUACAO_ATUAL === 'bloqueou');
+  $('coMeta').textContent = bq ? 'Desbloqueio em até 7 dias · 100% digital' : 'Acesso vitalício · 100% digital';
+  $('coWaT').textContent = bq ? 'Contagem iniciada na hora' : 'Acesso liberado na hora';
+  $('coWaS').textContent = bq ? 'Assim que o pagamento for confirmado, começa a contagem dos 7 dias.' : 'Assim que o pagamento for confirmado, seu acesso é liberado.';
+  $('co3b').innerHTML = bq ? 'Assim que o pagamento for confirmado, começa a contagem dos <strong class="co-hl">7 dias</strong> do seu desbloqueio. Você não precisa fazer nada, só aguardar. 💛' : 'Assim que o pagamento for confirmado, seu acesso ao <strong class="co-hl">Plano de 7 Dias</strong> chega no seu WhatsApp. 💛';
+  $('nome').value = (window.BLOQUEIO && window.BLOQUEIO.nomeDela) || '';
   $('contatoWa').value = '';
   $('formErr').style.display = 'none';
   leadEnviado = false;
@@ -670,6 +770,9 @@ function enviarLead(){
       valor: lead.valor,
       pagamento: metodoPagamento,
       situacao: window.SITUACAO_ATUAL || '',
+      nome_dele: (window.BLOQUEIO && window.BLOQUEIO.nomeDele) || '',
+      whatsapp_dele: (window.BLOQUEIO && window.BLOQUEIO.whatsappDele) || '',
+      ele_esta_com_outra_pessoa: (window.BLOQUEIO && window.BLOQUEIO.outra) || '',
       _subject: `Novo pedido (${metodoPagamento}): ${lead.nome} (${PRODUTO.nome})`
     })
   }).catch(()=>{});
