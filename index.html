@@ -258,10 +258,10 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
       ofDesc: 'Você não precisa fazer nada: sem mandar mensagem, sem insistir, sem implorar. É só aguardar o prazo de 7 dias.',
       list: [],
       depos: [
-        ['Ele tinha me bloqueado de tudo. Segui o plano à risca e em 5 dias ele mesmo me desbloqueou e mandou mensagem primeiro.','Camila R.'],
-        ['Eu não fazia ideia do motivo do bloqueio. O método me ajudou a entender e, sem nenhum desespero da minha parte, ele voltou a falar comigo.','Débora M.'],
-        ['Bloqueada em tudo: WhatsApp, Instagram... Achei que era o fim. Uma semana depois estávamos conversando de novo, com ele puxando assunto.','Larissa F.'],
-        ['O que mais me ajudou foi entender o que NÃO fazer. Parei de tentar contato e, quando ele me desbloqueou, veio ele atrás de mim.','Patrícia N.']
+        ["Mestre, eu tô sem acreditar!!! 😭😭❤️\n\nEle me desbloqueou hoje! Eu estava bloqueada há mais de 3 meses e já tinha perdido as esperanças. Achei que ele nunca mais fosse querer saber de mim.",'Anônima',"PA"],
+        ["Mestre, preciso te contar uma coisa! 😱\n\nEle estava com outra mulher e eu achava que tinha sido substituída de vez. Além disso, ele tinha me bloqueado.\n\nEu estava sofrendo muito, porque ainda amo esse homem e hoje percebi que ele me desbloqueou!\n\nNão sei o que vai acontecer daqui pra frente, mas só de ver que o bloqueio acabou, já fiquei em choque. Obrigada.",'Anônima',"RS"],
+        ["Três meses olhando o celular, pensando nele e achando que nunca mais teria nem a oportunidade de conversar.\n\nEu já estava quase desistindo de tudo. Resolvi tentar com você.\nHoje fui conferir e ele tinha me desbloqueado! Gente, eu fiquei olhando a tela sem acreditar. Depois de tanto tempo. Você é o melhor.❤️",'Anônima',"SP"],
+        ["Ele tinha terminado comigo, me bloqueou e parecia que preferia morrer a dar o braço a torcer, muito orgulhoso.\n\nEu implorei, chorei e tentei conversar várias vezes. Nada funcionou.\n\nFiquei quietinha, só aguardei igual você me orientou e em 4 dias ELE ME DESBLOQUEOU! 😭❤️\n\nEu nunca imaginei que voltaria a ver meu contato disponível assim. Ainda estou tentando acreditar!",'Anônima',"SP"]
       ]
     },
     foi_embora: {
@@ -569,9 +569,9 @@ function oferta(){
     '<p class="sec">'+(window.SITUACAO_ATUAL==='bloqueou'?'Pagamento 100% seguro &nbsp;·&nbsp; Você só aguarda &nbsp;·&nbsp; 7 dias de garantia':'Pagamento 100% seguro &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; 7 dias de garantia')+'</p>','card');
   /* o restante entra sem rolar a tela, para ela ler a oferta primeiro */
   var c=document.createElement('div'); c.className='chip'; c.id='ofertaStat'; c.textContent=S.stat; chat.appendChild(c); side='';
-  add('in','Olha o que algumas delas me contaram depois de aplicar:',null,true);
+  add('in',window.SITUACAO_ATUAL==='bloqueou'?'Olha o que algumas delas me contaram depois de serem desbloqueadas:':'Olha o que algumas delas me contaram depois de aplicar:',null,true);
   S.depos.forEach(function(d){
-    add('in','<span class="st">★★★★★</span><p>"'+d[0]+'"</p><div class="au"><span class="avt">'+PERSON+'</span><cite style="font-style:normal">Anônima <span class="city">· '+cidadeAleatoria()+'</span></cite></div>','dq',true);
+    add('in','<span class="st">★★★★★</span><p>"'+d[0].replace(/\n/g,'<br>')+'"</p><div class="au"><span class="avt">'+PERSON+'</span><cite style="font-style:normal">Anônima <span class="city">· '+(d[2]||cidadeAleatoria())+'</span></cite></div>','dq',true);
   });
   var m=add('in','Se fez sentido pra você, o próximo passo é um toque só. 💛',null,true);
   buttons(m,[{label:S.cta,fn:abrirCheckoutOferta}],true,true);
