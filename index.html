@@ -76,6 +76,9 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
 .bq-in{width:100%;padding:13px 14px;border:0;border-bottom:2px solid #d1d7db;border-radius:8px 8px 0 0;background:#f0f2f5;color:var(--tx);font:500 17px var(--sans)}
 .bq-in:focus{outline:none;border-bottom-color:var(--g2)}
 .bq-in:disabled{opacity:.65}
+.bq-price{margin:10px 0 2px;padding:11px 14px;border-radius:10px;background:#d9fdd3;color:#0a5c36;font-size:16px;line-height:1.35;text-align:center}
+.bq-price s{opacity:.7}
+.bq-price strong{font-size:21px;font-weight:800}
 .bq-seg{display:flex;gap:8px}
 .bq-seg button{flex:1;padding:12px 6px;border:2px solid #d1d7db;border-radius:10px;background:#f0f2f5;color:var(--tx);font:600 16px var(--sans);cursor:pointer}
 .bq-seg button.on{border-color:var(--g2);background:#d9fdd3;color:#0a5c36}
@@ -461,16 +464,18 @@ async function bloqueouSei(){
 }
 async function bloqueouDados(){
   var r=RUN; add('out',S.bridgeCta);
-  if(!await say(r,'Pra iniciar o seu desbloqueio, preciso de 4 informações rápidas:')) return;
+  if(!await say(r,'O seu desbloqueio custa apenas <strong>R$ 48,50</strong>, pagamento único no Pix. Pra iniciar, preciso de algumas informações rápidas:')) return;
   var m=add('in',
     '<span class="nm">'+HEART+' Seu desbloqueio</span>'+
+    '<div class="bq-price">De <s>R$ 99,90</s> por apenas <strong>R$ 48,50</strong><br>à vista no Pix</div>'+
     '<label class="bq-l" for="bqMe">Seu primeiro nome</label><input class="bq-in" id="bqMe" type="text" autocomplete="given-name" enterkeyhint="next" placeholder="Seu nome">'+
+    '<label class="bq-l" for="bqTelMe">Seu WhatsApp (com DDD)</label><input class="bq-in" id="bqTelMe" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="next" placeholder="(00) 00000-0000">'+
     '<label class="bq-l" for="bqHim">Nome dele</label><input class="bq-in" id="bqHim" type="text" autocomplete="off" enterkeyhint="next" placeholder="Nome de quem te bloqueou">'+
     '<label class="bq-l" for="bqTel">WhatsApp dele (com DDD)</label><input class="bq-in" id="bqTel" type="tel" inputmode="tel" autocomplete="off" enterkeyhint="done" placeholder="(00) 00000-0000">'+
     '<span class="bq-l" id="bqOutraL">Ele está com outra pessoa?</span><div class="bq-seg" id="bqSeg" role="group" aria-labelledby="bqOutraL"><button type="button" data-v="Sim" aria-pressed="false">Sim</button><button type="button" data-v="Não" aria-pressed="false">Não</button><button type="button" data-v="Não sei" aria-pressed="false">Não sei</button></div>'+
-    '<p class="bq-err" id="bqErr">Preencha tudo e escolha uma opção em "Ele está com outra pessoa?".</p>'+
-    '<button type="button" class="cta" id="bqBtn">'+HEART+'<span>INICIAR MEU DESBLOQUEIO</span>'+ARROW+'</button>','card');
-  var ids=['bqMe','bqHim','bqTel'];
+    '<p class="bq-err" id="bqErr">Preencha todos os campos (WhatsApp com DDD) e escolha uma opção em "Ele está com outra pessoa?".</p>'+
+    '<button type="button" class="cta" id="bqBtn">'+HEART+'<span>QUERO INICIAR POR R$ 48,50</span>'+ARROW+'</button>','card');
+  var ids=['bqMe','bqTelMe','bqHim','bqTel'];
   ids.forEach(function(id,i){
     var el=document.getElementById(id);
     el.addEventListener('focus',function(){[150,400,700].forEach(function(ms){setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'center'})},ms)})});
@@ -487,8 +492,10 @@ async function bloqueouDados(){
       document.getElementById('bqErr').style.display='none';
     });
   });
-  var tel=document.getElementById('bqTel');
-  tel.addEventListener('input',function(){tel.value=maskTel(tel.value)});
+  ['bqTelMe','bqTel'].forEach(function(id){
+    var t=document.getElementById(id);
+    t.addEventListener('input',function(){t.value=maskTel(t.value)});
+  });
   var btn=document.getElementById('bqBtn'),fired=false;
   var h=function(e){e.preventDefault();e.stopPropagation();if(fired)return;fired=true;enviarBloqueio();setTimeout(function(){fired=false},600)};
   btn.addEventListener('pointerdown',h); btn.addEventListener('click',h);
@@ -496,34 +503,41 @@ async function bloqueouDados(){
 function enviarBloqueio(){
   if(BQ_SENT) return;
   var g=function(id){return document.getElementById(id).value.trim()};
-  var me=g('bqMe'),him=g('bqHim'),tel=g('bqTel'),dg=tel.replace(/\D/g,'');
+  var me=g('bqMe'),telMe=g('bqTelMe'),him=g('bqHim'),tel=g('bqTel'),dg=tel.replace(/\D/g,''),dgMe=telMe.replace(/\D/g,'');
   var err=document.getElementById('bqErr'),outra=document.getElementById('bqSeg').getAttribute('data-sel')||'';
-  if(!me||!him||dg.length<10||dg.length>11||!outra){err.style.display='block';return}
+  if(!me||!him||dgMe.length<10||dgMe.length>11||dg.length<10||dg.length>11||!outra){err.style.display='block';return}
   BQ_SENT=true; err.style.display='none';
-  window.BLOQUEIO={nomeDela:me,nomeDele:him,whatsappDele:tel,outra:outra};
+  window.BLOQUEIO={nomeDela:me,whatsappDela:telMe,nomeDele:him,whatsappDele:tel,outra:outra};
   fetch(FORMSPREE_ENDPOINT,{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
     body:JSON.stringify({
       tipo:'Desbloqueio: dados antes do checkout',
       nome_dela:me,
+      whatsapp_dela:telMe,
       nome_dele:him,
       whatsapp_dele:tel,
       ele_esta_com_outra_pessoa:outra,
       situacao:'bloqueou',
-      _subject:'Desbloqueio: '+me+' quer ser desbloqueada por '+him+' ('+tel+') | Outra pessoa: '+outra
+      _subject:'Lead desbloqueio: '+me+' ('+telMe+') quer ser desbloqueada por '+him+' ('+tel+') | Outra pessoa: '+outra
     })
   }).catch(function(){});
-  ['bqMe','bqHim','bqTel'].forEach(function(id){document.getElementById(id).disabled=true});
+  ['bqMe','bqTelMe','bqHim','bqTel'].forEach(function(id){document.getElementById(id).disabled=true});
   document.getElementById('bqSeg').classList.add('dis');
   document.getElementById('bqBtn').style.display='none';
   bloqueouOferta(me,him);
 }
-async function bloqueouOferta(me,him){
-  var r=RUN;
-  if(!await say(r,'Pronto, <strong>'+esc(me)+'</strong>. Falta só um passo pra começar a contagem dos 7 dias até <strong>'+esc(him)+'</strong> te desbloquear. 💛')) return;
-  await typing(600); if(r!==RUN) return;
-  oferta();
+function bloqueouOferta(me,him){
+  /* vai direto ao checkout; atrás dele a conversa já segue, para quem fechar o pagamento */
+  var m=add('in','Pronto, <strong>'+esc(me)+'</strong>. Falta só o pagamento pra começar a contagem dos 7 dias até <strong>'+esc(him)+'</strong> te desbloquear. 💛',null,true);
+  setTimeout(function(){chat.scrollTo({top:m.offsetTop-12})},60);
+  var c=document.createElement('div'); c.className='chip'; c.id='ofertaStat'; c.textContent=S.stat; chat.appendChild(c); side='';
+  add('in','Olha o que algumas delas me contaram depois de serem desbloqueadas:',null,true);
+  depoimentos();
+  var f=add('in','Quando quiser, é só um toque pra finalizar. 💛',null,true);
+  buttons(f,[{label:S.cta,fn:abrirCheckoutOferta}],true,true);
+  if(document.activeElement&&document.activeElement.blur) document.activeElement.blur();
+  abrirCheckoutOferta();
 }
 async function quizSituacao(key,label){
   var r=RUN; window.SITUACAO_ATUAL=key; S=SITUACOES[key]; C=CONV[key];
@@ -557,6 +571,11 @@ async function scrollComece(){
   await typing(700); if(r!==RUN) return;
   oferta();
 }
+function depoimentos(){
+  S.depos.forEach(function(d){
+    add('in','<span class="st">★★★★★</span><p>"'+d[0].replace(/\n/g,'<br>')+'"</p><div class="au"><span class="avt">'+PERSON+'</span><cite style="font-style:normal">Anônima <span class="city">· '+(d[2]||cidadeAleatoria())+'</span></cite></div>','dq',true);
+  });
+}
 function abrirCheckoutOferta(){ setOferta('desconto'); openCheckout(); }
 function oferta(){
   var items=S.list;
@@ -570,9 +589,7 @@ function oferta(){
   /* o restante entra sem rolar a tela, para ela ler a oferta primeiro */
   var c=document.createElement('div'); c.className='chip'; c.id='ofertaStat'; c.textContent=S.stat; chat.appendChild(c); side='';
   add('in',window.SITUACAO_ATUAL==='bloqueou'?'Olha o que algumas delas me contaram depois de serem desbloqueadas:':'Olha o que algumas delas me contaram depois de aplicar:',null,true);
-  S.depos.forEach(function(d){
-    add('in','<span class="st">★★★★★</span><p>"'+d[0].replace(/\n/g,'<br>')+'"</p><div class="au"><span class="avt">'+PERSON+'</span><cite style="font-style:normal">Anônima <span class="city">· '+(d[2]||cidadeAleatoria())+'</span></cite></div>','dq',true);
-  });
+  depoimentos();
   var m=add('in','Se fez sentido pra você, o próximo passo é um toque só. 💛',null,true);
   buttons(m,[{label:S.cta,fn:abrirCheckoutOferta}],true,true);
 }
@@ -608,7 +625,7 @@ function openCheckout(){
   $('coWaS').textContent = bq ? 'Assim que o pagamento for confirmado, começa a contagem dos 7 dias.' : 'Assim que o pagamento for confirmado, seu acesso é liberado.';
   $('co3b').innerHTML = bq ? 'Assim que o pagamento for confirmado, começa a contagem dos <strong class="co-hl">7 dias</strong> do seu desbloqueio. Você não precisa fazer nada, só aguardar. 💛' : 'Assim que o pagamento for confirmado, seu acesso ao <strong class="co-hl">Plano de 7 Dias</strong> chega no seu WhatsApp. 💛';
   $('nome').value = (window.BLOQUEIO && window.BLOQUEIO.nomeDela) || '';
-  $('contatoWa').value = '';
+  $('contatoWa').value = (window.BLOQUEIO && window.BLOQUEIO.whatsappDela) || '';
   $('formErr').style.display = 'none';
   leadEnviado = false;
   lead = null;
