@@ -67,7 +67,7 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
 .px{display:flex;flex-direction:column;align-items:flex-start;gap:3px;margin-top:16px;padding:12px 14px;background:#f0f2f5;border-left:4px solid var(--g2);border-radius:6px}
 .px .lead-txt{font-weight:600}.px .old{color:var(--red);text-decoration:line-through;font-weight:700}
 .px .new{font-size:76px;line-height:.95;font-weight:800;letter-spacing:-2.5px}.px .new small{font-size:.45em;letter-spacing:0;color:var(--g)}
-.px .pix{font-size:13px;font-weight:700;color:#0a5c36;background:#d9fdd3;border-radius:99px;padding:3px 12px}
+.px .pix{display:inline-block;max-width:100%;font-size:13px;font-weight:700;line-height:1.3;color:#0a5c36;background:#d9fdd3;border-radius:16px;padding:4px 12px;text-align:center}
 .px .last{font-size:13.5px;font-weight:700;color:var(--red)}
 .cta{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:14px;padding:15px 14px;border:0;border-radius:24px;background:var(--g);color:#fff;font:700 17.5px/1.2 var(--sans);text-align:center;cursor:pointer;box-shadow:0 2px 0 #005c4b}
 .cta:active{transform:translateY(2px);box-shadow:none}.cta svg{flex:none;width:19px;height:19px}
@@ -79,6 +79,31 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
 .bq-price{margin:10px 0 2px;padding:11px 14px;border-radius:10px;background:#d9fdd3;color:#0a5c36;font-size:16px;line-height:1.35;text-align:center}
 .bq-price s{opacity:.7}
 .bq-price strong{font-size:21px;font-weight:800}
+.ub-slot.show{animation:rise .4s ease-out}
+@keyframes rise{from{opacity:0;transform:translateY(10px) scale(.97)}}
+.ub{margin:12px 0 4px}
+.ub-chat{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;background:#f0f2f5}
+.ub-wrap{position:relative;flex:none}
+.ub-av{width:44px;height:44px;border-radius:50%;background:#c5ced3;color:#fff;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.ub-av svg{width:34px;height:34px}
+.ub-badge{position:absolute;right:-5px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#fff;font-size:15px;line-height:21px;text-align:center}
+.ub.ready .ub-badge{animation:pop2 .45s ease-out}
+.ub-who{min-width:0}
+.ub-who b{display:block;font-size:17.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ub-who b.ph{color:#8696a0;font-weight:600}
+.ub-who small{display:block;font-size:13.5px;font-weight:700;color:var(--red)}
+.ub.ready .ub-who small{color:#0a7a45}
+.ub-days{display:flex;gap:4px;margin:12px 0 10px}
+.ub-days i{flex:1;min-width:0;padding:5px 0 6px;border-radius:8px;background:#e9edef;color:#667781;text-align:center;font-style:normal;transition:background .25s ease calc(var(--i)*70ms),color .25s ease calc(var(--i)*70ms)}
+.ub-days i em{display:block;font-style:normal;font-size:9.5px;font-weight:700;text-transform:uppercase}
+.ub-days i b{display:block;font-size:15px;font-weight:800}
+.ub-days i.on{background:var(--g2);color:#fff}
+.ub-days i:last-child.on{background:#0a7a45;box-shadow:0 0 0 3px rgba(37,211,102,.35)}
+.ub-head{margin:0;font-size:17.5px;line-height:1.3;font-weight:700}
+.ub-head strong{background:linear-gradient(transparent 62%,#c7f0d8 62%)}
+.ub-late{margin:6px 0 0;font-size:14px;font-weight:600;color:var(--red)}
+@keyframes pop2{from{transform:scale(2.2);opacity:0}}
+.co-urg{margin-top:9px;padding:10px 12px;border-radius:8px;background:#fff3e0;color:#7a4300;font-size:13.5px;line-height:1.35}
 .bq-seg{display:flex;gap:8px}
 .bq-seg button{flex:1;padding:12px 6px;border:2px solid #d1d7db;border-radius:10px;background:#f0f2f5;color:var(--tx);font:600 16px var(--sans);cursor:pointer}
 .bq-seg button.on{border-color:var(--g2);background:#d9fdd3;color:#0a5c36}
@@ -90,8 +115,27 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
 .dq p{margin:4px 0 8px;font-size:17.5px}
 .au{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600}.au .city{color:var(--mu);font-weight:500}
 .avt{flex:none;width:28px;height:28px;border-radius:50%;background:#c5ced3;color:#fff;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}.avt svg{width:22px;height:22px}
-.bar{display:flex;align-items:center;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));background:#f0f2f5;pointer-events:none;user-select:none}
-.bar .in{flex:1;padding:10px 16px;background:#fff;border-radius:22px;color:#8696a0}
+.bar{display:flex;align-items:center;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));background:#f0f2f5;user-select:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.bar .in{transition:color .2s;flex:1;padding:10px 16px;background:#fff;border-radius:22px;color:#8696a0}
+.bar.hint .in{color:#0a5c36;font-weight:600}
+.bar .up{display:none}.bar.hint .up{display:block}.bar.hint .mi{display:none}
+.bar.hint .mic{animation:bump 1.5s ease-in-out infinite}
+.bar.shake .in{animation:shk .35s}
+.bar:focus-visible{outline:3px solid #53bdeb;outline-offset:-3px}
+@keyframes bump{0%,100%{transform:none}50%{transform:translateY(-3px)}}
+@keyframes shk{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+@keyframes flash{0%,100%{background-color:transparent}40%{background-color:#d9fdd3}}
+@keyframes nudge{0%,100%{transform:none}30%{transform:translateY(-5px)}60%{transform:translateY(1px)}}
+.sh-ov{position:fixed;inset:0;z-index:50;display:flex;align-items:flex-end;justify-content:center;background:rgba(11,20,26,.45);animation:fade .2s ease}
+.sh{width:100%;max-width:560px;max-height:80dvh;overflow-y:auto;padding:8px 14px calc(14px + env(safe-area-inset-bottom,0px));background:#fff;border-radius:18px 18px 0 0;animation:sheet .25s ease-out}
+.sh-h{width:40px;height:4px;margin:4px auto 10px;border-radius:2px;background:#d1d7db}
+.sh-t{margin:0 0 4px;font-size:15px;font-weight:600;color:var(--mu);text-align:center}
+.sh-r{display:block;width:100%;margin-top:8px;padding:15px 14px;border:1.5px solid #e1e6ea;border-radius:12px;background:#fff;color:var(--bl);font:600 17.5px/1.25 var(--sans);text-align:left;cursor:pointer}
+.sh-r:active{background:#f0f2f5}
+.sh-r:focus-visible{outline:3px solid #53bdeb;outline-offset:-3px}
+@keyframes fade{from{opacity:0}}
+@keyframes sheet{from{transform:translateY(100%)}}
+.flash{animation:flash .9s ease 2}.nudge{animation:nudge .6s ease 3}
 .bar .mic{width:42px;height:42px;border-radius:50%;background:var(--g2);color:#fff;display:flex;align-items:center;justify-content:center}.bar .mic svg{width:22px;height:22px}
 /* checkout */
 .co-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(11,20,26,.62)}.co-overlay.show{display:block}
@@ -110,6 +154,7 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
 .co-prog-line{flex:1;max-width:46px;height:2px;margin:0 6px 18px;background:#d1d7db}.co-prog-line.on{background:var(--g)}
 .co-order{margin-bottom:18px;padding:12px 14px;background:#f0f2f5;border-left:4px solid var(--g2);border-radius:8px}
 .co-order-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.co-order-pay{margin-top:9px;padding-top:9px;border-top:1px dashed #cfd6db;font-size:13.5px;font-weight:600;color:#0a5c36}
 .co-order-name{font-size:17px;font-weight:700}.co-order-meta{margin-top:2px;font-size:12.5px;color:var(--mu)}
 .co-order-price{font-size:26px;font-weight:800;white-space:nowrap}.co-order-price span{font-size:.55em}
 .co-step{display:none}.co-step.active{display:block;animation:pop .25s ease-out}
@@ -132,6 +177,13 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
 .co-pix-ready{display:none}.co-pix-ready.show{display:block;animation:pop .25s ease-out}
 .co-btn-copy{padding:17px;font-size:18px}.co-btn-copy.copied{background:#0a7a45}
 .co-copied-msg{display:none;align-items:center;justify-content:center;gap:7px;margin-top:12px;padding:12px 14px;background:#d9fdd3;border-radius:10px;font-size:14.5px;font-weight:600;text-align:center}.co-copied-msg.show{display:flex}
+.co-methods{display:flex;gap:8px;margin-bottom:14px}
+.co-method{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 6px;border:2px solid #d1d7db;border-radius:12px;background:#fff;color:var(--tx);font:700 15.5px var(--sans);cursor:pointer}
+.co-method small{font-weight:500;font-size:12px;color:var(--mu)}
+.co-method.on{border-color:var(--g2);background:#d9fdd3}
+.co-card-sec{display:flex;align-items:flex-start;gap:11px;margin-bottom:12px;padding:13px 14px;background:#d9fdd3;border-radius:10px}
+.co-card-sec .ic{font-size:22px}.co-card-sec strong{display:block;font-size:16px}.co-card-sec span{font-size:13.5px;color:#3b4a54}
+.co-linkbox{margin:0 0 12px;padding:12px 14px;background:#f0f2f5;border-radius:10px;font:600 16px var(--sans);text-align:center;word-break:break-all;user-select:all;-webkit-user-select:all}
 .co-ghost{width:100%;margin-top:8px;padding:12px;border:0;background:none;color:var(--bl);font:600 14.5px var(--sans);cursor:pointer}
 .co-done-ic{width:60px;height:60px;margin:2px auto 14px;border-radius:50%;background:var(--g2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:700}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
@@ -149,7 +201,7 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
   <button type="button" class="lk ini" onclick="voltarPagina()">Início</button>
 </header>
 <main class="chat" id="chat" aria-live="polite"></main>
-<footer class="bar" aria-hidden="true"><div class="in">Mensagem</div><div class="mic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11Z"/></svg></div></footer>
+<footer class="bar" id="bar" role="button" tabindex="0" aria-label="Ver o que fazer agora"><div class="in" id="barTxt">Mensagem</div><div class="mic"><svg class="mi" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11Z"/></svg><svg class="up" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4 4.5 11.5l1.4 1.4L11 7.8V20h2V7.8l5.1 5.1 1.4-1.4z"/></svg></div></footer>
 </div>
 
 <!-- CHECKOUT (estrutura e textos originais) -->
@@ -179,6 +231,8 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
           </div>
           <div class="co-order-price" id="coOrderPrice">R$ 48<span>,50</span></div>
         </div>
+        <div class="co-order-pay">⚡ Pix ou 💳 cartão de crédito</div>
+        <div class="co-urg" id="coUrg" style="display:none"></div>
       </div>
 
       <!-- STEP 1 -->
@@ -206,6 +260,10 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
 
       <!-- STEP 2 -->
       <div class="co-step" id="step-2">
+        <div class="co-methods" role="tablist" aria-label="Forma de pagamento">
+          <button type="button" class="co-method on" id="mPix" role="tab" aria-selected="true" onclick="setMetodo('pix')">⚡ Pix<small>Aprovação na hora</small></button>
+          <button type="button" class="co-method" id="mCard" role="tab" aria-selected="false" onclick="setMetodo('card')">💳 Cartão de crédito<small>Pelo Mercado Pago</small></button>
+        </div>
         <div id="pay-pix">
 
 
@@ -229,6 +287,16 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
 
         </div><!-- /pay-pix -->
 
+        <div id="pay-card" style="display:none">
+          <div class="co-card-sec"><span class="ic">🔒</span><div><strong>Pagamento seguro pelo Mercado Pago</strong><span>Os dados do seu cartão são digitados direto no Mercado Pago, nunca passam por aqui.</span></div></div>
+          <div class="co-howto"><span class="co-howto-num">1</span><span>Toque em <strong class="co-hl">Copiar link de pagamento</strong></span></div>
+          <div class="co-howto"><span class="co-howto-num">2</span><span>Abra o <strong class="co-hl">navegador do celular</strong> (Chrome, Safari...)</span></div>
+          <div class="co-howto"><span class="co-howto-num">3</span><span><strong class="co-hl">Cole o link na barra de endereço</strong> e finalize com seu cartão</span></div>
+          <div class="co-linkbox" id="cardLink">https://mpago.la/1kyRb1m</div>
+          <button type="button" class="co-btn co-btn-copy" id="copyCardBtn" onclick="copyCard()"><span id="copyCardTxt">📋 Copiar link de pagamento</span></button>
+          <div class="co-copied-msg" id="cardCopiedMsg">✓ Link copiado! Agora abra o navegador e cole na barra de endereço.</div>
+        </div><!-- /pay-card -->
+
         <button type="button" class="co-ghost" onclick="goStep(1)">&larr; Voltar e corrigir meus dados</button>
       </div>
 
@@ -236,8 +304,9 @@ body{background:#d1d7db;font-family:var(--sans);color:var(--tx);font-size:16px;l
       <div class="co-step" id="step-3">
         <div class="co-done-ic">✓</div>
         <h3 class="co-h3" style="text-align:center">Falta só o pagamento</h3>
-        <p class="co-p" style="text-align:center;font-size:17px">Seu código Pix foi copiado. Abra o app do seu banco, escolha <strong class="co-hl">Pix &rarr; Pix Copia e Cola</strong>, cole o código e confirme.</p>
+        <p class="co-p" id="co3a" style="text-align:center;font-size:17px">Seu código Pix foi copiado. Abra o app do seu banco, escolha <strong class="co-hl">Pix &rarr; Pix Copia e Cola</strong>, cole o código e confirme.</p>
         <p class="co-p" id="co3b" style="text-align:center">Assim que o pagamento for confirmado, seu acesso ao <strong class="co-hl">Plano de 7 Dias</strong> chega no seu WhatsApp. 💛</p>
+        <button type="button" class="co-btn co-btn-copy" id="copyAgainBtn" onclick="recopiarLink()" style="display:none;margin-bottom:10px">📋 Copiar o link novamente</button>
         <button type="button" class="co-btn co-btn-gold" onclick="closeCheckout()">Entendi 💛</button>
         <button type="button" class="co-ghost" onclick="abrirWhatsDuvidas()">Pagou e não chegou? Fale com a gente no WhatsApp</button>
       </div>
@@ -443,6 +512,40 @@ async function start(){
 }
 async function sayAll(r,arr,cls){var m=null;for(var i=0;i<arr.length;i++){m=await say(r,arr[i],cls);if(!m)return null}return m}
 function ld(t){return '<p class="lead">'+t+'</p>'}
+function prazoData(n,curto){
+  var d=new Date(); d.setDate(d.getDate()+n);
+  return d.toLocaleDateString('pt-BR',{weekday:curto?'short':'long',day:'2-digit',month:'2-digit'});
+}
+function ubHtml(){
+  var days='';
+  for(var i=0;i<=7;i++){
+    var d=new Date(); d.setDate(d.getDate()+i);
+    var dow=(i===0)?'HOJE':(i===7?'🔓':d.toLocaleDateString('pt-BR',{weekday:'short'}).replace('.',''));
+    days+='<i style="--i:'+i+'"><em>'+dow+'</em><b>'+d.getDate()+'</b></i>';
+  }
+  return '<div class="ub" id="bqUb"><div class="ub-chat"><div class="ub-wrap"><div class="ub-av">'+PERSON+'</div><span class="ub-badge" id="ubBadge">🚫</span></div>'+
+    '<div class="ub-who"><b class="ph" id="ubName">Nome dele</b><small id="ubSt">bloqueou você</small></div></div>'+
+    '<div class="ub-days" id="ubDays" aria-hidden="true">'+days+'</div>'+
+    '<p class="ub-head">Começando hoje, até <strong>'+prazoData(7)+'</strong> você já estará desbloqueada.</p>'+
+    '<p class="ub-late">Deixar pra amanhã muda a data para <strong>'+prazoData(8)+'</strong>.</p></div>';
+}
+function bqPassAtualiza(){
+  var g=function(id){var e=document.getElementById(id);return e?e.value.trim():''};
+  var me=g('bqMe'),him=g('bqHim'),dm=g('bqTelMe').replace(/\D/g,''),dh=g('bqTel').replace(/\D/g,'');
+  var seg=document.getElementById('bqSeg'),sel=seg?seg.getAttribute('data-sel'):'';
+  var n=[me.length>=2,dm.length>=10,him.length>=2,dh.length>=10,!!sel].filter(Boolean).length;
+  var slot=document.getElementById('ubSlot');
+  if(slot&&slot.hidden&&me.length>=2&&him.length>=2){
+    slot.hidden=false; slot.classList.add('show');
+  }
+  var ok=(n===5),lit=ok?8:Math.floor(n*8/5);
+  var nm=document.getElementById('ubName');
+  nm.textContent=him?him.split(/\s+/)[0]:'Nome dele'; nm.className=him?'':'ph';
+  [].forEach.call(document.querySelectorAll('#ubDays i'),function(e,i){e.classList.toggle('on',i<lit)});
+  document.getElementById('bqUb').classList.toggle('ready',ok);
+  document.getElementById('ubBadge').textContent=ok?'🔓':'🚫';
+  document.getElementById('ubSt').textContent=ok?'vai te desbloquear até '+prazoData(7,true):'bloqueou você';
+}
 function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function maskTel(v){var d=v.replace(/\D/g,'').slice(0,11),k=d.length>10?7:6;
   if(d.length>6) return '('+d.slice(0,2)+') '+d.slice(2,k)+'-'+d.slice(k);
@@ -464,24 +567,27 @@ async function bloqueouSei(){
 }
 async function bloqueouDados(){
   var r=RUN; add('out',S.bridgeCta);
-  if(!await say(r,'O seu desbloqueio custa apenas <strong>R$ 48,50</strong>, pagamento único no Pix. Pra iniciar, preciso de algumas informações rápidas:')) return;
+  var pr=await say(r,'<h2 class="h2">Começando hoje, até '+prazoData(7)+' você já estará desbloqueada. 🔓</h2>'); if(!pr) return;
+  if(!await say(r,'O seu desbloqueio custa apenas <strong>R$ 48,50</strong>, pagamento único no Pix ou cartão de crédito. Pra iniciar, preciso de algumas informações rápidas:')) return;
   var m=add('in',
     '<span class="nm">'+HEART+' Seu desbloqueio</span>'+
-    '<div class="bq-price">De <s>R$ 99,90</s> por apenas <strong>R$ 48,50</strong><br>à vista no Pix</div>'+
-    '<label class="bq-l" for="bqMe">Seu primeiro nome</label><input class="bq-in" id="bqMe" type="text" autocomplete="given-name" enterkeyhint="next" placeholder="Seu nome">'+
-    '<label class="bq-l" for="bqTelMe">Seu WhatsApp (com DDD)</label><input class="bq-in" id="bqTelMe" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="next" placeholder="(00) 00000-0000">'+
-    '<label class="bq-l" for="bqHim">Nome dele</label><input class="bq-in" id="bqHim" type="text" autocomplete="off" enterkeyhint="next" placeholder="Nome de quem te bloqueou">'+
-    '<label class="bq-l" for="bqTel">WhatsApp dele (com DDD)</label><input class="bq-in" id="bqTel" type="tel" inputmode="tel" autocomplete="off" enterkeyhint="done" placeholder="(00) 00000-0000">'+
+    '<div class="bq-price">De <s>R$ 99,90</s> por apenas <strong>R$ 48,50</strong><br>à vista no Pix ou cartão de crédito</div>'+
+    '<label class="bq-l" for="bqMe">Seu nome</label><input class="bq-in" id="bqMe" type="text" autocomplete="given-name" enterkeyhint="next" placeholder="Seu nome">'+
+    '<label class="bq-l" for="bqTelMe">Seu WhatsApp</label><input class="bq-in" id="bqTelMe" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="next" placeholder="(DDD) 00000-0000">'+
+    '<label class="bq-l" for="bqHim">Nome de quem te bloqueou</label><input class="bq-in" id="bqHim" type="text" autocomplete="off" enterkeyhint="next" placeholder="Nome dele">'+
+    '<label class="bq-l" for="bqTel">WhatsApp de quem te bloqueou</label><input class="bq-in" id="bqTel" type="tel" inputmode="tel" autocomplete="off" enterkeyhint="done" placeholder="(DDD) 00000-0000">'+
+    '<div class="ub-slot" id="ubSlot" hidden>'+ubHtml()+'</div>'+
     '<span class="bq-l" id="bqOutraL">Ele está com outra pessoa?</span><div class="bq-seg" id="bqSeg" role="group" aria-labelledby="bqOutraL"><button type="button" data-v="Sim" aria-pressed="false">Sim</button><button type="button" data-v="Não" aria-pressed="false">Não</button><button type="button" data-v="Não sei" aria-pressed="false">Não sei</button></div>'+
     '<p class="bq-err" id="bqErr">Preencha todos os campos (WhatsApp com DDD) e escolha uma opção em "Ele está com outra pessoa?".</p>'+
-    '<button type="button" class="cta" id="bqBtn">'+HEART+'<span>QUERO INICIAR POR R$ 48,50</span>'+ARROW+'</button>','card');
+    '<button type="button" class="cta" id="bqBtn">'+HEART+'<span>QUERO INICIAR POR R$ 48,50</span>'+ARROW+'</button>','card',true);
+  setTimeout(function(){ if(r===RUN) chat.scrollTo({top:pr.offsetTop-12,behavior:'smooth'}); },60);
   var ids=['bqMe','bqTelMe','bqHim','bqTel'];
   ids.forEach(function(id,i){
     var el=document.getElementById(id);
     el.addEventListener('focus',function(){[150,400,700].forEach(function(ms){setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'center'})},ms)})});
     el.addEventListener('keydown',function(e){
       if(e.key!=='Enter') return; e.preventDefault();
-      if(i<ids.length-1) document.getElementById(ids[i+1]).focus(); else enviarBloqueio();
+      if(i<ids.length-1) document.getElementById(ids[i+1]).focus(); else bqEnterFinal(el);
     });
   });
   var seg=document.getElementById('bqSeg');
@@ -490,6 +596,7 @@ async function bloqueouDados(){
       seg.setAttribute('data-sel',b.getAttribute('data-v'));
       [].forEach.call(seg.querySelectorAll('button'),function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on?'true':'false')});
       document.getElementById('bqErr').style.display='none';
+      bqPassAtualiza();
     });
   });
   ['bqTelMe','bqTel'].forEach(function(id){
@@ -499,6 +606,13 @@ async function bloqueouDados(){
   var btn=document.getElementById('bqBtn'),fired=false;
   var h=function(e){e.preventDefault();e.stopPropagation();if(fired)return;fired=true;enviarBloqueio();setTimeout(function(){fired=false},600)};
   btn.addEventListener('pointerdown',h); btn.addEventListener('click',h);
+  ids.forEach(function(id){ document.getElementById(id).addEventListener('input',bqPassAtualiza); });
+  bqPassAtualiza();
+}
+function bqEnterFinal(el){
+  var seg=document.getElementById('bqSeg');
+  if(seg&&!seg.getAttribute('data-sel')){ el.blur(); seg.scrollIntoView({behavior:'smooth',block:'center'}); barFlash(seg); return; }
+  enviarBloqueio();
 }
 function enviarBloqueio(){
   if(BQ_SENT) return;
@@ -529,12 +643,12 @@ function enviarBloqueio(){
 }
 function bloqueouOferta(me,him){
   /* vai direto ao checkout; atrás dele a conversa já segue, para quem fechar o pagamento */
-  var m=add('in','Pronto, <strong>'+esc(me)+'</strong>. Falta só o pagamento pra começar a contagem dos 7 dias até <strong>'+esc(him)+'</strong> te desbloquear. 💛',null,true);
+  var m=add('in','Pronto, <strong>'+esc(me)+'</strong>. Falta só o pagamento pra começar a contagem dos 7 dias até <strong>'+esc(him)+'</strong> te desbloquear. Começando hoje, até <strong>'+prazoData(7)+'</strong> você já estará desbloqueada. Deixar pra amanhã muda a data para <strong>'+prazoData(8)+'</strong>. 💛',null,true);
   setTimeout(function(){chat.scrollTo({top:m.offsetTop-12})},60);
   var c=document.createElement('div'); c.className='chip'; c.id='ofertaStat'; c.textContent=S.stat; chat.appendChild(c); side='';
   add('in','Olha o que algumas delas me contaram depois de serem desbloqueadas:',null,true);
   depoimentos();
-  var f=add('in','Quando quiser, é só um toque pra finalizar. 💛',null,true);
+  var f=add('in','Cada dia que passa empurra o seu prazo. Finalize agora e comece a contagem: 💛',null,true);
   buttons(f,[{label:S.cta,fn:abrirCheckoutOferta}],true,true);
   if(document.activeElement&&document.activeElement.blur) document.activeElement.blur();
   abrirCheckoutOferta();
@@ -583,7 +697,7 @@ function oferta(){
     '<span class="nm">'+HEART+' Método comprovado · Baseado na psicologia masculina</span>'+
     '<h2 class="of-t" id="ofertaTitle">'+S.ofTitle+'</h2><p class="of-d" id="ofertaDesc">'+S.ofDesc+'</p>'+
     (items.length?'<ul class="of-l" id="ofertaList">'+items.map(function(i){return '<li>'+CHECK+'<span>'+i+'</span></li>'}).join('')+'</ul>':'')+
-    '<div class="px"><span class="lead-txt">De <span class="old">R$ 99,90</span> por apenas</span><span class="new">48<small>,50</small></span><span class="pix">à vista no PIX</span><span class="last">Últimos acessos por este valor</span></div>'+
+    '<div class="px"><span class="lead-txt">De <span class="old">R$ 99,90</span> por apenas</span><span class="new">48<small>,50</small></span><span class="pix">à vista no PIX ou cartão de crédito</span><span class="last">Últimos acessos por este valor</span></div>'+
     '<button type="button" class="cta" onclick="abrirCheckoutOferta()">'+HEART+'<span id="ofertaCtaText">'+S.cta+'</span>'+ARROW+'</button>'+
     '<p class="sec">'+(window.SITUACAO_ATUAL==='bloqueou'?'Pagamento 100% seguro &nbsp;·&nbsp; Você só aguarda &nbsp;·&nbsp; 7 dias de garantia':'Pagamento 100% seguro &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; 7 dias de garantia')+'</p>','card');
   /* o restante entra sem rolar a tela, para ela ler a oferta primeiro */
@@ -594,6 +708,60 @@ function oferta(){
   buttons(m,[{label:S.cta,fn:abrirCheckoutOferta}],true,true);
 }
 function voltarPagina(){ chat.innerHTML=''; start(); }
+/* ── barra "Mensagem": em vez de clique fantasma, ela guia para o que fazer agora ── */
+var barEl=document.getElementById('bar'),barTxt=document.getElementById('barTxt');
+function barPend(){
+  var fb=document.getElementById('bqBtn');
+  if(fb&&fb.style.display!=='none') return {k:'form'};
+  var q=chat.querySelectorAll('.qr'); if(q.length) return {k:'qr',el:q[q.length-1]};
+  var c=chat.querySelectorAll('.cta'); if(c.length) return {k:'cta',el:c[c.length-1]};
+  return null;
+}
+function barAtualiza(){
+  var p=barPend(),t='Mensagem';
+  if(p) t=(p.k==='form')?'Toque aqui para preencher':'Toque aqui para responder';
+  else if(chat.querySelector('.ty')) t='O Mestre está digitando…';
+  barTxt.textContent=t; barEl.classList.toggle('hint',!!p);
+}
+function barFlash(el){
+  var c=(el.matches&&el.matches('.cta'))?'nudge':'flash';
+  el.classList.remove('flash','nudge'); void el.offsetWidth; el.classList.add(c);
+  setTimeout(function(){el.classList.remove(c)},1800);
+}
+function barSheet(p){
+  var btns=(p.k==='qr')?[].slice.call(p.el.querySelectorAll('button')):[p.el];
+  var ov=document.createElement('div'); ov.className='sh-ov';
+  var box=document.createElement('div'); box.className='sh';
+  box.setAttribute('role','dialog'); box.setAttribute('aria-modal','true'); box.setAttribute('aria-label','Escolha sua resposta');
+  box.innerHTML='<div class="sh-h"></div><p class="sh-t">Escolha a sua resposta</p>';
+  var close=function(){ ov.remove(); barEl.focus(); };
+  btns.forEach(function(b){
+    var r=document.createElement('button'); r.type='button'; r.className='sh-r';
+    r.textContent=b.textContent.replace(/\s+/g,' ').trim();
+    r.onclick=function(){ ov.remove(); b.click(); };
+    box.appendChild(r);
+  });
+  ov.appendChild(box);
+  ov.addEventListener('click',function(e){ if(e.target===ov) close(); });
+  ov.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  document.body.appendChild(ov);
+  var f=box.querySelector('.sh-r'); if(f) f.focus();
+}
+function barToque(){
+  try{ if(navigator.vibrate) navigator.vibrate(12) }catch(e){}
+  var p=barPend();
+  if(!p){ barEl.classList.remove('shake'); void barEl.offsetWidth; barEl.classList.add('shake'); setTimeout(function(){barEl.classList.remove('shake')},400); return }
+  if(p.k==='form'){
+    var ids=['bqMe','bqTelMe','bqHim','bqTel'];
+    for(var i=0;i<ids.length;i++){var e=document.getElementById(ids[i]); if(e&&!e.disabled&&!e.value.trim()){e.focus();return}}
+    var seg=document.getElementById('bqSeg'),t=(seg&&!seg.getAttribute('data-sel'))?seg:document.getElementById('bqBtn');
+    t.scrollIntoView({behavior:'smooth',block:'center'}); barFlash(t); return;
+  }
+  barSheet(p);
+}
+barEl.addEventListener('click',barToque);
+barEl.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();barToque()} });
+new MutationObserver(barAtualiza).observe(chat,{childList:true,subtree:true,attributes:true,attributeFilter:['style']});
 start();
 </script>
 <script>/* ═══════════ CHECKOUT — Código da Reconquista ═══════════ */
@@ -607,6 +775,8 @@ const PRODUTO = { nome: 'Código da Reconquista', get valor(){ return OFERTA.val
 
 let canal = 'WhatsApp';
 let metodoPagamento = 'Pix';
+const MP_LINK = 'https://mpago.la/1kyRb1m';
+let metodoAtual = 'pix';
 let lead = null;
 let leadEnviado = false;
 let timerId = null;
@@ -620,10 +790,12 @@ function abrirWhatsDuvidas(){
 
 function openCheckout(){
   var bq = (window.SITUACAO_ATUAL === 'bloqueou');
+  $('coUrg').style.display = bq ? 'block' : 'none';
+  if(bq) $('coUrg').innerHTML = '⏳ Começando hoje, até <strong>' + prazoData(7) + '</strong> você já estará desbloqueada. Os 7 dias só começam a contar quando o pagamento for confirmado.';
   $('coMeta').textContent = bq ? 'Desbloqueio em até 7 dias · 100% digital' : 'Acesso vitalício · 100% digital';
   $('coWaT').textContent = bq ? 'Contagem iniciada na hora' : 'Acesso liberado na hora';
   $('coWaS').textContent = bq ? 'Assim que o pagamento for confirmado, começa a contagem dos 7 dias.' : 'Assim que o pagamento for confirmado, seu acesso é liberado.';
-  $('co3b').innerHTML = bq ? 'Assim que o pagamento for confirmado, começa a contagem dos <strong class="co-hl">7 dias</strong> do seu desbloqueio. Você não precisa fazer nada, só aguardar. 💛' : 'Assim que o pagamento for confirmado, seu acesso ao <strong class="co-hl">Plano de 7 Dias</strong> chega no seu WhatsApp. 💛';
+  $('co3b').innerHTML = bq ? 'Assim que o pagamento for confirmado, começa a contagem dos <strong class="co-hl">7 dias</strong> do seu desbloqueio. Você não precisa fazer nada, só aguardar. Quanto antes você pagar, mais cedo termina o seu prazo. 💛' : 'Assim que o pagamento for confirmado, seu acesso ao <strong class="co-hl">Plano de 7 Dias</strong> chega no seu WhatsApp. 💛';
   $('nome').value = (window.BLOQUEIO && window.BLOQUEIO.nomeDela) || '';
   $('contatoWa').value = (window.BLOQUEIO && window.BLOQUEIO.whatsappDela) || '';
   $('formErr').style.display = 'none';
@@ -747,6 +919,38 @@ function resetPixUi(){
   $('copiedMsg').classList.remove('show');
   const b = $('copyBtn'); b.classList.remove('copied');
   $('copyTxt').textContent = '📋 Copiar código Pix';
+  $('copyCardBtn').classList.remove('copied');
+  $('copyCardTxt').textContent = '📋 Copiar link de pagamento';
+  $('cardCopiedMsg').classList.remove('show');
+  setMetodo('pix');
+}
+function setMetodo(m){
+  metodoAtual = m;
+  $('pay-pix').style.display = (m==='pix') ? '' : 'none';
+  $('pay-card').style.display = (m==='card') ? '' : 'none';
+  [['mPix','pix'],['mCard','card']].forEach(x=>{
+    const b=$(x[0]), on=(x[1]===m);
+    b.classList.toggle('on',on); b.setAttribute('aria-selected',on?'true':'false');
+  });
+}
+function copiarTexto(t,done){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(t).then(done).catch(()=>{ fallbackCopy(t); done(); });
+  } else { fallbackCopy(t); done(); }
+}
+function copyCard(){
+  copiarTexto(MP_LINK, ()=>{
+    $('copyCardBtn').classList.add('copied');
+    $('copyCardTxt').textContent = '✓ Link copiado!';
+    $('cardCopiedMsg').classList.add('show');
+    setTimeout(goSuccess, 1400);
+  });
+  metodoPagamento = 'Cartão de crédito (copiou o link)';
+  enviarLead();
+}
+function recopiarLink(){
+  const b=$('copyAgainBtn');
+  copiarTexto(MP_LINK, ()=>{ b.textContent='✓ Link copiado!'; setTimeout(()=>{ b.textContent='📋 Copiar o link novamente'; },1800); });
 }
 function gerarPix(){
   $('genBtn').style.display = 'none';
@@ -774,8 +978,8 @@ function copyPix(){
 }
 
 function enviarLead(){
-  if(leadEnviado || !lead) return;
-  leadEnviado = true;
+  if(leadEnviado === metodoPagamento || !lead) return;
+  leadEnviado = metodoPagamento;
   fetch(FORMSPREE_ENDPOINT, {
     method:'POST',
     headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
@@ -798,6 +1002,11 @@ function enviarLead(){
 function goSuccess(){
   if(!lead) { goStep(1); return; }
   enviarLead();
+  const card = (metodoAtual==='card');
+  $('co3a').innerHTML = card
+    ? 'Seu link de pagamento foi copiado. Abra o <strong class="co-hl">navegador do celular</strong> (Chrome ou Safari), <strong class="co-hl">cole o link na barra de endereço</strong> e finalize com seu cartão no Mercado Pago.'
+    : 'Seu código Pix foi copiado. Abra o app do seu banco, escolha <strong class="co-hl">Pix &rarr; Pix Copia e Cola</strong>, cole o código e confirme.';
+  $('copyAgainBtn').style.display = card ? 'flex' : 'none';
   goStep(3);
 }</script>
 </body>
