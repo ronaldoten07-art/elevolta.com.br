@@ -401,6 +401,32 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
 .qz-load p,.co-h3,.co-order-name,.co-label-big{font-family:var(--title)}
 @media(max-width:430px){.sb-txt b{font-size:clamp(17px,5vw,19px)}}
 @media(max-width:400px){.lp-of-list li.vk{padding:14px 14px 16px 64px}.vk-lock{left:11px;top:13px;width:40px;height:47px}.vk-list::before{left:31px}.lp-of-list li.vk-seal{padding:16px 14px 16px 98px}.vk-stamp{left:12px;width:72px;height:72px;margin-top:-36px}}
+
+/* ===== Aviso de compra: pequeno, no canto, sem cobrir o conteúdo ===== */
+.sale-toast{position:fixed;top:66px;left:12px;z-index:60;width:min(286px,calc(100vw - 24px));display:flex;align-items:center;gap:10px;background:rgba(255,249,240,.96);border:2.5px solid var(--ink);border-radius:16px;box-shadow:3px 3px 0 var(--ink);padding:8px 12px 8px 8px;transform:translateX(-120%);opacity:0;pointer-events:none;transition:transform .5s cubic-bezier(.2,.9,.3,1.15),opacity .3s;font-family:var(--sans)}
+.sale-toast.show{transform:translateX(0);opacity:1}
+.sale-av{flex-shrink:0;width:38px;height:38px;border-radius:50%;border:2.5px solid var(--ink);display:grid;place-items:center;font-family:var(--title);font-weight:800;font-size:17px;line-height:1;color:var(--ink)}
+.sale-tx{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.sale-l1{font-weight:600;font-size:13.5px;color:var(--ink);line-height:1.25}
+.sale-tx b{font-family:var(--title);font-weight:800;font-size:14.5px;color:var(--ink)}
+.sale-sub{font-weight:600;font-size:12px;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sale-sub::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#2fbf71;margin-right:6px;vertical-align:1px}
+@media(prefers-reduced-motion:reduce){.sale-toast{transition:opacity .2s;transform:none}}
+
+.lp-lead-caps{font-weight:800;color:var(--ink);letter-spacing:.02em;line-height:1.4;font-size:clamp(17px,4.5vw,22px)}
+
+/* primeiro item da oferta: o próprio método */
+.lp-of-list li.vk-main{background:var(--butter);color:var(--ink)}
+.vk-medal{position:absolute;left:15px;top:14px;width:48px;height:48px;border-radius:50%;background:var(--pink);border:var(--bd);display:grid;place-items:center;font-size:22px;line-height:1;color:var(--ink);rotate:-8deg;box-shadow:2px 2px 0 var(--ink)}
+.vk-main .vk-tag::before{content:"Seu acesso"}
+.vk-main .vk-tag::after{display:none}
+.vk-main .vk-tag{color:var(--ink)}
+.vk-main .vk-h{font-size:clamp(21px,5.6vw,24px)}
+
+/* barra fixa: título grande, quebra em até 2 linhas, sem subtítulo vazio */
+.sb .sb-txt b{white-space:normal;overflow:visible;text-overflow:clip;font-size:clamp(20px,5.6vw,24px);line-height:1.12;letter-spacing:-.3px}
+.sb .sb-txt em:empty{display:none}
+@media(max-width:400px){.vk-medal{left:11px;top:13px;width:40px;height:40px;font-size:18px}}
 </style>
 </head>
 <body><svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="sic1"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></symbol><symbol id="sic2"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="sic4"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="sic7"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></symbol><symbol id="sic8"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2 9.2 4.3 5.5 4l-1 3.6L1 9.4l2 3.1L1 15.6l3.5 1.8 1 3.6 3.7-.3L12 22l2.8-2.3 3.7.3 1-3.6 3.5-1.8-2-3.1 2-3.1-3.5-1.8-1-3.6-3.7.3L12 2Zm-1.2 13.6-3.4-3.4 1.4-1.4 2 2 4.6-4.6 1.4 1.4-6 6Z"/></symbol><symbol id="sic9"><circle cx="12" cy="8.2" r="4.2"/><path d="M4 20.2c0-4.2 3.6-7.2 8-7.2s8 3 8 7.2v.3H4v-.3Z"/></symbol><symbol id="sic10"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol><symbol id="sic11"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.2 8.85-6.1 3.9a.6.6 0 0 1-.92-.5V9.75a.6.6 0 0 1 .92-.5l6.1 3.9a.6.6 0 0 1 0 .7z"/></symbol></svg>
@@ -429,16 +455,17 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
   function cidadeAleatoria(){ return CIDADES_ANONIMAS[Math.floor(Math.random()*CIDADES_ANONIMAS.length)]; }
   var SITUACOES = {
     bloqueou: {
-      heroCta: 'Quero sair desse silêncio',
-      h1: 'Ele te bloqueou. E o silêncio dói mais que qualquer briga.',
-      lead: 'Sem resposta, sem explicação, só aquele silêncio que faz você pensar em tudo. Você relembra as últimas mensagens, tenta entender onde errou e sente vontade de procurar uma forma de falar com ele. Mas é justamente aí que muitas mulheres acabam piorando a situação.',
-      promise: 'Existe uma estratégia para lidar com o bloqueio sem insistir, implorar ou tentar forçar uma conversa. E o mais importante: ela mostra o que fazer agora, e o que você precisa evitar para não afastá-lo ainda mais.',
-      bridgeCta: 'Eu quero ser desbloqueada',
-      cta: 'QUERO COMEÇAR MEU PLANO DE 7 DIAS',
+      heroCta: 'Quero reverter esse bloqueio',
+      h1: 'Ele te bloqueou. Mas bloqueio não significa o fim.',
+      lead: 'O QUE VOCÊ FIZER AGORA PODE SER DECISIVO PARA REVERTER ESSA SITUAÇÃO.',
+      promise: 'Orgulho, discussão, bloqueio sem explicação ou até outra mulher.<br><br>Não importa o motivo: o Mestre te mostra como agir para buscar o desbloqueio, passo a passo.',
+      bridgeCta: 'Quero saber como ser desbloqueada',
+      cta: 'QUERO SER DESBLOQUEADA AGORA',
       stat: 'Milhares de mulheres já foram desbloqueadas com esse método.',
-      ofTitle: 'O <span class="lp-script">Plano de 7 Dias</span> para Sair do Bloqueio',
-      ofDesc: 'Um passo a passo para você saber exatamente como agir durante 7 dias. Sem implorar, insistir ou correr atrás.',
-      list: ['O segredo que faz ele questionar a própria decisão de ter te bloqueado: você vai mexer com a mente dele','Como tirar essa angústia do peito e saber exatamente o que fazer a partir de agora','O segredo pra você não ser mais bloqueada: é ele quem vai ter medo de ser bloqueado por você','A forma perfeita de agir quando ele te desbloquear, e retomar o controle da relação','Garantia incondicional de 7 dias'],
+      ofTitle: 'Método <span class="lp-script">Mestre do Desbloqueio</span>',
+      ofMain: 'Método Mestre do Desbloqueio',
+      ofDesc: '',
+      list: ['O segredo para fazê-lo questionar a própria decisão de ter te bloqueado','Como agir diante do orgulho dele sem correr atrás, implorar ou alimentar ainda mais o bloqueio','O que fazer agora para evitar atitudes que podem dificultar o desbloqueio','Como aliviar a angústia e saber exatamente como agir enquanto você continua bloqueada','O que fazer quando ele te desbloquear para retomar o contato sem cometer erros que podem afastá-lo novamente','Garantia incondicional de 7 dias'],
       depos: [
         ['Ele tinha me bloqueado de tudo. Segui o plano à risca e em 5 dias ele mesmo me desbloqueou e mandou mensagem primeiro.','Camila R.'],
         ['Eu não fazia ideia do motivo do bloqueio. O método me ajudou a entender e, sem nenhum desespero da minha parte, ele voltou a falar comigo.','Débora M.'],
@@ -529,9 +556,9 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
       var heroCta = document.getElementById('heroCtaText');
       var promise = document.getElementById('bridgePromise');
       if(h1) h1.textContent = s.h1;
-      if(lead) lead.textContent = s.lead;
+      if(lead){ lead.textContent = s.lead; lead.classList.toggle('lp-lead-caps', s.lead === s.lead.toUpperCase()); }
       if(heroCta && s.heroCta) heroCta.textContent = s.heroCta;
-      if(promise) promise.textContent = s.promise;
+      if(promise) promise.innerHTML = s.promise;
       var bridgeCtaText = document.getElementById('bridgeCtaText');
       if(bridgeCtaText && s.bridgeCta) bridgeCtaText.textContent = s.bridgeCta;
       var ctaText = document.getElementById('ofertaCtaText');
@@ -541,7 +568,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
       var ofTitle = document.getElementById('ofertaTitle');
       if(ofTitle && s.ofTitle) ofTitle.innerHTML = s.ofTitle;
       var ofDesc = document.getElementById('ofertaDesc');
-      if(ofDesc && s.ofDesc) ofDesc.textContent = s.ofDesc;
+      if(ofDesc){ ofDesc.textContent = s.ofDesc || ''; ofDesc.style.display = s.ofDesc ? '' : 'none'; }
       var list = document.getElementById('ofertaList');
       if(list){
         var vkLock = '<span class="vk-lock"><svg viewBox="0 0 48 56" aria-hidden="true"><path class="vk-sh" d="M15 26v-8a9 9 0 0 1 18 0v8"/><rect class="vk-b" x="7" y="24" width="34" height="27" rx="8" stroke="currentColor" stroke-width="3.5"/><circle cx="24" cy="35.5" r="3.6" fill="currentColor"/><rect x="22.6" y="37" width="2.8" height="7" rx="1.4" fill="currentColor"/></svg></span>';
@@ -549,7 +576,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
         var vkColors = ['var(--pink)','var(--butter)','var(--mint)','var(--lilac)','var(--pink)'];
         var vkN = 0;
         list.classList.add('vk-list');
-        list.innerHTML = s.list.map(function(item){
+        list.innerHTML = (s.ofMain ? '<li class="vk vk-main" style="--c:var(--pink)">'+vkLock+'<span class="vk-tag"></span><span class="vk-h">'+s.ofMain+'</span></li>' : '') + s.list.map(function(item){
           if(/^garantia/i.test(item)){
             return '<li class="vk vk-seal">'+vkStamp+'<span class="vk-h">'+item+'</span></li>';
           }
@@ -566,6 +593,8 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
           list.parentNode.insertBefore(vkHead, list);
         }
         vkHead.innerHTML = '<span class="vk-kick">Cofre do Código</span><span class="vk-ttl">Os <span class="lp-script">'+vkN+' segredos</span> que você vai destravar</span>';
+        vkHead.style.display = s.ofMain ? 'none' : '';
+        list.style.marginTop = s.ofMain ? '26px' : '';
         if('IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)){
           list.classList.add('vk-armed');
           var vkIO = new IntersectionObserver(function(es){
@@ -923,7 +952,7 @@ function goSuccess(){
   goStep(3);
 }
 </script>
-<div class="sb" id="stickyBuy" aria-hidden="true"><div class="sb-in"><div class="sb-proof"><span class="sb-avs" aria-hidden="true"><i>&#9829;</i><i>&#9829;</i><i>&#9829;</i></span><span class="sb-txt"><b id="sbT1">Veja quem seguiu</b><em id="sbT2">e o que elas contaram</em></span></div><button type="button" class="sb-btn" id="sbBtn"><span id="sbBtnTxt">Ver agora</span> <span id="sbArrow" aria-hidden="true">&darr;</span></button></div></div>
+<div class="sb" id="stickyBuy" aria-hidden="true"><div class="sb-in"><div class="sb-proof"><span class="sb-avs" aria-hidden="true"><i>&#9829;</i><i>&#9829;</i><i>&#9829;</i></span><span class="sb-txt"><b id="sbT1">Testemunhos de quem já usou</b><em id="sbT2"></em></span></div><button type="button" class="sb-btn" id="sbBtn"><span id="sbBtnTxt">Ver agora</span> <span id="sbArrow" aria-hidden="true">&darr;</span></button></div></div>
 <script>
 (function(){
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1018,8 +1047,8 @@ function goSuccess(){
       if(buy === buyMode) return;
       buyMode = buy;
       bar.classList.toggle('sb-buy', buy);
-      t1.textContent = buy ? 'Garantia de 7 dias' : 'Veja quem seguiu';
-      t2.textContent = buy ? 'teste com segurança' : 'e o que elas contaram';
+      t1.textContent = buy ? 'Garantia de 7 dias' : 'Testemunhos de quem já usou';
+      t2.textContent = buy ? 'sem risco' : '';
       bt.textContent = buy ? 'Começar' : 'Ver agora';
       ar.innerHTML = buy ? '&rarr;' : '&darr;';
     }
@@ -1046,6 +1075,59 @@ function goSuccess(){
     new IntersectionObserver(function(es){ es.forEach(function(e){ ctaVis = e.isIntersecting; }); upd(); }).observe(cta);
     chk();
   }
+
+  /* ---------- Avisos de compra ----------
+     VENDAS_REAIS: cadastre SOMENTE compras verdadeiras (nome abreviado + cidade, com autorização).
+       Formato: {n:'Camila R.', c:'Petrópolis, RJ', t:'2026-10-20T14:30:00-03:00'}
+     MODO_DEMO: enquanto estiver true e VENDAS_REAIS estiver vazia, aparecem exemplos de demonstração,
+       só para você ver o visual. Antes de divulgar o site, deixe MODO_DEMO = false. */
+  var MODO_DEMO = true;
+  var VENDAS_REAIS = [];
+  (function(){
+    var comeceEl = document.getElementById('lp-comece'), ofertaEl = document.getElementById('lp-oferta');
+    var now = Date.now();
+    var q = VENDAS_REAIS.filter(function(v){
+      if(!v || !v.n || !v.c) return false;
+      if(!v.t) return true;
+      var d = Date.parse(v.t); return !isNaN(d) && now - d >= 0 && now - d < 30*86400000;
+    });
+    if(!q.length && MODO_DEMO){
+      q = [['Camila R.','Petrópolis, RJ',2],['Juliana S.','Belo Horizonte, MG',7],['Fernanda L.','Curitiba, PR',12],['Patrícia M.','Salvador, BA',19],['Aline C.','Fortaleza, CE',26],['Renata B.','Goiânia, GO',34],['Larissa T.','Porto Alegre, RS',41],['Bianca O.','Recife, PE',55]].map(function(x){
+        return {n:x[0], c:x[1], t:new Date(now - x[2]*60000).toISOString(), demo:true};
+      });
+    }
+    if(!q.length || !comeceEl || !ofertaEl) return;
+    q.sort(function(){ return Math.random() - .5; });
+    var cores = ['#ff5c8a','#7be0b3','#ffd84d','#c9b8ff'];
+    var el = document.createElement('div');
+    el.className = 'sale-toast'; el.setAttribute('role','status'); el.setAttribute('aria-live','polite');
+    el.innerHTML = '<span class="sale-av" aria-hidden="true"></span><span class="sale-tx"><span class="sale-l1"><b></b> adquiriu agora</span><span class="sale-sub"></span></span>';
+    document.body.appendChild(el);
+    var av = el.querySelector('.sale-av'), nb = el.querySelector('b'), ns = el.querySelector('.sale-sub');
+    function near(){
+      var ref = comeceEl.offsetParent ? comeceEl : ofertaEl;
+      return ref.offsetParent !== null && ref.getBoundingClientRect().top < window.innerHeight * 0.6;
+    }
+    function busy(){ var c = document.getElementById('checkout'); return document.hidden || (c && c.classList.contains('show')); }
+    var idx = 0, shown = 0, started = false;
+    function tick(){
+      if(shown >= 8) return;
+      if(!near() || busy()){ setTimeout(tick, 2500); return; }
+      var v = q[idx % q.length]; var cor = cores[idx % cores.length]; idx++; shown++;
+      av.textContent = v.n.charAt(0); av.style.background = cor;
+      nb.textContent = v.n;
+      ns.textContent = v.c;
+      el.classList.add('show');
+      setTimeout(function(){ el.classList.remove('show'); }, 4600);
+      setTimeout(tick, 11000);
+    }
+    function arm(){
+      if(started || !near()) return;
+      started = true; setTimeout(tick, 1800);
+    }
+    window.addEventListener('scroll', arm, {passive:true});
+    arm();
+  })();
 })();
 </script>
 </body>
