@@ -735,7 +735,8 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
   <script>
 /* ═══════════ CHECKOUT — Código da Reconquista ═══════════ */
 const WA_NUMBER = '5524981517067';
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mreonbkg';
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
+const WEB3FORMS_KEY = 'b94da7fe-0681-4504-b6a2-9eca5fb9d99d';
 const PIX_5990 = '00020126550014br.gov.bcb.pix0111121496937200218Codigo Reconquista52040000530398654049.995802BR5922RONALDO DA CUNHA SILVA6010PETROPOLIS62580520SAN2026102111005369150300017br.gov.bcb.brcode01051.0.063044036';
 const OFERTAS = { cheia:{valor:'R$ 9,99',num:9.99,pix:PIX_5990,priceHtml:'R$ 9<span>,99</span>',genVal:'R$ 9,99'}, desconto:{valor:'R$ 9,99',num:9.99,pix:PIX_5990,priceHtml:'R$ 9<span>,99</span>',genVal:'R$ 9,99'} };
 let OFERTA = OFERTAS.desconto;
@@ -908,18 +909,21 @@ function copyPix(){
 function enviarLead(){
   if(leadEnviado || !lead) return;
   leadEnviado = true;
-  fetch(FORMSPREE_ENDPOINT, {
+  fetch(WEB3FORMS_ENDPOINT, {
     method:'POST',
     headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
     body: JSON.stringify({
-      nome: lead.nome,
-      contato: lead.contato,
+      access_key: WEB3FORMS_KEY,
+      subject: `Novo pedido (${metodoPagamento}): ${lead.nome} (${PRODUTO.nome})`,
+      from_name: 'Site ' + PRODUTO.nome,
+      name: lead.nome,
+      whatsapp: lead.contato,
       canal: lead.canal,
       produto: lead.produto,
       valor: lead.valor,
       pagamento: metodoPagamento,
       situacao: window.SITUACAO_ATUAL || '',
-      _subject: `Novo pedido (${metodoPagamento}): ${lead.nome} (${PRODUTO.nome})`
+      message: `Novo pedido do ${PRODUTO.nome} (${lead.valor}) - ${metodoPagamento}. Cliente: ${lead.nome} - WhatsApp: ${lead.contato}`
     })
   }).catch(()=>{});
 }
