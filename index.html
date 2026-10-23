@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="theme-color" content="#fff4ea">
-<title>Código da Reconquista: clareza para quem foi deixado(a), ignorado(a) ou bloqueado(a)</title>
+<title>Código da Reconquista: clareza para quem foi deixada(o), ignorada(o) ou bloqueada(o)</title>
 <meta name="description" content="Ele(a) bloqueou, ignorou ou pediu um tempo? Um plano prático de 7 dias para você recuperar o controle e saber exatamente o que fazer.">
 
 
@@ -409,9 +409,73 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
 .vk-main .vk-h{font-size:clamp(21px,5.6vw,24px)}
 
 /* barra fixa: título grande, quebra em até 2 linhas, sem subtítulo vazio */
-.sb .sb-txt b{white-space:normal;overflow:visible;text-overflow:clip;font-size:clamp(20px,5.6vw,24px);line-height:1.12;letter-spacing:-.3px}
+/* barra fixa: situação + preço */
+.sb .sb-txt{justify-content:center}
+.sb .sb-txt b{white-space:nowrap;overflow:visible;text-overflow:clip;font-size:clamp(15.5px,4.55vw,19px);line-height:1.12;letter-spacing:-.3px}
+@media(max-width:340px){.sb .sb-txt b{white-space:normal;font-size:15px}}
 .sb .sb-txt em:empty{display:none}
+.sb:not(.sb-buy) .sb-txt em{display:flex;align-items:center;gap:9px;margin-top:7px;overflow:visible;white-space:nowrap}
+.sb-pr{display:inline-flex;align-items:center;background:var(--butter);color:var(--ink);border:2px solid var(--ink);border-radius:50px;padding:2px 11px;font-family:var(--sans);font-weight:800;font-size:clamp(14.5px,4.1vw,16.5px);line-height:1.25;letter-spacing:0;box-shadow:2px 2px 0 var(--ink)}
+.sb-pix{font-family:var(--sans);font-weight:700;font-size:clamp(11.5px,3.3vw,13px);color:var(--ink-2);letter-spacing:.01em}
 @media(max-width:400px){.vk-medal{left:11px;top:13px;width:40px;height:40px;font-size:18px}}
+
+/* ===== CHECKOUT: visual profissional e de confiança (só aparência) ===== */
+.co-overlay{background:rgba(20,12,33,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.co-panel{background:#fff;border:1px solid rgba(31,16,51,.08);border-radius:22px;box-shadow:0 28px 60px -14px rgba(20,12,33,.5),0 2px 8px rgba(20,12,33,.08);padding:28px 22px 20px}
+@media(max-width:480px){.co-panel{padding:24px 16px 18px;border-radius:20px}}
+.co-x{top:14px;right:14px;width:34px;height:34px;border:0;background:#f1eef6;color:var(--ink-2);font-size:22px;transition:background .15s}
+.co-x:hover{background:#e5e0ee}
+.co-head{margin-bottom:18px}
+.co-secure{display:inline-flex;align-items:center;gap:6px;background:#e8f7ef;border:1px solid #bde6d0;color:#17653f;font-size:12.5px;font-weight:700;padding:5px 12px 5px 10px;margin-bottom:18px;letter-spacing:.01em}
+.co-secure .co-lock{display:inline-flex}
+.co-prog-step span{width:30px;height:30px;font-family:var(--sans);font-size:13.5px;font-weight:800;background:#fff;color:#8b819e;border:1.5px solid #d3cce0}
+.co-prog-step label{font-size:11.5px;font-weight:700;color:#8b819e;letter-spacing:.2px}
+.co-prog-step.on span{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:none}
+.co-prog-step.on label{color:var(--ink)}
+.co-prog-step.done span{background:#1faa6b;border-color:#1faa6b;color:#fff}
+.co-prog-line{height:2px;background:#d9d3e4;opacity:1;max-width:54px}
+.co-prog-line.on{background:#1faa6b}
+.co-order{background:#faf8fd;border:1px solid #e9e4f1;border-radius:14px;padding:14px 16px}
+.co-order-name{font-family:var(--sans);font-size:16px;font-weight:700}
+.co-order-meta{font-size:12.5px;color:#6b6180}
+.co-order-price{font-family:var(--sans);font-size:26px;font-weight:800;letter-spacing:-.5px}
+.co-order-price span{font-size:.58em;vertical-align:baseline}
+.co-h3{font-family:var(--sans);font-size:22px;font-weight:800;letter-spacing:-.3px}
+.co-label,.co-label-big{font-family:var(--sans);font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:7px}
+.co-input{border:1.5px solid #d8d2e3;border-radius:12px;padding:15px 16px;font-size:16.5px;background:#fff;transition:border-color .15s,box-shadow .15s}
+.co-input:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 4px rgba(255,92,138,.2)}
+.co-wa-advantage{background:#f1faf6;border:1px solid #cdeedd;border-radius:12px;align-items:center}
+.co-wa-advantage-ic{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#1faa6b;color:#fff;font-size:0;margin-top:0}
+.co-wa-big .co-wa-advantage-ic{font-size:0}
+.co-wa-big strong{font-size:15.5px}
+.co-wa-big span{font-size:13.5px}
+.co-btn{border:0;border-radius:14px}
+.co-btn-gold,.co-gen-big,.co-btn-copy{background:linear-gradient(180deg,#ff6a94 0%,#f0457a 100%);color:#fff;box-shadow:0 10px 20px -8px rgba(240,69,122,.65),inset 0 1px 0 rgba(255,255,255,.25);text-shadow:0 1px 0 rgba(120,10,50,.25)}
+.co-btn-gold{padding:17px;font-size:17px}
+.co-btn-gold:active,.co-gen-big:active,.co-btn-copy:active{transform:translateY(1px);box-shadow:0 4px 10px -6px rgba(240,69,122,.7)}
+.co-gen-big{padding:22px 20px;gap:4px}
+.co-gen-ic{display:inline-flex;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.2);align-items:center;justify-content:center;margin-bottom:2px}
+.co-gen-txt{font-size:18px}
+.co-gen-val{font-family:var(--sans);font-size:30px;font-weight:800;letter-spacing:-.5px}
+.co-btn-copy{padding:18px;font-size:17.5px}
+.co-btn-copy.copied{background:#1faa6b;box-shadow:0 10px 20px -8px rgba(31,170,107,.6)}
+.co-howto{border:1px solid #e3ddee;background:#faf8fd;border-radius:12px}
+.co-howto-num{background:var(--ink);color:#fff;border:0}
+.co-hl{background:linear-gradient(transparent 62%,#ffe58a 62%)}
+.co-copied-msg{background:#e8f7ef;border:1px solid #bde6d0;color:#17653f;border-radius:12px}
+.co-reassure{color:#6b6180;font-size:12.5px;gap:6px}
+.co-reassure svg{flex-shrink:0}
+.co-ghost{color:#6b6180;font-size:14px;font-weight:600}
+.co-done-ic{background:#1faa6b;color:#fff;border:0;box-shadow:0 10px 20px -8px rgba(31,170,107,.6)}
+.co-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;margin-top:18px;padding-top:14px;border-top:1px solid #eee9f4}
+.co-trust span{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#4a3a63}
+.co-trust svg{color:#1faa6b;flex-shrink:0}
+
+.lp-back-btn{z-index:9500!important}
+.co-howto{display:block;line-height:1.6}
+.co-howto-num{display:inline-flex;vertical-align:middle;margin-right:8px;width:24px;height:24px}
+.co-wa-advantage .co-wa-advantage-ic{display:inline-flex;color:#fff;width:34px;height:34px;flex-shrink:0}
+.co-wa-advantage .co-wa-advantage-ic svg{display:block}
 </style>
 </head>
 <body><svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="sic1"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></symbol><symbol id="sic2"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="sic4"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="sic7"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></symbol><symbol id="sic8"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2 9.2 4.3 5.5 4l-1 3.6L1 9.4l2 3.1L1 15.6l3.5 1.8 1 3.6 3.7-.3L12 22l2.8-2.3 3.7.3 1-3.6 3.5-1.8-2-3.1 2-3.1-3.5-1.8-1-3.6-3.7.3L12 2Zm-1.2 13.6-3.4-3.4 1.4-1.4 2 2 4.6-4.6 1.4 1.4-6 6Z"/></symbol><symbol id="sic9"><circle cx="12" cy="8.2" r="4.2"/><path d="M4 20.2c0-4.2 3.6-7.2 8-7.2s8 3 8 7.2v.3H4v-.3Z"/></symbol><symbol id="sic10"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol><symbol id="sic11"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.2 8.85-6.1 3.9a.6.6 0 0 1-.92-.5V9.75a.6.6 0 0 1 .92-.5l6.1 3.9a.6.6 0 0 1 0 .7z"/></symbol></svg>
@@ -440,17 +504,18 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
   function cidadeAleatoria(){ return CIDADES_ANONIMAS[Math.floor(Math.random()*CIDADES_ANONIMAS.length)]; }
   var SITUACOES = {
     bloqueou: {
+      barra: 'Seja desbloqueada(o)',
       heroCta: 'Quero reverter esse bloqueio',
       h1: 'Ele(a) te bloqueou. Mas bloqueio não significa o fim.',
       lead: '',
       promise: 'Orgulho, discussão, bloqueio sem explicação ou até outra(o).<br><br>Não importa o motivo: o Mestre te mostra como agir para buscar o desbloqueio, passo a passo.',
-      bridgeCta: 'Quero saber como ser desbloqueado(a)',
-      cta: 'QUERO SER DESBLOQUEADO(A) AGORA',
+      bridgeCta: 'Quero saber como ser desbloqueada(o)',
+      cta: 'QUERO SER DESBLOQUEADA(O) AGORA',
       stat: 'Milhares de pessoas já foram desbloqueadas com esse método.',
       ofTitle: 'Método <span class="lp-script">Mestre do Desbloqueio</span>',
       ofMain: 'Método Mestre do Desbloqueio',
       ofDesc: '',
-      list: ['O segredo para fazê-lo(a) questionar a própria decisão de ter te bloqueado','Como agir diante do orgulho dele(a) sem correr atrás, implorar ou alimentar ainda mais o bloqueio','O que fazer agora para evitar atitudes que podem dificultar o desbloqueio','Como aliviar a angústia e saber exatamente como agir enquanto você continua bloqueado(a)','O que fazer quando ele(a) te desbloquear para retomar o contato sem cometer erros que podem afastá-lo(a) novamente','Garantia incondicional de 7 dias'],
+      list: ['O segredo para fazê-lo(a) questionar a própria decisão de ter te bloqueado','Como agir diante do orgulho dele(a) sem correr atrás, implorar ou alimentar ainda mais o bloqueio','O que fazer agora para evitar atitudes que podem dificultar o desbloqueio','Como aliviar a angústia e saber exatamente como agir enquanto você continua bloqueada(o)','O que fazer quando ele(a) te desbloquear para retomar o contato sem cometer erros que podem afastá-lo(a) novamente','Garantia incondicional de 7 dias'],
       depos: [
         ['Ele tinha me bloqueado de tudo. Segui o plano à risca e em 5 dias ele mesmo me desbloqueou e mandou mensagem primeiro.','Camila R.'],
         ['Eu não fazia ideia do motivo do bloqueio. O método me ajudou a entender e, sem nenhum desespero da minha parte, ele voltou a falar comigo.','Débora M.'],
@@ -459,6 +524,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
       ]
     },
     foi_embora: {
+      barra: 'Quer ele(a) de volta?',
       heroCta: 'Quero ele(a) de volta',
       h1: 'Ele(a) foi embora e essa é a pior dor do mundo.',
       lead: '',
@@ -468,7 +534,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
       stat: 'Milhares de pessoas já trouxeram ele(a) de volta pra casa com esse método.',
       ofTitle: 'O <span class="lp-script">Plano de 7 Dias</span> Feito pra Ele(a) Voltar pra Você',
       ofDesc: 'Fazer ele(a) sentir a sua falta até não aguentar mais ficar longe.',
-      list: ['O gatilho secreto que faz ele(a) sentir a sua falta: você vai mexer com a mente dele(a)','O modo de transformar a distância na sua maior aliada e fazer a saudade trabalhar a seu favor','A forma perfeita de agir quando ele(a) vier te procurar','O segredo pra nunca mais ser abandonado(a): é ele(a) quem vai ter medo de ser abandonado(a)','Garantia incondicional de 7 dias'],
+      list: ['O gatilho secreto que faz ele(a) sentir a sua falta: você vai mexer com a mente dele(a)','O modo de transformar a distância na sua maior aliada e fazer a saudade trabalhar a seu favor','A forma perfeita de agir quando ele(a) vier te procurar','O segredo pra nunca mais ser abandonada(o): é ele(a) quem vai ter medo de ser abandonado(a)','Garantia incondicional de 7 dias'],
       depos: [
         ['Ele tinha saído de casa fazia 3 semanas. Apliquei o plano e ele voltou pedindo pra conversar, do jeito que eu nunca esperei.','Fernanda O.'],
         ['Morava em outro estado e achei que não tinha jeito. O método me mostrou que dava, sim, e hoje estamos morando juntos de novo.','Aline C.'],
@@ -477,6 +543,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
       ]
     },
     outra: {
+      barra: 'Seja a(o) escolhida(o)',
       heroCta: 'Quero ser a(o) escolhida(o)',
       h1: 'Ele(a) está com outra(o), e ver os dois juntos é insuportável.',
       lead: '',
@@ -486,7 +553,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
       stat: 'Milhares de pessoas já reconquistaram o lugar delas com esse método.',
       ofTitle: 'O <span class="lp-script">Plano de 7 Dias</span> Feito pra Você Ser a(o) Escolhida(o)',
       ofDesc: 'Fazer ele(a) te comparar com ela(e) até a decisão ficar óbvia.',
-      list: ['O gatilho secreto que faz ele(a) lembrar de você e de tudo que viveram juntos: você vai mexer com a mente dele(a)','Ele(a) está cego(a): a forma de trazê-lo(a) de volta à realidade com um gatilho psicológico','A forma perfeita de agir quando ele(a) te procurar','Por que ele(a) te trocou e como nunca mais ser substituído(a): é ele(a) quem vai ter medo de ser trocado(a)','Garantia incondicional de 7 dias'],
+      list: ['O gatilho secreto que faz ele(a) lembrar de você e de tudo que viveram juntos: você vai mexer com a mente dele(a)','Ele(a) está cego(a): a forma de trazê-lo(a) de volta à realidade com um gatilho psicológico','A forma perfeita de agir quando ele(a) te procurar','Por que ele(a) te trocou e como nunca mais ser substituída(o): é ele(a) quem vai ter medo de ser trocado(a)','Garantia incondicional de 7 dias'],
       depos: [
         ['Ele estava namorando outra havia 2 meses. Segui o método sem fazer nenhum drama e hoje estamos juntos de novo, foi ele quem terminou com ela.','Vanessa T.'],
         ['Achei que tinha perdido de vez pra ela. O plano me ensinou a agir diferente e, sem competir com ninguém, ele voltou a me procurar.','Gabriela S.'],
@@ -495,6 +562,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
       ]
     },
     orgulhoso: {
+      barra: 'Quebre o orgulho dele(a)',
       heroCta: 'Quero que ele(a) dê o primeiro passo',
       h1: 'Ele(a) é orgulhoso(a) demais pra admitir que sente sua falta.',
       lead: '',
@@ -513,6 +581,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
       ]
     },
     reconquistar: {
+      barra: 'Reconquiste ele(a)',
       heroCta: 'Quero começar do jeito certo',
       h1: 'Você quer reconquistá-lo(a) e não sabe como começar.',
       lead: '',
@@ -636,7 +705,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
   </script>
 
 <!-- ════════ 2. COPY + OFERTA (preenchida conforme a situação) ════════ -->
-  <div class="lp" id="portal"><header class="lp-header"><div class="lp-logo"><svg class="lp-badge-tiktok" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic7"></use></svg><svg class="lp-badge-kwai" viewBox="0 0 24 24" fill="currentColor" aria-label="Kwai"><use href="#sic11"></use></svg><svg class="lp-badge-youtube" viewBox="0 0 24 24" fill="currentColor" aria-label="YouTube"><use href="#sic10"></use></svg> Mestre da Reconquista <svg class="lp-badge-verified" viewBox="0 0 24 24" fill="currentColor" aria-label="Verificado"><use href="#sic8"></use></svg></div><nav class="lp-nav"><a href="#lp-top">Início</a><a onclick="abrirWhatsDuvidas()">Dúvidas</a></nav></header><section class="lp-hero" id="lp-top"><div class="lp-hero-text lp-anim"><div class="lp-hero-kicker"><span class="lp-quiz-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic1"></use></svg></span><span class="lp-hero-kicker-txt">Baseado em psicologia masculina/feminina real</span></div><h1 class="lp-h1" id="heroH1">Ser abandonado(a) por quem você ama <span class="lp-script">dói</span>.</h1><p class="lp-lead" id="heroLead">A vontade é mandar mensagem, implorar, tentar consertar tudo. Mas essas atitudes só afastam ainda mais. Eu vou te mostrar como um homem ou uma mulher realmente decide voltar e o que fazer para reconquistá-lo(a).</p><button type="button" class="lp-cta" onclick="mostrarPromessa()"><span id="heroCtaText">Quero mudar isso</span> <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic2"></use></svg></b></button><p class="lp-hero-proof"><span class="lp-hero-proof-dots"><i></i><i></i><i></i></span>Milhares de pessoas já começaram essa virada</p></div></section><section class="lp-bridge" id="lp-bridge" style="display:none"><p class="lp-bridge-eyebrow">Existe um caminho</p><h2 class="lp-bridge-text lp-anim" id="bridgePromise"></h2><button type="button" class="lp-cta lp-bridge-cta" onclick="scrollComece()"><span id="bridgeCtaText">Quero saber como</span> <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic2"></use></svg></b></button></section><section class="lp-comece" id="lp-comece" style="display:none"><div class="lp-anim"><div class="lp-quiz-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></div><p class="lp-bridge-eyebrow">Chega de esperar</p><h2 class="lp-comece-text">Comece agora</h2></div></section><section class="lp-oferta" id="lp-oferta" style="display:none"><div class="lp-of-card lp-anim"><p class="lp-of-eyebrow"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic1"></use></svg></i> Método comprovado · Baseado na psicologia masculina/feminina</p><h2 class="lp-of-title" id="ofertaTitle">O <span class="lp-script">Plano de 7 Dias</span> que fala a língua da mente dele(a)</h2><p class="lp-of-desc" id="ofertaDesc">Um passo a passo construído sobre como a mente masculina/feminina realmente decide voltar:</p><ul class="lp-of-list" id="ofertaList"><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Plano completo de 7 dias baseado em gatilhos da psicologia masculina/feminina</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Os segredos de como a mente dele(a) processa a distância e o desejo</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Scripts que ativam o instinto de conquista masculino/feminino em cada situação</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Bônus exclusivos para acelerar a resposta emocional dele(a)</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Acesso imediato e 100% online</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Garantia incondicional de 7 dias</li></ul><div class="lp-of-price"><span class="lp-tk-off" aria-label="90% de desconto"><b>90%<i>OFF</i></b></span><div class="lp-tk-top"><span class="lp-of-de">Valor normal</span><span class="lp-of-old">R$ 99,90</span></div><div class="lp-tk-perf"></div><div class="lp-tk-main"><span class="lp-of-por">hoje, por apenas</span><span class="lp-of-new"><span class="rs">R$</span>9<small>,99</small></span><span class="lp-of-pix">à vista no PIX</span></div><span class="lp-of-last">Últimos acessos por este valor</span></div><button type="button" class="lp-cta lp-of-cta" onclick="setOferta('desconto');openCheckout()"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic1"></use></svg></i> <span id="ofertaCtaText">QUERO ELE(A) DE VOLTA AGORA</span> <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic2"></use></svg></b></button><p class="lp-of-secure">Pagamento 100% seguro &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; 7 dias de garantia</p></div></section><section class="lp-stat" id="lp-stat" style="display:none"><p class="lp-stat-text" id="ofertaStat">Milhares de pessoas já foram desbloqueadas com esse método.</p></section><section class="lp-depos-sec" id="lp-depos-sec" style="display:none"><div class="lp-of-depos" id="ofertaDepos"></div></section>  </div>
+  <div class="lp" id="portal"><header class="lp-header"><div class="lp-logo"><svg class="lp-badge-tiktok" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic7"></use></svg><svg class="lp-badge-kwai" viewBox="0 0 24 24" fill="currentColor" aria-label="Kwai"><use href="#sic11"></use></svg><svg class="lp-badge-youtube" viewBox="0 0 24 24" fill="currentColor" aria-label="YouTube"><use href="#sic10"></use></svg> Mestre da Reconquista <svg class="lp-badge-verified" viewBox="0 0 24 24" fill="currentColor" aria-label="Verificado"><use href="#sic8"></use></svg></div><nav class="lp-nav"><a href="#lp-top">Início</a><a onclick="abrirWhatsDuvidas()">Dúvidas</a></nav></header><section class="lp-hero" id="lp-top"><div class="lp-hero-text lp-anim"><div class="lp-hero-kicker"><span class="lp-quiz-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic1"></use></svg></span><span class="lp-hero-kicker-txt">Baseado em psicologia masculina/feminina real</span></div><h1 class="lp-h1" id="heroH1">Ser abandonada(o) por quem você ama <span class="lp-script">dói</span>.</h1><p class="lp-lead" id="heroLead">A vontade é mandar mensagem, implorar, tentar consertar tudo. Mas essas atitudes só afastam ainda mais. Eu vou te mostrar como um homem ou uma mulher realmente decide voltar e o que fazer para reconquistá-lo(a).</p><button type="button" class="lp-cta" onclick="mostrarPromessa()"><span id="heroCtaText">Quero mudar isso</span> <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic2"></use></svg></b></button><p class="lp-hero-proof"><span class="lp-hero-proof-dots"><i></i><i></i><i></i></span>Milhares de pessoas já começaram essa virada</p></div></section><section class="lp-bridge" id="lp-bridge" style="display:none"><p class="lp-bridge-eyebrow">Existe um caminho</p><h2 class="lp-bridge-text lp-anim" id="bridgePromise"></h2><button type="button" class="lp-cta lp-bridge-cta" onclick="scrollComece()"><span id="bridgeCtaText">Quero saber como</span> <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic2"></use></svg></b></button></section><section class="lp-comece" id="lp-comece" style="display:none"><div class="lp-anim"><div class="lp-quiz-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></div><p class="lp-bridge-eyebrow">Chega de esperar</p><h2 class="lp-comece-text">Comece agora</h2></div></section><section class="lp-oferta" id="lp-oferta" style="display:none"><div class="lp-of-card lp-anim"><p class="lp-of-eyebrow"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic1"></use></svg></i> Método comprovado · Baseado na psicologia masculina/feminina</p><h2 class="lp-of-title" id="ofertaTitle">O <span class="lp-script">Plano de 7 Dias</span> que fala a língua da mente dele(a)</h2><p class="lp-of-desc" id="ofertaDesc">Um passo a passo construído sobre como a mente masculina/feminina realmente decide voltar:</p><ul class="lp-of-list" id="ofertaList"><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Plano completo de 7 dias baseado em gatilhos da psicologia masculina/feminina</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Os segredos de como a mente dele(a) processa a distância e o desejo</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Scripts que ativam o instinto de conquista masculino/feminino em cada situação</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Bônus exclusivos para acelerar a resposta emocional dele(a)</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Acesso imediato e 100% online</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Garantia incondicional de 7 dias</li></ul><div class="lp-of-price"><span class="lp-tk-off" aria-label="90% de desconto"><b>90%<i>OFF</i></b></span><div class="lp-tk-top"><span class="lp-of-de">Valor normal</span><span class="lp-of-old">R$ 99,90</span></div><div class="lp-tk-perf"></div><div class="lp-tk-main"><span class="lp-of-por">hoje, por apenas</span><span class="lp-of-new"><span class="rs">R$</span>9<small>,99</small></span><span class="lp-of-pix">à vista no PIX</span></div><span class="lp-of-last">Últimos acessos por este valor</span></div><button type="button" class="lp-cta lp-of-cta" onclick="setOferta('desconto');openCheckout()"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic1"></use></svg></i> <span id="ofertaCtaText">QUERO ELE(A) DE VOLTA AGORA</span> <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic2"></use></svg></b></button><p class="lp-of-secure">Pagamento 100% seguro &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; 7 dias de garantia</p></div></section><section class="lp-stat" id="lp-stat" style="display:none"><p class="lp-stat-text" id="ofertaStat">Milhares de pessoas já foram desbloqueadas com esse método.</p></section><section class="lp-depos-sec" id="lp-depos-sec" style="display:none"><div class="lp-of-depos" id="ofertaDepos"></div></section>  </div>
 
 <!-- ════════ 3. CHECKOUT ════════ -->
   <div class="co-overlay" id="checkout" aria-hidden="true" style="display:none">
@@ -646,7 +715,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
 
       <!-- header -->
       <div class="co-head">
-        <div class="co-secure"><span class="co-lock">🔒</span> Pagamento protegido</div>
+        <div class="co-secure"><span class="co-lock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span> Pagamento protegido</div>
         <div class="co-progress">
           <div class="co-prog-step on" id="dot-1"><span>1</span><label>Dados</label></div>
           <div class="co-prog-line" id="line-1"></div>
@@ -677,7 +746,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
           <input class="co-input" type="tel" id="contatoWa" name="whatsapp" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel">
 
           <div class="co-wa-advantage co-wa-big">
-            <span class="co-wa-advantage-ic">💬</span>
+            <span class="co-wa-advantage-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
             <div>
               <strong>Acesso liberado na hora</strong>
               <span>Assim que o pagamento for confirmado, seu acesso é liberado.</span>
@@ -686,7 +755,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
 
           <p class="co-err" id="formErr">Preencha seu nome e WhatsApp para continuar.</p>
           <button type="button" class="co-btn co-btn-gold" id="toPayBtn">Ir para o pagamento &rarr;</button>
-          <div class="co-reassure"><span>🔒</span> Seus dados são usados só para enviar o acesso.</div>
+          <div class="co-reassure"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span> Seus dados são usados só para enviar o acesso.</div>
         </div>
       </div>
 
@@ -697,7 +766,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
 
         <!-- Estado A: gerar (grande e central) -->
         <button type="button" class="co-btn co-gen-big" id="genBtn" onclick="gerarPix()">
-          <span class="co-gen-ic">⚡</span>
+          <span class="co-gen-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>
           <span class="co-gen-txt">Gerar código Pix</span>
           <span class="co-gen-val" id="coGenVal">R$ 9,99</span>
         </button>
@@ -727,6 +796,8 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
         <button type="button" class="co-btn co-btn-gold" onclick="closeCheckout()">Entendi 💛</button>
         <button type="button" class="co-ghost" onclick="abrirWhatsDuvidas()">Pagou e não chegou? Fale com a gente no WhatsApp</button>
       </div>
+
+      <div class="co-trust"><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Pagamento via Pix</span><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Acesso imediato</span><span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> 7 dias de garantia</span></div>
 
     </div><!-- /co-panel -->
     </div><!-- /co-scroll -->
@@ -934,7 +1005,7 @@ function goSuccess(){
   goStep(3);
 }
 </script>
-<div class="sb" id="stickyBuy" aria-hidden="true"><div class="sb-in"><div class="sb-proof"><span class="sb-avs" aria-hidden="true"><i>&#9829;</i><i>&#9829;</i><i>&#9829;</i></span><span class="sb-txt"><b id="sbT1">Testemunhos de quem já usou</b><em id="sbT2"></em></span></div><button type="button" class="sb-btn" id="sbBtn"><span id="sbBtnTxt">Ver agora</span> <span id="sbArrow" aria-hidden="true">&darr;</span></button></div></div>
+<div class="sb" id="stickyBuy" aria-hidden="true"><div class="sb-in"><div class="sb-proof"><span class="sb-avs" aria-hidden="true"><i>&#9829;</i><i>&#9829;</i><i>&#9829;</i></span><span class="sb-txt"><b id="sbT1">Plano de 7 Dias</b><em id="sbT2"></em></span></div><button type="button" class="sb-btn" id="sbBtn"><span id="sbBtnTxt">Ver agora</span> <span id="sbArrow" aria-hidden="true">&darr;</span></button></div></div>
 <script>
 (function(){
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1025,17 +1096,35 @@ function goSuccess(){
   if(bar && ticket && cta && offCard && depSec && sbBtn && hasIO){
     var ticketVis = false, ctaVis = false, entered = false, buyMode = false, raf = 0;
     var t1 = document.getElementById('sbT1'), t2 = document.getElementById('sbT2'), bt = document.getElementById('sbBtnTxt'), ar = document.getElementById('sbArrow');
+    var lastKey = '';
+    function sbPreco(){
+      try{ return (typeof OFERTAS !== 'undefined' && OFERTAS.desconto && OFERTAS.desconto.valor) || 'R$ 9,99'; }catch(e){ return 'R$ 9,99'; }
+    }
+    /* antes dos depoimentos: situação + preço · depois: garantia */
+    function renderBar(){
+      var sit = window.SITUACAO_ATUAL || '';
+      var key = (buyMode ? 'b' : 'n') + '|' + sit;
+      if(key === lastKey) return;
+      lastKey = key;
+      if(buyMode){
+        t1.textContent = 'Garantia de 7 dias';
+        t2.textContent = 'sem risco';
+      } else {
+        var sd = (window.SITUACOES || {})[sit];
+        t1.textContent = (sd && sd.barra) || 'Plano de 7 Dias';
+        t2.innerHTML = '<span class="sb-pix">Apenas</span><span class="sb-pr">' + sbPreco() + '</span><span class="sb-pix">no PIX</span>';
+      }
+    }
     function setMode(buy){
       if(buy === buyMode) return;
       buyMode = buy;
       bar.classList.toggle('sb-buy', buy);
-      t1.textContent = buy ? 'Garantia de 7 dias' : 'Testemunhos de quem já usou';
-      t2.textContent = buy ? 'sem risco' : '';
       bt.textContent = buy ? 'Começar' : 'Ver agora';
       ar.innerHTML = buy ? '&rarr;' : '&darr;';
+      renderBar();
     }
     function upd(){
-      var show = entered && (!buyMode || (!ticketVis && !ctaVis));
+      var show = entered && !ticketVis && !ctaVis;
       bar.classList.toggle('show', show);
       bar.setAttribute('aria-hidden', show ? 'false' : 'true');
       document.body.classList.toggle('sb-on', show);
@@ -1045,11 +1134,12 @@ function goSuccess(){
       if(!offCard.offsetParent){ entered = false; upd(); return; }
       entered = offCard.getBoundingClientRect().top < window.innerHeight * 0.55;
       setMode(depSec.offsetParent !== null && depSec.getBoundingClientRect().top < window.innerHeight * 0.4);
+      renderBar();
       upd();
     }
     sbBtn.addEventListener('click', function(){
       if(buyMode){ setOferta('desconto'); openCheckout(); }
-      else { depSec.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'}); }
+      else { cta.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'}); }
     });
     window.addEventListener('scroll', function(){ if(!raf) raf = requestAnimationFrame(chk); }, {passive:true});
     window.addEventListener('resize', chk);
