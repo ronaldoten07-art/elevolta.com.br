@@ -1065,6 +1065,7 @@ function goSuccess(){
   /* ---------- Quiz: toque, corações e "montando seu plano" ---------- */
   var qzBusy = false;
   var goOriginal = window.quizSituacao;
+  window.quizSituacaoDireto = goOriginal; /* entrada por link: pula a pergunta e a animação */
   window.quizSituacao = function(key){
     if(qzBusy) return;
     qzBusy = true;
@@ -1251,6 +1252,29 @@ function goSuccess(){
     window.addEventListener('scroll', arm, {passive:true});
     arm();
   })();
+})();
+</script>
+<script>
+/* Links diretos: abre já numa situação, sem passar pela pergunta.
+   Exemplos: seusite.com/?s=bloqueio  ·  seusite.com/#bloqueio
+   Valores: bloqueio | orgulho | terminou | outra | reconquistar */
+(function(){
+  var MAPA = {bloqueio:'bloqueou',bloqueou:'bloqueou',bloqueado:'bloqueou',
+              orgulho:'orgulhoso',orgulhoso:'orgulhoso',
+              terminou:'foi_embora',foi_embora:'foi_embora',
+              outra:'outra',outro:'outra',
+              reconquistar:'reconquistar'};
+  var v = '';
+  try{
+    var q = new URLSearchParams(location.search);
+    v = q.get('s') || q.get('situacao') || '';
+  }catch(e){}
+  if(!v && location.hash) v = location.hash.slice(1);
+  v = (v || '').toLowerCase().replace(/[^a-z_]/g,'');
+  var key = MAPA[v];
+  if(key && typeof window.quizSituacaoDireto === 'function'){
+    try{ window.quizSituacaoDireto(key); }catch(e){}
+  }
 })();
 </script>
 </body>
