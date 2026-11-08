@@ -179,7 +179,7 @@ em{font-style:italic}
 .lp-quiz-q{font-family:var(--serif);font-weight:800;font-size:clamp(32px,8.6vw,44px);line-height:1.08;letter-spacing:-1px;color:var(--ink);margin-bottom:28px}
 .lp-quiz-options{display:flex;flex-direction:column;gap:14px}
 .lp-quiz-opt{position:relative;display:block;width:100%;border:var(--bd);border-radius:16px;background:var(--white);padding:16px 46px 16px 18px;font-size:17.5px;line-height:1.3;font-weight:700;color:var(--ink);cursor:pointer;text-align:left;font-family:var(--sans);box-shadow:var(--sh);transition:transform .12s,box-shadow .12s}
-.lp-quiz-opt:nth-child(1){background:var(--pink-l)}.lp-quiz-opt:nth-child(2){background:var(--butter-l)}.lp-quiz-opt:nth-child(3){background:var(--mint-l)}.lp-quiz-opt:nth-child(4){background:var(--white)}.lp-quiz-opt:nth-child(5){background:var(--pink);}
+.lp-quiz-opt:nth-child(1){background:var(--pink-l)}.lp-quiz-opt:nth-child(2){background:var(--butter-l)}.lp-quiz-opt:nth-child(3){background:var(--mint-l)}.lp-quiz-opt:nth-child(4){background:var(--white)}.lp-quiz-opt:nth-child(5){background:var(--pink);}.lp-quiz-opt:nth-child(6){background:var(--pink-l)}
 .lp-quiz-opt::after{content:'→';position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:800;color:var(--ink)}
 .lp-quiz-opt:active{transform:translate(4px,4px);box-shadow:none}
 @media(hover:hover){.lp-quiz-opt:hover{transform:translate(-2px,-2px);box-shadow:0 8px 18px -8px rgba(31,16,51,.35)}}
@@ -265,9 +265,9 @@ em{font-style:italic}
 
 /* ===== animação leve nas opções de situação ===== */
 .lp-quiz-opt{animation:optIn .45s cubic-bezier(.2,.8,.2,1) backwards}
-.lp-quiz-opt:nth-child(1){animation-delay:.05s}.lp-quiz-opt:nth-child(2){animation-delay:.12s}.lp-quiz-opt:nth-child(3){animation-delay:.19s}.lp-quiz-opt:nth-child(4){animation-delay:.26s}.lp-quiz-opt:nth-child(5){animation-delay:.33s}
+.lp-quiz-opt:nth-child(1){animation-delay:.05s}.lp-quiz-opt:nth-child(2){animation-delay:.12s}.lp-quiz-opt:nth-child(3){animation-delay:.19s}.lp-quiz-opt:nth-child(4){animation-delay:.26s}.lp-quiz-opt:nth-child(5){animation-delay:.33s}.lp-quiz-opt:nth-child(6){animation-delay:.4s}
 .lp-quiz-opt::after{animation:optArrow 1.8s ease-in-out infinite}
-.lp-quiz-opt:nth-child(2)::after{animation-delay:.15s}.lp-quiz-opt:nth-child(3)::after{animation-delay:.3s}.lp-quiz-opt:nth-child(4)::after{animation-delay:.45s}.lp-quiz-opt:nth-child(5)::after{animation-delay:.6s}
+.lp-quiz-opt:nth-child(2)::after{animation-delay:.15s}.lp-quiz-opt:nth-child(3)::after{animation-delay:.3s}.lp-quiz-opt:nth-child(4)::after{animation-delay:.45s}.lp-quiz-opt:nth-child(5)::after{animation-delay:.6s}.lp-quiz-opt:nth-child(6)::after{animation-delay:.75s}
 @keyframes optIn{0%{opacity:0;transform:translateY(14px)}100%{opacity:1;transform:translateY(0)}}
 @keyframes optArrow{0%,100%{translate:0 0}50%{translate:5px 0}}
 @media(prefers-reduced-motion:reduce){.lp-quiz-opt,.lp-quiz-opt::after{animation:none}}
@@ -491,6 +491,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
 .lp-comece{background:#fff;border-top:1px solid #ebe6f2;border-bottom:1px solid #ebe6f2}
 .lp-oferta{background:#f6f3fb}
 .lp-depos-sec{background:#fff}
+.lp-depos-sec[data-vazio]{display:none!important}
 .lp-stat{background:#1f1033;border:0}
 .lp-stat-text{font-family:var(--title);font-style:normal;font-weight:700;color:#fff;font-size:clamp(20px,5vw,28px);letter-spacing:-.3px}
 .lp-hero-kicker{background:#fff;box-shadow:none;border:1px solid #e3ddee}
@@ -542,6 +543,7 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
       <h1 class="lp-quiz-q">Qual dessas é a sua situação?</h1>
       <div class="lp-quiz-options">
         <button type="button" class="lp-quiz-opt" onclick="quizSituacao('bloqueou')">Ele(a) me bloqueou e não sei o que fazer</button>
+        <button type="button" class="lp-quiz-opt" onclick="quizSituacao('restauracao')">Quero restaurar a nossa relação</button>
         <button type="button" class="lp-quiz-opt" onclick="quizSituacao('orgulhoso')">Ele(a) é orgulhoso(a)</button>
         <button type="button" class="lp-quiz-opt" onclick="quizSituacao('foi_embora')">Ele(a) terminou comigo</button>
         <button type="button" class="lp-quiz-opt" onclick="quizSituacao('outra')">Ele(a) está com outra(o)</button>
@@ -573,6 +575,21 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
         ['Bloqueada em tudo: WhatsApp, Instagram... Achei que era o fim. Uma semana depois estávamos conversando de novo, com ele puxando assunto.','Larissa F.'],
         ['O que mais me ajudou foi entender o que NÃO fazer. Parei de tentar contato e, quando ele me desbloqueou, veio ele atrás de mim.','Patrícia N.']
       ]
+    },
+    restauracao: {
+      barra: 'Restaure essa relação',
+      heroCta: 'Quero restaurar a nossa relação',
+      h1: 'Ainda dá para restaurar o que vocês tiveram.',
+      lead: '',
+      promise: 'Brigas, mágoas, silêncio ou distância.<br><br>Você quer restaurar a relação e não sabe como começar: o Mestre te mostra exatamente o que fazer, passo a passo, para reconstruir a confiança e reaproximar vocês.',
+      bridgeCta: 'Quero saber como restaurar a nossa relação',
+      cta: 'QUERO RESTAURAR A NOSSA RELAÇÃO AGORA',
+      stat: 'Milhares de pessoas já usaram esse método para restaurar o relacionamento.',
+      ofTitle: 'Método <span class="lp-script">Mestre da Restauração</span>',
+      ofMain: 'Método Mestre da Restauração',
+      ofDesc: '',
+      list: ['Como reabrir o diálogo com ele(a) sem cobranças, discussões ou pressão','O que fazer para curar as mágoas e reconstruir a confiança aos poucos','Os erros que mais afastam e como evitá-los enquanto vocês se reaproximam','Como despertar de novo o carinho e o interesse que existiam entre vocês','Como manter a relação restaurada para que a história não se repita','Garantia incondicional de 7 dias'],
+      depos: []
     },
     foi_embora: {
       barra: 'Quer ele(a) de volta?',
@@ -702,7 +719,8 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
         list.style.marginTop = s.ofMain ? '26px' : '';
       }
       var depos = document.getElementById('ofertaDepos');
-      if(depos){
+      if(depos && (!s.depos || !s.depos.length)){ depos.innerHTML = ''; if(depos.parentNode) depos.parentNode.setAttribute('data-vazio','1'); }
+      else if(depos){ if(depos.parentNode) depos.parentNode.removeAttribute('data-vazio');
         var waCores = ['#c21f3a','#0a8f6a','#6b4bd8','#b86e00'];
         depos.innerHTML = '<div class="wa"><div class="wa-top"><span class="wa-av">&#9829;</span><span class="wa-who"><b>Quem já aplicou o plano</b><i>veja o que elas contaram</i></span></div><div class="wa-body">' + s.depos.map(function(d,i){
           return '<div class="wa-b"><span class="wa-n" style="color:'+waCores[i%waCores.length]+'">Anônima · '+cidadeAleatoria()+'</span><p>'+d[0]+'</p><span class="wa-m"><span class="wa-st">★★★★★</span><span class="wa-tk">✓✓</span></span></div>';
@@ -1262,7 +1280,7 @@ function goSuccess(){
   var MAPA = {bloqueio:'bloqueou',bloqueou:'bloqueou',bloqueado:'bloqueou',
               orgulho:'orgulhoso',orgulhoso:'orgulhoso',
               terminou:'foi_embora',foi_embora:'foi_embora',
-              outra:'outra',outro:'outra',
+              outra:'outra',outro:'outra',restauracao:'restauracao',restaurar:'restauracao',restaurao:'restauracao',
               reconquistar:'reconquistar'};
   var v = '';
   try{
