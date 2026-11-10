@@ -528,6 +528,32 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
 .vk-s{border:1px solid rgba(31,16,51,.12);background:#fff6d4}
 .sale-toast{border:1px solid rgba(31,16,51,.12);box-shadow:0 10px 24px -10px rgba(31,16,51,.35)}
 .lp-back-btn{box-shadow:0 4px 12px -4px rgba(31,16,51,.35);border:1px solid rgba(31,16,51,.12)}
+
+/* ORDER BUMP */
+.co-bump{display:block;margin:20px 0 4px;padding:16px 16px 14px;border:2px dashed #e0a800;border-radius:16px;background:linear-gradient(180deg,#fffbe8,#fff6d1);cursor:pointer;position:relative;transition:border-color .15s,box-shadow .15s,background .15s}
+.co-bump.on{border-style:solid;border-color:#1faa6b;background:linear-gradient(180deg,#f1fbf5,#e6f7ee);box-shadow:0 8px 22px -12px rgba(31,170,107,.55)}
+.co-bump-tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:#1f1033;border-radius:999px;padding:5px 10px;margin-bottom:12px;line-height:1.25}
+.co-bump-main{display:flex;gap:12px;align-items:flex-start}
+.co-bump input{position:absolute;opacity:0;pointer-events:none}
+.co-bump-ck{flex:0 0 26px;width:26px;height:26px;border-radius:8px;border:2px solid #1f1033;background:#fff;display:flex;align-items:center;justify-content:center;color:transparent;margin-top:1px;transition:all .15s}
+.co-bump input:checked + .co-bump-ck{background:#1faa6b;border-color:#1faa6b;color:#fff}
+.co-bump input:focus-visible + .co-bump-ck{box-shadow:0 0 0 3px rgba(31,16,51,.25)}
+.co-bump-txt strong{display:block;font-size:19px;line-height:1.2;letter-spacing:-.3px;color:#1f1033;font-weight:800}
+.co-bump-txt em{display:block;font-style:normal;font-size:14px;margin-top:3px;color:#4a3a63}
+.co-bump-txt em b{color:#0a8f6a;font-weight:800;font-size:17px;white-space:nowrap}
+.co-bump-desc{display:block;font-size:13.5px;line-height:1.5;color:#4a3a63;margin-top:10px}
+.co-bump-tot{display:none;margin-top:10px;font-size:13px;font-weight:700;color:#0a6b4d}
+.co-bump.on .co-bump-tot{display:block}
+.co-bump-row{margin-top:10px;padding-top:10px;border-top:1px dashed #d8d2e3;font-size:13.5px;color:#4a3a63}
+.co-bump-row div{display:flex;justify-content:space-between;gap:10px;padding:2px 0}
+.co-bump-row b{font-weight:800;color:#1f1033;white-space:nowrap}
+
+.co-bump-txt strong i{font-style:normal;color:#b8790a;display:block;font-size:15px;font-weight:800;letter-spacing:0;margin-top:3px}
+.co-bump-qs{display:flex;flex-direction:column;gap:6px;margin-top:12px}
+.co-bump-qs span{font-size:14.5px;font-weight:700;color:#1f1033;background:#fff;border:1px solid rgba(31,16,51,.12);border-radius:10px;padding:8px 12px}
+.co-bump-ans{display:block;margin-top:10px;font-size:14.5px;font-weight:800;color:#0a6b4d}
+.co-bump-pr{display:block;margin-top:10px;padding-top:10px;border-top:1px dashed rgba(31,16,51,.2);font-size:14px;color:#4a3a63}
+.co-bump-pr b{color:#0a8f6a;font-weight:800;font-size:18px;white-space:nowrap}
 </style>
 </head>
 <body><svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="sic1"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></symbol><symbol id="sic2"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="sic4"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="sic7"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></symbol><symbol id="sic8"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2 9.2 4.3 5.5 4l-1 3.6L1 9.4l2 3.1L1 15.6l3.5 1.8 1 3.6 3.7-.3L12 22l2.8-2.3 3.7.3 1-3.6 3.5-1.8-2-3.1 2-3.1-3.5-1.8-1-3.6-3.7.3L12 2Zm-1.2 13.6-3.4-3.4 1.4-1.4 2 2 4.6-4.6 1.4 1.4-6 6Z"/></symbol><symbol id="sic9"><circle cx="12" cy="8.2" r="4.2"/><path d="M4 20.2c0-4.2 3.6-7.2 8-7.2s8 3 8 7.2v.3H4v-.3Z"/></symbol><symbol id="sic10"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol><symbol id="sic11"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.2 8.85-6.1 3.9a.6.6 0 0 1-.92-.5V9.75a.6.6 0 0 1 .92-.5l6.1 3.9a.6.6 0 0 1 0 .7z"/></symbol></svg>
@@ -798,10 +824,14 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
       <div class="co-order" id="co-order">
         <div class="co-order-row">
           <div>
-            <div class="co-order-name">Código da Reconquista</div>
+            <div class="co-order-name" id="coOrderName">Código da Reconquista</div>
             <div class="co-order-meta">Acesso vitalício · 100% digital</div>
           </div>
           <div class="co-order-price" id="coOrderPrice">R$ 9<span>,99</span></div>
+        </div>
+        <div class="co-bump-row" id="coBumpRow" style="display:none">
+          <div><span>Código da Reconquista</span><b>R$ 9,99</b></div>
+          <div><span>+ 100 Mensagens de Reabertura</span><b>R$ 6,90</b></div>
         </div>
       </div>
 
@@ -813,6 +843,24 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
 
           <label class="co-label co-label-big" for="contatoWa" style="margin-top:18px">Seu WhatsApp</label>
           <input class="co-input" type="tel" id="contatoWa" name="whatsapp" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel">
+
+          <label class="co-bump" id="bumpBox" for="bumpCb" style="display:none">
+            <span class="co-bump-tag">Oferta única · só para quem leva o desbloqueio</span>
+            <span class="co-bump-main">
+              <input type="checkbox" id="bumpCb" onchange="aplicarBump()">
+              <span class="co-bump-ck" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <span class="co-bump-txt">
+                <strong>100 mensagens de reabertura <i>após o desbloqueio</i></strong>
+              </span>
+            </span>
+            <span class="co-bump-qs">
+              <span>Desbloqueou e ficou em silêncio?</span>
+              <span>Mandou um &ldquo;oi&rdquo; seco?</span>
+              <span>Só visualiza?</span>
+            </span>
+            <span class="co-bump-ans">Tem a resposta pronta para cada caso.</span>
+            <span class="co-bump-pr">Quero por apenas <b>+ R$ 6,90</b></span>
+          </label>
 
           <div class="co-wa-advantage co-wa-big">
             <span class="co-wa-advantage-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
@@ -879,9 +927,25 @@ const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 const WEB3FORMS_KEY = 'b94da7fe-0681-4504-b6a2-9eca5fb9d99d';
 const PIX_5990 = '00020126830014BR.GOV.BCB.PIX0136de85f8cf-01ba-49ce-b0b2-a2e641c1b22f0221mestre da reconquista52040000530398654049.995802BR5922Ronaldo da Cunha Silva6009SAO PAULO62140510Dr1G0UPAaz630484AE';
 const OFERTAS = { cheia:{valor:'R$ 9,99',num:9.99,pix:PIX_5990,priceHtml:'R$ 9<span>,99</span>',genVal:'R$ 9,99'}, desconto:{valor:'R$ 9,99',num:9.99,pix:PIX_5990,priceHtml:'R$ 9<span>,99</span>',genVal:'R$ 9,99'} };
+const PIX_BUMP = '00020126830014BR.GOV.BCB.PIX0136de85f8cf-01ba-49ce-b0b2-a2e641c1b22f0221mestre da reconquista520400005303986540516.895802BR5922Ronaldo da Cunha Silva6009SAO PAULO62140510Dr1G0UPAaz6304F63F';
+const BUMP = { ativo:false, valor:'R$ 6,90', num:6.90, total:'R$ 16,89', pix:PIX_BUMP, nome:'100 Mensagens de Reabertura' };
+function bumpDisponivel(){ return window.SITUACAO_ATUAL === 'bloqueou'; }
+function aplicarBump(){
+  var box=document.getElementById('bumpBox'), cb=document.getElementById('bumpCb');
+  var disp = bumpDisponivel();
+  if(box) box.style.display = disp ? 'block' : 'none';
+  BUMP.ativo = !!(disp && cb && cb.checked);
+  if(box) box.classList.toggle('on', BUMP.ativo);
+  var row=document.getElementById('coBumpRow'); if(row) row.style.display = BUMP.ativo ? 'block' : 'none';
+  var op=document.getElementById('coOrderPrice'); if(op) op.innerHTML = BUMP.ativo ? 'R$ 16<span>,89</span>' : OFERTA.priceHtml;
+  var nm=document.getElementById('coOrderName'); if(nm) nm.textContent = BUMP.ativo ? 'Total do pedido' : 'Código da Reconquista';
+  var gv=document.getElementById('coGenVal'); if(gv) gv.textContent = BUMP.ativo ? BUMP.total : OFERTA.genVal;
+}
+function valorFinal(){ return BUMP.ativo ? BUMP.total : OFERTA.valor; }
+function pixFinal(){ return BUMP.ativo ? BUMP.pix : OFERTA.pix; }
 let OFERTA = OFERTAS.desconto;
-function setOferta(t){ OFERTA = OFERTAS[t]||OFERTAS.cheia; var op=document.getElementById('coOrderPrice'); if(op) op.innerHTML=OFERTA.priceHtml; var gv=document.getElementById('coGenVal'); if(gv) gv.textContent=OFERTA.genVal; }
-const PRODUTO = { nome: 'Código da Reconquista', get valor(){ return OFERTA.valor; } };
+function setOferta(t){ OFERTA = OFERTAS[t]||OFERTAS.cheia; var op=document.getElementById('coOrderPrice'); if(op) op.innerHTML=OFERTA.priceHtml; var gv=document.getElementById('coGenVal'); if(gv) gv.textContent=OFERTA.genVal; if(typeof aplicarBump==='function') aplicarBump(); }
+const PRODUTO = { nome: 'Código da Reconquista', get valor(){ return valorFinal(); } };
 
 let canal = 'WhatsApp';
 let metodoPagamento = 'Pix';
@@ -902,6 +966,8 @@ function openCheckout(){
   $('formErr').style.display = 'none';
   leadEnviado = false;
   lead = null;
+  var _cb=$('bumpCb'); if(_cb) _cb.checked = false;
+  aplicarBump();
   resetPixUi();
   goStep(1);
   $('checkout').style.display = 'flex';
@@ -1009,7 +1075,7 @@ function irParaPagamento(){
   const contato = $('contatoWa').value.trim();
   if(!nome || !contato){ $('formErr').style.display='block'; return; }
   $('formErr').style.display='none';
-  lead = { nome, canal: 'WhatsApp', contato, produto: PRODUTO.nome, valor: PRODUTO.valor };
+  lead = { nome, canal: 'WhatsApp', contato, produto: PRODUTO.nome + (BUMP.ativo ? ' + ' + BUMP.nome : ''), valor: valorFinal() };
   resetPixUi();
   goStep(2);
 }
@@ -1040,8 +1106,8 @@ function copyPix(){
     setTimeout(goSuccess, 900);
   };
   if(navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(OFERTA.pix).then(done).catch(()=>{ fallbackCopy(OFERTA.pix); done(); });
-  } else { fallbackCopy(OFERTA.pix); done(); }
+    navigator.clipboard.writeText(pixFinal()).then(done).catch(()=>{ fallbackCopy(pixFinal()); done(); });
+  } else { fallbackCopy(pixFinal()); done(); }
   metodoPagamento = 'Pix (copiou o código)';
   enviarLead();
 }
@@ -1054,7 +1120,7 @@ function enviarLead(){
     headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
     body: JSON.stringify({
       access_key: WEB3FORMS_KEY,
-      subject: `Novo pedido (${metodoPagamento}): ${lead.nome} (${PRODUTO.nome})`,
+      subject: `Novo pedido (${metodoPagamento}): ${lead.nome} (${lead.produto})`,
       from_name: 'Site ' + PRODUTO.nome,
       name: lead.nome,
       whatsapp: lead.contato,
@@ -1063,7 +1129,7 @@ function enviarLead(){
       valor: lead.valor,
       pagamento: metodoPagamento,
       situacao: window.SITUACAO_ATUAL || '',
-      message: `Novo pedido do ${PRODUTO.nome} (${lead.valor}) - ${metodoPagamento}. Cliente: ${lead.nome} - WhatsApp: ${lead.contato}`
+      message: `Novo pedido do ${lead.produto} (${lead.valor}) - ${metodoPagamento}. Cliente: ${lead.nome} - WhatsApp: ${lead.contato}`
     })
   }).catch(()=>{});
 }
