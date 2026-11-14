@@ -19,8 +19,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=DM+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=DM+Sans:wght@500;600;700;800&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet"></noscript>
 <style>:root{
   --ink:#1f1033;--ink-2:#4a3a63;--cream:#fff4ea;--paper:#fffaf4;--white:#fff;
   --pink:#ff5c8a;--pink-l:#ffe0ea;--butter:#ffd84d;--butter-l:#fff0b3;
@@ -556,6 +556,173 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
 .lp-of-pix::before{background:#0a8f6a;width:9px;height:9px}
 .lp-of-last{bottom:-16px;background:#1f1033;color:#ffd84d;border:0;rotate:0deg;box-shadow:0 12px 22px -10px rgba(31,16,51,.7);padding:9px 14px;letter-spacing:.04em;font-size:clamp(10px,2.9vw,12px)}
 .lp-of-last::before{background:#ff5c8a}
+
+/* ================================================================
+   TEMA "NOITE & OURO" — redesign total
+   ================================================================ */
+:root{
+  --ink:#2b0f1d;--ink-2:#6b4a58;--cream:#f7efe4;--paper:#fffaf2;--white:#fff;
+  --pink:#c8344f;--pink-l:#f7e1e0;--butter:#e8c27a;--butter-l:#f8ecd0;
+  --mint:#bcd8c4;--mint-l:#e3f0e6;--lilac:#ead7d2;--lilac-l:#f3e6e2;--red:#9d1d3a;
+  --bd:1px solid rgba(43,15,29,.14);--sh:0 10px 26px -14px rgba(43,15,29,.35);--sh-lg:0 30px 60px -28px rgba(43,15,29,.55);
+  --serif:'Playfair Display',Georgia,serif;--price:'Playfair Display',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;--title:'Playfair Display',Georgia,serif;
+  --night:#14070f;--night-2:#1f0c18;--night-3:#2a1020;--gold:#e8c27a;--gold-2:#b98a3e;--ivory:#f8efe3;
+}
+body{background:var(--night);font-weight:500}
+body{background:#14070f}
+.lp{background:
+  radial-gradient(900px 520px at 85% -8%,rgba(200,52,79,.30),transparent 60%),
+  radial-gradient(700px 480px at -10% 30%,rgba(232,194,122,.14),transparent 60%),
+  linear-gradient(180deg,#1f0c18 0%,#14070f 60%);color:var(--ivory)}
+/* header */
+.lp-header{background:rgba(20,7,15,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid rgba(232,194,122,.22)}
+.lp-logo{color:var(--gold);font-weight:700;letter-spacing:0}
+.lp-badge-tiktok{color:var(--ivory)}
+.lp-nav a{color:rgba(248,239,227,.78);border-bottom:1px solid rgba(232,194,122,.55);font-weight:600;font-size:15px}
+.lp-back-btn{background:rgba(31,12,24,.9);color:var(--gold);border:1px solid rgba(232,194,122,.4)}
+/* hero */
+.lp-hero-kicker{background:rgba(232,194,122,.08);border:1px solid rgba(232,194,122,.35);color:var(--gold);box-shadow:none}
+.lp-hero-kicker-txt{color:var(--gold);letter-spacing:.14em;font-weight:700}
+.lp-quiz-badge{background:linear-gradient(135deg,#f3d99b,#c99a4c);border:0;color:#2b0f1d;box-shadow:0 10px 22px -10px rgba(232,194,122,.7)}
+.lp-h1{color:var(--ivory);font-family:var(--serif);font-weight:700;letter-spacing:-.8px;line-height:1.12;text-wrap:balance}
+.lp .lp-script{background:none;color:var(--gold);font-style:italic;font-weight:700}
+.lp-lead{color:rgba(248,239,227,.78)}
+.lp-hero-proof{color:rgba(248,239,227,.72);font-weight:600}
+.lp-hero-proof-dots i{border-color:#14070f}
+.lp-hero-proof-dots i:nth-child(1){background:#e8c27a}.lp-hero-proof-dots i:nth-child(2){background:#c8344f}.lp-hero-proof-dots i:nth-child(3){background:#8a5a7a}
+/* botão principal */
+.lp-cta{background:linear-gradient(135deg,#e23d62 0%,#b01d41 100%);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:16px;box-shadow:0 18px 34px -14px rgba(226,61,98,.75),inset 0 1px 0 rgba(255,255,255,.28);letter-spacing:.01em;text-shadow:0 1px 0 rgba(0,0,0,.18)}
+.lp-cta:active{transform:translateY(2px);box-shadow:0 8px 16px -10px rgba(226,61,98,.7)}
+.lp-cta b{background:rgba(255,255,255,.18);border-radius:50%;width:34px;height:34px;align-items:center;justify-content:center}
+/* ponte */
+.lp-bridge{background:linear-gradient(180deg,#2a1020,#1f0c18);border-top:1px solid rgba(232,194,122,.25);border-bottom:1px solid rgba(232,194,122,.25)}
+.lp-bridge-eyebrow{background:transparent;color:var(--gold);border:1px solid rgba(232,194,122,.45);letter-spacing:.22em;font-weight:700}
+.lp-bridge-text{color:var(--ivory);font-family:var(--serif);font-weight:600;letter-spacing:-.4px}
+/* comece */
+.lp-comece{background:linear-gradient(135deg,#f1d79a 0%,#d6a85a 100%);border:0}
+.lp-comece .lp-quiz-badge{background:#2b0f1d;color:var(--gold)}
+.lp-comece .lp-bridge-eyebrow{background:#2b0f1d;color:var(--gold);border:0}
+.lp-comece-text{color:#2b0f1d;font-weight:700}
+/* oferta */
+.lp-oferta{background:linear-gradient(180deg,#14070f,#1f0c18)}
+.lp-of-card{background:linear-gradient(180deg,#fffaf2,#f7ecdc);border:1px solid rgba(232,194,122,.55);box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 0 6px rgba(232,194,122,.08)}
+.lp-of-eyebrow{background:#2b0f1d;color:var(--gold);border-radius:999px;transform:none;letter-spacing:.1em;font-weight:700}
+.lp-of-title{color:#2b0f1d;font-weight:700;letter-spacing:-.6px}
+.lp .lp-of-title .lp-script{color:#a8123a}
+.lp-of-list li:not(.vk){background:#fff;border:1px solid rgba(43,15,29,.1);border-radius:14px}
+.lp-of-ck{background:linear-gradient(135deg,#f3d99b,#c99a4c);border:0;color:#2b0f1d}
+.vk-kick{background:#2b0f1d;color:var(--gold);border:0;transform:none;letter-spacing:.2em}
+.lp-of-list li.vk{background:#fff;border:1px solid rgba(43,15,29,.1);border-radius:18px;box-shadow:0 14px 28px -20px rgba(43,15,29,.5)}
+.vk-ck{background:linear-gradient(135deg,#f3d99b,#c99a4c);border:0;color:#2b0f1d}
+.vk-tag{color:#a8123a;letter-spacing:.18em}
+.vk-h{font-weight:700;color:#2b0f1d}
+.vk-s{background:#f8ecd0;border:1px solid rgba(185,138,62,.4);color:#5a3a12}
+.vk-s::before{color:#b98a3e;-webkit-text-stroke:0}
+.lp-of-list li.vk-main{background:linear-gradient(135deg,#fbefcf,#f3d99b);border:1px solid rgba(185,138,62,.55)}
+.lp-of-list li.vk-seal{background:linear-gradient(135deg,#2a1020,#14070f);border:1px solid rgba(232,194,122,.45);box-shadow:0 18px 30px -18px rgba(0,0,0,.8)}
+.vk-seal .vk-h{color:var(--gold)}
+/* preço (ingresso) */
+.lp-of-price{background:linear-gradient(180deg,#fffdf8,#fbf0dc);border:1px solid rgba(185,138,62,.5);box-shadow:0 30px 60px -28px rgba(43,15,29,.6)}
+.lp-tk-perf{border-top:2px dashed rgba(185,138,62,.5)}
+.lp-tk-perf::before,.lp-tk-perf::after{background:#f7ecdc;border:1px solid rgba(185,138,62,.5)}
+.lp-of-de,.lp-of-por{color:#8a6a4a}
+.lp-of-old{color:#b3a08f}
+.lp-of-old::after{background:#c8344f}
+.lp-tk-off{background:linear-gradient(135deg,#f3d99b,#c99a4c);box-shadow:0 12px 22px -10px rgba(185,138,62,.9),0 0 0 4px #fff}
+.lp-tk-off b,.lp-tk-off b i{color:#2b0f1d}
+.lp-of-new{color:#2b0f1d;text-shadow:4px 5px 0 rgba(232,194,122,.55)}
+.lp-of-new .rs,.lp-of-new small{color:#2b0f1d}
+.lp-of-pix{background:#e6f1e6;border:1px solid rgba(60,120,80,.4);color:#2d6a43}
+.lp-of-pix::before{background:#2d6a43}
+.lp-of-last{background:linear-gradient(135deg,#c8344f,#8f1633);color:#fff}
+.lp-of-last::before{background:#fff}
+.lp-of-secure{color:#6b4a58}
+/* faixa de prova */
+.lp-stat{background:linear-gradient(135deg,#2a1020,#14070f);border:0;border-top:1px solid rgba(232,194,122,.3);border-bottom:1px solid rgba(232,194,122,.3)}
+.lp-stat-text{color:var(--gold);font-weight:600}
+/* depoimentos */
+.lp-depos-sec{background:linear-gradient(180deg,#14070f,#1f0c18)}
+.lp-of-quote{border:1px solid rgba(232,194,122,.3);box-shadow:0 20px 40px -26px rgba(0,0,0,.8)}
+.lp-of-quote:nth-child(n){background:#fffaf2}
+/* quiz */
+.lp-quiz{background:
+  radial-gradient(800px 500px at 90% -10%,rgba(200,52,79,.35),transparent 60%),
+  radial-gradient(600px 420px at -10% 100%,rgba(232,194,122,.18),transparent 60%),
+  linear-gradient(180deg,#1f0c18,#14070f)!important;color:var(--ivory)}
+.lp-hero{background:transparent}
+.lp-quiz .lp-logo{color:var(--gold)}
+.lp-quiz-eyebrow{background:transparent;color:var(--gold);border:1px solid rgba(232,194,122,.45);border-radius:999px;transform:none;letter-spacing:.2em;font-weight:700}
+.lp-quiz-q{color:var(--ivory);font-weight:700;letter-spacing:-.6px}
+.lp-quiz-opt:nth-child(n){background:rgba(255,250,242,.06);border:1px solid rgba(232,194,122,.35);color:var(--ivory);box-shadow:none;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-radius:16px;font-weight:700;letter-spacing:.02em}
+.lp-quiz-opt::after{color:var(--gold)}
+@media(hover:hover){.lp-quiz-opt:hover{background:rgba(232,194,122,.14);border-color:var(--gold);transform:translateY(-2px)}}
+.lp-quiz-opt:active{transform:translateY(1px);background:rgba(232,194,122,.18)}
+
+/* quiz: progresso e carregando */
+.qz-prog-t{color:var(--gold)}
+.qz-prog-bar{background:rgba(255,250,242,.1);border:1px solid rgba(232,194,122,.35)}
+.qz-prog-bar i{background:linear-gradient(90deg,#c8344f,#e8c27a)}
+.qz-heart{background:linear-gradient(135deg,#f3d99b,#c99a4c);border:0;box-shadow:0 18px 40px -12px rgba(232,194,122,.6);color:#2b0f1d}
+.qz-load p{color:var(--ivory);font-weight:600}
+.qz-bar{background:rgba(255,250,242,.1);border:1px solid rgba(232,194,122,.35)}
+.qz-bar i,.qz-bar span{background:linear-gradient(90deg,#c8344f,#e8c27a)}
+.qz-hb{color:var(--gold);-webkit-text-stroke:0}
+/* barra fixa */
+.sb{background:rgba(31,12,24,.94);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid rgba(232,194,122,.4);box-shadow:0 -16px 34px -14px rgba(0,0,0,.7)}
+.sb-txt b{color:var(--ivory);font-weight:700}
+.sb-proof{color:var(--ivory)}
+.sb-pr{background:linear-gradient(135deg,#f3d99b,#c99a4c);color:#2b0f1d;border:0}
+.sb-pix{color:rgba(248,239,227,.72)}
+.sb-txt em{color:var(--gold)}
+.sb-btn{background:linear-gradient(135deg,#e23d62,#b01d41);box-shadow:0 10px 20px -10px rgba(226,61,98,.8)}
+.sb.sb-buy .sb-btn{background:linear-gradient(135deg,#e23d62,#b01d41)}
+/* depoimentos estilo whatsapp */
+.wa{border:1px solid rgba(232,194,122,.5);box-shadow:0 30px 60px -30px rgba(0,0,0,.85)}
+.wa-top{background:linear-gradient(135deg,#2a1020,#14070f);color:var(--ivory);border-bottom:1px solid rgba(232,194,122,.35)}
+.wa-av{background:linear-gradient(135deg,#f3d99b,#c99a4c);border:0;color:#2b0f1d}
+.wa-who i{color:var(--gold)}
+.wa-b{border:1px solid rgba(43,15,29,.08);box-shadow:0 10px 20px -14px rgba(43,15,29,.5)}
+.wa-st{color:#b98a3e}
+
+/* ajustes finais do tema */
+.lp-cta,.lp-bridge .lp-cta{background:linear-gradient(135deg,#e23d62 0%,#b01d41 100%);color:#fff;border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 34px -14px rgba(226,61,98,.75),inset 0 1px 0 rgba(255,255,255,.28)}
+.lp-bridge .lp-cta b{background:rgba(255,255,255,.18);border-radius:50%}
+.sale-toast{background:rgba(31,12,24,.94);border:1px solid rgba(232,194,122,.45);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 16px 30px -14px rgba(0,0,0,.8)}
+.sale-l1,.sale-tx b{color:var(--ivory)}
+.sale-sub{color:rgba(248,239,227,.7)}
+.sale-av{border:0;color:#2b0f1d;background:linear-gradient(135deg,#f3d99b,#c99a4c)!important}
+/* checkout */
+.co-overlay{background:rgba(10,3,8,.86);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.co-panel{background:linear-gradient(180deg,#fffaf2,#f8eedd);border:1px solid rgba(232,194,122,.6);box-shadow:0 40px 80px -30px rgba(0,0,0,.85),0 0 0 6px rgba(232,194,122,.08)}
+.co-btn-gold,.co-gen-big,.co-btn-copy{background:linear-gradient(135deg,#e23d62 0%,#b01d41 100%);box-shadow:0 14px 26px -12px rgba(226,61,98,.8),inset 0 1px 0 rgba(255,255,255,.25)}
+.co-btn-gold:active,.co-gen-big:active,.co-btn-copy:active{box-shadow:0 6px 12px -8px rgba(226,61,98,.8)}
+.co-prog-step.on span{background:#2b0f1d;color:var(--gold)}
+.co-prog-step.done span{background:linear-gradient(135deg,#f3d99b,#c99a4c);border-color:transparent;color:#2b0f1d}
+.co-order{background:#fff;border:1px solid rgba(185,138,62,.45)}
+.co-order-price{color:#2b0f1d}
+.co-h3,.co-label{color:#2b0f1d}
+.co-input{border:1px solid rgba(43,15,29,.18);background:#fff}
+.co-input:focus{border-color:#c99a4c;box-shadow:0 0 0 3px rgba(232,194,122,.35);outline:none}
+.co-x{background:#f1e6d3;color:#2b0f1d}
+
+/* OFERTA: fonte básica e sólida (sem serifa) */
+.lp-oferta,.lp-oferta *,.lp-stat,.lp-stat *,.lp-depos-sec,.lp-depos-sec *,.sb,.sb *,.sale-toast,.sale-toast *,.co-panel,.co-panel *{font-family:var(--sans)!important;font-style:normal}
+.lp-of-title{font-weight:800;letter-spacing:-.5px}
+.lp-of-title .lp-script{font-style:normal;font-weight:800}
+.vk-h{font-weight:700;font-size:clamp(17px,4.5vw,19px);letter-spacing:-.1px;line-height:1.3}
+.vk-ttl{font-weight:800;letter-spacing:-.3px}
+.lp-stat-text{font-weight:700;letter-spacing:-.2px}
+.lp-of-new,.lp-of-old,.lp-of-por,.co-order-price{font-variant-numeric:lining-nums}
+.lp-of-new{font-weight:800;letter-spacing:-5px}
+.wa-b p{font-weight:500}
+
+.lp-of-por{white-space:nowrap;font-size:clamp(10.5px,3.1vw,12.5px);letter-spacing:.14em}
+.lp-sohoje{display:inline-block;background:#c8344f;color:#fff;border-radius:6px;padding:3px 9px;margin-right:4px;letter-spacing:.14em;animation:sohojePulse 1.4s ease-in-out infinite}
+@keyframes sohojePulse{0%,100%{box-shadow:0 0 0 0 rgba(200,52,79,.55)}50%{box-shadow:0 0 0 7px rgba(200,52,79,0)}}
+.lp-of-last b{display:inline-block;min-width:5.6em;font-variant-numeric:tabular-nums;color:#fff;background:rgba(0,0,0,.25);border-radius:6px;padding:2px 7px;letter-spacing:.04em;text-align:center}
+.lp-of-last{gap:8px;font-size:clamp(11px,3.1vw,12.5px)}
+@media(prefers-reduced-motion:reduce){.lp-sohoje{animation:none}}
 </style>
 </head>
 <body><svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="sic1"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></symbol><symbol id="sic2"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="sic4"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="sic7"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></symbol><symbol id="sic8"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2 9.2 4.3 5.5 4l-1 3.6L1 9.4l2 3.1L1 15.6l3.5 1.8 1 3.6 3.7-.3L12 22l2.8-2.3 3.7.3 1-3.6 3.5-1.8-2-3.1 2-3.1-3.5-1.8-1-3.6-3.7.3L12 2Zm-1.2 13.6-3.4-3.4 1.4-1.4 2 2 4.6-4.6 1.4 1.4-6 6Z"/></symbol><symbol id="sic9"><circle cx="12" cy="8.2" r="4.2"/><path d="M4 20.2c0-4.2 3.6-7.2 8-7.2s8 3 8 7.2v.3H4v-.3Z"/></symbol><symbol id="sic10"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol><symbol id="sic11"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.2 8.85-6.1 3.9a.6.6 0 0 1-.92-.5V9.75a.6.6 0 0 1 .92-.5l6.1 3.9a.6.6 0 0 1 0 .7z"/></symbol></svg>
@@ -758,23 +925,31 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
     document.getElementById('quizQ2').style.display = 'none';
     var portal = document.getElementById('portal');
     portal.style.display = 'block';
+    esconder(SECOES);
+    mostrar(['lp-top']);
     window.scrollTo(0,0);
-    appState = 'hero';
+    setEstado('hero');
     showBackBtn();
   }
+  function setEstado(s){ appState = s; var l=(s==='hero'||s==='bridge'); document.documentElement.style.overflow=l?'hidden':''; document.body.style.overflow=l?'hidden':''; }
+  var SECOES = ['lp-bridge','lp-comece','lp-oferta','lp-stat','lp-depos-sec'];
+  function esconder(ids){ ids.forEach(function(id){ var el=document.getElementById(id); if(el) el.style.display='none'; }); }
+  function mostrar(ids){ ids.forEach(function(id){ var el=document.getElementById(id); if(el) el.style.display=''; }); }
+  /* tela 2 (travada): só a promessa. Só o botão avança. */
   function mostrarPromessa(){
-    ['lp-bridge','lp-comece','lp-oferta','lp-stat','lp-depos-sec'].forEach(function(id){
-      var el = document.getElementById(id);
-      if(el) el.style.display = '';
-    });
-    var bridge = document.getElementById('lp-bridge');
-    if(bridge) setTimeout(function(){ bridge.scrollIntoView({behavior:'smooth', block:'start'}); }, 50);
-    appState = 'full';
+    esconder(['lp-top','lp-comece','lp-oferta','lp-stat','lp-depos-sec']);
+    mostrar(['lp-bridge']);
+    window.scrollTo(0,0);
+    setEstado('bridge');
   }
-  function scrollComece(){
-    var el = document.getElementById('lp-comece');
-    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  /* tela 3: oferta (o botão da promessa pula direto para ela) */
+  function mostrarOferta(){
+    esconder(['lp-top','lp-bridge','lp-comece']);
+    mostrar(['lp-oferta','lp-stat','lp-depos-sec']);
+    window.scrollTo(0,0);
+    setEstado('full');
   }
+  function scrollComece(){ mostrarOferta(); }
   function showBackBtn(){
     var b = document.getElementById('backBtn');
     if(b) b.style.display = 'flex';
@@ -787,21 +962,24 @@ body.sb-on{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
     if(appState==='hero'){
       document.getElementById('portal').style.display = 'none';
       document.getElementById('quizQ2').style.display = 'flex';
-      appState = 'q2';
+      setEstado('q2');
       hideBackBtn();
-    } else if(appState==='full'){
-      ['lp-bridge','lp-comece','lp-oferta','lp-stat','lp-depos-sec'].forEach(function(id){
-        var el = document.getElementById(id);
-        if(el) el.style.display = 'none';
-      });
+    } else if(appState==='bridge'){
+      esconder(SECOES);
+      mostrar(['lp-top']);
       window.scrollTo(0,0);
-      appState = 'hero';
+      setEstado('hero');
+    } else if(appState==='full'){
+      esconder(['lp-oferta','lp-stat','lp-depos-sec','lp-comece']);
+      mostrar(['lp-bridge']);
+      window.scrollTo(0,0);
+      setEstado('bridge');
     }
   }
   </script>
 
 <!-- ════════ 2. COPY + OFERTA (preenchida conforme a situação) ════════ -->
-  <div class="lp" id="portal"><header class="lp-header"><div class="lp-logo"><svg class="lp-badge-tiktok" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic7"></use></svg><svg class="lp-badge-kwai" viewBox="0 0 24 24" fill="currentColor" aria-label="Kwai"><use href="#sic11"></use></svg><svg class="lp-badge-youtube" viewBox="0 0 24 24" fill="currentColor" aria-label="YouTube"><use href="#sic10"></use></svg> Mestre da Reconquista <svg class="lp-badge-verified" viewBox="0 0 24 24" fill="currentColor" aria-label="Verificado"><use href="#sic8"></use></svg></div><nav class="lp-nav"><a href="#lp-top">Início</a><a onclick="abrirWhatsDuvidas()">Dúvidas</a></nav></header><section class="lp-hero" id="lp-top"><div class="lp-hero-text lp-anim"><div class="lp-hero-kicker"><span class="lp-quiz-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic1"></use></svg></span><span class="lp-hero-kicker-txt">Baseado em psicologia masculina/feminina real</span></div><h1 class="lp-h1" id="heroH1">Ser abandonada(o) por quem você ama <span class="lp-script">dói</span>.</h1><p class="lp-lead" id="heroLead">A vontade é mandar mensagem, implorar, tentar consertar tudo. Mas essas atitudes só afastam ainda mais. Eu vou te mostrar como um homem ou uma mulher realmente decide voltar e o que fazer para reconquistá-lo(a).</p><button type="button" class="lp-cta" onclick="mostrarPromessa()"><span id="heroCtaText">Quero mudar isso</span> <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic2"></use></svg></b></button><p class="lp-hero-proof"><span class="lp-hero-proof-dots"><i></i><i></i><i></i></span>Milhares de pessoas já começaram essa virada</p></div></section><section class="lp-bridge" id="lp-bridge" style="display:none"><p class="lp-bridge-eyebrow">Existe um caminho</p><h2 class="lp-bridge-text lp-anim" id="bridgePromise"></h2><button type="button" class="lp-cta lp-bridge-cta" onclick="scrollComece()"><span id="bridgeCtaText">Quero saber como</span> <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic2"></use></svg></b></button></section><section class="lp-comece" id="lp-comece" style="display:none"><div class="lp-anim"><div class="lp-quiz-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></div><p class="lp-bridge-eyebrow">Chega de esperar</p><h2 class="lp-comece-text">Comece agora</h2></div></section><section class="lp-oferta" id="lp-oferta" style="display:none"><div class="lp-of-card lp-anim"><p class="lp-of-eyebrow"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic1"></use></svg></i> Método comprovado · Baseado na psicologia masculina/feminina</p><h2 class="lp-of-title" id="ofertaTitle">O <span class="lp-script">Plano de 7 Dias</span> que fala a língua da mente dele(a)</h2><p class="lp-of-desc" id="ofertaDesc">Um passo a passo construído sobre como a mente masculina/feminina realmente decide voltar:</p><ul class="lp-of-list" id="ofertaList"><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Plano completo de 7 dias baseado em gatilhos da psicologia masculina/feminina</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Os segredos de como a mente dele(a) processa a distância e o desejo</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Scripts que ativam o instinto de conquista masculino/feminino em cada situação</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Bônus exclusivos para acelerar a resposta emocional dele(a)</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Acesso imediato e 100% online</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Garantia incondicional de 7 dias</li></ul><div class="lp-of-price"><span class="lp-tk-off" aria-label="90% de desconto"><b>90%<i>OFF</i></b></span><div class="lp-tk-top"><span class="lp-of-de">Valor normal</span><span class="lp-of-old">R$ 99,90</span></div><div class="lp-tk-perf"></div><div class="lp-tk-main"><span class="lp-of-por">hoje, por apenas</span><span class="lp-of-new"><span class="rs">R$</span>9<small>,99</small></span><span class="lp-of-pix">à vista no PIX</span></div><span class="lp-of-last">Últimos acessos por este valor</span></div><button type="button" class="lp-cta lp-of-cta" onclick="setOferta('desconto');openCheckout()"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic1"></use></svg></i> <span id="ofertaCtaText">QUERO ELE(A) DE VOLTA AGORA</span> <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic2"></use></svg></b></button><p class="lp-of-secure">Pagamento 100% seguro &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; 7 dias de garantia</p></div></section><section class="lp-stat" id="lp-stat" style="display:none"><p class="lp-stat-text" id="ofertaStat">Milhares de pessoas já foram desbloqueadas com esse método.</p></section><section class="lp-depos-sec" id="lp-depos-sec" style="display:none"><div class="lp-of-depos" id="ofertaDepos"></div></section>  </div>
+  <div class="lp" id="portal"><header class="lp-header"><div class="lp-logo"><svg class="lp-badge-tiktok" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic7"></use></svg><svg class="lp-badge-kwai" viewBox="0 0 24 24" fill="currentColor" aria-label="Kwai"><use href="#sic11"></use></svg><svg class="lp-badge-youtube" viewBox="0 0 24 24" fill="currentColor" aria-label="YouTube"><use href="#sic10"></use></svg> Mestre da Reconquista <svg class="lp-badge-verified" viewBox="0 0 24 24" fill="currentColor" aria-label="Verificado"><use href="#sic8"></use></svg></div><nav class="lp-nav"><a href="#lp-top">Início</a><a onclick="abrirWhatsDuvidas()">Dúvidas</a></nav></header><section class="lp-hero" id="lp-top"><div class="lp-hero-text lp-anim"><h1 class="lp-h1" id="heroH1">Ser abandonada(o) por quem você ama <span class="lp-script">dói</span>.</h1><p class="lp-lead" id="heroLead">A vontade é mandar mensagem, implorar, tentar consertar tudo. Mas essas atitudes só afastam ainda mais. Eu vou te mostrar como um homem ou uma mulher realmente decide voltar e o que fazer para reconquistá-lo(a).</p><button type="button" class="lp-cta" onclick="mostrarPromessa()"><span id="heroCtaText">Quero mudar isso</span> <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic2"></use></svg></b></button><p class="lp-hero-proof"><span class="lp-hero-proof-dots"><i></i><i></i><i></i></span>Milhares de pessoas já começaram essa virada</p></div></section><section class="lp-bridge" id="lp-bridge" style="display:none"><p class="lp-bridge-eyebrow">Existe um caminho</p><h2 class="lp-bridge-text lp-anim" id="bridgePromise"></h2><button type="button" class="lp-cta lp-bridge-cta" onclick="mostrarOferta()"><span id="bridgeCtaText">Quero saber como</span> <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic2"></use></svg></b></button></section><section class="lp-comece" id="lp-comece" style="display:none"><div class="lp-anim"><div class="lp-quiz-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></div><p class="lp-bridge-eyebrow">Chega de esperar</p><h2 class="lp-comece-text">Comece agora</h2></div></section><section class="lp-oferta" id="lp-oferta" style="display:none"><div class="lp-of-card lp-anim"><p class="lp-of-eyebrow"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic1"></use></svg></i> Método comprovado</p><h2 class="lp-of-title" id="ofertaTitle">O <span class="lp-script">Plano de 7 Dias</span> que fala a língua da mente dele(a)</h2><p class="lp-of-desc" id="ofertaDesc">Um passo a passo construído sobre como a mente masculina/feminina realmente decide voltar:</p><ul class="lp-of-list" id="ofertaList"><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Plano completo de 7 dias baseado em gatilhos da psicologia masculina/feminina</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Os segredos de como a mente dele(a) processa a distância e o desejo</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Scripts que ativam o instinto de conquista masculino/feminino em cada situação</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Bônus exclusivos para acelerar a resposta emocional dele(a)</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Acesso imediato e 100% online</li><li><span class="lp-of-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic4"></use></svg></span>Garantia incondicional de 7 dias</li></ul><div class="lp-of-price"><span class="lp-tk-off" aria-label="90% de desconto"><b>90%<i>OFF</i></b></span><div class="lp-tk-top"><span class="lp-of-de">Valor normal</span><span class="lp-of-old">R$ 99,90</span></div><div class="lp-tk-perf"></div><div class="lp-tk-main"><span class="lp-of-por"><b class="lp-sohoje">Só hoje</b> por apenas</span><span class="lp-of-new"><span class="rs">R$</span>9<small>,99</small></span><span class="lp-of-pix">à vista no PIX</span></div><span class="lp-of-last"><span>Oferta válida só hoje</span> <b id="ofData">--/--/----</b></span></div><button type="button" class="lp-cta lp-of-cta" onclick="setOferta('desconto');openCheckout()"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#sic1"></use></svg></i> <span id="ofertaCtaText">QUERO ELE(A) DE VOLTA AGORA</span> <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#sic2"></use></svg></b></button><p class="lp-of-secure">Pagamento 100% seguro &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; 7 dias de garantia</p></div></section><section class="lp-stat" id="lp-stat" style="display:none"><p class="lp-stat-text" id="ofertaStat">Milhares de pessoas já foram desbloqueadas com esse método.</p></section><section class="lp-depos-sec" id="lp-depos-sec" style="display:none"><div class="lp-of-depos" id="ofertaDepos"></div></section>  </div>
 
 <!-- ════════ 3. CHECKOUT ════════ -->
   <div class="co-overlay" id="checkout" aria-hidden="true" style="display:none">
@@ -1322,6 +1500,18 @@ function goSuccess(){
   if(key && typeof window.quizSituacaoDireto === 'function'){
     try{ window.quizSituacaoDireto(key); }catch(e){}
   }
+})();
+</script>
+<script>
+/* data de hoje, automática todos os dias (horário do visitante) */
+(function(){
+  function p(n){return (n<10?'0':'')+n}
+  function atualiza(){
+    var el=document.getElementById('ofData'); if(!el) return;
+    var d=new Date();
+    el.textContent=p(d.getDate())+'/'+p(d.getMonth()+1)+'/'+d.getFullYear();
+  }
+  atualiza(); setInterval(atualiza,60000);
 })();
 </script>
 </body>
