@@ -799,6 +799,95 @@ body{background:#12081C}
 .co-btn-gold,.co-gen-big,.co-btn-copy{background:linear-gradient(135deg,#FF4D86,#D3155A)!important;box-shadow:0 16px 30px -14px rgba(255,45,111,.8)!important}
 .co-prog-step.on span{background:#1C0F2B;color:#fff}
 .co-prog-step.done span{background:#FF2D6F;color:#fff}
+
+/* ================================================================
+   BOTÕES: pílula com borda de luz giratória e brilho que passa
+   ================================================================ */
+@property --ang{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes btnSpin{to{--ang:360deg}}
+@keyframes btnShine{0%,55%{transform:translateX(-130%) skewX(-20deg)}100%{transform:translateX(230%) skewX(-20deg)}}
+.lp-cta,.sb-btn{position:relative;overflow:hidden;isolation:isolate}
+.lp-cta{justify-content:center;gap:0;text-align:center;border-radius:999px;padding:21px 30px;font-weight:800;letter-spacing:.01em;line-height:1.25;border:3px solid transparent}
+.lp-cta b,.lp-cta i{display:none!important}
+.lp-cta span{position:relative;z-index:2}
+.lp-cta::after,.sb-btn::after{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:38%;z-index:1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);transform:translateX(-130%) skewX(-20deg);animation:btnShine 3.4s ease-in-out 1.2s infinite}
+/* telas coloridas: pílula branca com borda de luz */
+#lp-top .lp-cta,#lp-bridge .lp-cta{color:#1C0F2B;background:linear-gradient(#fff,#fff) padding-box,conic-gradient(from var(--ang),#FF2D6F,#FFD24D,#8E3BE0,#3FD6C0,#FF2D6F) border-box;animation:btnSpin 5s linear infinite;box-shadow:0 22px 40px -16px rgba(30,0,40,.75)}
+#lp-top .lp-cta::after,#lp-bridge .lp-cta::after{background:linear-gradient(100deg,transparent,rgba(255,45,111,.28),transparent)}
+/* compra: rosa intenso com borda dourada de luz */
+.lp-of-cta{color:#fff;background:linear-gradient(135deg,#FF4D86,#D3155A) padding-box,conic-gradient(from var(--ang),#FFD24D,#fff,#FF9A5A,#FFD24D) border-box;animation:btnSpin 4s linear infinite;box-shadow:0 22px 40px -16px rgba(255,45,111,.85)}
+.lp-comece .lp-cta{color:#fff}
+.sb-btn{border-radius:999px;padding:13px 22px;border:2px solid transparent;color:#fff;background:linear-gradient(135deg,#FF4D86,#D3155A) padding-box,conic-gradient(from var(--ang),#FFD24D,#fff,#FF9A5A,#FFD24D) border-box;animation:btnSpin 4s linear infinite}
+.lp-cta:active,.sb-btn:active{transform:scale(.98)}
+@media(prefers-reduced-motion:reduce){.lp-cta,.sb-btn{animation:none!important}.lp-cta::after,.sb-btn::after{animation:none!important;display:none}}
+
+/* ================================================================
+   PERGUNTA: cartões brancos com ícone  |  BOTÕES: seta simples
+   ================================================================ */
+.lp-quiz-options{gap:12px}
+.lp-quiz-opt,.lp-quiz-opt:nth-child(n){display:flex;align-items:center;gap:14px;padding:14px 14px 14px 14px;min-height:72px;background:#fff;color:#1C0F2B;border:0;border-radius:22px;box-shadow:0 18px 34px -18px rgba(20,5,60,.7);font-size:clamp(16.5px,4.6vw,18px);font-weight:800;letter-spacing:-.005em;text-transform:none;line-height:1.22;-webkit-backdrop-filter:none;backdrop-filter:none}
+.lp-quiz-opt::before{content:"";flex:0 0 46px;width:46px;height:46px;border-radius:15px;background-repeat:no-repeat;background-position:center;background-size:24px 24px,100% 100%}
+.lp-quiz-opt::after,.lp-quiz-opt:nth-child(n)::after{position:static;transform:none;margin-left:auto;flex:0 0 34px;width:34px;height:34px;border-radius:50%;background:#FFE3EC url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%23D3155A%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M9%205l7%207-7%207%27%2F%3E%3C%2Fsvg%3E") center/16px no-repeat;content:"";font-size:0;animation:none!important;color:transparent}
+.lp-quiz-opt:active{transform:scale(.98)}
+@media(hover:hover){.lp-quiz-opt:hover{background:#FFF4F8;transform:translateY(-2px);border:0}}
+.lp-quiz-opt.picked,.lp-quiz-opt.picked:nth-child(n){background:#FFE9A8;outline:3px solid #fff;transform:scale(.98)}
+.lp-quiz-opt:nth-child(1)::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Crect%20x%3D%274%27%20y%3D%2711%27%20width%3D%2716%27%20height%3D%2710%27%20rx%3D%272.5%27%2F%3E%3Cpath%20d%3D%27M8%2011V7a4%204%200%200%201%207.5-2%27%2F%3E%3C%2Fsvg%3E");background-color:#FF2D6F;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Crect%20x%3D%274%27%20y%3D%2711%27%20width%3D%2716%27%20height%3D%2710%27%20rx%3D%272.5%27%2F%3E%3Cpath%20d%3D%27M8%2011V7a4%204%200%200%201%207.5-2%27%2F%3E%3C%2Fsvg%3E"),linear-gradient(135deg,#FF2D6F,#FF7A9E)}
+.lp-quiz-opt:nth-child(2)::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M20%2011a8%208%200%200%200-14-4L4%209%27%2F%3E%3Cpath%20d%3D%27M4%204v5h5%27%2F%3E%3Cpath%20d%3D%27M4%2013a8%208%200%200%200%2014%204l2-2%27%2F%3E%3Cpath%20d%3D%27M20%2020v-5h-5%27%2F%3E%3C%2Fsvg%3E");background-color:#FF2D6F;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M20%2011a8%208%200%200%200-14-4L4%209%27%2F%3E%3Cpath%20d%3D%27M4%204v5h5%27%2F%3E%3Cpath%20d%3D%27M4%2013a8%208%200%200%200%2014%204l2-2%27%2F%3E%3Cpath%20d%3D%27M20%2020v-5h-5%27%2F%3E%3C%2Fsvg%3E"),linear-gradient(135deg,#7B5CFF,#B13DD1)}
+.lp-quiz-opt:nth-child(3)::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M12%203c1%203.5%205%205.5%205%2010a5%205%200%200%201-10%200c0-2%201-3%202-4%20.3%201.2%201%202%202%202%200-3-1-5%201-8z%27%2F%3E%3C%2Fsvg%3E");background-color:#FF2D6F;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M12%203c1%203.5%205%205.5%205%2010a5%205%200%200%201-10%200c0-2%201-3%202-4%20.3%201.2%201%202%202%202%200-3-1-5%201-8z%27%2F%3E%3C%2Fsvg%3E"),linear-gradient(135deg,#FF5A5F,#FF9A5A)}
+.lp-quiz-opt:nth-child(4)::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Ccircle%20cx%3D%279%27%20cy%3D%278%27%20r%3D%273.2%27%2F%3E%3Cpath%20d%3D%27M3%2020a6%206%200%200%201%2012%200%27%2F%3E%3Ccircle%20cx%3D%2717%27%20cy%3D%279%27%20r%3D%272.6%27%2F%3E%3Cpath%20d%3D%27M16.5%2014.2A5%205%200%200%201%2021%2019%27%2F%3E%3C%2Fsvg%3E");background-color:#FF2D6F;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Ccircle%20cx%3D%279%27%20cy%3D%278%27%20r%3D%273.2%27%2F%3E%3Cpath%20d%3D%27M3%2020a6%206%200%200%201%2012%200%27%2F%3E%3Ccircle%20cx%3D%2717%27%20cy%3D%279%27%20r%3D%272.6%27%2F%3E%3Cpath%20d%3D%27M16.5%2014.2A5%205%200%200%201%2021%2019%27%2F%3E%3C%2Fsvg%3E"),linear-gradient(135deg,#4A2BD9,#7B5CFF)}
+.lp-quiz-opt:nth-child(5)::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27white%27%20stroke%3D%27white%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M12%2020.5s-8-4.8-9.7-9.9C1.3%207.5%203.3%204.5%206.5%204.5c2%200%203.4.9%205.500%203.2%202.100-2.300%203.500-3.200%205.500-3.200%203.200%200%205.200%203%204.200%206.100-1.700%205.100-9.700%209.900-9.700%209.900z%27%2F%3E%3C%2Fsvg%3E");background-color:#FF2D6F;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27white%27%20stroke%3D%27white%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M12%2020.5s-8-4.8-9.7-9.9C1.3%207.5%203.3%204.5%206.5%204.5c2%200%203.4.9%205.500%203.2%202.100-2.300%203.500-3.200%205.500-3.200%203.200%200%205.200%203%204.200%206.100-1.700%205.100-9.700%209.900-9.700%209.900z%27%2F%3E%3C%2Fsvg%3E"),linear-gradient(135deg,#FF2D6F,#C2185B)}
+
+.lp-quiz-eyebrow{background:rgba(255,255,255,.18);border:0;letter-spacing:0;text-transform:none;font-size:14.5px;font-weight:700;padding:9px 16px;line-height:1.3}
+.lp-quiz-q{font-size:clamp(25px,7vw,31px);line-height:1.15}
+/* seta simples nos botões principais */
+.lp-cta span{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-align:center}
+.lp-cta span::after{content:"";flex:none;width:20px;height:20px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%272.6%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M5%2012h14M13%206l6%206-6%206%27%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%272.6%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M5%2012h14M13%206l6%206-6%206%27%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;animation:ctaNudge 1.6s ease-in-out infinite}
+@keyframes ctaNudge{0%,60%,100%{transform:translateX(0)}30%{transform:translateX(5px)}}
+@media(prefers-reduced-motion:reduce){.lp-cta span::after{animation:none}}
+
+/* ================================================================
+   TODAS AS TELAS NO MESMO ESTILO DA PERGUNTA:
+   cartões arredondados, ícone em quadrado colorido, seta em círculo
+   ================================================================ */
+.lp-cta,#lp-top .lp-cta,#lp-bridge .lp-cta,.lp-of-cta{display:flex!important;justify-content:flex-start;align-items:center;gap:14px;width:100%;margin-top:26px;padding:14px;min-height:74px;border:0;border-radius:22px;text-align:left;font-size:clamp(16.5px,4.6vw,18px);font-weight:800;line-height:1.22;letter-spacing:-.005em;text-transform:none;animation:none;overflow:visible}
+.lp-cta::after{display:none}
+.lp-cta span{display:block;flex:1;text-align:left}
+.lp-cta span::after{display:none}
+.lp-cta::before{content:"";flex:0 0 46px;width:46px;height:46px;border-radius:15px;background-repeat:no-repeat;background-position:center;background-size:24px 24px,100% 100%}
+.lp-cta{position:relative}
+.lp-cta span{order:1}
+.lp-cta::before{order:0}
+/* seta em círculo ao fim (usa o <b> que já existe) */
+.lp-cta b{display:block!important;order:2;flex:0 0 34px;width:34px;height:34px;margin-left:auto;border-radius:50%;background:#FFE3EC url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%23D3155A%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M9%205l7%207-7%207%27%2F%3E%3C%2Fsvg%3E") center/16px no-repeat;font-size:0;color:transparent;animation:ctaNudge 1.6s ease-in-out infinite}
+.lp-cta b svg{display:none}
+.lp-cta i{display:none!important}
+/* telas coloridas: cartão branco */
+#lp-top .lp-cta,#lp-bridge .lp-cta{background:#fff;color:#1C0F2B;box-shadow:0 22px 40px -18px rgba(30,0,40,.75)}
+#lp-top .lp-cta::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Crect%20x%3D%274%27%20y%3D%2711%27%20width%3D%2716%27%20height%3D%2710%27%20rx%3D%272.5%27%2F%3E%3Cpath%20d%3D%27M8%2011V7a4%204%200%200%201%207.5-2%27%2F%3E%3C%2Fsvg%3E"),linear-gradient(135deg,#FF2D6F,#FF7A9E)}
+#lp-bridge .lp-cta::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Ccircle%20cx%3D%278%27%20cy%3D%2715%27%20r%3D%274%27%2F%3E%3Cpath%20d%3D%27M11%2012l9-9M16%207l3%203%27%2F%3E%3C%2Fsvg%3E"),linear-gradient(135deg,#7B5CFF,#B13DD1)}
+#lp-top .lp-cta b,#lp-bridge .lp-cta b{background-color:#FFE3EC}
+/* compra: cartão rosa intenso */
+.lp-of-cta{background:linear-gradient(135deg,#FF4D86,#D3155A);color:#fff;box-shadow:0 22px 40px -16px rgba(255,45,111,.85);text-transform:none}
+.lp-of-cta::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27white%27%20stroke%3D%27white%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M12%2020.5s-8-4.8-9.7-9.9C1.3%207.5%203.3%204.5%206.5%204.5c2%200%203.4.9%205.5%203.2%202.1-2.3%203.5-3.2%205.5-3.2%203.2%200%205.2%203%204.2%206.100-1.700%205.100-9.700%209.900-9.700%209.900z%27%2F%3E%3C%2Fsvg%3E"),linear-gradient(135deg,rgba(255,255,255,.28),rgba(255,255,255,.12))}
+.lp-of-cta b{background-color:rgba(255,255,255,.95)}
+.lp-comece .lp-cta::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27white%27%20stroke%3D%27white%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M12%2020.5s-8-4.8-9.7-9.9C1.3%207.5%203.3%204.5%206.5%204.5c2%200%203.4.9%205.5%203.2%202.1-2.3%203.5-3.2%205.5-3.2%203.2%200%205.2%203%204.2%206.100-1.700%205.100-9.700%209.900-9.700%209.900z%27%2F%3E%3C%2Fsvg%3E"),linear-gradient(135deg,#FF2D6F,#C2185B)}
+/* etiquetas no mesmo padrão da pergunta */
+.lp-bridge-eyebrow,#lp-bridge .lp-bridge-eyebrow,.lp-of-eyebrow{background:rgba(255,255,255,.18);border:0;color:#fff;letter-spacing:0;text-transform:none;font-size:14.5px;font-weight:700;padding:9px 16px;line-height:1.3}
+.lp-of-eyebrow{background:#1C0F2B;color:#FFE9A8}
+#lp-top .lp-hero-kicker{background:rgba(255,255,255,.2);border:0}
+/* itens da oferta: ícone em quadrado + sombra do cartão */
+.lp-of-list li:not(.vk),.lp-of-list li.vk{border:0;border-radius:22px;box-shadow:0 16px 30px -20px rgba(40,0,40,.7)}
+.lp-of-ck,.vk-ck{flex:0 0 46px;width:46px;height:46px;border-radius:15px;background:linear-gradient(135deg,#FF2D6F,#FF7A9E);color:#fff;border:0}
+.lp-of-ck svg,.vk-ck svg{width:22px;height:22px;stroke:#fff;color:#fff}
+@keyframes ctaNudge{0%,60%,100%{transform:translateX(0)}30%{transform:translateX(4px)}}
+@media(prefers-reduced-motion:reduce){.lp-cta b{animation:none}}
+
+#lp-top .lp-cta b,#lp-bridge .lp-cta b{background:#FFE3EC url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%23D3155A%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M9%205l7%207-7%207%27%2F%3E%3C%2Fsvg%3E") center/16px no-repeat!important}
+.lp-cta b{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%23D3155A%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M9%205l7%207-7%207%27%2F%3E%3C%2Fsvg%3E")}
+.lp-of-cta b{background:#fff url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%23D3155A%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%3Cpath%20d%3D%27M9%205l7%207-7%207%27%2F%3E%3C%2Fsvg%3E") center/16px no-repeat!important}
+.lp-of-list li.vk:not(.vk-seal){padding:16px 14px 16px 76px!important}
+.vk-ck,.lp-of-list .vk-ck{left:14px!important;top:14px!important;width:46px!important;height:46px!important}
+.lp-of-list li:not(.vk){align-items:center;gap:14px;padding:14px 14px 14px 14px}
 </style>
 </head>
 <body><svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><symbol id="sic1"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></symbol><symbol id="sic2"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="sic4"><path d="M20 6 9 17l-5-5"/></symbol><symbol id="sic7"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></symbol><symbol id="sic8"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2 9.2 4.3 5.5 4l-1 3.6L1 9.4l2 3.1L1 15.6l3.5 1.8 1 3.6 3.7-.3L12 22l2.8-2.3 3.7.3 1-3.6 3.5-1.8-2-3.1 2-3.1-3.5-1.8-1-3.6-3.7.3L12 2Zm-1.2 13.6-3.4-3.4 1.4-1.4 2 2 4.6-4.6 1.4 1.4-6 6Z"/></symbol><symbol id="sic9"><circle cx="12" cy="8.2" r="4.2"/><path d="M4 20.2c0-4.2 3.6-7.2 8-7.2s8 3 8 7.2v.3H4v-.3Z"/></symbol><symbol id="sic10"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol><symbol id="sic11"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.2 8.85-6.1 3.9a.6.6 0 0 1-.92-.5V9.75a.6.6 0 0 1 .92-.5l6.1 3.9a.6.6 0 0 1 0 .7z"/></symbol></svg>
@@ -813,11 +902,11 @@ body{background:#12081C}
       <p class="lp-quiz-eyebrow">O Mestre te tira dessa situação em 7 dias</p>
       <h1 class="lp-quiz-q">Qual dessas é a sua situação?</h1>
       <div class="lp-quiz-options">
-        <button type="button" class="lp-quiz-opt" onclick="quizSituacao('bloqueou')">QUERO SER DESBLOQUEADA(O)</button>
-        <button type="button" class="lp-quiz-opt" onclick="quizSituacao('restauracao')">RESTAURAÇÃO DO RELACIONAMENTO</button>
-        <button type="button" class="lp-quiz-opt" onclick="quizSituacao('orgulhoso')">DESTRUA O ORGULHO DELE(A)</button>
-        <button type="button" class="lp-quiz-opt" onclick="quizSituacao('outra')">ELE(A) ESTÁ COM OUTRA(O)</button>
-        <button type="button" class="lp-quiz-opt" onclick="quizSituacao('reconquistar')">QUERO MEU AMOR DE VOLTA</button>
+        <button type="button" class="lp-quiz-opt" onclick="quizSituacao('bloqueou')">Quero ser desbloqueada(o)</button>
+        <button type="button" class="lp-quiz-opt" onclick="quizSituacao('restauracao')">Restauração do relacionamento</button>
+        <button type="button" class="lp-quiz-opt" onclick="quizSituacao('orgulhoso')">Destrua o orgulho dele(a)</button>
+        <button type="button" class="lp-quiz-opt" onclick="quizSituacao('outra')">Ele(a) está com outra(o)</button>
+        <button type="button" class="lp-quiz-opt" onclick="quizSituacao('reconquistar')">Quero meu amor de volta</button>
       </div>
       <div class="qz-load" id="qzLoad" aria-live="polite"><span class="qz-heart">&#9829;</span><p id="qzMsg">Entendendo a sua situação…</p><span class="qz-bar"><i></i></span></div>
     </div>
