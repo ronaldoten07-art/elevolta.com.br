@@ -1620,7 +1620,7 @@ function goSuccess(){
   /* ---------- Quiz: toque -> coração partido grande que se repara -> diagnóstico ---------- */
   var qzBusy = false;
   var goOriginal = window.quizSituacao;
-  window.quizSituacaoDireto = goOriginal; /* entrada por link: pula a pergunta e a animação */
+  window.quizSituacaoDireto = function(key){ window.quizSituacao(key); }; /* entrada por link: pula a pergunta, mas toca a animação da situação */
   window.quizSituacao = function(key){
     if(qzBusy) return;
     qzBusy = true;
